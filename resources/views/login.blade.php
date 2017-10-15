@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Accedo Services | Login</title>
+    <title>Salud Materno Fetal | Login</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -62,8 +62,8 @@
             <p class="login-box-msg">Sign in to start your session</p>
             {!! Form::open(array('url' => 'login')) !!}
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email" name="email" autocomplete="off" required>
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Username" name="nickname" autocomplete="off" required>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" class="form-control" placeholder="Password" name="password" required>

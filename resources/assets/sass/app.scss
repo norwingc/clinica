@@ -1,10 +1,24 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Variables
 @import "variables";
 @import "AdminLTE.css";
+@import "_all-skins.css";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+.main-header{
+    .logo-mini{
+        img{
+            width: 50px;
+        }
+    }
+    .logo-lg{
+        img{
+            width: 50px;
+        }
+    }
+}
+

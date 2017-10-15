@@ -14,6 +14,14 @@
 
 Route::name('login')->get('login', 'UsersController@viewLogin');
 Route::name('login')->post('login', 'UsersController@login');
+Route::name('logout')->delete('login', 'UsersController@logout');
 
+Route::middleware(['auth'])->group(function () {
+    Route::view('/', 'home')->name('home');
 
-Route::view('/', 'home')->name('home');
+    Route::prefix('Paciente')->group(function () {
+       Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
+    });
+
+});
+
