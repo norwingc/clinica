@@ -15764,3 +15764,29 @@ button.close {
   width: 50px;
 }
 
+.actions {
+  min-width: 100px;
+}
+
+.actions a,
+.actions button {
+  padding: 1px 6px;
+  background: transparent;
+}
+
+.actions a:hover,
+.actions button:hover {
+  background: gray;
+}
+
+.actions a:hover i,
+.actions button:hover i {
+  color: white;
+}
+
+.actions a i,
+.actions button i {
+  font-size: 1.4em;
+  color: #00c0ef;
+}
+

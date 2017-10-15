@@ -23,10 +23,10 @@
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-home"></i><span>Home</span></a></li>
-        <li><a href="#"><i class="fa fa-database"></i> <span>Pacientes</span></a></li>
+        <li><a href="{{ route('home') }}"><i class="fa fa-home"></i><span>Inicio</span></a></li>
+        <li><a href="{{ route('pacientes') }}"><i class="fa fa-database"></i> <span>Pacientes</span></a></li>
         <li class="treeview">
-            <a href="#"><i class="fa fa-bar-chart"></i> <span>Citas</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class="fa fa-clock-o"></i> <span>Citas</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
                 <li><a href="#">Agregar Cita</a></li>
             </ul>

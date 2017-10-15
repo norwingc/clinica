@@ -1,3 +1,8 @@
 @extends('templates._maintemplate')
 
-@section('title') Home @endsection
+@section('title') Inicio @endsection
+
+
+@section('contenido')
+
+@endsection

@@ -22,3 +22,22 @@
     }
 }
 
+.actions{
+    min-width: 100px;
+    a, button{
+        padding: 1px 6px;
+        background: transparent;
+        &:hover{
+            background: gray;
+            i{
+                color: white;
+            }
+
+        }
+        i{
+            font-size: 1.4em;
+            color: #00c0ef;
+        }
+    }
+}
+

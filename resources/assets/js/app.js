@@ -11,3 +11,4 @@ require('./plugins/jquery.slimscroll.min.js');
 require('./plugins/fastclick.js');
 
 
+$('.sidebar-menu').tree()
