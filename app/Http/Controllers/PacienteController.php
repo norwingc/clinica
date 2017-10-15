@@ -43,9 +43,9 @@ class PacienteController extends Controller
         $paciente = Paciente::where('id_number', $request->id_number)->first();
 
         if($paciente){
-
+            return redirect()->action('PacienteController@show', ['paciente' => $paciente]);
         }
-        return view('404', ['message' => 'Paciente no encontrado'])
+        return view('404', ['message' => 'Paciente no encontrado']);
     }
 
     /**

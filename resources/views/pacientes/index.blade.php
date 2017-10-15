@@ -30,17 +30,19 @@
                 </div>
                 @include('includes._message')
                 <div class="box-body">
-                    <table id="table" class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Cedula</th>
-                                <th>Phone</th>
-                                <th>Ultima Consulta</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div class="table-responsive">
+                        <table id="table" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Cedula</th>
+                                    <th>Phone</th>
+                                    <th>Ultima Consulta</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

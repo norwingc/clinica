@@ -25,8 +25,8 @@ Route::middleware(['auth'])->group(function () {
         Route::name('pacientes')->get('/', 'PacienteController@index');
         Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
 
-        Route::name('paciente.show')->get('User/View/{user}', 'PacienteController@show');
-        Route::name('paciente.information')->get('User/Information/{user}', 'PacienteController@information');
+        Route::name('paciente.show')->get('User/View/{paciente}', 'PacienteController@show');
+        Route::name('paciente.information')->get('User/Information/{paciente}', 'PacienteController@information');
     });
 
 });
