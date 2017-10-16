@@ -7,8 +7,8 @@
 
 require('./bootstrap');
 require('./plugins/adminlte');
-require('./plugins/jquery.slimscroll.min.js');
-require('./plugins/fastclick.js');
+require('./plugins/jquery.slimscroll.min');
+require('./plugins/fastclick');
+require('./plugins/jquery.mask.min');
 
-
-$('.sidebar-menu').tree()
+require('./main');

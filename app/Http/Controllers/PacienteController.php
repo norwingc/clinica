@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use DataTables;
+use Carbon\Carbon;
 
 class PacienteController extends Controller
 {
@@ -22,6 +23,21 @@ class PacienteController extends Controller
 
         return response()->json([
             'paciente' => Paciente::find($id)
+        ]);
+    }
+
+    /**
+     * [getDateBirth description]
+     * @param  [type] $date [description]
+     * @return [type]       [description]
+     */
+    public function getAge($date)
+    {
+        $date = explode("-", $date);
+        $age = Carbon::createFromDate($date[0], $date[1], $date[2])->diff(Carbon::now())->format('%y años, %m meses y %d dias');
+
+        return response()->json([
+            'age' => $age
         ]);
     }
     /**

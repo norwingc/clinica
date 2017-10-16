@@ -20,8 +20,9 @@ Route::name('logout')->delete('login', 'UsersController@logout');
 Route::middleware(['auth'])->group(function () {
     Route::view('/', 'home')->name('home');
 
-    Route::prefix('Paciente')->group(function () {
+    Route::prefix('Pacientes')->group(function () {
         Route::name('paciente.get')->get('get/{id?}', 'PacienteController@get');
+        Route::name('paciente.getAge')->get('getAge/{fecha}', 'PacienteController@getAge');
         Route::name('pacientes')->get('/', 'PacienteController@index');
         Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
 
