@@ -1,3 +1,5 @@
+@import "AdminLTE.css";
+@import "_all-skins.css";
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
@@ -6,8 +8,25 @@
 
 // Variables
 @import "variables";
-@import "AdminLTE.css";
-@import "_all-skins.css";
+
+a{
+    text-decoration: none !important;
+}
+textarea{
+    resize:none;
+}
+.form-control{
+    border-radius: 0 !important;
+}
+.calendar{
+    font-size: 1em !important;
+    width: 80%;
+    margin:auto;
+    a{
+        color: gray;
+        font-size: 1.1em;
+    }
+}
 
 .main-header{
     .logo-mini{

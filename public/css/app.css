@@ -15756,6 +15756,29 @@ button.close {
   }
 }
 
+a {
+  text-decoration: none !important;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-control {
+  border-radius: 0 !important;
+}
+
+.calendar {
+  font-size: 1em !important;
+  width: 80%;
+  margin: auto;
+}
+
+.calendar a {
+  color: gray;
+  font-size: 1.1em;
+}
+
 .main-header .logo-mini img {
   width: 50px;
 }

@@ -65,6 +65,20 @@ class PacienteController extends Controller
     }
 
     /**
+     * [finCedula description]
+     * @param  [type] $cedula [description]
+     * @return [type]         [description]
+     */
+    public function finCedula($cedula)
+    {
+        $paciente = Paciente::where('id_number', $cedula)->first();
+
+        return response()->json([
+            'paciente' => $paciente
+        ]);
+    }
+
+    /**
      * [show description]
      * @param  Paciente $paciente [description]
      * @return [type]             [description]

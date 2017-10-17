@@ -12763,7 +12763,6 @@ __webpack_require__("./resources/assets/js/plugins/adminlte.js");
 __webpack_require__("./resources/assets/js/plugins/jquery.slimscroll.min.js");
 __webpack_require__("./resources/assets/js/plugins/fastclick.js");
 __webpack_require__("./resources/assets/js/plugins/jquery.mask.min.js");
-
 __webpack_require__("./resources/assets/js/main.js");
 
 /***/ }),

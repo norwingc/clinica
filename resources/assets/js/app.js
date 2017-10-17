@@ -10,5 +10,4 @@ require('./plugins/adminlte');
 require('./plugins/jquery.slimscroll.min');
 require('./plugins/fastclick');
 require('./plugins/jquery.mask.min');
-
 require('./main');

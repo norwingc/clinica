@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('test', function(){
+    return view('test');
+});
+
 Route::fallback('ResourcesController@notFoud');
 
 Route::name('login')->get('login', 'UsersController@viewLogin');
@@ -25,9 +29,17 @@ Route::middleware(['auth'])->group(function () {
         Route::name('paciente.getAge')->get('getAge/{fecha}', 'PacienteController@getAge');
         Route::name('pacientes')->get('/', 'PacienteController@index');
         Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
+        Route::name('paciente.finCedula')->get('/findCedula/{cedula}', 'PacienteController@finCedula');
 
+        Route::name('paciente.store')->post('/', 'PacienteController@store');
         Route::name('paciente.show')->get('User/View/{paciente}', 'PacienteController@show');
         Route::name('paciente.information')->get('User/Information/{paciente}', 'PacienteController@information');
+    });
+
+    Route::prefix('Citas')->group(function () {
+        Route::name('citas')->get('/', 'CitasController@index');
+        Route::name('citas.create')->get('/Create', 'CitasController@create');
+        Route::name('citas.store')->post('/Create', 'CitasController@store');
     });
 
 });
