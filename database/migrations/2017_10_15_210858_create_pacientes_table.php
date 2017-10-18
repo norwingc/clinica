@@ -18,8 +18,15 @@ class CreatePacientesTable extends Migration
             $table->string('name');
             $table->string('id_number')->unique();
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->date('birthday');
+            $table->string('convencional');
+            $table->string('celular');
             $table->string('address');
+            $table->string('contacto');
+            $table->string('parentesco');
+            $table->string('contacto_celular');
+            $table->string('trabajo');
+            $table->string('escolaridad');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -16,13 +16,20 @@ class PacienteTableSeeder extends Seeder
         $faker = Factory::create();
         Paciente::truncate();
 
-        foreach (range(1, 50) as $key => $value) {
+        foreach (range(1, 100) as $key => $value) {
             Paciente::create([
-                'name'      => $faker->name,
-                'id_number' => $faker->unique()->creditCardNumber,
-                'email'     => $faker->unique()->email,
-                'address'   => $faker->address,
-                'phone'     => $faker->phoneNumber
+                'name'             => $faker->name,
+                'id_number'        => $faker->unique()->creditCardNumber,
+                'email'            => $faker->unique()->email,
+                'birthday'         => $faker->date($format = 'Y-m-d', $max = 'now'),
+                'convencional'     => $faker->phoneNumber,
+                'celular'           => $faker->phoneNumber,
+                'address'          => $faker->address,
+                'contacto'         => $faker->name,
+                'parentesco'       => $faker->word,
+                'contacto_celular' => $faker->phoneNumber,
+                'trabajo'          => $faker->jobTitle,
+                'escolaridad'      => 'Secundaria'
             ]);
         }
     }

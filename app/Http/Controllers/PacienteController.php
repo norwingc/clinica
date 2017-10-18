@@ -72,9 +72,15 @@ class PacienteController extends Controller
     public function finCedula($cedula)
     {
         $paciente = Paciente::where('id_number', $cedula)->first();
+        $age = null;
+
+        if($paciente){
+            $age = $this->getAge($paciente->birthday);
+        }
 
         return response()->json([
-            'paciente' => $paciente
+            'paciente' => $paciente,
+            'age'      => $age
         ]);
     }
 
@@ -84,6 +90,11 @@ class PacienteController extends Controller
      * @return [type]             [description]
      */
     public function show(Paciente $paciente)
+    {
+        return view('pacientes.user', ['paciente' => $paciente]);
+    }
+
+    public function information(Paciente $paciente)
     {
         return view('pacientes.user', ['paciente' => $paciente]);
     }

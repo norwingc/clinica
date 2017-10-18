@@ -50,7 +50,7 @@
                             <div class="col-sm-3">
                                 <label>Fecha Nacimiento</label>
                                 <div>
-                                    <input type="date" class="form-control" name="birth_day" id="birth_day">
+                                    <input type="date" class="form-control" name="birthday" id="birthday">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -82,7 +82,7 @@
                             <div class="col-sm-6">
                                 <label>Direccion</label>
                                 <div>
-                                    <textarea name="address" class="form-control" id="address"></textarea>
+                                    <input type="text" name="address" class="form-control" id="address">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="col-sm-4">
                                 <label>Celular</label>
                                 <div>
-                                    <input type="text" class="form-control phone" id="celular" name="celular">
+                                    <input type="text" class="form-control phone" id="contacto_celular" name="contacto_celular">
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             <div class="col-sm-6">
                                 <label>Lugar de Trabajo</label>
                                 <div>
-                                    <textarea name="trabajo" class="form-control" id="trabajo"></textarea>
+                                    <input type="text" name="trabajo" class="form-control" id="trabajo">
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -140,8 +140,28 @@
             if(id == '') return false;
 
             $.get('/Pacientes/findCedula/'+id, function(data){
+                console.log(data);
                 if(data.paciente != null){
-                    console.log(data);
+                    $('#name').val(data.paciente.name);
+                    $('#birthday').val(data.paciente.birthday);
+                    $('#email').val(data.paciente.email);
+                    $('#edad').val(data.age.original.age);
+                    $('#convencional').val(data.paciente.convencional);
+                    $('#celular').val(data.paciente.celular);
+                    $('#address').val(data.paciente.address);
+                    $('#contacto').val(data.paciente.contacto);
+                    $('#parentesco').val(data.paciente.parentesco);
+                    $('#parentesco').val(data.paciente.parentesco);
+                    $('#contacto_celular').val(data.paciente.contacto_celular);
+                    $('#trabajo').val(data.paciente.trabajo);
+
+                    $('#escolaridad option').each(function(){
+                        if($(this).val() == data.paciente.escolaridad){
+                            $(this).prop('selected', 'selected');
+                        }
+                    });
+                }else{
+                    alert('Paciente no encotrado');
                 }
             });
         }

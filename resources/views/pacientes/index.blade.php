@@ -63,7 +63,7 @@
         columns:[
             {data: 'name', name: 'name'},
             {data: 'id_number', name: 'id_number'},
-            {data: 'phone', name: 'phone'},
+            {data: 'celular', name: 'celular'},
             {data: 'id', name: 'id'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]
