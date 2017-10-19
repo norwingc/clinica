@@ -50,6 +50,8 @@
 
         <div class="content-wrapper">
             @yield('contenido')
+
+            <footer class="text-center">Salud Materno Fetal &reg; {{ date('Y') }} Powered By @norwingc</footer>
         </div>
 
         <script src="{{ mix('js/app.js') }}"></script>

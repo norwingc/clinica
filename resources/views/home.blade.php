@@ -21,13 +21,51 @@
             <div class="box box-info">
                 <div class="box-header with-border">
                     <i class="ion ion-clipboard"></i>
-                    <h3 class="box-title">Citas</h3>
+                    <h3 class="box-title">Dashboard</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
                 @include('includes._message')
                 <div class="box-body">
+                     <div class="row">
+                        <div class="col-lg-4 col-xs-12">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>0</h3>
+                                    <p>Citas del dia</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion-ios-person"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <!-- small box -->
+                            <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>{{ App\Models\Paciente::count() }}</h3>
+                                    <p>Pacientes</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion-ios-people"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>0</h3>
+                                    <p>Citas</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion-ios-person"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="calendar"></div>
                 </div>
             </div>
@@ -47,7 +85,7 @@ $(document).ready(function() {
 
         $('.calendar').fullCalendar({
 
-            height: 500,
+            height: 550,
             eventStartEditable: false,
             defaultView: 'agendaWeek',
             header: {

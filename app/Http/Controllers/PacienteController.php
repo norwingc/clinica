@@ -94,6 +94,11 @@ class PacienteController extends Controller
         return view('pacientes.user', ['paciente' => $paciente]);
     }
 
+    /**
+     * [information description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
     public function information(Paciente $paciente)
     {
         return view('pacientes.user', ['paciente' => $paciente]);
