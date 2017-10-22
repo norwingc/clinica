@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label>Nombre Paciente</label>
                                 <div>
                                     <input type="text" class="form-control" name="name" id="name" required>
@@ -59,6 +59,16 @@
                                     <input type="text" class="form-control" name="referido" id="referido" required>
                                 </div>
                             </div>
+                            <div class="col-sm-3">
+                                <label>Tipo de Examen</label>
+                                <div>
+                                    <select name="examen_type" id="examen_type" required class="form-control">
+                                        <option value="">Seleccione el Examen</option>
+                                        <option value="Ultrasonido">Ultrasonido</option>
+                                        <option value="Examen2">Examen2</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-3">
@@ -68,33 +78,25 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Medico</label>
+                                <label>Doctor</label>
                                 <div>
-                                    <select name="medico" id="medico" class="form-control" required>
-                                        <option value="">Seleccione al doctor de la cita</option>
+                                    <select name="doctor" id="doctor" class="form-control" required>
+                                        <option value="">Seleccione al Doctor</option>
                                         <option value="Dr. Pavon">Dr. Pavon</option>
                                         <option value="Dra. Bravo">Dra. Bravo</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-3">
-                                <label>Dia de la cita</label>
-                                <div>
-                                    <input type="date" class="form-control" name="date" id="date" required>
-                                </div>
-                            </div>
                             <div class="col-sm-3">
                                 <label>Inicio de la cita</label>
                                 <div>
-                                    <input type="time" class="form-control" name="hr_start" id="hr_start" required>
+                                    <input type="datetime-local" class="form-control" name="start" id="start" required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Fin de la cita</label>
                                 <div>
-                                    <input type="time" class="form-control" name="hr_end" id="hr_end" required>
+                                    <input type="datetime-local" class="form-control" name="end" id="end" required>
                                 </div>
                             </div>
                         </div>

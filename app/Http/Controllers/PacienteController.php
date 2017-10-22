@@ -97,4 +97,14 @@ class PacienteController extends Controller
         session()->flash('message_success', "Informacion Actualizada");
         return back();
     }
+
+    /**
+     * [historia description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
+    public function historia(Paciente $paciente)
+    {
+        return view('pacientes.historia', ['paciente' => $paciente]);
+    }
 }

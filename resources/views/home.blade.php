@@ -96,6 +96,9 @@ $(document).ready(function() {
             navLinks: true,
             editable: false,
             eventLimit: true,
+            events:{
+                url: '{{ route('citas.get') }}'
+            }
         });
 
     });

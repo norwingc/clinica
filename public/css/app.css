@@ -15764,6 +15764,12 @@ textarea {
   resize: none;
 }
 
+.subtitle:not(.box-title) {
+  margin-top: 3em !important;
+  color: #336c2a;
+  text-align: center;
+}
+
 .form-control {
   border-radius: 0 !important;
 }
@@ -15849,5 +15855,9 @@ textarea {
 
 .header-paciente .active {
   background: #3c8dbc;
+}
+
+.fc-content {
+  color: white;
 }
 

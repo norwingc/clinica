@@ -35,13 +35,59 @@
 
             <div class="box-body">
                 <div class="row" style="margin-bottom:2em">
-                        <div class="col-md-6 col-sm-12">
-                            <p><strong>Nombre Completo:</strong> {{ $paciente->name }}</p>
-                            <p><strong>Cedula:</strong> {{ $paciente->id_number }}</p>
-                            <p><strong>Direccion:</strong> {{ $paciente->address }}</p>
-                            <p><strong>Email:</strong> {{ $paciente->email }}</p>
-                            <p><strong>Telefono:</strong> {{ $paciente->phone }}</p>
-                        </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p><strong>Nombre Completo:</strong> {{ $paciente->name }}</p>
+                        <p><strong>Cedula:</strong> {{ $paciente->id_number }}</p>
+                        <p><strong>Direccion:</strong> {{ $paciente->address }}</p>
+                        <p><strong>Email:</strong> {{ $paciente->email }}</p>
+                        <p><strong>Telefono:</strong> {{ $paciente->celular }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="subtitle">Agregar Cita</h3>
+
+                        {!! Form::open(['route' => ['citas.store', $paciente->id]]) !!}
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <label>Doctor</label>
+                                    <div>
+                                        <select name="doctor" id="doctor" class="form-control" required>
+                                            <option value="">Seleccione al Doctor</option>
+                                            <option value="Dr. Pavon">Dr. Pavon</option>
+                                            <option value="Dra. Bravo">Dra. Bravo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Inicio de la cita</label>
+                                    <div>
+                                        <input type="datetime-local" class="form-control" name="start" id="start" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Fin de la cita</label>
+                                    <div>
+                                        <input type="datetime-local" class="form-control" name="end" id="end" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Costo U$</label>
+                                    <div>
+                                        <input type="number" class="form-control" name="costo" id="costo" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center col-sm-12">
+                                <button class="btn btn-success btn-submit" type="submit">Agregar Cita</button>
+                            </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{ $paciente->consulta }}
                 </div>
             </div>
         </div>

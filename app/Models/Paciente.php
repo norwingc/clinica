@@ -11,14 +11,7 @@ class Paciente extends Model
 {
     use SoftDeletes;
 
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
-
-    /**
+    /*
      * [$fillable description]
      * @var [type]
      */
@@ -26,6 +19,12 @@ class Paciente extends Model
         'name', 'id_number', 'celular', 'referido', 'email', 'birthday', 'convencional',
         'address', 'contacto', 'parentesco', 'contacto_celular', 'trabajo', 'escolaridad'
     ];
+
+
+    public function consulta()
+    {
+        return $this->hasMany('App\Models\Consulta', 'paciente_id');
+    }
 
      /**
      * [getAge description]
