@@ -31,9 +31,13 @@ Route::middleware(['auth'])->group(function () {
         Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
         Route::name('paciente.finCedula')->get('/findCedula/{cedula}', 'PacienteController@finCedula');
 
-        Route::name('paciente.store')->post('/', 'PacienteController@store');
         Route::name('paciente.show')->get('User/View/{paciente}', 'PacienteController@show');
-        Route::name('paciente.information')->get('User/Information/{paciente}', 'PacienteController@information');
+
+        Route::name('paciente.store')->post('/', 'PacienteController@store');
+        Route::name('paciente.personal.update')->put('User/PersonalInformation/{paciente}', 'PacienteController@updatePersonal');
+
+        Route::name('paciente.personal')->get('User/PersonalInformation/{paciente}', 'PacienteController@personal');
+        Route::name('paciente.historia')->get('User/ClinicHistory/{paciente}', 'PacienteController@historia');
     });
 
     Route::prefix('Citas')->group(function () {

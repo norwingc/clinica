@@ -17,7 +17,15 @@
         </ol>
     </section>
 
-  <section class="content user-summary">
+    <div class="header-paciente">
+        <div class="row">
+            <div class="personal-information col-xs-6 col-md-3"><a href="{{ route('paciente.personal', $paciente) }}">Informacion Personal</a></div>
+            <div class="history col-xs-6 col-md-3"><a href="{{ route('paciente.historia', $paciente) }}">Historia Clinica</a></div>
+            <div class="summary col-xs-6 col-md-3 active"><a href="{{ route('paciente.show', $paciente) }}">Summary</a></div>
+        </div>
+    </div>
+
+    <section class="content user-summary">
         <div class="box box-info">
             <div class="box-header">
                 <h3 class="box-title subtitle">Informacion Personal</h3>

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+
 use DataTables;
-use Carbon\Carbon;
 
 class PacienteController extends Controller
 {
@@ -26,20 +26,6 @@ class PacienteController extends Controller
         ]);
     }
 
-    /**
-     * [getDateBirth description]
-     * @param  [type] $date [description]
-     * @return [type]       [description]
-     */
-    public function getAge($date)
-    {
-        $date = explode("-", $date);
-        $age = Carbon::createFromDate($date[0], $date[1], $date[2])->diff(Carbon::now())->format('%y años, %m meses y %d dias');
-
-        return response()->json([
-            'age' => $age
-        ]);
-    }
     /**
      * [index description]
      * @return [type] [description]
@@ -72,15 +58,9 @@ class PacienteController extends Controller
     public function finCedula($cedula)
     {
         $paciente = Paciente::where('id_number', $cedula)->first();
-        $age = null;
-
-        if($paciente){
-            $age = $this->getAge($paciente->birthday);
-        }
 
         return response()->json([
-            'paciente' => $paciente,
-            'age'      => $age
+            'paciente' => $paciente
         ]);
     }
 
@@ -99,8 +79,22 @@ class PacienteController extends Controller
      * @param  Paciente $paciente [description]
      * @return [type]             [description]
      */
-    public function information(Paciente $paciente)
+    public function personal(Paciente $paciente)
     {
-        return view('pacientes.user', ['paciente' => $paciente]);
+        return view('pacientes.personal', ['paciente' => $paciente]);
+    }
+
+    /**
+     * [updatePersonal description]
+     * @param  Request  $request  [description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
+    public function updatePersonal(Request $request, Paciente $paciente)
+    {
+        $paciente->update($request->all());
+
+        session()->flash('message_success', "Informacion Actualizada");
+        return back();
     }
 }

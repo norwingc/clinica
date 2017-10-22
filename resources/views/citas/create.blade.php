@@ -30,99 +30,76 @@
                             <div class="col-sm-3">
                                 <label>Cedula Paciente</label>
                                 <div>
-                                    <input type="text" class="form-control cedula" name="id_number" id="id_number">
+                                    <input type="text" class="form-control cedula" name="id_number" id="id_number" required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label></label>
+                                <label>&nbsp;</label>
                                 <div>
                                     <button type="button" class="btn btn-info" onclick="searchPaciente()">Buscar</button>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <label>Nombre Paciente</label>
                                 <div>
-                                    <input type="text" class="form-control" name="name" id="name">
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Fecha Nacimiento</label>
-                                <div>
-                                    <input type="date" class="form-control" name="birthday" id="birthday">
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Edad</label>
-                                <div>
-                                    <input type="text" class="form-control" name="edad" id="edad" readonly>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Email</label>
-                                <div>
-                                    <input type="email" class="form-control" name="email" id="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-3">
-                                <label>Telefono Convencional</label>
-                                <div>
-                                    <input type="email" class="form-control phone" name="convencional" id="convencional">
+                                    <input type="text" class="form-control" name="name" id="name" required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Telefono Celular</label>
                                 <div>
-                                    <input type="email" class="form-control phone" name="celular" id="celular">
+                                    <input type="text" class="form-control phone" name="celular" id="celular" required>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <label>Direccion</label>
+                            <div class="col-sm-3">
+                                <label>Referido</label>
                                 <div>
-                                    <input type="text" name="address" class="form-control" id="address">
+                                    <input type="text" class="form-control" name="referido" id="referido" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-4">
-                                <label>Contacto</label>
+                            <div class="col-sm-3">
+                                <label>Costo U$</label>
                                 <div>
-                                    <input type="text" class="form-control" id="contacto" name="contacto">
+                                    <input type="number" class="form-control" name="costo" id="costo" required>
                                 </div>
                             </div>
-                             <div class="col-sm-4">
-                                <label>Parentesco</label>
+                            <div class="col-sm-3">
+                                <label>Medico</label>
                                 <div>
-                                    <input type="text" class="form-control" id="parentesco" name="parentesco">
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <label>Celular</label>
-                                <div>
-                                    <input type="text" class="form-control phone" id="contacto_celular" name="contacto_celular">
+                                    <select name="medico" id="medico" class="form-control" required>
+                                        <option value="">Seleccione al doctor de la cita</option>
+                                        <option value="Dr. Pavon">Dr. Pavon</option>
+                                        <option value="Dra. Bravo">Dra. Bravo</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-6">
-                                <label>Lugar de Trabajo</label>
+                            <div class="col-sm-3">
+                                <label>Dia de la cita</label>
                                 <div>
-                                    <input type="text" name="trabajo" class="form-control" id="trabajo">
+                                    <input type="date" class="form-control" name="date" id="date" required>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <label>Escolaridad</label>
-                                <select name="escolaridad" id="escolaridad" class="form-control">
-                                    <option value="">Selecione Uno</option>
-                                    <option value="Primaria">Primaria</option>
-                                    <option value="Secundaria">Secundaria</option>
-                                    <option value="Tecnico">Tecnico</option>
-                                    <option value="Universidad">Universidad</option>
-                                </select>
+                            <div class="col-sm-3">
+                                <label>Inicio de la cita</label>
+                                <div>
+                                    <input type="time" class="form-control" name="hr_start" id="hr_start" required>
+                                </div>
                             </div>
+                            <div class="col-sm-3">
+                                <label>Fin de la cita</label>
+                                <div>
+                                    <input type="time" class="form-control" name="hr_end" id="hr_end" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success btn-submit" type="submit">Agregar Cita</button>
                         </div>
                     {!! Form::close() !!}
                 </div>
@@ -143,23 +120,8 @@
                 console.log(data);
                 if(data.paciente != null){
                     $('#name').val(data.paciente.name);
-                    $('#birthday').val(data.paciente.birthday);
-                    $('#email').val(data.paciente.email);
-                    $('#edad').val(data.age.original.age);
-                    $('#convencional').val(data.paciente.convencional);
                     $('#celular').val(data.paciente.celular);
-                    $('#address').val(data.paciente.address);
-                    $('#contacto').val(data.paciente.contacto);
-                    $('#parentesco').val(data.paciente.parentesco);
-                    $('#parentesco').val(data.paciente.parentesco);
-                    $('#contacto_celular').val(data.paciente.contacto_celular);
-                    $('#trabajo').val(data.paciente.trabajo);
-
-                    $('#escolaridad option').each(function(){
-                        if($(this).val() == data.paciente.escolaridad){
-                            $(this).prop('selected', 'selected');
-                        }
-                    });
+                    $('#referido').val(data.paciente.referido);
                 }else{
                     alert('Paciente no encotrado');
                 }

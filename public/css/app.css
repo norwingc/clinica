@@ -15813,3 +15813,41 @@ textarea {
   color: #00c0ef;
 }
 
+.btn-submit {
+  margin-top: 2em;
+}
+
+.header-paciente {
+  text-align: center;
+  line-height: 4em;
+  margin-top: 1em;
+  background: #008d4c;
+}
+
+.header-paciente .row {
+  margin: 0;
+  padding: 0;
+}
+
+.header-paciente .row div {
+  margin: 0;
+  padding: 0;
+}
+
+.header-paciente a {
+  display: block;
+  color: white;
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.header-paciente a:hover {
+  background: #3c8dbc;
+}
+
+.header-paciente .active {
+  background: #3c8dbc;
+}
+

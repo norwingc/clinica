@@ -60,3 +60,41 @@ textarea{
     }
 }
 
+.btn-submit{
+    margin-top: 2em;
+}
+
+
+.header-paciente{
+    text-align: center;
+    line-height: 4em;
+    margin-top: 1em;
+    background: #008d4c;
+    .row{
+        margin: 0;
+        padding: 0;
+        div{
+            margin: 0;
+            padding: 0;
+         }
+
+    }
+    a{
+        display: block;
+        color: white;
+        transition: .3s all ease;
+        font-size: 1.1em;
+        font-weight: bold;
+        &:hover{
+            background: #3c8dbc;
+        }
+
+    }
+    .active{
+        background: #3c8dbc;
+    }
+}
+
+
+
+

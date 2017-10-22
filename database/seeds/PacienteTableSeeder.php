@@ -20,10 +20,11 @@ class PacienteTableSeeder extends Seeder
             Paciente::create([
                 'name'             => $faker->name,
                 'id_number'        => $faker->unique()->creditCardNumber,
+                'referido'         => $faker->name,
                 'email'            => $faker->unique()->email,
                 'birthday'         => $faker->date($format = 'Y-m-d', $max = 'now'),
                 'convencional'     => $faker->phoneNumber,
-                'celular'           => $faker->phoneNumber,
+                'celular'          => $faker->phoneNumber,
                 'address'          => $faker->address,
                 'contacto'         => $faker->name,
                 'parentesco'       => $faker->word,

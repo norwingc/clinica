@@ -37,4 +37,5 @@ class User extends Authenticatable implements HasRoleContract
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
