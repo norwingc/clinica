@@ -15776,7 +15776,7 @@ textarea {
 
 .calendar {
   font-size: 1em !important;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -15859,5 +15859,11 @@ textarea {
 
 .fc-content {
   color: white;
+}
+
+@media (min-width: 768px) {
+  .calendar {
+    width: 80%;
+  }
 }
 

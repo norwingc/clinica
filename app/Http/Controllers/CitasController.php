@@ -50,7 +50,7 @@ class CitasController extends Controller
     public function store(Request $request, Paciente $paciente = null)
     {
 
-        if(!$this->validateCita($request)){
+        if($this->validateCita($request) == false){
             session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
             return back();
         }
@@ -89,8 +89,17 @@ class CitasController extends Controller
      */
     public function validateCita($request)
     {
-        //dd($request->start);
-        $date = date('Y-m-d',strtotime($request->start));
-        dd($date);
+        $from = min($request->start, $request->end);
+        $till = max($request->start, $request->end);
+
+        $cita = Cita::with(['consulta' => function($query) use ($request){
+            $query->where('doctor', $request->doctor);
+        }])->where('start', '<=', $from)->where('end', '>=', $till)->first();
+
+        //dd($cita && $cita->consulta);
+
+        if($cita && $cita->consulta) return false;
+
+        return true;
     }
 }
