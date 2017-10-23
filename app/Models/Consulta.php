@@ -34,4 +34,13 @@ class Consulta extends Model
     {
         return $this->hasOne('App\Models\Cita', 'consulta_id');
     }
+
+    /**
+     * [getCitasToday description]
+     * @return [type] [description]
+     */
+    public static function getCitasToday()
+    {
+        return self::where('date', date('Y-m-d'));
+    }
 }

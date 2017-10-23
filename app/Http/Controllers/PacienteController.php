@@ -9,7 +9,6 @@ use DataTables;
 
 class PacienteController extends Controller
 {
-
     /**
      * [get description]
      * @param  [type] $id [description]

@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('Citas')->group(function () {
         Route::name('citas')->get('/', 'CitasController@index');
+        Route::name('citas.api')->get('/api', 'CitasController@api');
         Route::name('citas.get')->get('/get/{id?}', 'CitasController@get');
         Route::name('citas.create')->get('/Create', 'CitasController@create');
         Route::name('citas.store')->post('/Create/{paciente?}', 'CitasController@store');

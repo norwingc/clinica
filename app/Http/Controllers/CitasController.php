@@ -6,10 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Cita;
 use App\Models\Consulta;
+
 use Carbon\Carbon;
+use DataTables;
 
 class CitasController extends Controller
 {
+    /**
+     * [api description]
+     * @return [type] [description]
+     */
+    public function api()
+    {
+        return Cita::get();
+    }
 
     /**
      * [get description]
@@ -18,7 +28,14 @@ class CitasController extends Controller
      */
     public function get($id = null)
     {
-        if($id == null) return Cita::get();
+        if($id == null){
+            $citas = Cita::with('consulta', 'consulta.paciente');
+            return Datatables::of($citas)->addColumn('horario', function($cita){
+                return date('g:i a', strtotime($cita->start)). ' - ' .date('g:i a', strtotime($cita->end));
+            })->addColumn('action', function($cita){
+                return "<div class='actions'><a href='". route('paciente.show', [$cita->consulta->paciente]) ."' class='btn'><i class='ion-search'></i></a></div>";
+            })->make(true);
+        }
 
         return response()->json([
             'cita' => Cita::find($id)

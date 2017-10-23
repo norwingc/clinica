@@ -87,7 +87,14 @@
                 </div>
 
                 <div class="row">
-                    {{ $paciente->consulta }}
+                    <div class="col-sm-12">
+                        <h3 class="subtitle">Consultas Realizadas</h3>
+                    </div>
+                    @if($paciente->consulta->isNotEmpty())
+                        @include('pacientes._consulta')
+                    @else
+                        <h3 class="text-center">No existen consultas</h3>
+                    @endif
                 </div>
             </div>
         </div>
