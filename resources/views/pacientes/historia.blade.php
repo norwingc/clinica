@@ -42,7 +42,7 @@
                     @endif
 
                         <div class="form-group">
-                            <div class="col-sm-12 col-lg-12">
+                            <div class="col-sm-12">
                                 <label>Motivo de la consulta:</label>
                                 <div>
                                     <textarea name="motivo" id="motivo" class="form-control" required></textarea>
@@ -138,8 +138,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-sm-3">
                                 <label>Enfermedad Tiroidea</label>
                                 <div>
@@ -523,6 +521,7 @@
                                 </table>
                             </div>
                         </div>
+
                         <p class="subtitul_form">Antecedentes Gineco Obstétricos:</p>
                         <div class="form-group">
                             <div class="col-sm-3">
@@ -537,15 +536,171 @@
                                     <input type="month" name="vida_sexual_inicio" id="vida_sexual_inicio" class="form-control" required>
                                 </div>
                             </div>
-                             <div class="col-sm-3">
+                            <div class="col-sm-3">
                                 <label>Gesta</label>
                                 <div>
-                                    <input type="number" name="gesta" id="gesta" class="form-control" required min="1">
+                                    <input type="number" name="gesta" id="gesta" class="form-control" required min="0" value="0">
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group gesta_si" style="display: none">
+                            <div class="col-sm-2">
+                                <label>Parto</label>
+                                <div>
+                                    <input type="number" name="gesta_parto" id="gesta_parto" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Aborto</label>
+                                <div>
+                                    <input type="number" name="gesta_aborto" id="gesta_aborto" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Cesárea</label>
+                                <div>
+                                    <input type="number" name="gesta_cesarea" id="gesta_cesarea" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Embarazo Ectópico</label>
+                                <div>
+                                    <input type="number" name="gesta_embarazo_etopico" id="gesta_embarazo_etopico" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Legrado</label>
+                                <div>
+                                    <input type="number" name="gesta_parto" id="gesta_parto" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Gemelar Previo</label>
+                                <div>
+                                    <input type="number" name="gesta_gemelar_previo" id="gesta_gemelar_previo" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label>Informacion</label>
+                                <div>
+                                    <textarea name="getsta_informacin" id="getsta_informacin" class="form-control" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Nacidos Vivos</label>
+                                <div>
+                                    <input type="number" name="gesta_nacidos_vivos" id="gesta_nacidos_vivos" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Nacidos Muertos</label>
+                                <div>
+                                    <input type="number" name="gesta_nacidos_muertos" id="gesta_nacidos_muertos" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Muertos primeros 7 días</label>
+                                <div>
+                                    <input type="number" name="gesta_muertos_primeros_dias" id="gesta_muertos_primeros_dias" class="form-control" min="0">
+                                </div>
+                            </div>
+                             <div class="col-sm-3">
+                                <label>Muertos &gt; 7 días</label>
+                                <div>
+                                    <input type="number" name="gesta_muertos_mayor_dias" id="gesta_muertos_mayor_dias" class="form-control" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label>Planificación Familiar</label>
+                                <div>
+                                    <select name="planificacion" id="planificacion" class="form-control" data-target='planificacion_si_form' required>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 planificacion_si_form" style="display: none">
+                                <label>Seleccione Planificación Familiar</label>
+                                <div>
+                                    <select name="planificacion_si" id="planificacion_si" class="form-control">
+                                        <option value="">Seleccione Uno</option>
+                                        <option value="Barrera">Barrera</option>
+                                        <option value="Inyectables">Inyectables</option>
+                                        <option value="Inyectable Trimestral">Inyectable Trimestral</option>
+                                        <option value="Mensual">Mensual</option>
+                                        <option value="Natural">Natural</option>
+                                        <option value="Oral">Oral</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Menopausia</label>
+                                <div>
+                                    <select name="menopausia" id="menopausia" class="form-control" data-target='menopausia_si_form' required>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 menopausia_si_form" style="display: none">
+                                <label>Seleccione Menopausiar</label>
+                                <div>
+                                    <input type="month" name="menopausia_si" id="menopausia_si" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Papanicolaou</label>
+                                <div>
+                                    <select name="papanicolaou" id="papanicolaou" class="form-control" data-target='papanicolaou_si_form' required>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 papanicolaou_si_form" style="display: none">
+                                <label>Fecha / Resultado</label>
+                                <div>
+                                    <input type="text" name="papanicolaou_si" id="papanicolaou_si" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Fecha de ultima regla</label>
+                                <div>
+                                   <input type="date" name="ultima_regla" id="ultima_regla" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <label>Embarazada</label>
+                                <div>
+                                    <select name="embarazada" id="embarazada" class="form-control" data-target='embarazada_si_form' required>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 embarazada_si_form" style="display: none">
+                                <label>Edad Gestional</label>
+                                <div>
+                                    <p id="edad_gestional_view"></p>
+                                    <textarea name="edad_gestional" id="edad_gestional" class="form-control" style="display: none"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 embarazada_si_form" style="display: none">
+                                <label>Fecha de parto por ultrasonido</label>
+                                <div>
+                                    <input type="date" name="fecha_ultrasonido" id="fecha_ultrasonido" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="subtitul_form">Examen Físico:</p>
+
                         <div class="text-center">
-                            <button class="btn btn-success" type="button">Guardar Cambios</button>
+                            <button class="btn btn-success" type="submit">Guardar Cambios</button>
                         </div>
                     {!! Form::close() !!}
                 </div>
