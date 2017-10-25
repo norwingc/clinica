@@ -15861,6 +15861,25 @@ textarea {
   color: white;
 }
 
+.subtitul_form {
+  text-align: center;
+  color: #008d4c;
+  font-weight: bold;
+}
+
+.bootstrap-select .dropdown-toggle {
+  background: transparent;
+}
+
+.bootstrap-select .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.bootstrap-select.open > .dropdown-toggle.btn-default {
+  background-color: transparent;
+}
+
 @media (min-width: 768px) {
   .calendar {
     width: 80%;

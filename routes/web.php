@@ -38,6 +38,9 @@ Route::middleware(['auth'])->group(function () {
 
         Route::name('paciente.personal')->get('User/PersonalInformation/{paciente}', 'PacienteController@personal');
         Route::name('paciente.historia')->get('User/ClinicHistory/{paciente}', 'PacienteController@historia');
+
+        Route::name('paciente.historia.store')->post('/Historia/update/{paciente}', 'PacienteController@storeHistoria');
+
     });
 
     Route::prefix('Citas')->group(function () {

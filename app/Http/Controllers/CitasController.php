@@ -83,7 +83,7 @@ class CitasController extends Controller
             }
         }
 
-        $consulta = new consulta($request->all());
+        $consulta       = new consulta($request->all());
         $consulta->date = $request->start;
         $paciente->consulta()->save($consulta);
 

@@ -106,4 +106,15 @@ class PacienteController extends Controller
     {
         return view('pacientes.historia', ['paciente' => $paciente]);
     }
+
+    /**
+     * [storeHistoria description]
+     * @param  Request  $request  [description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
+    public function storeHistoria(Request $request, Paciente $paciente)
+    {
+        return $request;
+    }
 }

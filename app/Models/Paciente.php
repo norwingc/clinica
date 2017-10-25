@@ -26,6 +26,11 @@ class Paciente extends Model
         return $this->hasMany('App\Models\Consulta', 'paciente_id');
     }
 
+    public function historia()
+    {
+        return $this->hasOne('App\Models\HistoriaClinica', 'paciente_id');
+    }
+
      /**
      * [getAge description]
      * @return [type] [description]

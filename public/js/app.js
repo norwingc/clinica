@@ -13604,6 +13604,42 @@ $('.sidebar-menu').tree();
 $('.phone').mask('0000-0000');
 $('.cedula').mask('000-000000-0000S');
 
+$('.form-examen select').change(function () {
+    if ($(this).data('target') == undefined) return false;
+
+    var target = $('.' + $(this).data('target'));
+
+    if ($(this).val() == 'Si') {
+        if ($(target).is(':hidden')) {
+            $(target).toggle('1000');
+
+            var select = $(target).find('select');
+            select.prop('required', 'required');
+
+            var input = $(target).find('input');
+            input.prop('required', 'required');
+            input.val('');
+        }
+    }
+
+    if ($(this).val() == 'No') {
+        if ($(target).is(':hidden')) {
+            return false;
+        } else {
+            $(target).toggle('1000');
+
+            var _select = $(target).find('select');
+            _select.removeAttr('required');
+            _select.val('');
+            _select.selectpicker('deselectAll');
+
+            var _input = $(target).find('input');
+            _input.removeAttr('required');
+            _input.val('');
+        }
+    }
+});
+
 /***/ }),
 
 /***/ "./resources/assets/js/plugins/adminlte.js":

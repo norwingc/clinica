@@ -64,8 +64,18 @@
                                 <div>
                                     <select name="examen_type" id="examen_type" required class="form-control">
                                         <option value="">Seleccione el Examen</option>
-                                        <option value="Ultrasonido">Ultrasonido</option>
-                                        <option value="Examen2">Examen2</option>
+                                        <option value="Colposcopia / Crioterapia">Colposcopia / Crioterapia</option>
+                                        <option value="Consulta de Atención Prenatal">Consulta de Atención Prenatal</option>
+                                        <option value="Consulta Ginecologica">Consulta Ginecologica</option>
+                                        <option value="Consulta medica por primera vez">Consulta medica por primera vez</option>
+                                        <option value="Curva de crecimiento">Curva de crecimiento</option>
+                                        <option value="Doppler Fetal">Doppler Fetal</option>
+                                        <option value="Ecocardiografia">Ecocardiografia</option>
+                                        <option value="Neurosonografia">Neurosonografia</option>
+                                        <option value="Toma de Exámenes / Perfil Vaginal">Toma de Exámenes / Perfil Vaginal</option>
+                                        <option value="Ultrasonido Estructural">Ultrasonido Estructural</option>
+                                        <option value="Ultrasonido I Trimestre">Ultrasonido I Trimestre</option>
+                                        <option value="Ultrasonido Pelvico">Ultrasonido Pelvico</option>
                                     </select>
                                 </div>
                             </div>
