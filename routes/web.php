@@ -39,7 +39,9 @@ Route::middleware(['auth'])->group(function () {
         Route::name('paciente.personal')->get('User/PersonalInformation/{paciente}', 'PacienteController@personal');
         Route::name('paciente.historia')->get('User/ClinicHistory/{paciente}', 'PacienteController@historia');
 
-        Route::name('paciente.historia.store')->post('/Historia/update/{paciente}', 'PacienteController@storeHistoria');
+        Route::name('paciente.historia.store')->post('/Historia/store/{paciente}', 'PacienteController@storeHistoria');
+        Route::name('paciente.historia.update')->post('/Historia/update/{historiaclinica}', 'PacienteController@updateHistoria');
+        Route::name('paciente.historia.get')->get('/Historia/get/{paciente}', 'PacienteController@getHistoria');
 
     });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use App\Models\HistoriaClinica;
 
 use DataTables;
 
@@ -22,6 +23,18 @@ class PacienteController extends Controller
 
         return response()->json([
             'paciente' => Paciente::find($id)
+        ]);
+    }
+
+    /**
+     * [getHistoria description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
+    public function getHistoria(Paciente $paciente)
+    {
+        return response()->json([
+            'historia' => $paciente->historia
         ]);
     }
 
@@ -70,6 +83,7 @@ class PacienteController extends Controller
      */
     public function show(Paciente $paciente)
     {
+        $paciente = Paciente::with('consulta', 'consulta.cita')->find($paciente->id);
         return view('pacientes.user', ['paciente' => $paciente]);
     }
 
@@ -104,6 +118,7 @@ class PacienteController extends Controller
      */
     public function historia(Paciente $paciente)
     {
+        $paciente = Paciente::with('historia')->find($paciente->id);
         return view('pacientes.historia', ['paciente' => $paciente]);
     }
 
@@ -114,6 +129,17 @@ class PacienteController extends Controller
      * @return [type]             [description]
      */
     public function storeHistoria(Request $request, Paciente $paciente)
+    {
+        return $request;
+    }
+
+    /**
+     * [updateHistoria description]
+     * @param  Request         $request         [description]
+     * @param  HistoriaClinica $historiaclinica [description]
+     * @return [type]                           [description]
+     */
+    public function updateHistoria(Request $request, HistoriaClinica $historiaclinica)
     {
         return $request;
     }

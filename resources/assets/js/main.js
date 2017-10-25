@@ -17,7 +17,6 @@ $('.form-examen select').change(function(){
 
             let input = $(target).find('input');
             input.prop('required', 'required');
-            input.val('');
         }
     }
 
@@ -36,5 +35,27 @@ $('.form-examen select').change(function(){
             input.removeAttr('required');
             input.val('');
         }
+    }
+});
+
+$('#cantidad_cirugias_pelvicas').change(function(){
+    let cantidad = $(this).val();
+
+    if(cantidad == 0) return false;
+
+    let table = $('#table_cantidad_cirugias_pelvicas');
+    table.html('');
+
+    let html = "<tr><td><input type='month' class='form-control'></td><td><input type='text' class='form-control'></td><td><input type='text' class='form-control'></td></tr>";
+
+    for (var i=0; i < cantidad; i++) {
+        table.append(html);
+    }
+});
+
+$('#cirugias_pelvicas').change(function(){
+    if($(this).val() == 'No'){
+        let table = $('#table_cantidad_cirugias_pelvicas');
+        table.html('');
     }
 });

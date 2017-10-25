@@ -15,7 +15,9 @@ class CreateHistoriClinicasTable extends Migration
     {
         Schema::create('historia_clinicas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('paciente_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
