@@ -583,7 +583,7 @@
                             <div class="col-sm-12">
                                 <label>Informacion</label>
                                 <div>
-                                    <textarea name="getsta_informacin" id="getsta_informacin" class="form-control" required></textarea>
+                                    <textarea name="gesta_informacion" id="gesta_informacion" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -668,7 +668,7 @@
                             <div class="col-sm-3">
                                 <label>Fecha de ultima regla</label>
                                 <div>
-                                   <input type="date" name="ultima_regla" id="ultima_regla" class="form-control">
+                                   <input type="date" name="ultima_regla" id="ultima_regla" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -698,6 +698,63 @@
                         </div>
 
                         <p class="subtitul_form">Examen Físico:</p>
+                        <p>Signos Vitales</p>
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <label>FC (Por minuto)</label>
+                                <div>
+                                    <input type="number" name="fc_minuto" id="fc_minuto" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>FR (Por minuto)</label>
+                                <div>
+                                    <input type="number" name="fr_minuto" id="fr_minuto" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Presión arterial Derecho (mmhg)</label>
+                                <div>
+                                    <input type="number" name="persion_arterial_derecho" id="persion_arterial_derecho" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Presión arterial Izquierdo (mmhg)</label>
+                                <div>
+                                    <input type="number" name="persion_arterial_izquierdo" id="persion_arterial_izquierdo" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label>Temperatura (&deg;C)</label>
+                                <div>
+                                    <input type="number" name="temperatura" id="temperatura" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Datos Antropométricos:</p>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <label>Peso (kgs)</label>
+                                <div>
+                                    <input type="number" name="peso" id="peso" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Talla (mts)</label>
+                                <div>
+                                    <input type="number" name="talla" id="talla" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>IMC</label>
+                                <div>
+                                    <input type="text" name="imc" id="imc" class="form-control" readonly required>
+                                </div>
+                            </div>
+                        </div>
+                        <p>General:</p>
+                        <div class="form-group">
+                        </div>
 
                         <div class="text-center">
                             <button class="btn btn-success" type="submit">Guardar Cambios</button>

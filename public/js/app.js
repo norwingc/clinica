@@ -13750,6 +13750,33 @@ function dispDate(dateObj) {
     return days[dayw] + " " + day + " de " + months[month] + " del " + year;
 }
 
+$('#talla').focusout(function () {
+    var peso = $('#peso').val();
+    var talla = $('#talla').val();
+
+    if (peso == '' || talla == '') return false;
+
+    var imc = peso / Math.pow(talla, 2);
+
+    var diag = '';
+
+    if (imc < 18.5) {
+        diag = 'Desnutricion';
+    } else if (imc >= 18.5 && imc <= 24.9) {
+        diag = 'Eutrofico';
+    } else if (imc >= 25 && imc <= 29.9) {
+        diag = 'Sobrepeso';
+    } else if (imc >= 30 && imc <= 34.9) {
+        diag = 'Obesidad Clase I';
+    } else if (imc >= 35 && imc <= 39.9) {
+        diag = 'Obesidad Clase II';
+    } else {
+        diag = 'Obesidad Clase III';
+    }
+
+    $('#imc').val(Math.round(imc * 10) / 10 + '% / ' + diag);
+});
+
 /***/ }),
 
 /***/ "./resources/assets/js/plugins/adminlte.js":
