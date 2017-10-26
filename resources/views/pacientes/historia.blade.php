@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 hipertension_arterial_familiar_si_form" style="display: none">
-                                <label>Seleccione Hipertensión arterial crónica</label>
+                                <label>Seleccione Hipertensión arterial</label>
                                 <div>
                                     <select name="hipertension_arterial_familiar_si" id="hipertension_arterial_familiar_si" class="form-control">
                                         <option value="">Seleccione Uno</option>
