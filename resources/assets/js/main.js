@@ -8,7 +8,7 @@ $('.form-examen select').change(function(){
 
     let target = $('.'+$(this).data('target'));
 
-    if($(this).val() == 'Si'){
+    if($(this).val() == 'Si' || $(this).val() == 'Anormal'){
         if($(target).is(':hidden')){
             $(target).toggle('1000');
 
@@ -20,7 +20,7 @@ $('.form-examen select').change(function(){
         }
     }
 
-    if($(this).val() == 'No'){
+    if($(this).val() == 'No' || $(this).val() == 'Normal'){
         if($(target).is(':hidden')){
             return false;
         }else{
