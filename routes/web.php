@@ -45,6 +45,11 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
+    Route::prefix('Consultas')->group(function () {
+        Route::name('consulta.delete')->get('/delete/{consulta}', 'ConsultasController@delete');
+    });
+
+
     Route::prefix('Citas')->group(function () {
         Route::name('citas')->get('/', 'CitasController@index');
         Route::name('citas.api')->get('/api', 'CitasController@api');

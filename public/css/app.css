@@ -15764,6 +15764,10 @@ textarea {
   resize: none;
 }
 
+hr {
+  border-top: 1px solid rgba(0, 141, 76, 0.2);
+}
+
 .subtitle:not(.box-title) {
   margin-top: 3em !important;
   color: #336c2a;

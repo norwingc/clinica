@@ -36,6 +36,15 @@ class Consulta extends Model
     }
 
     /**
+     * [prenatal description]
+     * @return [type] [description]
+     */
+    public function prenatal()
+    {
+        return $this->hasOne('App\Models\Prenatal', 'consulta_id');
+    }
+
+    /**
      * [getCitasToday description]
      * @return [type] [description]
      */
