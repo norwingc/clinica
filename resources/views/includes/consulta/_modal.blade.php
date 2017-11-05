@@ -6,7 +6,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                     <div class="form-group">
                         <div class="col-sm-4">
                             <label>Fecha y Hora</label>
@@ -162,6 +162,232 @@
                                 <input type="text" class="form-control" name="afu" id="afu_prenatal">
                             </div>
                         </div>
+                    </div>
+                    <p>Ginecologico</p>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Examen Ginecologico</label>
+                            <div>
+                                <select class="form-control" name="examen_ginecologico" id="examen_ginecologico_prenatal" data-target='examen_ginecologico_si_form'>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="examen_ginecologico_si_form" style="display: none;">
+                            <div class="col-sm-3">
+                                <label>Genitales externos</label>
+                                <div>
+                                    <select class="form-control" name="genitales_externos" id="genitales_externos_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="Anormales">Anormales</option>
+                                        <option value="Normales" selected>Normales</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Vagina Normo Térmica</label>
+                                <div>
+                                    <select class="form-control" name="vagina_normo_termica" id="vagina_normo_termica_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Vagina Normo Elástica</label>
+                                <div>
+                                    <select class="form-control" name="vagina_normo_elastica" id="vagina_normo_elastica_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Lesiones</label>
+                                <div>
+                                    <select class="form-control" name="vagina_lesiones" id="vagina_lesiones_prenatal" data-target='vagina_lesiones_si_form'>
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 vagina_lesiones_si_form" style="display: none">
+                                <label>Describa Lesiones</label>
+                                <div>
+                                   <input type="text" class="form-control" name="vagina_lesiones_si" id="vagina_lesiones_si_prenatal">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Leucorrea</label>
+                                <div>
+                                    <select class="form-control" name="vagina_leucorrea" id="vagina_leucorrea_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Fetidez</label>
+                                <div>
+                                    <select class="form-control" name="vagina_fetidez" id="vagina_fetidez_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Sangrado</label>
+                                <div>
+                                    <select class="form-control" name="vagina_sangrado" id="vagina_sangrado_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Hidrorrea</label>
+                                <div>
+                                    <select class="form-control" name="vagina_hidrorrea" id="vagina_hidrorrea_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Cervix</label>
+                                <div>
+                                    <select class="form-control" name="vagina_cervix" id="vagina_cervix_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="Central">Central</option>
+                                        <option value="Cerrado">Cerrado</option>
+                                        <option value="Intermedio">Intermedio</option>
+                                        <option value="Permeable">Permeable</option>
+                                        <option value="Posterior">Posterior</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Consistencia</label>
+                                <div>
+                                    <select class="form-control" name="vagina_consistencia" id="vagina_consistencia_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="Borramiento">Borramiento</option>
+                                        <option value="Dilatacion">Dilatacion</option>
+                                        <option value="Firme">Firme</option>
+                                        <option value="Reblandecido">Reblandecido</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Calotas</label>
+                                <div>
+                                    <select class="form-control" name="vagina_calotas" id="vagina_calotas_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Membranas Intergas</label>
+                                <div>
+                                    <select class="form-control" name="vagina_membranas_intergas" id="vagina_membranas_intergas_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Calotas Solidas</label>
+                                <div>
+                                    <select class="form-control" name="vagina_calotas_solidas" id="vagina_calotas_solidas_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Plano</label>
+                                <div>
+                                    <select class="form-control" name="vagina_plano" id="vagina_plano_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="I">I</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
+                                        <option value="IV">IV</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Pelvis</label>
+                                <div>
+                                    <select class="form-control" name="vagina_pelvis" id="vagina_pelvis_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Desproporcion Cefalopelvica</label>
+                                <div>
+                                    <select class="form-control" name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="Estrecho Superior">Estrecho Superior</option>
+                                        <option value="Inferior">Inferior</option>
+                                        <option value="Medio">Medio</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Miembros Inferiores Edema</label>
+                                <div>
+                                    <select class="form-control" name="vagina_miembros_inferiores_edema" id="vagina_miembros_inferiores_edema_prenatal" data-target='vagina_miembros_inferiores_edema_si_form'>
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 vagina_miembros_inferiores_edema_si_form" style="display: none">
+                                <label>Miembros Inferiores Edema Cual</label>
+                                <div>
+                                    <select class="form-control" name="vagina_miembros_inferiores_edema_si" id="vagina_miembros_inferiores_edema_si_prenatal">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="+">+</option>
+                                        <option value="++">++</option>
+                                        <option value="+++">+++</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Neurológico Conservado</label>
+                                <div>
+                                    <select class="form-control" name="vagina_ceurologico_conservado" id="vagina_ceurologico_conservado_prenatal" data-target='vagina_ceurologico_conservado_si_form'>
+                                        <option value="">Selecione Uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 vagina_ceurologico_conservado_si_form" style="display: none">
+                                <label>Alteracion</label>
+                                <div>
+                                   <input class="form-control" type="text" name="vagina_ceurologico_conservado_si" id="vagina_ceurologico_conservado_si">
+                                </div>
+                            </div>
+                       </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
