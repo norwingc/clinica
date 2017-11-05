@@ -99,4 +99,8 @@
             </div>
         </div>
     </section>
+
+@include('includes.consulta._modal')
+@include('includes.consulta._script')
+
 @endsection

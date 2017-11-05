@@ -15890,3 +15890,13 @@ hr {
   }
 }
 
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 1024px;
+  }
+
+  .modal-open .modal {
+    padding-right: 0 !important;
+  }
+}
+
