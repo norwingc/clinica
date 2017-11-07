@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 <div class="modal fade" id="modalUpdateAtencionPrenatal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -388,6 +389,358 @@
                             </div>
                        </div>
 
+                    </div>
+                   <p>Examen de laboratorio</p>
+                   <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Porta Resultados</label>
+                            <div>
+                                <select name="porta_examen" id="porta_examen_prenatal" class="form-control">
+                                    <option value="">Seleccione Uno</option>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Leucocitos xmm3</label>
+                            <div>
+                               <input type="text" class="form-control" name="leocitos" id="leocitos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Segmentos %</label>
+                            <div>
+                               <input type="text" class="form-control" name="segmentos" id="segmentos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Linfocitos %</label>
+                            <div>
+                               <input type="text" class="form-control" name="linfocitos" id="linfocitos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Hemoglobina gr/dl</label>
+                            <div>
+                               <input type="text" class="form-control" name="hemoglobina" id="hemoglobina_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Hematocrito %</label>
+                            <div>
+                               <input type="text" class="form-control" name="hematocrito" id="hematocrito_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Eosinofilos</label>
+                            <div>
+                               <input type="text" class="form-control" name="eosinofilos" id="eosinofilos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Resticulocitos</label>
+                            <div>
+                               <input type="text" class="form-control" name="resticulocitos" id="resticulocitos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Glicemia gr/dl</label>
+                            <div>
+                               <input type="text" class="form-control" name="glicemia" id="glicemia_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Glicemia gr/dl</label>
+                            <div>
+                               <input type="text" class="form-control" name="glicemia" id="glicemia_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>1 Hr Pospandrial gr/dl</label>
+                            <div>
+                               <input type="text" class="form-control" name="pospandrial_una" id="pospandrial_una_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>2 Hr Pospandrial gr/dl</label>
+                            <div>
+                               <input type="text" class="form-control" name="pospandrial_dos" id="pospandrial_dos_prenatal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Creatinina</label>
+                            <div>
+                               <input type="text" class="form-control" name="creatinina" id="creatinina_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>EGO Leucocitos</label>
+                            <div>
+                               <input type="text" class="form-control" name="ego_leucocitos" id="ego_leucocitos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Nitritos</label>
+                            <div>
+                               <input type="text" class="form-control" name="nitritos" id="nitritos_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Glucosa</label>
+                            <div>
+                               <input type="text" class="form-control" name="glucosa" id="glucosa_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Proteinas</label>
+                            <div>
+                               <input type="text" class="form-control" name="proteinas" id="proteinas_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Cilindros</label>
+                            <div>
+                               <input type="text" class="form-control" name="cilindros" id="cilindros_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Papanocloau</label>
+                            <div>
+                               <select class="form-control" name="papanocloau" id="papanocloau_renatal" data-target='papanocloau_si_form'>
+                                   <option value="">Selecione Uno</option>
+                                   <option value="No">No</option>
+                                   <option value="Si">Si</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 papanocloau_si_form" style="display: none">
+                            <label>Fecha Papanocloau</label>
+                            <div>
+                               <input type="date" class="form-control" name="fecha_papanocloau" id="fecha_papanocloau_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 papanocloau_si_form" style="display: none">
+                            <label>Resultado Papanocloau</label>
+                            <div>
+                               <input type="text" class="form-control" name="resultado_papanocloau" id="resultado_papanocloau_prenatal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Cultivos Vaginales</label>
+                            <div>
+                               <input type="text" class="form-control" name="cultivos_vaginales" id="cultivos_vaginales_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>RPR</label>
+                            <div>
+                                <select class="form-control" name="rpr_positivo" id="rpr_positivo_prenatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="Negativo">Negativo</option>
+                                   <option value="Positivo">Positivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>VIH</label>
+                            <div>
+                                <select class="form-control" name="vih_positivo" id="vih_positivo_prenatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="Negativo">Negativo</option>
+                                   <option value="Positivo">Positivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Urocultivo</label>
+                            <div>
+                               <select class="form-control" name="Urocultivo" id="Urocultivo_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="Sin Crecimiento Bacteriano">Sin Crecimiento Bacteriano</option>
+                                   <option value="Con Crecimiento Bacteriano">Con Crecimiento Bacteriano</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Transaminasas</label>
+                            <div>
+                               <input type="text" class="form-control" name="transaminasas" id="transaminasas_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Billiruinas</label>
+                            <div>
+                               <input type="text" class="form-control" name="billiruinas" id="billiruinas_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>LDH</label>
+                            <div>
+                               <input type="text" class="form-control" name="ldh" id="ldh_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>TP</label>
+                            <div>
+                               <input type="text" class="form-control" name="tp" id="tp_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>TPT</label>
+                            <div>
+                               <input type="text" class="form-control" name="tpt" id="tpt_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Fibrinogeno</label>
+                            <div>
+                               <input type="text" class="form-control" name="fibrinogeno" id="fibrinogeno_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Acido Urico</label>
+                            <div>
+                               <input type="text" class="form-control" name="acido_urico" id="acido_urico_prenatal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Ultrasonido</label>
+                            <div>
+                               <select class="form-control" name="ultrasonido" id="ultrasonido_renatal" data-target='ultrasonido_si_form'>
+                                   <option value="">Selecione Uno</option>
+                                   <option value="No">No</option>
+                                   <option value="Si">Si</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 ultrasonido_si_form" style="display: none">
+                            <label>Ultrasonido Descripcion</label>
+                            <div>
+                                <textarea class="form-control" name="ultrasonido_si" id="ultrasonido_si_prenatal"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Edad Gestional</p>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Semanas</label>
+                            <div>
+                               <input type="number" class="form-control" name="edad_gestional_semanas" id="edad_gestional_semanas_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Dias</label>
+                            <div>
+                               <input type="number" class="form-control" name="edad_gestional_dias" id="edad_gestional_dias_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>ILA</label>
+                            <div>
+                               <input type="number" class="form-control" name="ila" id="ila_prenatal">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Placenta Grado</label>
+                            <div>
+                               <select class="form-control" name="planceta_grado" id="planceta_grado_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="0">0</option>
+                                   <option value="1">1</option>
+                                   <option value="2">2</option>
+                                   <option value="3">3</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Doppler Normal</label>
+                            <div>
+                               <select class="form-control" name="doppler_normal" id="doppler_normal_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="No">No</option>
+                                   <option value="Si">Si</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Incremento de Peso Materno</label>
+                            <div>
+                               <select class="form-control" name="incremento_peso_materno" id="incremento_peso_materno_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="Adecuado">Adecuado</option>
+                                   <option value="No Adecuado">No Adecuado</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Incremento de Curva Fetal</label>
+                            <div>
+                               <select class="form-control" name="incremento_curva_fetal" id="incremento_curva_fetal_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="Adecuado">Adecuado</option>
+                                   <option value="No Adecuado">No Adecuado</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Maduración Pulmonar</label>
+                            <div>
+                               <select class="form-control" name="maduracion_pulmonar" id="maduracion_pulmonar_renatal">
+                                   <option value="">Selecione Uno</option>
+                                   <option value="No">No</option>
+                                   <option value="Si">Si</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Semanas</label>
+                            <div>
+                               <input type="number" class="form-control" name="maduracion_pulmonal_semanas" id="maduracion_pulmonal_semanas_prenatal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="col-sm-12">
+                            <label>Comentarios</label>
+                            <div>
+                               <textarea class="form-control" name="comentario" id="comentario_prenatal"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Plan</label>
+                            <div>
+                                <select class="form-control selectpicker" name="plan[]" id="plan_prenatal" multiple>
+                                    <option value="Abundantes Liquidos">Abundantes Liquidos</option>
+                                    <option value="Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana">Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana</option>
+                                    <option value="Acido Folico 5 Mg 1 Tableta Diario 9 Pm">Acido Folico 5 Mg 1 Tableta Diario 9 Pm</option>
+                                    <option value="Albendazol 400 Mg Oral Una Dosis Ayuno">Albendazol 400 Mg Oral Una Dosis Ayuno</option>
+                                    <option value="Aspartato De Arginia 1 Vial Diario 9 Pm">Aspartato De Arginia 1 Vial Diario 9 Pm</option>
+                                    <option value="Aspirina 100 Mg Diario 9 Pm">Aspirina 100 Mg Diario 9 Pm</option>
+                                    <option value="Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis">Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis</option>
+                                    <option value="Calcio 600 Mg Diario">Calcio 600 Mg Diario</option>
+                                    <option value="Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes">Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes</option>
+                                    <option value="Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis">Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis</option>
+                                    <option value="Dieta Rica En Fibra">Dieta Rica En Fibra</option>
+                                    <option value="Examenes De Laboratorio">Examenes De Laboratorio</option>
+                                    <option value="Ferrolent Folic 1 Tableta Cada 12 Horas">Ferrolent Folic 1 Tableta Cada 12 Horas</option>
+                                    <option value="Indometacina 100 Md Diario Por 10 Dias">Indometacina 100 Md Diario Por 10 Dias</option>
+                                    <option value="Metformina 500 Mg A La Mitad De La Cena Por 2 Semanas Y Luego Progresar">Metformina 500 Mg A La Mitad De La Cena Por 2 Semanas Y Luego Progresar</option>
+                                    <option value="Metformina 850 Mg Cada 12 Horas">Metformina 850 Mg Cada 12 Horas</option>
+                                    <option value="Metronidazol 500 Mg Cada 12 Horas Por 5 Dias">Metronidazol 500 Mg Cada 12 Horas Por 5 Dias</option>
+                                    <option value="Multivitaminas Prenatal 1 Tableta Diario 9 Pm">Multivitaminas Prenatal 1 Tableta Diario 9 Pm</option>
+                                    <option value="Ovulo Vaginal 1 Diario Antes De Acostarse">Ovulo Vaginal 1 Diario Antes De Acostarse</option>
+                                    <option value="Progesterona 200 Mg Diario Vaginal 9 Pm">Progesterona 200 Mg Diario Vaginal 9 Pm</option>
+                                    <option value="Sulfato Ferroso 1 Tableta Diario">Sulfato Ferroso 1 Tableta Diario</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
