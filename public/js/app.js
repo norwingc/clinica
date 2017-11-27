@@ -12906,6 +12906,10 @@ $('#embarazada').change(function () {
     }
 });
 
+$('#ultima_regla').focusout(function () {
+    edadGestional();
+});
+
 function edadGestional() {
     var fecha = $('#ultima_regla').val(); //annio-mes-dia
     var textarea = $('#edad_gestional_view');
@@ -12949,6 +12953,7 @@ function edadGestional() {
 }
 
 function dispDate(dateObj) {
+
     month = dateObj.getMonth() + 1;
     var months = new Array(12);
     months[1] = "Enero";
@@ -12979,8 +12984,15 @@ function dispDate(dateObj) {
     return days[dayw] + " " + day + " de " + months[month] + " del " + year;
 }
 
+$('#peso').focusout(function (event) {
+    if ($(this).val() != '') {
+        var peso = $('#peso').val() / 2.2;
+        $('#peso_kg').html(Math.round(peso * 10) / 10 + ' kg');
+    }
+});
+
 $('#talla').focusout(function () {
-    var peso = $('#peso').val();
+    var peso = $('#peso').val() / 2.2;
     var talla = $('#talla').val();
 
     if (peso == '' || talla == '') return false;

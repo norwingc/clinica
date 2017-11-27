@@ -166,6 +166,7 @@ return [
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */

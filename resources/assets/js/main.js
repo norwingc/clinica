@@ -76,6 +76,11 @@ $('#embarazada').change(function(){
     }
 });
 
+$('#ultima_regla').focusout(function() {
+    edadGestional();
+});
+
+
 function edadGestional() {
     let fecha    = $('#ultima_regla').val(); //annio-mes-dia
     let textarea = $('#edad_gestional_view');
@@ -118,8 +123,8 @@ function edadGestional() {
     textarea.html(resultado);
 }
 
-function dispDate(dateObj)
-{
+function dispDate(dateObj) {
+
     month = dateObj.getMonth()+1;
     var months = new Array(12);
     months[1] = "Enero";
@@ -151,8 +156,15 @@ function dispDate(dateObj)
 }
 
 
+$('#peso').focusout(function(event) {
+   if($(this).val() != ''){
+        let peso = ( $('#peso').val()  / 2.2);
+        $('#peso_kg').html(Math.round(peso*10)/10 + ' kg');
+   }
+});
+
 $('#talla').focusout(function() {
-    let peso = $('#peso').val();
+    let peso = ( $('#peso').val()  / 2.2);
     let talla = $('#talla').val();
 
     if(peso == '' || talla == '') return false;

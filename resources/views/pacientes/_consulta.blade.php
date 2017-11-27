@@ -23,7 +23,7 @@
             <div class="col-sm-12 col-lg-6">
                 <label>Agregar Examen</label>
                 <div>
-                    <select class="form-control" id="examen_tipo">
+                    <select class="form-control examen_tipo">
                         <option value="">Seleccione el Examen</option>
                         <option value="0">Colposcopia / Crioterapia</option>
                         <option value="1">Consulta de Atención Prenatal</option>
@@ -43,7 +43,7 @@
             <div class="col-sm-12 col-lg-6">
                 <label>&nbsp;</label>
                 <div>
-                    <button class="btn btn-success" id="examen_agregar" data-consulta='{{ $value->id }}' data-paciente='{{ $paciente->name }}' data-id='false'>Agregar</button>
+                    <button class="btn btn-success examen_agregar" data-consulta='{{ $value->id }}' data-paciente='{{ $paciente->name }}' data-id='false'>Agregar</button>
                 </div>
             </div>
 

@@ -38,14 +38,21 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <label>Signos Vitales</label>
+                            <label>FC</label>
                             <div>
-                                <select class="form-control" name="signos_vitales" id="signos_vitales_prenatal">
-                                    <option value="">Seleccione uno</option>
-                                    <option value="FC">FC</option>
-                                    <option value="FR">FR</option>
-                                    <option value="PA">PA</option>
-                                </select>
+                                <input type="number" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_prenatal" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>FR</label>
+                            <div>
+                                <input type="number" class="form-control" name="signos_vitales_fr" id="signos_vitales_fr_prenatal" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>PA</label>
+                            <div>
+                                <input type="number" class="form-control" name="signos_vitales_pa" id="signos_vitales_pa_prenatal" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -298,9 +305,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Membranas Intergas</label>
+                                <label>Membranas Integras</label>
                                 <div>
-                                    <select class="form-control" name="vagina_membranas_intergas" id="vagina_membranas_intergas_prenatal">
+                                    <select class="form-control" name="vagina_membranas_integras" id="vagina_membranas_integras_prenatal">
                                         <option value="">Selecione Uno</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
@@ -714,20 +721,21 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <label>Plan</label>
+                            <label>Tratamiento</label>
                             <div>
                                 <select class="form-control selectpicker" name="plan[]" id="plan_prenatal" multiple>
                                     <option value="Abundantes Liquidos">Abundantes Liquidos</option>
                                     <option value="Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana">Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana</option>
                                     <option value="Acido Folico 5 Mg 1 Tableta Diario 9 Pm">Acido Folico 5 Mg 1 Tableta Diario 9 Pm</option>
                                     <option value="Albendazol 400 Mg Oral Una Dosis Ayuno">Albendazol 400 Mg Oral Una Dosis Ayuno</option>
-                                    <option value="Aspartato De Arginia 1 Vial Diario 9 Pm">Aspartato De Arginia 1 Vial Diario 9 Pm</option>
+                                    <option value="Aspartato De Arginina 1 Vial Diario 9 Pm">Aspartato De Arginina 1 Vial Diario 9 Pm</option>
                                     <option value="Aspirina 100 Mg Diario 9 Pm">Aspirina 100 Mg Diario 9 Pm</option>
                                     <option value="Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis">Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis</option>
                                     <option value="Calcio 600 Mg Diario">Calcio 600 Mg Diario</option>
                                     <option value="Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes">Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes</option>
                                     <option value="Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis">Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis</option>
                                     <option value="Dieta Rica En Fibra">Dieta Rica En Fibra</option>
+                                    <option value="Dieta Rica En Proteina">Dieta Rica Proteina</option>
                                     <option value="Examenes De Laboratorio">Examenes De Laboratorio</option>
                                     <option value="Ferrolent Folic 1 Tableta Cada 12 Horas">Ferrolent Folic 1 Tableta Cada 12 Horas</option>
                                     <option value="Indometacina 100 Md Diario Por 10 Dias">Indometacina 100 Md Diario Por 10 Dias</option>
@@ -738,6 +746,14 @@
                                     <option value="Ovulo Vaginal 1 Diario Antes De Acostarse">Ovulo Vaginal 1 Diario Antes De Acostarse</option>
                                     <option value="Progesterona 200 Mg Diario Vaginal 9 Pm">Progesterona 200 Mg Diario Vaginal 9 Pm</option>
                                     <option value="Sulfato Ferroso 1 Tableta Diario">Sulfato Ferroso 1 Tableta Diario</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Examenes</label>
+                            <div>
+                                <select class="form-control selectpicker" name="examen[]" id="examen_prenatal" multiple>
+                                    <option value="Dieta Rica Proteina">Dieta Rica Proteina</option>
                                 </select>
                             </div>
                         </div>

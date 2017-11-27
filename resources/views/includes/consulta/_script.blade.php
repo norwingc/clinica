@@ -3,9 +3,9 @@
 <script type="text/javascript">
     var _token = window.Laravel.csrfToken;
 
-    $('#examen_agregar').click(function(){
+    $('.examen_agregar').click(function(){
 
-        let examen = $('#examen_tipo').val();
+        let examen = $('.examen_tipo').val();
 
         if(examen == '') return false;
 
@@ -40,8 +40,5 @@
 
         $('#modalUpdateAtencionPrenatal').modal('show');
     }
-
-
-
 </script>
 @endpush

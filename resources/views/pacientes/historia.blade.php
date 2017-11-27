@@ -19,7 +19,7 @@
     <div class="row">
         <div class="personal-information col-xs-6 col-md-3"><a href="{{ route('paciente.personal', $paciente) }}">Informacion Personal</a></div>
         <div class="history col-xs-6 col-md-3 active"><a href="{{ route('paciente.historia', $paciente) }}">Historia Clinica</a></div>
-        <div class="summary col-xs-6 col-md-3"><a href="{{ route('paciente.show', $paciente) }}">Summary</a></div>
+        <div class="summary col-xs-6 col-md-3"><a href="{{ route('paciente.show', $paciente) }}">Resumen Clinico</a></div>
     </div>
 </div>
 <section class="content">
@@ -683,7 +683,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 embarazada_si_form" style="display: none">
-                                <label>Edad Gestional</label>
+                                <label>Edad Gestacional</label>
                                 <div>
                                     <p id="edad_gestional_view"></p>
                                     <textarea name="edad_gestional" id="edad_gestional" class="form-control" style="display: none"></textarea>
@@ -734,7 +734,7 @@
                         <p>Datos Antropométricos:</p>
                         <div class="form-group">
                             <div class="col-sm-4">
-                                <label>Peso (kgs)</label>
+                                <label>Peso (lb) <small id="peso_kg"></small></label>
                                 <div>
                                     <input type="number" name="peso" id="peso" class="form-control" required>
                                 </div>

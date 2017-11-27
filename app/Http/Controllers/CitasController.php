@@ -88,7 +88,7 @@ class CitasController extends Controller
         $paciente->consulta()->save($consulta);
 
         $cita        = new Cita($request->all());
-        $cita->title = 'Paciente: '.$paciente->name;
+        $cita->title = 'Paciente: '.$paciente->name . ' / costo: $' . $consulta->costo;
         $cita->url   = '/Pacientes/User/View/'.$paciente->id;
         if($request->doctor != 'Dr. Pavon') $cita->color = '#ff4f81';
         if($consulta->examen_type != null) $cita->title = 'Paciente: '.$paciente->name.' / Examen: '. $consulta->examen_type;
