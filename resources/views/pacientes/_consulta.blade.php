@@ -4,7 +4,10 @@
 <div class="consulta col-lg-offset-1">
     <div class="row">
         <div class="col-lg-6 col-sm-12">
-            <p><b>Fecha de la consulta: </b> {{ $value->date }}</p>
+            <p>
+                <b>Fecha de la consulta: </b> {{ $value->date }}
+                <b>Costo: </b> {{ $value->costo }}
+            </p>
             <p>
                 <b>Doctor: </b> {{ $value->doctor }}
                 <b>Tipo de examen: </b> {!! ($value->examen_type != '') ? $value->examen_type : 'N/A' !!}
