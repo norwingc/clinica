@@ -75,7 +75,7 @@
                                 <div class="col-sm-3">
                                     <label>Costo U$</label>
                                     <div>
-                                        <input type="number" class="form-control" name="costo" id="costo" required>
+                                        <input type="number" class="form-control" name="costo" id="costo" required min="0">
                                     </div>
                                 </div>
                             </div>
