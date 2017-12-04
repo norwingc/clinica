@@ -721,39 +721,91 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <label>Tratamiento</label>
+                            <label>Plan Medico</label>
                             <div>
-                                <select class="form-control selectpicker" name="plan[]" id="plan_prenatal" multiple>
-                                    <option value="Abundantes Liquidos">Abundantes Liquidos</option>
-                                    <option value="Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana">Acetato De Medroxiprogesterona 250 Mcg Im Cada Semana</option>
-                                    <option value="Acido Folico 5 Mg 1 Tableta Diario 9 Pm">Acido Folico 5 Mg 1 Tableta Diario 9 Pm</option>
-                                    <option value="Albendazol 400 Mg Oral Una Dosis Ayuno">Albendazol 400 Mg Oral Una Dosis Ayuno</option>
-                                    <option value="Aspartato De Arginina 1 Vial Diario 9 Pm">Aspartato De Arginina 1 Vial Diario 9 Pm</option>
-                                    <option value="Aspirina 100 Mg Diario 9 Pm">Aspirina 100 Mg Diario 9 Pm</option>
-                                    <option value="Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis">Betametazon 12 Mg Im Cada 24 Horas Por Dos Dosis</option>
-                                    <option value="Calcio 600 Mg Diario">Calcio 600 Mg Diario</option>
-                                    <option value="Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes">Clindamicina 100 Mg Ovulo Vaginal 9 Pm Lunes Y Viernes</option>
-                                    <option value="Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis">Dexametazona 6 Mg Im Cada 12 Horas Por 4 Dosis</option>
-                                    <option value="Dieta Rica En Fibra">Dieta Rica En Fibra</option>
-                                    <option value="Dieta Rica En Proteina">Dieta Rica Proteina</option>
-                                    <option value="Examenes De Laboratorio">Examenes De Laboratorio</option>
-                                    <option value="Ferrolent Folic 1 Tableta Cada 12 Horas">Ferrolent Folic 1 Tableta Cada 12 Horas</option>
-                                    <option value="Indometacina 100 Md Diario Por 10 Dias">Indometacina 100 Md Diario Por 10 Dias</option>
-                                    <option value="Metformina 500 Mg A La Mitad De La Cena Por 2 Semanas Y Luego Progresar">Metformina 500 Mg A La Mitad De La Cena Por 2 Semanas Y Luego Progresar</option>
-                                    <option value="Metformina 850 Mg Cada 12 Horas">Metformina 850 Mg Cada 12 Horas</option>
-                                    <option value="Metronidazol 500 Mg Cada 12 Horas Por 5 Dias">Metronidazol 500 Mg Cada 12 Horas Por 5 Dias</option>
-                                    <option value="Multivitaminas Prenatal 1 Tableta Diario 9 Pm">Multivitaminas Prenatal 1 Tableta Diario 9 Pm</option>
-                                    <option value="Ovulo Vaginal 1 Diario Antes De Acostarse">Ovulo Vaginal 1 Diario Antes De Acostarse</option>
-                                    <option value="Progesterona 200 Mg Diario Vaginal 9 Pm">Progesterona 200 Mg Diario Vaginal 9 Pm</option>
-                                    <option value="Sulfato Ferroso 1 Tableta Diario">Sulfato Ferroso 1 Tableta Diario</option>
+                                <select class="form-control selectpicker" name="plan_medico[]" id="plan_medico_prenatal" data-live-search="true" data-size="10" multiple >
+                                    <option value="Dieta rica en Proteinas y fibra">Dieta rica en Proteinas y fibra</option>
+                                    <option value="Vacuna DT. Dosis 0.5 ml">Vacuna DT. Dosis 0.5 ml</option>
+                                    <option value="Betametasona 12mg Intramuscular cada 24 horas por 2 dosis">Betametasona 12mg Intramuscular cada 24 horas por 2 dosis</option>
+                                    <option value="Dexametasona 12mg Intramuscular STAT dosis unica">Dexametasona 12mg Intramuscular STAT dosis unica</option>
+                                    <option value="Enantyum sobre liquido. 1 sobre oral cada 8 hrs por 5 dias">Enantyum sobre liquido. 1 sobre oral cada 8 hrs por 5 dias</option>
+                                    <option value="Fixim Tableta 400mga 1tab oral diario por 7 dias">Fixim Tableta 400mga 1tab oral diario por 7 dias</option>
+                                    <option value="Dimenhidrinato ampolla 50mg 1 ampolla Intramuscular cada 8 horas">Dimenhidrinato ampolla 50mg 1 ampolla Intramuscular cada 8 horas</option>
+                                    <option value="Fluconazol 150mg 1 capsula oral semanal por 4 semanas">Fluconazol 150mg 1 capsula oral semanal por 4 semanas</option>
+                                    <option value="Doxiciclina 100mg 1 tableta cada 12 horas por 10 dias">Doxiciclina 100mg 1 tableta cada 12 horas por 10 dias</option>
+                                    <option value="Ciprofloxacina 500 mg 1tableta oral cada 6 horas por 7 dias">Ciprofloxacina 500 mg 1tableta oral cada 6 horas por 7 dias</option>
+                                    <option value="Dicloxacilina 500mg 1tableta oral cada 8 8 horas por 7 dias">Dicloxacilina 500mg 1tableta oral cada 8 8 horas por 7 dias</option>
+                                    <option value="Clindaminica 300mg 1 tableta oral cada 8 horas por 7 dias">Clindaminica 300mg 1 tableta oral cada 8 horas por 7 dias</option>
+                                    <option value="Progestin Depot 250 mg 1 ampolla Intramuscular  STAT y luego semanal por 2 semanas">Progestin Depot 250 mg 1 ampolla Intramuscular  STAT y luego semanal por 2 semanas</option>
+                                    <option value="Progestin 100mg 1 ampolla Intramuscular STAT y luego semanal por 2 semanas">Progestin 100mg 1 ampolla Intramuscular STAT y luego semanal por 2 semanas</option>
+                                    <option value="Gesemet 1 tableta oral cada 8 horas">Gesemet 1 tableta oral cada 8 horas</option>
+                                    <option value="Azitroaminica 500mg 1 tableta oral diario por 5 dias">Azitroaminica 500mg 1 tableta oral diario por 5 dias</option>
+                                    <option value="Albendazol 400mg 1 tableta oral dosis unica">Albendazol 400mg 1 tableta oral dosis unica</option>
+                                    <option value="Acido Folico 5 mg 1 tableta diario 9 de la noche oral todo el embarazo">Acido Folico 5 mg 1 tableta diario 9 de la noche oral todo el embarazo</option>
+                                    <option value="Aspirina 100 mg 1 tableta diario 9 de la noche oral">Aspirina 100 mg 1 tableta diario 9 de la noche oral</option>
+                                    <option value="Aspartato de arginina 1 vial diario oral 9 de la noche">Aspartato de arginina 1 vial diario oral 9 de la noche</option>
+                                    <option value="Multivitaminas prenatal 1 tableta diario oral">Multivitaminas prenatal 1 tableta diario oral</option>
+                                    <option value="Dimenhidrinato tableta de 50 mg oral. 1 tableta cada 8 horas por 5 dias">Dimenhidrinato tableta de 50 mg oral. 1 tableta cada 8 horas por 5 dias</option>
+                                    <option value="Nitrofurantoina 100 mg 1 tableta cada 12 horas por 10 dias">Nitrofurantoina 100 mg 1 tableta cada 12 horas por 10 dias</option>
+                                    <option value="Spasmo urolong 1 tableta oral cada 12 horas por 7 dias">Spasmo urolong 1 tableta oral cada 12 horas por 7 dias</option>
+                                    <option value="Cetriler 1 tableta cada 12 horas por 5 dias">Cetriler 1 tableta cada 12 horas por 5 dias</option>
+                                    <option value="Progesterona 200 mg vaginal. 9 de la noche. 1 ovulo diario">Progesterona 200 mg vaginal. 9 de la noche. 1 ovulo diario</option>
+                                    <option value="Progesterona 200 mg oral. 9 d ela noche. 1 capsula diario">Progesterona 200 mg oral. 9 d ela noche. 1 capsula diario</option>
+                                    <option value="Indometacina 100 mg diario supositorio (rectal) antes de dormir por 10 dias">Indometacina 100 mg diario supositorio (rectal) antes de dormir por 10 dias</option>
+                                    <option value="Ketorolac 60 mg intravenoso 1 ampolla cada 8 horas">Ketorolac 60 mg intravenoso 1 ampolla cada 8 horas</option>
+                                    <option value="Clindamicina 100 mg ovulos. 1 diario via vaginal por 7 dias">Clindamicina 100 mg ovulos. 1 diario via vaginal por 7 dias</option>
+                                    <option value="Clindamicina 100 mg ovulo. Via vaginal Lunes y viernes">Clindamicina 100 mg ovulo. Via vaginal Lunes y viernes</option>
+                                    <option value="Anara 1 tableta oral cada 8 horas">Anara 1 tableta oral cada 8 horas</option>
+                                    <option value="Aceite mineral 1 cucharada (10 ml) cada 8 horas por 3 dias">Aceite mineral 1 cucharada (10 ml) cada 8 horas por 3 dias</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <label>Examenes</label>
+                            <label>Examenes de Laboratorio</label>
                             <div>
-                                <select class="form-control selectpicker" name="examen[]" id="examen_prenatal" multiple>
-                                    <option value="Dieta Rica Proteina">Dieta Rica Proteina</option>
+                                <select class="form-control selectpicker" name="examen_laboratorio[]" id="examen_laboratorio_prenatal" data-live-search="true" data-size="10" multiple>
+                                    <option value="BHC">BHC</option>
+                                    <option value="Urocultivo">Urocultivo</option>
+                                    <option value="TGO">TGO</option>
+                                    <option value="TGP">TGP</option>
+                                    <option value="LDH">LDH</option>
+                                    <option value="Creatinina">Creatinina</option>
+                                    <option value="TP">TP</option>
+                                    <option value="TPT">TPT</option>
+                                    <option value="Fibrinogeno">Fibrinogeno</option>
+                                    <option value="Acido Urico">Acido Urico</option>
+                                    <option value="Tipo y RH">Tipo y RH</option>
+                                    <option value="Glucosa en ayuno">Glucosa en ayuno</option>
+                                    <option value="Glucosa 1hr pospandrial">Glucosa 1hr pospandrial</option>
+                                    <option value="Creatinina">Creatinina</option>
+                                    <option value="Curva de Tolerancia oral a la Glucosa 75 gramos. Ayuno, 1 hora y 2 horas pospandrial">Curva de Tolerancia oral a la Glucosa 75 gramos. Ayuno, 1 hora y 2 horas pospandrial</option>
+                                    <option value="RPR">RPR</option>
+                                    <option value="VIH">VIH</option>
+                                    <option value="Progesterona">Progesterona</option>
+                                    <option value="Estrogeno">Estrogeno</option>
+                                    <option value="Procalcitonina">Procalcitonina</option>
+                                    <option value="CA 125">CA 125</option>
+                                    <option value="TSH">TSH</option>
+                                    <option value="T4">T4</option>
+                                    <option value="T3">T3</option>
+                                    <option value="T4 Libre">T4 Libre</option>
+                                    <option value="Alfafetoproteina">Alfafetoproteina</option>
+                                    <option value="CA 119">CA 119</option>
+                                    <option value="FSH">FSH</option>
+                                    <option value="LH">LH</option>
+                                    <option value="Estradiol">Estradiol</option>
+                                    <option value="Protenias en orina de 24hr">Protenias en orina de 24hr</option>
+                                    <option value="HCG subunidad Beta">HCG subunidad Beta</option>
+                                    <option value="Combs indirecto ">Combs indirecto </option>
+                                    <option value="Perfil TORCH">Perfil TORCH</option>
+                                    <option value="Test de avidez IgG para Toxoplasmosis">Test de avidez IgG para Toxoplasmosis</option>
+                                    <option value="Toxoplasmosis Ig G Ig M">Toxoplasmosis Ig G Ig M</option>
+                                    <option value="Anticardiolipina">Anticardiolipina</option>
+                                    <option value="B-2 glicoproteina">B-2 glicoproteina</option>
+                                    <option value="Anti DNA">Anti DNA</option>
+                                    <option value="Bilirrubinas totales y fraccionadas">Bilirrubinas totales y fraccionadas</option>
+                                    <option value="Anti SM">Anti SM</option>
+                                    <option value="Anti RO">Anti RO</option>
                                 </select>
                             </div>
                         </div>
