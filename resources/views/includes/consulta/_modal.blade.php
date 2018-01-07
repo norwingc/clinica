@@ -1053,7 +1053,7 @@
                            </div>
                        </div>
                    </div>
-                   <p>Corte Axial De Abdomen</p>
+                    <p>Corte Axial De Abdomen</p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Situs</label>
@@ -1353,7 +1353,7 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                        </div>v
+                        </div>
                         <div class="col-md-3">
                             <label>Tamaño de vasos: Anormal</label>
                             <div>
@@ -1404,7 +1404,7 @@
                                 </select>
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
                             <label>Disposición: Anormal</label>
                              <div>
                                 <select name="disposicion_anormal" id="disposicion_anormal_ecocardiografia" class="form-control">
@@ -1414,61 +1414,61 @@
                                 </select>
                             </div>
                         </div>
-                        <p>Cortes Sagitales </p>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <label>Vista Bi cava</label>
-                                 <div>
-                                    <select name="vista_bi_cava" id="vista_bi_cava_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <p>Cortes Sagitales</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Vista Bi cava</label>
+                             <div>
+                                <select name="vista_bi_cava" id="vista_bi_cava_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label>Vestíbulo venoso subdifargmatico</label>
-                                 <div>
-                                    <select name="vestibulo_venoso" id="vestibulo_venoso_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vestíbulo venoso subdifargmatico</label>
+                             <div>
+                                <select name="vestibulo_venoso" id="vestibulo_venoso_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label>Arco aortico</label>
-                                 <div>
-                                    <select name="arco_aortico" id="arco_aortico_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Arco aortico</label>
+                             <div>
+                                <select name="arco_aortico" id="arco_aortico_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label>Arco ductal</label>
-                                 <div>
-                                    <select name="arco_ductal" id="arco_ductal_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Arco ductal</label>
+                             <div>
+                                <select name="arco_ductal" id="arco_ductal_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label>Eje corto de grandes vasos</label>
-                                 <div>
-                                    <select name="eje_corto_vasos" id="eje_corto_vasos_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Eje corto de grandes vasos</label>
+                             <div>
+                                <select name="eje_corto_vasos" id="eje_corto_vasos_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
-                            <div class="col-md-3">
-                                <label>Eje corto de ventriculos </label>
-                                 <div>
-                                    <select name="eje_corto_centriculos" id="eje_corto_centriculos_ecocardiografia" class="form-control">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Anormal">Anormal</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Eje corto de ventriculos </label>
+                             <div>
+                                <select name="eje_corto_centriculos" id="eje_corto_centriculos_ecocardiografia" class="form-control">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
                             </div>
                         </div>
                     </div>
