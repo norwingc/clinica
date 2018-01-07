@@ -1052,7 +1052,7 @@
                               <input type="number" name="fcf" id="fcf_ecocardiografia" class="form-control" required>
                            </div>
                        </div>
-                   </div>
+                    </div>
                     <p>Corte Axial De Abdomen</p>
                     <div class="form-group">
                         <div class="col-md-3">
@@ -1494,6 +1494,704 @@
                             </div>
                         </div>
                     </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdatedNeurosonografia">
+     <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Edad</label>
+                            <div>
+                                <input type="number" name="edad" id="edad_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Medico</label>
+                            <div>
+                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" name="date" id="date_neurosonografia" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Paridad</label>
+                            <div>
+                                <input type="text" name="paridad" id="paridad_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <P>Reporte De Neurosonografia</P>
+                    <div class="form-group">
+                       <div class="col-md-3">
+                           <label>Feto</label>
+                           <div>
+                               <select name="feto" id="feto_neurosonografia" class="form-control" required>
+                                   <option value="Unico">Unico</option>
+                                   <option value="Gemelo">Gemelo</option>
+                                   <option value="A">A</option>
+                                   <option value="B">B</option>
+                                   <option value="C">C</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>Presentacion</label>
+                           <div>
+                               <select name="presentacion" id="presentacion_neurosonografia" class="form-control" required>
+                                   <option value="Cefálico">Cefálico</option>
+                                   <option value="Pélvico">Pélvico</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>Situacion</label>
+                           <div>
+                               <select name="situacion" id="situacion_neurosonografia" class="form-control" required>
+                                   <option value="Longitudinal">Longitudinal</option>
+                                   <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
+                                   <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
+                               </select>
+                           </div>
+                       </div>
+                        <div class="col-md-3">
+                           <label>Posicion</label>
+                           <div>
+                               <select name="posicion" id="posicion_neurosonografia" class="form-control" required>
+                                   <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                   <option value="Dorso Derecho">Dorso Derecho</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>FCF (latidos por minuto)</label>
+                           <div>
+                              <input type="number" name="fcf" id="fcf_neurosonografia" class="form-control" required>
+                           </div>
+                       </div>
+                    </div>
+                    <p>Planos Axiales</p>
+                    <p><b>Craneo</b></p>
+                    <div class="form-group">
+                         <div class="col-md-3">
+                            <label>Craneo Normal</label>
+                            <div>
+                                <select name="craneo" id="craneo_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Dolicocefalia</label>
+                            <div>
+                                <select name="dolicocefalia" id="dolicocefalia_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Braquicefalia</label>
+                            <div>
+                                <select name="braquicefalia" id="braquicefalia_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tamaño normal</label>
+                            <div>
+                                <select name="craneo_tamano" id="craneo_tamano_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Suturas craneales normales</label>
+                            <div>
+                                <select name="craneo_situras" id="craneo_situras_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Compresión del transductor se aprecian deformidades</label>
+                            <div>
+                                <select name="craneo_compresion" id="craneo_compresion_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>La línea interhemisferica se observa integra</label>
+                            <div>
+                                <select name="craneo_interhemisferica" id="craneo_interhemisferica_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Los hemisferios cerebrales simétricos</label>
+                            <div>
+                                <select name="craneo_hemisferios" id="craneo_hemisferios_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Corte Transventricular</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Se identifica el Cavum del septum pellucidum</label>
+                            <div>
+                                <select name="cavum_septum" id="cavum_septum_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Diámetro anteroposterior (mm)</label>
+                            <div>
+                                <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Astas frontales de ventrículos laterales simétricas</label>
+                            <div>
+                                <select name="asta_frontales" id="asta_frontales_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Existe comunicación de astas anteriores</label>
+                            <div>
+                                <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Plexos coroideos homogéneos</label>
+                            <div>
+                                <select name="plexo_coroideos" id="plexo_coroideos_neurosonografia" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Presencia de quiste</label>
+                            <div>
+                                <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 presencia_quiste_si_form" style="display: none">
+                            <label>Quiste</label>
+                            <div>
+                                <select name="presencia_quiste_si" id="presencia_quiste_si_neurosonografia" class="form-control">
+                                    <option value="Unilateral">Unilateral</option>
+                                    <option value="Bilateral">Bilateral</option>
+                                    <option value="Unico">Unico</option>
+                                    <option value="Múltiples">Múltiples</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Se identifica la cisura parietooccipital</label>
+                            <div>
+                                <select name="cisura_parietooccipital" id="cisura_parietooccipital_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Atrios ventriculares simétricos</label>
+                            <div>
+                                <select name="atrios_ventruculares" id="atrios_ventruculares_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Atrios ventriculares Derecho (mm)</label>
+                            <div>
+                                <input type="text" name="atrios_derecho" id="atrios_derecho_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Atrios ventriculares Izquierdo (mm)</label>
+                            <div>
+                                <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Área peri ventricular</label>
+                            <div>
+                                <select name="area_ventricular" id="area_ventricular_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                    <option value="Demorrágica">Demorrágica</option>
+                                    <option value="Hiperecogenica">Hiperecogenica</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Corte Transtalámico</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Talamos normales</label>
+                            <div>
+                                <select name="talamos_normales" id="talamos_normales_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Giro hipocampal Presente</label>
+                            <div>
+                                <select name="giro_hipocampal_presente" id="giro_hipocampal_presente_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>III ventrículo con diámetros</label>
+                            <div>
+                                <input type="text" name="ventriculo_diametros" id="ventriculo_diametros_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Corte Transcerebelar</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Cerebelo con ambos hemisferios simétricos</label>
+                            <div>
+                                <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vermis</label>
+                            <div>
+                                <select name="vermis" id="vermis_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Presente">Presente</option>
+                                    <option value="Ausente">Ausente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Central y ecogénico</label>
+                            <div>
+                                <select name="central_ecogenico" id="central_ecogenico_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morfología normal</label>
+                            <div>
+                                <select name="morfologia_normal" id="morfologia_normal_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cisterna magna con diámetros (mm)</label>
+                            <div>
+                                <input type="text" name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
+                            <div>
+                                <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Pliegue nucal (mm)</label>
+                            <div>
+                                <input type="text" name="pliegue_nucal" id="pliegue_nucal_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Planos Coronales:</p>
+                    <p><b>Corte Transfrontal</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Se observa la línea interhemisferica integra</label>
+                            <div>
+                                <select name="liena_intergemisferica" id="liena_intergemisferica_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Astas anteriores de los ventrículos laterales normales</label>
+                            <div>
+                                <select name="asta_anteriores" id="asta_anteriores_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hueso esfenoides y las orbitas oculares normales </label>
+                            <div>
+                                <select name="hueso_esfenoides" id="hueso_esfenoides_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p><b>Corte Transcaudal</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Astas anteriores de los ventrículos con diámetros</label>
+                            <div>
+                                <input type="text" name="ventriculos_diametro_1" id="ventriculos_diametro_1_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Y de</label>
+                            <div>
+                                <input type="text" name="ventriculos_diametro_2" id="ventriculos_diametro_2_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Núcleos caudados sin alteraciones</label>
+                            <div>
+                                <select name="nucleos_caudado" id="nucleos_caudado_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Espacio subaracnoideo senocortical (mm)</label>
+                            <div>
+                                <input type="text" name="espacio_subaracnoideo" id="espacio_subaracnoideo_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Y craneocortical (mm)</label>
+                            <div>
+                                <input type="text" name="espacio_craneocotical" id="espacio_craneocotical_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Se identifica la cisura de Silvio claramente</label>
+                            <div>
+                                <select name="cisura_silvio" id="cisura_silvio_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p><b>Corte Transcerebelar</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Tentorio in situs</label>
+                            <div>
+                                <select name="tetorio_situs" id="tetorio_situs_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cisura interhemisferica integra</label>
+                            <div>
+                                <select name="cisura_interhemisferica" id="cisura_interhemisferica_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cuernos occipitales simétricos</label>
+                            <div>
+                                <select name="cuernos_occipitales" id="cuernos_occipitales_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Planos Sagitales</p>
+                    <p><b>Saginal Medio</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Presencia del cuerpo calloso</label>
+                            <div>
+                                <select name="presencia_calloso" id="presencia_calloso_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Disgenesia</label>
+                            <div>
+                                <select name="disgenesia" id="disgenesia_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Longitud (mm)</label>
+                            <div>
+                                <input type="text" name="saginal_longitud" id="saginal_longitud_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Grosor (mm)</label>
+                            <div>
+                                <input type="text" name="saginal_grosor" id="saginal_grosor_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>CSP y Cavum vergae</label>
+                            <div>
+                                <select name="csp_cavum" id="csp_cavum_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Sin Alteraciones">Sin Alteraciones</option>
+                                    <option value="Hipoplasicos">Hipoplasicos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Fornix, III Y IV ventrículo</label>
+                            <div>
+                                <select name="fornix" id="fornix_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Sin Dilatación">Sin Dilatación</option>
+                                    <option value="Con Dilatación">Con Dilatación</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tronco Encefálico</label>
+                            <div>
+                                <select name="tronco_encefalico" id="tronco_encefalico_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tórcula y Tentorio in situs</label>
+                            <div>
+                                <select name="torcula_tendorio" id="torcula_tendorio_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cisterna magna</label>
+                            <div>
+                                <select name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Doppler color se visualiza el trayecto de la arteria cerebral anterior</label>
+                            <div>
+                                <select name="doppler_visualiza" id="doppler_visualiza_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Pericallosa</label>
+                            <div>
+                                <select name="pericallosa" id="pericallosa_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vena de Galeno</label>
+                            <div>
+                                <select name="vena_galeno" id="vena_galeno_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Desarrollo Corporal</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Las cisuras de Silvio</label>
+                            <div>
+                                <select name="cisuras_silvio" id="cisuras_silvio_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cisura parieto occipital</label>
+                            <div>
+                                <select name="cisura_occipital" id="cisura_occipital_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Cisura calcarina</label>
+                            <div>
+                                <select name="cisura_calcarina" id="cisura_calcarina_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label> Cisura cingulada</label>
+                            <div>
+                                <select name="cisura_cingulada" id="cisura_cingulada_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Columna Vertebral</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Cortes sagitales con piel integra</label>
+                            <div>
+                                <select name="cortes_sagitales" id="cortes_sagitales_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Se identifica el cono medular</label>
+                            <div>
+                                <select name="identifica_cono" id="identifica_cono_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Se observa la disposición de la osificación</label>
+                            <div>
+                                <select name="observa_osificacion" id="observa_osificacion_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Integridad de los cuerpos vertebrales y los procesos laterales</label>
+                            <div>
+                                <select name="integridad_cuerpos" id="integridad_cuerpos_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Evidencia de signos intracraneales de Mielocele abierta</label>
+                            <div>
+                                <select name="evidencia_mielocele" id="evidencia_mielocele_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Evidencia de signos intracraneales de Mielomeningocele abierta</label>
+                            <div>
+                                <select name="evidencia_mielomeningocele" id="evidencia_mielomeningocele_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Evidencia de signos intracraneales de Mielosquisis abierta</label>
+                            <div>
+                                <select name="evidencia_mielosquisis" id="evidencia_mielosquisis_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Revision</label>
+                            <div>
+                                <select name="revision" id="revision_neurosonografia" class="form-control">
+                                    <option value="Adecuada">Adecuada</option>
+                                    <option value="Limitada">Limitada</option>
+                                    <option value="Muy Limitada">Muy Limitada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Conclusiones</label>
+                            <div>
+                                <select name="concluciones" id="concluciones_neurosonografia" class="form-control">
+                                    <option value="Embarazo de 23.2 Semanas de gestación por fetometría acorde a US evolutivo ">Embarazo de 23.2 Semanas de gestación por fetometría acorde a US evolutivo </option>
+                                    <option value="Neurosonografia sin alteraciones">Neurosonografia sin alteraciones</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                 {!! Form::close() !!}
             </div>
         </div>

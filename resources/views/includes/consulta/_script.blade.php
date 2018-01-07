@@ -12,15 +12,15 @@
         if(examen == 1){//consulta atencion prental
             updateAtencionPretanal($(this));
         }
-
         if(examen == 2){
             updatedConsultaGinecologica($(this));
         }
-
         if(examen == 6){
             updatedEcocardiografia($(this));
         }
-
+        if(examen == 7){
+            updatedNeurosonografia($(this));
+        }
     });
 
     /**
@@ -98,6 +98,32 @@
         }
 
         $('#modalUpdatedEcocardiografia').modal('show');
+    }
+
+    /**
+     * [updatedNeurosonografia description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function updatedNeurosonografia(este) {
+        let consulta        = este.data('consulta');
+        let title           = 'Consulta Neurosonografia: ' + este.data('paciente');
+        let neurosonografia = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!neurosonografia){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Neurosonografia/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Neurosonografia/update/"+neurosonografia);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Neurosonografia/get/"+neurosonografia, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedNeurosonografia').modal('show');
     }
 </script>
 @endpush
