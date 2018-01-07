@@ -15790,11 +15790,17 @@ hr {
 }
 
 .main-header .logo-mini img {
-  width: 50px;
+  width: 30px;
 }
 
 .main-header .logo-lg img {
-  width: 50px;
+  width: 30px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+  height: auto;
+  width: auto;
+  border: none;
 }
 
 .actions {
@@ -15892,7 +15898,7 @@ hr {
 
 @media (min-width: 992px) {
   .modal-lg {
-    width: 1024px;
+    width: 80%;
   }
 
   .modal-open .modal {

@@ -28,13 +28,16 @@
 
     <style type="text/css">
         .login-page{
-            background: #50a3a2;
+            background: #466ca4;
             background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-            background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+            background: linear-gradient(to bottom right, #466CA3 0%, #4692a3 100%);
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
+        }
+        .login-logo img{
+            margin: auto;
         }
     </style>
 
@@ -48,7 +51,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="http://www.maternofetalnic.com/"><img src="{{ asset('img/logo.png') }}" alt="" class="img-responsive"></a>
+            <img src="{{ asset('img/logo.png') }}" alt="" class="img-responsive">
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

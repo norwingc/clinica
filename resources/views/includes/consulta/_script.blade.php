@@ -13,6 +13,14 @@
             updateAtencionPretanal($(this));
         }
 
+        if(examen == 2){
+            updatedConsultaGinecologica($(this));
+        }
+
+        if(examen == 6){
+            updatedEcocardiografia($(this));
+        }
+
     });
 
     /**
@@ -22,9 +30,9 @@
      */
     function updateAtencionPretanal(este) {
         let consulta = este.data('consulta');
-        let title   = 'Consulta de Atención Prenatal: ' + este.data('paciente');
-        $('.modal-title').html(title);
+        let title    = 'Consulta de Atención Prenatal: ' + este.data('paciente');
         let prenatal = este.data('id');
+        $('.modal-title').html(title);
 
         if(!prenatal){//agregar examen
             $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Prenatal/store/"+consulta);
@@ -39,6 +47,57 @@
         }
 
         $('#modalUpdateAtencionPrenatal').modal('show');
+    }
+
+    /**
+     * [updatedConsultaGinecologica description]
+     * @param {[type]} este [description]
+     */
+    function updatedConsultaGinecologica(este) {
+        let consulta     = este.data('consulta');
+        let title        = 'Consulta Ginecologica: ' + este.data('paciente');
+        let ginecologica = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!ginecologica){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Ginecologica/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Ginecologica/update/"+ginecologica);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Ginecologica/get/"+ginecologica, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedConsultaGinecologica').modal('show');
+    }
+
+    /**
+     * [updatedEcocardiografia description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function updatedEcocardiografia(este) {
+        let consulta = este.data('consulta');
+        let title    = 'Consulta Ecocardiografia: ' + este.data('paciente');
+        let ecocardiografia = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!ecocardiografia){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Ecocardiografia/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Ecocardiografia/update/"+ecocardiografia);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Ecocardiografia/get/"+ecocardiografia, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedEcocardiografia').modal('show');
     }
 </script>
 @endpush
