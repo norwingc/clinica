@@ -21,6 +21,9 @@
         if(examen == 7){
             updatedNeurosonografia($(this));
         }
+         if(examen == 9){
+            updatedEstructural($(this));
+        }
     });
 
     /**
@@ -124,6 +127,32 @@
         }
 
         $('#modalUpdatedNeurosonografia').modal('show');
+    }
+
+    /**
+     * [updatedEstructural description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function updatedEstructural(este) {
+        let consulta        = este.data('consulta');
+        let title           = 'Consulta Estructural: ' + este.data('paciente');
+        let estructural = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!estructural){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Estructural/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Estructural/update/"+estructural);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Estructural/get/"+estructural, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedEstructural').modal('show');
     }
 </script>
 @endpush
