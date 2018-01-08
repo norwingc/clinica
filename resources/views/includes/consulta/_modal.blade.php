@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
 <div class="modal fade" id="modalUpdateAtencionPrenatal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -2199,7 +2200,7 @@
 </div>
 
 <div class="modal fade" id="modalUpdatedEstructural">
-     <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -2852,10 +2853,7 @@
                         <div class="col-md-3">
                             <label>Medicion</label>
                             <div>
-                                <select name="medicion_intra_abdominal" id="medicion_intra_abdominal_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
+                                <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_estructural" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -2870,10 +2868,7 @@
                         <div class="col-md-3">
                             <label>Medicion</label>
                             <div>
-                                <select name="medicion_extra_abdominal" id="medicion_extra_abdominal_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
+                                <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_estructural" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -2888,7 +2883,7 @@
                         <div class="col-md-3">
                             <label>Cámara gástrica</label>
                             <div>
-                                <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_form_si">
+                                <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_si_form">
                                     <option value="No">No</option>
                                     <option value="Si">Si</option>
                                 </select>
@@ -3168,6 +3163,630 @@
                         </div>
                     </div>
                     <p class="text-center"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas</b></p>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdatedITrimestre">
+     <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Edad</label>
+                            <div>
+                                <input type="number" name="edad" id="edad_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Medico</label>
+                            <div>
+                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" name="date" id="date_1trimestre" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Paridad</label>
+                            <div>
+                                <input type="text" name="paridad" id="paridad_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center"><b>Ultrasonido Estructural De I Trimestre</b></p>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Se realizó estudio ultrasonográfico en tiempo real</label>
+                            <textarea name="estudio" id="estudio_1trimestre" class="form-control"></textarea>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <div class="col-md-3">
+                           <label>Feto</label>
+                           <div>
+                               <select name="feto" id="feto_1trimestre" class="form-control" required>
+                                   <option value="Unico">Unico</option>
+                                   <option value="Gemelo">Gemelo</option>
+                                   <option value="A">A</option>
+                                   <option value="B">B</option>
+                                   <option value="C">C</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>Presentacion</label>
+                           <div>
+                               <select name="presentacion" id="presentacion_1trimestre" class="form-control" required>
+                                   <option value="Cefálico">Cefálico</option>
+                                   <option value="Pélvico">Pélvico</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>Situacion</label>
+                           <div>
+                               <select name="situacion" id="situacion_1trimestre" class="form-control" required>
+                                   <option value="Longitudinal">Longitudinal</option>
+                                   <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
+                                   <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
+                               </select>
+                           </div>
+                       </div>
+                        <div class="col-md-3">
+                           <label>Posicion</label>
+                           <div>
+                               <select name="posicion" id="posicion_1trimestre" class="form-control" required>
+                                   <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                   <option value="Dorso Derecho">Dorso Derecho</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3">
+                           <label>FCF (latidos por minuto)</label>
+                           <div>
+                              <input type="number" name="fcf" id="fcf_1trimestre" class="form-control" required>
+                           </div>
+                       </div>
+                    </div>
+                    <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
+                    <p>Cráneo</p>
+                     <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Craneo Normal</label>
+                            <div>
+                                <select name="craneo" id="craneo_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Forma Normal</label>
+                            <div>
+                                <select name="craneo_forma" id="craneo_forma_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Plexos coroideos Normal</label>
+                            <div>
+                                <select name="pexos_caroideos" id="pexos_caroideos_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Presencia de quiste de plexos coroideos </label>
+                            <div>
+                                <select name="quiste_plexos" id="quiste_plexos_1trimestre" class="form-control" required data-target="quiste_plexos_si_form">
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 quiste_plexos_si_form" style="display: none;">
+                            <label>Presencia de quiste de plexos coroideos Si</label>
+                            <div>
+                                <select name="quiste_plexos_si" id="quiste_plexos_si_1trimestre" class="form-control">
+                                    <option value="Unico">Unico</option>
+                                    <option value="Múltiple">Múltiple</option>
+                                    <option value="Unilateral">Unilateral</option>
+                                    <option value="Bilateral">Bilateral</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hueso nasal Presente</label>
+                            <div>
+                                <select name="hueso_nasal" id="hueso_nasal_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hipoplasico</label>
+                            <div>
+                                <input type="text" name="hipoplasico" id="hipoplasico_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Medición</label>
+                            <div>
+                                <input type="text" name="medicion_nasal" id="medicion_nasal_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Tórax Norma</label>
+                            <div>
+                                <select name="torax_normal" id="torax_normal_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Interrupción de pared torácica</label>
+                            <div>
+                                <input type="text" name="intearrupcion_toracica" id="intearrupcion_toracica_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Corazon</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Localización Intratoracica</label>
+                            <div>
+                                <select name="localizacion_intratoracica" id="localizacion_intratoracica_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Ectopia Cordis</label>
+                            <div>
+                                <select name="ectopia_cordis" id="ectopia_cordis_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Anomalía cardiaca</label>
+                            <div>
+                                <select name="anomalia_cardica" id="anomalia_cardica_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Abdomen</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Inserción de cordón normal</label>
+                            <div>
+                                <select name="insercion_cordon" id="insercion_cordon_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Presencia de 3 vasos </label>
+                            <div>
+                                <select name="presencia_vasos" id="presencia_vasos_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Arteria umbilical única</label>
+                            <div>
+                                <select name="arteria_umbilical" id="arteria_umbilical_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Pared abdominal integra</label>
+                            <div>
+                                <select name="pared_integra" id="pared_integra_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Defecto para umbilical </label>
+                            <div>
+                               <input type="text" name="defecto_umbilical" id="defecto_umbilical_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Defecto en base de cordón</label>
+                            <div>
+                               <input type="text" name="defecto_cordon" id="defecto_cordon_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Medida del defecto (mm)</label>
+                            <div>
+                               <input type="text" name="defecto_medida" id="defecto_medida_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <p>Estructuras presentes en defecto</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Cubierto por membrana</label>
+                            <div>
+                                <select name="cubierta_membrana" id="cubierta_membrana_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Asas de intestino delgado</label>
+                            <div>
+                                <select name="asas_intestino_delgado" id="asas_intestino_delgado_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Asas de intestino grueso</label>
+                            <div>
+                                <select name="asas_intestino_grueso" id="asas_intestino_grueso_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Dilatación de asas intra abdominal</label>
+                            <div>
+                                <select name="dilatacion_intra_abdominal" id="dilatacion_intra_abdominal_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Medicion</label>
+                            <div>
+                                <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Dilatación de asas extra abdominal</label>
+                            <div>
+                                <select name="dilatacion_extra_abdominal" id="dilatacion_extra_abdominal_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Medicion</label>
+                            <div>
+                                <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Sospecha de peritonitis</label>
+                            <div>
+                                <select name="sospecha_peritonitis" id="sospecha_peritonitis_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cámara gástrica</label>
+                            <div>
+                                <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required data-target="camara_gastrica_si_form">
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 camara_gastrica_si_form" style="display: none">
+                            <label>Cámara gástrica Si</label>
+                            <div>
+                                <select name="camara_gastrica_si" id="camara_gastrica_si_1trimestre" class="form-control" required>
+                                    <option value="Hígado intracorporeo">Hígado intracorporeo</option>
+                                    <option value="Hígado extra corpóreo">Hígado extra corpóreo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vejiga urinaria</label>
+                            <div>
+                                <select name="vejiga_urinaria" id="vejiga_urinaria_1trimestre" class="form-control" required>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cámara gástrica</label>
+                            <div>
+                                <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required>
+                                    <option value="Presente">Presente</option>
+                                    <option value="No visible">No visible</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vejiga</label>
+                            <div>
+                                <select name="vejiga" id="vejiga_1trimestre" class="form-control" required>
+                                    <option value="Presente">Presente</option>
+                                    <option value="No visible">No visible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Extremidades Superiores</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Ambas presentes</label>
+                            <div>
+                                <select name="extremidades_superiores" id="extremidades_superiores_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Integras</label>
+                            <div>
+                                <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Afectada</label>
+                            <div>
+                                <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <p>Extremidades Inferiores</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Ambas presentes</label>
+                            <div>
+                                <select name="extremidades_inferiores" id="extremidades_inferiores_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Integras</label>
+                            <div>
+                                <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Afectada</label>
+                            <div>
+                                <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <p>Placenta</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Numero</label>
+                            <div>
+                                <input type="number" name="placenta_numero" id="placenta_numero_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Posicion</label>
+                            <div>
+                                <select name="placenta_posocion" id="placenta_posocion_1trimestre" class="form-control" required>
+                                    <option value="Anterior Baja">Anterior Baja</option>
+                                    <option value="Anterior Alta">Anterior Alta</option>
+                                    <option value="Posterior Baja">Posterior Baja</option>
+                                    <option value="Posterior Alta">Posterior Alta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Grado</label>
+                            <div>
+                                <input type="number" name="placenta_grado" id="placenta_grado_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Longitud de cérvix (mm)</label>
+                            <div>
+                                <input type="number" name="longitud_cervix" id="longitud_cervix_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Funnelings</label>
+                            <div>
+                                <select name="funneling" id="funneling_1trimestre" class="form-control" required>
+                                    <option value="Negativo">Negativo</option>
+                                    <option value="Positivo">Positivo</option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Cevix</label>
+                            <div>
+                                <select name="cevix" id="cevix_1trimestre" class="form-control" required>
+                                    <option value="< 30%">< 30%</option>
+                                    <option value="30-50%">30-50%</option>
+                                    <option value="> 50%">> 50%</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Sludge </label>
+                            <div>
+                                <select name="sludge" id="sludge_1trimestre" class="form-control" required>
+                                    <option value="Negativo">Negativo</option>
+                                    <option value="Positivo">Positivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Líquido amniótico</label>
+                            <div>
+                                <select name="liquido_amniotico" id="liquido_amniotico_1trimestre" class="form-control" required>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center"><b>Tamizaje Para Enfermedades Hipertensivas En El Embarazo</b></p>
+                    <p>Antecedentes Maternos</p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Historia de Madre con Pre eclampsia </label>
+                            <div>
+                                <select name="historia_preecampsia_mama" id="historia_preecampsia_mama_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Historia de Madre con Hipertensión</label>
+                            <div>
+                                <select name="historia_hipertension_mama" id="historia_hipertension_mama_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Historia de hermana con Pre eclampsia </label>
+                            <div>
+                                <select name="historia_preecampsia_hermana" id="historia_preecampsia_hermana_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Historia personal de hipertensión</label>
+                            <div>
+                                <select name="historia_hipertension_personal" id="historia_hipertension_personal_1trimestre" class="form-control" required>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Peso actual</label>
+                            <div>
+                               <input type="text" name="peso_actual" id="peso_actual_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>PA brazo derecho</label>
+                            <div>
+                               <input type="text" name="pa_derecho" id="pa_derecho_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>PA brazo izquierdo</label>
+                            <div>
+                               <input type="text" name="pa_izquierdo" id="pa_izquierdo_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>IMC</label>
+                            <div>
+                               <input type="text" name="imc" id="imc_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>IP medio de aretrias uterinas</label>
+                            <div>
+                               <input type="text" name="ip_artrias" id="ip_artrias_1trimestre" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="form-control"><b>Tamizaje De Vasa Previa</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Bidimensional</label>
+                            <div>
+                                <select name="bidimensional" id="bidimensional_1trimestre" class="form-control" required>
+                                    <option value="Positivo">Positivo</option>
+                                    <option value="Negativo">Negativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Doppler color</label>
+                            <div>
+                                <select name="doppler_color" id="doppler_color_1trimestre" class="form-control" required>
+                                    <option value="Positivo">Positivo</option>
+                                    <option value="Negativo">Negativo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Conclusiones</label>
+                            <div>
+                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
+                                    <option value="">Seleccione Uno</option>
+                                    <option value="Feto de 12.4 Semanas por LCR, con riesgo bajo para procesos de cromosomopatías (Síndrome de Down)">Feto de 12.4 Semanas por LCR, con riesgo bajo para procesos de cromosomopatías (Síndrome de Down)</option>
+                                    <option value="Riesgo Bajo para Pre eclampsia de aparición temprana y para fenómenos hipertensivos tardíos. Riesgo Bajo para Restricción del Crecimiento Intrauterino">Riesgo Bajo para Pre eclampsia de aparición temprana y para fenómenos hipertensivos tardíos. Riesgo Bajo para Restricción del Crecimiento Intrauterino</option>
+                                    <option value="Bajo riesgo para Parto Pretermino ">Bajo riesgo para Parto Pretermino </option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revison estructural ente la semana 18 a 24</textarea>
+                            </div>
+                        </div>
+                    </div>
+
                 {!! Form::close() !!}
             </div>
         </div>

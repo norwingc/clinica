@@ -21,8 +21,11 @@
         if(examen == 7){
             updatedNeurosonografia($(this));
         }
-         if(examen == 9){
+        if(examen == 9){
             updatedEstructural($(this));
+        }
+        if(examen == 10){
+            updatedITrimestre($(this));
         }
     });
 
@@ -153,6 +156,32 @@
         }
 
         $('#modalUpdatedEstructural').modal('show');
+    }
+
+    /**
+     * [updatedITrimestre description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function updatedITrimestre(este) {
+        let consulta        = este.data('consulta');
+        let title           = 'Consulta I Trimestre: ' + este.data('paciente');
+        let trimestre = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!trimestre){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/ITrimestre/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/ITrimestre/update/"+trimestre);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/ITrimestre/get/"+trimestre, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedITrimestre').modal('show');
     }
 </script>
 @endpush
