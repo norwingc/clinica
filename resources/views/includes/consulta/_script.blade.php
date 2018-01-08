@@ -27,6 +27,9 @@
         if(examen == 10){
             updatedITrimestre($(this));
         }
+        if(examen == 11){
+            updatedUltrasonidoPelvico($(this));
+        }
     });
 
     /**
@@ -182,6 +185,27 @@
         }
 
         $('#modalUpdatedITrimestre').modal('show');
+    }
+
+    function updatedUltrasonidoPelvico(este) {
+        let consulta        = este.data('consulta');
+        let title           = 'Consulta I Trimestre: ' + este.data('paciente');
+        let ultrasonido = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!ultrasonido){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoPelvico/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoPelvico/update/"+ultrasonido);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/UltrasonidoPelvico/get/"+ultrasonido, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedUltrasonidoPelvico').modal('show');
     }
 </script>
 @endpush
