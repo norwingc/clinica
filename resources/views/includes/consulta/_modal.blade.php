@@ -1039,6 +1039,7 @@
                        </div>
                     </div>
 
+                    <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_ecocardiografia" style="display: none">
                             <div class="form-group">
@@ -1600,6 +1601,7 @@
                        </div>
                     </div>
 
+                    <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_neurosonografia" style="display: none">
                             <p>Planos Axiales</p>
@@ -2291,6 +2293,7 @@
                        </div>
                     </div>
 
+                    <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_estructural" style="display: none">
                             <p><b>Craneo</b></p>
@@ -3260,6 +3263,7 @@
                        </div>
                     </div>
 
+                    <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_1trimestre" style="display: none">
                             <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
@@ -4477,7 +4481,8 @@
                        </div>
                     </div>
 
-                     <div class="node">
+                    <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
+                    <div class="node">
                         <div id="child_doppler" style="display: none">
                             <div class="form-group">
                                 <div class="col-md-3">

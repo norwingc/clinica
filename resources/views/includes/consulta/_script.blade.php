@@ -229,12 +229,14 @@
      * @param {[type]} cantidad [description]
      */
     function setChild(child, cantidad) {
+        let msj = 'Analizando el feto: ' + cantidad;
         let node = child.parent(0);
         let remove = child;
         $(remove).remove();
 
         child.removeAttr('style');
         node.append(child);
+        $('.msj_feto').html(msj);
 
         if(cantidad > 1){
           let button = "<button type='button' class='btn btn-lg btn-info pull-right' data-cantidad='"+cantidad+"' data-child='"+child.prop('id')+"' onclick='netxtChild($(this))'>Siguiente</button>";
@@ -250,6 +252,7 @@
      * @return {[type]}      [description]
      */
     function netxtChild(este) {
+       $(".modal").animate({ scrollTop: 0 }, "slow");
         let child = $('#'+este.data('child'));
         let cantidad = este.data('cantidad') - 1 ;
 
