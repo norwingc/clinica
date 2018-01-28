@@ -189,7 +189,7 @@
 
     function updatedUltrasonidoPelvico(este) {
         let consulta        = este.data('consulta');
-        let title           = 'Consulta I Trimestre: ' + este.data('paciente');
+        let title           = 'Ultrasonido Pelvico: ' + este.data('paciente');
         let ultrasonido = este.data('id');
         $('.modal-title').html(title);
 
