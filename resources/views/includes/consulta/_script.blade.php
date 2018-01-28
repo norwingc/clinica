@@ -32,6 +32,150 @@
         }
     });
 
+    ////////////////////
+    //ecocardiografia //
+    ////////////////////
+    $('#feto_ecocardiografia').change(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        if(cantidad == 'Otro'){
+            $('.cantidad_feto').show();
+            return false;
+        }
+
+        let child = $('#child_ecocardiografia');
+
+        setChild(child, cantidad);
+    });
+    $('#cantidad_feto_ecocardiografia').focusout(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        let child = $('#child_ecocardiografia');
+
+        setChild(child, cantidad);
+    });
+
+    ////////////////////
+    //neurosonografia //
+    ////////////////////
+    $('#feto_neurosonografia').change(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        if(cantidad == 'Otro'){
+            $('.cantidad_feto').show();
+            return false;
+        }
+
+        let child = $('#child_neurosonografia');
+
+        setChild(child, cantidad);
+    });
+    $('#cantidad_feto_neurosonografia').focusout(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        let child = $('#child_neurosonografia');
+
+        setChild(child, cantidad);
+    });
+
+    ////////////////
+    //estructural //
+    ////////////////
+    $('#feto_estructural').change(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        if(cantidad == 'Otro'){
+            $('.cantidad_feto').show();
+            return false;
+        }
+
+        let child = $('#child_estructural');
+
+        setChild(child, cantidad);
+    });
+    $('#cantidad_feto_estructural').focusout(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        let child = $('#child_estructural');
+
+        setChild(child, cantidad);
+    });
+
+    ///////////////
+    //1trimestre //
+    ///////////////
+    $('#feto_1trimestre').change(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        if(cantidad == 'Otro'){
+            $('.cantidad_feto').show();
+            return false;
+        }
+
+        let child = $('#child_1trimestre');
+
+        setChild(child, cantidad);
+    });
+    $('#cantidad_feto_1trimestre').focusout(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        let child = $('#child_1trimestre');
+
+        setChild(child, cantidad);
+    });
+
+
+    /**
+     * [setChild description]
+     * @param {[type]} child    [description]
+     * @param {[type]} cantidad [description]
+     */
+    function setChild(child, cantidad) {
+        let node = child.parent(0);
+        let remove = child;
+        $(remove).remove();
+
+        child.removeAttr('style');
+        node.append(child);
+
+        if(cantidad > 1){
+          let button = "<button type='button' class='btn btn-lg btn-info pull-right' data-cantidad='"+cantidad+"' data-child='"+child.prop('id')+"' onclick='netxtChild($(this))'>Siguiente</button>";
+           $('.nextChild').html(button);
+        }else{
+            $('.nextChild').html('');
+        }
+    }
+
+    /**
+     * [netxtChild description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function netxtChild(este) {
+        let child = $('#'+este.data('child'));
+        let cantidad = este.data('cantidad') - 1 ;
+
+        if(cantidad < 0) cantidad = 0;
+
+        setChild(child, cantidad);
+    }
+
     /**
      * [updateAtencionPretanal description]
      * @param  {[type]} este [description]

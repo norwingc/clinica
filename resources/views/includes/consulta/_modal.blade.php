@@ -1024,490 +1024,507 @@
                            <label>Feto</label>
                            <div>
                                <select name="feto" id="feto_ecocardiografia" class="form-control" required>
-                                   <option value="Unico">Unico</option>
-                                   <option value="Gemelo">Gemelo</option>
-                                   <option value="A">A</option>
-                                   <option value="B">B</option>
-                                   <option value="C">C</option>
+                                    <option value="">Selecione una opcion</option>
+                                   <option value="1">Unico</option>
+                                   <option value="2">Gemelo</option>
+                                   <option value="Otro">Otro</option>
                                </select>
                            </div>
                        </div>
-                       <div class="col-md-3">
-                           <label>Presentacion</label>
-                           <div>
-                               <select name="presentacion" id="presentacion_ecocardiografia" class="form-control" required>
-                                   <option value="Cefálico">Cefálico</option>
-                                   <option value="Pélvico">Pélvico</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>Situacion</label>
-                           <div>
-                               <select name="situacion" id="situacion_ecocardiografia" class="form-control" required>
-                                   <option value="Longitudinal">Longitudinal</option>
-                                   <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
-                                   <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
-                               </select>
-                           </div>
-                       </div>
-                        <div class="col-md-3">
-                           <label>Posicion</label>
-                           <div>
-                               <select name="posicion" id="posicion_ecocardiografia" class="form-control" required>
-                                   <option value="Dorso Izquierdo">Dorso Izquierdo</option>
-                                   <option value="Dorso Derecho">Dorso Derecho</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>FCF (latidos por minuto)</label>
-                           <div>
-                              <input type="number" name="fcf" id="fcf_ecocardiografia" class="form-control" required>
-                           </div>
+                       <div class="col-md-3 cantidad_feto" style="display: none">
+                            <label>Cantidad</label>
+                            <div>
+                                <input type="number" id="cantidad_feto_ecocardiografia" class="form-control">
+                            </div>
                        </div>
                     </div>
-                    <p>Corte Axial De Abdomen</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Situs</label>
-                            <div>
-                                <select name="situs" id="situs_ecocardiografia" class="form-control" required>
-                                    <option value="solitus viscero atrial">solitus viscero atrial</option>
-                                    <option value="Situs Inversus">Situs Inversus</option>
-                                </select>
+
+                    <div class="node">
+                        <div id="child_ecocardiografia" style="display: none">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                   <label>Presentacion</label>
+                                   <div>
+                                       <select name="presentacion" id="presentacion_ecocardiografia" class="form-control" required>
+                                           <option value="Cefálico">Cefálico</option>
+                                           <option value="Pélvico">Pélvico</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Situacion</label>
+                                   <div>
+                                       <select name="situacion" id="situacion_ecocardiografia" class="form-control" required>
+                                           <option value="Longitudinal">Longitudinal</option>
+                                           <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
+                                           <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Posicion</label>
+                                   <div>
+                                       <select name="posicion" id="posicion_ecocardiografia" class="form-control" required>
+                                           <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                           <option value="Dorso Derecho">Dorso Derecho</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>FCF (latidos por minuto)</label>
+                                   <div>
+                                      <input type="number" name="fcf" id="fcf_ecocardiografia" class="form-control" required>
+                                   </div>
+                               </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Situs Ambiguo</label>
-                            <div>
-                                <select name="situs" id="situs_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form'>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
+                            <p>Corte Axial De Abdomen</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Situs</label>
+                                    <div>
+                                        <select name="situs" id="situs_ecocardiografia" class="form-control" required>
+                                            <option value="solitus viscero atrial">solitus viscero atrial</option>
+                                            <option value="Situs Inversus">Situs Inversus</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Situs Ambiguo</label>
+                                    <div>
+                                        <select name="situs" id="situs_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form'>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 situs_ecocardiografia_si_form" style="display: none">
+                                    <label>Isomerismo</label>
+                                    <div>
+                                        <select name="isomerismo" id="isomerismo_ecocardiografia" class="form-control" required>
+                                            <option value="Derecho">Derecho</option>
+                                            <option value="Izquierdo">Izquierdoa</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 situs_ecocardiografia_si_form" style="display: none">
-                            <label>Isomerismo</label>
-                            <div>
-                                <select name="isomerismo" id="isomerismo_ecocardiografia" class="form-control" required>
-                                    <option value="Derecho">Derecho</option>
-                                    <option value="Izquierdo">Izquierdoa</option>
-                                </select>
+                            <p>Corazon</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Tanaño</label>
+                                    <div>
+                                        <select name="corazon_tamano" id="corazon_tamano_ecocardiografia" class="form-control" required>
+                                            <option value="< 0.35 Normal">< 0.35 Normal</option>
+                                            <option value="0.35 – 0.50 Cardiomegalia leve">0.35 – 0.50 Cardiomegalia leve</option>
+                                            <option value="0.51- 0.65 Cardiomegalia moderada">0.51- 0.65 Cardiomegalia moderada</option>
+                                            <option value="> 0.65 Cardiomegalia moderada">> 0.65 Cardiomegalia moderada</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Posicion</label>
+                                    <div>
+                                        <select name="corazon_posicion" id="corazon_posicion_ecocardiografia" class="form-control" required>
+                                            <option value="Levocardia">Levocardia</option>
+                                            <option value="Dextrocardia">Dextrocardia</option>
+                                            <option value="Mesocardia">Mesocardia</option>
+                                            <option value="Levo desplazamiento">Levo desplazamiento</option>
+                                            <option value="Dextro desplazamiento">Dextro desplazamiento</option>
+                                            <option value="Meso desplazamiento">Meso desplazamiento</option>
+                                            <option value="Ectopia cordis">Ectopia cordis</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Estructura</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Corte De 4 Cámaras</label>
+                                    <div>
+                                        <select name="corte" id="corte_ecocardiografia" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>2 Aurículas simétricas</label>
+                                    <div>
+                                        <select name="auriculas" id="auriculas_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>2 Ventrículos simétricas</label>
+                                    <div>
+                                        <select name="ventriculos" id="ventriculos_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dominancia de cavidades</label>
+                                    <div>
+                                        <select name="dominancia" id="dominancia_ecocardiografia" class="form-control" required>
+                                            <option value="Derechas">Derechas</option>
+                                            <option value="Izquierdas">Izquierdas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Foramen Oval</label>
+                                    <div>
+                                        <select name="foramen" id="foramen_ecocardiografia" class="form-control" required>
+                                            <option value="2- 6 mm Normal">2- 6 mm Normal</option>
+                                            <option value="< 2 mm Foramen oval restrictivo">< 2 mm Foramen oval restrictivo</option>
+                                            <option value="> 6 mm Probable CIA Tipo Ostium secundum">> 6 mm Probable CIA Tipo Ostium secundum</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Válvula Mitral Implantación</label>
+                                    <div>
+                                        <select name="valvula_mitral_implantacion" id="valvula_mitral_implantacion_ecocardiografia" class="form-control" required>
+                                            <option value="Correcta">Correcta</option>
+                                            <option value="Incorrecta">Incorrecta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Válvula Mitral funcionalidad</label>
+                                    <div>
+                                        <select name="valvula_mitral_funcionalidad" id="valvula_mitral_funcionalidad_ecocardiografia" class="form-control" required>
+                                            <option value="Adecuada">Adecuada</option>
+                                            <option value="Inadecuada">Inadecuada</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Válvula Tricúspide Implantación</label>
+                                    <div>
+                                        <select name="valvula_tricuspide_implantacion" id="valvula_tricuspide_implantacion_ecocardiografia" class="form-control" required>
+                                            <option value="Correcta">Correcta</option>
+                                            <option value="Incorrecta">Incorrecta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Válvula Tricúspide funcionalidad</label>
+                                    <div>
+                                        <select name="valvula_tricuspide_funcionalidad" id="valvula_tricuspide_funcionalidad_ecocardiografia" class="form-control" required>
+                                            <option value="Adecuada">Adecuada</option>
+                                            <option value="Inadecuada">Inadecuada</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tabique Interventricular Integro</label>
+                                    <div>
+                                        <select name="tabique_interaventricular" id="tabique_interaventricular_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Defecto (mm)</label>
+                                    <div>
+                                        <input type="text" name="tabique_interaventricular_defecto" id="tabique_interaventricular_defecto_ecocardiografia" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>CIV</p>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label>Tracto de salida de Ventrículo derecho</label>
+                                    <div>
+                                         <select name="tracto_salida_derecho" id="tracto_salida_derecho_ecocardiografia" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Tracto de salida de Ventrículo Izquierdo</label>
+                                    <div>
+                                        <select name="tracto_salida_izquierdo" id="tracto_salida_izquierdo_ecocardiografia" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Tipo De Conexión Auriculo Ventricular</label>
+                                    <div>
+                                        <select name="tipo_conexion_ventricular" id="tipo_conexion_ventricular_ecocardiografia" class="form-control" required>
+                                            <option value="Concordante">Concordante</option>
+                                            <option value="Discordante">Discordante</option>
+                                            <option value="Ambigua">Ambigua</option>
+                                            <option value="Conexión AV ausente">Conexión AV ausente</option>
+                                            <option value="Doble entrada ventricular">Doble entrada ventricular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Modo De Conexión Auriculo Ventricular</label>
+                                    <div>
+                                        <select name="modo_conexion_ventricular" id="modo_conexion_ventricular_ecocardiografia" class="form-control" required>
+                                            <option value="Perforado">Perforado</option>
+                                            <option value="Imperforado">Imperforado</option>
+                                            <option value="Válvula Auriculo ventricular común">Válvula Auriculo ventricular común</option>
+                                            <option value="Cabalgante">Cabalgante</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Funcion</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Contractilidad Miocárdica</label>
+                                    <div>
+                                        <select name="funcion_contractilidad" id="funcion_contractilidad_ecocardiografia" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Índice de rendimiento cardiaco</label>
+                                    <div>
+                                        <select name="funcion_rendimiento_cardiaco" id="funcion_rendimiento_cardiaco_ecocardiografia" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Ritmo</label>
+                                    <div>
+                                        <select name="funcion_ritmo" id="funcion_ritmo_ecocardiografia" class="form-control" required>
+                                            <option value="Regular">Regular</option>
+                                            <option value="Irregular">Irregular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Extrasístoles</label>
+                                    <div>
+                                        <select name="funcion_extrasistoles" id="funcion_extrasistoles_ecocardiografia" class="form-control" required>
+                                            <option value="Presentes">Presentes</option>
+                                            <option value="Ausentes">Ausentes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Corte De Tres Vasos Traquea</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Numero de vasos: Tres</label>
+                                    <div>
+                                        <select name="numero_vasos" id="numero_vasos_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pulmonar Normal</label>
+                                    <div>
+                                        <select name="pulmonar" id="pulmonar_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Aorta Normal</label>
+                                    <div>
+                                        <select name="aorta" id="aorta_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena cava Normal</label>
+                                    <div>
+                                        <select name="vena_cava" id="vena_cava_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño de vasos: Normal</label>
+                                    <div>
+                                        <select name="tamano_vasos" id="tamano_vasos_ecocardiografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño de vasos: Normal</label>
+                                    <div>
+                                        <select name="tamano_vasos_normal" id="tamano_vasos_normal_ecocardiografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño de vasos: Anormal</label>
+                                    <div>
+                                        <select name="tamano_vasos_anormal" id="tamano_vasos_anormal_ecocardiografia" class="form-control">
+                                            <option value="N/A">N/A</option>
+                                            <option value="1a pulmonar">Arteria pulmonar</option>
+                                            <option value="Aorta">Aorta</option>
+                                            <option value="Vena cava">Vena cava</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Posicion</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Arteria pulmonar izquierda</label>
+                                     <div>
+                                        <select name="arteria_pulmonar_izquierda" id="arteria_pulmonar_izquierda_ecocardiografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Aorta en medio </label>
+                                     <div>
+                                        <select name="aorta_medio" id="aorta_medio_ecocardiografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena cava derecha</label>
+                                     <div>
+                                        <select name="vena_cava_derecha" id="vena_cava_derecha_ecocardiografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Disposición: Normal</label>
+                                     <div>
+                                        <select name="disposicion_normal" id="disposicion_normal_ecocardiografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Disposición: Anormal</label>
+                                     <div>
+                                        <select name="disposicion_anormal" id="disposicion_anormal_ecocardiografia" class="form-control">
+                                            <option value="Arteria pulmonar">Arteria pulmonar</option>
+                                            <option value="Aorta">Aorta</option>
+                                            <option value="Vena cava">Vena cava</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Cortes Sagitales</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Vista Bi cava</label>
+                                     <div>
+                                        <select name="vista_bi_cava" id="vista_bi_cava_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vestíbulo venoso subdifargmatico</label>
+                                     <div>
+                                        <select name="vestibulo_venoso" id="vestibulo_venoso_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arco aortico</label>
+                                     <div>
+                                        <select name="arco_aortico" id="arco_aortico_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arco ductal</label>
+                                     <div>
+                                        <select name="arco_ductal" id="arco_ductal_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Eje corto de grandes vasos</label>
+                                     <div>
+                                        <select name="eje_corto_vasos" id="eje_corto_vasos_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Eje corto de ventriculos </label>
+                                     <div>
+                                        <select name="eje_corto_centriculos" id="eje_corto_centriculos_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label>Revision</label>
+                                    <div>
+                                        <select name="revision" id="revision_ecocardiografia" class="form-control">
+                                            <option value="Adecuada">Adecuada</option>
+                                            <option value="Limitada">Limitada</option>
+                                            <option value="Muy Limitada">Muy Limitada</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Conclusiones</label>
+                                    <div>
+                                        <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
+                                            <option value="Corte Axial de Abdomen dentro de límites normales">Corte Axial de Abdomen dentro de límites normales</option>
+                                            <option value="Corte de 4 cámaras dentro de límites normales">Corte de 4 cámaras dentro de límites normales</option>
+                                            <option value="Corte de 3 vasos tráquea dentro de límites normales">Corte de 3 vasos tráquea dentro de límites normales</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <p>Corazon</p>
+
                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Tanaño</label>
-                            <div>
-                                <select name="corazon_tamano" id="corazon_tamano_ecocardiografia" class="form-control" required>
-                                    <option value="< 0.35 Normal">< 0.35 Normal</option>
-                                    <option value="0.35 – 0.50 Cardiomegalia leve">0.35 – 0.50 Cardiomegalia leve</option>
-                                    <option value="0.51- 0.65 Cardiomegalia moderada">0.51- 0.65 Cardiomegalia moderada</option>
-                                    <option value="> 0.65 Cardiomegalia moderada">> 0.65 Cardiomegalia moderada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Posicion</label>
-                            <div>
-                                <select name="corazon_posicion" id="corazon_posicion_ecocardiografia" class="form-control" required>
-                                    <option value="Levocardia">Levocardia</option>
-                                    <option value="Dextrocardia">Dextrocardia</option>
-                                    <option value="Mesocardia">Mesocardia</option>
-                                    <option value="Levo desplazamiento">Levo desplazamiento</option>
-                                    <option value="Dextro desplazamiento">Dextro desplazamiento</option>
-                                    <option value="Meso desplazamiento">Meso desplazamiento</option>
-                                    <option value="Ectopia cordis">Ectopia cordis</option>
-                                </select>
-                            </div>
-                        </div>
+                        <div class="col-md-12 nextChild"></div>
                     </div>
-                    <p>Estructura</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Corte De 4 Cámaras</label>
-                            <div>
-                                <select name="corte" id="corte_ecocardiografia" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>2 Aurículas simétricas</label>
-                            <div>
-                                <select name="auriculas" id="auriculas_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>2 Ventrículos simétricas</label>
-                            <div>
-                                <select name="ventriculos" id="ventriculos_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dominancia de cavidades</label>
-                            <div>
-                                <select name="dominancia" id="dominancia_ecocardiografia" class="form-control" required>
-                                    <option value="Derechas">Derechas</option>
-                                    <option value="Izquierdas">Izquierdas</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Foramen Oval</label>
-                            <div>
-                                <select name="foramen" id="foramen_ecocardiografia" class="form-control" required>
-                                    <option value="2- 6 mm Normal">2- 6 mm Normal</option>
-                                    <option value="< 2 mm Foramen oval restrictivo">< 2 mm Foramen oval restrictivo</option>
-                                    <option value="> 6 mm Probable CIA Tipo Ostium secundum">> 6 mm Probable CIA Tipo Ostium secundum</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Válvula Mitral Implantación</label>
-                            <div>
-                                <select name="valvula_mitral_implantacion" id="valvula_mitral_implantacion_ecocardiografia" class="form-control" required>
-                                    <option value="Correcta">Correcta</option>
-                                    <option value="Incorrecta">Incorrecta</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Válvula Mitral funcionalidad</label>
-                            <div>
-                                <select name="valvula_mitral_funcionalidad" id="valvula_mitral_funcionalidad_ecocardiografia" class="form-control" required>
-                                    <option value="Adecuada">Adecuada</option>
-                                    <option value="Inadecuada">Inadecuada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Válvula Tricúspide Implantación</label>
-                            <div>
-                                <select name="valvula_tricuspide_implantacion" id="valvula_tricuspide_implantacion_ecocardiografia" class="form-control" required>
-                                    <option value="Correcta">Correcta</option>
-                                    <option value="Incorrecta">Incorrecta</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Válvula Tricúspide funcionalidad</label>
-                            <div>
-                                <select name="valvula_tricuspide_funcionalidad" id="valvula_tricuspide_funcionalidad_ecocardiografia" class="form-control" required>
-                                    <option value="Adecuada">Adecuada</option>
-                                    <option value="Inadecuada">Inadecuada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tabique Interventricular Integro</label>
-                            <div>
-                                <select name="tabique_interaventricular" id="tabique_interaventricular_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Defecto (mm)</label>
-                            <div>
-                                <input type="text" name="tabique_interaventricular_defecto" id="tabique_interaventricular_defecto_ecocardiografia" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <p>CIV</p>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            <label>Tracto de salida de Ventrículo derecho</label>
-                            <div>
-                                 <select name="tracto_salida_derecho" id="tracto_salida_derecho_ecocardiografia" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Tracto de salida de Ventrículo Izquierdo</label>
-                            <div>
-                                <select name="tracto_salida_izquierdo" id="tracto_salida_izquierdo_ecocardiografia" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Tipo De Conexión Auriculo Ventricular</label>
-                            <div>
-                                <select name="tipo_conexion_ventricular" id="tipo_conexion_ventricular_ecocardiografia" class="form-control" required>
-                                    <option value="Concordante">Concordante</option>
-                                    <option value="Discordante">Discordante</option>
-                                    <option value="Ambigua">Ambigua</option>
-                                    <option value="Conexión AV ausente">Conexión AV ausente</option>
-                                    <option value="Doble entrada ventricular">Doble entrada ventricular</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Modo De Conexión Auriculo Ventricular</label>
-                            <div>
-                                <select name="modo_conexion_ventricular" id="modo_conexion_ventricular_ecocardiografia" class="form-control" required>
-                                    <option value="Perforado">Perforado</option>
-                                    <option value="Imperforado">Imperforado</option>
-                                    <option value="Válvula Auriculo ventricular común">Válvula Auriculo ventricular común</option>
-                                    <option value="Cabalgante">Cabalgante</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Funcion</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Contractilidad Miocárdica</label>
-                            <div>
-                                <select name="funcion_contractilidad" id="funcion_contractilidad_ecocardiografia" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Índice de rendimiento cardiaco</label>
-                            <div>
-                                <select name="funcion_rendimiento_cardiaco" id="funcion_rendimiento_cardiaco_ecocardiografia" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Ritmo</label>
-                            <div>
-                                <select name="funcion_ritmo" id="funcion_ritmo_ecocardiografia" class="form-control" required>
-                                    <option value="Regular">Regular</option>
-                                    <option value="Irregular">Irregular</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Extrasístoles</label>
-                            <div>
-                                <select name="funcion_extrasistoles" id="funcion_extrasistoles_ecocardiografia" class="form-control" required>
-                                    <option value="Presentes">Presentes</option>
-                                    <option value="Ausentes">Ausentes</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Corte De Tres Vasos Traquea</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Numero de vasos: Tres</label>
-                            <div>
-                                <select name="numero_vasos" id="numero_vasos_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pulmonar Normal</label>
-                            <div>
-                                <select name="pulmonar" id="pulmonar_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Aorta Normal</label>
-                            <div>
-                                <select name="aorta" id="aorta_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vena cava Normal</label>
-                            <div>
-                                <select name="vena_cava" id="vena_cava_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño de vasos: Normal</label>
-                            <div>
-                                <select name="tamano_vasos" id="tamano_vasos_ecocardiografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño de vasos: Normal</label>
-                            <div>
-                                <select name="tamano_vasos_normal" id="tamano_vasos_normal_ecocardiografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño de vasos: Anormal</label>
-                            <div>
-                                <select name="tamano_vasos_anormal" id="tamano_vasos_anormal_ecocardiografia" class="form-control">
-                                    <option value="N/A">N/A</option>
-                                    <option value="1a pulmonar">Arteria pulmonar</option>
-                                    <option value="Aorta">Aorta</option>
-                                    <option value="Vena cava">Vena cava</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Posicion</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Arteria pulmonar izquierda</label>
-                             <div>
-                                <select name="arteria_pulmonar_izquierda" id="arteria_pulmonar_izquierda_ecocardiografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Aorta en medio </label>
-                             <div>
-                                <select name="aorta_medio" id="aorta_medio_ecocardiografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vena cava derecha</label>
-                             <div>
-                                <select name="vena_cava_derecha" id="vena_cava_derecha_ecocardiografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Disposición: Normal</label>
-                             <div>
-                                <select name="disposicion_normal" id="disposicion_normal_ecocardiografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Disposición: Anormal</label>
-                             <div>
-                                <select name="disposicion_anormal" id="disposicion_anormal_ecocardiografia" class="form-control">
-                                    <option value="Arteria pulmonar">Arteria pulmonar</option>
-                                    <option value="Aorta">Aorta</option>
-                                    <option value="Vena cava">Vena cava</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Cortes Sagitales</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Vista Bi cava</label>
-                             <div>
-                                <select name="vista_bi_cava" id="vista_bi_cava_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vestíbulo venoso subdifargmatico</label>
-                             <div>
-                                <select name="vestibulo_venoso" id="vestibulo_venoso_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Arco aortico</label>
-                             <div>
-                                <select name="arco_aortico" id="arco_aortico_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Arco ductal</label>
-                             <div>
-                                <select name="arco_ductal" id="arco_ductal_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Eje corto de grandes vasos</label>
-                             <div>
-                                <select name="eje_corto_vasos" id="eje_corto_vasos_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Eje corto de ventriculos </label>
-                             <div>
-                                <select name="eje_corto_centriculos" id="eje_corto_centriculos_ecocardiografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6">
-                            <label>Revision</label>
-                            <div>
-                                <select name="revision" id="revision_ecocardiografia" class="form-control">
-                                    <option value="Adecuada">Adecuada</option>
-                                    <option value="Limitada">Limitada</option>
-                                    <option value="Muy Limitada">Muy Limitada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Conclusiones</label>
-                            <div>
-                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
-                                    <option value="Corte Axial de Abdomen dentro de límites normales">Corte Axial de Abdomen dentro de límites normales</option>
-                                    <option value="Corte de 4 cámaras dentro de límites normales">Corte de 4 cámaras dentro de límites normales</option>
-                                    <option value="Corte de 3 vasos tráquea dentro de límites normales">Corte de 3 vasos tráquea dentro de límites normales</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-md-12">
                             <label>Comentarios</label>
@@ -1567,635 +1584,616 @@
                            <label>Feto</label>
                            <div>
                                <select name="feto" id="feto_neurosonografia" class="form-control" required>
-                                   <option value="Unico">Unico</option>
-                                   <option value="Gemelo">Gemelo</option>
-                                   <option value="A">A</option>
-                                   <option value="B">B</option>
-                                   <option value="C">C</option>
+                                    <option value="">Selecione una opcion</option>
+                                   <option value="1">Unico</option>
+                                   <option value="2">Gemelo</option>
+                                   <option value="Otro">Otro</option>
                                </select>
                            </div>
                        </div>
-                       <div class="col-md-3">
-                           <label>Presentacion</label>
-                           <div>
-                               <select name="presentacion" id="presentacion_neurosonografia" class="form-control" required>
-                                   <option value="Cefálico">Cefálico</option>
-                                   <option value="Pélvico">Pélvico</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>Situacion</label>
-                           <div>
-                               <select name="situacion" id="situacion_neurosonografia" class="form-control" required>
-                                   <option value="Longitudinal">Longitudinal</option>
-                                   <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
-                                   <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
-                               </select>
-                           </div>
-                       </div>
-                        <div class="col-md-3">
-                           <label>Posicion</label>
-                           <div>
-                               <select name="posicion" id="posicion_neurosonografia" class="form-control" required>
-                                   <option value="Dorso Izquierdo">Dorso Izquierdo</option>
-                                   <option value="Dorso Derecho">Dorso Derecho</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>FCF (latidos por minuto)</label>
-                           <div>
-                              <input type="number" name="fcf" id="fcf_neurosonografia" class="form-control" required>
-                           </div>
+                       <div class="col-md-3 cantidad_feto" style="display: none">
+                            <label>Cantidad</label>
+                            <div>
+                                <input type="number" id="cantidad_feto_neurosonografia" class="form-control">
+                            </div>
                        </div>
                     </div>
-                    <p>Planos Axiales</p>
-                    <p><b>Craneo</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Craneo Normal</label>
-                            <div>
-                                <select name="craneo" id="craneo_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+
+                    <div class="node">
+                        <div id="child_neurosonografia" style="display: none">
+                            <p>Planos Axiales</p>
+                            <p><b>Craneo</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Craneo Normal</label>
+                                    <div>
+                                        <select name="craneo" id="craneo_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dolicocefalia</label>
+                                    <div>
+                                        <select name="dolicocefalia" id="dolicocefalia_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Braquicefalia</label>
+                                    <div>
+                                        <select name="braquicefalia" id="braquicefalia_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño normal</label>
+                                    <div>
+                                        <select name="craneo_tamano" id="craneo_tamano_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Suturas craneales normales</label>
+                                    <div>
+                                        <select name="craneo_situras" id="craneo_situras_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Compresión del transductor se aprecian deformidades</label>
+                                    <div>
+                                        <select name="craneo_compresion" id="craneo_compresion_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>La línea interhemisferica se observa integra</label>
+                                    <div>
+                                        <select name="craneo_interhemisferica" id="craneo_interhemisferica_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Los hemisferios cerebrales simétricos</label>
+                                    <div>
+                                        <select name="craneo_hemisferios" id="craneo_hemisferios_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dolicocefalia</label>
-                            <div>
-                                <select name="dolicocefalia" id="dolicocefalia_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Corte Transventricular</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Se identifica el Cavum del septum pellucidum</label>
+                                    <div>
+                                        <select name="cavum_septum" id="cavum_septum_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Diámetro anteroposterior (mm)</label>
+                                    <div>
+                                        <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Astas frontales de ventrículos laterales simétricas</label>
+                                    <div>
+                                        <select name="asta_frontales" id="asta_frontales_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Existe comunicación de astas anteriores</label>
+                                    <div>
+                                        <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Plexos coroideos homogéneos</label>
+                                    <div>
+                                        <select name="plexo_coroideos" id="plexo_coroideos_neurosonografia" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de quiste</label>
+                                    <div>
+                                        <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 presencia_quiste_si_form" style="display: none">
+                                    <label>Quiste</label>
+                                    <div>
+                                        <select name="presencia_quiste_si" id="presencia_quiste_si_neurosonografia" class="form-control">
+                                            <option value="Unilateral">Unilateral</option>
+                                            <option value="Bilateral">Bilateral</option>
+                                            <option value="Unico">Unico</option>
+                                            <option value="Múltiples">Múltiples</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se identifica la cisura parietooccipital</label>
+                                    <div>
+                                        <select name="cisura_parietooccipital" id="cisura_parietooccipital_neurosonografia" class="form-control">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares simétricos</label>
+                                    <div>
+                                        <select name="atrios_ventruculares" id="atrios_ventruculares_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares Derecho (mm)</label>
+                                    <div>
+                                        <input type="text" name="atrios_derecho" id="atrios_derecho_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares Izquierdo (mm)</label>
+                                    <div>
+                                        <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Área peri ventricular</label>
+                                    <div>
+                                        <select name="area_ventricular" id="area_ventricular_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="Demorrágica">Demorrágica</option>
+                                            <option value="Hiperecogenica">Hiperecogenica</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Braquicefalia</label>
-                            <div>
-                                <select name="braquicefalia" id="braquicefalia_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Corte Transtalámico</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Talamos normales</label>
+                                    <div>
+                                        <select name="talamos_normales" id="talamos_normales_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Giro hipocampal Presente</label>
+                                    <div>
+                                        <select name="giro_hipocampal_presente" id="giro_hipocampal_presente_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>III ventrículo con diámetros</label>
+                                    <div>
+                                        <input type="text" name="ventriculo_diametros" id="ventriculo_diametros_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño normal</label>
-                            <div>
-                                <select name="craneo_tamano" id="craneo_tamano_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Corte Transcerebelar</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cerebelo con ambos hemisferios simétricos</label>
+                                    <div>
+                                        <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vermis</label>
+                                    <div>
+                                        <select name="vermis" id="vermis_neurosonografia" class="form-control">
+                                            <option value="Presente">Presente</option>
+                                            <option value="Ausente">Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Central y ecogénico</label>
+                                    <div>
+                                        <select name="central_ecogenico" id="central_ecogenico_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Morfología normal</label>
+                                    <div>
+                                        <select name="morfologia_normal" id="morfologia_normal_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cisterna magna con diámetros (mm)</label>
+                                    <div>
+                                        <input type="text" name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
+                                    <div>
+                                        <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pliegue nucal (mm)</label>
+                                    <div>
+                                        <input type="text" name="pliegue_nucal" id="pliegue_nucal_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Suturas craneales normales</label>
-                            <div>
-                                <select name="craneo_situras" id="craneo_situras_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Planos Coronales:</p>
+                            <p><b>Corte Transfrontal</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Se observa la línea interhemisferica integra</label>
+                                    <div>
+                                        <select name="liena_intergemisferica" id="liena_intergemisferica_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Astas anteriores de los ventrículos laterales normales</label>
+                                    <div>
+                                        <select name="asta_anteriores" id="asta_anteriores_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Hueso esfenoides y las orbitas oculares normales </label>
+                                    <div>
+                                        <select name="hueso_esfenoides" id="hueso_esfenoides_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Compresión del transductor se aprecian deformidades</label>
-                            <div>
-                                <select name="craneo_compresion" id="craneo_compresion_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p><b>Corte Transcaudal</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Astas anteriores de los ventrículos con diámetros</label>
+                                    <div>
+                                        <input type="text" name="ventriculos_diametro_1" id="ventriculos_diametro_1_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Y de</label>
+                                    <div>
+                                        <input type="text" name="ventriculos_diametro_2" id="ventriculos_diametro_2_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Núcleos caudados sin alteraciones</label>
+                                    <div>
+                                        <select name="nucleos_caudado" id="nucleos_caudado_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Espacio subaracnoideo senocortical (mm)</label>
+                                    <div>
+                                        <input type="text" name="espacio_subaracnoideo" id="espacio_subaracnoideo_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Y craneocortical (mm)</label>
+                                    <div>
+                                        <input type="text" name="espacio_craneocotical" id="espacio_craneocotical_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se identifica la cisura de Silvio claramente</label>
+                                    <div>
+                                        <select name="cisura_silvio" id="cisura_silvio_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>La línea interhemisferica se observa integra</label>
-                            <div>
-                                <select name="craneo_interhemisferica" id="craneo_interhemisferica_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p><b>Corte Transcerebelar</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Tentorio in situs</label>
+                                    <div>
+                                        <select name="tetorio_situs" id="tetorio_situs_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cisura interhemisferica integra</label>
+                                    <div>
+                                        <select name="cisura_interhemisferica" id="cisura_interhemisferica_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cuernos occipitales simétricos</label>
+                                    <div>
+                                        <select name="cuernos_occipitales" id="cuernos_occipitales_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Los hemisferios cerebrales simétricos</label>
-                            <div>
-                                <select name="craneo_hemisferios" id="craneo_hemisferios_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Planos Sagitales</p>
+                            <p><b>Saginal Medio</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Presencia del cuerpo calloso</label>
+                                    <div>
+                                        <select name="presencia_calloso" id="presencia_calloso_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Disgenesia</label>
+                                    <div>
+                                        <select name="disgenesia" id="disgenesia_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Longitud (mm)</label>
+                                    <div>
+                                        <input type="text" name="saginal_longitud" id="saginal_longitud_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Grosor (mm)</label>
+                                    <div>
+                                        <input type="text" name="saginal_grosor" id="saginal_grosor_neurosonografia" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>CSP y Cavum vergae</label>
+                                    <div>
+                                        <select name="csp_cavum" id="csp_cavum_neurosonografia" class="form-control">
+                                            <option value="Sin Alteraciones">Sin Alteraciones</option>
+                                            <option value="Hipoplasicos">Hipoplasicos</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Fornix, III Y IV ventrículo</label>
+                                    <div>
+                                        <select name="fornix" id="fornix_neurosonografia" class="form-control">
+                                            <option value="Sin Dilatación">Sin Dilatación</option>
+                                            <option value="Con Dilatación">Con Dilatación</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tronco Encefálico</label>
+                                    <div>
+                                        <select name="tronco_encefalico" id="tronco_encefalico_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tórcula y Tentorio in situs</label>
+                                    <div>
+                                        <select name="torcula_tendorio" id="torcula_tendorio_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cisterna magna</label>
+                                    <div>
+                                        <select name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Doppler color se visualiza el trayecto de la arteria cerebral anterior</label>
+                                    <div>
+                                        <select name="doppler_visualiza" id="doppler_visualiza_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pericallosa</label>
+                                    <div>
+                                        <select name="pericallosa" id="pericallosa_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena de Galeno</label>
+                                    <div>
+                                        <select name="vena_galeno" id="vena_galeno_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Desarrollo Corporal</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Las cisuras de Silvio</label>
+                                    <div>
+                                        <select name="cisuras_silvio" id="cisuras_silvio_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cisura parieto occipital</label>
+                                    <div>
+                                        <select name="cisura_occipital" id="cisura_occipital_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>Cisura calcarina</label>
+                                    <div>
+                                        <select name="cisura_calcarina" id="cisura_calcarina_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label> Cisura cingulada</label>
+                                    <div>
+                                        <select name="cisura_cingulada" id="cisura_cingulada_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Columna Vertebral</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cortes sagitales con piel integra</label>
+                                    <div>
+                                        <select name="cortes_sagitales" id="cortes_sagitales_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se identifica el cono medular</label>
+                                    <div>
+                                        <select name="identifica_cono" id="identifica_cono_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se observa la disposición de la osificación</label>
+                                    <div>
+                                        <select name="observa_osificacion" id="observa_osificacion_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integridad de los cuerpos vertebrales y los procesos laterales</label>
+                                    <div>
+                                        <select name="integridad_cuerpos" id="integridad_cuerpos_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Evidencia de signos intracraneales de Mielocele abierta</label>
+                                    <div>
+                                        <select name="evidencia_mielocele" id="evidencia_mielocele_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Evidencia de signos intracraneales de Mielomeningocele abierta</label>
+                                    <div>
+                                        <select name="evidencia_mielomeningocele" id="evidencia_mielomeningocele_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Evidencia de signos intracraneales de Mielosquisis abierta</label>
+                                    <div>
+                                        <select name="evidencia_mielosquisis" id="evidencia_mielosquisis_neurosonografia" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <p>Corte Transventricular</p>
+
                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Se identifica el Cavum del septum pellucidum</label>
-                            <div>
-                                <select name="cavum_septum" id="cavum_septum_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Diámetro anteroposterior (mm)</label>
-                            <div>
-                                <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Astas frontales de ventrículos laterales simétricas</label>
-                            <div>
-                                <select name="asta_frontales" id="asta_frontales_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Existe comunicación de astas anteriores</label>
-                            <div>
-                                <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Plexos coroideos homogéneos</label>
-                            <div>
-                                <select name="plexo_coroideos" id="plexo_coroideos_neurosonografia" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de quiste</label>
-                            <div>
-                                <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 presencia_quiste_si_form" style="display: none">
-                            <label>Quiste</label>
-                            <div>
-                                <select name="presencia_quiste_si" id="presencia_quiste_si_neurosonografia" class="form-control">
-                                    <option value="Unilateral">Unilateral</option>
-                                    <option value="Bilateral">Bilateral</option>
-                                    <option value="Unico">Unico</option>
-                                    <option value="Múltiples">Múltiples</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se identifica la cisura parietooccipital</label>
-                            <div>
-                                <select name="cisura_parietooccipital" id="cisura_parietooccipital_neurosonografia" class="form-control">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares simétricos</label>
-                            <div>
-                                <select name="atrios_ventruculares" id="atrios_ventruculares_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares Derecho (mm)</label>
-                            <div>
-                                <input type="text" name="atrios_derecho" id="atrios_derecho_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares Izquierdo (mm)</label>
-                            <div>
-                                <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Área peri ventricular</label>
-                            <div>
-                                <select name="area_ventricular" id="area_ventricular_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="Demorrágica">Demorrágica</option>
-                                    <option value="Hiperecogenica">Hiperecogenica</option>
-                                </select>
-                            </div>
-                        </div>
+                        <div class="col-md-12 nextChild"></div>
                     </div>
-                    <p>Corte Transtalámico</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Talamos normales</label>
-                            <div>
-                                <select name="talamos_normales" id="talamos_normales_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Giro hipocampal Presente</label>
-                            <div>
-                                <select name="giro_hipocampal_presente" id="giro_hipocampal_presente_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>III ventrículo con diámetros</label>
-                            <div>
-                                <input type="text" name="ventriculo_diametros" id="ventriculo_diametros_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Corte Transcerebelar</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cerebelo con ambos hemisferios simétricos</label>
-                            <div>
-                                <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vermis</label>
-                            <div>
-                                <select name="vermis" id="vermis_neurosonografia" class="form-control">
-                                    <option value="Presente">Presente</option>
-                                    <option value="Ausente">Ausente</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Central y ecogénico</label>
-                            <div>
-                                <select name="central_ecogenico" id="central_ecogenico_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Morfología normal</label>
-                            <div>
-                                <select name="morfologia_normal" id="morfologia_normal_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cisterna magna con diámetros (mm)</label>
-                            <div>
-                                <input type="text" name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
-                            <div>
-                                <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pliegue nucal (mm)</label>
-                            <div>
-                                <input type="text" name="pliegue_nucal" id="pliegue_nucal_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Planos Coronales:</p>
-                    <p><b>Corte Transfrontal</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Se observa la línea interhemisferica integra</label>
-                            <div>
-                                <select name="liena_intergemisferica" id="liena_intergemisferica_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Astas anteriores de los ventrículos laterales normales</label>
-                            <div>
-                                <select name="asta_anteriores" id="asta_anteriores_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Hueso esfenoides y las orbitas oculares normales </label>
-                            <div>
-                                <select name="hueso_esfenoides" id="hueso_esfenoides_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p><b>Corte Transcaudal</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Astas anteriores de los ventrículos con diámetros</label>
-                            <div>
-                                <input type="text" name="ventriculos_diametro_1" id="ventriculos_diametro_1_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Y de</label>
-                            <div>
-                                <input type="text" name="ventriculos_diametro_2" id="ventriculos_diametro_2_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Núcleos caudados sin alteraciones</label>
-                            <div>
-                                <select name="nucleos_caudado" id="nucleos_caudado_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Espacio subaracnoideo senocortical (mm)</label>
-                            <div>
-                                <input type="text" name="espacio_subaracnoideo" id="espacio_subaracnoideo_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Y craneocortical (mm)</label>
-                            <div>
-                                <input type="text" name="espacio_craneocotical" id="espacio_craneocotical_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se identifica la cisura de Silvio claramente</label>
-                            <div>
-                                <select name="cisura_silvio" id="cisura_silvio_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p><b>Corte Transcerebelar</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Tentorio in situs</label>
-                            <div>
-                                <select name="tetorio_situs" id="tetorio_situs_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cisura interhemisferica integra</label>
-                            <div>
-                                <select name="cisura_interhemisferica" id="cisura_interhemisferica_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cuernos occipitales simétricos</label>
-                            <div>
-                                <select name="cuernos_occipitales" id="cuernos_occipitales_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Planos Sagitales</p>
-                    <p><b>Saginal Medio</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Presencia del cuerpo calloso</label>
-                            <div>
-                                <select name="presencia_calloso" id="presencia_calloso_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Disgenesia</label>
-                            <div>
-                                <select name="disgenesia" id="disgenesia_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Longitud (mm)</label>
-                            <div>
-                                <input type="text" name="saginal_longitud" id="saginal_longitud_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Grosor (mm)</label>
-                            <div>
-                                <input type="text" name="saginal_grosor" id="saginal_grosor_neurosonografia" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>CSP y Cavum vergae</label>
-                            <div>
-                                <select name="csp_cavum" id="csp_cavum_neurosonografia" class="form-control">
-                                    <option value="Sin Alteraciones">Sin Alteraciones</option>
-                                    <option value="Hipoplasicos">Hipoplasicos</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Fornix, III Y IV ventrículo</label>
-                            <div>
-                                <select name="fornix" id="fornix_neurosonografia" class="form-control">
-                                    <option value="Sin Dilatación">Sin Dilatación</option>
-                                    <option value="Con Dilatación">Con Dilatación</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tronco Encefálico</label>
-                            <div>
-                                <select name="tronco_encefalico" id="tronco_encefalico_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tórcula y Tentorio in situs</label>
-                            <div>
-                                <select name="torcula_tendorio" id="torcula_tendorio_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cisterna magna</label>
-                            <div>
-                                <select name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Doppler color se visualiza el trayecto de la arteria cerebral anterior</label>
-                            <div>
-                                <select name="doppler_visualiza" id="doppler_visualiza_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pericallosa</label>
-                            <div>
-                                <select name="pericallosa" id="pericallosa_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vena de Galeno</label>
-                            <div>
-                                <select name="vena_galeno" id="vena_galeno_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Desarrollo Corporal</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Las cisuras de Silvio</label>
-                            <div>
-                                <select name="cisuras_silvio" id="cisuras_silvio_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cisura parieto occipital</label>
-                            <div>
-                                <select name="cisura_occipital" id="cisura_occipital_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Cisura calcarina</label>
-                            <div>
-                                <select name="cisura_calcarina" id="cisura_calcarina_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label> Cisura cingulada</label>
-                            <div>
-                                <select name="cisura_cingulada" id="cisura_cingulada_neurosonografia" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Columna Vertebral</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cortes sagitales con piel integra</label>
-                            <div>
-                                <select name="cortes_sagitales" id="cortes_sagitales_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se identifica el cono medular</label>
-                            <div>
-                                <select name="identifica_cono" id="identifica_cono_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se observa la disposición de la osificación</label>
-                            <div>
-                                <select name="observa_osificacion" id="observa_osificacion_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integridad de los cuerpos vertebrales y los procesos laterales</label>
-                            <div>
-                                <select name="integridad_cuerpos" id="integridad_cuerpos_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Evidencia de signos intracraneales de Mielocele abierta</label>
-                            <div>
-                                <select name="evidencia_mielocele" id="evidencia_mielocele_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Evidencia de signos intracraneales de Mielomeningocele abierta</label>
-                            <div>
-                                <select name="evidencia_mielomeningocele" id="evidencia_mielomeningocele_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Evidencia de signos intracraneales de Mielosquisis abierta</label>
-                            <div>
-                                <select name="evidencia_mielosquisis" id="evidencia_mielosquisis_neurosonografia" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-md-6">
                             <label>Revision</label>
@@ -2273,910 +2271,891 @@
                     </div>
                     <p>Ultrasonido Morfologico De II Trimestre</p>
                     <div class="form-group">
-                        <div class="col-md-3">
+                       <div class="col-md-3">
                            <label>Feto</label>
                            <div>
                                <select name="feto" id="feto_estructural" class="form-control" required>
-                                   <option value="Unico">Unico</option>
-                                   <option value="Gemelo">Gemelo</option>
-                                   <option value="A">A</option>
-                                   <option value="B">B</option>
-                                   <option value="C">C</option>
+                                    <option value="">Selecione una opcion</option>
+                                   <option value="1">Unico</option>
+                                   <option value="2">Gemelo</option>
+                                   <option value="Otro">Otro</option>
                                </select>
                            </div>
                        </div>
-                       <div class="col-md-3">
-                           <label>Presentacion</label>
-                           <div>
-                               <select name="presentacion" id="presentacion_estructural" class="form-control" required>
-                                   <option value="Cefálico">Cefálico</option>
-                                   <option value="Pélvico">Pélvico</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>Situacion</label>
-                           <div>
-                               <select name="situacion" id="situacion_estructural" class="form-control" required>
-                                   <option value="Longitudinal">Longitudinal</option>
-                                   <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
-                                   <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
-                               </select>
-                           </div>
-                       </div>
-                        <div class="col-md-3">
-                           <label>Posicion</label>
-                           <div>
-                               <select name="posicion" id="posicion_estructural" class="form-control" required>
-                                   <option value="Dorso Izquierdo">Dorso Izquierdo</option>
-                                   <option value="Dorso Derecho">Dorso Derecho</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-3">
-                           <label>FCF (latidos por minuto)</label>
-                           <div>
-                              <input type="number" name="fcf" id="fcf_estructural" class="form-control" required>
-                           </div>
+                       <div class="col-md-3 cantidad_feto" style="display: none">
+                            <label>Cantidad</label>
+                            <div>
+                                <input type="number" id="cantidad_feto_estructural" class="form-control">
+                            </div>
                        </div>
                     </div>
-                    <p><b>Craneo</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Craneo Normal</label>
-                            <div>
-                                <select name="craneo" id="craneo_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+
+                    <div class="node">
+                        <div id="child_estructural" style="display: none">
+                            <p><b>Craneo</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Craneo Normal</label>
+                                    <div>
+                                        <select name="craneo" id="craneo_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dolicocefalia</label>
+                                    <div>
+                                        <select name="dolicocefalia" id="dolicocefalia_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Braquicefalia</label>
+                                    <div>
+                                        <select name="braquicefalia" id="braquicefalia_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño normal</label>
+                                    <div>
+                                        <select name="craneo_tamano" id="craneo_tamano_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Suturas craneales normales</label>
+                                    <div>
+                                        <select name="craneo_situras" id="craneo_situras_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Compresión del transductor se aprecian deformidades</label>
+                                    <div>
+                                        <select name="craneo_compresion" id="craneo_compresion_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>La línea interhemisferica se observa integra</label>
+                                    <div>
+                                        <select name="craneo_interhemisferica" id="craneo_interhemisferica_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Los hemisferios cerebrales simétricos</label>
+                                    <div>
+                                        <select name="craneo_hemisferios" id="craneo_hemisferios_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dolicocefalia</label>
-                            <div>
-                                <select name="dolicocefalia" id="dolicocefalia_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Se identifica el Cavum del septum pellucidum</label>
+                                    <div>
+                                        <select name="cavum_septum" id="cavum_septum_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Diámetro anteroposterior (mm)</label>
+                                    <div>
+                                        <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_estructural" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Astas frontales de ventrículos laterales simétricas</label>
+                                    <div>
+                                        <select name="asta_frontales" id="asta_frontales_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Existe comunicación de astas anteriores</label>
+                                    <div>
+                                        <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Plexos coroideos homogéneos</label>
+                                    <div>
+                                        <select name="plexo_coroideos" id="plexo_coroideos_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de quiste</label>
+                                    <div>
+                                        <select name="presencia_quiste" id="presencia_quiste_estructural" class="form-control" required data-target="presencia_quiste_si_form">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 presencia_quiste_si_form" style="display: none">
+                                    <label>Quiste</label>
+                                    <div>
+                                        <select name="presencia_quiste_si" id="presencia_quiste_si_estructural" class="form-control">
+                                            <option value="Unilateral">Unilateral</option>
+                                            <option value="Bilateral">Bilateral</option>
+                                            <option value="Unico">Unico</option>
+                                            <option value="Múltiples">Múltiples</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se identifica la cisura parietooccipital</label>
+                                    <div>
+                                        <select name="cisura_parietooccipital" id="cisura_parietooccipital_estructural" class="form-control">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares simétricos</label>
+                                    <div>
+                                        <select name="atrios_ventruculares" id="atrios_ventruculares_estructural" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares Derecho (mm)</label>
+                                    <div>
+                                        <input type="text" name="atrios_derecho" id="atrios_derecho_estructural" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Atrios ventriculares Izquierdo (mm)</label>
+                                    <div>
+                                        <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_estructural" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Área peri ventricular</label>
+                                    <div>
+                                        <select name="area_ventricular" id="area_ventricular_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="Demorrágica">Demorrágica</option>
+                                            <option value="Hiperecogenica">Hiperecogenica</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Braquicefalia</label>
-                            <div>
-                                <select name="braquicefalia" id="braquicefalia_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Corte Transcerebelar</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cerebelo con ambos hemisferios simétricos</label>
+                                    <div>
+                                        <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_estructural" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vermis</label>
+                                    <div>
+                                        <select name="vermis" id="vermis_estructural" class="form-control">
+                                            <option value="Presente">Presente</option>
+                                            <option value="Ausente">Ausente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Central y ecogénico</label>
+                                    <div>
+                                        <select name="central_ecogenico" id="central_ecogenico_estructural" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Morfología normal</label>
+                                    <div>
+                                        <select name="morfologia_normal" id="morfologia_normal_estructural" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cisterna magna con diámetros (mm)</label>
+                                    <div>
+                                        <input type="text" name="cisterna_magna" id="cisterna_magna_estructural" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
+                                    <div>
+                                        <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_estructural" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pliegue nucal (mm)</label>
+                                    <div>
+                                        <input type="text" name="pliegue_nucal" id="pliegue_nucal_estructural" class="form-control" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño normal</label>
-                            <div>
-                                <select name="craneo_tamano" id="craneo_tamano_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                             <p>Columna Vertebral</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cortes sagitales con piel integra</label>
+                                    <div>
+                                        <select name="cortes_sagitales" id="cortes_sagitales_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se identifica el cono medular</label>
+                                    <div>
+                                        <select name="identifica_cono" id="identifica_cono_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Se observa la disposición de la osificación</label>
+                                    <div>
+                                        <select name="observa_osificacion" id="observa_osificacion_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integridad de los cuerpos vertebrales y los procesos laterales</label>
+                                    <div>
+                                        <select name="integridad_cuerpos" id="integridad_cuerpos_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Evidencia de signos intracraneales de defecto de cierre de tubo neural</label>
+                                    <div>
+                                        <select name="evidencia_intracraneales" id="evidencia_intracraneales_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Descripcion</label>
+                                    <div>
+                                      <textarea name="columna_descipcion" id="columna_descipcion_estructural" class="form-control"></textarea>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Suturas craneales normales</label>
-                            <div>
-                                <select name="craneo_situras" id="craneo_situras_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Hueso nasal Presente</label>
+                                    <div>
+                                        <select name="hueso_nasal" id="hueso_nasal_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Retrognatia</label>
+                                    <div>
+                                        <select name="retrognatia" id="retrognatia_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Compresión del transductor se aprecian deformidades</label>
-                            <div>
-                                <select name="craneo_compresion" id="craneo_compresion_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Cara</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Labio Normal</label>
+                                    <div>
+                                        <select name="labio_normal" id="labio_normal_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Labio Tipo</label>
+                                    <div>
+                                        <select name="labio_tipo" id="labio_tipo_estructural" class="form-control" required>
+                                            <option value="Labio hendido Unilateral">Labio hendido Unilateral</option>
+                                            <option value="Labio y paladar hendido unilateral">Labio y paladar hendido unilateral</option>
+                                            <option value="Paladar y labio hendido bilateral">Paladar y labio hendido bilateral</option>
+                                            <option value="Hendidura labial y palatina media">Hendidura labial y palatina media</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>La línea interhemisferica se observa integra</label>
-                            <div>
-                                <select name="craneo_interhemisferica" id="craneo_interhemisferica_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Torax Fetal</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Ambos pulmones de tamaño normal</label>
+                                    <div>
+                                        <select name="torax_pulmon" id="torax_pulmon_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Lesiones ocupantes de espacio </label>
+                                    <div>
+                                        <select name="torax_lesion" id="torax_lesion_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de masa quística</label>
+                                    <div>
+                                        <select name="torax_masa_quistica" id="torax_masa_quistica_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de masa solida</label>
+                                    <div>
+                                        <select name="torax_masa_solida" id="torax_masa_solida_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Descripción</label>
+                                    <div>
+                                       <textarea name="torax_descripcion" id="torax_descripcion_estructural" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>Vaso nutricio en masa</label>
+                                    <div>
+                                        <input type="text" name="torax_nutricion_masa" id="torax_nutricion_masa_estructural" class="form-control">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Los hemisferios cerebrales simétricos</label>
-                            <div>
-                                <select name="craneo_hemisferios" id="craneo_hemisferios_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
+                            <p>Corazon</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Situs</label>
+                                    <div>
+                                        <select name="corazon_situs" id="corazon_situs_estructural" class="form-control" required>
+                                            <option value="Solitus viscero atria">Solitus viscero atria</option>
+                                            <option value="Situs Inversus">Situs Inversus</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tamaño Normal</label>
+                                    <div>
+                                        <select name="corazon_tamano" id="corazon_tamano_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cardiomegalia</label>
+                                    <div>
+                                        <select name="corazon_cardiomegalia" id="corazon_cardiomegalia_estructural" class="form-control" required>
+                                            <option value="Leve">Leve</option>
+                                            <option value="Moderada">Moderada</option>
+                                            <option value="Severa">Severa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cardiomegalia Severa</label>
+                                    <div>
+                                        <select name="corazon_cardiomegalia_severa" id="corazon_cardiomegalia_severa_estructural" class="form-control" required>
+                                            <option value="Levocardia">Levocardia</option>
+                                            <option value="Dextrocardia">Dextrocardia</option>
+                                            <option value="Mesocardia">Mesocardia</option>
+                                            <option value="Levo desplazamiento">Levo desplazamiento</option>
+                                            <option value="Dextro desplazamiento">Dextro desplazamiento</option>
+                                            <option value="Meso desplazamiento">Meso desplazamiento</option>
+                                            <option value="Ectopia cordis">Ectopia cordis</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Corte De 4 Cámaras</label>
+                                    <div>
+                                        <select name="corazon_corte_camaras" id="corazon_corte_camaras_estructural" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tracto de salida de Ventrículo derecho</label>
+                                    <div>
+                                        <select name="corazon_tracto_derecho" id="corazon_tracto_derecho_estructural" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Tracto de salida de Ventrículo izquierdo</label>
+                                    <div>
+                                        <select name="corazon_tracto_izquierdo" id="corazon_tracto_izquierdo_estructural" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Corte de 3 vasos </label>
+                                    <div>
+                                        <select name="corazon_corte_vasos" id="corazon_corte_vasos_estructural" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Abdomen</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Inserción de cordón normal</label>
+                                    <div>
+                                        <select name="insercion_cordon" id="insercion_cordon_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de 3 vasos </label>
+                                    <div>
+                                        <select name="presencia_vasos" id="presencia_vasos_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria umbilical única</label>
+                                    <div>
+                                        <select name="arteria_umbilical" id="arteria_umbilical_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pared abdominal integra</label>
+                                    <div>
+                                        <select name="pared_integra" id="pared_integra_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Defecto para umbilical </label>
+                                    <div>
+                                       <input type="text" name="defecto_umbilical" id="defecto_umbilical_esctructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Defecto en base de cordón</label>
+                                    <div>
+                                       <input type="text" name="defecto_cordon" id="defecto_cordon_esctructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medida del defecto (mm)</label>
+                                    <div>
+                                       <input type="text" name="defecto_medida" id="defecto_medida_esctructural" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Estructuras presentes en defecto</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cubierto por membrana</label>
+                                    <div>
+                                        <select name="cubierta_membrana" id="cubierta_membrana_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Asas de intestino delgado</label>
+                                    <div>
+                                        <select name="asas_intestino_delgado" id="asas_intestino_delgado_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Asas de intestino grueso</label>
+                                    <div>
+                                        <select name="asas_intestino_grueso" id="asas_intestino_grueso_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dilatación de asas intra abdominal</label>
+                                    <div>
+                                        <select name="dilatacion_intra_abdominal" id="dilatacion_intra_abdominal_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medicion</label>
+                                    <div>
+                                        <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dilatación de asas extra abdominal</label>
+                                    <div>
+                                        <select name="dilatacion_extra_abdominal" id="dilatacion_extra_abdominal_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medicion</label>
+                                    <div>
+                                        <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Sospecha de peritonitis</label>
+                                    <div>
+                                        <select name="sospecha_peritonitis" id="sospecha_peritonitis_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cámara gástrica</label>
+                                    <div>
+                                        <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_si_form">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 camara_gastrica_si_form" style="display: none">
+                                    <label>Cámara gástrica Si</label>
+                                    <div>
+                                        <select name="camara_gastrica_si" id="camara_gastrica_si_estructural" class="form-control" required>
+                                            <option value="Hígado intracorporeo">Hígado intracorporeo</option>
+                                            <option value="Hígado extra corpóreo">Hígado extra corpóreo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vejiga urinaria</label>
+                                    <div>
+                                        <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cámara gástrica</label>
+                                    <div>
+                                        <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required>
+                                            <option value="Presente">Presente</option>
+                                            <option value="No visible">No visible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vejiga</label>
+                                    <div>
+                                        <select name="vejiga" id="vejiga_estructural" class="form-control" required>
+                                            <option value="Presente">Presente</option>
+                                            <option value="No visible">No visible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Riñones de tamaño normal</label>
+                                    <div>
+                                        <select name="rinones" id="rinones_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                            <option value="No Valorables">No Valorables</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pelvis renal derecha (mm)</label>
+                                    <div>
+                                       <input type="text" name="pelvis_derecha" id="pelvis_derecha_esctructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pelvis renal izquierda (mm)</label>
+                                    <div>
+                                       <input type="text" name="pelvis_izquierda" id="pelvis_izquierda_esctructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de Hidronefrosis</label>
+                                    <div>
+                                        <select name="hidronefosis" id="hidronefosis_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Grado</label>
+                                    <div>
+                                        <select name="grado" id="grado_estructural" class="form-control" required>
+                                            <option value="Riñón normal sin hidronefrosis">Riñón normal sin hidronefrosis</option>
+                                            <option value="Pelvis renal ligeramente dilatada sin calectasia">Pelvis renal ligeramente dilatada sin calectasia</option>
+                                            <option value="Pelvis moderadamente dilatada con moderada dilatación caliceal">Pelvis moderadamente dilatada con moderada dilatación caliceal</option>
+                                            <option value="Pelvis renal grande, cálices dilatados y parénquima renal normal.">Pelvis renal grande, cálices dilatados y parénquima renal normal.</option>
+                                            <option value="Pelvis  renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.">Pelvis  renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Glandulas suprarrenales</label>
+                                    <div>
+                                        <select name="glandulas_suprarrenales" id="glandulas_suprarrenales_estructural" class="form-control" required>
+                                            <option value="Presentes">Presentes</option>
+                                            <option value="Ausentes">Ausentes</option>
+                                            <option value="No Valorables">No Valorables</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vejiga urinaria</label>
+                                    <div>
+                                        <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
+                                            <option value="Llenado Fisiológico">Llenado Fisiológico</option>
+                                            <option value="Vacia">Vacia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Engrosameinto de pared vesical</label>
+                                    <div>
+                                        <select name="engrosamiento_pared" id="engrosamiento_pared_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Extremidades Superiores</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Ambas presentes</label>
+                                    <div>
+                                        <select name="extremidades_superiores" id="extremidades_superiores_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integras</label>
+                                    <div>
+                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Afectada</label>
+                                    <div>
+                                        <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_estructural" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Extremidades Inferiores</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Ambas presentes</label>
+                                    <div>
+                                        <select name="extremidades_inferiores" id="extremidades_inferiores_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integras</label>
+                                    <div>
+                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Afectada</label>
+                                    <div>
+                                        <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_estructural" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Placenta</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Numero</label>
+                                    <div>
+                                        <input type="number" name="placenta_numero" id="placenta_numero_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Posicion</label>
+                                    <div>
+                                        <select name="placenta_posocion" id="placenta_posocion_estructural" class="form-control" required>
+                                            <option value="Anterior Baja">Anterior Baja</option>
+                                            <option value="Anterior Alta">Anterior Alta</option>
+                                            <option value="Posterior Baja">Posterior Baja</option>
+                                            <option value="Posterior Alta">Posterior Alta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Grado</label>
+                                    <div>
+                                        <input type="number" name="placenta_grado" id="placenta_grado_estructural" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Calcificaciones probablemente patológicas</label>
+                                    <div>
+                                        <select name="presencia_patologicas" id="presencia_patologicas_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Áreas de infartos placentarios</label>
+                                    <div>
+                                        <select name="areas_infarto" id="areas_infarto_estructural" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Longitud de cérvix (mm)</label>
+                                    <div>
+                                        <input type="number" name="longitud_cervix" id="longitud_cervix_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Funnelings</label>
+                                    <div>
+                                        <select name="funneling" id="funneling_estructural" class="form-control" required>
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>Cevix</label>
+                                    <div>
+                                        <select name="cevix" id="cevix_estructural" class="form-control" required>
+                                            <option value="< 30%">< 30%</option>
+                                            <option value="30-50%">30-50%</option>
+                                            <option value="> 50%">> 50%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Sludge </label>
+                                    <div>
+                                        <select name="sludge" id="sludge_estructural" class="form-control" required>
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Líquido amniótico</label>
+                                    <div>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_estructural" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Se identifica el Cavum del septum pellucidum</label>
-                            <div>
-                                <select name="cavum_septum" id="cavum_septum_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Diámetro anteroposterior (mm)</label>
-                            <div>
-                                <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Astas frontales de ventrículos laterales simétricas</label>
-                            <div>
-                                <select name="asta_frontales" id="asta_frontales_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Existe comunicación de astas anteriores</label>
-                            <div>
-                                <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Plexos coroideos homogéneos</label>
-                            <div>
-                                <select name="plexo_coroideos" id="plexo_coroideos_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de quiste</label>
-                            <div>
-                                <select name="presencia_quiste" id="presencia_quiste_estructural" class="form-control" required data-target="presencia_quiste_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 presencia_quiste_si_form" style="display: none">
-                            <label>Quiste</label>
-                            <div>
-                                <select name="presencia_quiste_si" id="presencia_quiste_si_estructural" class="form-control">
-                                    <option value="Unilateral">Unilateral</option>
-                                    <option value="Bilateral">Bilateral</option>
-                                    <option value="Unico">Unico</option>
-                                    <option value="Múltiples">Múltiples</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se identifica la cisura parietooccipital</label>
-                            <div>
-                                <select name="cisura_parietooccipital" id="cisura_parietooccipital_estructural" class="form-control">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares simétricos</label>
-                            <div>
-                                <select name="atrios_ventruculares" id="atrios_ventruculares_estructural" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares Derecho (mm)</label>
-                            <div>
-                                <input type="text" name="atrios_derecho" id="atrios_derecho_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Atrios ventriculares Izquierdo (mm)</label>
-                            <div>
-                                <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Área peri ventricular</label>
-                            <div>
-                                <select name="area_ventricular" id="area_ventricular_estructural" class="form-control">
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="Demorrágica">Demorrágica</option>
-                                    <option value="Hiperecogenica">Hiperecogenica</option>
-                                </select>
-                            </div>
-                        </div>
+                        <div class="col-md-12 nextChild"></div>
                     </div>
-                    <p>Corte Transcerebelar</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cerebelo con ambos hemisferios simétricos</label>
-                            <div>
-                                <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_estructural" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vermis</label>
-                            <div>
-                                <select name="vermis" id="vermis_estructural" class="form-control">
-                                    <option value="Presente">Presente</option>
-                                    <option value="Ausente">Ausente</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Central y ecogénico</label>
-                            <div>
-                                <select name="central_ecogenico" id="central_ecogenico_estructural" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Morfología normal</label>
-                            <div>
-                                <select name="morfologia_normal" id="morfologia_normal_estructural" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cisterna magna con diámetros (mm)</label>
-                            <div>
-                                <input type="text" name="cisterna_magna" id="cisterna_magna_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
-                            <div>
-                                <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_estructural" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pliegue nucal (mm)</label>
-                            <div>
-                                <input type="text" name="pliegue_nucal" id="pliegue_nucal_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                     <p>Columna Vertebral</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cortes sagitales con piel integra</label>
-                            <div>
-                                <select name="cortes_sagitales" id="cortes_sagitales_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se identifica el cono medular</label>
-                            <div>
-                                <select name="identifica_cono" id="identifica_cono_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Se observa la disposición de la osificación</label>
-                            <div>
-                                <select name="observa_osificacion" id="observa_osificacion_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integridad de los cuerpos vertebrales y los procesos laterales</label>
-                            <div>
-                                <select name="integridad_cuerpos" id="integridad_cuerpos_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Evidencia de signos intracraneales de defecto de cierre de tubo neural</label>
-                            <div>
-                                <select name="evidencia_intracraneales" id="evidencia_intracraneales_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Descripcion</label>
-                            <div>
-                              <textarea name="columna_descipcion" id="columna_descipcion_estructural" class="form-control"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Hueso nasal Presente</label>
-                            <div>
-                                <select name="hueso_nasal" id="hueso_nasal_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Retrognatia</label>
-                            <div>
-                                <select name="retrognatia" id="retrognatia_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Cara</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Labio Normal</label>
-                            <div>
-                                <select name="labio_normal" id="labio_normal_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Labio Tipo</label>
-                            <div>
-                                <select name="labio_tipo" id="labio_tipo_estructural" class="form-control" required>
-                                    <option value="Labio hendido Unilateral">Labio hendido Unilateral</option>
-                                    <option value="Labio y paladar hendido unilateral">Labio y paladar hendido unilateral</option>
-                                    <option value="Paladar y labio hendido bilateral">Paladar y labio hendido bilateral</option>
-                                    <option value="Hendidura labial y palatina media">Hendidura labial y palatina media</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Torax Fetal</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Ambos pulmones de tamaño normal</label>
-                            <div>
-                                <select name="torax_pulmon" id="torax_pulmon_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Lesiones ocupantes de espacio </label>
-                            <div>
-                                <select name="torax_lesion" id="torax_lesion_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de masa quística</label>
-                            <div>
-                                <select name="torax_masa_quistica" id="torax_masa_quistica_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de masa solida</label>
-                            <div>
-                                <select name="torax_masa_solida" id="torax_masa_solida_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Descripción</label>
-                            <div>
-                               <textarea name="torax_descripcion" id="torax_descripcion_estructural" class="form-control"></textarea>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Vaso nutricio en masa</label>
-                            <div>
-                                <input type="text" name="torax_nutricion_masa" id="torax_nutricion_masa_estructural" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Corazon</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Situs</label>
-                            <div>
-                                <select name="corazon_situs" id="corazon_situs_estructural" class="form-control" required>
-                                    <option value="Solitus viscero atria">Solitus viscero atria</option>
-                                    <option value="Situs Inversus">Situs Inversus</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tamaño Normal</label>
-                            <div>
-                                <select name="corazon_tamano" id="corazon_tamano_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cardiomegalia</label>
-                            <div>
-                                <select name="corazon_cardiomegalia" id="corazon_cardiomegalia_estructural" class="form-control" required>
-                                    <option value="Leve">Leve</option>
-                                    <option value="Moderada">Moderada</option>
-                                    <option value="Severa">Severa</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cardiomegalia Severa</label>
-                            <div>
-                                <select name="corazon_cardiomegalia_severa" id="corazon_cardiomegalia_severa_estructural" class="form-control" required>
-                                    <option value="Levocardia">Levocardia</option>
-                                    <option value="Dextrocardia">Dextrocardia</option>
-                                    <option value="Mesocardia">Mesocardia</option>
-                                    <option value="Levo desplazamiento">Levo desplazamiento</option>
-                                    <option value="Dextro desplazamiento">Dextro desplazamiento</option>
-                                    <option value="Meso desplazamiento">Meso desplazamiento</option>
-                                    <option value="Ectopia cordis">Ectopia cordis</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Corte De 4 Cámaras</label>
-                            <div>
-                                <select name="corazon_corte_camaras" id="corazon_corte_camaras_estructural" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tracto de salida de Ventrículo derecho</label>
-                            <div>
-                                <select name="corazon_tracto_derecho" id="corazon_tracto_derecho_estructural" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Tracto de salida de Ventrículo izquierdo</label>
-                            <div>
-                                <select name="corazon_tracto_izquierdo" id="corazon_tracto_izquierdo_estructural" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Corte de 3 vasos </label>
-                            <div>
-                                <select name="corazon_corte_vasos" id="corazon_corte_vasos_estructural" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Abdomen</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Inserción de cordón normal</label>
-                            <div>
-                                <select name="insercion_cordon" id="insercion_cordon_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de 3 vasos </label>
-                            <div>
-                                <select name="presencia_vasos" id="presencia_vasos_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Arteria umbilical única</label>
-                            <div>
-                                <select name="arteria_umbilical" id="arteria_umbilical_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pared abdominal integra</label>
-                            <div>
-                                <select name="pared_integra" id="pared_integra_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Defecto para umbilical </label>
-                            <div>
-                               <input type="text" name="defecto_umbilical" id="defecto_umbilical_esctructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Defecto en base de cordón</label>
-                            <div>
-                               <input type="text" name="defecto_cordon" id="defecto_cordon_esctructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medida del defecto (mm)</label>
-                            <div>
-                               <input type="text" name="defecto_medida" id="defecto_medida_esctructural" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Estructuras presentes en defecto</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cubierto por membrana</label>
-                            <div>
-                                <select name="cubierta_membrana" id="cubierta_membrana_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Asas de intestino delgado</label>
-                            <div>
-                                <select name="asas_intestino_delgado" id="asas_intestino_delgado_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Asas de intestino grueso</label>
-                            <div>
-                                <select name="asas_intestino_grueso" id="asas_intestino_grueso_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dilatación de asas intra abdominal</label>
-                            <div>
-                                <select name="dilatacion_intra_abdominal" id="dilatacion_intra_abdominal_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medicion</label>
-                            <div>
-                                <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_estructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dilatación de asas extra abdominal</label>
-                            <div>
-                                <select name="dilatacion_extra_abdominal" id="dilatacion_extra_abdominal_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medicion</label>
-                            <div>
-                                <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_estructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Sospecha de peritonitis</label>
-                            <div>
-                                <select name="sospecha_peritonitis" id="sospecha_peritonitis_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cámara gástrica</label>
-                            <div>
-                                <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 camara_gastrica_si_form" style="display: none">
-                            <label>Cámara gástrica Si</label>
-                            <div>
-                                <select name="camara_gastrica_si" id="camara_gastrica_si_estructural" class="form-control" required>
-                                    <option value="Hígado intracorporeo">Hígado intracorporeo</option>
-                                    <option value="Hígado extra corpóreo">Hígado extra corpóreo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vejiga urinaria</label>
-                            <div>
-                                <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cámara gástrica</label>
-                            <div>
-                                <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required>
-                                    <option value="Presente">Presente</option>
-                                    <option value="No visible">No visible</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vejiga</label>
-                            <div>
-                                <select name="vejiga" id="vejiga_estructural" class="form-control" required>
-                                    <option value="Presente">Presente</option>
-                                    <option value="No visible">No visible</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Riñones de tamaño normal</label>
-                            <div>
-                                <select name="rinones" id="rinones_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                    <option value="No Valorables">No Valorables</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pelvis renal derecha (mm)</label>
-                            <div>
-                               <input type="text" name="pelvis_derecha" id="pelvis_derecha_esctructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pelvis renal izquierda (mm)</label>
-                            <div>
-                               <input type="text" name="pelvis_izquierda" id="pelvis_izquierda_esctructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de Hidronefrosis</label>
-                            <div>
-                                <select name="hidronefosis" id="hidronefosis_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Grado</label>
-                            <div>
-                                <select name="grado" id="grado_estructural" class="form-control" required>
-                                    <option value="Riñón normal sin hidronefrosis">Riñón normal sin hidronefrosis</option>
-                                    <option value="Pelvis renal ligeramente dilatada sin calectasia">Pelvis renal ligeramente dilatada sin calectasia</option>
-                                    <option value="Pelvis moderadamente dilatada con moderada dilatación caliceal">Pelvis moderadamente dilatada con moderada dilatación caliceal</option>
-                                    <option value="Pelvis renal grande, cálices dilatados y parénquima renal normal.">Pelvis renal grande, cálices dilatados y parénquima renal normal.</option>
-                                    <option value="Pelvis  renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.">Pelvis  renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Glandulas suprarrenales</label>
-                            <div>
-                                <select name="glandulas_suprarrenales" id="glandulas_suprarrenales_estructural" class="form-control" required>
-                                    <option value="Presentes">Presentes</option>
-                                    <option value="Ausentes">Ausentes</option>
-                                    <option value="No Valorables">No Valorables</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vejiga urinaria</label>
-                            <div>
-                                <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
-                                    <option value="Llenado Fisiológico">Llenado Fisiológico</option>
-                                    <option value="Vacia">Vacia</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Engrosameinto de pared vesical</label>
-                            <div>
-                                <select name="engrosamiento_pared" id="engrosamiento_pared_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Extremidades Superiores</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Ambas presentes</label>
-                            <div>
-                                <select name="extremidades_superiores" id="extremidades_superiores_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integras</label>
-                            <div>
-                                <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Afectada</label>
-                            <div>
-                                <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_estructural" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Extremidades Inferiores</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Ambas presentes</label>
-                            <div>
-                                <select name="extremidades_inferiores" id="extremidades_inferiores_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integras</label>
-                            <div>
-                                <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Afectada</label>
-                            <div>
-                                <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_estructural" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Placenta</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Numero</label>
-                            <div>
-                                <input type="number" name="placenta_numero" id="placenta_numero_estructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Posicion</label>
-                            <div>
-                                <select name="placenta_posocion" id="placenta_posocion_estructural" class="form-control" required>
-                                    <option value="Anterior Baja">Anterior Baja</option>
-                                    <option value="Anterior Alta">Anterior Alta</option>
-                                    <option value="Posterior Baja">Posterior Baja</option>
-                                    <option value="Posterior Alta">Posterior Alta</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Grado</label>
-                            <div>
-                                <input type="number" name="placenta_grado" id="placenta_grado_estructural" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Calcificaciones probablemente patológicas</label>
-                            <div>
-                                <select name="presencia_patologicas" id="presencia_patologicas_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Áreas de infartos placentarios</label>
-                            <div>
-                                <select name="areas_infarto" id="areas_infarto_estructural" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Longitud de cérvix (mm)</label>
-                            <div>
-                                <input type="number" name="longitud_cervix" id="longitud_cervix_estructural" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Funnelings</label>
-                            <div>
-                                <select name="funneling" id="funneling_estructural" class="form-control" required>
-                                    <option value="Negativo">Negativo</option>
-                                    <option value="Positivo">Positivo</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Cevix</label>
-                            <div>
-                                <select name="cevix" id="cevix_estructural" class="form-control" required>
-                                    <option value="< 30%">< 30%</option>
-                                    <option value="30-50%">30-50%</option>
-                                    <option value="> 50%">> 50%</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Sludge </label>
-                            <div>
-                                <select name="sludge" id="sludge_estructural" class="form-control" required>
-                                    <option value="Negativo">Negativo</option>
-                                    <option value="Positivo">Positivo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Líquido amniótico</label>
-                            <div>
-                                <select name="liquido_amniotico" id="liquido_amniotico_estructural" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-md-6">
                             <label>Revision</label>
@@ -3260,536 +3239,545 @@
                             <textarea name="estudio" id="estudio_1trimestre" class="form-control"></textarea>
                         </div>
                     </div>
-                      <div class="form-group">
-                        <div class="col-md-3">
+                    <div class="form-group">
+                       <div class="col-md-3">
                            <label>Feto</label>
                            <div>
                                <select name="feto" id="feto_1trimestre" class="form-control" required>
-                                   <option value="Unico">Unico</option>
-                                   <option value="Gemelo">Gemelo</option>
-                                   <option value="A">A</option>
-                                   <option value="B">B</option>
-                                   <option value="C">C</option>
+                                    <option value="">Selecione una opcion</option>
+                                   <option value="1">Unico</option>
+                                   <option value="2">Gemelo</option>
+                                   <option value="Otro">Otro</option>
                                </select>
                            </div>
                        </div>
-                       <div class="col-md-3">
-                           <label>FCF (latidos por minuto)</label>
-                           <div>
-                              <input type="number" name="fcf" id="fcf_1trimestre" class="form-control" required>
-                           </div>
+                       <div class="col-md-3 cantidad_feto" style="display: none">
+                            <label>Cantidad</label>
+                            <div>
+                                <input type="number" id="cantidad_feto_1trimestre" class="form-control">
+                            </div>
                        </div>
                     </div>
-                    <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
-                    <p>Cráneo</p>
-                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Craneo Normal</label>
-                            <div>
-                                <select name="craneo" id="craneo_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Forma Normal</label>
-                            <div>
-                                <select name="craneo_forma" id="craneo_forma_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Plexos coroideos Normal</label>
-                            <div>
-                                <select name="pexos_caroideos" id="pexos_caroideos_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de quiste de plexos coroideos </label>
-                            <div>
-                                <select name="quiste_plexos" id="quiste_plexos_1trimestre" class="form-control" required data-target="quiste_plexos_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 quiste_plexos_si_form" style="display: none;">
-                            <label>Presencia de quiste de plexos coroideos Si</label>
-                            <div>
-                                <select name="quiste_plexos_si" id="quiste_plexos_si_1trimestre" class="form-control">
-                                    <option value="Unico">Unico</option>
-                                    <option value="Múltiple">Múltiple</option>
-                                    <option value="Unilateral">Unilateral</option>
-                                    <option value="Bilateral">Bilateral</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Hueso nasal Presente</label>
-                            <div>
-                                <select name="hueso_nasal" id="hueso_nasal_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Hipoplasico</label>
-                            <div>
-                                <input type="text" name="hipoplasico" id="hipoplasico_1trimestre" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medición</label>
-                            <div>
-                                <input type="text" name="medicion_nasal" id="medicion_nasal_1trimestre" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Tórax Norma</label>
-                            <div>
-                                <select name="torax_normal" id="torax_normal_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Interrupción de pared torácica</label>
-                            <div>
-                                <input type="text" name="intearrupcion_toracica" id="intearrupcion_toracica_1trimestre" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Corazon</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Localización Intratoracica</label>
-                            <div>
-                                <select name="localizacion_intratoracica" id="localizacion_intratoracica_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Ectopia Cordis</label>
-                            <div>
-                                <select name="ectopia_cordis" id="ectopia_cordis_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Anomalía cardiaca</label>
-                            <div>
-                                <select name="anomalia_cardica" id="anomalia_cardica_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Abdomen</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Inserción de cordón normal</label>
-                            <div>
-                                <select name="insercion_cordon" id="insercion_cordon_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Presencia de 3 vasos </label>
-                            <div>
-                                <select name="presencia_vasos" id="presencia_vasos_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Arteria umbilical única</label>
-                            <div>
-                                <select name="arteria_umbilical" id="arteria_umbilical_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Pared abdominal integra</label>
-                            <div>
-                                <select name="pared_integra" id="pared_integra_1trimestre" class="form-control" required data-target="pared_integra_1trimestre_si">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="pared_integra_1trimestre_si" style="display: none">
-                            <div class="col-md-3">
-                                <label>Defecto para umbilical </label>
-                                <div>
-                                   <input type="text" name="defecto_umbilical" id="defecto_umbilical_1trimestre" class="form-control">
+
+                    <div class="node">
+                        <div id="child_1trimestre" style="display: none">
+                            <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
+                            <p>Cráneo</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Craneo Normal</label>
+                                    <div>
+                                        <select name="craneo" id="craneo_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Forma Normal</label>
+                                    <div>
+                                        <select name="craneo_forma" id="craneo_forma_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Plexos coroideos Normal</label>
+                                    <div>
+                                        <select name="pexos_caroideos" id="pexos_caroideos_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de quiste de plexos coroideos </label>
+                                    <div>
+                                        <select name="quiste_plexos" id="quiste_plexos_1trimestre" class="form-control" required data-target="quiste_plexos_si_form">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 quiste_plexos_si_form" style="display: none;">
+                                    <label>Presencia de quiste de plexos coroideos Si</label>
+                                    <div>
+                                        <select name="quiste_plexos_si" id="quiste_plexos_si_1trimestre" class="form-control">
+                                            <option value="Unico">Unico</option>
+                                            <option value="Múltiple">Múltiple</option>
+                                            <option value="Unilateral">Unilateral</option>
+                                            <option value="Bilateral">Bilateral</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Hueso nasal Presente</label>
+                                    <div>
+                                        <select name="hueso_nasal" id="hueso_nasal_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Hipoplasico</label>
+                                    <div>
+                                        <input type="text" name="hipoplasico" id="hipoplasico_1trimestre" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medición</label>
+                                    <div>
+                                        <input type="text" name="medicion_nasal" id="medicion_nasal_1trimestre" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <label>Defecto en base de cordón</label>
-                                <div>
-                                   <input type="text" name="defecto_cordon" id="defecto_cordon_1trimestre" class="form-control">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Tórax Norma</label>
+                                    <div>
+                                        <select name="torax_normal" id="torax_normal_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Interrupción de pared torácica</label>
+                                    <div>
+                                        <input type="text" name="intearrupcion_toracica" id="intearrupcion_toracica_1trimestre" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <label>Medida del defecto (mm)</label>
-                                <div>
-                                   <input type="text" name="defecto_medida" id="defecto_medida_1trimestre" class="form-control">
+                            <p>Corazon</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Localización Intratoracica</label>
+                                    <div>
+                                        <select name="localizacion_intratoracica" id="localizacion_intratoracica_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Ectopia Cordis</label>
+                                    <div>
+                                        <select name="ectopia_cordis" id="ectopia_cordis_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Anomalía cardiaca</label>
+                                    <div>
+                                        <select name="anomalia_cardica" id="anomalia_cardica_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Abdomen</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Inserción de cordón normal</label>
+                                    <div>
+                                        <select name="insercion_cordon" id="insercion_cordon_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Presencia de 3 vasos </label>
+                                    <div>
+                                        <select name="presencia_vasos" id="presencia_vasos_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria umbilical única</label>
+                                    <div>
+                                        <select name="arteria_umbilical" id="arteria_umbilical_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Pared abdominal integra</label>
+                                    <div>
+                                        <select name="pared_integra" id="pared_integra_1trimestre" class="form-control" required data-target="pared_integra_1trimestre_si">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="pared_integra_1trimestre_si" style="display: none">
+                                    <div class="col-md-3">
+                                        <label>Defecto para umbilical </label>
+                                        <div>
+                                           <input type="text" name="defecto_umbilical" id="defecto_umbilical_1trimestre" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Defecto en base de cordón</label>
+                                        <div>
+                                           <input type="text" name="defecto_cordon" id="defecto_cordon_1trimestre" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Medida del defecto (mm)</label>
+                                        <div>
+                                           <input type="text" name="defecto_medida" id="defecto_medida_1trimestre" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Estructuras presentes en defecto</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Cubierto por membrana</label>
+                                    <div>
+                                        <select name="cubierta_membrana" id="cubierta_membrana_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Asas de intestino delgado</label>
+                                    <div>
+                                        <select name="asas_intestino_delgado" id="asas_intestino_delgado_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Asas de intestino grueso</label>
+                                    <div>
+                                        <select name="asas_intestino_grueso" id="asas_intestino_grueso_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dilatación de asas intra abdominal</label>
+                                    <div>
+                                        <select name="dilatacion_intra_abdominal" id="dilatacion_intra_abdominal_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medicion</label>
+                                    <div>
+                                        <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Dilatación de asas extra abdominal</label>
+                                    <div>
+                                        <select name="dilatacion_extra_abdominal" id="dilatacion_extra_abdominal_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medicion</label>
+                                    <div>
+                                        <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Sospecha de peritonitis</label>
+                                    <div>
+                                        <select name="sospecha_peritonitis" id="sospecha_peritonitis_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cámara gástrica</label>
+                                    <div>
+                                        <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required data-target="camara_gastrica_si_form">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 camara_gastrica_si_form" style="display: none">
+                                    <label>Cámara gástrica Si</label>
+                                    <div>
+                                        <select name="camara_gastrica_si" id="camara_gastrica_si_1trimestre" class="form-control" required>
+                                            <option value="Hígado intracorporeo">Hígado intracorporeo</option>
+                                            <option value="Hígado extra corpóreo">Hígado extra corpóreo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vejiga urinaria</label>
+                                    <div>
+                                        <select name="vejiga_urinaria" id="vejiga_urinaria_1trimestre" class="form-control" required>
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cámara gástrica</label>
+                                    <div>
+                                        <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required>
+                                            <option value="Presente">Presente</option>
+                                            <option value="No visible">No visible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vejiga</label>
+                                    <div>
+                                        <select name="vejiga" id="vejiga_1trimestre" class="form-control" required>
+                                            <option value="Presente">Presente</option>
+                                            <option value="No visible">No visible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Extremidades Superiores</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Ambas presentes</label>
+                                    <div>
+                                        <select name="extremidades_superiores" id="extremidades_superiores_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integras</label>
+                                    <div>
+                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Afectada</label>
+                                    <div>
+                                        <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Extremidades Inferiores</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Ambas presentes</label>
+                                    <div>
+                                        <select name="extremidades_inferiores" id="extremidades_inferiores_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Integras</label>
+                                    <div>
+                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Afectada</label>
+                                    <div>
+                                        <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Placenta</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Numero</label>
+                                    <div>
+                                        <input type="number" name="placenta_numero" id="placenta_numero_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Posicion</label>
+                                    <div>
+                                        <select name="placenta_posocion" id="placenta_posocion_1trimestre" class="form-control" required>
+                                            <option value="Anterior Baja">Anterior Baja</option>
+                                            <option value="Anterior Alta">Anterior Alta</option>
+                                            <option value="Posterior Baja">Posterior Baja</option>
+                                            <option value="Posterior Alta">Posterior Alta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Grado</label>
+                                    <div>
+                                        <input type="number" name="placenta_grado" id="placenta_grado_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Longitud de cérvix (mm)</label>
+                                    <div>
+                                        <input type="number" name="longitud_cervix" id="longitud_cervix_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>Funnelings</label>
+                                    <div>
+                                        <select name="funneling" id="funneling_1trimestre" class="form-control" required>
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3">
+                                    <label>Cevix</label>
+                                    <div>
+                                        <select name="cevix" id="cevix_1trimestre" class="form-control" required>
+                                            <option value="< 30%">< 30%</option>
+                                            <option value="30-50%">30-50%</option>
+                                            <option value="> 50%">> 50%</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Sludge </label>
+                                    <div>
+                                        <select name="sludge" id="sludge_1trimestre" class="form-control" required>
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Líquido amniótico</label>
+                                    <div>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_1trimestre" class="form-control" required>
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center"><b>Tamizaje Para Enfermedades Hipertensivas En El Embarazo</b></p>
+                            <p>Antecedentes Maternos</p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Historia de Madre con Pre eclampsia </label>
+                                    <div>
+                                        <select name="historia_preecampsia_mama" id="historia_preecampsia_mama_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Historia de Madre con Hipertensión</label>
+                                    <div>
+                                        <select name="historia_hipertension_mama" id="historia_hipertension_mama_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Historia de hermana con Pre eclampsia </label>
+                                    <div>
+                                        <select name="historia_preecampsia_hermana" id="historia_preecampsia_hermana_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Historia personal de hipertensión</label>
+                                    <div>
+                                        <select name="historia_hipertension_personal" id="historia_hipertension_personal_1trimestre" class="form-control" required>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Peso actual</label>
+                                    <div>
+                                       <input type="text" name="peso_actual" id="peso_actual_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>PA brazo derecho</label>
+                                    <div>
+                                       <input type="text" name="pa_derecho" id="pa_derecho_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>PA brazo izquierdo</label>
+                                    <div>
+                                       <input type="text" name="pa_izquierdo" id="pa_izquierdo_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>IMC</label>
+                                    <div>
+                                       <input type="text" name="imc" id="imc_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>IP medio de aretrias uterinas</label>
+                                    <div>
+                                       <input type="text" name="ip_artrias" id="ip_artrias_1trimestre" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="form-control"><b>Tamizaje De Vasa Previa</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Bidimensional</label>
+                                    <div>
+                                        <select name="bidimensional" id="bidimensional_1trimestre" class="form-control" required>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Doppler color</label>
+                                    <div>
+                                        <select name="doppler_color" id="doppler_color_1trimestre" class="form-control" required>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <p>Estructuras presentes en defecto</p>
+
                     <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cubierto por membrana</label>
-                            <div>
-                                <select name="cubierta_membrana" id="cubierta_membrana_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Asas de intestino delgado</label>
-                            <div>
-                                <select name="asas_intestino_delgado" id="asas_intestino_delgado_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Asas de intestino grueso</label>
-                            <div>
-                                <select name="asas_intestino_grueso" id="asas_intestino_grueso_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dilatación de asas intra abdominal</label>
-                            <div>
-                                <select name="dilatacion_intra_abdominal" id="dilatacion_intra_abdominal_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medicion</label>
-                            <div>
-                                <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Dilatación de asas extra abdominal</label>
-                            <div>
-                                <select name="dilatacion_extra_abdominal" id="dilatacion_extra_abdominal_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Medicion</label>
-                            <div>
-                                <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Sospecha de peritonitis</label>
-                            <div>
-                                <select name="sospecha_peritonitis" id="sospecha_peritonitis_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cámara gástrica</label>
-                            <div>
-                                <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required data-target="camara_gastrica_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 camara_gastrica_si_form" style="display: none">
-                            <label>Cámara gástrica Si</label>
-                            <div>
-                                <select name="camara_gastrica_si" id="camara_gastrica_si_1trimestre" class="form-control" required>
-                                    <option value="Hígado intracorporeo">Hígado intracorporeo</option>
-                                    <option value="Hígado extra corpóreo">Hígado extra corpóreo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vejiga urinaria</label>
-                            <div>
-                                <select name="vejiga_urinaria" id="vejiga_urinaria_1trimestre" class="form-control" required>
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Cámara gástrica</label>
-                            <div>
-                                <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required>
-                                    <option value="Presente">Presente</option>
-                                    <option value="No visible">No visible</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Vejiga</label>
-                            <div>
-                                <select name="vejiga" id="vejiga_1trimestre" class="form-control" required>
-                                    <option value="Presente">Presente</option>
-                                    <option value="No visible">No visible</option>
-                                </select>
-                            </div>
-                        </div>
+                        <div class="col-md-12 nextChild"></div>
                     </div>
-                    <p>Extremidades Superiores</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Ambas presentes</label>
-                            <div>
-                                <select name="extremidades_superiores" id="extremidades_superiores_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integras</label>
-                            <div>
-                                <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Afectada</label>
-                            <div>
-                                <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Extremidades Inferiores</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Ambas presentes</label>
-                            <div>
-                                <select name="extremidades_inferiores" id="extremidades_inferiores_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Integras</label>
-                            <div>
-                                <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Afectada</label>
-                            <div>
-                                <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Placenta</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Numero</label>
-                            <div>
-                                <input type="number" name="placenta_numero" id="placenta_numero_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Posicion</label>
-                            <div>
-                                <select name="placenta_posocion" id="placenta_posocion_1trimestre" class="form-control" required>
-                                    <option value="Anterior Baja">Anterior Baja</option>
-                                    <option value="Anterior Alta">Anterior Alta</option>
-                                    <option value="Posterior Baja">Posterior Baja</option>
-                                    <option value="Posterior Alta">Posterior Alta</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Grado</label>
-                            <div>
-                                <input type="number" name="placenta_grado" id="placenta_grado_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Longitud de cérvix (mm)</label>
-                            <div>
-                                <input type="number" name="longitud_cervix" id="longitud_cervix_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Funnelings</label>
-                            <div>
-                                <select name="funneling" id="funneling_1trimestre" class="form-control" required>
-                                    <option value="Negativo">Negativo</option>
-                                    <option value="Positivo">Positivo</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Cevix</label>
-                            <div>
-                                <select name="cevix" id="cevix_1trimestre" class="form-control" required>
-                                    <option value="< 30%">< 30%</option>
-                                    <option value="30-50%">30-50%</option>
-                                    <option value="> 50%">> 50%</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Sludge </label>
-                            <div>
-                                <select name="sludge" id="sludge_1trimestre" class="form-control" required>
-                                    <option value="Negativo">Negativo</option>
-                                    <option value="Positivo">Positivo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Líquido amniótico</label>
-                            <div>
-                                <select name="liquido_amniotico" id="liquido_amniotico_1trimestre" class="form-control" required>
-                                    <option value="Normal">Normal</option>
-                                    <option value="Anormal">Anormal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-center"><b>Tamizaje Para Enfermedades Hipertensivas En El Embarazo</b></p>
-                    <p>Antecedentes Maternos</p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Historia de Madre con Pre eclampsia </label>
-                            <div>
-                                <select name="historia_preecampsia_mama" id="historia_preecampsia_mama_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Historia de Madre con Hipertensión</label>
-                            <div>
-                                <select name="historia_hipertension_mama" id="historia_hipertension_mama_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Historia de hermana con Pre eclampsia </label>
-                            <div>
-                                <select name="historia_preecampsia_hermana" id="historia_preecampsia_hermana_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Historia personal de hipertensión</label>
-                            <div>
-                                <select name="historia_hipertension_personal" id="historia_hipertension_personal_1trimestre" class="form-control" required>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Peso actual</label>
-                            <div>
-                               <input type="text" name="peso_actual" id="peso_actual_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>PA brazo derecho</label>
-                            <div>
-                               <input type="text" name="pa_derecho" id="pa_derecho_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>PA brazo izquierdo</label>
-                            <div>
-                               <input type="text" name="pa_izquierdo" id="pa_izquierdo_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>IMC</label>
-                            <div>
-                               <input type="text" name="imc" id="imc_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>IP medio de aretrias uterinas</label>
-                            <div>
-                               <input type="text" name="ip_artrias" id="ip_artrias_1trimestre" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <p class="form-control"><b>Tamizaje De Vasa Previa</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Bidimensional</label>
-                            <div>
-                                <select name="bidimensional" id="bidimensional_1trimestre" class="form-control" required>
-                                    <option value="Positivo">Positivo</option>
-                                    <option value="Negativo">Negativo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Doppler color</label>
-                            <div>
-                                <select name="doppler_color" id="doppler_color_1trimestre" class="form-control" required>
-                                    <option value="Positivo">Positivo</option>
-                                    <option value="Negativo">Negativo</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <div class="col-md-6">
                             <label>Conclusiones</label>
