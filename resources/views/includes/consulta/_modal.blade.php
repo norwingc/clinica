@@ -1007,7 +1007,7 @@
                          <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
-                                <input type="text" name="date" id="date_ecocardiografia" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                                <input type="text" name="date" id="date_ecocardiografia" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -1091,7 +1091,7 @@
                                 <div class="col-md-3">
                                     <label>Situs Ambiguo</label>
                                     <div>
-                                        <select name="situs" id="situs_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form'>
+                                        <select name="situs" id="situs_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form' onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -1496,33 +1496,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <label>Revision</label>
-                                    <div>
-                                        <select name="revision" id="revision_ecocardiografia" class="form-control">
-                                            <option value="Adecuada">Adecuada</option>
-                                            <option value="Limitada">Limitada</option>
-                                            <option value="Muy Limitada">Muy Limitada</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Conclusiones</label>
-                                    <div>
-                                        <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
-                                            <option value="Corte Axial de Abdomen dentro de límites normales">Corte Axial de Abdomen dentro de límites normales</option>
-                                            <option value="Corte de 4 cámaras dentro de límites normales">Corte de 4 cámaras dentro de límites normales</option>
-                                            <option value="Corte de 3 vasos tráquea dentro de límites normales">Corte de 3 vasos tráquea dentro de límites normales</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-md-12 nextChild"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Revision</label>
+                            <div>
+                                <select name="revision" id="revision_ecocardiografia" class="form-control">
+                                    <option value="Adecuada">Adecuada</option>
+                                    <option value="Limitada">Limitada</option>
+                                    <option value="Muy Limitada">Muy Limitada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Conclusiones</label>
+                            <div>
+                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
+                                    <option value="Corte Axial de Abdomen dentro de límites normales">Corte Axial de Abdomen dentro de límites normales</option>
+                                    <option value="Corte de 4 cámaras dentro de límites normales">Corte de 4 cámaras dentro de límites normales</option>
+                                    <option value="Corte de 3 vasos tráquea dentro de límites normales">Corte de 3 vasos tráquea dentro de límites normales</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -1568,7 +1569,7 @@
                          <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
-                                <input type="text" name="date" id="date_neurosonografia" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                                <input type="text" name="date" id="date_neurosonografia" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -1724,7 +1725,7 @@
                                 <div class="col-md-3">
                                     <label>Presencia de quiste</label>
                                     <div>
-                                        <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form">
+                                        <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -2259,7 +2260,7 @@
                          <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
-                                <input type="text" name="date" id="date_estructural" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                                <input type="text" name="date" id="date_estructural" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -2413,7 +2414,7 @@
                                 <div class="col-md-3">
                                     <label>Presencia de quiste</label>
                                     <div>
-                                        <select name="presencia_quiste" id="presencia_quiste_estructural" class="form-control" required data-target="presencia_quiste_si_form">
+                                        <select name="presencia_quiste" id="presencia_quiste_estructural" class="form-control" required data-target="presencia_quiste_si_form" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -2892,7 +2893,7 @@
                                 <div class="col-md-3">
                                     <label>Cámara gástrica</label>
                                     <div>
-                                        <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_si_form">
+                                        <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required data-target="camara_gastrica_si_form" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -3222,7 +3223,7 @@
                          <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
-                                <input type="text" name="date" id="date_1trimestre" class="form-control" value="{{ date('Y-m-d h:i a') }}">
+                                <input type="text" name="date" id="date_1trimestre" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -3294,7 +3295,7 @@
                                 <div class="col-md-3">
                                     <label>Presencia de quiste de plexos coroideos </label>
                                     <div>
-                                        <select name="quiste_plexos" id="quiste_plexos_1trimestre" class="form-control" required data-target="quiste_plexos_si_form">
+                                        <select name="quiste_plexos" id="quiste_plexos_1trimestre" class="form-control" required data-target="quiste_plexos_si_form" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -3412,7 +3413,7 @@
                                 <div class="col-md-3">
                                     <label>Pared abdominal integra</label>
                                     <div>
-                                        <select name="pared_integra" id="pared_integra_1trimestre" class="form-control" required data-target="pared_integra_1trimestre_si">
+                                        <select name="pared_integra" id="pared_integra_1trimestre" class="form-control" required data-target="pared_integra_1trimestre_si" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -3510,7 +3511,7 @@
                                 <div class="col-md-3">
                                     <label>Cámara gástrica</label>
                                     <div>
-                                        <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required data-target="camara_gastrica_si_form">
+                                        <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required data-target="camara_gastrica_si_form" onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -4378,3 +4379,414 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalUpdatedColposcopia">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Historia</label>
+                             <div>
+                                 <textarea name="historia" id="historia_colposcopia" class="form-control"></textarea>
+                             </div>
+                        </div>
+                        <div class="col-md-3">
+                           <label>Edad</label>
+                           <div>
+                               <input type="number" name="edad" id="edad_colposcopia" class="form-control">
+                           </div>
+                        </div>
+                        <div class="col-md-3">
+                           <label>Fecha</label>
+                           <div>
+                               <input type="text" class="form-control" name="date" id="date_colposcopia" readonly value="{{ date('d/m/Y h:i a') }}">
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <label>Control Por</label>
+                           <div>
+                               <textarea name="control" id="control_cosposcopia" class="form-control"></textarea>
+                           </div>
+                        </div>
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdatedDoppler">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Edad</label>
+                            <div>
+                                <input type="number" name="edad" id="edad_doppler" class="form-control" required>
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Medico</label>
+                            <div>
+                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" name="date" id="date_doppler" class="form-control" value="{{ date('d/m/Y h:i a') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Paridad</label>
+                            <div>
+                                <input type="text" name="paridad" id="paridad_doppler" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center"><b>Se realizó estudio ultrasonográfico en tiempo real, observando</b></p>
+                    <div class="form-group">
+                       <div class="col-md-3">
+                           <label>Feto</label>
+                           <div>
+                               <select name="feto" id="feto_doppler" class="form-control" required>
+                                    <option value="">Selecione una opcion</option>
+                                   <option value="1">Unico</option>
+                                   <option value="2">Gemelo</option>
+                                   <option value="Otro">Otro</option>
+                               </select>
+                           </div>
+                       </div>
+                       <div class="col-md-3 cantidad_feto" style="display: none">
+                            <label>Cantidad</label>
+                            <div>
+                                <input type="number" id="cantidad_feto_doppler" class="form-control">
+                            </div>
+                       </div>
+                    </div>
+
+                     <div class="node">
+                        <div id="child_doppler" style="display: none">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>Evaluación de parámetros biofísicos fetales</label>
+                                    <div>
+                                        <select name="evaluacion_parametros" id="evaluacion_parametros_doppler" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Semanas</label>
+                                    <div>
+                                        <select name="semanas" id="semanas_doppler" class="form-control" onchange="semanasDoppler($(this))">
+                                            <option value="">Selecione una opcion</option>
+                                            <option value="32">Mayor a 32 Semanas</option>
+                                            <option value="36">Mayor a 36 Semanas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="mayor32" style="display: none">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label>Movimientos respiratorios</label>
+                                        <div>
+                                            <select name="movimiento_respiratorios_32" id="movimiento_respiratorios_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Puntos 2</label>
+                                        <div>
+                                            <select name="puntos_2_respiratorios_32" id="puntos_2_respiratorios_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Tono fetal Presente</label>
+                                        <div>
+                                            <select name="tono_fetal_32" id="tono_fetal_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Puntos 2</label>
+                                        <div>
+                                            <select name="puntos_2_tono_32" id="puntos_2_tono_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Movimientos corporales Normales</label>
+                                        <div>
+                                            <select name="movimiento_corporales_32" id="movimiento_corporales_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Puntos 2</label>
+                                        <div>
+                                            <select name="puntos_2_corporales_32" id="puntos_2_corporales_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Liquido amniótico</label>
+                                        <div>
+                                            <select name="liquido_amoniotico_32" id="liquido_amoniotico_32_doppler" class="form-control">
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Puntos 2</label>
+                                        <div>
+                                            <select name="puntos_2_liquido_32" id="puntos_2_liquido_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Integridad cardiaca 100% en 5 ciclos normal</label>
+                                        <div>
+                                            <select name="integridad_cardiaca_32" id="integridad_cardiaca_32_doppler" class="form-control">
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Puntos 2</label>
+                                        <div>
+                                            <select name="puntos_2_integridad_32" id="puntos_2_integridad_32_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label>NST</label>
+                                        <div>
+                                            <select name="nst_32" id="nst_32_doppler" class="form-control" data-target="nst_32_si" onchange="selectShow($(this))">
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 nst_32_si" style="display: none">
+                                        <label>Registro NST < 32 semanas de gestación / Embarazo a término sin trabajo de parto</label>
+                                        <div>
+                                            <select name="nst_parto" id="nst_parto_doppler" class="form-control">
+                                                <option value="Datos ominosos">Datos ominosos</option>
+                                                <option value="Sin datos ominosos">Sin datos ominosos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 nst_32_si" style="display: none">
+                                        <label>Registro NST Embarazo a término en Trabajo de Parto semanas de gestación</label>
+                                        <div>
+                                            <select name="nst_gestacion" id="nst_gestacion_doppler" class="form-control">
+                                                <option value="Datos ominosos">Datos ominosos</option>
+                                                <option value="Sin datos ominosos">Sin datos ominosos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Maduracion Pulmonar</label>
+                                        <div>
+                                            <select name="maduracion_pulmonar" id="maduracion_pulmonar_doppler" class="form-control">
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="mayor36" style="display: none">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label>Riesgo de distres respiratorio</label>
+                                        <div>
+                                            <select name="riesgo_distres" id="riesgo_distres_doppler" class="form-control">
+                                                <option value="Alto">Alto</option>
+                                                <option value="Bajo">Bajo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Placenta</label>
+                                        <div>
+                                            <select name="placenta" id="placenta_doppler" class="form-control">
+                                                <option value="Una">Una</option>
+                                                <option value="Dos">Bajo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Posicion</label>
+                                        <div>
+                                            <select name="placenta_posocion" id="placenta_posocion_doppler" class="form-control" required>
+                                                <option value="Anterior Baja">Anterior Baja</option>
+                                                <option value="Anterior Alta">Anterior Alta</option>
+                                                <option value="Posterior Baja">Posterior Baja</option>
+                                                <option value="Posterior Alta">Posterior Alta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Placenta Grado</label>
+                                        <div>
+                                           <select class="form-control" name="planceta_grado" id="planceta_grado_doppler">
+                                               <option value="">Selecione Uno</option>
+                                               <option value="0">0</option>
+                                               <option value="1">1</option>
+                                               <option value="2">2</option>
+                                               <option value="3">3</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Presencia de calcificaciones probablemente patológicas</label>
+                                        <div>
+                                           <select class="form-control" name="calificaciones_patologicas" id="calificaciones_patologicas_doppler">
+                                               <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Áreas de infartos placentarios</label>
+                                        <div>
+                                           <select class="form-control" name="areas_infartos" id="areas_infartos_doppler">
+                                               <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label>Longitud de cérvix (mm)</label>
+                                        <div>
+                                            <input type="number" name="longitud_cervix" id="longitud_cervix_doppler" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Funnelings</label>
+                                        <div>
+                                            <select name="funneling" id="funneling_doppler" class="form-control" required>
+                                                <option value="Negativo">Negativo</option>
+                                                <option value="Positivo">Positivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-3">
+                                        <label>Cevix</label>
+                                        <div>
+                                            <select name="cevix" id="cevix_doppler" class="form-control" required>
+                                                <option value="< 30%">< 30%</option>
+                                                <option value="30-50%">30-50%</option>
+                                                <option value="> 50%">> 50%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Sludge</label>
+                                        <div>
+                                            <select name="sludge" id="sludge_doppler" class="form-control" required>
+                                                <option value="Negativo">Negativo</option>
+                                                <option value="Positivo">Positivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Líquido amniótico</label>
+                                        <div>
+                                            <select name="liquido_amniotico" id="liquido_amniotico_doppler" class="form-control" required>
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 nextChild"></div>
+                    </div>
+
+                     <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Revision</label>
+                            <div>
+                                <select name="revision" id="revision_doppler" class="form-control">
+                                    <option value="Adecuada">Adecuada</option>
+                                    <option value="Limitada">Limitada</option>
+                                    <option value="Muy Limitada">Muy Limitada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Conclusiones</label>
+                            <div>
+                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
+                                    <option value="Embarazo de 35.4 Semanas de gestación por fetometría acorde a US evolutivo ">Embarazo de 35.4 Semanas de gestación por fetometría acorde a US evolutivo </option>
+                                    <option value="Perfil Biofísico: 8/8">Perfil Biofísico: 8/8</option>
+                                    <option value="Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado">Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Comentarios</label>
+                            <div>
+                                <textarea name="comentarios" id="comentarios_doppler" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

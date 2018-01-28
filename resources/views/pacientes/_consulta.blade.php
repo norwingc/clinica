@@ -31,12 +31,12 @@
                         <option value="0">Colposcopia / Crioterapia</option>
                         <option value="1">Consulta de Atención Prenatal</option>
                         <option value="2">Consulta Ginecologica</option>
-                        <option value="4">Curva de crecimiento / Doppler Fetal</option>
-                        <option value="6">Ecocardiografia</option>
-                        <option value="7">Neurosonografia</option>
-                        <option value="9">Ultrasonido Estructural</option>
-                        <option value="10">Ultrasonido I Trimestre</option>
-                        <option value="11">Ultrasonido Pelvico</option>
+                        <option value="3">Curva de crecimiento / Doppler Fetal</option>
+                        <option value="4">Ecocardiografia</option>
+                        <option value="5">Neurosonografia</option>
+                        <option value="6">Ultrasonido Estructural</option>
+                        <option value="7">Ultrasonido I Trimestre</option>
+                        <option value="8">Ultrasonido Pelvico</option>
                     </select>
                 </div>
             </div>

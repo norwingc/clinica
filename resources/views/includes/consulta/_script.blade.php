@@ -3,31 +3,77 @@
 <script type="text/javascript">
     var _token = window.Laravel.csrfToken;
 
+
+    $('.form-examen select').change(function(){
+        selectShow($(this));
+    });
+
+    function selectShow(este) {
+        if(este.data('target') == undefined) return false;
+
+        let target = $('.'+este.data('target'));
+
+        if(este.val() == 'Si' || este.val() == 'Anormal'){
+            if($(target).is(':hidden')){
+                $(target).toggle('1000');
+
+                let select = $(target).find('select');
+                select.prop('required', 'required');
+
+                let input = $(target).find('input');
+                input.prop('required', 'required');
+            }
+        }
+
+        if(este.val() == 'No' || este.val() == 'Normal'){
+            if($(target).is(':hidden')){
+                return false;
+            }else{
+                $(target).toggle('1000');
+
+                let select = $(target).find('select');
+                select.removeAttr('required');
+                select.val('');
+                select.selectpicker('deselectAll');
+
+                let input = $(target).find('input');
+                input.removeAttr('required');
+                input.val('');
+            }
+        }
+    }
+
     $('.examen_agregar').click(function(){
 
         let examen = $('.examen_tipo').val();
 
         if(examen == '') return false;
 
-        if(examen == 1){//consulta atencion prental
+        if(examen == 0){
+            updateColposcopia($(this));
+        }
+        if(examen == 1){
             updateAtencionPretanal($(this));
         }
         if(examen == 2){
             updatedConsultaGinecologica($(this));
         }
-        if(examen == 6){
+        if(examen == 3){
+            updatedConsultaDoppler($(this));
+        }
+        if(examen == 4){
             updatedEcocardiografia($(this));
         }
-        if(examen == 7){
+        if(examen == 5){
             updatedNeurosonografia($(this));
         }
-        if(examen == 9){
+        if(examen == 6){
             updatedEstructural($(this));
         }
-        if(examen == 10){
+        if(examen == 7){
             updatedITrimestre($(this));
         }
-        if(examen == 11){
+        if(examen == 8){
             updatedUltrasonidoPelvico($(this));
         }
     });
@@ -140,6 +186,42 @@
         setChild(child, cantidad);
     });
 
+    ////////////
+    //doppler //
+    ////////////
+    $('#feto_doppler').change(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        if(cantidad == 'Otro'){
+            $('.cantidad_feto').show();
+            return false;
+        }
+
+        let child = $('#child_doppler');
+
+        setChild(child, cantidad);
+    });
+    $('#cantidad_feto_doppler').focusout(function(event) {
+        let cantidad = $(this).val();
+
+        if(cantidad == '') return false;
+
+        let child = $('#child_doppler');
+
+        setChild(child, cantidad);
+    });
+
+    function semanasDoppler(este) {
+        if(este.val() == 32){
+            $('#mayor32').show();
+            $('#mayor36').hide();
+        }else{
+            $('#mayor36').show();
+            $('#mayor32').hide();
+        }
+    }
 
     /**
      * [setChild description]
@@ -174,6 +256,32 @@
         if(cantidad < 0) cantidad = 0;
 
         setChild(child, cantidad);
+    }
+
+    /**
+     * [updateColposcopia description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function updateColposcopia(este) {
+        let consulta = este.data('consulta');
+        let title    = 'Consulta Colposcopia / Crioterapia: ' + este.data('paciente');
+        let colposcopia = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!colposcopia){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Colposcopia/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Colposcopia/update/"+colposcopia);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Colposcopia/get/"+colposcopia, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedColposcopia').modal('show');
     }
 
     /**
@@ -225,6 +333,27 @@
         }
 
         $('#modalUpdatedConsultaGinecologica').modal('show');
+    }
+
+    function updatedConsultaDoppler(este) {
+        let consulta     = este.data('consulta');
+        let title        = 'Curva de crecimiento / Doppler Fetal: ' + este.data('paciente');
+        let doppler = este.data('id');
+        $('.modal-title').html(title);
+
+        if(!doppler){//agregar examen
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Doppler/store/"+consulta);
+            $('.consulta-form')[0].reset();
+        }else{
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Doppler/update/"+doppler);
+            $('.consulta-form')[0].reset();
+
+            $.get("{{ url('/') }}/Consultas/Doppler/get/"+doppler, function(data){
+                console.log(data);
+            });
+        }
+
+        $('#modalUpdatedDoppler').modal('show');
     }
 
     /**
