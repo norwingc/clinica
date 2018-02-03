@@ -3262,6 +3262,19 @@
                     <div class="node">
                         <div id="child_1trimestre" style="display: none">
 
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label>Vitalidad</label>
+                                    <div>
+                                        <select name="vitalidad_feto" id="vitalidad_feto_1trimestre" class="form-control">
+                                            <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
+                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
                             <p class="text-center"><b>Tabla Somatometria</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
@@ -3326,19 +3339,6 @@
                                 </div>
                             </div>
 
-
-                            <div class="form-group">
-                                <div class="col-md-4">
-                                    <label>Vitalidad</label>
-                                    <div>
-                                        <select name="vitalidad_feto" id="vitalidad_feto_1trimestre" class="form-control">
-                                            <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con respiracion de movimientos y ausencia de tonos">Feto con respiracion de movimientos y ausencia de tonos</option>
-                                            <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
                             <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
                             <p>Cráneo</p>
                             <div class="form-group">
@@ -3417,7 +3417,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Corazon</p>
+                            <p class="text-center"><b>Coraz&oacute;n</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Localización Intratoracica</label>
@@ -3454,7 +3454,7 @@
                                 </div>
                             </div>
 
-                            <p>Abdomen</p>
+                            <p class="text-center"><b>Abdomen</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Inserción de cordón normal</label>
@@ -3478,8 +3478,8 @@
                                     <label>Arteria umbilical única</label>
                                     <div>
                                         <select name="arteria_umbilical" id="arteria_umbilical_1trimestre" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3500,8 +3500,8 @@
                                         <label>Localizacion del defecto</label>
                                         <div>
                                            <select name="localizacion_defecto_abdominal" id="localizacion_defecto_abdominal_1trimestre" class="form-control">
-                                               <option value="Defecto paraunbilical derecho">Defecto paraunbilical derecho</option>
-                                               <option value="Defecto paraunbilical izquierdo">Defecto paraunbilical izquierdo</option>
+                                               <option value="Defecto paraumbilical derecho">Defecto paraumbilical derecho</option>
+                                               <option value="Defecto paraumbilical izquierdo">Defecto paraumbilical izquierdo</option>
                                                <option value="Defecto en base de cordón">Defecto en base de cordón</option>
                                                <option value="Defecto en linea media">Defecto en linea media</option>
                                            </select>
@@ -3615,17 +3615,16 @@
 
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <label>Cámara gástrica</label>
+                                    <label>Cámara gástrica Insitu</label>
                                     <div>
                                         <select name="camara_gastrica" id="camara_gastrica_1trimestre" class="form-control" required>
                                             <option value="Presente">Presente</option>
-                                            <option value="Insitu">Insitu</option>
                                             <option value="No visible">No visible</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Vejiga Urinaria</label>
+                                    <label>Vejiga Urinaria Insitu</label>
                                     <div>
                                         <select name="vejiga" id="vejiga_1trimestre" class="form-control" required>
                                             <option value="Presente">Presente</option>
@@ -3749,9 +3748,9 @@
                                     </div>
                                 </div>
                                  <div class="col-md-3">
-                                    <label>Porcentage Funneling</label>
+                                    <label>Porcentaje Funneling</label>
                                     <div>
-                                        <select name="cevix" id="cevix_1trimestre" class="form-control" required>
+                                        <select name="porcentaje_funneling" id="porcentaje_funneling_1trimestre" class="form-control" required>
                                             <option value="< 30%">< 30%</option>
                                             <option value="30-50%">30-50%</option>
                                             <option value="> 50%">> 50%</option>
@@ -3872,8 +3871,8 @@
                             <label>Bidimensional</label>
                             <div>
                                 <select name="bidimensional" id="bidimensional_1trimestre" class="form-control" required>
-                                    <option value="Positivo">Positivo</option>
                                     <option value="Negativo">Negativo</option>
+                                    <option value="Positivo">Positivo</option>
                                 </select>
                             </div>
                         </div>
@@ -3881,8 +3880,8 @@
                             <label>Doppler color</label>
                             <div>
                                 <select name="doppler_color" id="doppler_color_1trimestre" class="form-control" required>
-                                    <option value="Positivo">Positivo</option>
                                     <option value="Negativo">Negativo</option>
+                                    <option value="Positivo">Positivo</option>
                                 </select>
                             </div>
                         </div>
@@ -3907,9 +3906,19 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label style="font-size: 10px">Riesgo para Pre eclampsia de aparición temprana y para fenómenos hipertensivos tardíos</label>
+                            <label style="font-size: 12px">Riesgo para Pre eclampsia de aparición temprana</label>
                             <div>
                                 <select name="conclusion_riesago_preeclampsia" id="conclusion_riesago_preeclampsia_1trimestre"  class="form-control">
+                                    <option value="Alto">Alto</option>
+                                    <option value="Intermedio">Intermedio</option>
+                                    <option value="Bajo">Bajo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Riesgo fenómenos hipertensivos tardíos</label>
+                            <div>
+                                <select name="conclusion_riesago_hipertensivos" id="conclusion_riesago_hipertensivos_1trimestre"  class="form-control">
                                     <option value="Alto">Alto</option>
                                     <option value="Intermedio">Intermedio</option>
                                     <option value="Bajo">Bajo</option>
@@ -4034,245 +4043,251 @@
                         <div class="col-md-3">
                             <label>Útero</label>
                             <div>
-                                <select name="utero" id="utero_pelvico" class="form-control">
+                                <select name="utero" id="utero_pelvico" class="form-control" onchange="uteroPelvico($(this))">
                                     <option value="Presente">Presente</option>
                                     <option value="Ausente">Ausente</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label>Forma</label>
-                            <div>
-                                <select name="forma" id="forma_pelvico" class="form-control">
-                                    <option value="Anteversion">Anteversion</option>
-                                    <option value="Retroversion">Retroversion</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Bordes</label>
-                            <div>
-                                <select name="bordes" id="bordes_pelvico" class="form-control">
-                                    <option value="Regulares">Regulares</option>
-                                    <option value="Irregulares">Irregulares</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Paredes</label>
-                            <div>
-                                <select name="paredes" id="paredes_pelvico" class="form-control">
-                                    <option value="Regulares">Regulares</option>
-                                    <option value="Irregulares">Irregulares</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
-                    <p class="text-center"><b>Medicion</b></p>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Longitud (mm)</label>
-                            <div>
-                                <input type="text" name="longitud" id="longitud_pelvico" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Ancho (mm)</label>
-                            <div>
-                                <input type="text" name="ancho" id="ancho_pelvico" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Grosor (mm)</label>
-                            <div>
-                                <input type="text" name="grosor" id="grosor_pelvico" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Masas en musculo uterino</label>
-                            <div>
-                                <select name="masa_uterino" id="masa_uterino_pelvico" class="form-control" data-target="masa_uterino_si" onchange="selectShow($(this))">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                    <option value="Unica">Unica</option>
-                                    <option value="Multiple">Multiple</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="masa_uterino_si" style="display: none">
+
+                    <div class="utero_pelvico_ausente">
+                        <div class="form-group">
                             <div class="col-md-3">
-                                <label>Numbero de masas</label>
+                                <label>Forma</label>
                                 <div>
-                                    <input type="text" name="masa_uterino_cuantas" id="masa_uterino_cuantas_pelvico" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <label>Cara</label>
-                                <div>
-                                    <select name="cara[]" id="capa_pelvico" class="form-control selectpicker" multiple>
-                                        <option value="Cara Anterior">Cara Anterior</option>
-                                        <option value="Cara Posterior">Cara Posterior</option>
+                                    <select name="forma" id="forma_pelvico" class="form-control">
+                                        <option value="Anteversion">Anteversion</option>
+                                        <option value="Retroversion">Retroversion</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label>Localizacion de la masa</label>
+                                <label>Bordes</label>
                                 <div>
-                                    <select name="localizacion_masa[]" id="localizacion_masa_pelvico" class="form-control selectpicker" multiple>
-                                        <option value="Serosa">Serosa</option>
-                                        <option value="Miometrial">Miometrial</option>
-                                        <option value="Mucosa">Mucosa</option>
+                                    <select name="bordes" id="bordes_pelvico" class="form-control">
+                                        <option value="Regulares">Regulares</option>
+                                        <option value="Irregulares">Irregulares</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label>Mediciones</label>
+                                <label>Paredes</label>
                                 <div>
-                                    <input type="text" name="mediciones" id="mediciones_pelvico" class="form-control">
+                                    <select name="paredes" id="paredes_pelvico" class="form-control">
+                                        <option value="Regulares">Regulares</option>
+                                        <option value="Irregulares">Irregulares</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label>Presencia de tabique</label>
-                            <div>
-                                <select name="presencia_tabique" id="presencia_tabique_pelvico" class="form-control" data-target="presencia_tabique_si">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
+                        <p class="text-center"><b>Medicion</b></p>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label>Longitud (mm)</label>
+                                <div>
+                                    <input type="text" name="longitud" id="longitud_pelvico" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Ancho (mm)</label>
+                                <div>
+                                    <input type="text" name="ancho" id="ancho_pelvico" class="form-control" required>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <label>Grosor (mm)</label>
+                                <div>
+                                    <input type="text" name="grosor" id="grosor_pelvico" class="form-control" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3 presencia_tabique_si" style="display: none">
-                            <label>Medicion</label>
-                            <div>
-                                <input type="text" name="tabique_medicion" id="tabique_medicion_pelvico" class="form-control">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label>Masas en musculo uterino</label>
+                                <div>
+                                    <select name="masa_uterino" id="masa_uterino_pelvico" class="form-control" data-target="masa_uterino_si" onchange="selectShow($(this))">
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                        <option value="Unica">Unica</option>
+                                        <option value="Multiple">Multiple</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="masa_uterino_si" style="display: none">
+                                <div class="col-md-3">
+                                    <label>Numero de masas</label>
+                                    <div>
+                                        <input type="text" name="masa_uterino_cuantas" id="masa_uterino_cuantas_pelvico" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Cara</label>
+                                    <div>
+                                        <select name="cara[]" id="capa_pelvico" class="form-control selectpicker" multiple>
+                                            <option value="Cara Anterior">Cara Anterior</option>
+                                            <option value="Cara Posterior">Cara Posterior</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Localizacion de la masa</label>
+                                    <div>
+                                        <select name="localizacion_masa[]" id="localizacion_masa_pelvico" class="form-control selectpicker" multiple>
+                                            <option value="Serosa">Serosa</option>
+                                            <option value="Miometrial">Miometrial</option>
+                                            <option value="Mucosa">Mucosa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Mediciones</label>
+                                    <div>
+                                        <input type="text" name="mediciones" id="mediciones_pelvico" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Presencia de tabique</label>
+                                <div>
+                                    <select name="presencia_tabique" id="presencia_tabique_pelvico" class="form-control" data-target="presencia_tabique_si">
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 presencia_tabique_si" style="display: none">
+                                <label>Medicion</label>
+                                <div>
+                                    <input type="text" name="tabique_medicion" id="tabique_medicion_pelvico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Endometrio (mm)</label>
+                                <div>
+                                    <input type="text" name="endometrio" id="endometrio_pelvico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Modo</label>
+                                <div>
+                                     <select name="endometrio_modo" id="endometrio_modo_pelvico" class="form-control">
+                                        <option value="Lineal">Lineal</option>
+                                        <option value="No Valorable">No Valorable</option>
+                                        <option value="Engrosado">Engrosado</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label>Endometrio (mm)</label>
-                            <div>
-                                <input type="text" name="endometrio" id="endometrio_pelvico" class="form-control">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label>Cavidad endometrial ocupada</label>
+                                <div>
+                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_si_form">
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label>Modo</label>
-                            <div>
-                                 <select name="endometrio_modo" id="endometrio_modo_pelvico" class="form-control">
-                                    <option value="Lineal">Lineal</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                    <option value="Engrosado">Engrosado</option>
-                                </select>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Dispositivo intrauterino</label>
+                                <div>
+                                    <input type="text" name="dispositivo_intrauterino" id="dispositivo_intrauterino_pelvico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Saco gestacional</label>
+                                <div>
+                                     <select name="saco_gestional" id="saco_gestional_pelvico" class="form-control">
+                                        <option value="Unico">Unico</option>
+                                        <option value="Gemelo">Gemelo</option>
+                                        <option value="Triple">Triple</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Saco gestacional Bordes</label>
+                                <div>
+                                    <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
+                                        <option value="Regulares">Regulares</option>
+                                        <option value="Irregulares">Irregulares</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Ubicacion</label>
+                                <div>
+                                    <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
+                                        <option value="Fondo uterino">Fondo uterino</option>
+                                        <option value="Segmento">Segmento</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Reaccion coridodecidual</label>
+                                <div>
+                                    <select name="reaccion_coridodecidual" id="reaccion_coridodecidual_pelvico" class="form-control">
+                                        <option value="Adecuada">Adecuada</option>
+                                        <option value="Inadecuada">Inadecuada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Presencia de vesicula vitelina</label>
+                                <div>
+                                    <select name="presencia_vesicula" id="presencia_vesicula_pelvico" class="form-control">
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Presencia de yema embrionaria</label>
+                                <div>
+                                    <select name="presencia_yema" id="presencia_yema_pelvico" class="form-control">
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Vitalidad</label>
+                                <div>
+                                    <select name="vitalidad" id="vitalidad_pelvico" class="form-control">
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                        <option value="No Valorable">No Valorable</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Longitud craneo cauda (mm)</label>
+                                <div>
+                                    <input type="text" name="longitud_craneo" id="longitud_craneo_pelvico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Edad gestacional</label>
+                                <div>
+                                    <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
+                                <label>Fecha estimada de parto</label>
+                                <div>
+                                    <input type="text" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <label>Cavidad endometrial ocupada</label>
-                            <div>
-                                <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_si_form">
-                                    <option value="No">No</option>
-                                    <option value="Si">Si</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Dispositivo intrauterino</label>
-                            <div>
-                                <input type="text" name="dispositivo_intrauterino" id="dispositivo_intrauterino_pelvico" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Saco gestacional</label>
-                            <div>
-                                 <select name="saco_gestional" id="saco_gestional_pelvico" class="form-control">
-                                    <option value="Unico">Unico</option>
-                                    <option value="Gemelo">Gemelo</option>
-                                    <option value="Triple">Triple</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Saco gestacional Bordes</label>
-                            <div>
-                                <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
-                                    <option value="Regulares">Regulares</option>
-                                    <option value="Irregulares">Irregulares</option>
-                                </select>
-                            </div>
-                        </div>
-                         <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Ubicacion</label>
-                            <div>
-                                <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
-                                    <option value="Fondo uterino">Fondo uterino</option>
-                                    <option value="Segmento">Segmento</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Reaccion coridodecidual</label>
-                            <div>
-                                <select name="reaccion_coridodecidual" id="reaccion_coridodecidual_pelvico" class="form-control">
-                                    <option value="Adecuada">Adecuada</option>
-                                    <option value="Inadecuada">Inadecuada</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Presencia de vesicula vitelina</label>
-                            <div>
-                                <select name="presencia_vesicula" id="presencia_vesicula_pelvico" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Presencia de yema embrionaria</label>
-                            <div>
-                                <select name="presencia_yema" id="presencia_yema_pelvico" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Vitalidad</label>
-                            <div>
-                                <select name="vitalidad" id="vitalidad_pelvico" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                    <option value="No Valorable">No Valorable</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Longitud craneo cauda (mm)</label>
-                            <div>
-                                <input type="text" name="longitud_craneo" id="longitud_craneo_pelvico" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Edad gestacional</label>
-                            <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                            <label>Fecha estimada de parto</label>
-                            <div>
-                                <input type="text" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+
                     <p class="text-center"><b>Ovario Izquierdo</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Ovario</label>
                             <div>
                                  <select name="ovario_izquierdo" id="ovario_izquierdo_pelvico" class="form-control">
-                                    <option value="Presente">Presenrte</option>
+                                    <option value="Presente">Presente</option>
                                     <option value="Ausente">Ausente</option>
                                 </select>
                             </div>
@@ -4291,24 +4306,15 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label>Cuerpo luteo</label>
+                                <label>Presencia de masa anexial</label>
                                 <div>
-                                     <select name="ovario_izquierdo_cuerpo_luteo" id="ovario_izquierdo_cuerpo_luteo_pelvico" class="form-control" data-target="ovario_izquierdo_cuerpo_luteo_si">
+                                     <select name="presencia_masa_anexial_izquierdo" id="presencia_masa_anexial_izquierdo_pelvico" class="form-control" data-target="presencia_masa_anexial_izquierdo_si">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="ovario_izquierdo_cuerpo_luteo_si" style="display: none">
-                                <div class="col-md-3">
-                                    <label>Presencia de masa anexial</label>
-                                    <div>
-                                         <select name="ovario_izquierdo_presencia_masa" id="ovario_izquierdo_presencia_masa_pelvico" class="form-control">
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <div class="presencia_masa_anexial_izquierdo_si" style="display: none">
                                 <div class="col-md-3">
                                     <label>Tipo</label>
                                     <div>
@@ -4391,25 +4397,16 @@
                                     <input type="text" name="ovario_derecho_2" id="ovario_derecho_2_pelvico" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <label>Cuerpo luteo</label>
+                           <div class="col-md-3">
+                                <label>Presencia de masa anexial</label>
                                 <div>
-                                     <select name="ovario_derecho_cuerpo_luteo" id="ovario_derecho_cuerpo_luteo_pelvico" class="form-control" data-target="ovario_derecho_cuerpo_luteo_si">
+                                     <select name="presencia_masa_anexial_derecho" id="presencia_masa_anexial_derecho_pelvico" class="form-control" data-target="presencia_masa_anexial_derecho_si">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="ovario_derecho_cuerpo_luteo_si" style="display: none">
-                                <div class="col-md-3">
-                                    <label>Presencia de masa anexial</label>
-                                    <div>
-                                         <select name="ovario_derecho_presencia_masa" id="ovario_derecho_presencia_masa_pelvico" class="form-control">
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <div class="presencia_masa_anexial_derecho_si" style="display: none">
                                 <div class="col-md-3">
                                     <label>Tipo</label>
                                     <div>
@@ -4506,6 +4503,8 @@
                                     <option value="Útero y ovarios normales">Útero y ovarios normales</option>
                                     <option value="T de Cobre in Situ sin alteraciones.">T de Cobre in Situ sin alteraciones.</option>
                                     <option value="Embarazo temprano menor a 5 semanas por saco gestacional">Embarazo temprano menor a 5 semanas por saco gestacional</option>
+                                    <option value="Miomatosis uterina">Miomatosis uterina</option>
+                                    <option value="Ovarios poloquisticos">Ovarios poloquisticos</option>
                                 </select>
                             </div>
                         </div>

@@ -58,6 +58,10 @@
         (este.val() == 'No') ? $('.pared_integra_1trimestre_si').show() : $('.pared_integra_1trimestre_si').hide();
     }
 
+    function uteroPelvico(este) {
+        (este.val() == 'Presente') ? $('.utero_pelvico_ausente').show() : $('.utero_pelvico_ausente').hide();
+    }
+
 
     $('.examen_agregar').click(function(){
 
