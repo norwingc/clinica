@@ -43,6 +43,22 @@
         }
     }
 
+    $('#ovario_izquierdo_pelvico').change(function(event) {
+        ($(this).val() == 'Presente') ? $('.ovario_izquierdo_ausente').show() : $('.ovario_izquierdo_ausente').hide();
+    });
+    $('#ovario_derecho_pelvico').change(function(event) {
+        ($(this).val() == 'Presente') ? $('.ovario_derecho_ausente').show() : $('.ovario_derecho_ausente').hide();
+    });
+
+    function huesoNasalAusente(este) {
+        (este.val() == 'Ausente') ? $('.medicion_nasal_1trimestre').hide() : $('.medicion_nasal_1trimestre').show();
+    }
+
+    function paredIntegra(este) {
+        (este.val() == 'No') ? $('.pared_integra_1trimestre_si').show() : $('.pared_integra_1trimestre_si').hide();
+    }
+
+
     $('.examen_agregar').click(function(){
 
         let examen = $('.examen_tipo').val();

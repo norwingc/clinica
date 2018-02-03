@@ -1,0 +1,69 @@
+Pelvico
+ ✔ presencia de ecos -> no @done (18-02-03 12:06)
+ ✔ masas utero -> noc -> hasta mediciones @done (18-02-03 12:06)
+ ✔ cuantas -> numero de masas @done (18-02-03 12:06)
+ ✔ capa -> cara -> cara anterior -> seleccionar las dos @done (18-02-03 12:06)
+ ✔ localizacion de la masa -> serosa, mimetrial, mucosa -> selecionar las 3 @done (18-02-03 12:06)
+ ✔ tabique -> no -> ocultar medicion @done (18-02-03 12:07)
+ ✔ modo -> agregar engrosado @done (18-02-03 12:07)
+ ✔ cavidad -> no selecionar todos @done (18-02-03 12:08)
+ ✔ ovario -> ausente quitar todo @done (18-02-03 12:19)
+ ✔ cuerpo luteo -> no -> desaparece hasta ascitis @done (18-02-03 12:23)
+ ✔ ascitis ->quitar de los ovarios y ponerlos despues de liquido cantidad @done (18-02-03 12:24)
+ ✔ liquido -> no -> quitar cantidad @done (18-02-03 12:25)
+ ✔ conslusion->embarazo quitar -> agregar: embarazo temprano menor a 5 semanas por saco gestacional @done (18-02-03 12:27)
+ ✔ LCC -> longitud craneo caudal @done (18-02-03 12:30)
+
+I trimestre
+ ✔ quitar estructural en I trimestre @done (18-02-03 12:31)
+ ✔ se realizo estudio ->agregar "encontrando:" -> quitar textarea @done (18-02-03 12:31)
+ ✔ adentro de feto -> vitalidad->option->Feto Vivo con movimientos corporales y respiratorios presentes, feto con respiracion de movimientos y ausencia de tonos, ausencia de vitalidad @done (18-02-03 12:34)
+ ✔ hueso nasal quitar presente->option->presente, hipoclasico, ausente -> si es presente y hipoclasico salga medicion @done (18-02-03 12:42)
+ ✔ torax->quitar normal ->options-> pared toraccica normal, interrupcion de pared toraccica @done (18-02-03 12:43)
+ ✔ ectopia cordis->no @done (18-02-03 12:44)
+ ✔ anomalia->no -> si es si->agregar campo en blanco->descipcion anomalia @done (18-02-03 12:45)
+ ✔ ateria umbilical unica->no @done (18-02-03 12:54)
+ ✔ pared abdominal es ->si ->cerrar hasta Vejiga urinaria @done (18-02-03 12:54)
+ ✔ defecto para umbilical->localizacion del defecto->opction->defecto paraunbilical derecho, defecto paraumbilican izuquiedo, defecto de base de cordon, defecto en linea media @done (18-02-03 13:14)
+ ✔ segunda vejiga poner urinaria @done (18-02-03 13:14)
+ ✔ cubierto por membrana->no @done (18-02-03 13:15)
+ ✔ asas de intestino ->si @done (18-02-03 13:15)
+ ✔ dilatacion las dos -> si es si-> desplegar medicion @done (18-02-03 13:18)
+ ✔ camara gastrica->add presente->default no @done (18-02-03 13:22)
+ ✔ vejiga urinaria->add presente->dafault no @done (18-02-03 13:22)
+ ✔ segunda camara gastrica->add insitu @done (18-02-03 13:22)
+ ✔ segunda vejiga urinaria-> add insitu ->add option->mega vejiga @done (18-02-03 13:22)
+ ✔ extermidades superiros e inferiores->modificar->afectada->extermeidad afectada @done (18-02-03 13:23)
+
+placenta
+    ✔ despues de posicion -> fusion de membranas->corion y amnios fucionados, corion y amios separados parcialmente, corion y amnios separados en su totalidad @done (18-02-03 13:25)
+    ✔ grado->grado 0, grado I, grado II, grado III @done (18-02-03 13:26)
+    ✔ Funnelings sin "S" @done (18-02-03 13:26)
+    ✔ Cevix->porsentage de Funneling @done (18-02-03 13:27)
+    ✔ liquido amniotico->add opstion->normal, disminuido->anhidramnios @done (18-02-03 13:28)
+
+Tamizaje Para Enfermedades Hipertensivas En El Embarazo final de feto
+   ✔ Historia de Madre con Pre eclampsia->no @done (18-02-03 13:37)
+   ✔ Historia de Madre con Hipertensión->no @done (18-02-03 13:37)
+   ✔ Historia de hermana con Pre eclampsia->no @done (18-02-03 13:37)
+   ✔ Historia personal de hipertensión->Historia personal de hipertensión @done (18-02-03 13:37)
+   ✔ poso actual->talla ->IMC @done (18-02-03 13:37)
+   ✔ PA->presion alterial @done (18-02-03 13:37)
+   ✔ Tamizaje De Vasa Previa->titulo @done (18-02-03 13:37)
+
+conslusiones
+    ✔ feto de LCR->feto de __ por LCR @done (18-02-03 13:51)
+    ✔ Riesgo ->option->alto, intermedio, bajo __ para proceso de corosomoptias @done (18-02-03 13:51)
+    ✔ riesto->option->alto, intermedio, bajo para Pre elampcia @done (18-02-03 13:51)
+    ✔ riesgo->option.... para fetonomenmos ipertensicov tardios @done (18-02-03 13:51)
+    ✔ riesto->option.. para restriccion del crecimeinto intrauterino @done (18-02-03 13:51)
+    ✔ riesto->option... para parto pretermino @done (18-02-03 13:51)
+    ✔ LCR -> longitud cardio cauda @done (18-02-03 13:52)
+    ✔ quitar recomendaciones @done (18-02-03 13:52)
+    ✔ tabla ponerla antes de craneo @done (18-02-03 14:00)
+    ✔ tabla-> TN->trans lucencia nucal @done (18-02-03 14:00)
+
+
+
+
+poner recordatorio a todos
