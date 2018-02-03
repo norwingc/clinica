@@ -1018,7 +1018,7 @@
                         </div>
                    </div>
                    <p>Reporte De Ecocardiografia</p>
-                   <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b></p>
+                   <p class="sub_titul"><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b></p>
                    <div class="form-group">
                        <div class="col-md-3">
                            <label>Feto</label>
@@ -2298,7 +2298,7 @@
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </div>
-                    <p class="text-center"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
+                    <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                 {!! Form::close() !!}
             </div>
         </div>
@@ -2417,7 +2417,7 @@
                                </div>
                             </div>
 
-                            <p class="text-center"><b>Tabla somatometria</b></p>
+                            <p class="sub_titul"><b>Tabla somatometria</b></p>
                             <div class="form-group">
                                 <div class="col-md-2">
                                     <label>DBP (mm)</label>
@@ -2542,7 +2542,7 @@
 
                             </div>
 
-                            <p class="text-center"><b>Craneo</b></p>
+                            <p class="sub_titul"><b>Craneo</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Craneo Normal</label>
@@ -2729,7 +2729,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Corte Transcerebelar</b></p>
+                            <p class="sub_titul"><b>Corte Transcerebelar</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label style="font-size: 12px">Cerebelo con ambos hemisferios simétricos</label>
@@ -2783,7 +2783,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Columna Vertebral</b></p>
+                            <p class="sub_titul"><b>Columna Vertebral</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Cortes sagitales con piel integra</label>
@@ -2857,7 +2857,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Cara</b></p>
+                            <p class="sub_titul"><b>Cara</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Labio Normal</label>
@@ -2881,7 +2881,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Torax Fetal</b></p>
+                            <p class="sub_titul"><b>Torax Fetal</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Ambos pulmones de tamaño normal</label>
@@ -2932,7 +2932,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Corazon</b></p>
+                            <p class="sub_titul"><b>Corazon</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Situs</label>
@@ -3018,7 +3018,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Abdomen</b></p>
+                            <p class="sub_titul"><b>Abdomen</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Inserción de cordón normal</label>
@@ -3079,7 +3079,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-center"><b>Estructuras presentes en defecto</b></p>
+                                <p class="sub_titul"><b>Estructuras presentes en defecto</b></p>
                                 <div class="form-group">
                                     <div class="col-md-3">
                                         <label>Cubierto por membrana</label>
@@ -3304,7 +3304,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Extremidades Superiores</b></p>
+                            <p class="sub_titul"><b>Extremidades Superiores</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Ambas presentes</label>
@@ -3331,7 +3331,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Extremidades Inferiores</b></p>
+                            <p class="sub_titul"><b>Extremidades Inferiores</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Ambas presentes</label>
@@ -3358,7 +3358,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Placenta</b></p>
+                            <p class="sub_titul"><b>Placenta</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Numero</label>
@@ -3495,7 +3495,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Conclusiones</b></p>
+                    <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Riesgo de parto Pretermino</label>
@@ -3621,7 +3621,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Ultrasonido De I Trimestre</b></p>
+                    <p class="sub_titul"><b>Ultrasonido De I Trimestre</b></p>
                     <p><b>Se realizó estudio ultrasonográfico en tiempo real encontrando:</b></p>
                     <div class="form-group">
                        <div class="col-md-3">
@@ -3660,7 +3660,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-center"><b>Tabla Somatometria</b></p>
+                            <p class="sub_titul"><b>Tabla Somatometria</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>LCC (mm)</label>
@@ -3724,7 +3724,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-center"><b>Tamizaje Para Defectos Estructurales</b></p>
+                            <p class="sub_titul"><b>Tamizaje Para Defectos Estructurales</b></p>
                             <p>Cráneo</p>
                             <div class="form-group">
                                 <div class="col-md-3">
@@ -3802,7 +3802,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-center"><b>Coraz&oacute;n</b></p>
+                            <p class="sub_titul"><b>Coraz&oacute;n</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Localización Intratoracica</label>
@@ -3839,7 +3839,7 @@
                                 </div>
                             </div>
 
-                            <p class="text-center"><b>Abdomen</b></p>
+                            <p class="sub_titul"><b>Abdomen</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Inserción de cordón normal</label>
@@ -3899,7 +3899,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-center"><b>Estructuras presentes en defecto</b></p>
+                                <p class="sub_titul"><b>Estructuras presentes en defecto</b></p>
                                 <div class="form-group">
                                     <div class="col-md-3">
                                         <label>Cubierto por membrana</label>
@@ -4168,7 +4168,7 @@
                         <div class="col-md-12 nextChild"></div>
                     </div>
 
-                    <p class="text-center"><b>Tamizaje Para Enfermedades Hipertensivas En El Embarazo</b></p>
+                    <p class="sub_titul"><b>Tamizaje Para Enfermedades Hipertensivas En El Embarazo</b></p>
                     <p><b>Antecedentes Maternos</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
@@ -4249,7 +4249,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Tamizaje De Vasa Previa</b></p>
+                    <p class="sub_titul"><b>Tamizaje De Vasa Previa</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Bidimensional</label>
@@ -4271,7 +4271,7 @@
                         </div>
                     </div>
 
-                    <p class="text-center"><b>Conclusiones</b></p>
+                    <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Feto por longitud cardio cauda (Semanas)</label>
@@ -4404,7 +4404,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Se realiza ultrasonido en tiempo real encontrando:</b></p>
+                    <p class="sub_titul"><b>Se realiza ultrasonido en tiempo real encontrando:</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Vejia de bordes</label>
@@ -4465,7 +4465,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-center"><b>Medicion</b></p>
+                        <p class="sub_titul"><b>Medicion</b></p>
                         <div class="form-group">
                             <div class="col-md-3">
                                 <label>Longitud (mm)</label>
@@ -4665,7 +4665,7 @@
                         </div>
                     </div>
 
-                    <p class="text-center"><b>Ovario Izquierdo</b></p>
+                    <p class="sub_titul"><b>Ovario Izquierdo</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Ovario</label>
@@ -4757,7 +4757,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Ovarios Derecho</b></p>
+                    <p class="sub_titul"><b>Ovarios Derecho</b></p>
                       <div class="form-group">
                         <div class="col-md-3">
                             <label>Ovario</label>
@@ -5001,7 +5001,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Se realizó estudio ultrasonográfico en tiempo real, observando</b></p>
+                    <p class="sub_titul"><b>Se realizó estudio ultrasonográfico en tiempo real, observando</b></p>
                     <div class="form-group">
                        <div class="col-md-3">
                            <label>Feto</label>
@@ -5375,7 +5375,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
+                    <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
