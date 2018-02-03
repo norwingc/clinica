@@ -57,9 +57,21 @@
     function paredIntegra(este) {
         (este.val() == 'No') ? $('.pared_integra_1trimestre_si').show() : $('.pared_integra_1trimestre_si').hide();
     }
+    function paredIntegraEstructural(este) {
+        (este.val() == 'No') ? $('.pared_integra_estructural_si').show() : $('.pared_integra_estructural_si').hide();
+    }
 
     function uteroPelvico(este) {
         (este.val() == 'Presente') ? $('.utero_pelvico_ausente').show() : $('.utero_pelvico_ausente').hide();
+    }
+    function labioNormal(este) {
+        (este.val() == 'Si') ? $('.labio_normal_no').hide() : $('.labio_normal_no').show();
+    }
+    function corazonTamano(este) {
+        (este.val() == 'Si') ? $('.corazon_tamano_no').hide() : $('.corazon_tamano_no').show();
+    }
+    function claficicaionLiquidoAmnioticoEstructural(este) {
+        (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
     }
 
 
