@@ -1042,6 +1042,19 @@
                     <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_ecocardiografia" style="display: none">
+
+                            <div class="form-group">
+                                <div class="col-md-5">
+                                    <label>Vitalidad</label>
+                                    <div>
+                                        <select name="vitalidad_feto" id="vitalidad_feto_ecocardiografia" class="form-control">
+                                            <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
+                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-3">
                                    <label>Presentacion</label>
@@ -1057,8 +1070,8 @@
                                    <div>
                                        <select name="situacion" id="situacion_ecocardiografia" class="form-control" required>
                                            <option value="Longitudinal">Longitudinal</option>
-                                           <option value="Transverso Dorso Superior">Transverso Dorso Superior</option>
-                                           <option value="Transverso Dorso Inferior">Transverso Dorso Inferior</option>
+                                           <option value="Transverso">Transverso</option>
+                                           <option value="Olvbliculo">Olvbliculo</option>
                                        </select>
                                    </div>
                                 </div>
@@ -1068,6 +1081,8 @@
                                        <select name="posicion" id="posicion_ecocardiografia" class="form-control" required>
                                            <option value="Dorso Izquierdo">Dorso Izquierdo</option>
                                            <option value="Dorso Derecho">Dorso Derecho</option>
+                                           <option value="Dorso Superior">Dorso Superior</option>
+                                           <option value="Dorso Inferior">Dorso Inferior</option>
                                        </select>
                                    </div>
                                 </div>
@@ -1078,6 +1093,7 @@
                                    </div>
                                </div>
                             </div>
+
                             <p>Corte Axial De Abdomen</p>
                             <div class="form-group">
                                 <div class="col-md-3">
@@ -1604,6 +1620,58 @@
                     <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_neurosonografia" style="display: none">
+
+                            <div class="form-group">
+                                <div class="col-md-5">
+                                    <label>Vitalidad</label>
+                                    <div>
+                                        <select name="vitalidad_feto" id="vitalidad_feto_neurosonografia" class="form-control">
+                                            <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
+                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                   <label>Presentacion</label>
+                                   <div>
+                                       <select name="presentacion" id="presentacion_neurosonografia" class="form-control" required>
+                                           <option value="Cefálico">Cefálico</option>
+                                           <option value="Pélvico">Pélvico</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Situacion</label>
+                                   <div>
+                                       <select name="situacion" id="situacion_neurosonografia" class="form-control" required>
+                                           <option value="Longitudinal">Longitudinal</option>
+                                           <option value="Transverso">Transverso</option>
+                                           <option value="Olvbliculo">Olvbliculo</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Posicion</label>
+                                   <div>
+                                       <select name="posicion" id="posicion_neurosonografia" class="form-control" required>
+                                           <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                           <option value="Dorso Derecho">Dorso Derecho</option>
+                                           <option value="Dorso Superior">Dorso Superior</option>
+                                           <option value="Dorso Inferior">Dorso Inferior</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>FCF (latidos por minuto)</label>
+                                   <div>
+                                      <input type="number" name="fcf" id="fcf_neurosonografia" class="form-control" required>
+                                   </div>
+                               </div>
+                            </div>
+
                             <p>Planos Axiales</p>
                             <p><b>Craneo</b></p>
                             <div class="form-group">
@@ -3460,7 +3528,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Riesgo de Restricción del Crecimiento</label>
+                            <label style="font-size: 12px">Riesgo de Restricción del Crecimiento</label>
                             <div>
                                 <select name="conclusion_riesgo_restriccion_crecimiento" id="conclusion_riesgo_restriccion_crecimiento_estructural"  class="form-control">
                                     <option value="Alto">Alto</option>
@@ -4957,6 +5025,58 @@
                     <p class="msj_feto text-center" style="color:#008d4c; font-weight: bold"></p>
                     <div class="node">
                         <div id="child_doppler" style="display: none">
+
+                            <div class="form-group">
+                                <div class="col-md-5">
+                                    <label>Vitalidad</label>
+                                    <div>
+                                        <select name="vitalidad_feto" id="vitalidad_feto_doppler" class="form-control">
+                                            <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
+                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                   <label>Presentacion</label>
+                                   <div>
+                                       <select name="presentacion" id="presentacion_doppler" class="form-control" required>
+                                           <option value="Cefálico">Cefálico</option>
+                                           <option value="Pélvico">Pélvico</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Situacion</label>
+                                   <div>
+                                       <select name="situacion" id="situacion_doppler" class="form-control" required>
+                                           <option value="Longitudinal">Longitudinal</option>
+                                           <option value="Transverso">Transverso</option>
+                                           <option value="Olvbliculo">Olvbliculo</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>Posicion</label>
+                                   <div>
+                                       <select name="posicion" id="posicion_doppler" class="form-control" required>
+                                           <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                           <option value="Dorso Derecho">Dorso Derecho</option>
+                                           <option value="Dorso Superior">Dorso Superior</option>
+                                           <option value="Dorso Inferior">Dorso Inferior</option>
+                                       </select>
+                                   </div>
+                                </div>
+                                <div class="col-md-3">
+                                   <label>FCF (latidos por minuto)</label>
+                                   <div>
+                                      <input type="number" name="fcf" id="fcf_doppler" class="form-control" required>
+                                   </div>
+                               </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Evaluación de parámetros biofísicos fetales</label>
@@ -5265,6 +5385,3 @@
         </div>
     </div>
 </div>
-
-
-
