@@ -49,6 +49,10 @@
     $('#ovario_derecho_pelvico').change(function(event) {
         ($(this).val() == 'Presente') ? $('.ovario_derecho_ausente').show() : $('.ovario_derecho_ausente').hide();
     });
+    $('#presencia_quiste_neurosonografia').change(function(event) {
+        alert('fasdfds');
+        $('#presencia_quiste_si_neurosonografia').selectpicker();
+    });
 
     function huesoNasalAusente(este) {
         (este.val() == 'Ausente') ? $('.medicion_nasal_1trimestre').hide() : $('.medicion_nasal_1trimestre').show();
@@ -73,6 +77,11 @@
     function claficicaionLiquidoAmnioticoEstructural(este) {
         (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
     }
+    function presenciaQuiste(este) {
+        $('#presencia_quiste_si_neurosonografia').selectpicker();
+        (este.val() == 'No') ? $('.presencia_quiste_si_form').hide() : $('.presencia_quiste_si_form').show();
+    }
+
 
 
     $('.examen_agregar').click(function(){

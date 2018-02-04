@@ -7,8 +7,37 @@ posision->dorso izquiero, dorzo derecho, dorso superiro, dorso inferior
 tabla->despues de presentacion, situacion, etc
  sisterna magna, pliegue nucal solo medida, fetometria promedio, pensentil, peso fetal un solo campo, fecha estimada de parto,
 
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ y de->hasta anterior izquierda @done (18-02-03 19:32)
+ ✔ recordatorio @done (18-02-03 19:32)
+ ✔ embarasos semanas @done (18-02-03 19:32)
+ ✔ conslusiones @done (18-02-03 19:32)
+ ✔ Astas anteriores de los ventrículos con diámetros->hasta anterior derecha (mm)-> y derecha @done (18-02-03 19:32)
+ ✔ Evidencia de signos intracraneales de Mielosquisis abierta->no->add descripcion en Si @done (18-02-03 19:28)
+ ✔ Evidencia de signos intracraneales de Mielomeningocele abierta->no->add descripcion en Si @done (18-02-03 19:28)
+ ✔ Evidencia de signos intracraneales de Mielocele abierta->no->add descripcion en Si @done (18-02-03 19:28)
+ ✔ Desarrollo Corporal->es cortical @done (18-02-03 19:22)
+ ✔ Cisterna magna->add opction->normal, anormal, mega cisterna @done (18-02-03 19:21)
+ ✔ Y craneocortical (mm)->options->2mm-5mm @done (18-02-03 19:17)
+ ✔ Espacio subaracnoideo senocortical (mm)->options->2mm-5mm @done (18-02-03 19:17)
+ ✔ III ventrículo con diámetros->options->1mm-4mm @done (18-02-03 19:08)
+ ✔ Comunicación entre el 4º ventrículo y la cisterna magna->no @done (18-02-03 19:08)
+ ✔ Área peri ventricular->corregir->Demorragica->hemorragica @done (18-02-03 19:07)
+ ✔ Atrios ventriculares Derecho (mm)->singular ambos (derecho, izquierdo) @done (18-02-03 19:07)
+ ✔ quiste_presencia->escoger las 4 @done (18-02-03 19:06)
+ ✔ Se identifica la cisura parietooccipital->si @done (18-02-03 19:06)
+ ✔ Existe comunicación de astas anteriores->no @done (18-02-03 18:45)
+ ✔ Diámetro anteroposterior (mm)->option->1mm-6mm @done (18-02-03 18:45)
+ ✔ Tamaño normal->si @done (18-02-03 18:43)
+ ✔ Dolicocefalia->no @done (18-02-03 18:43)
+ ✔ Compresión del transductor se aprecian deformidades->no @done (18-02-03 18:43)
+ ✔ Braquicefalia->no @done (18-02-03 18:43)
+ ✔ eje cardiaco->siempre @done (18-02-03 18:36)
+ ✔ labio hendido->con H ->add tipos @done (18-02-03 18:34)
+ ✔ humero, radio, cubito->semanas hasta cerbelo\ @done (18-02-03 18:34)
+ ✔ vitalidad -movimiento repiratorios y ausencia de tono @done (18-02-03 18:32)
  ✔ add->Riesgo de parto Pretermino @done (18-02-03 17:27)
  ✔ Riesgo de Restricción del Crecimiento @done (18-02-03 17:27)
  ✔ Riesgo de Pre eclampsia @done (18-02-03 17:27)

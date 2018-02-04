@@ -1672,8 +1672,85 @@
                                </div>
                             </div>
 
-                            <p>Planos Axiales</p>
-                            <p><b>Craneo</b></p>
+                            <p class="sub_titul"><b>Tabla somatometria</b></p>
+                           <div class="form-group">
+                                <div class="col-md-2">
+                                    <label>DBP (mm)</label>
+                                    <div>
+                                        <input type="number" name="dbp_medida" id="dbp_medida_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>DBP (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="dbp_semanas" id="dbp_semanas_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (mm)</label>
+                                    <div>
+                                        <input type="number" name="cc_medida" id="cc_medida_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="cc_semanas" id="cc_semanas_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (mm)</label>
+                                    <div>
+                                        <input type="number" name="ca_medida" id="ca_medida_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="ca_semanas" id="ca_semanas_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (mm)</label>
+                                    <div>
+                                        <input type="number" name="lf_medida" id="lf_medida_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="lf_semanas" id="lf_semanas_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Fetometría promedio</label>
+                                    <div>
+                                        <input type="text" name="fetometria_promedio" id="fetometria_promedio_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Percentilo</label>
+                                    <div>
+                                        <input type="text" name="percentil" id="percentil_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Peso fetal</label>
+                                    <div>
+                                        <input type="text" name="peso_fetal" id="peso_fetal_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label style="font-size: 13px">Fecha de parto estimada</label>
+                                    <div>
+                                        <input type="date" name="fecha_parto" id="fecha_parto_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <p class="sub_titul"><b>Planos Axiales</b></p>
+                            <p class="sub_titul"><b>Craneo</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Craneo Normal</label>
@@ -1688,8 +1765,8 @@
                                     <label>Dolicocefalia</label>
                                     <div>
                                         <select name="dolicocefalia" id="dolicocefalia_neurosonografia" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1697,8 +1774,8 @@
                                     <label>Braquicefalia</label>
                                     <div>
                                         <select name="braquicefalia" id="braquicefalia_neurosonografia" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1724,8 +1801,8 @@
                                     <label>Compresión del transductor se aprecian deformidades</label>
                                     <div>
                                         <select name="craneo_compresion" id="craneo_compresion_neurosonografia" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1748,7 +1825,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Corte Transventricular</p>
+                            <p class="sub_titul"><b>Corte Transventricular</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Se identifica el Cavum del septum pellucidum</label>
@@ -1762,7 +1839,14 @@
                                 <div class="col-md-3">
                                     <label>Diámetro anteroposterior (mm)</label>
                                     <div>
-                                        <input type="text" name="diametro_anteroposterior" id="diametro_anteroposterior_neurosonografia" class="form-control" required>
+                                        <select name="diametro_anteroposterior" id="diametro_anteroposterior_neurosonografia" class="form-control" required>
+                                                <option value="1mm">1mm</option>
+                                                <option value="2mm">2mm</option>
+                                                <option value="3mm">3mm</option>
+                                                <option value="4mm">4mm</option>
+                                                <option value="5mm">5mm</option>
+                                                <option value="6mm">6mm</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -1778,8 +1862,8 @@
                                     <label>Existe comunicación de astas anteriores</label>
                                     <div>
                                         <select name="comunicacion_asta_ateriores" id="comunicacion_asta_ateriores_neurosonografia" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1795,7 +1879,7 @@
                                 <div class="col-md-3">
                                     <label>Presencia de quiste</label>
                                     <div>
-                                        <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required data-target="presencia_quiste_si_form" onchange="selectShow($(this))">
+                                        <select name="presencia_quiste" id="presencia_quiste_neurosonografia" class="form-control" required onchange="presenciaQuiste($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -1804,7 +1888,7 @@
                                 <div class="col-md-3 presencia_quiste_si_form" style="display: none">
                                     <label>Quiste</label>
                                     <div>
-                                        <select name="presencia_quiste_si" id="presencia_quiste_si_neurosonografia" class="form-control">
+                                        <select name="presencia_quiste_si[]" id="presencia_quiste_si_neurosonografia" class="form-control" multiple>
                                             <option value="Unilateral">Unilateral</option>
                                             <option value="Bilateral">Bilateral</option>
                                             <option value="Unico">Unico</option>
@@ -1816,8 +1900,8 @@
                                     <label>Se identifica la cisura parietooccipital</label>
                                     <div>
                                         <select name="cisura_parietooccipital" id="cisura_parietooccipital_neurosonografia" class="form-control">
-                                            <option value="No">No</option>
                                             <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1831,15 +1915,15 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Atrios ventriculares Derecho (mm)</label>
+                                    <label>Atrio ventricular Derecho (mm)</label>
                                     <div>
-                                        <input type="text" name="atrios_derecho" id="atrios_derecho_neurosonografia" class="form-control" required>
+                                        <input type="text" name="atrio_derecho" id="atrio_derecho_neurosonografia" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Atrios ventriculares Izquierdo (mm)</label>
+                                    <label>Atrio ventricular Izquierdo (mm)</label>
                                     <div>
-                                        <input type="text" name="atrios_izquierdo" id="atrios_izquierdo_neurosonografia" class="form-control" required>
+                                        <input type="text" name="atrio_izquierdo" id="atrio_izquierdo_neurosonografia" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -1848,13 +1932,13 @@
                                         <select name="area_ventricular" id="area_ventricular_neurosonografia" class="form-control">
                                             <option value="Normal">Normal</option>
                                             <option value="Anormal">Anormal</option>
-                                            <option value="Demorrágica">Demorrágica</option>
+                                            <option value="Hemorrágica">Hemorrágica</option>
                                             <option value="Hiperecogenica">Hiperecogenica</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <p>Corte Transtalámico</p>
+                            <p class="sub_titul"><b>Corte Transtalámico</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Talamos normales</label>
@@ -1877,14 +1961,19 @@
                                  <div class="col-md-3">
                                     <label>III ventrículo con diámetros</label>
                                     <div>
-                                        <input type="text" name="ventriculo_diametros" id="ventriculo_diametros_neurosonografia" class="form-control" required>
+                                        <select name="ventriculo_diametros" id="ventriculo_diametros_neurosonografia" class="form-control">
+                                            <option value="1mm">1mm</option>
+                                            <option value="2mm">2mm</option>
+                                            <option value="3mm">3mm</option>
+                                            <option value="4mm">4mm</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                            <p>Corte Transcerebelar</p>
+                            <p class="sub_titul"><b>Corte Transcerebelar</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <label>Cerebelo con ambos hemisferios simétricos</label>
+                                    <label style="font-size: 12px">Cerebelo con ambos hemisferios simétricos</label>
                                     <div>
                                         <select name="ambos_hemisferios_simetricos" id="ambos_hemisferios_simetricos_neurosonografia" class="form-control">
                                             <option value="Si">Si</option>
@@ -1926,11 +2015,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Comunicación entre el 4º ventrículo y la cisterna magna</label>
+                                    <label style="font-size: 12px">Comunicación entre el 4º ventrículo y la cisterna magna</label>
                                     <div>
                                         <select name="comunicacion_4_ventriculo" id="comunicacion_4_ventriculo_neurosonografia" class="form-control">
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1941,8 +2030,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Planos Coronales:</p>
-                            <p><b>Corte Transfrontal</b></p>
+                            <p class="sub_titul"><b>Planos Coronales:</b></p>
+                            <p class="sub_titul"><b>Corte Transfrontal</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Se observa la línea interhemisferica integra</label>
@@ -1972,18 +2061,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><b>Corte Transcaudal</b></p>
+                            <p class="sub_titul"><b>Corte Transcaudal</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <label>Astas anteriores de los ventrículos con diámetros</label>
+                                    <label>Asta anterior derecha (mm)</label>
                                     <div>
-                                        <input type="text" name="ventriculos_diametro_1" id="ventriculos_diametro_1_neurosonografia" class="form-control" required>
+                                        <input type="text" name="asta_aterior_derecha" id="asta_aterior_derecha_neurosonografia" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Y de</label>
+                                    <label>Asta anterior izquierda (mm)</label>
                                     <div>
-                                        <input type="text" name="ventriculos_diametro_2" id="ventriculos_diametro_2_neurosonografia" class="form-control" required>
+                                        <input type="text" name="asta_aterior_izquierda" id="asta_aterior_izquierda_neurosonografia" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -1996,15 +2085,25 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Espacio subaracnoideo senocortical (mm)</label>
+                                    <label style="font-size: 12px">Espacio subaracnoideo senocortical (mm)</label>
                                     <div>
-                                        <input type="text" name="espacio_subaracnoideo" id="espacio_subaracnoideo_neurosonografia" class="form-control" required>
+                                        <select name="espacio_subaracnoideo" id="espacio_subaracnoideo_neurosonografia" class="form-control" required>
+                                            <option value="2mm">2mm</option>
+                                            <option value="3mm">3mm</option>
+                                            <option value="4mm">4mm</option>
+                                            <option value="5mm">5mm</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Y craneocortical (mm)</label>
                                     <div>
-                                        <input type="text" name="espacio_craneocotical" id="espacio_craneocotical_neurosonografia" class="form-control" required>
+                                        <select name="espacio_craneocotical" id="espacio_craneocotical_neurosonografia" class="form-control" required>
+                                            <option value="2mm">2mm</option>
+                                            <option value="3mm">3mm</option>
+                                            <option value="4mm">4mm</option>
+                                            <option value="5mm">5mm</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -2017,7 +2116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p><b>Corte Transcerebelar</b></p>
+                            <p class="sub_titul"><b>Corte Transcerebelar</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Tentorio in situs</label>
@@ -2047,8 +2146,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Planos Sagitales</p>
-                            <p><b>Saginal Medio</b></p>
+                            <p class="sub_titul"><b>Planos Sagitales</b></p>
+                            <p class="sub_titul"><b>Saginal Medio</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Presencia del cuerpo calloso</label>
@@ -2122,6 +2221,7 @@
                                         <select name="cisterna_magna" id="cisterna_magna_neurosonografia" class="form-control">
                                             <option value="Normal">Normal</option>
                                             <option value="Anormal">Anormal</option>
+                                            <option value="Mega Cisterna">Mega Cisterna</option>
                                         </select>
                                     </div>
                                 </div>
@@ -2153,7 +2253,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Desarrollo Corporal</p>
+                            <p class="sub_titul"><b>Desarrollo Cortical</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Las cisuras de Silvio</label>
@@ -2192,7 +2292,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Columna Vertebral</p>
+                            <p class="sub_titul"><b>Columna Vertebral</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Cortes sagitales con piel integra</label>
@@ -2233,28 +2333,46 @@
                                 <div class="col-md-3">
                                     <label>Evidencia de signos intracraneales de Mielocele abierta</label>
                                     <div>
-                                        <select name="evidencia_mielocele" id="evidencia_mielocele_neurosonografia" class="form-control">
-                                            <option value="Si">Si</option>
+                                        <select name="evidencia_mielocele" id="evidencia_mielocele_neurosonografia" class="form-control" data-target="evidencia_mielocele_si" onchange="selectShow($(this))">
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 evidencia_mielocele_si" style="display: none">
+                                    <label>Descripcion</label>
+                                    <div>
+                                        <textarea name="evidencia_mielocele_descripcion" id="evidencia_mielocele_descripcion_neurosonografia" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Evidencia de signos intracraneales de Mielomeningocele abierta</label>
                                     <div>
-                                        <select name="evidencia_mielomeningocele" id="evidencia_mielomeningocele_neurosonografia" class="form-control">
-                                            <option value="Si">Si</option>
+                                        <select name="evidencia_mielomeningocele" id="evidencia_mielomeningocele_neurosonografia" class="form-control" data-target="evidencia_mielomeningocele_si" onchange="selectShow($(this))">
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 evidencia_mielomeningocele_si" style="display: none">
+                                    <label>Descripcion</label>
+                                    <div>
+                                        <textarea name="evidencia_mielomeningocele_descripcion" id="evidencia_mielomeningocele_descripcion_neurosonografia" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Evidencia de signos intracraneales de Mielosquisis abierta</label>
                                     <div>
-                                        <select name="evidencia_mielosquisis" id="evidencia_mielosquisis_neurosonografia" class="form-control">
-                                            <option value="Si">Si</option>
+                                        <select name="evidencia_mielosquisis" id="evidencia_mielosquisis_neurosonografia" class="form-control" data-target="evidencia_mielosquisis_si" onchange="selectShow($(this))">
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
+                                    </div>
+                                </div>
+                                 <div class="col-md-3 evidencia_mielosquisis_si" style="display: none">
+                                    <label>Descripcion</label>
+                                    <div>
+                                        <textarea name="evidencia_mielosquisise_descripcion" id="evidencia_mielosquisise_descripcion_neurosonografia" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -2276,11 +2394,20 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <p class="sub_titul"><b>Conclusiones</b></p>
+                    <div class="form-group">
+                         <div class="col-md-6">
+                            <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
+                            <div>
+                                <input type="text" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_neurosonografia" class="form-control">
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
                                 <select name="concluciones" id="concluciones_neurosonografia" class="form-control">
-                                    <option value="Embarazo de 23.2 Semanas de gestación por fetometría acorde a US evolutivo ">Embarazo de 23.2 Semanas de gestación por fetometría acorde a US evolutivo </option>
                                     <option value="Neurosonografia sin alteraciones">Neurosonografia sin alteraciones</option>
                                 </select>
                             </div>
@@ -2291,6 +2418,14 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_neurosonografia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_neurosonografia" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -2569,7 +2704,6 @@
                                         <input type="date" name="fecha_parto" id="fecha_parto_estructural" class="form-control">
                                     </div>
                                 </div>
-
                             </div>
 
                             <p class="sub_titul"><b>Craneo</b></p>
