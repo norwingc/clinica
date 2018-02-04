@@ -1049,7 +1049,7 @@
                                     <div>
                                         <select name="vitalidad_feto" id="vitalidad_feto_ecocardiografia" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
                                         </select>
                                     </div>
@@ -1627,7 +1627,7 @@
                                     <div>
                                         <select name="vitalidad_feto" id="vitalidad_feto_neurosonografia" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
                                         </select>
                                     </div>
@@ -2371,7 +2371,7 @@
                                     <div>
                                         <select name="vitalidad_feto" id="vitalidad_feto_estructural" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
                                         </select>
                                     </div>
@@ -2470,13 +2470,25 @@
                                 <div class="col-md-2">
                                     <label>Humero (mm)</label>
                                     <div>
-                                        <input type="number" name="lf_medida" id="lf_medida_estructural" class="form-control">
+                                        <input type="number" name="humero_medida" id="humero_medida_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                 <div class="col-md-2">
+                                    <label>Humero (semanas)</label>
+                                    <div>
+                                        <input type="number" name="humero_semanas" id="humero_semanas_estructural" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <label>Radio (mm)</label>
                                     <div>
                                         <input type="number" name="radio_medida" id="radio_medida_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                 <div class="col-md-2">
+                                    <label>Radio (semanas)</label>
+                                    <div>
+                                        <input type="number" name="radio_semanas" id="radio_semanas_estructural" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -2486,15 +2498,33 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
+                                    <label>Cúbito (semanas)</label>
+                                    <div>
+                                        <input type="number" name="cubito_semanas" id="cubito_semanas_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
                                     <label>Tibia (mm)</label>
                                     <div>
                                         <input type="number" name="tibia_medida" id="tibia_medida_estructural" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
+                                    <label>Tibia (semanas)</label>
+                                    <div>
+                                        <input type="number" name="tibia_semanas" id="tibia_semanas_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
                                     <label>Peroné (mm)</label>
                                     <div>
                                         <input type="number" name="perone_medida" id="perone_medida_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Peroné (semanas)</label>
+                                    <div>
+                                        <input type="number" name="perone_semanas" id="perone_semanas_estructural" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -2870,13 +2900,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 labio_normal_no" style="display: none">
-                                    <label>Clasificaion de labio endido</label>
+                                    <label>Clasificaion de labio hendido</label>
                                     <div>
                                         <select name="clasificacion_labio" id="clasificacion_labio_estructural" class="form-control" required>
-                                            <option value="Tipo 1 Labio hendido Unilateral">Labio hendido Unilateral</option>
-                                            <option value="Tipo 2 Labio y paladar hendido unilateral">Labio y paladar hendido unilateral</option>
-                                            <option value="Tipo 3 Paladar y labio hendido bilateral">Paladar y labio hendido bilateral</option>
-                                            <option value="Tipo A Hendidura labial y palatina media">Hendidura labial y palatina media</option>
+                                            <option value="Tipo 1 Labio hendido Unilateral">Tipo 1 Labio hendido Unilateral</option>
+                                            <option value="Tipo 2 Labio y paladar hendido unilateral">Tipo 2 Labio y paladar hendido unilateral</option>
+                                            <option value="Tipo 3 Paladar y labio hendido bilateral">Tipo 3 Paladar y labio hendido bilateral</option>
+                                            <option value="Tipo A Hendidura labial y palatina media">Tipo A Hendidura labial y palatina media</option>
                                         </select>
                                     </div>
                                 </div>
@@ -2963,20 +2993,20 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label>Eje cardico</label>
-                                        <div>
-                                            <select name="corazon_cardiomegalia_severa" id="corazon_cardiomegalia_severa_estructural" class="form-control" required>
-                                                <option value="Levocardia">Levocardia</option>
-                                                <option value="Levocardia Extrema">Levocardia Extrema</option>
-                                                <option value="Dextrocardia">Dextrocardia</option>
-                                                <option value="Mesocardia">Mesocardia</option>
-                                                <option value="Levo desplazamiento">Levo desplazamiento</option>
-                                                <option value="Dextro desplazamiento">Dextro desplazamiento</option>
-                                                <option value="Meso desplazamiento">Meso desplazamiento</option>
-                                                <option value="Ectopia cordis">Ectopia cordis</option>
-                                            </select>
-                                        </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Eje cardico</label>
+                                    <div>
+                                        <select name="corazon_cardiomegalia_severa" id="corazon_cardiomegalia_severa_estructural" class="form-control" required>
+                                            <option value="Levocardia">Levocardia</option>
+                                            <option value="Levocardia Extrema">Levocardia Extrema</option>
+                                            <option value="Dextrocardia">Dextrocardia</option>
+                                            <option value="Mesocardia">Mesocardia</option>
+                                            <option value="Levo desplazamiento">Levo desplazamiento</option>
+                                            <option value="Dextro desplazamiento">Dextro desplazamiento</option>
+                                            <option value="Meso desplazamiento">Meso desplazamiento</option>
+                                            <option value="Ectopia cordis">Ectopia cordis</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -3653,7 +3683,7 @@
                                     <div>
                                         <select name="vitalidad_feto" id="vitalidad_feto_1trimestre" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
                                         </select>
                                     </div>
@@ -5032,7 +5062,7 @@
                                     <div>
                                         <select name="vitalidad_feto" id="vitalidad_feto_doppler" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
-                                            <option value="Feto con disminución de movimientos y ausencia de tono">Feto con disminución de movimientos y ausencia de tono</option>
+                                            <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
                                         </select>
                                     </div>
