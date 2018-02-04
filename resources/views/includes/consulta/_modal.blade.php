@@ -1094,7 +1094,83 @@
                                </div>
                             </div>
 
-                            <p>Corte Axial De Abdomen</p>
+                            <p class="sub_titul"><b>Tabla somatometria</b></p>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label>DBP (mm)</label>
+                                    <div>
+                                        <input type="number" name="dbp_medida" id="dbp_medida_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>DBP (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="dbp_semanas" id="dbp_semanas_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (mm)</label>
+                                    <div>
+                                        <input type="number" name="cc_medida" id="cc_medida_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="cc_semanas" id="cc_semanas_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (mm)</label>
+                                    <div>
+                                        <input type="number" name="ca_medida" id="ca_medida_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="ca_semanas" id="ca_semanas_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (mm)</label>
+                                    <div>
+                                        <input type="number" name="lf_medida" id="lf_medida_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="lf_semanas" id="lf_semanas_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Fetometría promedio</label>
+                                    <div>
+                                        <input type="text" name="fetometria_promedio" id="fetometria_promedio_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Percentilo</label>
+                                    <div>
+                                        <input type="text" name="percentil" id="percentil_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Peso fetal</label>
+                                    <div>
+                                        <input type="text" name="peso_fetal" id="peso_fetal_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label style="font-size: 13px">Fecha de parto estimada</label>
+                                    <div>
+                                        <input type="date" name="fecha_parto" id="fecha_parto_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="sub_titul"><b>Corte Axial De Abdomen</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Situs</label>
@@ -1124,7 +1200,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Corazon</p>
+                            <p class="sub_titul"><b>Corazon</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Tanaño</label>
@@ -1152,7 +1228,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Estructura</p>
+                            <p class="sub_titul"><b>Estructura</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Corte De 4 Cámaras</label>
@@ -1252,7 +1328,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>CIV</p>
+                            <p class="sub_titul"><b>CIV</b></p>
                             <div class="form-group">
                                 <div class="col-md-6">
                                     <label>Tracto de salida de Ventrículo derecho</label>
@@ -1276,7 +1352,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <label>Tipo De Conexión Auriculo Ventricular</label>
                                     <div>
                                         <select name="tipo_conexion_ventricular" id="tipo_conexion_ventricular_ecocardiografia" class="form-control" required>
@@ -1288,7 +1364,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-6">
                                     <label>Modo De Conexión Auriculo Ventricular</label>
                                     <div>
                                         <select name="modo_conexion_ventricular" id="modo_conexion_ventricular_ecocardiografia" class="form-control" required>
@@ -1300,7 +1376,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Funcion</p>
+                            <p class="sub_titul"><b>Funcion</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Contractilidad Miocárdica</label>
@@ -1339,7 +1415,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Corte De Tres Vasos Traquea</p>
+                            <p class="sub_titul"><b>Corte De Tres Vasos Traquea</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Numero de vasos: Tres</label>
@@ -1407,7 +1483,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Posicion</p>
+                            <p class="sub_titul"><b>Posicion</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Arteria pulmonar izquierda</label>
@@ -1456,7 +1532,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Cortes Sagitales</p>
+                            <p class="sub_titul"><b>Cortes Sagitales</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Vista Bi cava</label>
@@ -1673,7 +1749,7 @@
                             </div>
 
                             <p class="sub_titul"><b>Tabla somatometria</b></p>
-                           <div class="form-group">
+                            <div class="form-group">
                                 <div class="col-md-2">
                                     <label>DBP (mm)</label>
                                     <div>
@@ -5241,9 +5317,85 @@
                                </div>
                             </div>
 
+                            <p class="sub_titul"><b>Tabla somatometria</b></p>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label>DBP (mm)</label>
+                                    <div>
+                                        <input type="number" name="dbp_medida" id="dbp_medida_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>DBP (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="dbp_semanas" id="dbp_semanas_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (mm)</label>
+                                    <div>
+                                        <input type="number" name="cc_medida" id="cc_medida_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CC (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="cc_semanas" id="cc_semanas_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (mm)</label>
+                                    <div>
+                                        <input type="number" name="ca_medida" id="ca_medida_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>CA (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="ca_semanas" id="ca_semanas_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (mm)</label>
+                                    <div>
+                                        <input type="number" name="lf_medida" id="lf_medida_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>LF (Semanas)</label>
+                                    <div>
+                                        <input type="number" name="lf_semanas" id="lf_semanas_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Fetometría promedio</label>
+                                    <div>
+                                        <input type="text" name="fetometria_promedio" id="fetometria_promedio_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Percentilo</label>
+                                    <div>
+                                        <input type="text" name="percentil" id="percentil_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Peso fetal</label>
+                                    <div>
+                                        <input type="text" name="peso_fetal" id="peso_fetal_doppler" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label style="font-size: 13px">Fecha de parto estimada</label>
+                                    <div>
+                                        <input type="date" name="fecha_parto" id="fecha_parto_doppler" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-3">
-                                    <label>Evaluación de parámetros biofísicos fetales</label>
+                                    <label style="font-size: 12px">Evaluación de parámetros biofísicos fetales</label>
                                     <div>
                                         <select name="evaluacion_parametros" id="evaluacion_parametros_doppler" class="form-control">
                                             <option value="Si">Si</option>
