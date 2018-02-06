@@ -77,9 +77,49 @@
     function claficicaionLiquidoAmnioticoEstructural(este) {
         (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
     }
+    function claficicaionLiquidoAmnioticoneurosonografia(este) {
+        (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
+    }
+    function claficicaionLiquidoAmnioticoecocardiografia(este) {
+       (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
+    }
+    function claficicaionLiquidoAmnioticodoppler(este) {
+       (este.val() == 'Normal') ? $('.liquido_amniotico_anormal').hide() : $('.liquido_amniotico_anormal').show();
+    }
     function presenciaQuiste(este) {
         $('#presencia_quiste_si_neurosonografia').selectpicker();
         (este.val() == 'No') ? $('.presencia_quiste_si_form').hide() : $('.presencia_quiste_si_form').show();
+    }
+    function presenciaQuisteEstructural(este) {
+        $('#presencia_quiste_si_estructural').selectpicker();
+        (este.val() == 'No') ? $('.presencia_quiste_si_form').hide() : $('.presencia_quiste_si_form').show();
+    }
+    function quistePlexos1trimestre(este) {
+        $('#quiste_plexos_si_1trimestre').selectpicker();
+        (este.val() == 'No') ? $('.quiste_plexos_si_form').hide() : $('.quiste_plexos_si_form').show();
+    }
+    function changeFunneling(este) {
+        (este.val() == 'Negativo') ? $('.funneling').hide() : $('.funneling').show();
+    }
+    function tabiqueInterventricularEco(este) {
+        $('#tipo_civ_ecocardiografia').selectpicker();
+        (este.val() == 'Si') ? $('.tabique_interaventricular_noIntegro').hide() : $('.tabique_interaventricular_noIntegro').show();
+    }
+    function examenNst(este) {
+        (este.val() == 'No') ? $('.examen_nst_si').hide() : $('.examen_nst_si').show();
+    }
+    function datosNst(este) {
+       var html = ''
+
+       if(este.val() == "Registro NST > 32 semanas de gestación" || este.val() == "Embarazo a término sin trabajo de parto"){
+            html = "<option value='Datos ominoso'>Datos ominoso</option><option value='Sin datos ominosos'>Sin datos ominosos</option>";
+       }else{
+            html = "<option value='Trazo categoria I'>Trazo categoria I</option><option value='Trazo categoria II'>Trazo categoria II</option><option value='Trazo categoria III'>Trazo categoria III</option>";
+       }
+       $('#datos_nst_doppler').html(html);
+    }
+    function examenMaduracionPulmonar(este) {
+        (este.val() == 'No') ? $('.examen_maduracion_si').hide() : $('.examen_maduracion_si').show();
     }
 
 
@@ -130,6 +170,8 @@
         if(cantidad == 'Otro'){
             $('.cantidad_feto').show();
             return false;
+        }else{
+            $('.cantidad_feto').hide();
         }
 
         let child = $('#child_ecocardiografia');
@@ -157,6 +199,8 @@
         if(cantidad == 'Otro'){
             $('.cantidad_feto').show();
             return false;
+        }else{
+            $('.cantidad_feto').hide();
         }
 
         let child = $('#child_neurosonografia');
@@ -184,6 +228,8 @@
         if(cantidad == 'Otro'){
             $('.cantidad_feto').show();
             return false;
+        }else{
+            $('.cantidad_feto').hide();
         }
 
         let child = $('#child_estructural');
@@ -211,6 +257,8 @@
         if(cantidad == 'Otro'){
             $('.cantidad_feto').show();
             return false;
+        }else{
+            $('.cantidad_feto').hide();
         }
 
         let child = $('#child_1trimestre');
@@ -238,6 +286,8 @@
         if(cantidad == 'Otro'){
             $('.cantidad_feto').show();
             return false;
+        }else{
+            $('.cantidad_feto').hide();
         }
 
         let child = $('#child_doppler');
@@ -255,13 +305,7 @@
     });
 
     function semanasDoppler(este) {
-        if(este.val() == 32){
-            $('#mayor32').show();
-            $('#mayor36').hide();
-        }else{
-            $('#mayor36').show();
-            $('#mayor32').hide();
-        }
+        (este.val() == 'Mayor a 32 Semanas') ? $('#mayor32').show() : $('#mayor32').hide();
     }
 
     /**

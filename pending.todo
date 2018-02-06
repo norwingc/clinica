@@ -4,12 +4,100 @@ estructural, neurosonografia,  ecocardiografia->curva doppler ->add options  vit
 situacion->longitudinal, transverso, olvbliculo
 posision->dorso izquiero, dorzo derecho, dorso superiro, dorso inferior
 
-tabla->despues de presentacion, situacion, etc
- sisterna magna, pliegue nucal solo medida, fetometria promedio, pensentil, peso fetal un solo campo, fecha estimada de parto,
 
 
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+ecocardiografia{
+
+
+placenta va a estar->neurosonografia, ecocardiografia, crecimiento doppler
+
+ ✔ cuando seleccional feto oculatar cantidad @done (18-02-05 21:04)
+
+doppler{
+
+si es menor a 32 semanas-> no aparece nada
+
+si esa mayor as 32 semanas->aparen las cosas
+
+
+edad gestacional->option->menor de 32 semans y mayor-> si se selecionar mayor-> sale->Evaluación de parámetros biofísicos fetales
+Evaluación de parámetros biofísicos fetales-> solo si es mayor a 32 semanas ->titul
+Movimientos respiratorios=>Movimientos respiratorios (Normalidad 2 movimientos en 30 minutos)->option->normal->anormal
+Tono fetal Presente=>Tono fetal (2 movimientos de flexión y extensión de dedos de mano, 1 movimientos de protrusión lingual y 2 movimientos de arqueamiento de columna)
+Movimientos corporales Normales=>Movimientos corporales (Normalidad 2 en 30 minutos)
+Liquido amniótico->options->normal, anormal
+Integridad cardiaca 100% en 5 ciclos normal=>integridad cardiaca 100% en 5 ciclos->options->normal, anormal
+quitar todos los puntos
+
+segunto titulo NST
+
+option Examen realizado->si, no->default->no
+
+analisis de NST->OPTIONS->Registro NST > 32 semanas de gestación / Embarazo a término sin trabajo de parto / Embarazo a término con trabajo de parto
+datos NST->options->Datos ominosos, Sin datos ominosos
+
+si eliege->Embarazo a término con trabajo de parto->trazo categoria I,II,III
+
+maduracion pulmunar->titul
+option Examen realizado->si, no->default->no
+
+analisis de maduracion pulmonar->options->Índice de maduración Tórax/Cardio->options->normal, anormal / Índice maduración basal->normal, anormal / Índice evaluación pulmonar->normal, anormal =>default todo normal
+Riesgo de distres respiratorio->toda la palabra mayuscula->alto, bajo(default)
+
+PLACENta salir siempre y agregar
+
+Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.->las semans
+
+
+}
+
+
+Flujometria Doppler-> NO APARECE EN PELVICO NI EN PRIMER TRIMESTRE->SOLO ESTRUCTURAL0->NEUROSONO->CRECIEMITO, CADIOGRAFIA
+
+
 Archive:
+ ✔ Vena umbilical ->dicrota, laminar(default) @done (18-02-05 21:04)
+ ✔ Valor->interpretacion @done (18-02-05 21:04)
+ ✔ Itsmo aórtico->estadio I-IV @done (18-02-05 21:04)
+ ✔ Flujometria Doppler @done (18-02-05 21:04)
+ ✔ Flujo diastólico de Arteria umbilical=>persentil->flujo diastolico ausente en una arteria, flujo diastolico ausente en dos arteria, flujo diastolico reverso en una arteria, flujo diastolico reverso en dos arteria, flujo diastolico presente(default)=>interpretacion ->anormal, normal(defaul) @done (18-02-05 21:04)
+ ✔ Ducto venoso->despues->Flujo diastólico de ducto venoso->persentil->flujo diastolico presente(default), Onda A ausente, Onda A reversa=>normal, anormal @done (18-02-05 21:04)
+ ✔ Arterias uterinas=>IP medio de arterias uterinas->percentil-> < Percentil 95 y > percentil 95 ->option valor->normal, anormal @done (18-02-05 21:04)
+ ✔ defecto(mm)->tananno de defecto @done (18-02-05 20:28)
+ ✔ agregar recordatorio @done (18-02-05 20:28)
+  }
+ ✔ Tabique Interventricular Integro->NO->tambien mostrar defecto->tipo de civ SELECCIONAR MULTIPLE->CIV Outlet / Tracto de salida de Ventrículo derecho / Infundibular__________ @done (18-02-05 20:28)
+ ✔ Tabique Interventricular Integro->DEFAULT SI @done (18-02-05 20:28)
+ ✔ Cortes Sagitales->agregar despues plancenta @done (18-02-05 20:28)
+ ✔ Conclusiones->seleccionar las 3 @done (18-02-05 20:28)
+ ✔ CIV->eliminar titulo @done (18-02-05 20:28)
+ ✔ CIV Peri membranosa____________ @done (18-02-05 20:28)
+ ✔ CIV Muscular___________ @done (18-02-05 20:28)
+ ✔ CIV Inlet / Tracto de entrada de ventrículo derecho_____________________ @done (18-02-05 20:28)
+ ✔ Corte De 4 Cámaras->anormal->mostrar->Dominancia de cavidades @done (18-02-05 20:16)
+ ✔ agregar el bloque de placenta @done (18-02-05 20:13)
+  }
+ ✔ Conclusiones->default->bajo @done (18-02-05 20:09)
+  }
+ ✔ Vejiga Urinaria Insitu->eliminarRiñon derecho @done (18-02-05 20:08)
+ ✔ Riñones derecho/izquierdo tamaño->singular @done (18-02-05 20:08)
+ ✔ Riñon derecho izquierdo->option->no valorable @done (18-02-05 20:08)
+ ✔ Situs->la otra opcion default @done (18-02-05 20:06)
+ ✔ Funneling->negativo->no sale porcentaje @done (18-02-05 20:06)
+ ✔ cara->Clasificaion de labio hendido->componer a "Clasificacion"-> en tipo->tipo A es 4 @done (18-02-05 20:04)
+ ✔ Placenta->numero->1-3 @done (18-02-05 20:04)
+ ✔ quiste->si->select multiple @done (18-02-05 20:02)
+ ✔ todas las conculusiones->bajo @created(18-02-05 19:23) @done (18-02-05 19:23)
+  }
+ ✔ conclusion->Feto por longitud cardio cauda ->craneo en vez de cardio @done (18-02-05 19:23)
+ ✔ Funneling->positivo, aparezca porcentaje @done (18-02-05 19:19)
+ ✔ planceta->default->1-3 @done (18-02-05 19:16)
+ ✔ Fusion de membranas->option->fucionados->con  "S" @done (18-02-05 19:16)
+ ✔ Presencia de quiste de plexos coroideos Si->escoger los 4 @done (18-02-05 19:15)
+ ✔ agregar TAMIZAJE PARA EL ASESORAMIENTO CLÍNICO DE RIESGO DE CROMOSOMOPATÍA, @done (18-02-05 19:09)
+ ✔ en medio de parto y aborto cesaria @done (18-02-05 18:59)
+ ✔ conclusion->ovario poliquisticos   @done (18-02-05 18:59)
+  }
  ✔ y de->hasta anterior izquierda @done (18-02-03 19:32)
  ✔ recordatorio @done (18-02-03 19:32)
  ✔ embarasos semanas @done (18-02-03 19:32)
