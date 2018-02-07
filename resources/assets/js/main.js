@@ -2,6 +2,45 @@ $('.sidebar-menu').tree();
 $('.phone').mask('0000-0000');
 $('.cedula').mask('000-000000-0000S');
 
+ $('.form-examen select').change(function(){
+    selectShow($(this));
+});
+
+function selectShow(este) {
+    if(este.data('target') == undefined) return false;
+
+    let target = $('.'+este.data('target'));
+
+    if(este.val() == 'Si' || este.val() == 'Anormal'){
+        if($(target).is(':hidden')){
+            $(target).toggle('1000');
+
+            let select = $(target).find('select');
+            select.prop('required', 'required');
+
+            let input = $(target).find('input');
+            input.prop('required', 'required');
+        }
+    }
+
+    if(este.val() == 'No' || este.val() == 'Normal'){
+        if($(target).is(':hidden')){
+            return false;
+        }else{
+            $(target).toggle('1000');
+
+            let select = $(target).find('select');
+            select.removeAttr('required');
+            select.val('');
+            select.selectpicker('deselectAll');
+
+            let input = $(target).find('input');
+            input.removeAttr('required');
+            input.val('');
+        }
+    }
+}
+
 $('#cantidad_cirugias_pelvicas').change(function(){
     let cantidad = $(this).val();
 

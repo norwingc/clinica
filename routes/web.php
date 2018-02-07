@@ -48,11 +48,9 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('Consultas')->group(function () {
         Route::name('consulta.delete')->get('/delete/{consulta}', 'ConsultasController@delete');
 
-        Route::name('consulta.prenatal.get')->post('/Prenatal/get/{prenatal}', 'ConsultasController@getPrenatal');
-        Route::name('consulta.prenatal.store')->post('/Prenatal/store/{consulta}', 'ConsultasController@storePrenatal');
-        Route::name('consulta.prenatal.update')->post('/Prenatal/update/{prenatal}', 'ConsultasController@udatePrenatal');
-        Route::name('consulta.prenatal.delete')->get('/Prenatal/delete/{consulta}', 'ConsultasController@deletePrenatal');
 
+        Route::name('consulta.prenatal.store')->post('/Prenatal/store/{consulta}', 'ConsultasController@storePrenatal');
+        Route::name('consulta.prenatal.pelvico')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
 
     });
 

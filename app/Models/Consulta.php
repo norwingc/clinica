@@ -44,6 +44,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Prenatal', 'consulta_id');
     }
 
+    public function pelvico()
+    {
+        return $this->hasOne('App\Models\UltrasonidoPelvico', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

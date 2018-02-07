@@ -63,7 +63,7 @@
                             <div class="col-sm-3">
                                 <label>Diabetes</label>
                                 <div>
-                                    <select name="diabetes_familiar" id="diabetes_familiar" class="form-control" data-target='diabetes_familiar_si_form' required>
+                                    <select name="diabetes_familiar" id="diabetes_familiar" class="form-control" data-target='diabetes_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -83,7 +83,7 @@
                             <div class="col-sm-3">
                                 <label>Hipertensión arterial crónica</label>
                                 <div>
-                                    <select name="hipertension_arterial_familiar" id="hipertension_arterial_familiar" class="form-control" data-target='hipertension_arterial_familiar_si_form' required>
+                                    <select name="hipertension_arterial_familiar" id="hipertension_arterial_familiar" class="form-control" data-target='hipertension_arterial_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -101,7 +101,7 @@
                             <div class="col-sm-3">
                                 <label>Cardiopatía</label>
                                 <div>
-                                    <select name="cardiopatia_familiar" id="cardiopatia_familiar" class="form-control" data-target='cardiopatia_familiar_si_form' required>
+                                    <select name="cardiopatia_familiar" id="cardiopatia_familiar" class="form-control" data-target='cardiopatia_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -121,7 +121,7 @@
                             <div class="col-sm-3">
                                 <label>Nefropatías</label>
                                 <div>
-                                    <select name="nefropatias_familiar" id="nefropatias_familiar" class="form-control" data-target='nefropatias_familiar_si_form' required>
+                                    <select name="nefropatias_familiar" id="nefropatias_familiar" class="form-control" data-target='nefropatias_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -141,7 +141,7 @@
                             <div class="col-sm-3">
                                 <label>Enfermedad Tiroidea</label>
                                 <div>
-                                    <select name="tiroidea_familiar" id="tiroidea_familiar" class="form-control" data-target='tiroidea_familiar_si_form' required>
+                                    <select name="tiroidea_familiar" id="tiroidea_familiar" class="form-control" data-target='tiroidea_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -160,7 +160,7 @@
                             <div class="col-sm-3">
                                 <label>Enfermedad Inmunológica</label>
                                 <div>
-                                    <select name="enfermedad_inmunologica_familiar" id="enfermedad_inmunologica_familiar" class="form-control" data-target='enfermedad_inmunologica_familiar_si_form' required>
+                                    <select name="enfermedad_inmunologica_familiar" id="enfermedad_inmunologica_familiar" class="form-control" data-target='enfermedad_inmunologica_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -179,7 +179,7 @@
                             <div class="col-sm-3">
                                 <label>Enfermedad Oncológica</label>
                                 <div>
-                                    <select name="enfermedad_oncologica_familiar" id="enfermedad_oncologica_familiar" class="form-control" data-target='enfermedad_oncologica_familiar_si_form' required>
+                                    <select name="enfermedad_oncologica_familiar" id="enfermedad_oncologica_familiar" class="form-control" data-target='enfermedad_oncologica_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -194,7 +194,7 @@
                             <div class="col-sm-3">
                                 <label>Malformación Congénita</label>
                                 <div>
-                                    <select name="malformacion_congenita_familiar" id="malformacion_congenita_familiar" class="form-control" data-target='malformacion_congenita_familiar_si_form' required>
+                                    <select name="malformacion_congenita_familiar" id="malformacion_congenita_familiar" class="form-control" data-target='malformacion_congenita_familiar_si_form' required onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -742,7 +742,7 @@
                             <div class="col-sm-4">
                                 <label>Talla (mts)</label>
                                 <div>
-                                    <input type="number" name="talla" id="talla" class="form-control" required>
+                                    <input type="text" name="talla" id="talla" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-sm-4">

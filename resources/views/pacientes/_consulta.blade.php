@@ -16,10 +16,12 @@
                 <b>Hora de Inicio: </b> {{ date('g:i a', strtotime($value->cita->start)) }}
                 <b>Hora de Fin: </b> {{ date('g:i a', strtotime($value->cita->end)) }}
             </p>
-            <div class="action">
-                <button class="btn btn-info">Editar</button>
-                <a href="{{ route('consulta.delete', $value) }}" class="btn btn-danger">Eliminar</a>
+            <p><b>Reportes:</b></p>
+            @include('includes.consulta._dowloadExamenes')
+            <div class="action" style="margin-top: 1em">
+                <a href="{{ route('consulta.delete', $value) }}" class="btn btn-danger col-md-12">Eliminar Consulta</a>
             </div>
+
         </div>
         <div class="col-lg-6 col-sm-12">
 
