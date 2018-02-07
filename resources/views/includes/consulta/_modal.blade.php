@@ -3794,6 +3794,7 @@
                                         <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
                                             <option value="Llenado Fisiológico">Llenado Fisiológico</option>
                                             <option value="Vacia">Vacia</option>
+                                            <option value="Megavejiga">Megavejiga</option>
                                         </select>
                                     </div>
                                 </div>
@@ -4931,9 +4932,9 @@
                             </div>
                         </div>
                          <div class="col-md-3">
-                            <label>Cesaria</label>
+                            <label>Cesárea</label>
                             <div>
-                                <input type="text" name="cesaria" id="cesaria_pelvico" class="form-control" required>
+                                <input type="text" name="cesarea" id="cesarea_pelvico" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
