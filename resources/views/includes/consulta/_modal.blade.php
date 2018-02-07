@@ -1170,6 +1170,224 @@
                                 </div>
                             </div>
 
+                             <p class="sub_titul"><b>Flujometria Doppler</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas Percentil</label>
+                                    <div>
+                                        <select name="percentil_ip_medio" id="percentil_ip_medio_ecocardiografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ip_medio" id="interpretacion_ip_medio_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_izquierda" id="percentil_notch_izquierda_ecocardiografia" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_izquierda" id="interpretacion_notch_izquierda_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_derecha" id="percentil_notch_derecha_ecocardiografia" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_derecha" id="interpretacion_notch_derecha_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario Percentil</label>
+                                    <div>
+                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_ecocardiografia" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_ecocardiografia" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_ecocardiografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_ecocardiografia" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico Percentil</label>
+                                    <div>
+                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_ecocardiografia" class="form-control">
+                                            <option value="Estadio I">Estadio I</option>
+                                            <option value="Estadio II">Estadio II</option>
+                                            <option value="Estadio III">Estadio III</option>
+                                            <option value="Estadio IV">Estadio IV</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_ecocardiografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_ecocardiografia" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Onda A ausente">Onda A ausente</option>
+                                            <option value="Onda A reversa">Onda A reversa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-3">
+                                    <label>Vena umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_ecocardiografia" class="form-control">
+                                            <option value="Laminar">Laminar</option>
+                                            <option value="Dicrota">Dicrota</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_ecocardiografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
                             <p class="sub_titul"><b>Corte Axial De Abdomen</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
@@ -1622,13 +1840,13 @@
                                     <label>Posicion</label>
                                     <div>
                                         <select name="placenta_posocion" id="placenta_posocion_ecocardiografia" class="form-control" required>
+                                            <option value="Fundica">Fundica</option>
                                             <option value="Anterior Baja">Anterior Baja</option>
                                             <option value="Anterior Alta">Anterior Alta</option>
                                             <option value="Posterior Baja">Posterior Baja</option>
                                             <option value="Posterior Alta">Posterior Alta</option>
                                             <option value="Corporal Anterior">Corporal Anterior</option>
                                             <option value="Posterior">Posterior</option>
-                                            <option value="Fundica">Fundica</option>
                                             <option value="Placenta previa oclusiva total">Placenta previa oclusiva total</option>
                                         </select>
                                     </div>
@@ -1968,6 +2186,224 @@
                                     <label style="font-size: 13px">Fecha de parto estimada</label>
                                     <div>
                                         <input type="date" name="fecha_parto" id="fecha_parto_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="sub_titul"><b>Flujometria Doppler</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas Percentil</label>
+                                    <div>
+                                        <select name="percentil_ip_medio" id="percentil_ip_medio_neurosonografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ip_medio" id="interpretacion_ip_medio_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_izquierda" id="percentil_notch_izquierda_neurosonografia" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_izquierda" id="interpretacion_notch_izquierda_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_derecha" id="percentil_notch_derecha_neurosonografia" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_derecha" id="interpretacion_notch_derecha_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario Percentil</label>
+                                    <div>
+                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_neurosonografia" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_neurosonografia" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_neurosonografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_neurosonografia" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico Percentil</label>
+                                    <div>
+                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_neurosonografia" class="form-control">
+                                            <option value="Estadio I">Estadio I</option>
+                                            <option value="Estadio II">Estadio II</option>
+                                            <option value="Estadio III">Estadio III</option>
+                                            <option value="Estadio IV">Estadio IV</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_neurosonografia" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_neurosonografia" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Onda A ausente">Onda A ausente</option>
+                                            <option value="Onda A reversa">Onda A reversa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-3">
+                                    <label>Vena umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_neurosonografia" class="form-control">
+                                            <option value="Laminar">Laminar</option>
+                                            <option value="Dicrota">Dicrota</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_neurosonografia" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -2617,13 +3053,13 @@
                                     <label>Posicion</label>
                                     <div>
                                         <select name="placenta_posocion" id="placenta_posocion_neurosonografia" class="form-control" required>
+                                            <option value="Fundica">Fundica</option>
                                             <option value="Anterior Baja">Anterior Baja</option>
                                             <option value="Anterior Alta">Anterior Alta</option>
                                             <option value="Posterior Baja">Posterior Baja</option>
                                             <option value="Posterior Alta">Posterior Alta</option>
                                             <option value="Corporal Anterior">Corporal Anterior</option>
                                             <option value="Posterior">Posterior</option>
-                                            <option value="Fundica">Fundica</option>
                                             <option value="Placenta previa oclusiva total">Placenta previa oclusiva total</option>
                                         </select>
                                     </div>
@@ -3049,6 +3485,224 @@
                                     <label style="font-size: 13px">Fecha de parto estimada</label>
                                     <div>
                                         <input type="date" name="fecha_parto" id="fecha_parto_estructural" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="sub_titul"><b>Flujometria Doppler</b></p>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas Percentil</label>
+                                    <div>
+                                        <select name="percentil_ip_medio" id="percentil_ip_medio_estructural" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>IP medio de arterias uterinas interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ip_medio" id="interpretacion_ip_medio_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_izquierda" id="percentil_notch_izquierda_estructural" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Izquierda interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_izquierda" id="interpretacion_notch_izquierda_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha Percentil</label>
+                                    <div>
+                                        <select name="percentil_notch_derecha" id="percentil_notch_derecha_estructural" class="form-control">
+                                            <option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Notch Arteria uterina Derecha interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_notch_derecha" id="interpretacion_notch_derecha_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario Percentil</label>
+                                    <div>
+                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_estructural" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Índice Cerebro placentario interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_estructural" class="form-control">
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria cerebral media interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_estructural" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Arteria Umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_estructural" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico Percentil</label>
+                                    <div>
+                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_estructural" class="form-control">
+                                            <option value="Estadio I">Estadio I</option>
+                                            <option value="Estadio II">Estadio II</option>
+                                            <option value="Estadio III">Estadio III</option>
+                                            <option value="Estadio IV">Estadio IV</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Itsmo aórtico interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_estructural" class="form-control">
+                                            <option value="< Percentil 95">< Percentil 95</option>
+                                            <option value="> Percentil 95">> Percentil 95</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso Percentil</label>
+                                    <div>
+                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_estructural" class="form-control">
+                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                            <option value="Onda A ausente">Onda A ausente</option>
+                                            <option value="Onda A reversa">Onda A reversa</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                 <div class="col-md-3">
+                                    <label>Vena umbilical Percentil</label>
+                                    <div>
+                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_estructural" class="form-control">
+                                            <option value="Laminar">Laminar</option>
+                                            <option value="Dicrota">Dicrota</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Vena umbilical interpretacion</label>
+                                    <div>
+                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_estructural" class="form-control">
+                                            <option value="Normal">Normal</option>
+                                            <option value="Anormal">Anormal</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -4765,7 +5419,7 @@
 
                     <div class="form-group">
                         <div class="col-md-3">
-                            <label>Presion alterial brazo derecho</label>
+                            <label>Presion arterial brazo derecho</label>
                             <div>
                                <input type="text" name="pa_derecho" id="pa_derecho_1trimestre" class="form-control">
                             </div>
@@ -5756,8 +6410,8 @@
                                     <label>Índice Cerebro placentario Percentil</label>
                                     <div>
                                         <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_doppler" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -5775,8 +6429,8 @@
                                     <label>Arteria cerebral media Percentil</label>
                                     <div>
                                         <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_doppler" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
+                                            <option value="> Percentil 5">> Percentil 5</option>
+                                            <option value="< Percentil 5">< Percentil 5</option>
                                         </select>
                                     </div>
                                 </div>
@@ -5815,9 +6469,9 @@
                                         <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_doppler" class="form-control">
                                             <option value="Flujo diastolico presente">Flujo diastolico presente</option>
                                             <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
-                                            <option value="Flujo diastolico ausente en dos arteria">Flujo diastolico ausente en dos arteria</option>
+                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
                                             <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
-                                            <option value="Flujo diastolico reverso en dos arteria">Flujo diastolico reverso en dos arteria</option>
+                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
                                         </select>
                                     </div>
                                 </div>
@@ -5956,7 +6610,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <label>Liquido amniótico</label>
+                                        <label>Liquido amniótico normal</label>
                                         <div>
                                             <select name="liquido_amoniotico" id="liquido_amoniotico_doppler" class="form-control">
                                                 <option value="Si">Si</option>
@@ -6003,7 +6657,7 @@
                                             <label>Datos NST</label>
                                             <div>
                                                 <select name="datos_nst" id="datos_nst_doppler" class="form-control">
-                                                    <option value='Datos ominoso'>Datos ominoso</option>
+                                                    <option value='Datos ominosos'>Datos ominosos</option>
                                                     <option value='Sin datos ominosos'>Sin datos ominosos</option>
                                                 </select>
                                             </div>
@@ -6083,13 +6737,13 @@
                                     <label>Posicion</label>
                                     <div>
                                         <select name="placenta_posocion" id="placenta_posocion_doppler" class="form-control" required>
+                                            <option value="Fundica">Fundica</option>
                                             <option value="Anterior Baja">Anterior Baja</option>
                                             <option value="Anterior Alta">Anterior Alta</option>
                                             <option value="Posterior Baja">Posterior Baja</option>
                                             <option value="Posterior Alta">Posterior Alta</option>
                                             <option value="Corporal Anterior">Corporal Anterior</option>
                                             <option value="Posterior">Posterior</option>
-                                            <option value="Fundica">Fundica</option>
                                             <option value="Placenta previa oclusiva total">Placenta previa oclusiva total</option>
                                         </select>
                                     </div>
@@ -6209,11 +6863,20 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+
+                    <p class="form-control"><b>Conclusiones</b></p>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
+                            <div>
+                                <input type="number" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion" class="form-control">
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
-                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control">
-                                    <option value="Embarazo de 35.4 Semanas de gestación por fetometría acorde a US evolutivo ">Embarazo de 35.4 Semanas de gestación por fetometría acorde a US evolutivo </option>
+                                <select name="concluciones[]" id="concluciones_doppler" class="form-control selectpicker" multiple>
                                     <option value="Perfil Biofísico: 8/8">Perfil Biofísico: 8/8</option>
                                     <option value="Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado">Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado</option>
                                 </select>
@@ -6225,6 +6888,14 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_doppler" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_doppler" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

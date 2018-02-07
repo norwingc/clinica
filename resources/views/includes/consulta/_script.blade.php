@@ -112,7 +112,7 @@
        var html = ''
 
        if(este.val() == "Registro NST > 32 semanas de gestación" || este.val() == "Embarazo a término sin trabajo de parto"){
-            html = "<option value='Datos ominoso'>Datos ominoso</option><option value='Sin datos ominosos'>Sin datos ominosos</option>";
+            html = "<option value='Datos ominosos'>Datos ominosos</option><option value='Sin datos ominosos'>Sin datos ominosos</option>";
        }else{
             html = "<option value='Trazo categoria I'>Trazo categoria I</option><option value='Trazo categoria II'>Trazo categoria II</option><option value='Trazo categoria III'>Trazo categoria III</option>";
        }
