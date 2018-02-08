@@ -48,12 +48,11 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('Consultas')->group(function () {
         Route::name('consulta.delete')->get('/delete/{consulta}', 'ConsultasController@delete');
 
-
         Route::name('consulta.prenatal.store')->post('/Prenatal/store/{consulta}', 'ConsultasController@storePrenatal');
-        Route::name('consulta.prenatal.pelvico')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
+        Route::name('consulta.pelvico.store')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
+        Route::name('consulta.pelvico.delete')->get('/UltrasonidoPelvico/delete/{pelvico}', 'ConsultasController@deletePelvico');
 
     });
-
 
     Route::prefix('Citas')->group(function () {
         Route::name('citas')->get('/', 'CitasController@index');
@@ -61,6 +60,10 @@ Route::middleware(['auth'])->group(function () {
         Route::name('citas.get')->get('/get/{id?}', 'CitasController@get');
         Route::name('citas.create')->get('/Create', 'CitasController@create');
         Route::name('citas.store')->post('/Create/{paciente?}', 'CitasController@store');
+    });
+
+    Route::prefix('Reports')->group(function () {
+        Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');
     });
 
 });

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Consulta, UltrasonidoPelvico, Prenatal};
 
+use PDF;
+
 class ConsultasController extends Controller
 {
     /**
@@ -41,9 +43,38 @@ class ConsultasController extends Controller
      */
     public function storePelvico(Request $request, Consulta $consulta)
     {
-        $consulta->pelvico()->save(new UltrasonidoPelvico($request->all()));
+        $pelvico = new UltrasonidoPelvico($request->all());
+        $consulta->pelvico()->save($pelvico);
+
+        $pelvico->cara              = implode(', ', $request->cara);
+        $pelvico->localizacion_masa = implode(', ', $request->localizacion_masa);
+        $pelvico->concluciones      = implode(', ', $request->concluciones);
+        $pelvico->update();
 
         session()->flash('message_success', "Examen Agregado");
         return back();
+    }
+
+    /**
+     * [deletePelvico description]
+     * @param  UltrasonidoPelvico $pelvico [description]
+     * @return [type]                      [description]
+     */
+    public function deletePelvico(UltrasonidoPelvico $pelvico)
+    {
+        return $pelvico;
+    }
+
+    /**
+     * [reportPelvico description]
+     * @param  UltrasonidoPelvico $pelvico [description]
+     * @return [type]                      [description]
+     */
+    public function reportPelvico(UltrasonidoPelvico $pelvico)
+    {
+        //return view('reports.pelvico', compact('pelvico'));
+
+        $pdf = \PDF::loadView('reports.pelvico', compact('pelvico'));
+        return $pdf->stream();
     }
 }

@@ -5795,7 +5795,7 @@
                              <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
                                 <label>Ubicacion</label>
                                 <div>
-                                    <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
+                                    <select name="saco_gestional_ubicacion" id="saco_gestional_ubicacion_pelvico" class="form-control">
                                         <option value="Fondo uterino">Fondo uterino</option>
                                         <option value="Segmento">Segmento</option>
                                     </select>
@@ -5956,7 +5956,7 @@
                         <div class="col-md-3">
                             <label>Ovario</label>
                             <div>
-                                 <select name="ovario_izquierdo" id="ovario_derecho_pelvico" class="form-control">
+                                 <select name="ovario_derecho" id="ovario_derecho_pelvico" class="form-control">
                                     <option value="Presente">Presente</option>
                                     <option value="Ausente">Ausente</option>
                                 </select>
