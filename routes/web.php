@@ -53,8 +53,8 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.pelvico.store')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
         Route::name('consulta.pelvico.delete')->get('/UltrasonidoPelvico/delete/{pelvico}', 'ConsultasController@deletePelvico');
 
-        Route::name('consulta.1trimestre.store')->post('/UltrasonidoTrimestre/store/{consulta}', 'ConsultasController@storeTrimestre');
-        Route::name('consulta.1trimestre.delete')->get('/UltrasonidoTrimestre/delete/{trimestre}', 'ConsultasController@deleteTrimestre');
+        Route::name('consulta.trimestre.store')->post('/UltrasonidoTrimestre/store/{consulta}', 'ConsultasController@storeTrimestre');
+        Route::name('consulta.trimestre.delete')->get('/UltrasonidoTrimestre/delete/{trimestre}', 'ConsultasController@deleteTrimestre');
 
     });
 
@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('Reports')->group(function () {
         Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');
+         Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');
     });
 
 });

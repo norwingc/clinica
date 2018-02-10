@@ -5,6 +5,13 @@
     </p>
 @endif
 
+@if($value->trimestre)
+    <p>
+        <a href="{{ route('report.trimestre', $value->trimestre) }}" class="btn btn-info">Descargar reporte Ultrasonido I Trimestre</a>
+        <a href="{{ route('consulta.trimestre.delete', $value->trimestre) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif

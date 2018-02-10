@@ -105,4 +105,24 @@ class ConsultasController extends Controller
             'saved' => true
         ]);
     }
+
+    /**
+     * [deleteTrimestre description]
+     * @param  UltrasonidoTrimestre $trimestre [description]
+     * @return [type]                          [description]
+     */
+    public function deleteTrimestre(UltrasonidoTrimestre $trimestre)
+    {
+        return $trimestre;
+    }
+
+    /**
+     * [reportTrimestre description]
+     * @param  UltrasonidoTrimestre $trimestre [description]
+     * @return [type]                          [description]
+     */
+    public function reportTrimestre(UltrasonidoTrimestre $trimestre)
+    {
+        return $trimestre->load('fetos');
+    }
 }
