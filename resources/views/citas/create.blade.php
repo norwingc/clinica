@@ -94,6 +94,7 @@
                                         <option value="">Seleccione al Doctor</option>
                                         <option value="Dr. Pavon">Dr. Pavon</option>
                                         <option value="Dra. Bravo">Dra. Bravo</option>
+                                        <option value="Dr. Rafael Centeno">Dr. Rafael Centeno</option>
                                     </select>
                                 </div>
                             </div>
