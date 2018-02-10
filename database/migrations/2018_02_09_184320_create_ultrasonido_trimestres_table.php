@@ -15,6 +15,7 @@ class CreateUltrasonidoTrimestresTable extends Migration
     {
         Schema::create('ultrasonido_trimestres', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('consulta_id');
             $table->integer('edad')->nullable();
             $table->string('date')->nullable();
             $table->string('paridad')->nullable();

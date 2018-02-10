@@ -46,9 +46,10 @@ class ConsultasController extends Controller
         $pelvico = new UltrasonidoPelvico($request->all());
         $consulta->pelvico()->save($pelvico);
 
-        $pelvico->cara              = implode(', ', $request->cara);
-        $pelvico->localizacion_masa = implode(', ', $request->localizacion_masa);
-        $pelvico->concluciones      = implode(', ', $request->concluciones);
+        (isset($request->cara)) ? $pelvico->cara = implode(', ', $request->cara) : '';
+        (isset($request->localizacion_masa)) ? $pelvico->localizacion_masa = implode(', ', $request->localizacion_masa) : '';
+        (isset($request->concluciones)) ? $pelvico->concluciones = implode(', ', $request->concluciones) : '';
+
         $pelvico->update();
 
         session()->flash('message_success', "Examen Agregado");
@@ -87,7 +88,7 @@ class ConsultasController extends Controller
     public function storeTrimestre(Request $request, Consulta $consulta)
     {
         $UltrasonidoTrimestre = new UltrasonidoTrimestre($request->all());
-        $UltrasonidoTrimestre->save();
+        $consulta->trimestre()->save($UltrasonidoTrimestre);
 
         foreach ($request->fetos as $key => $value) {
             $UltrasonidoTrimestre->fetos()->save(
