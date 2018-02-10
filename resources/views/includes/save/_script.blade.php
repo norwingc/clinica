@@ -69,7 +69,7 @@
                 "craneo_forma" : $(child).find('#craneo_forma_1trimestre').val(),
                 "pexos_caroideos" : $(child).find('#pexos_caroideos_1trimestre').val(),
                 "quiste_plexos" : $(child).find('#quiste_plexos_1trimestre').val(),
-                "quiste_plexos_si_1trimestre" : $(child).find('#quiste_plexos_si_1trimestre').val(),
+                "quiste_plexos_si" : $(child).find('#quiste_plexos_si_1trimestre').val(),
                 "hueso_nasal" : $(child).find('#hueso_nasal_1trimestre').val(),
                 "medicion_nasal" : $(child).find('#medicion_nasal_1trimestre').val(),
                 "torax_normal" : $(child).find('#torax_normal_1trimestre').val(),

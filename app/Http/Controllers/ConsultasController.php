@@ -43,8 +43,9 @@ class ConsultasController extends Controller
      */
     public function storePelvico(Request $request, Consulta $consulta)
     {
-        $pelvico = new UltrasonidoPelvico($request->all());
-        $consulta->pelvico()->save($pelvico);
+        $consulta->pelvico()->save(
+            $pelvico = new UltrasonidoPelvico($request->all())
+        );
 
         (isset($request->cara)) ? $pelvico->cara = implode(', ', $request->cara) : '';
         (isset($request->localizacion_masa)) ? $pelvico->localizacion_masa = implode(', ', $request->localizacion_masa) : '';
@@ -91,9 +92,13 @@ class ConsultasController extends Controller
         $consulta->trimestre()->save($UltrasonidoTrimestre);
 
         foreach ($request->fetos as $key => $value) {
+
             $UltrasonidoTrimestre->fetos()->save(
-                new UltrasonidoTrimestreFeto($value)
+                $feto = new UltrasonidoTrimestreFeto($value)
             );
+
+            (isset($value['quiste_plexos_si'])) ? $feto->quiste_plexos_si = implode(', ', $value['quiste_plexos_si']) : '';
+            $feto->update();
         }
 
         return response()->json([
