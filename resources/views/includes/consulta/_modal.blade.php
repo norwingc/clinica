@@ -4756,7 +4756,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'UltrasonidoTrimestre']) !!}
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Edad</label>
@@ -5543,7 +5543,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" id="UltrasonidoTrimestre" data-examen="#UltrasonidoTrimestre" onclick="saveTrimestre($(this))">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>

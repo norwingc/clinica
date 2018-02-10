@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto};
 
 use PDF;
 
@@ -76,5 +76,27 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.pelvico', compact('pelvico'));
         return $pdf->stream();
+    }
+
+    /**
+     * [storeTrimestre description]
+     * @param  Request  $request  [description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeTrimestre(Request $request, Consulta $consulta)
+    {
+        $UltrasonidoTrimestre = new UltrasonidoTrimestre($request->all());
+        $UltrasonidoTrimestre->save();
+
+        foreach ($request->fetos as $key => $value) {
+            $UltrasonidoTrimestre->fetos()->save(
+                new UltrasonidoTrimestreFeto($value)
+            );
+        }
+
+        return response()->json([
+            'saved' => true
+        ]);
     }
 }

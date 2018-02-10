@@ -159,6 +159,8 @@
         }
     });
 
+
+
     ////////////////////
     //ecocardiografia //
     ////////////////////
@@ -263,16 +265,16 @@
 
         let child = $('#child_1trimestre');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'UltrasonidoTrimestre');
     });
     $('#cantidad_feto_1trimestre').focusout(function(event) {
         let cantidad = $(this).val();
 
         if(cantidad == '') return false;
 
-        let child = $('#child_1trimestre');
+        let child = $('#child_1trimestre', '');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'UltrasonidoTrimestre');
     });
 
     ////////////
@@ -313,7 +315,7 @@
      * @param {[type]} child    [description]
      * @param {[type]} cantidad [description]
      */
-    function setChild(child, cantidad) {
+    function setChild(child, cantidad, examen) {
         let msj = 'Analizando el feto: ' + cantidad;
         let node = child.parent(0);
         let remove = child;
@@ -324,7 +326,7 @@
         $('.msj_feto').html(msj);
 
         if(cantidad > 1){
-          let button = "<button type='button' class='btn btn-lg btn-info pull-right' data-cantidad='"+cantidad+"' data-child='"+child.prop('id')+"' onclick='netxtChild($(this))'>Siguiente</button>";
+          let button = "<button type='button' class='btn btn-lg btn-info pull-right' data-examen='"+examen+"' data-cantidad='"+cantidad+"' data-child='"+child.prop('id')+"' onclick='netxtChild($(this))'>Siguiente</button>";
            $('.nextChild').html(button);
         }else{
             $('.nextChild').html('');
@@ -342,7 +344,7 @@
         let cantidad = este.data('cantidad') - 1 ;
 
         if(cantidad < 0) cantidad = 0;
-
+        addFeto(child, este.data('examen'))
         setChild(child, cantidad);
     }
 
@@ -534,13 +536,13 @@
         $('.modal-title').html(title);
 
         if(!trimestre){//agregar examen
-            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/ITrimestre/store/"+consulta);
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoTrimestre/store/"+consulta);
             $('.consulta-form')[0].reset();
         }else{
-            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/ITrimestre/update/"+trimestre);
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoTrimestre/update/"+trimestre);
             $('.consulta-form')[0].reset();
 
-            $.get("{{ url('/') }}/Consultas/ITrimestre/get/"+trimestre, function(data){
+            $.get("{{ url('/') }}/Consultas/UltrasonidoTrimestre/get/"+trimestre, function(data){
                 console.log(data);
             });
         }

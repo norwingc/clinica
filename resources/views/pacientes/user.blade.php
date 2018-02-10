@@ -102,5 +102,6 @@
 
 @include('includes.consulta._modal')
 @include('includes.consulta._script')
+@include('includes.save._script')
 
 @endsection
