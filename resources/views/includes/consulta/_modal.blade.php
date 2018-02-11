@@ -2011,7 +2011,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Neurosonografia']) !!}
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Edad</label>
@@ -3214,7 +3214,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" id="Neurosonografia" data-examen="#Neurosonografia" onclick="saveNeurosonografia($(this))">Guardar Cambios</button>
                     </div>
                     <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                 {!! Form::close() !!}
@@ -3449,6 +3449,12 @@
                                     <label>Cerebelo (mm)</label>
                                     <div>
                                         <input type="number" name="cerebelo_medida" id="cerebelo_medida_estructural" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Cerebelo (semanas)</label>
+                                    <div>
+                                        <input type="number" name="cerebelo_semanas" id="cerebelo_semanas_estructural" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-2">

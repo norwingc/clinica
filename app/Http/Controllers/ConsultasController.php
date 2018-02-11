@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto};
 
 use PDF;
 
@@ -189,5 +189,31 @@ class ConsultasController extends Controller
 
         session()->flash('message_success', "Examen Eliminado");
         return back();
+    }
+
+    /**
+     * [storeNeurosonografia description]
+     * @param  Request  $request  [description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeNeurosonografia(Request $request, Consulta $consulta)
+    {
+        $Neurosonografia = new Neurosonografia($request->all());
+        $consulta->neurosonografia()->save($Neurosonografia);
+
+        foreach ($request->fetos as $key => $value) {
+
+            $Neurosonografia->fetos()->save(
+                $feto = new NeurosonografiaFeto($value)
+            );
+
+            (isset($value['presencia_quiste_si'])) ? $feto->presencia_quiste_si = implode(', ', $value['presencia_quiste_si']) : '';
+            $feto->update();
+        }
+
+        return response()->json([
+            'saved' => true
+        ]);
     }
 }

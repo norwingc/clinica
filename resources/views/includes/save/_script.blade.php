@@ -94,6 +94,37 @@
         });
     }
 
+    function saveNeurosonografia(este) {
+        //$(este).button('loading');
+        var form = $(este.data('examen'));
+        var _token = $('meta[name="csrf-token"]').attr('content');
+
+        addFeto($(form).find('#child_neurosonografia'), 'Neurosonografia');
+
+         var data = {
+            "_token" : _token,
+            "edad": $(form).find('#edad_neurosonografia').val(),
+            "date": $(form).find('#date_neurosonografia').val(),
+            "paridad": $(form).find('#paridad_neurosonografia').val(),
+            "feto": $(form).find('#feto_neurosonografia').val(),
+            "revision" : $(form).find('#revision_neurosonografia').val(),
+            "conclusion_embarazo_gestacion" : $(form).find('#conclusion_embarazo_gestacion_neurosonografia').val(),
+            "concluciones" : $(form).find('#concluciones_neurosonografia').val(),
+            "comentarios" : $(form).find('#comentarios_neurosonografia').val(),
+            "recordatorio" : $(form).find('#recordatorio_neurosonografia').val(),
+            fetos : fetos
+        };
+
+        $.post($(form).attr('action'), data, function(resp){
+            console.log(resp);
+            if(resp.saved == true){
+                $(este).button('reset');
+                alert('Examen Guardado');
+                location.reload();
+            }
+        });
+    }
+
     function addFeto(child, examen) {
 
         if(examen == 'UltrasonidoTrimestre'){
@@ -187,6 +218,7 @@
                 "perone_medida": $(child).find('#perone_medida_estructural').val(),
                 "perone_semanas": $(child).find('#perone_semanas_estructural').val(),
                 "cerebelo_medida": $(child).find('#cerebelo_medida_estructural').val(),
+                "cerebelo_semanas": $(child).find('#cerebelo_semanas_estructural').val(),
                 "cisterna_magna": $(child).find('#cisterna_magna_estructural').val(),
                 "pliegue_nucal": $(child).find('#pliegue_nucal_estructural').val(),
                 "fetometria_promedio": $(child).find('#fetometria_promedio_estructural').val(),
@@ -317,6 +349,131 @@
                 "liquido_amniotico" : $(child).find('#liquido_amniotico_estructural').val(),
                 "clasificacion_liquido_amniotico" : $(child).find('#clasificacion_liquido_amniotico_estructural').val(),
                 "valor_ila" : $(child).find('#valor_ila_estructural').val()
+            });
+        }
+
+        if(examen = 'Neurosonografia'){
+            fetos.push({
+                "vitalidad_feto": $(child).find('#vitalidad_feto_neurosonografia').val(),
+                "presentacion": $(child).find('#presentacion_neurosonografia').val(),
+                "situacion": $(child).find('#situacion_neurosonografia').val(),
+                "posicion": $(child).find('#posicion_neurosonografia').val(),
+                "fcf": $(child).find('#fcf_neurosonografia').val(),
+                "dbp_medida": $(child).find('#dbp_medida_neurosonografia').val(),
+                "dbp_semanas": $(child).find('#dbp_semanas_neurosonografia').val(),
+                "cc_medida": $(child).find('#cc_medida_neurosonografia').val(),
+                "cc_semanas": $(child).find('#cc_semanas_neurosonografia').val(),
+                "ca_medida": $(child).find('#ca_medida_neurosonografia').val(),
+                "ca_semanas": $(child).find('#ca_semanas_neurosonografia').val(),
+                "lf_medida": $(child).find('#lf_medida_neurosonografia').val(),
+                "lf_semanas": $(child).find('#lf_semanas_neurosonografia').val(),
+                "fetometria_promedio": $(child).find('#fetometria_promedio_neurosonografia').val(),
+                "percentil": $(child).find('#percentil_neurosonografia').val(),
+                "peso_fetal": $(child).find('#peso_fetal_neurosonografia').val(),
+                "fecha_parto": $(child).find('#fecha_parto_neurosonografia').val(),
+                "percentil_ip_medio": $(child).find('#percentil_ip_medio_neurosonografia').val(),
+                "interpretacion_ip_medio": $(child).find('#interpretacion_ip_medio_neurosonografia').val(),
+                "percentil_notch_izquierda": $(child).find('#percentil_notch_izquierda_neurosonografia').val(),
+                "interpretacion_notch_izquierda": $(child).find('#interpretacion_notch_izquierda_neurosonografia').val(),
+                "percentil_notch_derecha": $(child).find('#percentil_notch_derecha_neurosonografia').val(),
+                "interpretacion_notch_derecha": $(child).find('#interpretacion_notch_derecha_neurosonografia').val(),
+                "percentil_cerebro_placentario": $(child).find('#percentil_cerebro_placentario_neurosonografia').val(),
+                "interpretacion_cerebro_placentario": $(child).find('#interpretacion_cerebro_placentario_neurosonografia').val(),
+                "percentil_arteria_cerebral": $(child).find('#percentil_arteria_cerebral_neurosonografia').val(),
+                "interpretacion_arteria_cerebral": $(child).find('#interpretacion_arteria_cerebral_neurosonografia').val(),
+                "percentil_arteria_umbilical": $(child).find('#percentil_arteria_umbilical_neurosonografia').val(),
+                "interpretacion_arteria_umbilical": $(child).find('#interpretacion_arteria_umbilical_neurosonografia').val(),
+                "percentil_flojo_diasotolico": $(child).find('#percentil_flojo_diasotolico_neurosonografia').val(),
+                "interpretacion_flojo_diasotolico": $(child).find('#interpretacion_flojo_diasotolico_neurosonografia').val(),
+                "percentil_itsmo_aortico": $(child).find('#percentil_itsmo_aortico_neurosonografia').val(),
+                "interpretacion_itsmo_aortico": $(child).find('#interpretacion_itsmo_aortico_neurosonografia').val(),
+                "percentil_ducto_venenoso": $(child).find('#percentil_ducto_venenoso_neurosonografia').val(),
+                "interpretacion_ducto_venenoso": $(child).find('#interpretacion_ducto_venenoso_neurosonografia').val(),
+                "percentil_flujo_dicto_venenoso": $(child).find('#percentil_flujo_dicto_venenoso_neurosonografia').val(),
+                "interpretacion_flujo_dicto_venenoso": $(child).find('#interpretacion_flujo_dicto_venenoso_neurosonografia').val(),
+                "percentil_vena_umbilical": $(child).find('#percentil_vena_umbilical_neurosonografia').val(),
+                "interpretacion_vena_umbilical": $(child).find('#interpretacion_vena_umbilical_neurosonografia').val(),
+                "craneo": $(child).find('#craneo_neurosonografia').val(),
+                "dolicocefalia": $(child).find('#dolicocefalia_neurosonografia').val(),
+                "braquicefalia": $(child).find('#braquicefalia_neurosonografia').val(),
+                "craneo_tamano": $(child).find('#craneo_tamano_neurosonografia').val(),
+                "craneo_situras": $(child).find('#craneo_situras_neurosonografia').val(),
+                "craneo_compresion": $(child).find('#craneo_compresion_neurosonografia').val(),
+                "craneo_interhemisferica": $(child).find('#craneo_interhemisferica_neurosonografia').val(),
+                "craneo_hemisferios": $(child).find('#craneo_hemisferios_neurosonografia').val(),
+                "cavum_septum": $(child).find('#cavum_septum_neurosonografia').val(),
+                "diametro_anteroposterior": $(child).find('#diametro_anteroposterior_neurosonografia').val(),
+                "asta_frontales": $(child).find('#asta_frontales_neurosonografia').val(),
+                "comunicacion_asta_ateriores": $(child).find('#comunicacion_asta_ateriores_neurosonografia').val(),
+                "plexo_coroideos": $(child).find('#plexo_coroideos_neurosonografia').val(),
+                "presencia_quiste": $(child).find('#presencia_quiste_neurosonografia').val(),
+                "presencia_quiste_si": $(child).find('#presencia_quiste_si_neurosonografia').val(),
+                "cisura_parietooccipital": $(child).find('#cisura_parietooccipital_neurosonografia').val(),
+                "atrios_ventruculares": $(child).find('#atrios_ventruculares_neurosonografia').val(),
+                "atrio_derecho": $(child).find('#atrio_derecho_neurosonografia').val(),
+                "atrio_izquierdo": $(child).find('#atrio_izquierdo_neurosonografia').val(),
+                "area_ventricular": $(child).find('#area_ventricular_neurosonografia').val(),
+                "talamos_normales": $(child).find('#talamos_normales_neurosonografia').val(),
+                "giro_hipocampal_presente": $(child).find('#giro_hipocampal_presente_neurosonografia').val(),
+                "ventriculo_diametros": $(child).find('#ventriculo_diametros_neurosonografia').val(),
+                "ambos_hemisferios_simetricos": $(child).find('#ambos_hemisferios_simetricos_neurosonografia').val(),
+                "vermis": $(child).find('#vermis_neurosonografia').val(),
+                "central_ecogenico": $(child).find('#central_ecogenico_neurosonografia').val(),
+                "morfologia_normal": $(child).find('#morfologia_normal_neurosonografia').val(),
+                "cisterna_magna": $(child).find('#cisterna_magna_neurosonografia').val(),
+                "comunicacion_4_ventriculo": $(child).find('#comunicacion_4_ventriculo_neurosonografia').val(),
+                "pliegue_nucal": $(child).find('#pliegue_nucal_neurosonografia').val(),
+                "liena_intergemisferica": $(child).find('#liena_intergemisferica_neurosonografia').val(),
+                "asta_anteriores": $(child).find('#asta_anteriores_neurosonografia').val(),
+                "hueso_esfenoides": $(child).find('#hueso_esfenoides_neurosonografia').val(),
+                "asta_aterior_derecha": $(child).find('#asta_aterior_derecha_neurosonografia').val(),
+                "asta_aterior_izquierda": $(child).find('#asta_aterior_izquierda_neurosonografia').val(),
+                "nucleos_caudado": $(child).find('#nucleos_caudado_neurosonografia').val(),
+                "espacio_subaracnoideo": $(child).find('#espacio_subaracnoideo_neurosonografia').val(),
+                "espacio_craneocotical": $(child).find('#espacio_craneocotical_neurosonografia').val(),
+                "cisura_silvio": $(child).find('#cisura_silvio_neurosonografia').val(),
+                "tetorio_situs": $(child).find('#tetorio_situs_neurosonografia').val(),
+                "cisura_interhemisferica": $(child).find('#cisura_interhemisferica_neurosonografia').val(),
+                "cuernos_occipitales": $(child).find('#cuernos_occipitales_neurosonografia').val(),
+                "presencia_calloso": $(child).find('#presencia_calloso_neurosonografia').val(),
+                "disgenesia": $(child).find('#disgenesia_neurosonografia').val(),
+                "saginal_longitud": $(child).find('#saginal_longitud_neurosonografia').val(),
+                "saginal_grosor": $(child).find('#saginal_grosor_neurosonografia').val(),
+                "csp_cavum": $(child).find('#csp_cavum_neurosonografia').val(),
+                "fornix": $(child).find('#fornix_neurosonografia').val(),
+                "tronco_encefalico": $(child).find('#tronco_encefalico_neurosonografia').val(),
+                "torcula_tendorio": $(child).find('#torcula_tendorio_neurosonografia').val(),
+                "cisterna_magna": $(child).find('#cisterna_magna_neurosonografia').val(),
+                "doppler_visualiza": $(child).find('#doppler_visualiza_neurosonografia').val(),
+                "pericallosa": $(child).find('#pericallosa_neurosonografia').val(),
+                "vena_galeno": $(child).find('#vena_galeno_neurosonografia').val(),
+                "cisuras_silvio": $(child).find('#cisuras_silvio_neurosonografia').val(),
+                "vena_galeno": $(child).find('#vena_galeno_neurosonografia').val(),
+                "cisura_occipital": $(child).find('#cisura_occipital_neurosonografia').val(),
+                "cisura_calcarina": $(child).find('#cisura_calcarina_neurosonografia').val(),
+                "cisura_cingulada": $(child).find('#cisura_cingulada_neurosonografia').val(),
+                "cortes_sagitales": $(child).find('#cortes_sagitales_neurosonografia').val(),
+                "identifica_cono": $(child).find('#identifica_cono_neurosonografia').val(),
+                "observa_osificacion": $(child).find('#observa_osificacion_neurosonografia').val(),
+                "integridad_cuerpos": $(child).find('#integridad_cuerpos_neurosonografia').val(),
+                "evidencia_mielocele": $(child).find('#evidencia_mielocele_neurosonografia').val(),
+                "evidencia_mielocele_descripcion": $(child).find('#evidencia_mielocele_descripcion_neurosonografia').val(),
+                "evidencia_mielomeningocele": $(child).find('#evidencia_mielomeningocele_neurosonografia').val(),
+                "evidencia_mielomeningocele_descripcion": $(child).find('#evidencia_mielomeningocele_descripcion_neurosonografia').val(),
+                "evidencia_mielosquisis": $(child).find('#evidencia_mielosquisis_neurosonografia').val(),
+                "evidencia_mielosquisise_descripcion": $(child).find('#evidencia_mielosquisise_descripcion_neurosonografia').val(),
+                "placenta_numero" : $(child).find('#placenta_numero_neurosonografia').val(),
+                "placenta_posocion" : $(child).find('#placenta_posocion_neurosonografia').val(),
+                "placenta_grado" : $(child).find('#placenta_grado_neurosonografia').val(),
+                "presencia_patologicas" : $(child).find('#presencia_patologicas_neurosonografia').val(),
+                "areas_infarto" : $(child).find('#areas_infarto_neurosonografia').val(),
+                "longitud_cervix" : $(child).find('#longitud_cervix_neurosonografia').val(),
+                "funneling" : $(child).find('#funneling_neurosonografia').val(),
+                "porcentaje_funneling" : $(child).find('#porcentaje_funneling_neurosonografia').val(),
+                "sludge" : $(child).find('#sludge_neurosonografia').val(),
+                "liquido_amniotico" : $(child).find('#liquido_amniotico_neurosonografia').val(),
+                "clasificacion_liquido_amniotico" : $(child).find('#clasificacion_liquido_amniotico_neurosonografia').val(),
+                "valor_ila" : $(child).find('#valor_ila_neurosonografia').val()
             });
         }
 

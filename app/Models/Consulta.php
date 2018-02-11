@@ -59,6 +59,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\UltrasonidoEstructural', 'consulta_id');
     }
 
+    public function neurosonografia()
+    {
+        return $this->hasOne('App\Models\Neurosonografia', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

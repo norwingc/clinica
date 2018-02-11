@@ -207,7 +207,7 @@
 
         let child = $('#child_neurosonografia');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Neurosonografia');
     });
     $('#cantidad_feto_neurosonografia').focusout(function(event) {
         let cantidad = $(this).val();
@@ -216,7 +216,7 @@
 
         let child = $('#child_neurosonografia');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Neurosonografia');
     });
 
     ////////////////
@@ -479,7 +479,7 @@
      */
     function updatedNeurosonografia(este) {
         let consulta        = este.data('consulta');
-        let title           = 'Consulta Neurosonografia: ' + este.data('paciente');
+        let title           = 'Neurosonografia: ' + este.data('paciente');
         let neurosonografia = este.data('id');
         $('.modal-title').html(title);
 
