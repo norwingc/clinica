@@ -171,7 +171,10 @@ class ConsultasController extends Controller
      */
     public function reportEstructural(UltrasonidoEstructural $estructural)
     {
-       return $estructural->load('fetos');
+       //return view('reports.estructural', ['estructural' => $estructural->load('fetos')]);
+
+        $pdf = \PDF::loadView('reports.estructural', ['estructural' => $estructural->load('fetos')]);
+        return $pdf->stream();
     }
 
     /**

@@ -1151,7 +1151,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label>Percentilo</label>
+                                    <label>Percentil</label>
                                     <div>
                                         <input type="text" name="percentil" id="percentil_ecocardiografia" class="form-control">
                                     </div>
@@ -2171,7 +2171,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label>Percentilo</label>
+                                    <label>Percentil</label>
                                     <div>
                                         <input type="text" name="percentil" id="percentil_neurosonografia" class="form-control">
                                     </div>
@@ -3470,7 +3470,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label>Percentilo</label>
+                                    <label>Percentil</label>
                                     <div>
                                         <input type="text" name="percentil" id="percentil_estructural" class="form-control">
                                     </div>
@@ -6328,7 +6328,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <label>Percentilo</label>
+                                    <label>Percentil</label>
                                     <div>
                                         <input type="text" name="percentil" id="percentil_doppler" class="form-control">
                                     </div>
