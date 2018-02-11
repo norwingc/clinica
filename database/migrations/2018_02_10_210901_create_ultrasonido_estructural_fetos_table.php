@@ -40,6 +40,7 @@ class CreateUltrasonidoEstructuralFetosTable extends Migration
             $table->string('perone_medida', 20)->nullable();
             $table->string('perone_semanas', 20)->nullable();
             $table->string('cerebelo_medida', 20)->nullable();
+            $table->string('cerebelo_semanas', 20)->nullable();
             $table->string('cisterna_magna', 20)->nullable();
             $table->string('pliegue_nucal', 20)->nullable();
             $table->string('fetometria_promedio', 20)->nullable();

@@ -27,9 +27,7 @@
 
     <p class="sub_titul"><b>ULTRASONIDO MORFOLOGICO DE II TRIMESTRE</b></p>
 
-    <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b></p>
-
-    <p>Fetos: @if($estructural->feto == 1) Unico @elseif($estructural->feto == 2) Gemelo @else {{ $estructural->fetos->count() }} @endif</p>
+    <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b> Fetos: @if($estructural->feto == 1) Unico @elseif($estructural->feto == 2) Gemelo @else {{ $estructural->fetos->count() }} @endif</p>
 
     @php
         $count = $estructural->fetos->count();
@@ -38,22 +36,18 @@
      @foreach ($estructural->fetos as $value)
         <p class="sub_titul"><b>Analizando el feto: {{ $count }}</b></p>
 
-        <p>Vitalidad: {{ $value->vitalidad_feto }}</p>
-
-        <p><b>PRESENTACIÓN:</b> {{ $value->presentacion }}</p>
-        <p><b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
+        <p>
+            Vitalidad: {{ $value->vitalidad_feto }}. <b>PRESENTACIÓN:</b> {{ $value->presentacion }}. <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
+        </p>
 
         <div>
             <p class="sub_titul"><b>SOMATOMETRIA</b></p>
-            <table style="width: 100%" class="table-text-center">
-                <thead>
+            <table style="width: 100%;">
                     <tr>
                         <th>Parámetro</th>
                         <th>Medida mm</th>
                         <th>Semanas</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <th>DBP</th>
                         <td>{{ $value->dbp_medida }}</td>
@@ -74,7 +68,7 @@
                         <td>{{ $value->lf_medida }}</td>
                         <td>{{ $value->lf_semanas }}</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <th>Húmero</th>
                         <td>{{ $value->humero_medida }}</td>
                         <td>{{ $value->humero_semanas }}</td>
@@ -102,17 +96,15 @@
                     <tr>
                         <th>Cerebelo</th>
                         <td>{{ $value->cerebelo_medida }}</td>
-                        <td></td>
+                        <td>{{ $value->cerebelo_semanas }}</td>
                     </tr>
                     <tr>
                         <th>Cisterna magna</th>
-                        <td></td>
-                        <td>{{ $value->cisterna_magna }}</td>
+                        <td colspan="2">{{ $value->cisterna_magna }}</td>
                     </tr>
                     <tr>
                         <th>Pliegue nucal</th>
-                        <td></td>
-                        <td>{{ $value->pliegue_nucal }}</td>
+                        <td colspan="2">{{ $value->pliegue_nucal }}</td>
                     </tr>
                     <tr>
                         <th>Fetometría promedio</th>
@@ -130,20 +122,16 @@
                         <th>Fecha de parto estimada</th>
                         <td colspan="2">{{ $value->cerebelo_medida }}</td>
                     </tr>
-                </tbody>
             </table>
         </div>
         <div>
             <p class="sub_titul"><b>Flujometria Doppler</b></p>
-            <table style="width: 100%" class="table-text-center">
-                <thead>
+            <table style="width: 100%">
                     <tr>
                         <th>Vaso evaluado</th>
                         <th>Percentil</th>
                         <th>Valor</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <th>IP medio de arterias uterinas</th>
                         <td>{{ $value->percentil_ip_medio }}</td>
@@ -199,10 +187,8 @@
                         <td>{{ $value->percentil_vena_umbilical }}</td>
                         <td>{{ $value->interpretacion_vena_umbilical }}</td>
                     </tr>
-                </tbody>
             </table>
         </div>
-
         <p>
             <b>Cráneo:</b> Forma normal: {{ $value->craneo }}. Dolicocefalia: {{ $value->dolicocefalia }}. Braquicefalia: {{ $value->braquicefalia }}. Tamaño normal: {{ $value->craneo_tamano }}.
             Suturas craneales normales: {{ $value->craneo_situras }}. A la leve compresión del transductor se aprecian deformidades: {{ $value->craneo_compresion }}.
@@ -274,13 +260,15 @@
     <p>Revision: {{ $estructural->revision }}</p>
 
     <p class="sub_titul"><b>Conclusiones</b></p>
+    <p style="margin:0">Embarazo por fetometría (Semanas): {{ $estructural->conclusion_embarazo_fetometria }}</p>
+    <p style="margin:0">Conclusiones: {{ $estructural->concluciones }}</p>
     <p style="margin:0">Riesgo de parto Pretermino: {{ $estructural->conclusion_riesgo_parto_pretermino }}</p>
     <p style="margin:0">Riesgo de Pre eclampsia: {{ $estructural->conclusion_riesgo_preeclampsia }}</p>
     <p style="margin:0">Riesgo de Hipertensión tardía: {{ $estructural->conclusion_riesgo_hipertension }}</p>
     <p style="margin:0">Riesgo de Restricción del Crecimiento: {{ $estructural->conclusion_riesgo_restriccion_crecimiento }}</p>
-    <p style="margin:0">Embarazo de gestación por fetometría acorde a US evolutivo (Semanas): {{ $estructural->conclusion_embarazo_fetometria }}</p>
+
+    <p class="sub_titul"><b>Recomendaciones</b></p>
     <p style="margin:0">Continuar vigilancia y curva de crecimiento (semanas): {{ $estructural->conclusion_vigilancia_crecimiento }}</p>
-    <p style="margin:0">Conclusiones: {{ $estructural->concluciones }}</p>
 
    @if($estructural->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>

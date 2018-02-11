@@ -12,7 +12,7 @@ class UltrasonidoEstructuralFeto extends Model
     protected $fillable = [
         "vitalidad_feto", "presentacion", "situacion", "posicion", "fcf", "dbp_medida", "dbp_semanas", "cc_medida", "cc_semanas", "ca_medida",
         "ca_semanas", "lf_medida", "lf_semanas", "humero_medida", "humero_semanas", "radio_medida", "radio_semanas", "cubito_medida", "cubito_semanas", "tibia_medida", "tibia_semanas",
-        "perone_medida", "perone_semanas", "cerebelo_medida", "cisterna_magna", "pliegue_nucal", "fetometria_promedio", "percentil", "peso_fetal", "fecha_parto", "percentil_ip_medio",
+        "perone_medida", "perone_semanas", "cerebelo_medida", "cerebelo_semanas", "cisterna_magna", "pliegue_nucal", "fetometria_promedio", "percentil", "peso_fetal", "fecha_parto", "percentil_ip_medio",
         "interpretacion_ip_medio", "percentil_notch_izquierda", "interpretacion_notch_izquierda", "percentil_notch_derecha", "interpretacion_notch_derecha",
         "percentil_cerebro_placentario", "interpretacion_cerebro_placentario", "percentil_arteria_cerebral", "interpretacion_arteria_cerebral", "percentil_arteria_umbilical",
         "interpretacion_arteria_umbilical", "percentil_flojo_diasotolico", "interpretacion_flojo_diasotolico", "percentil_itsmo_aortico", "interpretacion_itsmo_aortico",
