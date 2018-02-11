@@ -29,24 +29,26 @@
 
     <p>Vejia de: bordes: {{ $pelvico->bordes }}. Presencia de ecos en su interior: {{ $pelvico->ecos_interior }}</p>
 
-    <p>Utero {{ $pelvico->utero }}</p>
+    <p>Utero: {{ $pelvico->utero }}.
 
     @if($pelvico->utero == 'Presente')
-        <p>Forma: {{ $pelvico->forma }}. Bordes: {{ $pelvico->bordes }}. Paredes: {{ $pelvico->paredes }}</p>
-        <p>
-            Longitud: {{ $pelvico->longitud }}. Ancho: {{ $pelvico->ancho }}. Grosor: {{ $pelvico->grosor }}. Masas en musculo uterino: {{ $pelvico->masa_uterino }}.
-            @if($pelvico->masa_uterino == 'Si')
-                Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}.
-            @endif
-        </p>
-        <p>
+       Forma: {{ $pelvico->forma }}. Bordes: {{ $pelvico->bordes }}. Paredes: {{ $pelvico->paredes }}
+
+        Longitud: {{ $pelvico->longitud }}. Ancho: {{ $pelvico->ancho }}. Grosor: {{ $pelvico->grosor }}. Masas en musculo uterino: {{ $pelvico->masa_uterino }}.
+        @if($pelvico->masa_uterino == 'Si')
+            Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}.
+        @endif
             Presencia de tabique: {{ $pelvico->presencia_tabique }}.
             @if($pelvico->presencia_tabique == 'Si')
                    Medicion: {{ $pelvico->tabique_medicion }}.
             @endif
+            <p>
             Endometrio (mm): {{ $pelvico->endometrio }}. Modo: {{ $pelvico->endometrio_modo }}. Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
             @if($pelvico->cavidad_endometrial == 'Si')
-                Dispositivo intrauterino: {{ $pelvico->dispositivo_intrauterino }}. Saco gestacional: {{ $pelvico->saco_gestional }}.
+                Dispositivo intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
+            </p>
+            <p>
+                Saco gestacional: {{ $pelvico->saco_gestional }}.
                 Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
                 Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
                 Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
@@ -56,37 +58,40 @@
     @endif
 
     <p class="sub_titul">Ovario Izquierdo</p>
-    <ul>
-        <p>Ovario: {{ $pelvico->ovario_izquierdo }}.</p>
+
+    <p>
+        Ovario: {{ $pelvico->ovario_izquierdo }}.
         @if($pelvico->ovario_izquierdo == 'Presente')
-            <p>
-                Mide (mm): {{ $pelvico->ovario_izquierdo_1 }}. X (mm): {{ $pelvico->ovario_izquierdo_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_izquierdo }}
-                @if($pelvico->presencia_masa_anexial_izquierdo == 'Si')
-                    Tipo: {{ $pelvico->ovario_izquierdo_tipo }}. Vegetaciones: {{ $pelvico->ovario_izquierdo_vegetaciones }}. Septos: {{ $pelvico->ovario_izquierdo_septos }}.
-                    Irregularidad de la masa: {{ $pelvico->ovario_izquierdo_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_izquierdo_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_izquierdo_patron_vascular }}.
-                @endif
-            </p>
+            Mide (mm): {{ $pelvico->ovario_izquierdo_1 }}. X (mm): {{ $pelvico->ovario_izquierdo_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_izquierdo }}
+            @if($pelvico->presencia_masa_anexial_izquierdo == 'Si')
+                Tipo: {{ $pelvico->ovario_izquierdo_tipo }}. Vegetaciones: {{ $pelvico->ovario_izquierdo_vegetaciones }}. Septos: {{ $pelvico->ovario_izquierdo_septos }}.
+                Irregularidad de la masa: {{ $pelvico->ovario_izquierdo_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_izquierdo_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_izquierdo_patron_vascular }}.
+            @endif
         @endif
-    </ul>
+    </p>
+
     <p class="sub_titul">Ovario Derecho</p>
-    <ul>
-        <p>Ovario: {{ $pelvico->ovario_derecho }}</p>
+
+    <p>
+        Ovario: {{ $pelvico->ovario_derecho }}
         @if($pelvico->ovario_derecho == 'Presente')
-            <p>
-                Mide (mm): {{ $pelvico->ovario_derecho_1 }}. X (mm): {{ $pelvico->ovario_derecho_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_derecho }}
-                @if($pelvico->presencia_masa_anexial_derecho == 'Si')
-                    Tipo: {{ $pelvico->ovario_derecho_tipo }}. Vegetaciones: {{ $pelvico->ovario_derecho_vegetaciones }}. Septos: {{ $pelvico->ovario_derecho_septos }}.
-                    Irregularidad de la masa: {{ $pelvico->ovario_derecho_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_derecho_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_derecho_patron_vascular }}.
-                @endif
-            </p>
+            Mide (mm): {{ $pelvico->ovario_derecho_1 }}. X (mm): {{ $pelvico->ovario_derecho_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_derecho }}
+            @if($pelvico->presencia_masa_anexial_derecho == 'Si')
+                Tipo: {{ $pelvico->ovario_derecho_tipo }}. Vegetaciones: {{ $pelvico->ovario_derecho_vegetaciones }}. Septos: {{ $pelvico->ovario_derecho_septos }}.
+                Irregularidad de la masa: {{ $pelvico->ovario_derecho_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_derecho_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_derecho_patron_vascular }}.
+            @endif
         @endif
-    </ul>
+    </p>
+
     <p class="sub_titul">Conclusiones</p>
     <ul>
         <li>{{ $pelvico->concluciones }}</li>
         <li>Embarazo por longitud craneo caudal (semanas): {{ $pelvico->embarazo_lcc_semanas }}</li>
     </ul>
-    <p class="sub_titul">Comentarios</p>
-    <p>{{ $pelvico->comentarios }}</p>
+
+    @if($pelvico->comentarios != '')
+        <p class="sub_titul">Comentarios</p>
+        <p>{{ $pelvico->comentarios }}</p>
+    @endif
 </body>
 </html>

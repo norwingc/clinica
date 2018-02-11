@@ -27,14 +27,16 @@
 
     <p class="sub_titul">ULTRASONIDO ESTRUCTURAL DE I TRIMESTRE</p>
 
-    <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b></p>
+    <p>
+        <b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b>
+        Fetos: @if($trimestre->feto == 1) Unico @elseif($trimestre->feto == 2) Gemelo @else {{ $trimestre->fetos->count() }} @endif
+    </p>
 
-    <p>Fetos: @if($trimestre->feto == 1) Unico @elseif($trimestre->feto == 2) Gemelo @else {{ $trimestre->fetos->count() }} @endif</p>
     @php
         $count = $trimestre->fetos->count();
     @endphp
     @foreach ($trimestre->fetos as $value)
-        <p class="sub_titul"><b>Analizando el feto: {{ $count }}</b></p>
+        <p class="sub_titul"><b>Revision de feto: {{ $count }}</b></p>
 
         <p>Vitalidad: {{ $value->vitalidad_feto }}</p>
 
@@ -79,10 +81,12 @@
         </table>
 
         <p class="sub_titul"><b>I TAMIZAJE PARA DEFECTOS ESTRUCTURALES</b></p>
-        <p><b>Craneo</b> Integridad: Normal {{ $value->craneo }}. Forma: Normal {{ $value->craneo_forma }}. Plexos coroideos: Normal {{ $value->pexos_caroideos }}. Presencia de quiste de plexos coroideos: {{ $value->quiste_plexos }}.  @if($value->quiste_plexos == 'Si') {{ $value->quiste_plexos_si }} @endif </p>
-        <p>Hueso nasal: {{ $value->hueso_nasal }}. Medición: {{ $value->medicion_nasala }}</p>
-        <p>Tórax: {{ $value->torax_normal }}</p>
-        <p><b>Corazón</b> Localización  intratoracica {{ $value->localizacion_intratoracica }}. Ectopia cordis {{ $value->ectopia_cordis }}. Anomalía cardiaca {{ $value->anomalia_cardica }}  @if($value->anomalia_cardica == 'Si'). Descripcion: {{ $value->descripcion_anomalia_cardica }} @endif</p>
+        <p>
+            <b>Craneo</b> Integridad: Normal {{ $value->craneo }}. Forma: Normal {{ $value->craneo_forma }}. Plexos coroideos: Normal {{ $value->pexos_caroideos }}. Presencia de quiste de plexos coroideos: {{ $value->quiste_plexos }}.  @if($value->quiste_plexos == 'Si') {{ $value->quiste_plexos_si }} @endif
+            Hueso nasal: {{ $value->hueso_nasal }}. Medición: {{ $value->medicion_nasala }}
+            Tórax: {{ $value->torax_normal }}
+            <b>Corazón</b> Localización  intratoracica {{ $value->localizacion_intratoracica }}. Ectopia cordis {{ $value->ectopia_cordis }}. Anomalía cardiaca {{ $value->anomalia_cardica }}  @if($value->anomalia_cardica == 'Si'). Descripcion: {{ $value->descripcion_anomalia_cardica }} @endif
+        </p>
         <p><b>Abdomen:</b> Inserción de cordón normal {{ $value->insercion_cordon }}. Presencia de 3 vasos {{ $value->presencia_vasos }}. Arteria umbilical única {{ $value->arteria_umbilical }}. Pared abdominal integra {{ $value->pared_integra }}. @if($value->pared_integra == 'No') {{ $value->localizacion_defecto_abdominal }}. Medida del defecto: {{ $value->defecto_medida }} mm @endif</p>
         @if($value->pared_integra == 'No')
             <p>
@@ -93,8 +97,10 @@
             </p>
         @endif
         <p>Cámara gástrica Insitu: {{ $value->camara_gastrica }}. Vejiga Urinaria Insitu: {{ $value->vejiga }}.</p>
-        <p><b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. Extremidad afectada: {{ $value->extremidades_superiores_afectada }}
-        <p><b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}
+        <p>
+            <b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. Extremidad afectada: {{ $value->extremidades_superiores_afectada }}.
+            <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}
+        </p>
         <p>
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm.
             Funneling:  {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}.@endif Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}
@@ -119,7 +125,7 @@
                 </tr>
             </table>
         </div>
-        <div style="width: 49%; height: 270px; display: inline-block;">
+        <div style="width: 49%; height: 220px; display: inline-block;">
             <img style="margin: auto; display: block;" src="{{ asset('img/grafico_trimestre.png') }}" alt="">
         </div>
 
@@ -139,17 +145,19 @@
     <p>Bidimensional: {{ $trimestre->bidimensional }}. Doppler color: {{ $trimestre->doppler_color }}</p>
 
     <p class="sub_titul"><b>Conclusiones</b></p>
-    <p>Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }} (Semanas)</p>
-    <p>Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}</p>
-    <p>Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}</p>
-    <p>Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}</p>
-    <p>Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}</p>
-    <p>Riesgo para Parto Pretermino: {{ $trimestre->conclusion_riesago_parto_pretermino }}</p>
+    <p style="margin: 0">Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }} (Semanas)</p>
+    <p style="margin: 0">Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}</p>
+    <p style="margin: 0">Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}</p>
+    <p style="margin: 0">Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}</p>
+    <p style="margin: 0">Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}</p>
+    <p style="margin: 0">Riesgo para Parto Pretermino: {{ $trimestre->conclusion_riesago_parto_pretermino }}</p>
 
     <p class="sub_titul"><b>Recomendaciones</b></p>
     <p>{{ $trimestre->recomendaciones }}</p>
 
-    <p class="sub_titul"><b>Comentarios</b></p>
-    <p>{{ $trimestre->comentarios }}</p>
+    @if($trimestre->comentarios != '')
+        <p class="sub_titul"><b>Comentarios</b></p>
+        <p>{{ $trimestre->comentarios }}</p>
+    @endif
 </body>
 </html>
