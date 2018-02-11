@@ -12,6 +12,13 @@
     </p>
 @endif
 
+@if($value->estructural)
+    <p>
+        <a href="{{ route('report.estructural', $value->estructural) }}" class="btn btn-info">Descargar reporte Ultrasonido Estructural</a>
+        <a href="{{ route('consulta.estructural.delete', $value->estructural) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif

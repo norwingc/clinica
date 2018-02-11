@@ -54,6 +54,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\UltrasonidoTrimestre', 'consulta_id');
     }
 
+    public function estructural()
+    {
+        return $this->hasOne('App\Models\UltrasonidoEstructural', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

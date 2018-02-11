@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto};
 
 use PDF;
 
@@ -64,7 +64,10 @@ class ConsultasController extends Controller
      */
     public function deletePelvico(UltrasonidoPelvico $pelvico)
     {
-        return $pelvico;
+        $pelvico->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
     }
 
     /**
@@ -113,7 +116,11 @@ class ConsultasController extends Controller
      */
     public function deleteTrimestre(UltrasonidoTrimestre $trimestre)
     {
-        return $trimestre;
+        $trimestre->fetos()->delete();
+        $trimestre->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
     }
 
     /**
@@ -127,5 +134,57 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.trimestre', ['trimestre' => $trimestre->load('fetos')]);
         return $pdf->stream();
+    }
+
+    /**
+     * [storeEstructural description]
+     * @param  Request  $request  [description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeEstructural(Request $request, Consulta $consulta)
+    {
+        //return $request;
+
+        $UltrasonidoEstructural = new UltrasonidoEstructural($request->all());
+        $consulta->trimestre()->save($UltrasonidoEstructural);
+
+        foreach ($request->fetos as $key => $value) {
+
+            $UltrasonidoEstructural->fetos()->save(
+                $feto = new UltrasonidoEstructuralFeto($value)
+            );
+
+            (isset($value['presencia_quiste_si'])) ? $feto->presencia_quiste_si = implode(', ', $value['presencia_quiste_si']) : '';
+            $feto->update();
+        }
+
+        return response()->json([
+            'saved' => true
+        ]);
+    }
+
+    /**
+     * [reportEstructural description]
+     * @param  UltrasonidoEstructural $estructural [description]
+     * @return [type]                              [description]
+     */
+    public function reportEstructural(UltrasonidoEstructural $estructural)
+    {
+       return $estructural->load('fetos');
+    }
+
+    /**
+     * [deleteEstructural description]
+     * @param  UltrasonidoEstructural $estructural [description]
+     * @return [type]                              [description]
+     */
+    public function deleteEstructural(UltrasonidoEstructural $estructural)
+    {
+        $estructural->fetos()->delete();
+        $estructural->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
     }
 }

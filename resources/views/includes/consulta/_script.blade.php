@@ -236,7 +236,7 @@
 
         let child = $('#child_estructural');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'UltrasonidoEstructural');
     });
     $('#cantidad_feto_estructural').focusout(function(event) {
         let cantidad = $(this).val();
@@ -245,7 +245,7 @@
 
         let child = $('#child_estructural');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'UltrasonidoEstructural');
     });
 
     ///////////////
@@ -505,18 +505,18 @@
      */
     function updatedEstructural(este) {
         let consulta        = este.data('consulta');
-        let title           = 'Consulta Estructural: ' + este.data('paciente');
+        let title           = 'Ultrasonido Estructural: ' + este.data('paciente');
         let estructural = este.data('id');
         $('.modal-title').html(title);
 
         if(!estructural){//agregar examen
-            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Estructural/store/"+consulta);
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoEstructural/store/"+consulta);
             $('.consulta-form')[0].reset();
         }else{
-            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Estructural/update/"+estructural);
+            $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/UltrasonidoEstructural/update/"+estructural);
             $('.consulta-form')[0].reset();
 
-            $.get("{{ url('/') }}/Consultas/Estructural/get/"+estructural, function(data){
+            $.get("{{ url('/') }}/Consultas/UltrasonidoEstructural/get/"+estructural, function(data){
                 console.log(data);
             });
         }

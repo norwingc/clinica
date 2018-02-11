@@ -3231,7 +3231,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'UltrasonidoEstructural']) !!}
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Edad</label>
@@ -3844,7 +3844,7 @@
                                 <div class="col-md-3 presencia_quiste_si_form" style="display: none">
                                     <label>Quiste</label>
                                     <div>
-                                        <select name="presencia_quiste_si" id="presencia_quiste_si_estructural" class="form-control" multiple>
+                                        <select name="presencia_quiste_si[]" id="presencia_quiste_si_estructural" class="form-control" multiple>
                                             <option value="Unilateral">Unilateral</option>
                                             <option value="Bilateral">Bilateral</option>
                                             <option value="Unico">Unico</option>
@@ -4346,7 +4346,7 @@
                                 <div class="col-md-3">
                                     <label>Cámara gástrica Insitu</label>
                                     <div>
-                                        <select name="camara_gastrica" id="camara_gastrica_estructural" class="form-control" required>
+                                        <select name="camara_gastrica_insitu" id="camara_gastrica_insitu_estructural" class="form-control" required>
                                             <option value="Presente">Presente</option>
                                             <option value="No visible">No visible</option>
                                         </select>
@@ -4445,7 +4445,7 @@
                                 <div class="col-md-3">
                                     <label>Vejiga urinaria</label>
                                     <div>
-                                        <select name="vejiga_urinaria" id="vejiga_urinaria_estructural" class="form-control" required>
+                                        <select name="vejiga_urinaria_insitu" id="vejiga_urinaria_insitu_estructural" class="form-control" required>
                                             <option value="Llenado Fisiológico">Llenado Fisiológico</option>
                                             <option value="Vacia">Vacia</option>
                                             <option value="Megavejiga">Megavejiga</option>
@@ -4740,7 +4740,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" id="UltrasonidoEstructural" data-examen="#UltrasonidoEstructural" onclick="saveEstructural($(this))">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>

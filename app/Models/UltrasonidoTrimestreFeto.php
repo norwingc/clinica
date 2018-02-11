@@ -29,7 +29,7 @@ class UltrasonidoTrimestreFeto extends Model
      * [fetos description]
      * @return [type] [description]
      */
-    public function exaamen()
+    public function examen()
     {
         return $this->belongsTo('App\Models\UltrasonidoTrimestre', 'examen_id');
     }

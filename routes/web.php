@@ -56,6 +56,9 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.trimestre.store')->post('/UltrasonidoTrimestre/store/{consulta}', 'ConsultasController@storeTrimestre');
         Route::name('consulta.trimestre.delete')->get('/UltrasonidoTrimestre/delete/{trimestre}', 'ConsultasController@deleteTrimestre');
 
+        Route::name('consulta.estructural.store')->post('/UltrasonidoEstructural/store/{consulta}', 'ConsultasController@storeEstructural');
+        Route::name('consulta.estructural.delete')->get('/UltrasonidoEstructural/delete/{estructural}', 'ConsultasController@deleteEstructural');
+
     });
 
     Route::prefix('Citas')->group(function () {
@@ -68,7 +71,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('Reports')->group(function () {
         Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');
-         Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');
+        Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');
+        Route::name('report.estructural')->get('Estructural/{estructural}', 'ConsultasController@reportEstructural');
     });
 
 });
