@@ -123,6 +123,9 @@ class ConsultasController extends Controller
      */
     public function reportTrimestre(UltrasonidoTrimestre $trimestre)
     {
-        return $trimestre->load('fetos');
+        //return view('reports.trimestre', ['trimestre' => $trimestre->load('fetos')]);
+
+        $pdf = \PDF::loadView('reports.trimestre', ['trimestre' => $trimestre->load('fetos')]);
+        return $pdf->stream();
     }
 }
