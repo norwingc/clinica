@@ -128,7 +128,6 @@
         @endphp
     @endforeach
 
-    <div style="height: 16em"></div>
     <p class="sub_titul"><b>III TAMIZAJE PARA  ENFERMEDADES HIPERTENSIVAS EN EL EMBARAZO</b></p>
     <p>
         <b>Antecedentes Maternos:</b> Historia de Madre con Pre eclampsia: {{ $trimestre->historia_preecampsia_mama }}. Historia de Madre con Hipertensión: {{ $trimestre->historia_hipertension_mama }}.
