@@ -19,6 +19,13 @@
     </p>
 @endif
 
+@if($value->neurosonografia)
+    <p>
+        <a href="{{ route('report.neurosonografia', $value->neurosonografia) }}" class="btn btn-info">Descargar reporte Neurosonografia</a>
+        <a href="{{ route('consulta.neurosonografia.delete', $value->neurosonografia) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif

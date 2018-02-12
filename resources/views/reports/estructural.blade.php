@@ -33,7 +33,7 @@
         $count = $estructural->fetos->count();
     @endphp
 
-     @foreach ($estructural->fetos as $value)
+    @foreach ($estructural->fetos as $value)
         <p class="sub_titul"><b>Analizando el feto: {{ $count }}</b></p>
 
         <p>
@@ -116,11 +116,11 @@
                     </tr>
                     <tr>
                         <th>Peso fetal</th>
-                        <td colspan="2">{{ $value->cerebelo_medida }}</td>
+                        <td colspan="2">{{ $value->peso_fetal }}</td>
                     </tr>
                     <tr>
                         <th>Fecha de parto estimada</th>
-                        <td colspan="2">{{ $value->cerebelo_medida }}</td>
+                        <td colspan="2">{{ $value->fecha_parto }}</td>
                     </tr>
             </table>
         </div>

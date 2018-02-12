@@ -216,4 +216,17 @@ class ConsultasController extends Controller
             'saved' => true
         ]);
     }
+
+    /**
+     * [reportNeurosonografia description]
+     * @param  Neurosonografia $neurosono [description]
+     * @return [type]                     [description]
+     */
+    public function reportNeurosonografia(Neurosonografia $neurosonografia)
+    {
+        //return view('reports.neurosonografia', ['neurosono' => $neurosonografia->load('fetos')]);
+
+        $pdf = \PDF::loadView('reports.neurosonografia', ['neurosono' => $neurosonografia->load('fetos')]);
+        return $pdf->stream();
+    }
 }

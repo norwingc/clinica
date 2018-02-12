@@ -26,6 +26,7 @@ class CreateNeurosonografiasTable extends Migration
             $table->string('comentarios')->nullable();
             $table->string('recordatorio')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

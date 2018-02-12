@@ -59,8 +59,8 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.estructural.store')->post('/UltrasonidoEstructural/store/{consulta}', 'ConsultasController@storeEstructural');
         Route::name('consulta.estructural.delete')->get('/UltrasonidoEstructural/delete/{estructural}', 'ConsultasController@deleteEstructural');
 
-        Route::name('consulta.neurosono.store')->post('/Neurosonografia/store/{consulta}', 'ConsultasController@storeNeurosonografia');
-        Route::name('consulta.neurosono.delete')->get('/Neurosonografia/delete/{neurosono}', 'ConsultasController@deleteNeurosonografia');
+        Route::name('consulta.neurosonografia.store')->post('/Neurosonografia/store/{consulta}', 'ConsultasController@storeNeurosonografia');
+        Route::name('consulta.neurosonografia.delete')->get('/Neurosonografia/delete/{neurosono}', 'ConsultasController@deleteNeurosonografia');
 
     });
 
@@ -76,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');
         Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');
         Route::name('report.estructural')->get('Estructural/{estructural}', 'ConsultasController@reportEstructural');
+        Route::name('report.neurosonografia')->get('Neurosonografia/{neurosonografia}', 'ConsultasController@reportNeurosonografia');
     });
 
 });
