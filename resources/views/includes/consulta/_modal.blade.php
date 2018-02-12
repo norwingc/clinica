@@ -1694,7 +1694,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <!-- <div class="col-md-3">
                                     <label>Tamaño de vasos: Normal</label>
                                     <div>
                                         <select name="tamano_vasos_normal" id="tamano_vasos_normal_ecocardiografia" class="form-control">
@@ -1702,7 +1702,7 @@
                                             <option value="No">No</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-3">
                                     <label>Tamaño de vasos: Anormal</label>
                                     <div>

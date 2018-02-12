@@ -241,7 +241,7 @@ class ConsultasController extends Controller
         $Ecocardiografia = new Ecocardiografia($request->all());
         $consulta->ecocardiografia()->save($Ecocardiografia);
 
-        (isset($request->cara)) ? $Ecocardiografia->concluciones = implode(', ', $request->concluciones) : '';
+        (isset($request->concluciones)) ? $Ecocardiografia->concluciones = implode(', ', $request->concluciones) : '';
         $Ecocardiografia->update();
 
         foreach ($request->fetos as $key => $value) {
@@ -257,5 +257,18 @@ class ConsultasController extends Controller
         return response()->json([
             'saved' => true
         ]);
+    }
+
+    /**
+     * [reportEcocardiografia description]
+     * @param  Ecocardiografia $ecocardiografia [description]
+     * @return [type]                           [description]
+     */
+    public function reportEcocardiografia(Ecocardiografia $ecocardiografia)
+    {
+        //return view('reports.ecocardiografia', ['ecocardio' => $ecocardiografia->load('fetos')]);
+
+        $pdf = \PDF::loadView('reports.ecocardiografia', ['ecocardio' => $ecocardiografia->load('fetos')]);
+        return $pdf->stream();
     }
 }

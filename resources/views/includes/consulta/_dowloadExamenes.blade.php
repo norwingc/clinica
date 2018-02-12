@@ -26,6 +26,13 @@
     </p>
 @endif
 
+@if($value->ecocardiografia)
+    <p>
+        <a href="{{ route('report.ecocardiografia', $value->ecocardiografia) }}" class="btn btn-info">Descargar reporte Ecocardiografia</a>
+        <a href="{{ route('consulta.ecocardiografia.delete', $value->ecocardiografia) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif

@@ -80,6 +80,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');
         Route::name('report.estructural')->get('Estructural/{estructural}', 'ConsultasController@reportEstructural');
         Route::name('report.neurosonografia')->get('Neurosonografia/{neurosonografia}', 'ConsultasController@reportNeurosonografia');
+        Route::name('report.ecocardiografia')->get('Ecocardiografia/{ecocardiografia}', 'ConsultasController@reportEcocardiografia');
     });
 
 });

@@ -14,6 +14,7 @@ class CreateEcocardiografiasTable extends Migration
     public function up()
     {
         Schema::create('ecocardiografias', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('consulta_id');
             $table->integer('edad')->nullable();
             $table->string('date')->nullable();
