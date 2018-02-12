@@ -95,7 +95,7 @@
     }
 
     function saveNeurosonografia(este) {
-        //$(este).button('loading');
+        $(este).button('loading');
         var form = $(este.data('examen'));
         var _token = $('meta[name="csrf-token"]').attr('content');
 
@@ -116,7 +116,41 @@
         };
 
         $.post($(form).attr('action'), data, function(resp){
-            console.log(resp);
+            if(resp.saved == true){
+                $(este).button('reset');
+                alert('Examen Guardado');
+                location.reload();
+            }
+        });
+    }
+
+    /**
+     * [saveEcocardiografia description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function saveEcocardiografia(este) {
+        //$(este).button('loading');
+        var form = $(este.data('examen'));
+
+        var _token = $('meta[name="csrf-token"]').attr('content');
+
+        addFeto($(form).find('#child_ecocardiografia'), 'Ecocardiografia');
+
+        var data = {
+            "_token" : _token,
+            "edad": $(form).find('#edad_ecocardiografia').val(),
+            "date": $(form).find('#date_ecocardiografia').val(),
+            "paridad": $(form).find('#paridad_ecocardiografia').val(),
+            "feto": $(form).find('#feto_ecocardiografia').val(),
+            "revision" : $(form).find('#revision_ecocardiografia').val(),
+            "concluciones" : $(form).find('#concluciones_ecocardiografia').val(),
+            "comentarios" : $(form).find('#comentarios_ecocardiografia').val(),
+            "recordatorio" : $(form).find('#recordatorio_ecocardiografia').val(),
+            "fetos": fetos
+        }
+
+        $.post($(form).attr('action'), data, function(resp){
             if(resp.saved == true){
                 $(este).button('reset');
                 alert('Examen Guardado');
@@ -352,7 +386,7 @@
             });
         }
 
-        if(examen = 'Neurosonografia'){
+        if(examen == 'Neurosonografia'){
             fetos.push({
                 "vitalidad_feto": $(child).find('#vitalidad_feto_neurosonografia').val(),
                 "presentacion": $(child).find('#presentacion_neurosonografia').val(),
@@ -474,6 +508,106 @@
                 "liquido_amniotico" : $(child).find('#liquido_amniotico_neurosonografia').val(),
                 "clasificacion_liquido_amniotico" : $(child).find('#clasificacion_liquido_amniotico_neurosonografia').val(),
                 "valor_ila" : $(child).find('#valor_ila_neurosonografia').val()
+            });
+        }
+
+        if(examen == 'Ecocardiografia'){
+            console.log('esdfasdf');
+            fetos.push({
+                "vitalidad_feto": $(child).find('#vitalidad_feto_ecocardiografia').val(),
+                "presentacion": $(child).find('#presentacion_ecocardiografia').val(),
+                "situacion": $(child).find('#situacion_ecocardiografia').val(),
+                "posicion": $(child).find('#posicion_ecocardiografia').val(),
+                "fcf": $(child).find('#fcf_ecocardiografia').val(),
+                "dbp_medida": $(child).find('#dbp_medida_ecocardiografia').val(),
+                "dbp_semanas": $(child).find('#dbp_semanas_ecocardiografia').val(),
+                "cc_medida": $(child).find('#cc_medida_ecocardiografia').val(),
+                "cc_semanas": $(child).find('#cc_semanas_ecocardiografia').val(),
+                "ca_medida": $(child).find('#ca_medida_ecocardiografia').val(),
+                "ca_semanas": $(child).find('#ca_semanas_ecocardiografia').val(),
+                "lf_medida": $(child).find('#lf_medida_ecocardiografia').val(),
+                "lf_semanas": $(child).find('#lf_semanas_ecocardiografia').val(),
+                "fetometria_promedio": $(child).find('#fetometria_promedio_ecocardiografia').val(),
+                "percentil": $(child).find('#percentil_ecocardiografia').val(),
+                "peso_fetal": $(child).find('#peso_fetal_ecocardiografia').val(),
+                "fecha_parto": $(child).find('#fecha_parto_ecocardiografia').val(),
+                "percentil_ip_medio": $(child).find('#percentil_ip_medio_ecocardiografia').val(),
+                "interpretacion_ip_medio": $(child).find('#interpretacion_ip_medio_ecocardiografia').val(),
+                "percentil_notch_izquierda": $(child).find('#percentil_notch_izquierda_ecocardiografia').val(),
+                "interpretacion_notch_izquierda": $(child).find('#interpretacion_notch_izquierda_ecocardiografia').val(),
+                "percentil_notch_derecha": $(child).find('#percentil_notch_derecha_ecocardiografia').val(),
+                "interpretacion_notch_derecha": $(child).find('#interpretacion_notch_derecha_ecocardiografia').val(),
+                "percentil_cerebro_placentario": $(child).find('#percentil_cerebro_placentario_ecocardiografia').val(),
+                "interpretacion_cerebro_placentario": $(child).find('#interpretacion_cerebro_placentario_ecocardiografia').val(),
+                "percentil_arteria_cerebral": $(child).find('#percentil_arteria_cerebral_ecocardiografia').val(),
+                "interpretacion_arteria_cerebral": $(child).find('#interpretacion_arteria_cerebral_ecocardiografia').val(),
+                "percentil_arteria_umbilical": $(child).find('#percentil_arteria_umbilical_ecocardiografia').val(),
+                "interpretacion_arteria_umbilical": $(child).find('#interpretacion_arteria_umbilical_ecocardiografia').val(),
+                "percentil_flojo_diasotolico": $(child).find('#percentil_flojo_diasotolico_ecocardiografia').val(),
+                "interpretacion_flojo_diasotolico": $(child).find('#interpretacion_flojo_diasotolico_ecocardiografia').val(),
+                "percentil_itsmo_aortico": $(child).find('#percentil_itsmo_aortico_ecocardiografia').val(),
+                "interpretacion_itsmo_aortico": $(child).find('#interpretacion_itsmo_aortico_ecocardiografia').val(),
+                "percentil_ducto_venenoso": $(child).find('#percentil_ducto_venenoso_ecocardiografia').val(),
+                "interpretacion_ducto_venenoso": $(child).find('#interpretacion_ducto_venenoso_ecocardiografia').val(),
+                "percentil_flujo_dicto_venenoso": $(child).find('#percentil_flujo_dicto_venenoso_ecocardiografia').val(),
+                "interpretacion_flujo_dicto_venenoso": $(child).find('#interpretacion_flujo_dicto_venenoso_ecocardiografia').val(),
+                "percentil_vena_umbilical": $(child).find('#percentil_vena_umbilical_ecocardiografia').val(),
+                "interpretacion_vena_umbilical": $(child).find('#interpretacion_vena_umbilical_ecocardiografia').val(),
+                "situs": $(child).find('#situs_ecocardiografia').val(),
+                "situs_ambiguo": $(child).find('#situs_ambiguo_ecocardiografia').val(),
+                "isomerismo": $(child).find('#isomerismo_ecocardiografia').val(),
+                "corazon_tamano": $(child).find('#corazon_tamano_ecocardiografia').val(),
+                "corazon_posicion": $(child).find('#corazon_posicion_ecocardiografia').val(),
+                "corte": $(child).find('#corte_ecocardiografia').val(),
+                "auriculas": $(child).find('#auriculas_ecocardiografia').val(),
+                "ventriculos": $(child).find('#ventriculos_ecocardiografia').val(),
+                "dominancia": $(child).find('#dominancia_ecocardiografia').val(),
+                "foramen": $(child).find('#foramen_ecocardiografia').val(),
+                "valvula_mitral_implantacion": $(child).find('#valvula_mitral_implantacion_ecocardiografia').val(),
+                "valvula_mitral_funcionalidad": $(child).find('#valvula_mitral_funcionalidad_ecocardiografia').val(),
+                "valvula_tricuspide_implantacion": $(child).find('#valvula_tricuspide_implantacion_ecocardiografia').val(),
+                "valvula_tricuspide_funcionalidad": $(child).find('#valvula_tricuspide_funcionalidad_ecocardiografia').val(),
+                "tabique_interaventricular": $(child).find('#tabique_interaventricular_ecocardiografia').val(),
+                "tabique_interaventricular_defecto": $(child).find('#tabique_interaventricular_defecto_ecocardiografia').val(),
+                "tipo_civ": $(child).find('#tipo_civ_ecocardiografia').val(),
+                "tracto_salida_derecho": $(child).find('#tracto_salida_derecho_ecocardiografia').val(),
+                "tracto_salida_izquierdo": $(child).find('#tracto_salida_izquierdo_ecocardiografia').val(),
+                "tipo_conexion_ventricular": $(child).find('#tipo_conexion_ventricular_ecocardiografia').val(),
+                "modo_conexion_ventricular": $(child).find('#modo_conexion_ventricular_ecocardiografia').val(),
+                "funcion_contractilidad": $(child).find('#funcion_contractilidad_ecocardiografia').val(),
+                "funcion_rendimiento_cardiaco": $(child).find('#funcion_rendimiento_cardiaco_ecocardiografia').val(),
+                "funcion_ritmo": $(child).find('#funcion_ritmo_ecocardiografia').val(),
+                "funcion_extrasistoles": $(child).find('#funcion_extrasistoles_ecocardiografia').val(),
+                "numero_vasos": $(child).find('#numero_vasos_ecocardiografia').val(),
+                "pulmonar": $(child).find('#pulmonar_ecocardiografia').val(),
+                "aorta": $(child).find('#aorta_ecocardiografia').val(),
+                "vena_cava": $(child).find('#vena_cava_ecocardiografia').val(),
+                "tamano_vasos": $(child).find('#tamano_vasos_ecocardiografia').val(),
+                "tamano_vasos_normal": $(child).find('#tamano_vasos_normal_ecocardiografia').val(),
+                "tamano_vasos_anormal": $(child).find('#tamano_vasos_anormal_ecocardiografia').val(),
+                "arteria_pulmonar_izquierda": $(child).find('#arteria_pulmonar_izquierda_ecocardiografia').val(),
+                "aorta_medio": $(child).find('#aorta_medio_ecocardiografia').val(),
+                "vena_cava_derecha": $(child).find('#vena_cava_derecha_ecocardiografia').val(),
+                "disposicion_normal": $(child).find('#disposicion_normal_ecocardiografia').val(),
+                "disposicion_anormal": $(child).find('#disposicion_anormal_ecocardiografia').val(),
+                "vista_bi_cava": $(child).find('#vista_bi_cava_ecocardiografia').val(),
+                "vestibulo_venoso": $(child).find('#vestibulo_venoso_ecocardiografia').val(),
+                "arco_aortico": $(child).find('#arco_aortico_ecocardiografia').val(),
+                "arco_ductal": $(child).find('#arco_ductal_ecocardiografia').val(),
+                "eje_corto_vasos": $(child).find('#eje_corto_vasos_ecocardiografia').val(),
+                "eje_corto_centriculos": $(child).find('#eje_corto_centriculos_ecocardiografia').val(),
+                "placenta_numero" : $(child).find('#placenta_numero_ecocardiografia').val(),
+                "placenta_posocion" : $(child).find('#placenta_posocion_ecocardiografia').val(),
+                "placenta_grado" : $(child).find('#placenta_grado_ecocardiografia').val(),
+                "presencia_patologicas" : $(child).find('#presencia_patologicas_ecocardiografia').val(),
+                "areas_infarto" : $(child).find('#areas_infarto_ecocardiografia').val(),
+                "longitud_cervix" : $(child).find('#longitud_cervix_ecocardiografia').val(),
+                "funneling" : $(child).find('#funneling_ecocardiografia').val(),
+                "porcentaje_funneling" : $(child).find('#porcentaje_funneling_ecocardiografia').val(),
+                "sludge" : $(child).find('#sludge_ecocardiografia').val(),
+                "liquido_amniotico" : $(child).find('#liquido_amniotico_ecocardiografia').val(),
+                "clasificacion_liquido_amniotico" : $(child).find('#clasificacion_liquido_amniotico_ecocardiografia').val(),
+                "valor_ila" : $(child).find('#valor_ila_ecocardiografia').val()
             });
         }
 

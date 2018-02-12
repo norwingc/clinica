@@ -64,6 +64,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Neurosonografia', 'consulta_id');
     }
 
+    public function ecocardiografia()
+    {
+        return $this->hasOne('App\Models\Ecocardiografia', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

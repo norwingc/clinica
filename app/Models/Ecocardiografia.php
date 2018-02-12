@@ -2,22 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Neurosonografia extends Model
+class Ecocardiografia extends Model
 {
+
     use SoftDeletes;
 
-     /**
+    /**
      * [$fillable description]
      * @var [type]
      */
     protected $fillable = [
-        "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "concluciones", "comentarios", "recordatorio"
+        "edad", "date", "paridad", "feto", "revision", "comentarios", "recordatorio"
     ];
 
-    /**
+     /**
      * [consulta description]
      * @return [type] [description]
      */
@@ -32,6 +33,6 @@ class Neurosonografia extends Model
      */
     public function fetos()
     {
-        return $this->hasMany('App\Models\NeurosonografiaFeto', 'examen_id');
+        return $this->hasMany('App\Models\EcocardiografiaFeto', 'examen_id');
     }
 }

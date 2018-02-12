@@ -178,7 +178,7 @@
 
         let child = $('#child_ecocardiografia');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Ecocardiografia');
     });
     $('#cantidad_feto_ecocardiografia').focusout(function(event) {
         let cantidad = $(this).val();
@@ -187,7 +187,7 @@
 
         let child = $('#child_ecocardiografia');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Ecocardiografia');
     });
 
     ////////////////////

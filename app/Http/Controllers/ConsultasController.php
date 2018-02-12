@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto};
 
 use PDF;
 
@@ -228,5 +228,34 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.neurosonografia', ['neurosono' => $neurosonografia->load('fetos')]);
         return $pdf->stream();
+    }
+
+    /**
+     * [storeEcocardiografia description]
+     * @param  Request  $request  [description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeEcocardiografia(Request $request, Consulta $consulta)
+    {
+        $Ecocardiografia = new Ecocardiografia($request->all());
+        $consulta->ecocardiografia()->save($Ecocardiografia);
+
+        (isset($request->cara)) ? $Ecocardiografia->concluciones = implode(', ', $request->concluciones) : '';
+        $Ecocardiografia->update();
+
+        foreach ($request->fetos as $key => $value) {
+
+            $Ecocardiografia->fetos()->save(
+                $feto = new EcocardiografiaFeto($value)
+            );
+
+            (isset($value['tipo_civ'])) ? $feto->tipo_civ = implode(', ', $value['tipo_civ']) : '';
+            $feto->update();
+        }
+
+        return response()->json([
+            'saved' => true
+        ]);
     }
 }

@@ -62,6 +62,9 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.neurosonografia.store')->post('/Neurosonografia/store/{consulta}', 'ConsultasController@storeNeurosonografia');
         Route::name('consulta.neurosonografia.delete')->get('/Neurosonografia/delete/{neurosono}', 'ConsultasController@deleteNeurosonografia');
 
+        Route::name('consulta.ecocardiografia.store')->post('/Ecocardiografia/store/{consulta}', 'ConsultasController@storeEcocardiografia');
+        Route::name('consulta.ecocardiografia.delete')->get('/Ecocardiografia/delete/{neurosono}', 'ConsultasController@deleteEcocardiografia');
+
     });
 
     Route::prefix('Citas')->group(function () {

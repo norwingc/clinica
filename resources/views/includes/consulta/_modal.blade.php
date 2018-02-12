@@ -990,7 +990,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Ecocardiografia']) !!}
                    <div class="form-group">
                         <div class="col-md-3">
                             <label>Edad</label>
@@ -1402,7 +1402,7 @@
                                 <div class="col-md-3">
                                     <label>Situs Ambiguo</label>
                                     <div>
-                                        <select name="situs" id="situs_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form' onchange="selectShow($(this))">
+                                        <select name="situs_ambiguo" id="situs_ambiguo_ecocardiografia" class="form-control" required data-target='situs_ecocardiografia_si_form' onchange="selectShow($(this))">
                                             <option value="No">No</option>
                                             <option value="Si">Si</option>
                                         </select>
@@ -1413,7 +1413,7 @@
                                     <div>
                                         <select name="isomerismo" id="isomerismo_ecocardiografia" class="form-control" required>
                                             <option value="Derecho">Derecho</option>
-                                            <option value="Izquierdo">Izquierdoa</option>
+                                            <option value="Izquierdo">Izquierdo</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1544,13 +1544,13 @@
                                     <div class="col-md-3">
                                         <label>Tamaño del Defecto (mm)</label>
                                         <div>
-                                            <input type="text" name="tabique_interaventricular_defecto" id="tabique_interaventricular_defecto_ecocardiografia" class="form-control" required>
+                                            <input type="text" name="tabique_interaventricular_defecto" id="tabique_interaventricular_defecto_ecocardiografia" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <label>Tipo CIV</label>
                                         <div>
-                                            <select name="tipo_civ" id="tipo_civ_ecocardiografia" class="form-control" multiple>
+                                            <select name="tipo_civ[]" id="tipo_civ_ecocardiografia" class="form-control" multiple>
                                                 <option value="CIV Outlet / Tracto de salida de Ventrículo derecho / Infundibular">CIV Outlet / Tracto de salida de Ventrículo derecho / Infundibular</option>
                                                 <option value="CIV Peri membranosa">CIV Peri membranosa</option>
                                                 <option value="CIV Inlet / Tracto de entrada de ventrículo derecho">CIV Inlet / Tracto de entrada de ventrículo derecho</option>
@@ -1891,7 +1891,7 @@
                                 <div class="col-md-3">
                                     <label>Funneling</label>
                                     <div>
-                                        <select name="funneling" id="funneling_ecocardiografiaa" class="form-control" required onchange="changeFunneling($(this))">
+                                        <select name="funneling" id="funneling_ecocardiografia" class="form-control" required onchange="changeFunneling($(this))">
                                             <option value="Negativo">Negativo</option>
                                             <option value="Positivo">Positivo</option>
                                         </select>
@@ -1900,7 +1900,7 @@
                                  <div class="col-md-3 funneling" style="display: none"></td>
                                     <label>Porcentaje Funneling</label>
                                     <div>
-                                        <select name="porcentaje_funneling" id="porcentaje_funneling_ecocardiografiaa" class="form-control" required>
+                                        <select name="porcentaje_funneling" id="porcentaje_funneling_ecocardiografia" class="form-control" required>
                                             <option value="< 30%">< 30%</option>
                                             <option value="30-50%">30-50%</option>
                                             <option value="> 50%">> 50%</option>
@@ -1968,7 +1968,7 @@
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
-                                <select name="concluciones" id="concluciones_ecocardiografia" class="form-control selectpicker" multiple>
+                                <select name="concluciones[]" id="concluciones_ecocardiografia" class="form-control selectpicker" multiple>
                                     <option value="Corte Axial de Abdomen dentro de límites normales">Corte Axial de Abdomen dentro de límites normales</option>
                                     <option value="Corte de 4 cámaras dentro de límites normales">Corte de 4 cámaras dentro de límites normales</option>
                                     <option value="Corte de 3 vasos tráquea dentro de límites normales">Corte de 3 vasos tráquea dentro de límites normales</option>
@@ -1995,7 +1995,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" id="Ecocardiografia" data-examen="#Ecocardiografia" onclick="saveEcocardiografia($(this))">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>
