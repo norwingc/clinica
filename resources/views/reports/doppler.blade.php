@@ -25,7 +25,7 @@
         </tr>
     </table>
 
-    <p class="sub_titul"><b>REPORTE DE NEUROSONOGRAFIA</b></p>
+    <p class="sub_titul"><b>ULTRASONIDO III TRIMESTRE / DOPPLER Y CURVA DE CRECIMIENTO</b></p>
 
     <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b> Fetos: @if($doppler->feto == 1) Unico @elseif($doppler->feto == 2) Gemelo @else {{ $doppler->fetos->count() }} @endif</p>
 
