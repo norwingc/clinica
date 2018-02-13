@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto};
 
 use PDF;
 
@@ -270,5 +270,31 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.ecocardiografia', ['ecocardio' => $ecocardiografia->load('fetos')]);
         return $pdf->stream();
+    }
+
+    /**
+     * [storeDoppler description]
+     * @param  Request  $request  [description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeDoppler(Request $request, Consulta $consulta)
+    {
+        $Doppler = new Doppler($request->all());
+        $consulta->doppler()->save($Doppler);
+
+        (isset($request->concluciones)) ? $Doppler->concluciones = implode(', ', $request->concluciones) : '';
+        $Doppler->update();
+
+        foreach ($request->fetos as $key => $value) {
+
+            $Doppler->fetos()->save(
+                $feto = new DopplerFeto($value)
+            );
+        }
+
+        return response()->json([
+            'saved' => true
+        ]);
     }
 }

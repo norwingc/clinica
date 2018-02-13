@@ -65,6 +65,9 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.ecocardiografia.store')->post('/Ecocardiografia/store/{consulta}', 'ConsultasController@storeEcocardiografia');
         Route::name('consulta.ecocardiografia.delete')->get('/Ecocardiografia/delete/{neurosono}', 'ConsultasController@deleteEcocardiografia');
 
+        Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
+        Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');
+
     });
 
     Route::prefix('Citas')->group(function () {

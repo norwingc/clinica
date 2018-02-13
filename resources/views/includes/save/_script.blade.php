@@ -94,6 +94,11 @@
         });
     }
 
+    /**
+     * [saveNeurosonografia description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
     function saveNeurosonografia(este) {
         $(este).button('loading');
         var form = $(este.data('examen'));
@@ -130,7 +135,7 @@
      * @return {[type]}      [description]
      */
     function saveEcocardiografia(este) {
-        //$(este).button('loading');
+        $(este).button('loading');
         var form = $(este.data('examen'));
 
         var _token = $('meta[name="csrf-token"]').attr('content');
@@ -159,6 +164,48 @@
         });
     }
 
+    /**
+     * [saveDoppler description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function saveDoppler(este) {
+        //$(este).button('loading');
+        var form = $(este.data('examen'));
+
+        var _token = $('meta[name="csrf-token"]').attr('content');
+
+        addFeto($(form).find('#child_doppler'), 'Doppler');
+
+        var data = {
+            "_token" : _token,
+            "edad": $(form).find('#edad_doppler').val(),
+            "date": $(form).find('#date_doppler').val(),
+            "paridad": $(form).find('#paridad_doppler').val(),
+            "feto": $(form).find('#feto_doppler').val(),
+            "revision" : $(form).find('#revision_doppler').val(),
+            "conclusion_embarazo_gestacion" : $(form).find('#conclusion_embarazo_gestacion_doppler').val(),
+            "concluciones" : $(form).find('#concluciones_doppler').val(),
+            "comentarios" : $(form).find('#comentarios_doppler').val(),
+            "recordatorio" : $(form).find('#recordatorio_doppler').val(),
+            "fetos": fetos
+        }
+
+        $.post($(form).attr('action'), data, function(resp){
+            console.log(resp);
+            if(resp.saved == true){
+                $(este).button('reset');
+                alert('Examen Guardado');
+                location.reload();
+            }
+        });
+    }
+
+    /**
+     * [addFeto description]
+     * @param {[type]} child  [description]
+     * @param {[type]} examen [description]
+     */
     function addFeto(child, examen) {
 
         if(examen == 'UltrasonidoTrimestre'){
@@ -512,7 +559,6 @@
         }
 
         if(examen == 'Ecocardiografia'){
-            console.log('esdfasdf');
             fetos.push({
                 "vitalidad_feto": $(child).find('#vitalidad_feto_ecocardiografia').val(),
                 "presentacion": $(child).find('#presentacion_ecocardiografia').val(),
@@ -611,6 +657,78 @@
             });
         }
 
+        if(examen == 'Doppler'){
+            fetos.push({
+                "vitalidad_feto": $(child).find('#vitalidad_feto_doppler').val(),
+                "presentacion": $(child).find('#presentacion_doppler').val(),
+                "situacion": $(child).find('#situacion_doppler').val(),
+                "posicion": $(child).find('#posicion_doppler').val(),
+                "fcf": $(child).find('#fcf_doppler').val(),
+                "dbp_medida": $(child).find('#dbp_medida_doppler').val(),
+                "dbp_semanas": $(child).find('#dbp_semanas_doppler').val(),
+                "cc_medida": $(child).find('#cc_medida_doppler').val(),
+                "cc_semanas": $(child).find('#cc_semanas_doppler').val(),
+                "ca_medida": $(child).find('#ca_medida_doppler').val(),
+                "ca_semanas": $(child).find('#ca_semanas_doppler').val(),
+                "lf_medida": $(child).find('#lf_medida_doppler').val(),
+                "lf_semanas": $(child).find('#lf_semanas_doppler').val(),
+                "fetometria_promedio": $(child).find('#fetometria_promedio_doppler').val(),
+                "percentil": $(child).find('#percentil_doppler').val(),
+                "peso_fetal": $(child).find('#peso_fetal_doppler').val(),
+                "fecha_parto": $(child).find('#fecha_parto_doppler').val(),
+                "percentil_ip_medio": $(child).find('#percentil_ip_medio_doppler').val(),
+                "interpretacion_ip_medio": $(child).find('#interpretacion_ip_medio_doppler').val(),
+                "percentil_notch_izquierda": $(child).find('#percentil_notch_izquierda_doppler').val(),
+                "interpretacion_notch_izquierda": $(child).find('#interpretacion_notch_izquierda_doppler').val(),
+                "percentil_notch_derecha": $(child).find('#percentil_notch_derecha_doppler').val(),
+                "interpretacion_notch_derecha": $(child).find('#interpretacion_notch_derecha_doppler').val(),
+                "percentil_cerebro_placentario": $(child).find('#percentil_cerebro_placentario_doppler').val(),
+                "interpretacion_cerebro_placentario": $(child).find('#interpretacion_cerebro_placentario_doppler').val(),
+                "percentil_arteria_cerebral": $(child).find('#percentil_arteria_cerebral_doppler').val(),
+                "interpretacion_arteria_cerebral": $(child).find('#interpretacion_arteria_cerebral_doppler').val(),
+                "percentil_arteria_umbilical": $(child).find('#percentil_arteria_umbilical_doppler').val(),
+                "interpretacion_arteria_umbilical": $(child).find('#interpretacion_arteria_umbilical_doppler').val(),
+                "percentil_flojo_diasotolico": $(child).find('#percentil_flojo_diasotolico_doppler').val(),
+                "interpretacion_flojo_diasotolico": $(child).find('#interpretacion_flojo_diasotolico_doppler').val(),
+                "percentil_itsmo_aortico": $(child).find('#percentil_itsmo_aortico_doppler').val(),
+                "interpretacion_itsmo_aortico": $(child).find('#interpretacion_itsmo_aortico_doppler').val(),
+                "percentil_ducto_venenoso": $(child).find('#percentil_ducto_venenoso_doppler').val(),
+                "interpretacion_ducto_venenoso": $(child).find('#interpretacion_ducto_venenoso_doppler').val(),
+                "percentil_flujo_dicto_venenoso": $(child).find('#percentil_flujo_dicto_venenoso_doppler').val(),
+                "interpretacion_flujo_dicto_venenoso": $(child).find('#interpretacion_flujo_dicto_venenoso_doppler').val(),
+                "percentil_vena_umbilical": $(child).find('#percentil_vena_umbilical_doppler').val(),
+                "interpretacion_vena_umbilical": $(child).find('#interpretacion_vena_umbilical_doppler').val(),
+
+                "semanas": $(child).find('#semanas_doppler').val(),
+                "movimiento_respiratorios": $(child).find('#movimiento_respiratorios_doppler').val(),
+                "tono_fetal": $(child).find('#tono_fetal_doppler').val(),
+                "movimiento_corporales": $(child).find('#movimiento_corporales_doppler').val(),
+                "liquido_amoniotico": $(child).find('#liquido_amoniotico_doppler').val(),
+                "integridad_cardiaca": $(child).find('#integridad_cardiaca_doppler').val(),
+                "examen_nst": $(child).find('#examen_nst_doppler').val(),
+                "analisis_nst": $(child).find('#analisis_nst_doppler').val(),
+                "datos_nst": $(child).find('#datos_nst_doppler').val(),
+                "examen_maduracion": $(child).find('#examen_maduracion_doppler').val(),
+                "indice_maduracion_torax": $(child).find('#indice_maduracion_torax_doppler').val(),
+                "indice_maduracion_basal": $(child).find('#indice_maduracion_basal_doppler').val(),
+                "indice_maduracion_pulmonar": $(child).find('#indice_maduracion_pulmonar_doppler').val(),
+                "riesgo_distres": $(child).find('#riesgo_distres_doppler').val(),
+
+                "placenta_numero" : $(child).find('#placenta_numero_doppler').val(),
+                "placenta_posocion" : $(child).find('#placenta_posocion_doppler').val(),
+                "placenta_grado" : $(child).find('#placenta_grado_doppler').val(),
+                "presencia_patologicas" : $(child).find('#presencia_patologicas_doppler').val(),
+                "areas_infarto" : $(child).find('#areas_infarto_doppler').val(),
+                "longitud_cervix" : $(child).find('#longitud_cervix_doppler').val(),
+                "funneling" : $(child).find('#funneling_doppler').val(),
+                "porcentaje_funneling" : $(child).find('#porcentaje_funneling_doppler').val(),
+                "sludge" : $(child).find('#sludge_doppler').val(),
+                "liquido_amniotico" : $(child).find('#liquido_amniotico_doppler').val(),
+                "clasificacion_liquido_amniotico" : $(child).find('#clasificacion_liquido_amniotico_doppler').val(),
+                "valor_ila" : $(child).find('#valor_ila_doppler').val()
+
+            });
+        }
     }
 
 

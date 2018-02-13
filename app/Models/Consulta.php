@@ -69,6 +69,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Ecocardiografia', 'consulta_id');
     }
 
+    public function doppler()
+    {
+        return $this->hasOne('App\Models\Doppler', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

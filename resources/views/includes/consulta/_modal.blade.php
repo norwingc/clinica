@@ -6174,7 +6174,7 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Doppler']) !!}
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Edad</label>
@@ -6688,7 +6688,7 @@
                                         <div class="col-md-3">
                                             <label>Índice de maduración Tórax/Cardio</label>
                                             <div>
-                                                <select name="analisis_nst" id="analisis_nst_doppler" class="form-control">
+                                                <select name="indice_maduracion_torax" id="indice_maduracion_torax_doppler" class="form-control">
                                                     <option value="Normal">Normal</option>
                                                     <option value="Anormal">Anormal</option>
                                                 </select>
@@ -6697,7 +6697,7 @@
                                         <div class="col-md-3">
                                             <label>Índice maduración basal</label>
                                             <div>
-                                                <select name="analisis_nst" id="analisis_nst_doppler" class="form-control">
+                                                <select name="indice_maduracion_basal" id="indice_maduracion_basal_doppler" class="form-control">
                                                     <option value="Normal">Normal</option>
                                                     <option value="Anormal">Anormal</option>
                                                 </select>
@@ -6706,7 +6706,7 @@
                                         <div class="col-md-3">
                                             <label>Índice evaluación pulmonar</label>
                                             <div>
-                                                <select name="analisis_nst" id="analisis_nst_doppler" class="form-control">
+                                                <select name="indice_maduracion_pulmonar" id="indice_maduracion_pulmonar_doppler" class="form-control">
                                                     <option value="Normal">Normal</option>
                                                     <option value="Anormal">Anormal</option>
                                                 </select>
@@ -6715,7 +6715,7 @@
                                         <div class="col-md-3">
                                             <label style="text-transform: uppercase;">Riesgo de distres respiratorio</label>
                                             <div>
-                                                <select name="analisis_nst" id="analisis_nst_doppler" class="form-control">
+                                                <select name="riesgo_distres" id="riesgo_distres_doppler" class="form-control">
                                                     <option value="Bajo">Bajo</option>
                                                     <option value="Alto">Alto</option>
                                                 </select>
@@ -6725,9 +6725,7 @@
                                 </div>
                             </div>
 
-
-
-                             <p class="sub_titul"><b>Placenta</b></p>
+                            <p class="sub_titul"><b>Placenta</b></p>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <label>Numero</label>
@@ -6857,7 +6855,6 @@
                         <div class="col-md-12 nextChild"></div>
                     </div>
 
-
                      <div class="form-group">
                         <div class="col-md-6">
                             <label>Revision</label>
@@ -6876,7 +6873,7 @@
                         <div class="col-md-6">
                             <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
                             <div>
-                                <input type="number" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion" class="form-control">
+                                <input type="number" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_doppler" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -6908,7 +6905,7 @@
                     <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" id="Doppler" data-examen="#Doppler" onclick="saveDoppler($(this))">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>

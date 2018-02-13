@@ -294,7 +294,7 @@
 
         let child = $('#child_doppler');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Doppler');
     });
     $('#cantidad_feto_doppler').focusout(function(event) {
         let cantidad = $(this).val();
@@ -303,7 +303,7 @@
 
         let child = $('#child_doppler');
 
-        setChild(child, cantidad);
+        setChild(child, cantidad, 'Doppler');
     });
 
     function semanasDoppler(este) {
