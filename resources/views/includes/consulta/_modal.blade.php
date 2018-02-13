@@ -6868,7 +6868,7 @@
                         </div>
                     </div>
 
-                    <p class="form-control"><b>Conclusiones</b></p>
+                    <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                         <div class="col-md-6">
                             <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>

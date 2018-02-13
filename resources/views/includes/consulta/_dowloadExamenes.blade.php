@@ -33,6 +33,13 @@
     </p>
 @endif
 
+@if($value->doppler)
+    <p>
+        <a href="{{ route('report.doppler', $value->doppler) }}" class="btn btn-info">Descargar reporte Curva de crecimiento / Doppler</a>
+        <a href="{{ route('consulta.doppler.delete', $value->doppler) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif

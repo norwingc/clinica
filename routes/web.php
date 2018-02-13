@@ -84,6 +84,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.estructural')->get('Estructural/{estructural}', 'ConsultasController@reportEstructural');
         Route::name('report.neurosonografia')->get('Neurosonografia/{neurosonografia}', 'ConsultasController@reportNeurosonografia');
         Route::name('report.ecocardiografia')->get('Ecocardiografia/{ecocardiografia}', 'ConsultasController@reportEcocardiografia');
+        Route::name('report.doppler')->get('Doppler/{doppler}', 'ConsultasController@reportDoppler');
     });
 
 });

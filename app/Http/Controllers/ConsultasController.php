@@ -297,4 +297,17 @@ class ConsultasController extends Controller
             'saved' => true
         ]);
     }
+
+    /**
+     * [reportDoppler description]
+     * @param  Doppler $doppler [description]
+     * @return [type]           [description]
+     */
+    public function reportDoppler(Doppler $doppler)
+    {
+       //return view('reports.doppler', ['doppler' => $doppler->load('fetos')]);
+
+       $pdf = \PDF::loadView('reports.doppler', ['doppler' => $doppler->load('fetos')]);
+        return $pdf->stream();
+    }
 }
