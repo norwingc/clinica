@@ -40,7 +40,13 @@
     </p>
 @endif
 
+@if($value->ginecologica)
+    <p>
+        <a href="{{ route('report.ginecologica', $value->ginecologica) }}" class="btn btn-info">Descargar reporte Consulta Ginecologica</a>
+        <a href="{{ route('consulta.genecologica.delete', $value->ginecologica) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif
+
 @if($value->prenatal)
     <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
 @endif
-

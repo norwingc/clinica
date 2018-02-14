@@ -308,7 +308,7 @@ class ConsultasController extends Controller
        //return view('reports.doppler', ['doppler' => $doppler->load('fetos')]);
 
        $pdf = \PDF::loadView('reports.doppler', ['doppler' => $doppler->load('fetos')]);
-        return $pdf->stream();
+       return $pdf->stream();
     }
 
     /**
@@ -322,5 +322,18 @@ class ConsultasController extends Controller
 
       session()->flash('message_success', "Examen Agregado");
       return back();
+    }
+
+    /**
+     * [reportGinecologica description]
+     * @param  Ginecologica $ginecologica [description]
+     * @return [type]                     [description]
+     */
+    public function reportGinecologica(Ginecologica $ginecologica)
+    {      
+      //return view('reports.ginecologica', compact('ginecologica'));
+
+      $pdf = \PDF::loadView('reports.ginecologica', compact('ginecologica'));
+      return $pdf->stream();
     }
 }

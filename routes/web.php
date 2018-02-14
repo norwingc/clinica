@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.neurosonografia')->get('Neurosonografia/{neurosonografia}', 'ConsultasController@reportNeurosonografia');
         Route::name('report.ecocardiografia')->get('Ecocardiografia/{ecocardiografia}', 'ConsultasController@reportEcocardiografia');
         Route::name('report.doppler')->get('Doppler/{doppler}', 'ConsultasController@reportDoppler');
+        Route::name('report.ginecologica')->get('Ginecologica/{ginecologica}', 'ConsultasController@reportGinecologica');
     });
 
 });

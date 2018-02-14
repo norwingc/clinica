@@ -32,7 +32,7 @@ class CreateGinecologicasTable extends Migration
         $table->string('examenes')->nullable();
         $table->string('ultrasonido')->nullable();
         $table->string('plan')->nullable();
-        $table->string('comentarios')->nullable();
+        $table->text('comentarios')->nullable();
         $table->string('recordatorio')->nullable();
         $table->timestamps();
         $table->softDeletes();
