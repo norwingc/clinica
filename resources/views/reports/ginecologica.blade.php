@@ -44,8 +44,8 @@
     <p>Estado General: {{ $ginecologica->estado_general }}. Cardioplumonar: {{ $ginecologica->cardioplumonar }} </p>
 
 
-    <p class="sub_titul">
-      <b>Ginecologico</b>
+    <p class="sub_titul"><b>Ginecologico</b></p>
+    <p>
       Genitales Externos: {{ $ginecologica->genitales_externos }}. Cervix Posicion Y Consistencia: {{ $ginecologica->cervix }}.
       Examenes De Laboratorio: {{ $ginecologica->examenes }}. Ultrasonido: {{ $ginecologica->ultrasonido }}.
     </p>
