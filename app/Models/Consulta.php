@@ -74,6 +74,11 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Doppler', 'consulta_id');
     }
 
+    public function ginecologica()
+    {
+        return $this->hasOne('App\Models\Ginecologica', 'consulta_id');
+    }
+
     /**
      * [getCitasToday description]
      * @return [type] [description]

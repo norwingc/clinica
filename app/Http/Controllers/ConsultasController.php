@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica};
 
 use PDF;
 
@@ -309,5 +309,18 @@ class ConsultasController extends Controller
 
        $pdf = \PDF::loadView('reports.doppler', ['doppler' => $doppler->load('fetos')]);
         return $pdf->stream();
+    }
+
+    /**
+     * [storeGinecologica description]
+     * @param  Consulta $consulta [description]
+     * @return [type]             [description]
+     */
+    public function storeGinecologica(Request $request, Consulta $consulta)
+    {
+      $consulta->ginecologica()->save(new Ginecologica($request->all()));
+
+      session()->flash('message_success', "Examen Agregado");
+      return back();
     }
 }

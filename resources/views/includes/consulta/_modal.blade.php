@@ -844,14 +844,8 @@
                                 <input type="text" class="form-control" name="date" id="date_ginecologica" readonly value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
-                         <div class="col-sm-4">
-                            <label>Edad gestacional por ulrasonido</label>
-                            <div>
-                                <input type="text" class="form-control" name="edad_gestacional" id="edad_gestacinal_ginecologica" value="De historia clinica" readonly>
-                            </div>
-                        </div>
                         <div class="col-sm-4">
-                            <label>Consutal de atencion prenatal NO</label>
+                            <label>Consuta ginecologica</label>
                             <div>
                                 <input type="text" class="form-control" name="numero" id="numero_ginecologica" readonly value="{{ \App\Models\Prenatal::count() + 1 }}">
                             </div>
@@ -867,19 +861,19 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <label>FC</label>
+                            <label>Frecuencia Cardiaca</label>
                             <div>
                                 <input type="number" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_ginecologica" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>FR</label>
+                            <label>Frecuencia respiratoria</label>
                             <div>
                                 <input type="number" class="form-control" name="signos_vitales_fr" id="signos_vitales_fr_ginecologica" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>PA</label>
+                            <label>Presion Arterial</label>
                             <div>
                                 <input type="number" class="form-control" name="signos_vitales_pa" id="signos_vitales_pa_ginecologica" required>
                             </div>
@@ -891,7 +885,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Incremente de peso</label>
+                            <label>Incremente de peso (lb)</label>
                             <div>
                                 <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_ginecologica" readonly value="calcular con el peso anteriro de historia clinica">
                             </div>
@@ -905,10 +899,10 @@
                             </div>
                         </div>
                     </div>
-                    <p>Objetivo</p>
+                    <p class="sub_titul"><b>Objetivo</b</p>
                     <div class="form-group">
                         <div class="col-md-6">
-                           <label>Estado Genral</label>
+                           <label>Estado General</label>
                            <div>
                                <input type="text" name="estado_general" id="estado_general_ginecologica" class="form-control" required>
                            </div>
@@ -920,7 +914,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Ginecologico</p>
+                    <p class="sub_titul"><b>Ginecologico</b></p>
                     <div class="form-group">
                         <div class="col-md-6">
                            <label>Genitales Externos</label>
@@ -939,14 +933,7 @@
                         <div class="col-md-6">
                            <label>Examenes De Laboratorio</label>
                            <div>
-                                <select name="examenes" id="examenes_gicecologica" class="form-control" required>
-                                    <option value="">Selecione Uno</option>
-                                    <option value="Creatinina">Creatinina</option>
-                                    <option value="Cultivos Vaginales">Cultivos Vaginales</option>
-                                    <option value="Ego">Ego</option>
-                                    <option value="Glicemia">Glicemia</option>
-                                    <option value="Papanicolau">Papanicolau</option>
-                                </select>
+                            <input type="text" name="examenes" id="examen_ginecologico" class="form-control">
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -969,6 +956,14 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_ginecologica" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_ginecologica" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

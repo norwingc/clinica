@@ -2,6 +2,59 @@ Estructural
 cerebelo agregar semanas
 
 
+Olvbliculo -> Oblicuo
+Papanocloau->Papanicolau
+
+
+☐ consulta ginecologica
+{
+  Consutal de atencion prenatal (Consuta ginecologica) NO -- poner cutnas ha tenido
+
+  calcular con el peso anteriro de historia clinica (anterior)
+  Examenes De Laboratorio-> campo en blanco
+  add recordatorio
+  comentarios texto->DB
+}
+
+
+atencion pernatal{
+  Presion arterial brazo/izquierdo derecho de primero = unidad de medida mmhg
+  presion arterial media -> nuevo campo mmhg
+  fr= frecuencia cardiaca -> reporte por minuno
+  fr= frecuencia respiratoria -> reporte por minuno
+  antes de peso actual, temperatura Centigrado
+  peso en libra y kg
+  Estado General->select multiple
+  Movimientos Fetales->presente (default)->add no valorable
+  Utero Grávido Abdominal->si(defautl)->add: Presentacion, Situacion, Posicion
+  Peristalsis->presente
+  Genitales externos->normales
+  Vagina Normo Térmica->si
+  Vagina Normo Elástica->Si
+  Lesiones->no
+  Leucorrea->no->si->nuevo campo de descipcion
+  Fetidez->no
+  Sangrado->add  Remanente->no(default)
+  Hidrorrea->no
+  Cervix->posterior->selecionar multiple
+  Consistencia->solo firme, reblandecido
+  Borramiento % ->default 0, Dilatacion cm->defatult 0
+  Calotas->opciones->solida, blandas, no valorables
+  Membranas Integras->add -> no valorable (defatult)
+  Calotas Solidas->quitar
+  Plano->add no valorable (default)
+  Pelvis->opciones->buena relacion cefalopelvica, desproporcion cefalopelvica a espesas del fetal, desproporcion cefalopelvica a espesas de la madre, no valorable (default)
+  Desproporcion Cefalopelvica-> en opciones add "Estrecho"->add no valorable (default)-> al selecionar otros->add descipcion
+  Miembros Inferiores Edema->Edema de miembros inferiores-> no (default)-> si es si
+  Miembros Inferiores Edema Cual->clasificaion de edema->add edema generalizado
+  Neurológico Conservado->no (default)->aparezaca  Alteracion
+  porta examenes->esconder: TPT, Fibrinogeno, Acido Urico-> solo imprimir el que lleve resultado
+  Doppler Normal->si
+  Incremento de Peso Materno->adecuado
+  Incremento de Curva Fetal->incremento de peso fetal->adecuado (default)
+  Maduración Pulmonar->default(no)-> selecionar si-> semanas que si cumplio maduracion
+}
+
 Archive:
  ✔ Vena umbilical ->dicrota, laminar(default) @done (18-02-05 21:04)
  ✔ Valor->interpretacion @done (18-02-05 21:04)
@@ -12,7 +65,6 @@ Archive:
  ✔ Arterias uterinas=>IP medio de arterias uterinas->percentil-> < Percentil 95 y > percentil 95 ->option valor->normal, anormal @done (18-02-05 21:04)
  ✔ defecto(mm)->tananno de defecto @done (18-02-05 20:28)
  ✔ agregar recordatorio @done (18-02-05 20:28)
-  }
  ✔ Tabique Interventricular Integro->NO->tambien mostrar defecto->tipo de civ SELECCIONAR MULTIPLE->CIV Outlet / Tracto de salida de Ventrículo derecho / Infundibular__________ @done (18-02-05 20:28)
  ✔ Tabique Interventricular Integro->DEFAULT SI @done (18-02-05 20:28)
  ✔ Cortes Sagitales->agregar despues plancenta @done (18-02-05 20:28)
@@ -23,9 +75,7 @@ Archive:
  ✔ CIV Inlet / Tracto de entrada de ventrículo derecho_____________________ @done (18-02-05 20:28)
  ✔ Corte De 4 Cámaras->anormal->mostrar->Dominancia de cavidades @done (18-02-05 20:16)
  ✔ agregar el bloque de placenta @done (18-02-05 20:13)
-  }
  ✔ Conclusiones->default->bajo @done (18-02-05 20:09)
-  }
  ✔ Vejiga Urinaria Insitu->eliminarRiñon derecho @done (18-02-05 20:08)
  ✔ Riñones derecho/izquierdo tamaño->singular @done (18-02-05 20:08)
  ✔ Riñon derecho izquierdo->option->no valorable @done (18-02-05 20:08)
@@ -35,7 +85,6 @@ Archive:
  ✔ Placenta->numero->1-3 @done (18-02-05 20:04)
  ✔ quiste->si->select multiple @done (18-02-05 20:02)
  ✔ todas las conculusiones->bajo @created(18-02-05 19:23) @done (18-02-05 19:23)
-  }
  ✔ conclusion->Feto por longitud cardio cauda ->craneo en vez de cardio @done (18-02-05 19:23)
  ✔ Funneling->positivo, aparezca porcentaje @done (18-02-05 19:19)
  ✔ planceta->default->1-3 @done (18-02-05 19:16)
@@ -44,7 +93,6 @@ Archive:
  ✔ agregar TAMIZAJE PARA EL ASESORAMIENTO CLÍNICO DE RIESGO DE CROMOSOMOPATÍA, @done (18-02-05 19:09)
  ✔ en medio de parto y aborto cesaria @done (18-02-05 18:59)
  ✔ conclusion->ovario poliquisticos   @done (18-02-05 18:59)
-  }
  ✔ y de->hasta anterior izquierda @done (18-02-03 19:32)
  ✔ recordatorio @done (18-02-03 19:32)
  ✔ embarasos semanas @done (18-02-03 19:32)
