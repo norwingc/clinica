@@ -91,7 +91,7 @@ class CreatePrenatalsTable extends Migration
             $table->string('cultivos_vaginales')->nullable();
             $table->string('rpr_positivo', 10)->nullable();
             $table->string('vih_positivo', 10)->nullable();
-            $table->string('Urocultivo')->nullable();
+            $table->string('urocultivo')->nullable();
             $table->string('transaminasas')->nullable();
             $table->string('billiruinas')->nullable();
             $table->string('ldh')->nullable();

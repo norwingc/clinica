@@ -513,12 +513,6 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Glicemia gr/dl</label>
-                                <div>
-                                   <input type="text" class="form-control" name="glicemia" id="glicemia_prenatal">
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
                                 <label>1 Hr Pospandrial gr/dl</label>
                                 <div>
                                    <input type="text" class="form-control" name="pospandrial_una" id="pospandrial_una_prenatal">
@@ -622,7 +616,7 @@
                             <div class="col-sm-3">
                                 <label>Urocultivo</label>
                                 <div>
-                                   <select class="form-control" name="Urocultivo" id="Urocultivo_renatal">
+                                   <select class="form-control" name="urocultivo" id="urocultivo_prenatal">
                                        <option value="Sin Crecimiento Bacteriano">Sin Crecimiento Bacteriano</option>
                                        <option value="Con Crecimiento Bacteriano">Con Crecimiento Bacteriano</option>
                                    </select>

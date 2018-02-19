@@ -48,5 +48,8 @@
 @endif
 
 @if($value->prenatal)
-    <a href="#" class="btn btn-info">Descargar reporte Consulta de atencion prenatal</a>
+  <p>
+      <a href="{{ route('report.prenatal', $value->prenatal) }}" class="btn btn-info">Descargar reporte Consulta Atencion Prenatal</a>
+      <a href="{{ route('consulta.prenatal.delete', $value->prenatal) }}" class="btn btn-danger">Eliminar examen</a>
+  </p>
 @endif

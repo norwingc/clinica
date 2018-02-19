@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.delete')->get('/delete/{consulta}', 'ConsultasController@delete');
 
         Route::name('consulta.prenatal.store')->post('/Prenatal/store/{consulta}', 'ConsultasController@storePrenatal');
+        Route::name('consulta.prenatal.delete')->post('/Prenatal/store/{prenatal}', 'ConsultasController@deletePrenatal');
 
         Route::name('consulta.genecologica.store')->post('/Ginecologica/store/{consulta}', 'ConsultasController@storeGinecologica');
         Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{pelvico}', 'ConsultasController@deleteGinecologica');
@@ -89,6 +90,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.ecocardiografia')->get('Ecocardiografia/{ecocardiografia}', 'ConsultasController@reportEcocardiografia');
         Route::name('report.doppler')->get('Doppler/{doppler}', 'ConsultasController@reportDoppler');
         Route::name('report.ginecologica')->get('Ginecologica/{ginecologica}', 'ConsultasController@reportGinecologica');
+        Route::name('report.prenatal')->get('Prenatal/{prenatal}', 'ConsultasController@reportPrenatal');
     });
 
 });

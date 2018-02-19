@@ -39,11 +39,21 @@ class ConsultasController extends Controller
 
         (isset($request->plan_medico)) ? $prenatal->plan_medico = implode(', ', $request->plan_medico) : '';
         (isset($request->examen_laboratorio)) ? $prenatal->examen_laboratorio = implode(', ', $request->examen_laboratorio) : '';
+        (isset($request->estado_general)) ? $prenatal->estado_general = implode(', ', $request->estado_general) : '';
+        (isset($request->vagina_cervix)) ? $prenatal->vagina_cervix = implode(', ', $request->vagina_cervix) : '';
 
         $prenatal->update();
 
         session()->flash('message_success', "Examen Agregado");
-        return back();        
+        return back();
+    }
+
+    public function reportPrenatal(Prenatal $prenatal)
+    {
+      //return view('reports.prenatal', compact('prenatal'));
+
+      $pdf = \PDF::loadView('reports.prenatal', compact('prenatal'));
+      return $pdf->stream();
     }
 
     /**

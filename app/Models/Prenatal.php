@@ -16,16 +16,16 @@ class Prenatal extends Model
      */
     protected $fillable = [
       "date", "edad_gestacional", "numero", "diagnostico_previo", "presion_arterial_derecho", "presion_arterial_izquierdo", "presion_arterial_media",
-      "signos_vitales_fc", "signos_vitales_fr", "temperatura", "peso_actual", "incremento_peso", "subjetivo", "estado_general",
+      "signos_vitales_fc", "signos_vitales_fr", "temperatura", "peso_actual", "incremento_peso", "subjetivo",
       "alteraciones_hermodinamicas", "alteraciones_cardiopulmonar", "pezon_areola", "movimientos_fetales", "fcf_minuto", "actividad_uterina",
       "utero_gravido", "presentacion", "situacion", "posicion", "utero_intrapelvico", "peristalsis", "afu", "examen_ginecologico", "genitales_externos",
       "vagina_normo_termica", "vagina_normo_elastica", "vagina_lesiones", "vagina_lesiones_si", "vagina_leucorrea", "vagina_leucorrea_descripcion",
-      "vagina_fetidez", "vagina_sangrado", "vagina_hidrorrea", "vagina_cervix", "vagina_consistencia", "borramiento", "dilatacion", "vagina_calotas",
+      "vagina_fetidez", "vagina_sangrado", "vagina_hidrorrea", "vagina_consistencia", "borramiento", "dilatacion", "vagina_calotas",
       "vagina_membranas_integras", "vagina_plano", "vagina_pelvis", "vagina_desproporcion_cefalopelvica", "vagina_desproporcion_cefalopelvica_descripcion",
       "vagina_miembros_inferiores_edema", "vagina_miembros_inferiores_edema_si", "vagina_ceurologico_conservado", "vagina_ceurologico_conservado_si",
       "porta_examen", "leocitos", "segmentos", "linfocitos", "hemoglobina", "hematocrito", "eosinofilos", "resticulocitos", "glicemia", "pospandrial_una",
       "pospandrial_dos", "creatinina", "ego_leucocitos", "nitritos", "glucosa", "proteinas", "cilindros", "papanicolaou", "fecha_papanicolaou",
-      "resultado_papanicolaou", "cultivos_vaginales", "rpr_positivo", "vih_positivo", "Urocultivo", "transaminasas", "billiruinas", "ldh", "tp", "tpt",
+      "resultado_papanicolaou", "cultivos_vaginales", "rpr_positivo", "vih_positivo", "urocultivo", "transaminasas", "billiruinas", "ldh", "tp", "tpt",
       "fibrinogeno", "acido_urico", "ultrasonido", "ultrasonido_si", "edad_gestional_semanas", "edad_gestional_dias", "ila", "planceta_grado",
       "doppler_normal", "incremento_peso_materno", "incremento_curva_fetal", "maduracion_pulmonar", "maduracion_pulmonal_semanas", "comentarios", "recordatorio"
     ];
