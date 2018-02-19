@@ -12834,7 +12834,7 @@ $('.phone').mask('0000-0000');
 $('.cedula').mask('000-000000-0000S');
 
 $('.form-examen select').change(function () {
-    selectShow($(this));
+    //selectShow($(this));
 });
 
 function selectShow(este) {

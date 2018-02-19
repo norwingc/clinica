@@ -38,32 +38,50 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-4">
-                            <label>FC</label>
-                            <div>
-                                <input type="number" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_prenatal" required>
-                            </div>
+                      <div class="col-sm-4">
+                        <label>Presion Arterial Brazo Derecho (mmhg)</label>
+                        <div>
+                            <input type="number" class="form-control" name="presion_arterial_derecho" id="presion_arterial_derecho_prenatal" required>
                         </div>
-                        <div class="col-sm-4">
-                            <label>FR</label>
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Presion Arterial Brazo Izquierdo (mmhg)</label>
+                        <div>
+                            <input type="number" class="form-control" name="presion_arterial_izquierdo" id="presion_arterial_izquierdo_prenatal" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Presion Arterial Media (mmhg)</label>
+                        <div>
+                            <input type="number" class="form-control" name="presion_arterial_media" id="presion_arterial_media_prenatal" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <label>Frecuencia Cardiaca</label>
+                          <div>
+                              <input type="number" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_prenatal" required>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <label>Frecuencia Respiratoria</label>
                             <div>
                                 <input type="number" class="form-control" name="signos_vitales_fr" id="signos_vitales_fr_prenatal" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>PA</label>
+                            <label>Temeratura ºC</label>
                             <div>
-                                <input type="number" class="form-control" name="signos_vitales_pa" id="signos_vitales_pa_prenatal" required>
+                                <input type="number" class="form-control" name="temperatura" id="temperatura_prenatal" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Peso Actual</label>
+                            <label>Peso Actual (lb)</label>
                             <div>
                                 <input type="number" class="form-control" name="peso_actual" id="peso_actual_prenatal" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Incremente de peso</label>
+                            <label>Incremente de peso (lb)</label>
                             <div>
                                 <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_prenatal" readonly value="calcular con el peso anteriro de historia clinica">
                             </div>
@@ -77,12 +95,12 @@
                             </div>
                         </div>
                     </div>
-                    <p>Objetivo</p>
+                    <p class="sub_titul"><b>Objetivo</b></p>
                     <div class="form-group">
                         <div class="col-sm-3">
                             <label>Estado General</label>
                             <div>
-                                <select class="form-control" name="estado_general" id="estado_general_prenatal">
+                                <select class="form-control selectpicker" name="estado_general[]" id="estado_general_prenatal" multiple>
                                     <option value="Conciente">Conciente</option>
                                     <option value="Orientada">Orientada</option>
                                 </select>
@@ -120,8 +138,9 @@
                             <label>Movimientos Fetales</label>
                             <div>
                                 <select class="form-control" name="movimientos_fetales" id="movimientos_fetales_prenatal">
-                                    <option value="Ausentes">Ausentes</option>
                                     <option value="Presentes">Presentes</option>
+                                    <option value="Ausentes">Ausentes</option>
+                                    <option value="No Valorable">No Valorable</option>
                                 </select>
                             </div>
                         </div>
@@ -140,10 +159,42 @@
                         <div class="col-sm-3">
                             <label>Utero Grávido Abdominal</label>
                             <div>
-                                <select class="form-control" name="utero_gravido" id="utero_gravido_prenatal">
-                                    <option value="No">No</option>
+                                <select class="form-control" name="utero_gravido" id="utero_gravido_prenatal" onchange="uteroGravidoSi($(this))" data-target="utero_gravido_si">
                                     <option value="Si">Si</option>
+                                    <option value="No">No</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="utero_gravido_si">
+                          <div class="col-md-3">
+                             <label>Presentacion</label>
+                             <div>
+                                 <select name="presentacion" id="presentacion_prenatal" class="form-control" required>
+                                     <option value="Cefálico">Cefálico</option>
+                                     <option value="Pélvico">Pélvico</option>
+                                 </select>
+                             </div>
+                          </div>
+                          <div class="col-md-3">
+                             <label>Situacion</label>
+                             <div>
+                                 <select name="situacion" id="situacion_prenatal" class="form-control" required>
+                                     <option value="Longitudinal">Longitudinal</option>
+                                     <option value="Transverso">Transverso</option>
+                                     <option value="Oblicuo">Oblicuo</option>
+                                 </select>
+                             </div>
+                          </div>
+                          <div class="col-md-3">
+                               <label>Posicion</label>
+                               <div>
+                                   <select name="posicion" id="posicion_prenatal" class="form-control" required>
+                                       <option value="Dorso Izquierdo">Dorso Izquierdo</option>
+                                       <option value="Dorso Derecho">Dorso Derecho</option>
+                                       <option value="Dorso Superior">Dorso Superior</option>
+                                       <option value="Dorso Inferior">Dorso Inferior</option>
+                                   </select>
+                               </div>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -159,9 +210,9 @@
                             <label>Peristalsis</label>
                             <div>
                                 <select class="form-control" name="peristalsis" id="peristalsis_prenatal">
+                                    <option value="Presente">Presente</option>
                                     <option value="Ausente">Ausente</option>
                                     <option value="Disminuido">Disminuido</option>
-                                    <option value="Presente">Presente</option>
                                 </select>
                             </div>
                         </div>
@@ -172,12 +223,12 @@
                             </div>
                         </div>
                     </div>
-                    <p>Ginecologico</p>
+                    <p class="sub_titul"><b>Ginecologico</b></p>
                     <div class="form-group">
                         <div class="col-sm-3">
                             <label>Examen Ginecologico</label>
                             <div>
-                                <select class="form-control" name="examen_ginecologico" id="examen_ginecologico_prenatal" data-target='examen_ginecologico_si_form'>
+                                <select class="form-control" name="examen_ginecologico" id="examen_ginecologico_prenatal" onchange="selectShow($(this))" data-target='examen_ginecologico_si_form'>
                                     <option value="No">No</option>
                                     <option value="Si">Si</option>
                                 </select>
@@ -188,9 +239,8 @@
                                 <label>Genitales externos</label>
                                 <div>
                                     <select class="form-control" name="genitales_externos" id="genitales_externos_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="Anormales">Anormales</option>
                                         <option value="Normales" selected>Normales</option>
+                                        <option value="Anormales">Anormales</option>
                                     </select>
                                 </div>
                             </div>
@@ -198,9 +248,8 @@
                                 <label>Vagina Normo Térmica</label>
                                 <div>
                                     <select class="form-control" name="vagina_normo_termica" id="vagina_normo_termica_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -208,17 +257,15 @@
                                 <label>Vagina Normo Elástica</label>
                                 <div>
                                     <select class="form-control" name="vagina_normo_elastica" id="vagina_normo_elastica_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Lesiones</label>
                                 <div>
-                                    <select class="form-control" name="vagina_lesiones" id="vagina_lesiones_prenatal" data-target='vagina_lesiones_si_form'>
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control" name="vagina_lesiones" id="vagina_lesiones_prenatal" data-target='vagina_lesiones_si_form' onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -233,18 +280,22 @@
                             <div class="col-sm-3">
                                 <label>Leucorrea</label>
                                 <div>
-                                    <select class="form-control" name="vagina_leucorrea" id="vagina_leucorrea_prenatal">
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control" name="vagina_leucorrea" id="vagina_leucorrea_prenatal" onchange="selectShow($(this))" data-target="vagina_leucorrea_si">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-3 vagina_leucorrea_si" style="display:none">
+                              <label>Descripcion</label>
+                              <div>
+                                <textarea name="vagina_leucorrea_descripcion" id="vagina_leucorrea_descripcion_prenatal" class="form-control"></textarea>
+                              </div>
+                            </div>
                             <div class="col-sm-3">
                                 <label>Fetidez</label>
                                 <div>
                                     <select class="form-control" name="vagina_fetidez" id="vagina_fetidez_prenatal">
-                                        <option value="">Selecione Uno</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -254,9 +305,9 @@
                                 <label>Sangrado</label>
                                 <div>
                                     <select class="form-control" name="vagina_sangrado" id="vagina_sangrado_prenatal">
-                                        <option value="">Selecione Uno</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="Remanente">Remanente</option>
                                     </select>
                                 </div>
                             </div>
@@ -264,7 +315,6 @@
                                 <label>Hidrorrea</label>
                                 <div>
                                     <select class="form-control" name="vagina_hidrorrea" id="vagina_hidrorrea_prenatal">
-                                        <option value="">Selecione Uno</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -273,13 +323,12 @@
                             <div class="col-sm-3">
                                 <label>Cervix</label>
                                 <div>
-                                    <select class="form-control" name="vagina_cervix" id="vagina_cervix_prenatal">
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control selectpicker" name="vagina_cervix[]" id="vagina_cervix_prenatal" multiple>
+                                        <option value="Posterior">Posterior</option>
                                         <option value="Central">Central</option>
                                         <option value="Cerrado">Cerrado</option>
                                         <option value="Intermedio">Intermedio</option>
                                         <option value="Permeable">Permeable</option>
-                                        <option value="Posterior">Posterior</option>
                                     </select>
                                 </div>
                             </div>
@@ -287,21 +336,30 @@
                                 <label>Consistencia</label>
                                 <div>
                                     <select class="form-control" name="vagina_consistencia" id="vagina_consistencia_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="Borramiento">Borramiento</option>
-                                        <option value="Dilatacion">Dilatacion</option>
                                         <option value="Firme">Firme</option>
                                         <option value="Reblandecido">Reblandecido</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
+                                <label>Borramiento (%)</label>
+                                <div>
+                                  <input type="text" name="borramiento" id="borramiento_prenatal" class="form-control" value="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Dilatacion (cm)</label>
+                                <div>
+                                  <input type="text" name="dilatacion" id="dilatacion_prenatal" class="form-control" value="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
                                 <label>Calotas</label>
                                 <div>
                                     <select class="form-control" name="vagina_calotas" id="vagina_calotas_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="No">No</option>
-                                        <option value="Si">Si</option>
+                                        <option value="Solidas">No</option>
+                                        <option value="Blandas">Blandas</option>
+                                        <option value="No Valorables">No Valorables</option>
                                     </select>
                                 </div>
                             </div>
@@ -309,17 +367,7 @@
                                 <label>Membranas Integras</label>
                                 <div>
                                     <select class="form-control" name="vagina_membranas_integras" id="vagina_membranas_integras_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="No">No</option>
-                                        <option value="Si">Si</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Calotas Solidas</label>
-                                <div>
-                                    <select class="form-control" name="vagina_calotas_solidas" id="vagina_calotas_solidas_prenatal">
-                                        <option value="">Selecione Uno</option>
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -329,7 +377,7 @@
                                 <label>Plano</label>
                                 <div>
                                     <select class="form-control" name="vagina_plano" id="vagina_plano_prenatal">
-                                        <option value="">Selecione Uno</option>
+                                        <option value="No Valorable">No Valorable</option>
                                         <option value="I">I</option>
                                         <option value="II">II</option>
                                         <option value="III">III</option>
@@ -341,49 +389,55 @@
                                 <label>Pelvis</label>
                                 <div>
                                     <select class="form-control" name="vagina_pelvis" id="vagina_pelvis_prenatal">
-                                        <option value="">Selecione Uno</option>
-                                        <option value="No">No</option>
-                                        <option value="Si">Si</option>
+                                      <option value="No Valorable">No Valorable</option>
+                                      <option value="Buena relacion cefalopelvica">Buena relacion cefalopelvica</option>
+                                      <option value="Desproporcion cefalopelvica a espesas del fetal">Desproporcion cefalopelvica a espesas del fetal</option>
+                                      <option value="Desproporcion cefalopelvica a expensas de la madre">Desproporcion cefalopelvica a expensas de la madre</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Desproporcion Cefalopelvica</label>
                                 <div>
-                                    <select class="form-control" name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica_prenatal">
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control" name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica_prenatal" onchange="cefalopelvicaPrenatal($(this))">
+                                        <option value="No Valorable">No Valorable</option>
                                         <option value="Estrecho Superior">Estrecho Superior</option>
-                                        <option value="Inferior">Inferior</option>
-                                        <option value="Medio">Medio</option>
+                                        <option value="Estrecho Inferior">Estrecho Inferior</option>
+                                        <option value="Estrecho Medio">Estrecho Medio</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="col-md-3 vagina_desproporcion_cefalopelvica_otro" style="display: none">
+                              <label>Descripcion</label>
+                              <div>
+                                <textarea name="vagina_desproporcion_cefalopelvica_descripcion" id="vagina_desproporcion_cefalopelvica_descripcion_prenatal" class="form-control"></textarea>
+                              </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Miembros Inferiores Edema</label>
                                 <div>
-                                    <select class="form-control" name="vagina_miembros_inferiores_edema" id="vagina_miembros_inferiores_edema_prenatal" data-target='vagina_miembros_inferiores_edema_si_form'>
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control" name="vagina_miembros_inferiores_edema" id="vagina_miembros_inferiores_edema_prenatal" data-target='vagina_miembros_inferiores_edema_si_form' onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="Edema de miembros inferiores">Edema de miembros inferiores</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-3 vagina_miembros_inferiores_edema_si_form" style="display: none">
-                                <label>Miembros Inferiores Edema Cual</label>
+                                <label>Clasificacion de edema</label>
                                 <div>
                                     <select class="form-control" name="vagina_miembros_inferiores_edema_si" id="vagina_miembros_inferiores_edema_si_prenatal">
-                                        <option value="">Selecione Uno</option>
                                         <option value="+">+</option>
                                         <option value="++">++</option>
                                         <option value="+++">+++</option>
+                                        <option value="Edema Generalizado">Edema Generalizado</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <label>Neurológico Conservado</label>
                                 <div>
-                                    <select class="form-control" name="vagina_ceurologico_conservado" id="vagina_ceurologico_conservado_prenatal" data-target='vagina_ceurologico_conservado_si_form'>
-                                        <option value="">Selecione Uno</option>
+                                    <select class="form-control" name="vagina_ceurologico_conservado" id="vagina_ceurologico_conservado_prenatal" data-target='vagina_ceurologico_conservado_si_form' onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -398,12 +452,12 @@
                        </div>
 
                     </div>
-                   <p>Examen de laboratorio</p>
+                   <p class="sub_titul"><b>Examen de laboratorio</b></p>
                    <div class="form-group">
                         <div class="col-sm-3">
                             <label>Porta Resultados</label>
                             <div>
-                                <select name="porta_examen" id="porta_examen_prenatal" class="form-control" data-target="porta_examen_prenatal_si_form">
+                                <select name="porta_examen" id="porta_examen_prenatal" class="form-control" data-target="porta_examen_prenatal_si_form" onchange="selectShow($(this))">
                                     <option value="No">No</option>
                                     <option value="Si">Si</option>
                                 </select>
@@ -517,25 +571,24 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Papanocloau</label>
+                                <label>Papanicolaou</label>
                                 <div>
-                                   <select class="form-control" name="papanocloau" id="papanocloau_renatal" data-target='papanocloau_si_form'>
-                                       <option value="">Selecione Uno</option>
+                                   <select class="form-control" name="papanicolaou" id="papanicolaou_renatal" data-target='papanicolaou_si_form' onchange="selectShow($(this))">
                                        <option value="No">No</option>
                                        <option value="Si">Si</option>
                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3 papanocloau_si_form" style="display: none">
-                                <label>Fecha Papanocloau</label>
+                            <div class="col-sm-3 papanicolaou_si_form" style="display: none">
+                                <label>Fecha Papanicolaou</label>
                                 <div>
-                                   <input type="date" class="form-control" name="fecha_papanocloau" id="fecha_papanocloau_prenatal">
+                                   <input type="date" class="form-control" name="fecha_papanicolaou" id="fecha_papanicolaou_prenatal">
                                 </div>
                             </div>
-                            <div class="col-sm-3 papanocloau_si_form" style="display: none">
-                                <label>Resultado Papanocloau</label>
+                            <div class="col-sm-3 papanicolaou_si_form" style="display: none">
+                                <label>Resultado Papanicolaou</label>
                                 <div>
-                                   <input type="text" class="form-control" name="resultado_papanocloau" id="resultado_papanocloau_prenatal">
+                                   <input type="text" class="form-control" name="resultado_papanicolaou" id="resultado_papanicolaou_prenatal">
                                 </div>
                             </div>
                         </div>
@@ -552,7 +605,6 @@
                                 <label>RPR</label>
                                 <div>
                                     <select class="form-control" name="rpr_positivo" id="rpr_positivo_prenatal">
-                                       <option value="">Selecione Uno</option>
                                        <option value="Negativo">Negativo</option>
                                        <option value="Positivo">Positivo</option>
                                     </select>
@@ -562,7 +614,6 @@
                                 <label>VIH</label>
                                 <div>
                                     <select class="form-control" name="vih_positivo" id="vih_positivo_prenatal">
-                                       <option value="">Selecione Uno</option>
                                        <option value="Negativo">Negativo</option>
                                        <option value="Positivo">Positivo</option>
                                     </select>
@@ -572,7 +623,6 @@
                                 <label>Urocultivo</label>
                                 <div>
                                    <select class="form-control" name="Urocultivo" id="Urocultivo_renatal">
-                                       <option value="">Selecione Uno</option>
                                        <option value="Sin Crecimiento Bacteriano">Sin Crecimiento Bacteriano</option>
                                        <option value="Con Crecimiento Bacteriano">Con Crecimiento Bacteriano</option>
                                    </select>
@@ -602,24 +652,23 @@
                                    <input type="text" class="form-control" name="tp" id="tp_prenatal">
                                 </div>
                             </div>
-                        </div>
-                        <!-- -->
-                        <div class="col-sm-3">
-                            <label>TPT</label>
-                            <div>
-                               <input type="text" class="form-control" name="tpt" id="tpt_prenatal">
+                            <div class="col-sm-3">
+                                <label>TPT</label>
+                                <div>
+                                   <input type="text" class="form-control" name="tpt" id="tpt_prenatal">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <label>Fibrinogeno</label>
-                            <div>
-                               <input type="text" class="form-control" name="fibrinogeno" id="fibrinogeno_prenatal">
+                            <div class="col-sm-3">
+                                <label>Fibrinogeno</label>
+                                <div>
+                                   <input type="text" class="form-control" name="fibrinogeno" id="fibrinogeno_prenatal">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <label>Acido Urico</label>
-                            <div>
-                               <input type="text" class="form-control" name="acido_urico" id="acido_urico_prenatal">
+                            <div class="col-sm-3">
+                                <label>Acido Urico</label>
+                                <div>
+                                   <input type="text" class="form-control" name="acido_urico" id="acido_urico_prenatal">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -627,7 +676,7 @@
                         <div class="col-sm-3">
                             <label>Ultrasonido</label>
                             <div>
-                               <select class="form-control" name="ultrasonido" id="ultrasonido_renatal" data-target='ultrasonido_si_form'>
+                               <select class="form-control" name="ultrasonido" id="ultrasonido_renatal" data-target='ultrasonido_si_form' onchange="selectShow($(this))">
                                    <option value="No">No</option>
                                    <option value="Si">Si</option>
                                </select>
@@ -640,7 +689,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Edad Gestional</p>
+                    <p class="sub_titul"><b>Edad Gestional</b></p>
                     <div class="form-group">
                         <div class="col-sm-3">
                             <label>Semanas</label>
@@ -664,7 +713,6 @@
                             <label>Placenta Grado</label>
                             <div>
                                <select class="form-control" name="planceta_grado" id="planceta_grado_renatal">
-                                   <option value="">Selecione Uno</option>
                                    <option value="0">0</option>
                                    <option value="1">1</option>
                                    <option value="2">2</option>
@@ -675,10 +723,9 @@
                         <div class="col-sm-3">
                             <label>Doppler Normal</label>
                             <div>
-                               <select class="form-control" name="doppler_normal" id="doppler_normal_renatal">
-                                   <option value="">Selecione Uno</option>
-                                   <option value="No">No</option>
-                                   <option value="Si">Si</option>
+                              <select class="form-control" name="doppler_normal" id="doppler_normal_renatal">
+                                  <option value="Si">Si</option>
+                                  <option value="No">No</option>
                                </select>
                             </div>
                         </div>
@@ -686,7 +733,6 @@
                             <label>Incremento de Peso Materno</label>
                             <div>
                                <select class="form-control" name="incremento_peso_materno" id="incremento_peso_materno_renatal">
-                                   <option value="">Selecione Uno</option>
                                    <option value="Adecuado">Adecuado</option>
                                    <option value="No Adecuado">No Adecuado</option>
                                </select>
@@ -696,7 +742,6 @@
                             <label>Incremento de Curva Fetal</label>
                             <div>
                                <select class="form-control" name="incremento_curva_fetal" id="incremento_curva_fetal_renatal">
-                                   <option value="">Selecione Uno</option>
                                    <option value="Adecuado">Adecuado</option>
                                    <option value="No Adecuado">No Adecuado</option>
                                </select>
@@ -705,15 +750,14 @@
                         <div class="col-sm-3">
                             <label>Maduración Pulmonar</label>
                             <div>
-                               <select class="form-control" name="maduracion_pulmonar" id="maduracion_pulmonar_renatal">
-                                   <option value="">Selecione Uno</option>
+                               <select class="form-control" name="maduracion_pulmonar" id="maduracion_pulmonar_renatal" data-target="maduracion_pulmonar_si" onchange="selectShow($(this))">
                                    <option value="No">No</option>
                                    <option value="Si">Si</option>
                                </select>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <label>Semanas</label>
+                        <div class="col-sm-3 maduracion_pulmonar_si" style="display: none">
+                            <label>Semanas que si cumplio maduracion</label>
                             <div>
                                <input type="number" class="form-control" name="maduracion_pulmonal_semanas" id="maduracion_pulmonal_semanas_prenatal">
                             </div>
@@ -815,6 +859,14 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_prenatal" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_prenatal" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -1066,7 +1118,7 @@
                                        <select name="situacion" id="situacion_ecocardiografia" class="form-control" required>
                                            <option value="Longitudinal">Longitudinal</option>
                                            <option value="Transverso">Transverso</option>
-                                           <option value="Olvbliculo">Olvbliculo</option>
+                                           <option value="Oblicuo">Oblicuo</option>
                                        </select>
                                    </div>
                                 </div>
@@ -2086,7 +2138,7 @@
                                        <select name="situacion" id="situacion_neurosonografia" class="form-control" required>
                                            <option value="Longitudinal">Longitudinal</option>
                                            <option value="Transverso">Transverso</option>
-                                           <option value="Olvbliculo">Olvbliculo</option>
+                                           <option value="Oblicuo">Oblicuo</option>
                                        </select>
                                    </div>
                                 </div>
@@ -3307,7 +3359,7 @@
                                        <select name="situacion" id="situacion_estructural" class="form-control" required>
                                            <option value="Longitudinal">Longitudinal</option>
                                            <option value="Transverso">Transverso</option>
-                                           <option value="Olvbliculo">Olvbliculo</option>
+                                           <option value="Oblicuo">Oblicuo</option>
                                        </select>
                                    </div>
                                 </div>
@@ -6249,7 +6301,7 @@
                                        <select name="situacion" id="situacion_doppler" class="form-control" required>
                                            <option value="Longitudinal">Longitudinal</option>
                                            <option value="Transverso">Transverso</option>
-                                           <option value="Olvbliculo">Olvbliculo</option>
+                                           <option value="Oblicuo">Oblicuo</option>
                                        </select>
                                    </div>
                                 </div>

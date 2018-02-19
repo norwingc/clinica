@@ -32,7 +32,18 @@ class ConsultasController extends Controller
     */
     public function storePrenatal(Request $request, Consulta $consulta)
     {
-        return $request;
+        $consulta->prenatal()->save(
+          $prenatal = new Prenatal($request->all())
+        );
+
+
+        (isset($request->plan_medico)) ? $prenatal->plan_medico = implode(', ', $request->plan_medico) : '';
+        (isset($request->examen_laboratorio)) ? $prenatal->examen_laboratorio = implode(', ', $request->examen_laboratorio) : '';
+
+        $prenatal->update();
+
+        session()->flash('message_success', "Examen Agregado");
+        return back();        
     }
 
     /**
@@ -330,7 +341,7 @@ class ConsultasController extends Controller
      * @return [type]                     [description]
      */
     public function reportGinecologica(Ginecologica $ginecologica)
-    {      
+    {
       //return view('reports.ginecologica', compact('ginecologica'));
 
       $pdf = \PDF::loadView('reports.ginecologica', compact('ginecologica'));
