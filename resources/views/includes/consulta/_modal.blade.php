@@ -6293,7 +6293,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 descripcion_carcinoma_otro" style="display:none">
-                            <label>Descipcion</label>
+                            <label>Descripcion</label>
                             <div>
                                 <textarea class="form-control" name="descripcion_carcinoma" id="descripcion_carcinoma_colposcopia"></textarea>
                             </div>
@@ -6317,7 +6317,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 vaginoscopia_descipcion" style="display:none">
-                            <label>Descipcion</label>
+                            <label>Descripcion</label>
                             <div>
                                 <textarea class="form-control" name="vaginoscopia_descipcion" id="vaginoscopia_descipcion_colposcopia"></textarea>
                             </div>
@@ -6332,7 +6332,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 vulvoscopia_descipcion" style="display:none">
-                            <label>Descipcion</label>
+                            <label>Descripcion</label>
                             <div>
                                 <textarea class="form-control" name="vulvoscopia_descipcion" id="vulvoscopia_descipcion_colposcopia"></textarea>
                             </div>
@@ -6347,7 +6347,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 lesiones_perianales_descipcion" style="display:none">
-                            <label>Descipcion</label>
+                            <label>Descripcion</label>
                             <div>
                                 <textarea class="form-control" name="lesiones_perianales_descipcion" id="lesiones_perianales_descipcion_colposcopia"></textarea>
                             </div>

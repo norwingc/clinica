@@ -44,6 +44,10 @@
                     </div>
                 </div>
 
+                <div class="text-center">
+                    <a href="#" class="btn btn-lg btn-warning">Agregar fecha de parto</a>
+                </div>
+
                 <div class="row">
                     <div class="col-sm-12">
                         <h3 class="subtitle">Agregar Cita</h3>

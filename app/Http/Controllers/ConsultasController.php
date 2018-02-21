@@ -376,4 +376,17 @@ class ConsultasController extends Controller
         session()->flash('message_success', "Examen Agregado");
         return back();
     }
+
+    /**
+     * [reportColposcopia description]
+     * @param  Colposcopia $colposcopia [description]
+     * @return [type]                   [description]
+     */
+    public function reportColposcopia(Colposcopia $colposcopia)
+    {
+        //return view('reports.colposcopia', compact('colposcopia'));
+
+        $pdf = \PDF::loadView('reports.colposcopia', compact('colposcopia'));
+        return $pdf->stream();
+    }
 }

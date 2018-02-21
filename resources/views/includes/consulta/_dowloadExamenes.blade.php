@@ -53,3 +53,10 @@
       <a href="{{ route('consulta.prenatal.delete', $value->prenatal) }}" class="btn btn-danger">Eliminar examen</a>
   </p>
 @endif
+
+@if($value->colposcopia)
+  <p>
+      <a href="{{ route('report.colposcopia', $value->colposcopia) }}" class="btn btn-info">Descargar reporte Colposcopia / Crioterapia</a>
+      <a href="{{ route('consulta.colposcopia.delete', $value->colposcopia) }}" class="btn btn-danger">Eliminar examen</a>
+  </p>
+@endif

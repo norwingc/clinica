@@ -94,6 +94,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.doppler')->get('Doppler/{doppler}', 'ConsultasController@reportDoppler');
         Route::name('report.ginecologica')->get('Ginecologica/{ginecologica}', 'ConsultasController@reportGinecologica');
         Route::name('report.prenatal')->get('Prenatal/{prenatal}', 'ConsultasController@reportPrenatal');
+        Route::name('report.colposcopia')->get('Colposcopia/{colposcopia}', 'ConsultasController@reportColposcopia');
     });
 
 });
