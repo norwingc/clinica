@@ -6176,12 +6176,6 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                     <div class="form-group">
-                        <div class="col-md-12">
-                            <label>Historia</label>
-                             <div>
-                                 <textarea name="historia" id="historia_colposcopia" class="form-control"></textarea>
-                             </div>
-                        </div>
                         <div class="col-md-3">
                            <label>Edad</label>
                            <div>
@@ -6189,17 +6183,197 @@
                            </div>
                         </div>
                         <div class="col-md-3">
-                           <label>Fecha</label>
-                           <div>
-                               <input type="text" class="form-control" name="date" id="date_colposcopia" readonly value="{{ date('d/m/Y h:i a') }}">
-                           </div>
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" class="form-control" name="date" id="date_colposcopia" readonly value="{{ date('d/m/Y h:i a') }}">
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                           <label>Control Por</label>
-                           <div>
-                               <textarea name="control" id="control_cosposcopia" class="form-control"></textarea>
-                           </div>
+                        <div class="col-md-12">
+                            <label>Historia</label>
+                             <div>
+                                 <textarea name="historia" id="historia_colposcopia" class="form-control"></textarea>
+                             </div>
                         </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Inspeccion Visual Con Acido Acetico</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Interpretacion de IVAA</label>
+                            <div>
+                                <select class="form-control" name="interpretacion_ivaa" id="interpretacion_ivaa_colposcopia">
+                                    <option value="Negativo">Negativo</option>
+                                    <option value="Positivo">Positivo</option>
+                                    <option value="Sospechosa">Sospechosa</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Aplicación De Lugol (Test De Schiller)</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Interpretacion de aplicación de lugol</label>
+                            <div>
+                                <select class="form-control" name="interpretacion_lugol" id="interpretacion_lugol_colposcopia">
+                                    <option value="Iodopositivo">Iodopositivo</option>
+                                    <option value="Iodo parcialmente negativo (positividad débil, parcialmente moteado)">Iodo parcialmente negativo (positividad débil, parcialmente moteado)</option>
+                                    <option value="Iodo negativo (amarillo moztaza sobre epitelio acetoblanco)">Iodo negativo (amarillo moztaza sobre epitelio acetoblanco)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Colposcopia</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Clasificacion de colposcopia</label>
+                            <div>
+                                <select class="form-control" name="clasificacion" id="clasificacion_colposcopia" onchange="clasificacionColposcopia($(this))">
+                                    <option value="Satisfactoria">Satisfactoria</option>
+                                    <option value="No satisfactoria">No satisfactoria</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Descripcion</label>
+                            <div>
+                                <select class="form-control" name="descripcion_colposcopia" id="descripcion_colposcopia">
+                                    <option value="Localizada en el ectocérvix, totalmente visible">Localizada en el ectocérvix, totalmente visible</option>
+                                    <option value="Con un componente endocervical totalmente visible">Con un componente endocervical totalmente visible</option>
+                                    <option value="Con un componente endocervical NO totalmente visible">Con un componente endocervical NO totalmente visible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Descripicon de resultado de colposcopia</b></p>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Descripcion</label>
+                            <div>
+                                <select class="form-control" name="descripcion" id="descripcion_colposcopia" onchange="descripcionColposcopia($(this))">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Con cambios menores">Con cambios menores</option>
+                                    <option value="Con cambios mayores">Con cambios mayores</option>
+                                    <option value="Sugestivo de carcinoma">Sugestivo de carcinoma</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 cambios_menores_si" style="display:none">
+                            <label>Con cambios menores</label>
+                            <div>
+                                <select class="form-control selectpicker" name="cambios_menores[]" id="cambios_menores_colposcopia" multiple>
+                                    <option value="Epitelio acetoblanco tenue">Epitelio acetoblanco tenue</option>
+                                    <option value="Mosaico fino">Mosaico fino</option>
+                                    <option value="Punteado fino">Punteado fino</option>
+                                    <option value="Sin presencia de vasos atípicos">Sin presencia de vasos atípicos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 cambios_mayores_si" style="display:none">
+                            <label>Con cambios mayores</label>
+                            <div>
+                                <select class="form-control selectpicker" name="cambios_mayores[]" id="cambios_mayores_colposcopia" multiple>
+                                    <option value="Epitelio acetoblanco denso">Epitelio acetoblanco denso</option>
+                                    <option value="Mosaico grueso">Mosaico grueso</option>
+                                    <option value="Punteado grueso">Punteado grueso</option>
+                                    <option value="Con presencia de vasos atípicos">Con presencia de vasos atípicos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 sugestivo_carcinoma_si" style="display:none">
+                            <label>Sugestivo de carcinoma</label>
+                            <div>
+                                <select class="form-control" name="sugestivo_carcinoma" id="sugestivo_carcinoma_colposcopia" onchange="cambiosMenores($(this))">
+                                    <option value="Ulceración ">Ulceración </option>
+                                    <option value="Tumoral">Tumoral</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 descripcion_carcinoma_otro" style="display:none">
+                            <label>Descipcion</label>
+                            <div>
+                                <textarea class="form-control" name="descripcion_carcinoma" id="descripcion_carcinoma_colposcopia"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Toma de biopsia</label>
+                            <div>
+                                <select class="form-control" name="toma_biopsia" id="toma_biopsia_colposcopia">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vaginoscopia</label>
+                            <div>
+                                <select class="form-control" name="vaginoscopia" id="vaginoscopia_colposcopia" onchange="selectShow($(this))" data-target="vaginoscopia_descipcion">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 vaginoscopia_descipcion" style="display:none">
+                            <label>Descipcion</label>
+                            <div>
+                                <textarea class="form-control" name="vaginoscopia_descipcion" id="vaginoscopia_descipcion_colposcopia"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Vulvoscopia</label>
+                            <div>
+                                <select class="form-control" name="vulvoscopia" id="vulvoscopia_colposcopia" onchange="selectShow($(this))" data-target="vulvoscopia_descipcion">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 vulvoscopia_descipcion" style="display:none">
+                            <label>Descipcion</label>
+                            <div>
+                                <textarea class="form-control" name="vulvoscopia_descipcion" id="vulvoscopia_descipcion_colposcopia"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Lesiones perianales</label>
+                            <div>
+                                <select class="form-control" name="lesiones_perianales" id="lesiones_perianales_colposcopia" onchange="selectShow($(this))" data-target="lesiones_perianales_descipcion">
+                                    <option value="Normal">Normal</option>
+                                    <option value="Anormal">Anormal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 lesiones_perianales_descipcion" style="display:none">
+                            <label>Descipcion</label>
+                            <div>
+                                <textarea class="form-control" name="lesiones_perianales_descipcion" id="lesiones_perianales_descipcion_colposcopia"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Comentarios</label>
+                            <div>
+                                <textarea name="comentarios" id="comentarios_colposcopia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_colposcopia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>

@@ -30,6 +30,7 @@
             <ul class="treeview-menu">
                 <li><a href="{{ route('citas') }}">Lista</a></li>
                 <li><a href="{{ route('citas.create') }}">Agregar Cita</a></li>
+                <li><a href="#">Lista de embarazos</a></li>
             </ul>
         </li>
     </ul>

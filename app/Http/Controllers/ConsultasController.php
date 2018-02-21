@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica};
+use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia};
 
 use PDF;
 
@@ -356,5 +356,24 @@ class ConsultasController extends Controller
 
       $pdf = \PDF::loadView('reports.ginecologica', compact('ginecologica'));
       return $pdf->stream();
+    }
+
+    /**
+     * [storeColposcopia description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function storeColposcopia(Request $request, Consulta $consulta)
+    {
+        $consulta->colposcopia()->save(
+            $colposcopia = new Colposcopia($request->all())
+        );
+
+        (isset($request->cambios_menores)) ? $colposcopia->cambios_menores = implode(', ', $request->cambios_menores) : '';
+        (isset($request->cambios_mayores)) ? $colposcopia->cambios_mayores = implode(', ', $request->cambios_mayores) : '';
+        $colposcopia->update();
+
+        session()->flash('message_success', "Examen Agregado");
+        return back();
     }
 }

@@ -17,10 +17,10 @@ class Doppler extends Model
         "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "comentarios", "recordatorio"
     ];
 
-     /**
+    /**
      * [consulta description]
      * @return [type] [description]
-     */
+    */
     public function consulta()
     {
         return $this->belongsTo('App\Models\Consulta', 'consulta_id');

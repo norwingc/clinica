@@ -127,6 +127,37 @@
     function cefalopelvicaPrenatal(este) {
       (este.val() != 'No Valorable') ? $('.vagina_desproporcion_cefalopelvica_otro').show() : $('.vagina_desproporcion_cefalopelvica_otro').hide();
     }
+    function clasificacionColposcopia(este) {
+        (este.val() == 'No satisfactoria') ? $('#descripcion_colposcopia').val('Con un componente endocervical NO totalmente visible') : $('#descripcion_colposcopia').val('Localizada en el ectocérvix, totalmente visible');
+    }
+
+    function descripcionColposcopia(este) {
+        if(este.val() == 'Con cambios menores'){
+            $('.cambios_menores_si').show();
+            $('.cambios_mayores_si').hide();
+            $('.sugestivo_carcinoma_si').hide()
+            $('.descripcion_carcinoma_otro').hide();
+        }else if (este.val() == 'Con cambios mayores') {
+            $('.cambios_mayores_si').show();
+            $('.cambios_menores_si').hide();
+            $('.sugestivo_carcinoma_si').hide()
+            $('.descripcion_carcinoma_otro').hide();
+        }else if(este.val() == 'Sugestivo de carcinoma'){
+            $('.sugestivo_carcinoma_si').show()
+            $('.cambios_mayores_si').hide();
+            $('.cambios_menores_si').hide();
+            $('.descripcion_carcinoma_otro').hide();
+        }else{
+            $('.sugestivo_carcinoma_si').hide()
+            $('.cambios_mayores_si').hide();
+            $('.cambios_menores_si').hide();
+            $('.descripcion_carcinoma_otro').hide();
+        }
+    }
+
+    function cambiosMenores(este) {
+        (este.val() == 'Otro') ? $('.descripcion_carcinoma_otro').show() : $('.descripcion_carcinoma_otro').hide();
+    }
 
 
 
