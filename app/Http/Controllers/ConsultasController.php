@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaParto};
 
 use PDF;
+use DataTables;
 
 class ConsultasController extends Controller
 {
@@ -391,11 +392,11 @@ class ConsultasController extends Controller
     }
 
     /**
-     * [sotreFechaParto description]
+     * [storeFechaParto description]
      * @param  Paciente $paciente [description]
      * @return [type]             [description]
      */
-    public function sotreFechaParto(Request $request, Paciente $paciente)
+    public function storeFechaParto(Request $request, Paciente $paciente)
     {
         $paciente->fecha_parto()->save(
             new FechaParto($request->all())
@@ -403,5 +404,27 @@ class ConsultasController extends Controller
 
         session()->flash('message_success', "Fecha de parto agregada");
         return back();
+    }
+
+    /**
+     * [showFechaParto description]
+     * @return [type] [description]
+     */
+    public function showFechaParto()
+    {
+        return view('citas.fecha_parto');
+    }
+
+    /**
+     * w
+     * @return [type] [description]
+     */
+    public function getFechaParto()
+    {
+        $fecha = FechaParto::with('paciente');
+
+        return Datatables::of($fecha)->addColumn('action', function($fecha){
+            return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
+        })->make(true);
     }
 }

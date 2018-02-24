@@ -21,6 +21,7 @@ class CreateFechaPartosTable extends Migration
             $table->date('date');
             $table->string('costo');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
