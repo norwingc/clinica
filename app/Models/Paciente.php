@@ -31,6 +31,11 @@ class Paciente extends Model
         return $this->hasOne('App\Models\HistoriaClinica', 'paciente_id');
     }
 
+    public function fecha_parto()
+    {
+        return $this->hasMany('App\Models\FechaParto', 'paciente_id');
+    }
+
      /**
      * [getAge description]
      * @return [type] [description]
@@ -44,4 +49,6 @@ class Paciente extends Model
 
         return Carbon::createFromDate($date[0], $date[1], $date[2])->diff(Carbon::now())->format('%y años, %m meses y %d dias');
     }
+
+
 }

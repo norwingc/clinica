@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia};
+use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaParto};
 
 use PDF;
 
@@ -388,5 +388,20 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.colposcopia', compact('colposcopia'));
         return $pdf->stream();
+    }
+
+    /**
+     * [sotreFechaParto description]
+     * @param  Paciente $paciente [description]
+     * @return [type]             [description]
+     */
+    public function sotreFechaParto(Request $request, Paciente $paciente)
+    {
+        $paciente->fecha_parto()->save(
+            new FechaParto($request->all())
+        );
+
+        session()->flash('message_success', "Fecha de parto agregada");
+        return back();
     }
 }

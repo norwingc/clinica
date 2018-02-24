@@ -75,6 +75,8 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
         Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');
 
+        Route::name('fecha.parto.store')->post('/FechaParto/store/{paciente}', 'ConsultasController@sotreFechaParto');
+
     });
 
     Route::prefix('Citas')->group(function () {

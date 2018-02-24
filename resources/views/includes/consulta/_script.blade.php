@@ -607,5 +607,15 @@
 
         $('#modalUpdatedUltrasonidoPelvico').modal('show');
     }
+
+    function saveFechaParto(este) {
+        let paciente        = este.data('paciente');
+        let title           = 'Agregar Fecha de parto';
+        $('.modal-title').html(title);
+
+        $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/FechaParto/store/"+paciente);
+
+        $('#modalAddFechaParto').modal('show');
+    }
 </script>
 @endpush

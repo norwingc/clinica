@@ -391,7 +391,7 @@
                                     <select class="form-control" name="vagina_pelvis" id="vagina_pelvis_prenatal">
                                       <option value="No Valorable">No Valorable</option>
                                       <option value="Buena relacion cefalopelvica">Buena relacion cefalopelvica</option>
-                                      <option value="Desproporcion cefalopelvica a espesas del fetal">Desproporcion cefalopelvica a espesas del fetal</option>
+                                      <option value="Desproporcion cefalopelvica a expensas del fetal">Desproporcion cefalopelvica a expensas del fetal</option>
                                       <option value="Desproporcion cefalopelvica a expensas de la madre">Desproporcion cefalopelvica a expensas de la madre</option>
                                     </select>
                                 </div>
@@ -6247,7 +6247,7 @@
                         </div>
                     </div>
 
-                    <p class="sub_titul"><b>Descripicon de resultado de colposcopia</b></p>
+                    <p class="sub_titul"><b>Descripcion de resultado de colposcopia</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
                             <label>Descripcion</label>
@@ -6307,6 +6307,10 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Estudios Adicionales</b></p>
+                    <div class="form-group">
                         <div class="col-md-3">
                             <label>Vaginoscopia</label>
                             <div>
@@ -7121,6 +7125,52 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" id="Doppler" data-examen="#Doppler" onclick="saveDoppler($(this))">Guardar Cambios</button>
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalAddFechaParto">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Doppler']) !!}
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>Hospital</label>
+                            <div>
+                                <input type="text" name="hospital" id="hospital_fecha_parto" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Via de nacimiento</label>
+                            <div>
+                                <input type="text" name="via_nacimiento" id="via_nacimiento_fecha_parto" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hospital</label>
+                            <div>
+                                <input type="date" name="date" id="date_fecha_parto" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Costo</label>
+                            <div>
+                                <input type="text" name="costo" id="costo_fecha_parto" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </div>
                 {!! Form::close() !!}
             </div>
