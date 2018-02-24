@@ -3,7 +3,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
         <div class="pull-left image">
-            <img src="/img/avatar.png" class="img-circle" alt="User Image">
+            <img src="{{ asset('img/profile/'. Auth::user()->avatar) }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
             <p>Salud Materno Fetal</p>

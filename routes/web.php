@@ -24,6 +24,14 @@ Route::name('logout')->delete('login', 'UsersController@logout');
 Route::middleware(['auth'])->group(function () {
     Route::view('/', 'home')->name('home');
 
+
+    Route::prefix('Profile')->group(function(){
+        Route::name('profile')->get('/', 'ProfileController@index');
+        Route::name('profile.avatar')->post('/avatar', 'ProfileController@avatar');
+        Route::name('profile.password')->post('/password', 'ProfileController@password');
+        Route::name('profile.theme')->get('/theme/{theme}', 'ProfileController@theme');
+    });
+
     Route::prefix('Pacientes')->group(function () {
         Route::name('paciente.get')->get('get/{id?}', 'PacienteController@get');
         Route::name('paciente.getAge')->get('getAge/{fecha}', 'PacienteController@getAge');

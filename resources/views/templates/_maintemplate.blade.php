@@ -31,7 +31,7 @@
         <![endif]-->
 
     </head>
-    <body class="hold-transition skin-blue sidebar-mini fixed">
+    <body class="hold-transition {{ \Auth::user()->theme }} sidebar-mini fixed">
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
