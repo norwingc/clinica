@@ -12,7 +12,13 @@
 */
 
 Route::get('test', function(){
-    return view('test');
+    $user = \App\Models\User::find(1);
+    $rol = \HttpOz\Roles\Models\Role::find(1);
+    $user->attachRole($rol);
+
+    //$user->detachAllRoles();
+
+
 });
 
 Route::fallback('ResourcesController@notFoud');

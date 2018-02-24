@@ -33,7 +33,11 @@ class CitasController extends Controller
             return Datatables::of($citas)->addColumn('horario', function($cita){
                 return date('g:i a', strtotime($cita->start)). ' - ' .date('g:i a', strtotime($cita->end));
             })->addColumn('action', function($cita){
-                return "<div class='actions'><a href='". route('paciente.show', [$cita->consulta->paciente]) ."' class='btn'><i class='ion-search'></i></a></div>";
+                if(\Auth::user()->isRole('doctor')){
+                    return "<div class='actions'><a href='". route('paciente.show', [$cita->consulta->paciente]) ."' class='btn'><i class='ion-search'></i></a></div>";
+                }else{
+                    return "<div class='actions'><a href='". route('paciente.personal', [$cita->consulta->paciente]) ."' class='btn'><i class='ion-search'></i></a></div>";
+                }
             })->make(true);
         }
 

@@ -424,7 +424,11 @@ class ConsultasController extends Controller
         $fecha = FechaParto::with('paciente');
 
         return Datatables::of($fecha)->addColumn('action', function($fecha){
-            return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
+            if(\Auth::user()->isRole('doctor')){
+                return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
+            }else{
+                return "<div class='actions'><a href='". route('paciente.personal', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
+            }
         })->make(true);
     }
 }
