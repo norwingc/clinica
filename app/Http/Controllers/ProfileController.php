@@ -57,7 +57,7 @@ class ProfileController extends Controller
     public function password(Request $request)
     {
         request()->validate([
-            'password'              => 'required|min:8|regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%@]).*$/|confirmed',
+            'password'              => 'required|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
 
