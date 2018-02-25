@@ -19,8 +19,8 @@
     <div class="row">
         <div class="personal-information col-xs-6 col-md-3"><a href="{{ route('paciente.personal', $paciente) }}">Informacion Personal</a></div>
         @role('doctor')
-            <div class="history col-xs-6 col-md-3"><a href="{{ route('paciente.historia', $paciente) }}">Historia Clinica</a></div>
-            <div class="summary col-xs-6 col-md-3 active"><a href="{{ route('paciente.show', $paciente) }}">Resumen Clinico</a></div>
+            <div class="history col-xs-6 col-md-3 active"><a href="{{ route('paciente.historia', $paciente) }}">Historia Clinica</a></div>
+            <div class="summary col-xs-6 col-md-3"><a href="{{ route('paciente.show', $paciente) }}">Resumen Clinico</a></div>
         @endrole
     </div>
 </div>
@@ -72,11 +72,13 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 diabetes_familiar_si_form" style="display: none">
-                                <label>Seleccione Diabetes</label>
+                                <label>Familiar</label>
                                 <div>
                                     <select name="diabetes_familiar_si[]" id="diabetes_familiar_si" class="selectpicker form-control" multiple>
-                                        <option value="Abuela Materno/Paterno">Abuela Materno/Paterno</option>
-                                        <option value="Abuelo Materno/Paterno">Abuelo Materno/Paterno</option>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
                                         <option value="Mama">Mama</option>
                                         <option value="Papa">Papa</option>
                                     </select>
@@ -92,11 +94,15 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 hipertension_arterial_familiar_si_form" style="display: none">
-                                <label>Seleccione Hipertensión arterial</label>
+                                <label>Familiar</label>
                                 <div>
-                                    <select name="hipertension_arterial_familiar_si" id="hipertension_arterial_familiar_si" class="form-control">
-                                        <option value="">Seleccione Uno</option>
-                                        <option value="Idem">Idem</option>
+                                    <select name="hipertension_arterial_familiar_si[]" id="hipertension_arterial_familiar_si" class="selectpicker form-control" multiple>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
+                                        <option value="Mama">Mama</option>
+                                        <option value="Papa">Papa</option>
                                     </select>
                                 </div>
                             </div>
@@ -110,11 +116,13 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 cardiopatia_familiar_si_form" style="display: none">
-                                <label>Seleccione Cardiopatía</label>
+                                <label>Familiar</label>
                                 <div>
                                     <select name="cardiopatia_familiar_si[]" id="cardiopatia_familiar_si" class="selectpicker form-control" multiple>
-                                        <option value="Abuela Materno/Paterno">Abuela Materno/Paterno</option>
-                                        <option value="Abuelo Materno/Paterno">Abuelo Materno/Paterno</option>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
                                         <option value="Mama">Mama</option>
                                         <option value="Papa">Papa</option>
                                     </select>
@@ -130,11 +138,13 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 nefropatias_familiar_si_form" style="display: none">
-                                <label>Seleccione Nefropatías</label>
+                                <label>Familiar</label>
                                 <div>
                                     <select name="nefropatias_familiar_si[]" id="nefropatias_familiar_si" class="selectpicker form-control" multiple>
-                                        <option value="Abuela Materno/Paterno">Abuela Materno/Paterno</option>
-                                        <option value="Abuelo Materno/Paterno">Abuelo Materno/Paterno</option>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
                                         <option value="Mama">Mama</option>
                                         <option value="Papa">Papa</option>
                                     </select>
@@ -152,10 +162,23 @@
                             <div class="col-sm-3 tiroidea_familiar_si_form" style="display: none">
                                 <label>Seleccione Enfermedad Tiroidea</label>
                                 <div>
-                                    <select name="tiroidea_si_familiar" id="tiroidea_si_familiar" class="form-control">
+                                    <select name="tiroidea_si_emfermedad[]" id="tiroidea_si_emfermedad" class="form-control selectpicker" multiple>
                                         <option value="">Seleccione Uno</option>
                                         <option value="Hipertiroidismo">Hipertiroidismo</option>
-                                        <option value="IDEM Hipotiroidismo">IDEM Hipotiroidismo</option>
+                                        <option value="Hipotiroidismo"> Hipotiroidismo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 nefropatias_familiar_si_form" style="display: none">
+                                <label>Familiar</label>
+                                <div>
+                                    <select name="tiroidea_si_familiar[]" id="tiroidea_si_familiar" class="selectpicker form-control" multiple>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
+                                        <option value="Mama">Mama</option>
+                                        <option value="Papa">Papa</option>
                                     </select>
                                 </div>
                             </div>
@@ -171,10 +194,24 @@
                             <div class="col-sm-3 enfermedad_inmunologica_familiar_si_form" style="display: none">
                                 <label>Seleccione Enfermedad Inmunológica</label>
                                 <div>
-                                    <select name="enfermedad_inmunologica_familiar_si" id="enfermedad_inmunologica_familiar_si" class="form-control">
+                                    <select name="enfermedad_inmunologica_familiar_si[]" id="enfermedad_inmunologica_familiar_si" class="form-control selectpicker" multiple>
                                         <option value="">Seleccione Uno</option>
-                                        <option value="IDEM Lupus Eritematoso">IDEM Lupus Eritematoso</option>
+                                        <option value="Lupus Eritematoso">Lupus Eritematoso</option>
                                         <option value="Síndrome Anti Fosfolípido">Síndrome Anti Fosfolípido</option>
+                                        <option value="Artritis Reumatoide">Artritis Reumatoid</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 enfermedad_inmunologica_familiar_si_form" style="display: none">
+                                <label>Familiar</label>
+                                <div>
+                                    <select name="enfermedad_inmunologica_familiar_si[]" id="enfermedad_inmunologica_familiar_si" class="selectpicker form-control" multiple>
+                                        <option value="Abuela Paterna">Abuela Paterna</option>
+                                        <option value="Abuela Materna">Abuela Materna</option>
+                                        <option value="Abuelo Paterno">Abuelo Paterno</option>
+                                        <option value="Abuelo Materno">Abuelo Materno</option>
+                                        <option value="Mama">Mama</option>
+                                        <option value="Papa">Papa</option>
                                     </select>
                                 </div>
                             </div>
@@ -288,7 +325,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 medicamentos_si_form" style="display: none">
-                                <label>Seleccione Drogas</label>
+                                <label>Seleccione Medicamentos</label>
                                 <div>
                                    <input type="text" name="medicamentos_si" id="medicamentos_si" class="form-control" placeholder="Cuales Medicamentos">
                                 </div>
@@ -297,7 +334,7 @@
                                 <label>Tipo y Rh Paciente</label>
                                 <div>
                                     <select name="rh_paciente" id="rh_paciente" class="form-control" required>
-                                        <option value="">Selecione Uno</option>
+                                        <option value="O positivo">O positivo</option>
                                         <option value="A negativo">A negativo</option>
                                         <option value="A positivo">A positivo</option>
                                         <option value="AB Negativo">AB Negativo</option>
@@ -305,7 +342,7 @@
                                         <option value="B Negativo">B Negativo</option>
                                         <option value="B positivo">B positivo</option>
                                         <option value="O negativo">O negativo</option>
-                                        <option value="O positivo">O positivo</option>
+                                        <option value="Desconocido">Desconocido</option>
                                     </select>
                                 </div>
                             </div>
@@ -313,7 +350,7 @@
                                 <label>Tipo y Rh Esposo</label>
                                 <div>
                                     <select name="rh_esposo" id="rh_esposo" class="form-control" required>
-                                        <option value="">Selecione Uno</option>
+                                        <option value="O positivo">O positivo</option>
                                         <option value="A negativo">A negativo</option>
                                         <option value="A positivo">A positivo</option>
                                         <option value="AB Negativo">AB Negativo</option>
@@ -321,7 +358,7 @@
                                         <option value="B Negativo">B Negativo</option>
                                         <option value="B positivo">B positivo</option>
                                         <option value="O negativo">O negativo</option>
-                                        <option value="O positivo">O positivo</option>
+                                        <option value="Desconocido">Desconocido</option>
                                     </select>
                                 </div>
                             </div>
@@ -343,7 +380,7 @@
                                 <div>
                                     <select name="diabetes_si" id="diabetes_si" class="form-control">
                                         <option value="">Seleccione Uno</option>
-                                        <option value="Diabetes Gestacional">Diabetes Gestacional</option>
+                                        <option value="Diabetes Gestacional">Diabetes Mellitus Gestacional</option>
                                         <option value="Diabetes Tipo 1">Diabetes Tipo 1</option>
                                         <option value="Diabetes Tipo 2">Diabetes Tipo 2</option>
                                     </select>
@@ -359,12 +396,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 hipertension_arterial_si_form" style="display: none">
-                                <label>Seleccione Hipertensión Arterial</label>
+                                <label>Tratamiento</label>
                                 <div>
-                                    <select name="hipertension_arterial_si" id="hipertension_arterial_si" class="form-control">
-                                        <option value="">Seleccione Uno</option>
-                                        <option value="Idem">Idem</option>
-                                    </select>
+                                    <input type="text" name="hipertension_arterial_tratamiento">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -377,9 +411,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 cardiopatia_si_form" style="display: none">
-                                <label>Seleccione Cardiopatía</label>
+                                <label>Tipo de Cardiopatía</label>
                                 <div>
-                                   <input type="text" name="cardiopatia_si" id="cardiopatia_si" class="form-control" placeholder="Cuales Cardiopatía">
+                                   <input type="text" name="cardiopatia_tipo" id="cardiopatia_tipo" class="form-control" placeholder="Tipo Cardiopatía">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -392,9 +426,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 nefropatias_si_form" style="display: none">
-                                <label>Seleccione Nefropatías</label>
+                                <label>Tipo Nefropatías</label>
                                 <div>
-                                   <input type="text" name="nefropatias_si" id="nefropatias_si" class="form-control" placeholder="Cuales Nefropatías">
+                                   <input type="text" name="nefropatias_tipo" id="nefropatias_tipo" class="form-control" placeholder="Tipo Nefropatías">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -407,9 +441,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 tiroidea_si_form" style="display: none">
-                                <label>Seleccione Enfermedad Tiroidea</label>
+                                <label>Tipo Enfermedad Tiroidea</label>
                                 <div>
-                                    <select name="tiroidea_si" id="tiroidea_si" class="form-control">
+                                    <select name="tiroidea_tipo" id="tiroidea_tipo" class="form-control">
                                         <option value="">Seleccione Uno</option>
                                         <option value="Bocio Eutiroideo">Bocio Eutiroideo</option>
                                         <option value="Hipertiroidismo">Hipertiroidismo</option>
@@ -427,13 +461,13 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 inmunologica_si_form" style="display: none">
-                                <label>Seleccione Enfermedad Inmunológica</label>
+                                <label>Tipo Enfermedad Inmunológica</label>
                                 <div>
-                                    <select name="inmunologica_si" id="inmunologica_si" class="form-control">
-                                        <option value="">Seleccione Uno</option>
+                                    <select name="inmunologica_tipo[]" id="inmunologica_tipo" class="form-control selectpicker" multiple>
                                         <option value="Artritis Reumatoide">Artritis Reumatoide</option>
                                         <option value="Lupus Eritematoso">Lupus Eritematoso</option>
                                         <option value="Síndrome Anti Fosfolípido">Síndrome Anti Fosfolípido</option>
+                                        <option value="Otras Trombofilias">Otras Trombofilias</option>
                                     </select>
                                 </div>
                             </div>
@@ -447,9 +481,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 oncologica_si_form" style="display: none">
-                                <label>Seleccione Enfermedad Oncológica</label>
+                                <label>Tipo Enfermedad Oncológica</label>
                                 <div>
-                                   <input type="text" name="oncologica_si" id="oncologica_si" class="form-control" placeholder="Cuales Enfermedad Oncológica">
+                                   <input type="text" name="oncologica_tipo" id="oncologica_tipo" class="form-control" placeholder="Cuales Enfermedad Oncológica">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -462,9 +496,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 malformacion_congenita_si_form" style="display: none">
-                                <label>Seleccione Malformación Congénita</label>
+                                <label>Tipo Malformación Congénita</label>
                                 <div>
-                                   <input type="text" name="malformacion_congenita_si" id="malformacion_congenita_si" class="form-control" placeholder="Cuales Malformación Congénita">
+                                   <input type="text" name="malformacion_congenita_tipo" id="malformacion_congenita_tipo" class="form-control" placeholder="Cuales Malformación Congénita">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -474,6 +508,12 @@
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Manejo de Pre eclampsia</label> {{-- si es si   --}}
+                                <div>
+                                    <input type="text" name="manejo_pre_eclampsia" id="manejo_pre_eclampsia" class="form-control">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -541,7 +581,7 @@
                             <div class="col-sm-3">
                                 <label>Gesta</label>
                                 <div>
-                                    <input type="number" name="gesta" id="gesta" class="form-control" required min="0" value="0">
+                                    <input type="text" name="gesta" id="gesta" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -624,9 +664,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 planificacion_si_form" style="display: none">
-                                <label>Seleccione Planificación Familiar</label>
+                                <label>Tipo Planificación Familiar</label>
                                 <div>
-                                    <select name="planificacion_si" id="planificacion_si" class="form-control">
+                                    <select name="planificacion_tipo" id="planificacion_tipo" class="form-control">
                                         <option value="">Seleccione Uno</option>
                                         <option value="Barrera">Barrera</option>
                                         <option value="Inyectables">Inyectables</option>
@@ -647,7 +687,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3 menopausia_si_form" style="display: none">
-                                <label>Seleccione Menopausiar</label>
+                                <label>Tiempo de Menopausia</label>
                                 <div>
                                     <input type="month" name="menopausia_si" id="menopausia_si" class="form-control">
                                 </div>
@@ -787,8 +827,8 @@
                                 <label>Condición hemodinámica adecuada</label>
                                 <div>
                                     <select name="condicion_hemodinamica" id="condicion_hemodinamica" class="form-control">
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -869,8 +909,8 @@
                                 <label>Simétricas</label>
                                 <div>
                                     <select name="mamas_simetricas" id="mamas_simetricas" class="form-control">
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -893,7 +933,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Localización Derecho</label>
+                                <label>Localización Derecho</label> {{-- si es no nodulos no salir hasta Tamaño izquierdo  --}}
                                 <div>
                                     <select name="mamas_localizacion_derecho" id="mamas_localizacion_derecho" class="form-control">
                                         <option value="CSE">CSE</option>
@@ -926,6 +966,8 @@
                                    <input type="number" name="mamas_tamanno_izquierdo" id="mamas_tamanno_izquierdo" class="form-control">
                                 </div>
                             </div>
+                            {{-- hasta aqui --}}
+
                             <div class="col-sm-3">
                                 <label>Galactorrea</label>
                                 <div>
@@ -982,16 +1024,16 @@
                                 <label>Peristalsis</label>
                                 <div>
                                     <select name="peristalsis" id="peristalsis" class="form-control">
+                                        <option value="Presente">Presente</option>
                                         <option value="Ausente">Ausente</option>
                                         <option value="Disminuido">Disminuido</option>
-                                        <option value="Presente">Presente</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <label>Utero Grávido Abdominal</label>
+                            <div class="col-sm-3"> {{-- quitar --}}
+                                <label>Utero Grávido Abdominal</label> {{--- si es si Presentacion Situacion Posicion Frecuencia cardiaca fetal--}}
                                 <div>
-                                    <select name="utero_gravido_abdominal" id="utero_gravido_abdominal" class="form-control">
+                                    <select name="utero_gravido_abdominal" id="utero_gravido_abdominal" class="form-control"> {{-- poner la opcion al revez si es si cerrar todo Presentacion Situacion Posicion Frecuencia cardiaca fetal--}}
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -1028,7 +1070,7 @@
                             <div class="col-sm-3">
                                 <label>Examen Ginecológico</label>
                                 <div>
-                                    <select name="examen_ginecologico" id="examen_ginecologico" class="form-control">
+                                    <select name="examen_ginecologico" id="examen_ginecologico" class="form-control"> {{-- si es no cerar hasta Miembros Inferiores Edema --}}
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -1047,8 +1089,8 @@
                                 <label>Vagina Normo Térmica</label>
                                 <div>
                                     <select name="vagina_normo_terminca" id="vagina_normo_terminca" class="form-control">
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -1056,8 +1098,8 @@
                                 <label>Vagina Normo elástica</label>
                                 <div>
                                     <select name="vagina_normo_elastica" id="vagina_normo_elastica" class="form-control">
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -1070,7 +1112,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-3"> {{-- solo si pone si  --}}
                                 <label>Describa</label>
                                 <div>
                                    <input type="text" name="vagina_describa" id="vagina_describa" class="form-control">
@@ -1128,8 +1170,8 @@
                                 <label>Consistencia</label>
                                 <div>
                                     <select name="vagina_consistencia" id="vagina_consistencia" class="form-control">
-                                        <option value="Reblandecido">Reblandecido</option>
                                         <option value="Firme">Firme</option>
+                                        <option value="Reblandecido">Reblandecido</option>
                                         <option value="Dilatacion">Dilatacion</option>
                                         <option value="Borramiento">Borramiento</option>
                                     </select>
@@ -1145,9 +1187,10 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Membranas Intergas</label>
+                                <label>Membranas Integras</label>
                                 <div>
-                                    <select name="vagina_membranas_intergas" id="vagina_membranas_intergas" class="form-control">
+                                    <select name="vagina_membranas_integras" id="vagina_membranas_integras" class="form-control">
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -1156,16 +1199,18 @@
                             <div class="col-sm-3">
                                 <label>Calotas Solidas</label>
                                 <div>
-                                    <select name="vagina_calotas_solidas" id="vagina_calotas_solidas" class="form-control" data-target="vagina_calotas_solidas_si_form">
+                                    <select name="vagina_calotas_solidas" id="vagina_calotas_solidas" class="form-control">
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3 vagina_calotas_solidas_si_form" style="display: none">
-                                <label>Cual Calotas Solidas</label>
+                            <div class="col-sm-3">
+                                <label>Plano</label>
                                 <div>
-                                    <select name="vagina_calotas_solidas_si" id="vagina_calotas_solidas_si" class="form-control">
+                                    <select name="vagina_plano" id="vagina_plano" class="form-control">
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="Plano I">Plano I</option>
                                         <option value="Plano II">Plano II</option>
                                         <option value="Plano III">Plano III</option>
@@ -1177,6 +1222,7 @@
                                 <label>Pelvis</label>
                                 <div>
                                     <select name="vagina_pelvis" id="vagina_pelvis" class="form-control">
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="Util">Util</option>
                                         <option value="No Util">No Util</option>
                                     </select>
@@ -1186,6 +1232,7 @@
                                 <label>Desproporcion Cefalopelvica</label>
                                 <div>
                                     <select name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica" class="form-control">
+                                        <option value="No Valorables">No Valorables</option>
                                         <option value="Estrecho Superior">Estrecho Superior</option>
                                         <option value="Inferior">Inferior</option>
                                         <option value="Medio">Medio</option>
@@ -1216,12 +1263,12 @@
                                 <label>Neurologico Conservado</label>
                                 <div>
                                     <select name="vagina_neurologico_conservado" id="vagina_neurologico_conservado" class="form-control" data-target="vagina_neurologico_conservado_si_form">
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3 vagina_neurologico_conservado_si_form" style="display: none">
+                            <div class="col-sm-3 vagina_neurologico_conservado_si_form" style="display: none"> {{-- solo si es no --}}
                                 <label>Alteracion</label>
                                 <div>
                                     <input type="text" name="vagina_neurologico_conservado_si" id="vagina_neurologico_conservado_si" class="form-control">
@@ -1246,6 +1293,7 @@
                             </div>
                         </div>
 
+                        {{-- agregar recordario --}}
 
                         <div class="text-center">
                             <button class="btn btn-success" type="submit">Guardar Cambios</button>
@@ -1256,6 +1304,10 @@
         </div>
     </div>
 </section>
+
+
+
+
 @endsection
 
 @section('js')
