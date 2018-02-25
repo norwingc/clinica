@@ -31,9 +31,9 @@ class Paciente extends Model
         return $this->hasOne('App\Models\HistoriaClinica', 'paciente_id');
     }
 
-    public function fecha_parto()
+    public function fecha_procedimiento()
     {
-        return $this->hasMany('App\Models\FechaParto', 'paciente_id');
+        return $this->hasMany('App\Models\FechaProcedimiento', 'paciente_id');
     }
 
      /**

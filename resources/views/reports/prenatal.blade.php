@@ -16,8 +16,8 @@
             <td>{{ $prenatal->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $prenatal->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $prenatal->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
@@ -133,5 +133,7 @@
       <b>Examenes de Laboratorio:</b><br>
       {{ $prenatal->examen_laboratorio }}
     </p>
+
+    @include('includes._firmas')
 </body>
 </html>

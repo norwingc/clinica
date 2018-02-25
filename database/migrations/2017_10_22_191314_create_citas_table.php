@@ -20,7 +20,7 @@ class CreateCitasTable extends Migration
             $table->dateTime('end');
             $table->string('color')->default('#3c8dbc');
             $table->string('url');
-            $table->integer('consulta_id')->unsigned();
+            $table->date('date');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,7 +15,7 @@ class Prenatal extends Model
      * @var [type]
      */
     protected $fillable = [
-      "date", "edad_gestacional", "numero", "diagnostico_previo", "presion_arterial_derecho", "presion_arterial_izquierdo", "presion_arterial_media",
+      "referido", "date", "edad_gestacional", "numero", "diagnostico_previo", "presion_arterial_derecho", "presion_arterial_izquierdo", "presion_arterial_media",
       "signos_vitales_fc", "signos_vitales_fr", "temperatura", "peso_actual", "incremento_peso", "subjetivo",
       "alteraciones_hermodinamicas", "alteraciones_cardiopulmonar", "pezon_areola", "movimientos_fetales", "fcf_minuto", "actividad_uterina",
       "utero_gravido", "presentacion", "situacion", "posicion", "utero_intrapelvico", "peristalsis", "afu", "examen_ginecologico", "genitales_externos",

@@ -10,6 +10,12 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-sm-4">
                             <label>Fecha y Hora</label>
                             <div>
@@ -884,6 +890,12 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                    <div class="form-group">
+                       <div class="col-sm-4">
+                           <label>Referido</label>
+                           <div>
+                               <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                           </div>
+                       </div>
                         <div class="col-sm-4">
                             <label>Fecha y Hora</label>
                             <div>
@@ -1033,16 +1045,16 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Ecocardiografia']) !!}
                    <div class="form-group">
+                       <div class="col-sm-3">
+                           <label>Referido</label>
+                           <div>
+                               <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                           </div>
+                       </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_ecocardiografia" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Medico</label>
-                            <div>
-                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                                <input type="text" name="edad" id="edad_ecocardiografia" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -2054,19 +2066,19 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Neurosonografia']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_neurosonografia" class="form-control" required>
+                                <input type="text" name="edad" id="edad_neurosonografia" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
-                            <label>Medico</label>
-                            <div>
-                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
-                            </div>
-                        </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
                                 <input type="text" name="date" id="date_neurosonografia" class="form-control" value="{{ date('d/m/Y h:i a') }}">
@@ -3274,16 +3286,16 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'UltrasonidoEstructural']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_estructural" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Medico</label>
-                            <div>
-                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                                <input type="text" name="edad" id="edad_estructural" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -3299,7 +3311,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Ultrasonido Morfologico De II Trimestre</p>
+                    <p class="sub_titul"><b>Ultrasonido Morfologico De II Trimestre</b></p>
                     <div class="form-group">
                        <div class="col-md-3">
                            <label>Feto</label>
@@ -4805,19 +4817,18 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'UltrasonidoTrimestre']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_1trimestre" class="form-control" required>
-                            </div>
+                                <input type="text" name="edad" id="edad_1trimestre" class="form-control" required value="{{ $paciente->getAge() }}">                            </div>
                         </div>
-                         <div class="col-md-3">
-                            <label>Medico</label>
-                            <div>
-                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
-                            </div>
-                        </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
                                 <input type="text" name="date" id="date_1trimestre" class="form-control" value="{{ date('d/m/Y h:i a') }}">
@@ -5608,10 +5619,16 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_pelvico" class="form-control" required>
+                                <input type="text" name="edad" id="edad_pelvico" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -6176,10 +6193,16 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                            <label>Edad</label>
                            <div>
-                               <input type="number" name="edad" id="edad_colposcopia" class="form-control">
+                               <input type="text" name="edad" id="edad_colposcopia" class="form-control" value="{{ $paciente->getAge() }}">
                            </div>
                         </div>
                         <div class="col-md-3">
@@ -6395,16 +6418,16 @@
             <div class="modal-body">
                 {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Doppler']) !!}
                     <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="number" name="edad" id="edad_doppler" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Medico</label>
-                            <div>
-                                <input type="text" class="form-control" value="{{ \Auth::user()->name }}">
+                                <input type="text" name="edad" id="edad_doppler" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
                          <div class="col-md-3">
@@ -7132,7 +7155,6 @@
     </div>
 </div>
 
-
 <div class="modal fade" id="modalAddFechaParto">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -7146,17 +7168,31 @@
                         <div class="col-md-3">
                             <label>Hospital</label>
                             <div>
-                                <input type="text" name="hospital" id="hospital_fecha_parto" class="form-control">
+                                <select class="form-control" name="hospital" id="hospital_fecha_parto">
+                                    <option value="Hospital Vivian Pellas">Hospital Vivian Pellas</option>
+                                    <option value="Hospital Cruz Azul">Hospital Cruz Azul</option>
+                                    <option value="Hospital Salud Integral">Hospital Salud Integral</option>
+                                    <option value="Hospital Militar">Hospital Militar</option>
+                                    <option value="Hospital Calos Roberto Huembes">Hospital Calos Roberto Huembes</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Via de nacimiento</label>
+                            <label>procedimiento</label>
                             <div>
-                                <input type="text" name="via_nacimiento" id="via_nacimiento_fecha_parto" class="form-control">
+                                <select class="form-control" name="procedimiento" id="procedimiento_fecha_parto">
+                                    <option value="Parto Vaginal">Parto Vaginal</option>
+                                    <option value="Parto por Cesa">Parto por Cesa</option>
+                                    <option value="AMEU">AMEU</option>
+                                    <option value="Laparoatomia">Laparoatomia</option>
+                                    <option value="Histerectomía">Histerectomía</option>
+                                    <option value="Cerclaje Cervical">Cerclaje Cervical</option>
+                                    <option value="OTV">OTV</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Hospital</label>
+                            <label>Fecha procedimiento</label>
                             <div>
                                 <input type="date" name="date" id="date_fecha_parto" class="form-control">
                             </div>

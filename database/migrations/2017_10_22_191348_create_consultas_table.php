@@ -15,12 +15,12 @@ class CreateConsultasTable extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
             $table->string('doctor');
             $table->double('costo');
             $table->string('examen_type')->nullable();
-            $table->string('examen_id')->nullable();
+            $table->integer('examen_id')->nullable();
             $table->integer('paciente_id')->unsigned();
+            $table->integer('cita_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

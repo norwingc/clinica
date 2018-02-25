@@ -12,7 +12,7 @@ class Colposcopia extends Model
      * @var [type]
      */
     protected $fillable =[
-        "edad", "date", "historia", "interpretacion_ivaa", "interpretacion_lugol", "clasificacion", "descripcion_colposcopia", "descripcion", "sugestivo_carcinoma",
+        "referido", "edad", "date", "historia", "interpretacion_ivaa", "interpretacion_lugol", "clasificacion", "descripcion_colposcopia", "descripcion", "sugestivo_carcinoma",
         "descripcion_carcinoma", "toma_biopsia", "vaginoscopia", "vaginoscopia_descipcion", "vulvoscopia", "vulvoscopia_descipcion", "lesiones_perianales",
         "lesiones_perianales_descipcion", "comentarios", "recordatorio",
     ];

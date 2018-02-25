@@ -61,12 +61,12 @@
    $('#table').DataTable( {
         processing: true,
         serverSide: true,
-        ajax: '{!! route('fecha.parto.get') !!}',
+        ajax: '{!! route('fecha.procedimiento.get') !!}',
         columns:[
             {data: 'paciente.name', name: 'paciente.name'},
             {data: 'paciente.celular', name: 'paciente.celular'},
             {data: 'hospital', name: 'hospital'},
-            {data: 'via_nacimiento', name: 'via_nacimiento'},
+            {data: 'procedimiento', name: 'procedimiento'},
             {data: 'date', name: 'date'},
             {data: 'costo', name: 'costo'},
             {data: 'action', name: 'action'},

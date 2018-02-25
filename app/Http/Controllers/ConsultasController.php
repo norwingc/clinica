@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaParto};
+use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaProcedimiento};
 
 use PDF;
 use DataTables;
@@ -392,36 +392,37 @@ class ConsultasController extends Controller
     }
 
     /**
-     * [storeFechaParto description]
+     * [storeFechaProcedimiento description]
+     * @param  Request  $request  [description]
      * @param  Paciente $paciente [description]
      * @return [type]             [description]
      */
-    public function storeFechaParto(Request $request, Paciente $paciente)
+    public function storeFechaProcedimiento(Request $request, Paciente $paciente)
     {
-        $paciente->fecha_parto()->save(
-            new FechaParto($request->all())
+        $paciente->fecha_procedimiento()->save(
+            new FechaProcedimiento($request->all())
         );
 
-        session()->flash('message_success', "Fecha de parto agregada");
+        session()->flash('message_success', "Fecha de procedimiento agregada");
         return back();
     }
 
     /**
-     * [showFechaParto description]
+     * [showFechaProcedimiento description]
      * @return [type] [description]
      */
-    public function showFechaParto()
+    public function showFechaProcedimiento()
     {
-        return view('citas.fecha_parto');
+        return view('citas.fecha_procedimiento');
     }
 
     /**
      * w
      * @return [type] [description]
      */
-    public function getFechaParto()
+    public function getFechaProcedimiento()
     {
-        $fecha = FechaParto::with('paciente');
+        $fecha = FechaProcedimiento::with('paciente');
 
         return Datatables::of($fecha)->addColumn('action', function($fecha){
             if(\Auth::user()->isRole('doctor')){

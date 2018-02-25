@@ -82,9 +82,9 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
         Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');
 
-        Route::name('fecha.parto.store')->post('/FechaParto/store/{paciente}', 'ConsultasController@storeFechaParto');
-        Route::name('fecha.parto.show')->get('/FechaParto/show/', 'ConsultasController@showFechaParto');
-        Route::name('fecha.parto.get')->get('/FechaParto/get/', 'ConsultasController@getFechaParto');
+        Route::name('fecha.procedimiento.store')->post('/FechaProcedimiento/store/{paciente}', 'ConsultasController@storeFechaProcedimiento');
+        Route::name('fecha.procedimiento.show')->get('/FechaProcedimiento/show/', 'ConsultasController@showFechaProcedimiento');
+        Route::name('fecha.procedimiento.get')->get('/FechaProcedimiento/get/', 'ConsultasController@getFechaProcedimiento');
 
     });
 

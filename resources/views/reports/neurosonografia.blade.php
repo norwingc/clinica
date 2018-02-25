@@ -16,12 +16,16 @@
             <td>{{ $neurosono->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $neurosono->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $neurosono->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
             <td>{{ $neurosono->created_at->format('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Paridad</th>
+            <td>{{ $neurosono->paridad }}</td>
         </tr>
     </table>
 
@@ -41,8 +45,10 @@
         </p>
 
         <div>
-            <p class="sub_titul"><b>SOMATOMETRIA</b></p>
-            <table style="width: 100%;">
+            <table style="width: 100%">
+                <tr>
+                    <th colspan="3" style="text-align: center">SOMATOMETRIA</th>
+                </tr>
                 <tr>
                     <th>Parámetro</th>
                     <th>Medida mm</th>
@@ -87,68 +93,70 @@
             </table>
         </div>
         <div>
-            <p class="sub_titul"><b>Flujometria Doppler</b></p>
             <table style="width: 100%">
-                    <tr>
-                        <th>Vaso evaluado</th>
-                        <th>Percentil</th>
-                        <th>Valor</th>
-                    </tr>
-                    <tr>
-                        <th>IP medio de arterias uterinas</th>
-                        <td>{{ $value->percentil_ip_medio }}</td>
-                        <td>{{ $value->interpretacion_ip_medio }}</td>
-                    </tr>
-                    <tr>
-                        <th>Notch Arteria uterina Izquierda</th>
-                        <td>{{ $value->percentil_notch_izquierda }}</td>
-                        <td>{{ $value->interpretacion_notch_izquierda }}</td>
-                    </tr>
-                    <tr>
-                        <th>Notch Arteria uterina Derecha</th>
-                        <td>{{ $value->percentil_notch_derecha }}</td>
-                        <td>{{ $value->interpretacion_notch_derecha }}</td>
-                    </tr>
-                    <tr>
-                        <th>Índice Cerebro placentario</th>
-                        <td>{{ $value->percentil_cerebro_placentario }}</td>
-                        <td>{{ $value->interpretacion_cerebro_placentario }}</td>
-                    </tr>
-                    <tr>
-                        <th>Arteria cerebral media</th>
-                        <td>{{ $value->percentil_arteria_cerebral }}</td>
-                        <td>{{ $value->interpretacion_arteria_cerebral }}</td>
-                    </tr>
-                    <tr>
-                        <th>Arteria Umbilical</th>
-                        <td>{{ $value->percentil_arteria_umbilical }}</td>
-                        <td>{{ $value->interpretacion_arteria_umbilical }}</td>
-                    </tr>
-                    <tr>
-                        <th>Flujo diastólico de Arteria umbilical</th>
-                        <td>{{ $value->percentil_flojo_diasotolico }}</td>
-                        <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
-                    </tr>
-                    <tr>
-                        <th>Itsmo aórtico</th>
-                        <td>{{ $value->percentil_itsmo_aortico }}</td>
-                        <td>{{ $value->interpretacion_itsmo_aortico }}</td>
-                    </tr>
-                    <tr>
-                        <th>Ducto venoso</th>
-                        <td>{{ $value->percentil_ducto_venenoso }}</td>
-                        <td>{{ $value->interpretacion_ducto_venenoso }}</td>
-                    </tr>
-                    <tr>
-                        <th>Flujo diastólico de ducto venoso</th>
-                        <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
-                        <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vena umbilical</th>
-                        <td>{{ $value->percentil_vena_umbilical }}</td>
-                        <td>{{ $value->interpretacion_vena_umbilical }}</td>
-                    </tr>
+                <tr>
+                    <th colspan="3" style="text-align: center">Flujometria Doppler</th>
+                </tr>
+                <tr>
+                    <th>Vaso evaluado</th>
+                    <th>Percentil</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <th>IP medio de arterias uterinas</th>
+                    <td>{{ $value->percentil_ip_medio }}</td>
+                    <td>{{ $value->interpretacion_ip_medio }}</td>
+                </tr>
+                <tr>
+                    <th>Notch Arteria uterina Izquierda</th>
+                    <td>{{ $value->percentil_notch_izquierda }}</td>
+                    <td>{{ $value->interpretacion_notch_izquierda }}</td>
+                </tr>
+                <tr>
+                    <th>Notch Arteria uterina Derecha</th>
+                    <td>{{ $value->percentil_notch_derecha }}</td>
+                    <td>{{ $value->interpretacion_notch_derecha }}</td>
+                </tr>
+                <tr>
+                    <th>Índice Cerebro placentario</th>
+                    <td>{{ $value->percentil_cerebro_placentario }}</td>
+                    <td>{{ $value->interpretacion_cerebro_placentario }}</td>
+                </tr>
+                <tr>
+                    <th>Arteria cerebral media</th>
+                    <td>{{ $value->percentil_arteria_cerebral }}</td>
+                    <td>{{ $value->interpretacion_arteria_cerebral }}</td>
+                </tr>
+                <tr>
+                    <th>Arteria Umbilical</th>
+                    <td>{{ $value->percentil_arteria_umbilical }}</td>
+                    <td>{{ $value->interpretacion_arteria_umbilical }}</td>
+                </tr>
+                <tr>
+                    <th>Flujo diastólico de Arteria umbilical</th>
+                    <td>{{ $value->percentil_flojo_diasotolico }}</td>
+                    <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
+                </tr>
+                <tr>
+                    <th>Itsmo aórtico</th>
+                    <td>{{ $value->percentil_itsmo_aortico }}</td>
+                    <td>{{ $value->interpretacion_itsmo_aortico }}</td>
+                </tr>
+                <tr>
+                    <th>Ducto venoso</th>
+                    <td>{{ $value->percentil_ducto_venenoso }}</td>
+                    <td>{{ $value->interpretacion_ducto_venenoso }}</td>
+                </tr>
+                <tr>
+                    <th>Flujo diastólico de ducto venoso</th>
+                    <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
+                    <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
+                </tr>
+                <tr>
+                    <th>Vena umbilical</th>
+                    <td>{{ $value->percentil_vena_umbilical }}</td>
+                    <td>{{ $value->interpretacion_vena_umbilical }}</td>
+                </tr>
             </table>
         </div>
 
@@ -224,5 +232,7 @@
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $neurosono->comentarios }}</p>
     @endif
+
+    @include('includes._firmas')
 </body>
 </html>

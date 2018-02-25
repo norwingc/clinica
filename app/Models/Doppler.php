@@ -14,7 +14,7 @@ class Doppler extends Model
      * @var [type]
     */
     protected $fillable = [
-        "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "comentarios", "recordatorio"
+        "referido", "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "comentarios", "recordatorio"
     ];
 
     /**

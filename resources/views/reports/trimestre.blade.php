@@ -16,12 +16,16 @@
             <td>{{ $trimestre->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $trimestre->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $trimestre->Referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
             <td>{{ $trimestre->created_at->format('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Paridad</th>
+            <td>{{ $trimestre->paridad }}</td>
         </tr>
     </table>
 
@@ -159,5 +163,7 @@
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $trimestre->comentarios }}</p>
     @endif
+
+    @include('includes._firmas')
 </body>
 </html>

@@ -16,8 +16,8 @@
             <td>{{ $pelvico->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $pelvico->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $pelvico->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
@@ -93,5 +93,7 @@
         <p class="sub_titul">Comentarios</p>
         <p>{{ $pelvico->comentarios }}</p>
     @endif
+
+    @include('includes._firmas')
 </body>
 </html>

@@ -16,8 +16,8 @@
             <td>{{ $ginecologica->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $ginecologica->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $ginecologica->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
@@ -60,6 +60,6 @@
       <p>{{ $ginecologica->comentarios }}</p>
     @endif
 
-
+    @include('includes._firmas')
 </body>
 </html>

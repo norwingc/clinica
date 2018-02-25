@@ -16,6 +16,7 @@ class CreateGinecologicasTable extends Migration
       Schema::create('ginecologicas', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('consulta_id');
+        $table->string('referido')->nullable();
         $table->string('date')->nullable();
         $table->string('numero')->nullable();
         $table->string('diagnostico_previo');

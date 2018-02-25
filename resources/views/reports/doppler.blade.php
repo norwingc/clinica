@@ -16,12 +16,16 @@
             <td>{{ $doppler->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $doppler->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $doppler->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
             <td>{{ $doppler->created_at->format('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Paridad</th>
+            <td>{{ $doppler->paridad }}</td>
         </tr>
     </table>
 
@@ -196,5 +200,7 @@
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $doppler->comentarios }}</p>
     @endif
+
+    @include('includes._firmas')
 </body>
 </html>

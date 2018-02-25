@@ -16,12 +16,16 @@
             <td>{{ $ecocardio->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $ecocardio->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $ecocardio->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
             <td>{{ $ecocardio->created_at->format('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Paridad</th>
+            <td>{{ $ecocardio->paridad }}</td>
         </tr>
     </table>
 
@@ -201,5 +205,7 @@
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $ecocardio->comentarios }}</p>
     @endif
+
+    @include('includes._firmas')
 </body>
 </html>

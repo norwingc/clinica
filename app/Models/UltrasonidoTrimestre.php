@@ -15,7 +15,7 @@ class UltrasonidoTrimestre extends Model
      * @var [type]
      */
     protected $fillable = [
-        "edad", "date", "paridad", "feto", "historia_preecampsia_mama", "historia_hipertension_mama", "historia_preecampsia_hermana", "historia_hipertension_personal", "peso", "talla",
+        "referido", "edad", "date", "paridad", "feto", "historia_preecampsia_mama", "historia_hipertension_mama", "historia_preecampsia_hermana", "historia_hipertension_personal", "peso", "talla",
         "imc", "pa_derecho", "pa_izquierdo", "ip_artrias", "bidimensional", "doppler_color", "conclusion_lcc", "conclusion_riesago_cromosomopatias", "conclusion_riesago_preeclampsia",
         "conclusion_riesago_hipertensivos", "conclusion_riesago_restiaccion", "conclusion_riesago_parto_pretermino", "recomendaciones", "comentarios", "recordatorio"
     ];

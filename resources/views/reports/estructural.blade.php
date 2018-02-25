@@ -16,12 +16,16 @@
             <td>{{ $estructural->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $estructural->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $estructural->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
             <td>{{ $estructural->created_at->format('d/m/Y') }}</td>
+        </tr>
+        <tr>
+            <th>Paridad</th>
+            <td>{{ $estructural->paridad }}</td>
         </tr>
     </table>
 
@@ -275,5 +279,6 @@
         <p>{{ $estructural->comentarios }}</p>
     @endif
 
+    @include('includes._firmas')
 </body>
 </html>

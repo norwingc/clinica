@@ -17,6 +17,7 @@
 
         var data = {
             "_token"                             : _token,
+            "referido"                           : $(form).find('#referido').val(),
             "edad"                               : $(form).find('#edad_1trimestre').val(),
             "date"                               : $(form).find('#date_1trimestre').val(),
             "paridad"                            : $(form).find('#paridad_1trimestre').val(),
@@ -68,6 +69,7 @@
 
          var data = {
             "_token"                                    : _token,
+            "referido"                                  : $(form).find('#referido').val(),
             "edad"                                      : $(form).find('#edad_estructural').val(),
             "date"                                      : $(form).find('#date_estructural').val(),
             "paridad"                                   : $(form).find('#paridad_estructural').val(),
@@ -108,6 +110,7 @@
 
          var data = {
             "_token"                        : _token,
+            "referido"                      : $(form).find('#referido').val(),
             "edad"                          : $(form).find('#edad_neurosonografia').val(),
             "date"                          : $(form).find('#date_neurosonografia').val(),
             "paridad"                       : $(form).find('#paridad_neurosonografia').val(),
@@ -144,6 +147,7 @@
 
         var data = {
             "_token"       : _token,
+            "referido"     : $(form).find('#referido').val(),
             "edad"         : $(form).find('#edad_ecocardiografia').val(),
             "date"         : $(form).find('#date_ecocardiografia').val(),
             "paridad"      : $(form).find('#paridad_ecocardiografia').val(),
@@ -179,6 +183,7 @@
 
         var data = {
             "_token"                        : _token,
+            "referido"                      : $(form).find('#referido').val(),
             "edad"                          : $(form).find('#edad_doppler').val(),
             "date"                          : $(form).find('#date_doppler').val(),
             "paridad"                       : $(form).find('#paridad_doppler').val(),

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FechaParto extends Model
+class FechaProcedimiento extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +14,7 @@ class FechaParto extends Model
      * @var [type]
      */
     protected $fillable = [
-        'hospital', 'via_nacimiento', 'date', 'costo'
+        'hospital', 'procedimiento', 'date', 'costo'
     ];
 
     public function paciente()

@@ -15,7 +15,7 @@ class UltrasonidoPelvico extends Model
      * @var [type]
      */
     protected $fillable = [
-        "edad", "gesta", "parto", "aborto", "cesarea", "legrado", "bordes", "ecos_interior", "utero", "forma", "paredes", "longitud", "ancho", "grosor", "masa_uterino",
+        "referido", "edad", "gesta", "parto", "aborto", "cesarea", "legrado", "bordes", "ecos_interior", "utero", "forma", "paredes", "longitud", "ancho", "grosor", "masa_uterino",
         "masa_uterino_cuantas", "mediciones", "presencia_tabique", "tabique_medicion", "endometrio", "endometrio_modo", "cavidad_endometrial",
         "dispositivo_intrauterino", "saco_gestional", "saco_gestional_bordes", "saco_gestional_ubicacion", "reaccion_coridodecidual", "presencia_vesicula", "presencia_yema",
         "vitalidad", "longitud_craneo", "edad_gestacional", "fecha_parto", "ovario_izquierdo", "ovario_izquierdo_1", "ovario_izquierdo_2", "presencia_masa_anexial_izquierdo",

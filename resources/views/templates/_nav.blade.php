@@ -28,10 +28,11 @@
         <li class="treeview">
             <a href="#"><i class="fa fa-clock-o"></i> <span>Citas</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-                @role('doctor|recepcion')
-                    <li><a href="{{ route('citas') }}">Lista</a></li>
-                    <li><a href="{{ route('citas.create') }}">Agregar Cita</a></li>
-                    <li><a href="{{ route('fecha.parto.show') }}">Lista de embarazos</a></li>
+
+                <li><a href="{{ route('citas') }}">Lista</a></li>
+                <li><a href="{{ route('citas.create') }}">Agregar Cita</a></li>
+                @role('doctor')
+                    <li><a href="{{ route('fecha.procedimiento.show') }}">Procedimientos medicos</a></li>
                 @endrole
             </ul>
         </li>

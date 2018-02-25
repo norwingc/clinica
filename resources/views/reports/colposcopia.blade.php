@@ -16,8 +16,8 @@
             <td>{{ $colposcopia->edad }}</td>
         </tr>
          <tr>
-            <th>Medico:</th>
-            <td>{{ $colposcopia->consulta->doctor }}</td>
+            <th>Referido:</th>
+            <td>{{ $colposcopia->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
@@ -27,18 +27,22 @@
 
     <p class="sub_titul">Mapa del cuello uterino</p>
 
-    <div style="height: 130px; width: 100%">
-        <img src="{{ asset('img/colposcopia1.jpg') }}" style="margin: auto; display: block">
-    </div>
-
     <p>
         <b>Inspeccion Visual Con Acido Acetico</b><br>
         Interpretacion de IVAA: {{ $colposcopia->interpretacion_ivaa }}
+
+        <div style="height: 130px; width: 50%">
+            <img src="{{ asset('img/colposcopia1.jpg') }}" style="margin: auto; display: block">
+        </div>
     </p>
 
     <p>
         <b>Aplicación De Lugol (Test De Schiller)</b><br>
         Interpretacion de aplicación de lugol: {{ $colposcopia->interpretacion_lugol }}
+
+        <div style="height: 130px; width: 50%">
+            <img src="{{ asset('img/colposcopia1.jpg') }}" style="margin: auto; display: block">
+        </div>
     </p>
 
     <p>
@@ -74,6 +78,6 @@
         <p>{{ $colposcopia->comentarios }}</p>
     @endif
 
-
+    @include('includes._firmas')
 </body>
 </html>

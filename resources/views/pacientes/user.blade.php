@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" onclick="saveFechaParto($(this))">Agregar fecha de parto</button>
+                    <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" onclick="saveFechaParto($(this))">Agregar fecha de procedimiento</button>
                 </div>
 
                 <div class="row">

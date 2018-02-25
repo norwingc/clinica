@@ -16,9 +16,10 @@ class CreateDopplersTable extends Migration
         Schema::create('dopplers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('consulta_id');
-            $table->integer('edad')->nullable();
+            $table->string('edad', 30)->nullable();
             $table->string('date')->nullable();
             $table->string('paridad')->nullable();
+            $table->string('referido')->nullable();
             $table->string('feto');
             $table->string('revision')->nullable();
             $table->string('conclusion_embarazo_gestacion')->nullable();

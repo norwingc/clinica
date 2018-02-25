@@ -14,7 +14,7 @@ class Neurosonografia extends Model
      * @var [type]
      */
     protected $fillable = [
-        "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "concluciones", "comentarios", "recordatorio"
+        "referido", "edad", "date", "paridad", "feto", "revision", "conclusion_embarazo_gestacion", "concluciones", "comentarios", "recordatorio"
     ];
 
     /**

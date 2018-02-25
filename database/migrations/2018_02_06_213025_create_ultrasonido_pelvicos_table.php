@@ -15,7 +15,8 @@ class CreateUltrasonidoPelvicosTable extends Migration
     {
         Schema::create('ultrasonido_pelvicos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('edad')->nullable();
+            $table->string('referido')->nullable();
+            $table->string('edad', 30)->nullable();
             $table->integer('gesta')->nullable();
             $table->integer('parto')->nullable();
             $table->integer('aborto')->nullable();
