@@ -14,7 +14,7 @@ class Consulta extends Model
      * @var [type]
      */
     protected $fillable = [
-        'date', 'doctor', 'costo', 'examen_type'
+        'doctor', 'costo', 'examen_type'
     ];
 
     /**
@@ -32,7 +32,7 @@ class Consulta extends Model
      */
     public function cita()
     {
-        return $this->hasOne('App\Models\Cita', 'consulta_id');
+        return $this->belongsTo('App\Models\Cita', 'cita_id');
     }
 
     /**
@@ -84,12 +84,4 @@ class Consulta extends Model
         return $this->hasOne('App\Models\Colposcopia', 'consulta_id');
     }
 
-    /**
-     * [getCitasToday description]
-     * @return [type] [description]
-     */
-    public static function getCitasToday()
-    {
-        return self::where('date', date('Y-m-d'));
-    }
 }

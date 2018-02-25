@@ -39,7 +39,7 @@
                                     <th>Hospital</th>
                                     <th>Via de nacimiento</th>
                                     <th>Dia</th>
-                                    <th>Costo</th>
+                                    <th>Codigo</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>

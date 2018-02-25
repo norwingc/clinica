@@ -7198,7 +7198,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Costo</label>
+                            <label>Codigo</label>
                             <div>
                                 <input type="text" name="costo" id="costo_fecha_parto" class="form-control">
                             </div>

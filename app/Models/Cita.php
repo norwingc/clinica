@@ -14,8 +14,9 @@ class Cita extends Model
      * @var [type]
      */
     protected $fillable = [
-        'title', 'start', 'end', 'color'
+        'title', 'start', 'end'
     ];
+
 
     /**
      * [consulta description]
@@ -23,6 +24,15 @@ class Cita extends Model
      */
     public function consulta()
     {
-       return $this->belongsTo('App\Models\Consulta', 'consulta_id');
+        return $this->hasOne('App\Models\Consulta', 'cita_id');
+    }
+
+    /**
+     * [getCitasToday description]
+     * @return [type] [description]
+     */
+    public static function getCitasToday()
+    {
+        return self::where('date', date('Y-m-d'));
     }
 }

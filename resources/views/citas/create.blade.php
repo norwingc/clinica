@@ -28,9 +28,9 @@
                     {!! Form::open(['route' => 'citas.store', 'class' => 'form-horizontal']) !!}
                         <div class="form-group">
                             <div class="col-sm-3">
-                                <label>Cedula Paciente</label>
+                                <label>Telefono Paciente</label>
                                 <div>
-                                    <input type="text" class="form-control cedula" name="id_number" id="id_number" required>
+                                    <input type="text" class="form-control phone" name="phone" id="phone">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -48,15 +48,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Telefono Celular</label>
-                                <div>
-                                    <input type="text" class="form-control phone" name="celular" id="celular" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
                                 <label>Referido</label>
                                 <div>
-                                    <input type="text" class="form-control" name="referido" id="referido" required>
+                                    <input type="text" class="form-control" name="referido" id="referido">
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -79,8 +73,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-sm-3">
                                 <label>Costo U$</label>
                                 <div>
@@ -98,16 +90,34 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <label>Inicio de la cita</label>
+                            <div class="col-md-3">
+                                <label>Fecha</label>
                                 <div>
-                                    <input type="datetime-local" class="form-control" name="start" id="start" required>
+                                    <input type="date" class="form-control" name="date" id="date" required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Fin de la cita</label>
+                                <label>Hr de inicio</label>
                                 <div>
-                                    <input type="datetime-local" class="form-control" name="end" id="end" required>
+                                    <input type="time" class="form-control" name="start" id="start" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Duracion</label>
+                                <div>
+                                    <select class="form-control" name="duracion" id="duracion" required>
+                                        <option value="30 min">30 min</option>
+                                        <option value="1 hr">1 hr</option>
+                                        <option value="1 hr 30 min">1hr 30 min</option>
+                                        <option value="2 hr">2 hr</option>
+                                        <option value="Todo el dia">Todo el dia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Comentario</label>
+                                <div>
+                                    <textarea name="comentario" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -125,15 +135,14 @@
 @section('js')
     <script>
         function searchPaciente() {
-            let id = $('#id_number').val();
+            let phone = $('#phone').val();
 
-            if(id == '') return false;
+            if(phone == '') return false;
 
-            $.get('/Pacientes/findCedula/'+id, function(data){
+            $.get('/Pacientes/findPhone/'+phone, function(data){
                 console.log(data);
                 if(data.paciente != null){
                     $('#name').val(data.paciente.name);
-                    $('#celular').val(data.paciente.celular);
                     $('#referido').val(data.paciente.referido);
                 }else{
                     alert('Paciente no encotrado');

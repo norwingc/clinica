@@ -17,10 +17,9 @@ class CreatePacientesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('id_number')->nullable()->unique();
-            $table->string('celular')->nullable()->unique();
-            $table->string('conpania_celular')->nullable();
+            $table->string('phone')->nullable()->unique();
+            $table->string('compania_phone')->nullable();
             $table->string('referido')->nullable();
-            $table->string('email')->unique()->nullable();
             $table->date('birthday')->nullable();
             $table->string('convencional')->nullable();
             $table->string('address')->nullable();

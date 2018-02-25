@@ -12,6 +12,7 @@
 */
 
 Route::get('test', function(){
+    return \App\Models\Paciente::find(1)->consulta;
 });
 
 Route::fallback('ResourcesController@notFoud');
@@ -36,7 +37,8 @@ Route::middleware(['auth'])->group(function () {
         Route::name('paciente.getAge')->get('getAge/{fecha}', 'PacienteController@getAge');
         Route::name('pacientes')->get('/', 'PacienteController@index');
         Route::name('paciente.findById')->post('/User/Find', 'PacienteController@findByCedula');
-        Route::name('paciente.finCedula')->get('/findCedula/{cedula}', 'PacienteController@finCedula');
+        Route::name('paciente.findCedula')->get('/findCedula/{cedula}', 'PacienteController@findCedula');
+        Route::name('paciente.findPhone')->get('/findPhone/{phone}', 'PacienteController@findPhone');
 
         Route::name('paciente.show')->get('User/View/{paciente}', 'PacienteController@show');
 

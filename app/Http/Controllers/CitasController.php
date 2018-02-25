@@ -71,33 +71,74 @@ class CitasController extends Controller
     public function store(Request $request, Paciente $paciente = null)
     {
 
-        if($this->validateCita($request) == false){
-            session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
-            return back();
+
+        $fecha = $request->date;
+        $start = $fecha . ' '.$request->start;
+        $start = date('Y-m-d H:i:s', strtotime($start));
+
+        if($request->duracion == '30 min'){
+            $end = \Carbon\Carbon::parse($start)->addMinutes(30);
+        }else if($request->duracion == '1 hr'){
+            $end = \Carbon\Carbon::parse($start)->addMinutes(60);
+        }else if($request->duracion == '1hr 30min'){
+            $end = \Carbon\Carbon::parse($start)->addMinutes(90);
+        }elseif ($request->duracion == '2hr') {
+            $end = \Carbon\Carbon::parse($start)->addMinutes(120);
+        }else{
+            $end = null;
         }
 
-        if($paciente == null){
-            $paciente = Paciente::where('id_number', $request->id_number)->first();
+        if($request->duracion != 'Todo el dia'){
+            if($this->validateCita($start, $end, $request->doctor) == false){
+                session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
+                return back();
+            }
 
-            if(!$paciente){
-                $paciente            = new Paciente($request->all());
-                $paciente->id_number = strtoupper($request->id_number);
-                $paciente->name      = ucwords(strtolower($request->name));
-                $paciente->save();
+            if($paciente == null){
+                $paciente = Paciente::where('phone', $request->phone)->first();
+
+                if(!$paciente){
+                    $paciente       = new Paciente($request->all());
+                    $paciente->name = ucwords(strtolower($request->name));
+                    $paciente->save();
+                }
             }
         }
 
-        $consulta       = new consulta($request->all());
-        $consulta->date = $request->start;
-        $paciente->consulta()->save($consulta);
+        $cita        = new Cita();
+        $cita->start = $start;
+        $cita->end   = $end;
+        $cita->date  = $request->date;
 
-        $cita        = new Cita($request->all());
-        $cita->title = 'Paciente: '.$paciente->name . ' / costo: $' . $consulta->costo;
-        $cita->url   = '/Pacientes/User/View/'.$paciente->id;
-        if($request->doctor != 'Dr. Pavon') $cita->color = '#ff4f81';
-        if($consulta->examen_type != null) $cita->title = 'Paciente: '.$paciente->name.' / Examen: '. $consulta->examen_type;
+        if($request->duracion != 'Todo el dia'){
+            $cita->title = 'Paciente: '. $request->name . ' Examen: '. $request->examen_type .' Costo: $'. $request->costo . ' Comentario: '. $request->comentario;
+            $cita->url   = '/Pacientes/User/View/'.$paciente->id;
 
-        $consulta->cita()->save($cita);
+            if($request->doctor == 'Dr. Pavon'){
+                $cita->color ='#3c8dbc';
+            }else if ($request->doctor == 'Dra. Bravo') {
+                $cita->color = '#ff4f81';
+            }else{
+                $cita->color = '#00a65a';
+            }
+
+            $cita->save();
+
+        }else{
+            $cita->title   = $request->title;
+            $cita->all_day = true;
+            $cita->color   = '#ff0000';
+            $cita->start = $request->date . ' 00:00:00';
+            $cita->end   = $request->date . ' 23:59:00';
+            $cita->save();
+        }
+
+
+        $cita->consulta()->save(
+            $consulta = new Consulta($request->all())
+        );
+        $consulta->paciente_id = $paciente->id;
+        $consulta->update();
 
         session()->flash('message_success', "Cita Agregada");
         return back();
@@ -105,16 +146,18 @@ class CitasController extends Controller
 
     /**
      * [validateCita description]
-     * @param  [type] $request [description]
-     * @return [type]          [description]
+     * @param  [type] $start  [description]
+     * @param  [type] $end    [description]
+     * @param  [type] $doctor [description]
+     * @return [type]         [description]
      */
-    public function validateCita($request)
+    public function validateCita($start, $end, $doctor)
     {
-        $from = min($request->start, $request->end);
-        $till = max($request->start, $request->end);
+        $from = min($start, $end);
+        $till = max($start, $end);
 
-        $cita = Cita::with(['consulta' => function($query) use ($request){
-            $query->where('doctor', $request->doctor);
+        $cita = Cita::with(['consulta' => function($query) use ($doctor){
+            $query->where('doctor', $doctor);
         }])->where('start', '<=', $from)->where('end', '>=', $till)->first();
 
         //dd($cita && $cita->consulta);

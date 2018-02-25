@@ -63,8 +63,8 @@
         columns:[
             {data: 'name', name: 'name'},
             {data: 'id_number', name: 'id_number'},
-            {data: 'celular', name: 'celular'},
-            {data: 'id', name: 'id'},
+            {data: 'phone', name: 'phone'},
+            {data: 'consulta[0].examen_type', name: 'consulta[0].examen_type'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]
     });

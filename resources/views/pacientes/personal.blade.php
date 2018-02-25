@@ -39,7 +39,7 @@
                             <div class="col-sm-3">
                                 <label>Cedula Paciente</label>
                                 <div>
-                                    <input type="text" class="form-control cedula" name="id_number" id="id_number" value="{{ $paciente->id_number }}" required>
+                                    <input type="text" class="form-control cedula" name="id_number" id="id_number" value="{{ $paciente->id_number }}">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,17 @@
                             <div class="col-sm-3">
                                 <label>Telefono Celular</label>
                                 <div>
-                                    <input type="text" class="form-control phone" name="celular" id="celular" value="{{ $paciente->celular }}">
+                                    <input type="text" class="form-control phone" name="phone" id="phone" value="{{ $paciente->phone }}">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Compañia</label>
+                                <div>
+                                    <select class="form-control" name="compania_phone" id="compania_phone">
+                                        <option value="">Seleccione una</option>
+                                        <option value="Claro">Claro</option>
+                                        <option value="Movistar">Movistar</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -90,19 +100,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
+                                <label>Estado Civil</label>
+                                <div>
+                                    <input type="text" class="form-control" id="estado_civil" name="estado_civil" value="{{ $paciente->estado_civil }}">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
                                 <label>Contacto</label>
                                 <div>
                                     <input type="text" class="form-control" id="contacto" name="contacto" value="{{ $paciente->contacto }}">
                                 </div>
                             </div>
-                             <div class="col-sm-4">
+                             <div class="col-sm-3">
                                 <label>Parentesco</label>
                                 <div>
                                     <input type="text" class="form-control" id="parentesco" name="parentesco" value="{{ $paciente->parentesco }}">
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <label>Celular</label>
                                 <div>
                                     <input type="text" class="form-control phone" id="contacto_celular" name="contacto_celular" value="{{ $paciente->contacto_celular }}">
@@ -142,6 +158,11 @@
     <script>
         $('#escolaridad option').each(function(){
             if($(this).val() == '{{ $paciente->escolaridad }}'){
+                $(this).prop('selected', 'selected');
+            }
+        });
+        $('#compania_phone option').each(function(){
+            if($(this).val() == '{{ $paciente->compania_phone }}'){
                 $(this).prop('selected', 'selected');
             }
         });

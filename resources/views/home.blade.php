@@ -33,7 +33,7 @@
                             <!-- small box -->
                             <div class="small-box bg-yellow">
                                 <div class="inner">
-                                    <h3>{{ App\Models\Consulta::getCitasToday()->count() }}</h3>
+                                    <h3>{{ App\Models\Cita::getCitasToday()->count() }}</h3>
                                     <p>Citas del dia</p>
                                 </div>
                                 <div class="icon">

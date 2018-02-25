@@ -18,7 +18,12 @@ class PacienteController extends Controller
     public function get($id = null)
     {
         if($id == null){
-            return Datatables::of(Paciente::query())->addColumn('action', 'pacientes._action')->make(true);
+
+            $paciente = Paciente::with(['consulta'=>function($consulta){
+                $consulta->orderBy('created_at', 'DES');
+            }]);
+
+            return Datatables::of($paciente)->addColumn('action', 'pacientes._action')->make(true);
         }
 
         return response()->json([
@@ -67,9 +72,23 @@ class PacienteController extends Controller
      * @param  [type] $cedula [description]
      * @return [type]         [description]
      */
-    public function finCedula($cedula)
+    public function findCedula($cedula)
     {
         $paciente = Paciente::where('id_number', $cedula)->first();
+
+        return response()->json([
+            'paciente' => $paciente
+        ]);
+    }
+
+    /**
+     * [findPhone description]
+     * @param  [type] $phone [description]
+     * @return [type]        [description]
+     */
+    public function findPhone($phone)
+    {
+        $paciente = Paciente::where('phone', $phone)->first();
 
         return response()->json([
             'paciente' => $paciente
@@ -105,6 +124,18 @@ class PacienteController extends Controller
      */
     public function updatePersonal(Request $request, Paciente $paciente)
     {
+        if($request->id_number != $paciente->id_number){
+            $request->validate([
+                'id_number' => 'required|unique:pacientes',
+            ]);
+        }
+
+        if($request->phone != $paciente->phone){
+            $request->validate([
+                'phone'     => 'required|unique:pacientes',
+            ]);
+        }
+
         $paciente->update($request->all());
 
         session()->flash('message_success', "Informacion Actualizada");

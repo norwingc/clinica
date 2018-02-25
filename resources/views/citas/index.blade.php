@@ -63,7 +63,7 @@
         ajax: '{!! route('citas.get') !!}',
         columns:[
             {data: 'consulta.paciente.name', name: 'consulta.paciente.name'},
-            {data: 'consulta.date', name: 'consulta.date'},
+            {data: 'date', name: 'date'},
             {data: 'horario', name: 'horario'},
             {data: 'consulta.doctor', name: 'consulta.doctor'},
             {data: 'consulta.examen_type', name: 'consulta.examen_type'},

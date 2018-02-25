@@ -17,10 +17,9 @@ class CreateConsultasTable extends Migration
             $table->increments('id');
             $table->string('doctor');
             $table->double('costo');
-            $table->string('examen_type')->nullable();
-            $table->integer('examen_id')->nullable();
-            $table->integer('paciente_id')->unsigned();
-            $table->integer('cita_id')->unsigned();
+            $table->string('examen_type');
+            $table->integer('paciente_id')->nullable();
+            $table->integer('cita_id');
             $table->timestamps();
             $table->softDeletes();
         });

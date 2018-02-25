@@ -16,10 +16,11 @@ class CreateCitasTable extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
+            $table->boolean('all_day')->default(false);
             $table->string('color')->default('#3c8dbc');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->date('date');
             $table->timestamps();
             $table->softDeletes();

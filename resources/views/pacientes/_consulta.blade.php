@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-lg-6 col-sm-12">
             <p>
-                <b>Fecha de la consulta: </b> {{ $value->date }}
-                <b>Costo: </b> {{ $value->costo }}
+                <b>Fecha de la consulta: </b> {{ date('d/m/Y', strtotime($value->cita->date)) }}
+                <b>Costo: </b> ${{ $value->costo }}
             </p>
             <p>
                 <b>Doctor: </b> {{ $value->doctor }}

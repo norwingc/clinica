@@ -16,8 +16,8 @@ class Paciente extends Model
      * @var [type]
      */
     protected $fillable = [
-        'name', 'id_number', 'celular', 'referido', 'email', 'birthday', 'convencional',
-        'address', 'contacto', 'parentesco', 'contacto_celular', 'trabajo', 'escolaridad'
+        'name', 'id_number', 'phone', 'compania_phone', 'referido', 'email', 'birthday', 'convencional', 'address', 'estado_civil', 'contacto', 'parentesco',
+        'contacto_celular', 'trabajo', 'escolaridad'
     ];
 
 
@@ -48,6 +48,16 @@ class Paciente extends Model
         $date = explode("-", $nacimiento);
 
         return Carbon::createFromDate($date[0], $date[1], $date[2])->diff(Carbon::now())->format('%y años, %m meses y %d dias');
+    }
+
+    /**
+     * [getAgeAttribute description]
+     * @param  string $value [description]
+     * @return [type]        [description]
+     */
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['birthday'])->age;
     }
 
 
