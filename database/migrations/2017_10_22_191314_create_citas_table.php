@@ -16,6 +16,7 @@ class CreateCitasTable extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('comentario')->nullable();
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
             $table->boolean('all_day')->default(false);

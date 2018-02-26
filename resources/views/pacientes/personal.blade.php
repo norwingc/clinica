@@ -16,7 +16,7 @@
         <div class="personal-information col-xs-6 col-md-3 active"><a href="{{ route('paciente.personal', $paciente) }}">Informacion Personal</a></div>
         @role('doctor')
             <div class="history col-xs-6 col-md-3"><a href="{{ route('paciente.historia', $paciente) }}">Historia Clinica</a></div>
-            <div class="summary col-xs-6 col-md-3 active"><a href="{{ route('paciente.show', $paciente) }}">Resumen Clinico</a></div>
+            <div class="summary col-xs-6 col-md-3"><a href="{{ route('paciente.show', $paciente) }}">Resumen Clinico</a></div>
         @endrole
     </div>
 </div>
@@ -29,7 +29,7 @@
                     <i class="ion ion-clipboard"></i>
                     <h3 class="box-title">Crear Cita</h3>
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-info" data-paciente="{{ $paciente->id }}" onclick="addNextCita($(this))">Agregar Proxima Cita</button>
                     </div>
                 </div>
                 @include('includes._message')
@@ -83,13 +83,19 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Compañia</label>
+                                <label>Compañia Celular</label>
                                 <div>
                                     <select class="form-control" name="compania_phone" id="compania_phone">
                                         <option value="">Seleccione una</option>
                                         <option value="Claro">Claro</option>
                                         <option value="Movistar">Movistar</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label>Referido</label>
+                                <div>
+                                    <input type="text" name="referido" class="form-control" id="referido" value="{{ $paciente->referido }}">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -152,6 +158,10 @@
         </div>
     </div>
 </section>
+
+@include('includes.citas._modal')
+@include('includes.citas._script')
+
 @endsection
 
 @section('js')

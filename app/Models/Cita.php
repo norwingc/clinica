@@ -14,7 +14,7 @@ class Cita extends Model
      * @var [type]
      */
     protected $fillable = [
-        'title', 'start', 'end'
+        'title', 'start', 'end', 'comentario'
     ];
 
 

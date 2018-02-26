@@ -18,6 +18,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
+    @include('includes._message')
     <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
@@ -25,10 +26,10 @@
                     <i class="ion ion-clipboard"></i>
                     <h3 class="box-title">Citas</h3>
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-danger" onclick="addAllDayCita()">Agregar dia sin citas</button>
                     </div>
                 </div>
-                @include('includes._message')
+
                 <div class="box-body">
                     <div class="table-responsive">
                         <table id="table" class="table table-bordered table-hover">
@@ -49,6 +50,11 @@
         </div>
     </div>
 </section>
+
+
+@include('includes.citas._modal')
+@include('includes.citas._script')
+
 @endsection
 
 @section('js')
@@ -70,5 +76,6 @@
             {data: 'action', name: 'id', orderable: false, searchable: false}
         ]
     });
+
 </script>
 @endsection

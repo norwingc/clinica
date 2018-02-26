@@ -20,12 +20,12 @@
                     <i class="ion ion-clipboard"></i>
                     <h3 class="box-title">Crear Cita</h3>
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-danger" onclick="addAllDayCita($(this))">Agregar dia sin citas</button>
                     </div>
                 </div>
                 @include('includes._message')
                 <div class="box-body">
-                    {!! Form::open(['route' => 'citas.store', 'class' => 'form-horizontal']) !!}
+                        {!! Form::open(['route' => 'citas.store', 'class' => 'form-horizontal', 'id' => 'form_citas']) !!}
                         <div class="form-group">
                             <div class="col-sm-3">
                                 <label>Telefono Paciente</label>
@@ -108,9 +108,8 @@
                                     <select class="form-control" name="duracion" id="duracion" required>
                                         <option value="30 min">30 min</option>
                                         <option value="1 hr">1 hr</option>
-                                        <option value="1 hr 30 min">1hr 30 min</option>
+                                        <option value="1 hr 30 min">1 hr 30 min</option>
                                         <option value="2 hr">2 hr</option>
-                                        <option value="Todo el dia">Todo el dia</option>
                                     </select>
                                 </div>
                             </div>
@@ -130,6 +129,10 @@
         </div>
     </div>
 </section>
+
+@include('includes.citas._modal')
+@include('includes.citas._script')
+
 @endsection
 
 @section('js')
@@ -144,6 +147,9 @@
                 if(data.paciente != null){
                     $('#name').val(data.paciente.name);
                     $('#referido').val(data.paciente.referido);
+
+                    $('#form_citas').attr('action', "{{ url('/') }}/Citas/store/"+ data.paciente.id);
+
                 }else{
                     alert('Paciente no encotrado');
                 }

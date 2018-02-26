@@ -102,6 +102,10 @@ class PacienteController extends Controller
      */
     public function show(Paciente $paciente)
     {
+        if(\Auth::user()->isRole('recepcion')){
+            return redirect()->route('paciente.personal', [$paciente]);
+        }
+
         $paciente = Paciente::with('consulta', 'consulta.cita')->find($paciente->id);
         return view('pacientes.user', ['paciente' => $paciente]);
     }
@@ -149,6 +153,10 @@ class PacienteController extends Controller
      */
     public function historia(Paciente $paciente)
     {
+        if(\Auth::user()->isRole('recepcion')){
+            return redirect()->route('paciente.personal', [$paciente]);
+        }
+        
         $paciente = Paciente::with('historia')->find($paciente->id);
         return view('pacientes.historia', ['paciente' => $paciente]);
     }

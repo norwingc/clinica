@@ -95,7 +95,11 @@ Route::middleware(['auth'])->group(function () {
         Route::name('citas.api')->get('/api', 'CitasController@api');
         Route::name('citas.get')->get('/get/{id?}', 'CitasController@get');
         Route::name('citas.create')->get('/Create', 'CitasController@create');
-        Route::name('citas.store')->post('/Create/{paciente?}', 'CitasController@store');
+        Route::name('citas.store')->post('/store/{paciente?}', 'CitasController@store');
+
+        Route::name('citas.update')->post('/update/{cita}', 'CitasController@update');
+        Route::name('citas.delete')->get('/delete/{cita}', 'CitasController@delete');
+        Route::name('citas.all.day')->post('/AllDay', 'CitasController@storeCitaAllDay');
     });
 
     Route::prefix('Reports')->group(function () {

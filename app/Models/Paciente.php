@@ -42,7 +42,7 @@ class Paciente extends Model
      */
     public function getAge()
     {
-        if($this->birthday == null) return 'Ingresar Fecha de nacimiento';
+        if($this->birthday == null) return '';
 
         $nacimiento = $this->birthday;
         $date = explode("-", $nacimiento);
