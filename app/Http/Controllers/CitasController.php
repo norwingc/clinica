@@ -88,7 +88,6 @@ class CitasController extends Controller
             $end = \Carbon\Carbon::parse($start)->addMinutes(120);
         }
 
-
         if($this->validateCita($start, $end, $request->doctor) == false){
             session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
             return back();
@@ -169,9 +168,9 @@ class CitasController extends Controller
             $end = \Carbon\Carbon::parse($start)->addMinutes(30);
         }else if($request->duracion == '1 hr'){
             $end = \Carbon\Carbon::parse($start)->addMinutes(60);
-        }else if($request->duracion == '1hr 30min'){
+        }else if($request->duracion == '1 hr 30 min'){
             $end = \Carbon\Carbon::parse($start)->addMinutes(90);
-        }elseif ($request->duracion == '2hr') {
+        }elseif ($request->duracion == '2 hr') {
             $end = \Carbon\Carbon::parse($start)->addMinutes(120);
         }
 
