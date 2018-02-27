@@ -220,8 +220,11 @@
         </p>
 
         <p>
-            <b>TORAX FETAL</b>  Ambos pulmones de tamaño normal: {{ $value->torax_pulmon }}. Lesiones ocupantes de espacio: {{ $value->torax_lesion }}. Presencia de masa quística: {{ $value->torax_masa_quistica }}.
-            Presencia de masa solida: {{ $value->torax_masa_solida }}. Descripción: {{ $value->torax_descripcion }}. Vaso nutricio en masa: {{ $value->torax_nutricion_masa }}.
+            <b>TORAX FETAL</b>  Ambos pulmones de tamaño normal: {{ $value->torax_pulmon }}.
+             @if($value->torax_pulmon == 'No')
+                Lesiones ocupantes de espacio: {{ $value->torax_lesion }}. Presencia de masa quística: {{ $value->torax_masa_quistica }}.
+                Presencia de masa solida: {{ $value->torax_masa_solida }}. Descripción: {{ $value->torax_descripcion }}. Vaso nutricio en masa: {{ $value->torax_nutricion_masa }}.
+            @endif
         </p>
 
         <p>
@@ -232,25 +235,24 @@
 
         <p>
             <b>Abdomen:</b> Inserción de cordón normal: {{ $value->insercion_cordon }}. Presencia de 3 vasos:  {{ $value->presencia_vasos }}. Arteria umbilical única {{ $value->arteria_umbilical }}.
-            Pared abdominal integra {{ $value->pared_integra }}.
+            Pared abdominal integra {{ $value->pared_integra }}. <br>
             @if($value->pared_integra == 'No')
-                Defecto para umbilical: {{ $value->defecto_umbilical }}. Defecto en base de cordón: {{ $value->defecto_cordon }}. Medida del defecto: {{ $value->defecto_medida }}mm.
-                <p>
-                    <b>Estructuras presentes en defecto:</b> Cubierto por membrana: {{ $value->cubierta_membrana }}. Asas de intestino delgado {{ $value->asas_intestino_delgado }}. Asas de intestino grueso {{ $value->asas_intestino_grueso }}.
-                    Dilatación de asas intra abdominal: {{ $value->dilatacion_intra_abdominal }}. Medición: {{ $value->medicion_intra_abdominal }}mm. Dilatación de asas extra abdominal: {{ $value->dilatacion_extra_abdominal }} Medición: {{ $value->medicion_extra_abdominal }}mm.
-                    Sospecha de peritonitis: {{ $value->sospecha_peritonitis }}. Cámara gástrica {{ $value->camara_gastrica }}. Vejiga urinaria presente: {{ $value->vejiga_urinaria }}
-                </p>
+                Defecto para umbilical: {{ $value->defecto_umbilical }}. Defecto en base de cordón: {{ $value->defecto_cordon }}. Medida del defecto: {{ $value->defecto_medida }}mm. <br>
+
+                <b>Estructuras presentes en defecto:</b> Cubierto por membrana: {{ $value->cubierta_membrana }}. Asas de intestino delgado {{ $value->asas_intestino_delgado }}. Asas de intestino grueso {{ $value->asas_intestino_grueso }}.
+                Dilatación de asas intra abdominal: {{ $value->dilatacion_intra_abdominal }}. Medición: {{ $value->medicion_intra_abdominal }}mm. Dilatación de asas extra abdominal: {{ $value->dilatacion_extra_abdominal }} Medición: {{ $value->medicion_extra_abdominal }}mm.
+                Sospecha de peritonitis: {{ $value->sospecha_peritonitis }}. Cámara gástrica {{ $value->camara_gastrica }}. Vejiga urinaria presente: {{ $value->vejiga_urinaria }}
+
             @endif
-            <p>
-                Cámara gástrica Insitu: {{ $value->camara_gastrica_insitu }}. Riñon Derecho: {{ $value->rinon_derecho }}. Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Riñon izquierdo: {{ $value->rinon_izquierdo }}. Riñon izquierdo tamaño: {{ $value->rinon_izquierdo_tanano }}.
-                Pelvis renal derecha: {{ $value->pelvis_derecha }}mm.  Pelvis renal izquierda: {{ $value->pelvis_izquierda }}mm. Presencia de Hidronefrosis: {{ $value->hidronefosis }}.
-                Grado de Hidronefrosis: {{ $value->grado }}. Glandulas suprarrenales: {{ $value->glandulas_suprarrenales }}. Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosameinto de pared vesical: {{ $value->engrosamiento_pared }}.
-            </p>
+
+            Cámara gástrica Insitu: {{ $value->camara_gastrica_insitu }}. Riñon Derecho: {{ $value->rinon_derecho }}. Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Riñon izquierdo: {{ $value->rinon_izquierdo }}. Riñon izquierdo tamaño: {{ $value->rinon_izquierdo_tanano }}.
+            Pelvis renal derecha: {{ $value->pelvis_derecha }}mm.  Pelvis renal izquierda: {{ $value->pelvis_izquierda }}mm. Presencia de Hidronefrosis: {{ $value->hidronefosis }}.
+            Grado de Hidronefrosis: {{ $value->grado }}. Glandulas suprarrenales: {{ $value->glandulas_suprarrenales }}. Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosameinto de pared vesical: {{ $value->engrosamiento_pared }}.
         </p>
 
          <p>
-            <b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. Extremidad afectada: {{ $value->extremidades_superiores_afectada }}.
-            <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}
+            <b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. @if($value->extremidades_superiores_integras == 'No') Extremidad afectada: {{ $value->extremidades_superiores_afectada }}. @endif
+            <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. @if($value->extremidades_inferiores_integras == 'No') Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}. @endif
         </p>
 
         <p>
@@ -264,20 +266,22 @@
     <p>Revision: {{ $estructural->revision }}</p>
 
     <p class="sub_titul"><b>Conclusiones</b></p>
-    <p style="margin:0">Embarazo por fetometría (Semanas): {{ $estructural->conclusion_embarazo_fetometria }}</p>
-    <p style="margin:0">Conclusiones: {{ $estructural->concluciones }}</p>
-    <p style="margin:0">Riesgo de parto Pretermino: {{ $estructural->conclusion_riesgo_parto_pretermino }}</p>
-    <p style="margin:0">Riesgo de Pre eclampsia: {{ $estructural->conclusion_riesgo_preeclampsia }}</p>
-    <p style="margin:0">Riesgo de Hipertensión tardía: {{ $estructural->conclusion_riesgo_hipertension }}</p>
-    <p style="margin:0">Riesgo de Restricción del Crecimiento: {{ $estructural->conclusion_riesgo_restriccion_crecimiento }}</p>
+    <p style="margin:0">Embarazo por fetometría: {{ $estructural->conclusion_embarazo_fetometria }}</p>
+    <p style="margin:0">{{ $estructural->concluciones }}</p>
+    <p style="margin:0">
+        Riesgo de parto Pretermino: {{ $estructural->conclusion_riesgo_parto_pretermino }}.
+        Riesgo de Pre eclampsia: {{ $estructural->conclusion_riesgo_preeclampsia }}.
+        Riesgo de Hipertensión tardía: {{ $estructural->conclusion_riesgo_hipertension }}.
+        Riesgo de Restricción del Crecimiento: {{ $estructural->conclusion_riesgo_restriccion_crecimiento }}.
+    </p>
 
-    <p class="sub_titul"><b>Recomendaciones</b></p>
-    <p style="margin:0">Continuar vigilancia y curva de crecimiento (semanas): {{ $estructural->conclusion_vigilancia_crecimiento }}</p>
-
-   @if($estructural->comentarios != '')
+    @if($estructural->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $estructural->comentarios }}</p>
     @endif
+
+    <p class="sub_titul"><b>Recomendaciones</b></p>
+    <p style="margin:0">Continuar vigilancia y curva de crecimiento (semanas): {{ $estructural->conclusion_vigilancia_crecimiento }}</p>
 
     @include('includes._firmas')
 </body>

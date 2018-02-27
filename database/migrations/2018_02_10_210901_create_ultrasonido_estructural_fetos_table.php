@@ -102,7 +102,7 @@ class CreateUltrasonidoEstructuralFetosTable extends Migration
             $table->string('columna_descipcion')->nullable();
             $table->string('hueso_nasal', 5)->nullable();
             $table->string('retrognatia', 5)->nullable();
-            $table->string('labio_normal', 20)->nullable();
+            $table->string('labio_normal')->nullable();
             $table->string('clasificacion_labio')->nullable();
             $table->string('torax_pulmon', 5)->nullable();
             $table->string('torax_lesion', 5)->nullable();

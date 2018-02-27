@@ -15,7 +15,7 @@ class UltrasonidoEstructural extends Model
      */
     protected $fillable = [
         "referido", "edad", "date", "paridad", "feto", "revision", "conclusion_riesgo_parto_pretermino", "conclusion_riesgo_preeclampsia", "conclusion_riesgo_hipertension",
-        "conclusion_riesgo_restriccion_crecimiento", "conclusion_embarazo_fetometria", "conclusion_vigilancia_crecimiento", "concluciones", "comentarios", "recordatorio"
+        "conclusion_riesgo_restriccion_crecimiento", "conclusion_embarazo_fetometria", "concluciones", "comentarios", "recomendaciones", "recordatorio"
     ];
 
     /**

@@ -206,6 +206,9 @@
         <p>{{ $ecocardio->comentarios }}</p>
     @endif
 
+    <p class="sub_titul"><b>Recomendaciones</b></p>
+    <p>{{ $ecocardio->recomendaciones }}</p>
+
     @include('includes._firmas')
 </body>
 </html>

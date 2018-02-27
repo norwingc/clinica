@@ -2040,6 +2040,14 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_ecocardiografia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
                             <label>Recordatorio</label>
                             <div>
                                 <textarea name="recordatorio" id="recordatorio_ecocardiografia" class="form-control"></textarea>
@@ -3234,18 +3242,16 @@
                     <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                          <div class="col-md-6">
-                            <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
+                            <label>Embarazo por fetometría (Semanas)</label>
                             <div>
                                 <input type="text" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_neurosonografia" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <label>Conclusiones</label>
+                            <label></label>
                             <div>
-                                <select name="concluciones" id="concluciones_neurosonografia" class="form-control">
-                                    <option value="Neurosonografia sin alteraciones">Neurosonografia sin alteraciones</option>
-                                </select>
+                                <textarea name="concluciones" id="concluciones_neurosonografia" class="form-control">Neurosonografia sin alteraciones</textarea>
                             </div>
                         </div>
                     </div>
@@ -3254,6 +3260,14 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_neurosonografia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_neurosonografia" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -4089,7 +4103,8 @@
                                         <select name="labio_normal" id="labio_normal_estructural" class="form-control" required onchange="labioNormal($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
-                                            <option value="No Valorable">No Valorable</option>
+                                            <option value="No valorable por edad gestacional">No Valorable por edad gestacional</option>
+                                            <option value="No valorable por posicion fetal">No valorable por posicion fetal</option>
                                         </select>
                                     </div>
                                 </div>
@@ -4110,50 +4125,52 @@
                                 <div class="col-md-3">
                                     <label>Ambos pulmones de tamaño normal</label>
                                     <div>
-                                        <select name="torax_pulmon" id="torax_pulmon_estructural" class="form-control" required>
+                                        <select name="torax_pulmon" id="torax_pulmon_estructural" class="form-control" required onchange="toraxPulmon($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Lesiones ocupantes de espacio </label>
-                                    <div>
-                                        <select name="torax_lesion" id="torax_lesion_estructural" class="form-control" required>
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
+                                <div class="torax_pulmon_no_form" style="display:none">
+                                    <div class="col-md-3">
+                                        <label>Lesiones ocupantes de espacio </label>
+                                        <div>
+                                            <select name="torax_lesion" id="torax_lesion_estructural" class="form-control" required>
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Presencia de masa quística</label>
-                                    <div>
-                                        <select name="torax_masa_quistica" id="torax_masa_quistica_estructural" class="form-control" required>
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Presencia de masa quística</label>
+                                        <div>
+                                            <select name="torax_masa_quistica" id="torax_masa_quistica_estructural" class="form-control" required>
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Presencia de masa solida</label>
-                                    <div>
-                                        <select name="torax_masa_solida" id="torax_masa_solida_estructural" class="form-control" required>
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Presencia de masa solida</label>
+                                        <div>
+                                            <select name="torax_masa_solida" id="torax_masa_solida_estructural" class="form-control" required>
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Descripción</label>
-                                    <div>
-                                       <textarea name="torax_descripcion" id="torax_descripcion_estructural" class="form-control"></textarea>
+                                    <div class="col-md-3">
+                                        <label>Descripción</label>
+                                        <div>
+                                           <textarea name="torax_descripcion" id="torax_descripcion_estructural" class="form-control"></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                 <div class="col-md-3">
+                                    <div class="col-md-3">
                                     <label>Vaso nutricio en masa</label>
                                     <div>
                                         <input type="text" name="torax_nutricion_masa" id="torax_nutricion_masa_estructural" class="form-control">
                                     </div>
+                                </div>
                                 </div>
                             </div>
                             <p class="sub_titul"><b>Corazon</b></p>
@@ -4238,6 +4255,7 @@
                                         <select name="corazon_corte_vasos" id="corazon_corte_vasos_estructural" class="form-control" required>
                                             <option value="Normal">Normal</option>
                                             <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
                                         </select>
                                     </div>
                                 </div>
@@ -4535,13 +4553,13 @@
                                 <div class="col-md-3">
                                     <label>Integras</label>
                                     <div>
-                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_estructural" class="form-control" required>
+                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_estructural" class="form-control" required onchange="extremidadSuperior($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 extermidadSuperiorAfectada" style="display:none">
                                     <label>Extremidad Afectada</label>
                                     <div>
                                         <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_estructural" class="form-control">
@@ -4562,13 +4580,13 @@
                                 <div class="col-md-3">
                                     <label>Integras</label>
                                     <div>
-                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_estructural" class="form-control" required>
+                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_estructural" class="form-control" required onchange="extremidadInferior($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 extermidadInferiorAfectada" style="display:none">
                                     <label>Extremidad Afectada</label>
                                     <div>
                                         <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_estructural" class="form-control">
@@ -4718,6 +4736,18 @@
                     </div>
                     <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Embarazo por fetometría (Semanas)</label>
+                            <div>
+                                <input type="text" name="conclusion_embarazo_fetometria" id="conclusion_embarazo_fetometria_estructural"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label></label>
+                            <div>
+                                <textarea name="concluciones" id="concluciones_estructural" class="form-control">Sin alteraciones estructurales evidentes ni marcadores para cromosomopatías de los aun detectables a esta edad gestacional</textarea>
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <label>Riesgo de parto Pretermino</label>
                             <div>
@@ -4758,27 +4788,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
-                            <div>
-                                <input type="number" name="conclusion_embarazo_fetometria" id="conclusion_embarazo_fetometria_estructural"  class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Continuar vigilancia y curva de crecimiento (semanas)</label>
-                            <div>
-                                <input type="number" name="conclusion_vigilancia_crecimiento" id="conclusion_vigilancia_crecimiento_estructural"  class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Conclusiones</label>
-                            <div>
-                                <select name="concluciones" id="concluciones_estructural" class="form-control">
-                                    <option value="Sin alteraciones estructurales evidentes ni marcadores para cromosomopatías de los aun detectables a esta edad gestacional">Sin alteraciones estructurales evidentes ni marcadores para cromosomopatías de los aun detectables a esta edad gestacional</option>
-                                    <option value="Bajo Riesgo para Pre eclampsia, RCIU y parto pretermino">Bajo Riesgo para Pre eclampsia, RCIU y parto pretermino</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="form-group">
@@ -4786,6 +4795,15 @@
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_estructural" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_estructural" class="form-control">Continuar vigilancia y curva de crecimiento (semanas)</textarea>
                             </div>
                         </div>
                     </div>
@@ -4998,7 +5016,7 @@
                                     <label>Hueso nasal</label>
                                     <div>
                                         <select name="hueso_nasal" id="hueso_nasal_1trimestre" class="form-control" required onchange="huesoNasalAusente($(this))">
-                                            <option value="Presentre">Presentre</option>
+                                            <option value="Presente">Presente</option>
                                             <option value="Hipoplasico">Hipoplasico</option>
                                             <option value="Ausente">Ausente</option>
                                         </select>
@@ -5253,13 +5271,13 @@
                                 <div class="col-md-3">
                                     <label>Integras</label>
                                     <div>
-                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_1trimestre" class="form-control" required>
+                                        <select name="extremidades_superiores_integras" id="extremidades_superiores_integras_1trimestre" class="form-control" required onchange="extremidadSuperior($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 extermidadSuperiorAfectada" style="display:none">
                                     <label>Extremidad Afectada</label>
                                     <div>
                                         <input type="text" name="extremidades_superiores_afectada" id="extremidades_superiores_afectada_1trimestre" class="form-control">
@@ -5280,13 +5298,13 @@
                                 <div class="col-md-3">
                                     <label>Integras</label>
                                     <div>
-                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_1trimestre" class="form-control" required>
+                                        <select name="extremidades_inferiores_integras" id="extremidades_inferiores_integras_1trimestre" class="form-control" required onchange="extremidadInferior($(this))">
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 extermidadInferiorAfectada" style="display:none">
                                     <label>Extremidad Afectada</label>
                                     <div>
                                         <input type="text" name="extremidades_inferiores_afectada" id="extremidades_inferiores_afectada_1trimestre" class="form-control">
@@ -5520,9 +5538,9 @@
                     <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                         <div class="col-md-3">
-                            <label>Feto por longitud craneo cauda (Semanas)</label>
+                            <label>Feto por longitud craneo cauda</label>
                             <div>
-                                <input type="number" name="conclusion_lcc" id="conclusion_lcc_1trimestre"  class="form-control">
+                                <input type="text" name="conclusion_lcc" id="conclusion_lcc_1trimestre"  class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -5575,19 +5593,19 @@
                                 </select>
                             </div>
                         </div>
-
-                        <div class="col-md-12">
-                            <label>Recomendaciones</label>
-                            <div>
-                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revison estructural ente la semana 18 a 24</textarea>
-                            </div>
-                        </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
                             <label>Comentarios</label>
                             <div>
                                 <textarea name="comentarios" id="comentarios_1trimestre" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revison estructural ente la semana 18 a 24</textarea>
                             </div>
                         </div>
                     </div>
@@ -7113,18 +7131,16 @@
                     <p class="sub_titul"><b>Conclusiones</b></p>
                     <div class="form-group">
                         <div class="col-md-6">
-                            <label>Embarazo de gestación por fetometría acorde a US evolutivo (Semanas)</label>
+                            <label>Embarazo por fetometría (Semanas)</label>
                             <div>
-                                <input type="number" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_doppler" class="form-control">
+                                <input type="text" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_doppler" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
-                                <select name="concluciones[]" id="concluciones_doppler" class="form-control selectpicker" multiple>
-                                    <option value="Perfil Biofísico: 8/8">Perfil Biofísico: 8/8</option>
-                                    <option value="Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado">Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado</option>
-                                </select>
+                                <textarea name="concluciones" id="concluciones_doppler" class="form-control" style="height: 100px">Perfil Biofísico: 8/8. Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado
+                                </textarea>
                             </div>
                         </div>
                     </div>
@@ -7138,13 +7154,20 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_doppler" class="form-control">Continuar vigilancia y curva de crecimiento en semanas.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
                             <label>Recordatorio</label>
                             <div>
                                 <textarea name="recordatorio" id="recordatorio_doppler" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
-                    <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" id="Doppler" data-examen="#Doppler" onclick="saveDoppler($(this))">Guardar Cambios</button>

@@ -305,9 +305,6 @@ class ConsultasController extends Controller
         $Doppler = new Doppler($request->all());
         $consulta->doppler()->save($Doppler);
 
-        (isset($request->concluciones)) ? $Doppler->concluciones = implode(', ', $request->concluciones) : '';
-        $Doppler->update();
-
         foreach ($request->fetos as $key => $value) {
 
             $Doppler->fetos()->save(
@@ -425,11 +422,7 @@ class ConsultasController extends Controller
         $fecha = FechaProcedimiento::with('paciente');
 
         return Datatables::of($fecha)->addColumn('action', function($fecha){
-            if(\Auth::user()->isRole('doctor')){
-                return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
-            }else{
-                return "<div class='actions'><a href='". route('paciente.personal', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
-            }
+            return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
         })->make(true);
     }
 }

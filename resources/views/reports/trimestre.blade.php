@@ -102,8 +102,8 @@
         @endif
         <p>Cámara gástrica Insitu: {{ $value->camara_gastrica }}. Vejiga Urinaria Insitu: {{ $value->vejiga }}.</p>
         <p>
-            <b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. Extremidad afectada: {{ $value->extremidades_superiores_afectada }}.
-            <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}
+            <b>Extremidades superiores</b> Ambas presentes: {{ $value->extremidades_superiores }}. Integras: {{ $value->extremidades_superiores_integras }}. @if($value->extremidades_superiores_integras == 'No') Extremidad afectada: {{ $value->extremidades_superiores_afectada }}. @endif
+            <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. @if($value->extremidades_inferiores_integras == 'No') Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}. @endif
         </p>
         <p>
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm.
@@ -149,20 +149,22 @@
     <p>Bidimensional: {{ $trimestre->bidimensional }}. Doppler color: {{ $trimestre->doppler_color }}</p>
 
     <p class="sub_titul"><b>Conclusiones</b></p>
-    <p style="margin: 0">Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }} (Semanas)</p>
-    <p style="margin: 0">Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}</p>
-    <p style="margin: 0">Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}</p>
-    <p style="margin: 0">Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}</p>
-    <p style="margin: 0">Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}</p>
-    <p style="margin: 0">Riesgo para Parto Pretermino: {{ $trimestre->conclusion_riesago_parto_pretermino }}</p>
-
-    <p class="sub_titul"><b>Recomendaciones</b></p>
-    <p>{{ $trimestre->recomendaciones }}</p>
+    <p style="margin: 0">
+        Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }}.
+        Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}.
+        Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}.
+        Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}.
+        Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}.
+        Riesgo para Parto Pretermino: {{ $trimestre->conclusion_riesago_parto_pretermino }}.
+    </p>
 
     @if($trimestre->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $trimestre->comentarios }}</p>
     @endif
+
+    <p class="sub_titul"><b>Recomendaciones</b></p>
+    <p>{{ $trimestre->recomendaciones }}</p>
 
     @include('includes._firmas')
 </body>

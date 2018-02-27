@@ -225,13 +225,16 @@
 
     <p class="sub_titul"><b>Conclusion</b></p>
 
-    <p style="margin: 0">Embarazo por fetometría (Semanas): {{ $neurosono->conclusion_embarazo_gestacion }}</p>
+    <p style="margin: 0">Embarazo por fetometría: {{ $neurosono->conclusion_embarazo_gestacion }}</p>
     <p style="margin: 0">{{ $neurosono->concluciones }}</p>
 
     @if($neurosono->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $neurosono->comentarios }}</p>
     @endif
+
+    <p class="sub_titul"><b>Recomendaciones</b></p>
+    <p>{{ $neurosono->recomendaciones }}</p>
 
     @include('includes._firmas')
 </body>

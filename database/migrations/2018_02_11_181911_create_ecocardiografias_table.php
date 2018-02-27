@@ -24,6 +24,7 @@ class CreateEcocardiografiasTable extends Migration
             $table->string('revision')->nullable();
             $table->text('concluciones')->nullable();
             $table->text('comentarios')->nullable();
+            $table->text('recomendaciones')->nullable();
             $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();

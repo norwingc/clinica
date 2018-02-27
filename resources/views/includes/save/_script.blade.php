@@ -80,9 +80,9 @@
             "conclusion_riesgo_hipertension"            : $(form).find('#conclusion_riesgo_hipertension_estructural').val(),
             "conclusion_riesgo_restriccion_crecimiento" : $(form).find('#conclusion_riesgo_restriccion_crecimiento_estructural').val(),
             "conclusion_embarazo_fetometria"            : $(form).find('#conclusion_embarazo_fetometria_estructural').val(),
-            "conclusion_vigilancia_crecimiento"         : $(form).find('#conclusion_vigilancia_crecimiento_estructural').val(),
             "concluciones"                              : $(form).find('#concluciones_estructural').val(),
             "comentarios"                               : $(form).find('#comentarios_estructural').val(),
+            "recomendaciones"                           : $(form).find('#recomendaciones_estructural').val(),
             "recordatorio"                              : $(form).find('#recordatorio_estructural').val(),
             "fetos"                                     : fetos
         };
@@ -119,6 +119,7 @@
             "conclusion_embarazo_gestacion" : $(form).find('#conclusion_embarazo_gestacion_neurosonografia').val(),
             "concluciones"                  : $(form).find('#concluciones_neurosonografia').val(),
             "comentarios"                   : $(form).find('#comentarios_neurosonografia').val(),
+            "recomendaciones"               : $(form).find('#recomendaciones_neurosonografia').val(),
             "recordatorio"                  : $(form).find('#recordatorio_neurosonografia').val(),
             fetos                           : fetos
         };
@@ -146,17 +147,18 @@
         addFeto($(form).find('#child_ecocardiografia'), 'Ecocardiografia');
 
         var data = {
-            "_token"       : _token,
-            "referido"     : $(form).find('#referido').val(),
-            "edad"         : $(form).find('#edad_ecocardiografia').val(),
-            "date"         : $(form).find('#date_ecocardiografia').val(),
-            "paridad"      : $(form).find('#paridad_ecocardiografia').val(),
-            "feto"         : $(form).find('#feto_ecocardiografia').val(),
-            "revision"     : $(form).find('#revision_ecocardiografia').val(),
-            "concluciones" : $(form).find('#concluciones_ecocardiografia').val(),
-            "comentarios"  : $(form).find('#comentarios_ecocardiografia').val(),
-            "recordatorio" : $(form).find('#recordatorio_ecocardiografia').val(),
-            "fetos"        : fetos
+            "_token"          : _token,
+            "referido"        : $(form).find('#referido').val(),
+            "edad"            : $(form).find('#edad_ecocardiografia').val(),
+            "date"            : $(form).find('#date_ecocardiografia').val(),
+            "paridad"         : $(form).find('#paridad_ecocardiografia').val(),
+            "feto"            : $(form).find('#feto_ecocardiografia').val(),
+            "revision"        : $(form).find('#revision_ecocardiografia').val(),
+            "concluciones"    : $(form).find('#concluciones_ecocardiografia').val(),
+            "comentarios"     : $(form).find('#comentarios_ecocardiografia').val(),
+            "recomendaciones" : $(form).find('#recomendaciones_ecocardiografia').val(),
+            "recordatorio"    : $(form).find('#recordatorio_ecocardiografia').val(),
+            "fetos"           : fetos
         }
 
         $.post($(form).attr('action'), data, function(resp){
@@ -192,6 +194,7 @@
             "conclusion_embarazo_gestacion" : $(form).find('#conclusion_embarazo_gestacion_doppler').val(),
             "concluciones"                  : $(form).find('#concluciones_doppler').val(),
             "comentarios"                   : $(form).find('#comentarios_doppler').val(),
+            "recomendaciones"               : $(form).find('#recomendaciones_doppler').val(),
             "recordatorio"                  : $(form).find('#recordatorio_doppler').val(),
             "fetos"                         : fetos
         }

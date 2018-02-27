@@ -193,13 +193,16 @@
 
     <p class="sub_titul"><b>Conclusion</b></p>
 
-    <p style="margin:0">Embarazo de gestación por fetometría acorde a US evolutivo (Semanas): {{ $doppler->conclusion_embarazo_gestacion }}</p>
+    <p style="margin:0">Embarazo por fetometría de: {{ $doppler->conclusion_embarazo_gestacion }}</p>
     <p style="margin:0">{{ $doppler->concluciones }}</p>
 
      @if($doppler->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $doppler->comentarios }}</p>
     @endif
+
+    <p class="sub_titul"><b>Recomendaciones</b></p>
+    <p>{{ $ecocardio->recomendaciones }}</p>
 
     @include('includes._firmas')
 </body>
