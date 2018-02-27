@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
 
         /*
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
 
     ],
 
