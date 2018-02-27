@@ -42,7 +42,7 @@
                         <p><strong>Cedula:</strong> {{ $paciente->id_number }}</p>
                         <p><strong>Direccion:</strong> {{ $paciente->address }}</p>
                         <p><strong>Email:</strong> {{ $paciente->email }}</p>
-                        <p><strong>Telefono:</strong> {{ $paciente->celular }}</p>
+                        <p><strong>Telefono:</strong> {{ $paciente->phone }}</p>
                     </div>
                 </div>
 
