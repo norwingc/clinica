@@ -64,7 +64,7 @@
             {data: 'name', name: 'name'},
             {data: 'id_number', name: 'id_number'},
             {data: 'phone', name: 'phone'},
-            {data: 'consulta[0].examen_type', name: 'consulta[0].examen_type'},
+            {data: 'lastConsulta', name: 'lastConsulta'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]
     });

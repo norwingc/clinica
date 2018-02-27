@@ -76,8 +76,8 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('ovario_ascitis')->nullable();
             $table->string('embarazo_lcc_semanas')->nullable();
             $table->string('concluciones')->nullable();
-            $table->string('comentarios')->nullable();
-            $table->string('recordatorios')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->text('recordatorios')->nullable();
             $table->integer('consulta_id');
             $table->timestamps();
             $table->softDeletes();

@@ -22,9 +22,9 @@ class CreateEcocardiografiasTable extends Migration
             $table->string('referido')->nullable();
             $table->string('feto');
             $table->string('revision')->nullable();
-            $table->string('concluciones')->nullable();
-            $table->string('comentarios')->nullable();
-            $table->string('recordatorio')->nullable();
+            $table->text('concluciones')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

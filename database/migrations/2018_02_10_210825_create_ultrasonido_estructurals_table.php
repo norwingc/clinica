@@ -28,9 +28,9 @@ class CreateUltrasonidoEstructuralsTable extends Migration
             $table->string('conclusion_riesgo_restriccion_crecimiento')->nullable();
             $table->string('conclusion_embarazo_fetometria')->nullable();
             $table->string('conclusion_vigilancia_crecimiento')->nullable();
-            $table->string('concluciones')->nullable();
-            $table->string('comentarios')->nullable();
-            $table->string('recordatorio')->nullable();
+            $table->text('concluciones')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

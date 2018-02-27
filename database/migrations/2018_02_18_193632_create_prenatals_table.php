@@ -20,7 +20,7 @@ class CreatePrenatalsTable extends Migration
             $table->string('date')->nullable();
             $table->string('edad_gestacional')->nullable();
             $table->integer('numero')->nullable();
-            $table->string('diagnostico_previo')->nullable();
+            $table->text('diagnostico_previo')->nullable();
             $table->string('presion_arterial_derecho')->nullable();
             $table->string('presion_arterial_izquierdo')->nullable();
             $table->string('presion_arterial_media')->nullable();
@@ -29,7 +29,7 @@ class CreatePrenatalsTable extends Migration
             $table->string('temperatura')->nullable();
             $table->string('peso_actual')->nullable();
             $table->string('incremento_peso')->nullable();
-            $table->string('subjetivo')->nullable();
+            $table->text('subjetivo')->nullable();
             $table->string('estado_general')->nullable();
             $table->string('alteraciones_hermodinamicas', 5)->nullable();
             $table->string('alteraciones_cardiopulmonar', 5)->nullable();

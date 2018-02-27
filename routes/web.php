@@ -12,7 +12,6 @@
 */
 
 Route::get('test', function(){
-    return \App\Models\Paciente::find(1)->consulta;
 });
 
 Route::fallback('ResourcesController@notFoud');

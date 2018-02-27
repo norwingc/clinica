@@ -36,6 +36,15 @@ class Paciente extends Model
         return $this->hasMany('App\Models\FechaProcedimiento', 'paciente_id');
     }
 
+    /**
+     * [lastConsulta description]
+     * @return [type] [description]
+     */
+    public function lastConsulta()
+    {
+        return $this->hasOne('App\Models\Consulta', 'paciente_id')->latest();
+    }
+    
      /**
      * [getAge description]
      * @return [type] [description]

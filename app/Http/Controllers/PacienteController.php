@@ -19,11 +19,11 @@ class PacienteController extends Controller
     {
         if($id == null){
 
-            $paciente = Paciente::with(['consulta'=>function($consulta){
-                $consulta->orderBy('created_at', 'DES');
-            }]);
+            $paciente = Paciente::has('consulta');
 
-            return Datatables::of($paciente)->addColumn('action', 'pacientes._action')->make(true);
+            return Datatables::of($paciente)->addColumn('lastConsulta', function($paciente){
+                return $paciente->lastConsulta->examen_type;
+            })->addColumn('action', 'pacientes._action')->make(true);
         }
 
         return response()->json([
@@ -156,7 +156,7 @@ class PacienteController extends Controller
         if(\Auth::user()->isRole('recepcion')){
             return redirect()->route('paciente.personal', [$paciente]);
         }
-        
+
         $paciente = Paciente::with('historia')->find($paciente->id);
         return view('pacientes.historia', ['paciente' => $paciente]);
     }

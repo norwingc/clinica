@@ -39,9 +39,9 @@ class CreateUltrasonidoTrimestresTable extends Migration
             $table->string('conclusion_riesago_hipertensivos')->nullable();
             $table->string('conclusion_riesago_restiaccion')->nullable();
             $table->string('conclusion_riesago_parto_pretermino')->nullable();
-            $table->string('recomendaciones')->nullable();
-            $table->string('comentarios')->nullable();
-            $table->string('recordatorio')->nullable();
+            $table->text('recomendaciones')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

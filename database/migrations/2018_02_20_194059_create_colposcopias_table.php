@@ -19,7 +19,7 @@ class CreateColposcopiasTable extends Migration
             $table->string('referido')->nullable();
             $table->string('edad', 30)->nullable();
             $table->string('date')->nullable();
-            $table->string('historia')->nullable();
+            $table->text('historia')->nullable();
             $table->string('interpretacion_ivaa')->nullable();
             $table->string('interpretacion_lugol')->nullable();
             $table->string('clasificacion')->nullable();
@@ -36,8 +36,8 @@ class CreateColposcopiasTable extends Migration
             $table->string('vulvoscopia_descipcion')->nullable();
             $table->string('lesiones_perianales')->nullable();
             $table->string('lesiones_perianales_descipcion')->nullable();
-            $table->string('comentarios')->nullable();
-            $table->string('recordatorio')->nullable();
+            $table->text('comentarios')->nullable();
+            $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
