@@ -264,6 +264,7 @@ class ConsultasController extends Controller
      */
     public function deleteNeurosonografia(Neurosonografia $neurosonografia)
     {
+        $neurosonografia->fetos()->delete();
         $neurosonografia->delete();
 
         session()->flash('message_success', "Examen Eliminado");
@@ -319,7 +320,8 @@ class ConsultasController extends Controller
      */
     public function deleteEcocardiografia(Ecocardiografia $ecocardiografia)
     {
-        $neurosonografia->delete();
+        $ecocardiografia->fetos()->delete();
+        $ecocardiografia->delete();
 
         session()->flash('message_success', "Examen Eliminado");
         return back();
@@ -368,6 +370,7 @@ class ConsultasController extends Controller
      */
     public function deleteDoppler(Doppler $doppler)
     {
+        $doppler->fetos()->delete();
         $doppler->delete();
 
         session()->flash('message_success', "Examen Eliminado");

@@ -12,7 +12,6 @@
 */
 
 Route::get('test', function(){
-    
 });
 
 Route::fallback('ResourcesController@notFoud');
