@@ -17,7 +17,7 @@
         </tr>
          <tr>
             <th>Referido:</th>
-            <td>{{ $trimestre->Referido }}</td>
+            <td>{{ $trimestre->referido }}</td>
         </tr>
         <tr>
             <th>Fecha:</th>
@@ -48,7 +48,7 @@
         <table>
             <tr>
                 <th>LCC</th>
-                <td>{{ $value->somatometria_lcc }} / {{ $value->somatometria_semanas }}</td>
+                <td>{{ $value->somatometria_lcc }}mm / {{ $value->somatometria_semanas }}</td>
             </tr>
             <tr>
                 <th>DBP</th>
@@ -80,14 +80,14 @@
             </tr>
             <tr>
                 <th>Fecha estimada de parto</th>
-                <td>{{ $value->somatometria_fecha_estimada_parto }}</td>
+                <td>{{ date('d/m/Y', strtotime($value->somatometria_fecha_estimada_parto)) }}</td>
             </tr>
         </table>
 
         <p class="sub_titul"><b>I TAMIZAJE PARA DEFECTOS ESTRUCTURALES</b></p>
         <p>
-            <b>Craneo</b> Integridad: Normal {{ $value->craneo }}. Forma: Normal {{ $value->craneo_forma }}. Plexos coroideos: Normal {{ $value->pexos_caroideos }}. Presencia de quiste de plexos coroideos: {{ $value->quiste_plexos }}.  @if($value->quiste_plexos == 'Si') {{ $value->quiste_plexos_si }} @endif
-            Hueso nasal: {{ $value->hueso_nasal }}. Medición: {{ $value->medicion_nasala }}
+            <b>Craneo</b> Integridad: Normal {{ $value->craneo }}. Forma: Normal {{ $value->craneo_forma }}. Plexos coroideos: Normal {{ $value->pexos_caroideos }}. Presencia de quiste de plexos coroideos: {{ $value->quiste_plexos }}.  @if($value->quiste_plexos == 'Si') {{ $value->quiste_plexos_si }} @endif <br>
+            Hueso nasal: {{ $value->hueso_nasal }}. Medición: {{ $value->medicion_nasal }} mm
             Tórax: {{ $value->torax_normal }}
             <b>Corazón</b> Localización  intratoracica {{ $value->localizacion_intratoracica }}. Ectopia cordis {{ $value->ectopia_cordis }}. Anomalía cardiaca {{ $value->anomalia_cardica }}  @if($value->anomalia_cardica == 'Si'). Descripcion: {{ $value->descripcion_anomalia_cardica }} @endif
         </p>
@@ -112,7 +112,7 @@
 
         <p class="sub_titul"><b>II TAMIZAJE PARA EL ASESORAMIENTO CLÍNICO DE RIESGO DE CROMOSOMOPATÍA</b></p>
 
-        <div style="width: 50%; display: inline-block; vertical-align: top; margin-top: 5em">
+        <div style="width: 50%; display: inline-block; vertical-align: top;">
             <p class="sub_titul"><b>RIESGO  TRISOMÍA  21</b></p>
             <table style="width: 100%">
                 <tr>
@@ -143,7 +143,7 @@
         <b>Antecedentes Maternos:</b> Historia de Madre con Pre eclampsia: {{ $trimestre->historia_preecampsia_mama }}. Historia de Madre con Hipertensión: {{ $trimestre->historia_hipertension_mama }}.
         Historia de hermana con Pre eclampsia: {{ $trimestre->historia_preecampsia_hermana }}. <b>Historia personal de hipertensión</b> Pre eclampsia previa {{ $trimestre->historia_hipertension_personal }}
     </p>
-    <p>Peso actual: {{ $trimestre->peso }}. Talla: {{ $trimestre->talla }}. IMC: {{ $trimestre->imc }}.  Presion arterial brazo derecho: {{ $trimestre->pa_derecho }}. Presion alterial brazo izquierdo {{ $trimestre->pa_izquierdo }}. IP medio de aretrias uterinas: {{ $trimestre->ip_artrias }}.</p>
+    <p>Peso actual: {{ $trimestre->peso }}. Talla: {{ $trimestre->talla }}. IMC: {{ $trimestre->imc }}.  Presion arterial brazo derecho: {{ $trimestre->pa_derecho }} mmhg. Presion arterial brazo izquierdo {{ $trimestre->pa_izquierdo }} mmhg. IP medio de arterias uterinas: {{ $trimestre->ip_artrias }}.</p>
 
     <p class="sub_titul"><b>Tamizaje De Vasa Previa</b></p>
     <p>Bidimensional: {{ $trimestre->bidimensional }}. Doppler color: {{ $trimestre->doppler_color }}</p>
@@ -151,7 +151,7 @@
     <p class="sub_titul"><b>Conclusiones</b></p>
     <p style="margin: 0">
         Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }}.
-        Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}.
+        Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}. <br>
         Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}.
         Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}.
         Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}.

@@ -12,6 +12,7 @@
 */
 
 Route::get('test', function(){
+    
 });
 
 Route::fallback('ResourcesController@notFoud');
@@ -60,10 +61,10 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.prenatal.delete')->post('/Prenatal/store/{prenatal}', 'ConsultasController@deletePrenatal');
 
         Route::name('consulta.colposcopia.store')->post('/Colposcopia/store/{consulta}', 'ConsultasController@storeColposcopia');
-        Route::name('consulta.colposcopia.delete')->post('/Colposcopia/store/{prenatal}', 'ConsultasController@deleteColposcopia');
+        Route::name('consulta.colposcopia.delete')->post('/Colposcopia/store/{colposcopia}', 'ConsultasController@deleteColposcopia');
 
         Route::name('consulta.genecologica.store')->post('/Ginecologica/store/{consulta}', 'ConsultasController@storeGinecologica');
-        Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{pelvico}', 'ConsultasController@deleteGinecologica');
+        Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{genecologica}', 'ConsultasController@deleteGinecologica');
 
         Route::name('consulta.pelvico.store')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
         Route::name('consulta.pelvico.delete')->get('/UltrasonidoPelvico/delete/{pelvico}', 'ConsultasController@deletePelvico');
@@ -75,10 +76,10 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.estructural.delete')->get('/UltrasonidoEstructural/delete/{estructural}', 'ConsultasController@deleteEstructural');
 
         Route::name('consulta.neurosonografia.store')->post('/Neurosonografia/store/{consulta}', 'ConsultasController@storeNeurosonografia');
-        Route::name('consulta.neurosonografia.delete')->get('/Neurosonografia/delete/{neurosono}', 'ConsultasController@deleteNeurosonografia');
+        Route::name('consulta.neurosonografia.delete')->get('/Neurosonografia/delete/{neurosonografia}', 'ConsultasController@deleteNeurosonografia');
 
         Route::name('consulta.ecocardiografia.store')->post('/Ecocardiografia/store/{consulta}', 'ConsultasController@storeEcocardiografia');
-        Route::name('consulta.ecocardiografia.delete')->get('/Ecocardiografia/delete/{neurosono}', 'ConsultasController@deleteEcocardiografia');
+        Route::name('consulta.ecocardiografia.delete')->get('/Ecocardiografia/delete/{ecocardiografia}', 'ConsultasController@deleteEcocardiografia');
 
         Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
         Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');

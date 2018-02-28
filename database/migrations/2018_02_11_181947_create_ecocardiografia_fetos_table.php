@@ -31,7 +31,7 @@ class CreateEcocardiografiaFetosTable extends Migration
             $table->string('lf_semanas', 20)->nullable();
             $table->string('fetometria_promedio', 20)->nullable();
             $table->string('percentil', 20)->nullable();
-            $table->string('peso_fetal', 20)->nullable();
+            $table->string('peso_fetal')->nullable();
             $table->date('fecha_parto')->nullable();
             $table->string('percentil_ip_medio')->nullable();
             $table->string('interpretacion_ip_medio', 10)->nullable();

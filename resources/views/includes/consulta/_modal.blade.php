@@ -1993,7 +1993,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ila</label>
+                                    <label>Valor de ILA</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_ecocardiografia" class="form-control">
                                     </div>
@@ -2883,8 +2883,8 @@
                                     <label>Disgenesia</label>
                                     <div>
                                         <select name="disgenesia" id="disgenesia_neurosonografia" class="form-control">
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3214,7 +3214,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ila</label>
+                                    <label>Valor de ILA</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_neurosonografia" class="form-control">
                                     </div>
@@ -3283,7 +3283,6 @@
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" id="Neurosonografia" data-examen="#Neurosonografia" onclick="saveNeurosonografia($(this))">Guardar Cambios</button>
                     </div>
-                    <p class="sub_titul"><b>Recomendaciones: Continuar vigilancia y curva de crecimiento en 8 semanas.</b></p>
                 {!! Form::close() !!}
             </div>
         </div>
@@ -4709,7 +4708,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ila</label>
+                                    <label>Valor de ILA</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_estructural" class="form-control">
                                     </div>
@@ -4909,7 +4908,7 @@
                                 <div class="col-md-3">
                                     <label>Semanas</label>
                                     <div>
-                                        <input type="number" name="somatometria_semanas" id="somatometria_semanas_1trimestre" class="form-control">
+                                        <input type="text" name="somatometria_semanas" id="somatometria_semanas_1trimestre" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -5843,7 +5842,7 @@
                             <div class="col-md-3">
                                 <label>Cavidad endometrial ocupada</label>
                                 <div>
-                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_si_form">
+                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_si_form" onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -5935,7 +5934,7 @@
                             <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
                                 <label>Fecha estimada de parto</label>
                                 <div>
-                                    <input type="text" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
+                                    <input type="date" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -5968,7 +5967,7 @@
                             <div class="col-md-3">
                                 <label>Presencia de masa anexial</label>
                                 <div>
-                                     <select name="presencia_masa_anexial_izquierdo" id="presencia_masa_anexial_izquierdo_pelvico" class="form-control" data-target="presencia_masa_anexial_izquierdo_si">
+                                     <select name="presencia_masa_anexial_izquierdo" id="presencia_masa_anexial_izquierdo_pelvico" class="form-control" data-target="presencia_masa_anexial_izquierdo_si"  onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -6060,7 +6059,7 @@
                            <div class="col-md-3">
                                 <label>Presencia de masa anexial</label>
                                 <div>
-                                     <select name="presencia_masa_anexial_derecho" id="presencia_masa_anexial_derecho_pelvico" class="form-control" data-target="presencia_masa_anexial_derecho_si">
+                                     <select name="presencia_masa_anexial_derecho" id="presencia_masa_anexial_derecho_pelvico" class="form-control" data-target="presencia_masa_anexial_derecho_si" onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -6149,8 +6148,8 @@
                                 <label>Ascitis</label>
                                 <div>
                                      <select name="ovario_ascitis" id="ovario_ascitis_pelvico" class="form-control">
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
+                                         <option value="No">No</option>
+                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
@@ -6171,7 +6170,7 @@
                         <div class="col-md-6">
                             <label>Embarazo por longitud craneo caudal (semanas)</label>
                             <div>
-                                <input type="number" name="embarazo_lcc_semanas" id="embarazo_lcc_semanas_pelvico" class="form-control">
+                                <input type="text" name="embarazo_lcc_semanas" id="embarazo_lcc_semanas_pelvico" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -7101,7 +7100,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ila</label>
+                                    <label>Valor de ILA</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_doppler" class="form-control">
                                     </div>

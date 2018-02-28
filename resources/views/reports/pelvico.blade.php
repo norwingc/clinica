@@ -52,7 +52,7 @@
                 Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
                 Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
                 Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
-                Edad gestacional: {{ $pelvico->edad_gestacional }}. Fecha estimada de parto: {{ $pelvico->fecha_parto }}.
+                Edad gestacional: {{ $pelvico->edad_gestacional }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
             @endif
         </p>
     @endif
@@ -86,7 +86,9 @@
     <p class="sub_titul">Conclusiones</p>
     <ul>
         <li>{{ $pelvico->concluciones }}</li>
-        <li>Embarazo por longitud craneo caudal (semanas): {{ $pelvico->embarazo_lcc_semanas }}</li>
+        @if($pelvico->embarazo_lcc_semanas != '')
+            <li>Embarazo por longitud craneo caudal (semanas): {{ $pelvico->embarazo_lcc_semanas }}</li>
+        @endif
     </ul>
 
     @if($pelvico->comentarios != '')

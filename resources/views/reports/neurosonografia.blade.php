@@ -177,7 +177,7 @@
         </p>
 
         <p>
-            <b>CORTE TRANSTALÀMICO</b> Talamos normales: {{ $value->talamos_normales }}. Giro hipocampal Presente: {{ $value->giro_hipocampal_presente }}. III ventrículo con diámetros de {{ $value->ventriculo_diametros }}mm.
+            <b>CORTE TRANSTALÀMICO</b> Talamos normales: {{ $value->talamos_normales }}. Giro hipocampal Presente: {{ $value->giro_hipocampal_presente }}. III ventrículo con diámetros de {{ $value->ventriculo_diametros }}.
         </p>
 
         <p>
@@ -190,7 +190,7 @@
             <b>PLANOS CORONALES:</b> <b>CORTE TRANSFRONTAL.</b> Se observa la línea interhemisferica integra: {{ $value->liena_intergemisferica }}. Astas anteriores de los ventrículos laterales normales: {{ $value->asta_anteriores }}.
             Hueso esfenoides y las orbitas oculares normales: {{ $value->hueso_esfenoides }}. <br>
             <b>CORTE TRANSCAUDAL.</b> Asta anterior derecha: {{ $value->asta_aterior_derecha }}(mm). Asta anterior izquierda: {{ $value->asta_aterior_izquierda }}(mm).
-            Núcleos caudados sin alteraciones: {{ $value->nucleos_caudado }}. Espacio subaracnoideo senocortical: {{ $value->espacio_subaracnoideo }}mm y craneocortical: {{ $value->espacio_craneocotical }}mm.
+            Núcleos caudados sin alteraciones: {{ $value->nucleos_caudado }}. Espacio subaracnoideo senocortical: {{ $value->espacio_subaracnoideo }} y craneocortical: {{ $value->espacio_craneocotical }}.
             Se identifica la cisura  de  Silvio claramente: {{ $value->cisura_silvio }}. <br>
             <b>CORTE TRANSCEREBELAR.</b> Tentorio in situs: {{  $value->tetorio_situs }}. Cisura interhemisferica integra: {{ $value->cisura_interhemisferica }}. Cuernos occipitales simétricos: {{ $value->cuernos_occipitales }}.
         </p>
@@ -217,7 +217,7 @@
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Presencia de calcificaciones probablemente patológicas: {{ $value->presencia_patologicas }}.
             Áreas de infartos placentarios: {{ $value->areas_infarto }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm. Funneling: {{ $value->funneling }}. @if($value->funneling == 'Negativo') Porcentaje: {{ $value->porcentaje_funneling }}. @endif
             Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}. @if($value->liquido_amniotico != 'Normal') Clasificacion: {{ $value->clasificacion_liquido_amniotico }}. @endif
-            Valor de ila: {{ $value->valor_ila }}.
+            Valor de ILA: {{ $value->valor_ila }} cms.
         </p>
     @endforeach
 

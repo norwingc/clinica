@@ -130,13 +130,13 @@ class PacienteController extends Controller
     {
         if($request->id_number != $paciente->id_number){
             $request->validate([
-                'id_number' => 'required|unique:pacientes',
+                'id_number' => 'unique:pacientes',
             ]);
         }
 
         if($request->phone != $paciente->phone){
             $request->validate([
-                'phone'     => 'required|unique:pacientes',
+                'phone'     => 'unique:pacientes',
             ]);
         }
 

@@ -124,7 +124,7 @@
                     </tr>
                     <tr>
                         <th>Fecha de parto estimada</th>
-                        <td colspan="2">{{ $value->fecha_parto }}</td>
+                        <td colspan="2">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
                     </tr>
             </table>
         </div>
@@ -216,7 +216,7 @@
 
         <p>
             Hueso nasal Presente: {{ $value->hueso_nasal }}. Retrognatia {{ $value->retrognatia }}.
-            <b>CARA.</b> Labio Normal: {{ $value->labio_normal }}. @if($value->labio_normal != 'Si') {{ $value->clasificacion_labio }}.@endif
+            <b>CARA.</b> Labio Normal: {{ $value->labio_normal }}. @if($value->labio_normal == 'No') {{ $value->clasificacion_labio }}.@endif
         </p>
 
         <p>
@@ -247,7 +247,7 @@
 
             Cámara gástrica Insitu: {{ $value->camara_gastrica_insitu }}. Riñon Derecho: {{ $value->rinon_derecho }}. Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Riñon izquierdo: {{ $value->rinon_izquierdo }}. Riñon izquierdo tamaño: {{ $value->rinon_izquierdo_tanano }}.
             Pelvis renal derecha: {{ $value->pelvis_derecha }}mm.  Pelvis renal izquierda: {{ $value->pelvis_izquierda }}mm. Presencia de Hidronefrosis: {{ $value->hidronefosis }}.
-            Grado de Hidronefrosis: {{ $value->grado }}. Glandulas suprarrenales: {{ $value->glandulas_suprarrenales }}. Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosameinto de pared vesical: {{ $value->engrosamiento_pared }}.
+            Grado de Hidronefrosis: {{ $value->grado }}. Glandulas suprarrenales: {{ $value->glandulas_suprarrenales }}. Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosamiento de pared vesical: {{ $value->engrosamiento_pared }}.
         </p>
 
          <p>
@@ -257,9 +257,9 @@
 
         <p>
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Presencia de calcificaciones probablemente patológicas: {{ $value->presencia_patologicas }}.
-            Áreas de infartos placentarios: {{ $value->areas_infarto }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm. Funneling: {{ $value->funneling }}. @if($value->funneling == 'Negativo') Porcentaje: {{ $value->porcentaje_funneling }}. @endif
+            Áreas de infartos placentarios: {{ $value->areas_infarto }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm. Funneling: {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}. @endif
             Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}. @if($value->liquido_amniotico != 'Normal') Clasificacion: {{ $value->clasificacion_liquido_amniotico }}. @endif
-            Valor de ila: {{ $value->valor_ila }}.
+            Valor de ILA: {{ $value->valor_ila }} cms.
         </p>
     @endforeach
 

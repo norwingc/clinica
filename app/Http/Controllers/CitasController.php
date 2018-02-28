@@ -77,6 +77,7 @@ class CitasController extends Controller
         $fecha = $request->date;
         $start = $fecha . ' '.$request->start;
         $start = date('Y-m-d H:i:s', strtotime($start));
+        $end   = null;
 
         if($request->duracion == '30 min'){
             $end = \Carbon\Carbon::parse($start)->addMinutes(30);
@@ -94,6 +95,12 @@ class CitasController extends Controller
         }
 
         if($paciente == null){
+
+            $request->validate([
+                'phone'     => 'unique:pacientes',
+                'id_number' => 'unique:pacientes',
+            ]);
+
             $paciente = Paciente::where('phone', $request->phone)->first();
 
             if(!$paciente){
@@ -163,6 +170,7 @@ class CitasController extends Controller
         $fecha = $request->date;
         $start = $fecha . ' '.$request->start;
         $start = date('Y-m-d H:i:s', strtotime($start));
+        $end   = null;
 
         if($request->duracion == '30 min'){
             $end = \Carbon\Carbon::parse($start)->addMinutes(30);
@@ -227,6 +235,8 @@ class CitasController extends Controller
      */
     public function validateCita($start, $end, $doctor)
     {
+        if($end == null) return false;
+
         $from = min($start, $end);
         $till = max($start, $end);
 

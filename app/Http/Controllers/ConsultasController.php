@@ -49,6 +49,24 @@ class ConsultasController extends Controller
         return back();
     }
 
+    /**
+     * [deletePrenatal description]
+     * @param  Prenatal $prenatal [description]
+     * @return [type]             [description]
+     */
+    public function deletePrenatal(Prenatal $prenatal)
+    {
+        $prenatal->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
+    }
+
+    /**
+     * [reportPrenatal description]
+     * @param  Prenatal $prenatal [description]
+     * @return [type]             [description]
+     */
     public function reportPrenatal(Prenatal $prenatal)
     {
       //return view('reports.prenatal', compact('prenatal'));
@@ -240,6 +258,19 @@ class ConsultasController extends Controller
     }
 
     /**
+     * [deleteNeurosonografia description]
+     * @param  Neurosonografia $neurosonografia [description]
+     * @return [type]                           [description]
+     */
+    public function deleteNeurosonografia(Neurosonografia $neurosonografia)
+    {
+        $neurosonografia->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
+    }
+
+    /**
      * [reportNeurosonografia description]
      * @param  Neurosonografia $neurosono [description]
      * @return [type]                     [description]
@@ -282,6 +313,19 @@ class ConsultasController extends Controller
     }
 
     /**
+     * [deleteEcocardiografia description]
+     * @param  Ecocardiografia $ecocardiografia [description]
+     * @return [type]                           [description]
+     */
+    public function deleteEcocardiografia(Ecocardiografia $ecocardiografia)
+    {
+        $neurosonografia->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
+    }
+
+    /**
      * [reportEcocardiografia description]
      * @param  Ecocardiografia $ecocardiografia [description]
      * @return [type]                           [description]
@@ -318,6 +362,19 @@ class ConsultasController extends Controller
     }
 
     /**
+     * [deleteDoppler description]
+     * @param  Doppler $doppler [description]
+     * @return [type]           [description]
+     */
+    public function deleteDoppler(Doppler $doppler)
+    {
+        $doppler->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
+    }
+
+    /**
      * [reportDoppler description]
      * @param  Doppler $doppler [description]
      * @return [type]           [description]
@@ -341,6 +398,19 @@ class ConsultasController extends Controller
 
       session()->flash('message_success', "Examen Agregado");
       return back();
+    }
+
+    /**
+     * [deleteGinecologica description]
+     * @param  Ginecologica $ginecologica [description]
+     * @return [type]                     [description]
+     */
+    public function deleteGinecologica(Ginecologica $ginecologica)
+    {
+        $ginecologica->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
+        return back();
     }
 
     /**
@@ -372,6 +442,19 @@ class ConsultasController extends Controller
         $colposcopia->update();
 
         session()->flash('message_success', "Examen Agregado");
+        return back();
+    }
+
+    /**
+     * [deleteColposcopia description]
+     * @param  [type] Colposcopia [description]
+     * @return [type]             [description]
+     */
+    public function deleteColposcopia(Colposcopia $colposcopia)
+    {
+        $colposcopia->delete();
+
+        session()->flash('message_success', "Examen Eliminado");
         return back();
     }
 
