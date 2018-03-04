@@ -3,31 +3,55 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1.1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $doppler->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $doppler->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $doppler->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $doppler->created_at->format('d/m/Y') }}</td>
-        </tr>
-        <tr>
-            <th>Paridad</th>
-            <td>{{ $doppler->paridad }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $doppler->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $doppler->edad }} {!! ($doppler->edad_gestacional != '') ? ' / '. $doppler->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $doppler->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $doppler->date }} {!! ($doppler->rh_tipo != '') ? ' / '. $doppler->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $doppler->paridad }} {!! ($doppler->morbilidad != '') ? ' / '. $doppler->morbilidad : '' !!} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul"><b>ULTRASONIDO III TRIMESTRE / DOPPLER Y CURVA DE CRECIMIENTO</b></p>
 
@@ -44,55 +68,60 @@
             Vitalidad: {{ $value->vitalidad_feto }}. <b>PRESENTACIÓN:</b> {{ $value->presentacion }}. <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
         </p>
 
-        <div>
-            <p class="sub_titul"><b>SOMATOMETRIA</b></p>
-            <table style="width: 100%;">
-                <tr>
-                    <th>Parámetro</th>
-                    <th>Medida mm</th>
-                    <th>Semanas</th>
-                </tr>
-                <tr>
-                    <th>DBP</th>
-                    <td>{{ $value->dbp_medida }}</td>
-                    <td>{{ $value->dbp_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>CC</th>
-                    <td>{{ $value->cc_medida }}</td>
-                    <td>{{ $value->cc_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>CA</th>
-                    <td>{{ $value->ca_medida }}</td>
-                    <td>{{ $value->ca_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>LF</th>
-                    <td>{{ $value->lf_medida }}</td>
-                    <td>{{ $value->lf_semanas }}</td>
-                </tr>
-                 <tr>
-                    <th>Fetometría promedio</th>
-                    <td colspan="2">{{ $value->fetometria_promedio }}</td>
-                </tr>
-                <tr>
-                    <th>Percentil</th>
-                    <td colspan="2">{{ $value->percentil }}</td>
-                </tr>
-                <tr>
-                    <th>Peso fetal</th>
-                    <td colspan="2">{{ $value->peso_fetal }}</td>
-                </tr>
-                <tr>
-                    <th>Fecha de parto estimada</th>
-                    <td colspan="2">{{ $value->fecha_parto }}</td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <p class="sub_titul"><b>Flujometria Doppler</b></p>
-            <table style="width: 100%">
+        <div class="row">
+            <div class="col-xs-5">
+                <table class="table-striped">
+                        <tr>
+                            <th colspan="3" style="text-align: center">SOMATOMETRIA</th>
+                        </tr>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Medida mm</th>
+                            <th>Semanas</th>
+                        </tr>
+                        <tr>
+                            <th>DBP</th>
+                            <td>{{ $value->dbp_medida }}</td>
+                            <td>{{ $value->dbp_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CC</th>
+                            <td>{{ $value->cc_medida }}</td>
+                            <td>{{ $value->cc_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CA</th>
+                            <td>{{ $value->ca_medida }}</td>
+                            <td>{{ $value->ca_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>LF</th>
+                            <td>{{ $value->lf_medida }}</td>
+                            <td>{{ $value->lf_semanas }}</td>
+                        </tr>
+                         <tr>
+                            <th>Fetometría promedio</th>
+                            <td colspan="2">{{ $value->fetometria_promedio }}</td>
+                        </tr>
+                        <tr>
+                            <th>Percentil</th>
+                            <td colspan="2">{{ $value->percentil }}</td>
+                        </tr>
+                        <tr>
+                            <th>Peso fetal</th>
+                            <td colspan="2">{{ $value->peso_fetal }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de parto estimada</th>
+                            <td colspan="2">{{ $value->fecha_parto }}</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="col-xs-6">
+                <table class="table-striped">
+                    <tr>
+                        <th colspan="3" style="text-align: center">Flujometria Doppler</th>
+                    </tr>
                     <tr>
                         <th>Vaso evaluado</th>
                         <th>Percentil</th>
@@ -153,7 +182,8 @@
                         <td>{{ $value->percentil_vena_umbilical }}</td>
                         <td>{{ $value->interpretacion_vena_umbilical }}</td>
                     </tr>
-            </table>
+                </table>
+            </div>
         </div>
 
         @if($value->semanas == 'Mayor a 32 Semanas')

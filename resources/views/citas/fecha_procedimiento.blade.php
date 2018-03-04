@@ -64,7 +64,7 @@
         ajax: '{!! route('fecha.procedimiento.get') !!}',
         columns:[
             {data: 'paciente.name', name: 'paciente.name'},
-            {data: 'paciente.celular', name: 'paciente.celular'},
+            {data: 'paciente.phone', name: 'paciente.phone'},
             {data: 'hospital', name: 'hospital'},
             {data: 'procedimiento', name: 'procedimiento'},
             {data: 'date', name: 'date'},

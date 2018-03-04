@@ -3,27 +3,51 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1.1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $ginecologica->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $ginecologica->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $ginecologica->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $ginecologica->created_at->format('d/m/Y') }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $ginecologica->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $ginecologica->edad }}</td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $ginecologica->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $ginecologica->date }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul"><b>CONSULTA GINECOLOGICA</b></p>
 

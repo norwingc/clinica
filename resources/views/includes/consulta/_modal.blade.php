@@ -1057,16 +1057,44 @@
                                 <input type="text" name="edad" id="edad_ecocardiografia" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
                                 <input type="text" name="date" id="date_ecocardiografia" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_getacional" id="edad_getacional_ecocardiografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
                                 <input type="text" name="paridad" id="paridad_ecocardiografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_ecocardiografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_ecocardiografia">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                    </div>
@@ -2092,10 +2120,38 @@
                                 <input type="text" name="date" id="date_neurosonografia" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_getacional" id="edad_getacional_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
                                 <input type="text" name="paridad" id="paridad_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_neurosonografia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_neurosonografia">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -3311,16 +3367,44 @@
                                 <input type="text" name="edad" id="edad_estructural" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
                             <label>Fecha</label>
                             <div>
                                 <input type="text" name="date" id="date_estructural" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
+                        <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_getacional" id="edad_getacional_estructural" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
                                 <input type="text" name="paridad" id="paridad_estructural" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_estructural" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_estructural">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -4852,9 +4936,37 @@
                             </div>
                         </div>
                         <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_getacional" id="edad_getacional_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
                                 <input type="text" name="paridad" id="paridad_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_1trimestre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_1trimestre">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -5648,34 +5760,44 @@
                                 <input type="text" name="edad" id="edad_pelvico" class="form-control" required value="{{ $paciente->getAge() }}">
                             </div>
                         </div>
-                         <div class="col-md-3">
-                            <label>Gesta</label>
+                        <div class="col-md-3">
+                            <label>Fecha</label>
                             <div>
-                                <input type="text" name="gesta" id="gesta_pelvico" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Parto</label>
-                            <div>
-                                <input type="text" name="parto" id="parto_pelvico" class="form-control" required>
+                                <input type="text" name="date" id="date_pelvico" class="form-control" value="{{ date('d/m/Y h:i a') }}">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Aborto</label>
+                            <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="aborto" id="aborto_pelvico" class="form-control" required>
-                            </div>
-                        </div>
-                         <div class="col-md-3">
-                            <label>Cesárea</label>
-                            <div>
-                                <input type="text" name="cesarea" id="cesarea_pelvico" class="form-control" required>
+                                <input type="text" name="edad_getacional" id="edad_getacional_pelvico" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Legrado</label>
+                            <label>Paridad</label>
                             <div>
-                                <input type="text" name="legrado" id="legrado_pelvico" class="form-control" required>
+                                <input type="text" name="paridad" id="paridad_pelvico" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_pelvico" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_pelvico">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -5842,99 +5964,114 @@
                             <div class="col-md-3">
                                 <label>Cavidad endometrial ocupada</label>
                                 <div>
-                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_si_form" onchange="selectShow($(this))">
+                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_ocupada" onchange="selectShow($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Dispositivo intrauterino</label>
+
+                            <div class="col-md-3 cavidad_endometrial_ocupada" style="display:none">
+                                <label>Ocupada Por</label>
+                                <div>
+                                     <select name="cavidad_endometrial_ocupada" id="cavidad_endometrial_ocupada_pelvico" class="form-control">
+                                        <option value="">Seleccione uno</option>
+                                        <option value="Dispositivo intrauterino">Dispositivo intrauterino</option>
+                                        <option value="Embarazo">Embarazo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 dispositivo_intrauterino_cual" style="display:none">
+                                <label>Cual Dispositivo</label>
                                 <div>
                                     <input type="text" name="dispositivo_intrauterino" id="dispositivo_intrauterino_pelvico" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Saco gestacional</label>
-                                <div>
-                                     <select name="saco_gestional" id="saco_gestional_pelvico" class="form-control">
-                                        <option value="Unico">Unico</option>
-                                        <option value="Gemelo">Gemelo</option>
-                                        <option value="Triple">Triple</option>
-                                    </select>
+
+                            <div class="cavidad_endometrial_embarazo" style="display:none">
+                                <div class="col-md-3">
+                                    <label>Saco gestacional</label>
+                                    <div>
+                                         <select name="saco_gestional" id="saco_gestional_pelvico" class="form-control">
+                                            <option value="Unico">Unico</option>
+                                            <option value="Gemelo">Gemelo</option>
+                                            <option value="Triple">Triple</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Saco gestacional Bordes</label>
-                                <div>
-                                    <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
-                                        <option value="Regulares">Regulares</option>
-                                        <option value="Irregulares">Irregulares</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Saco gestacional Bordes</label>
+                                    <div>
+                                        <select name="saco_gestional_bordes" id="saco_gestional_bordes_pelvico" class="form-control">
+                                            <option value="Regulares">Regulares</option>
+                                            <option value="Irregulares">Irregulares</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                             <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Ubicacion</label>
-                                <div>
-                                    <select name="saco_gestional_ubicacion" id="saco_gestional_ubicacion_pelvico" class="form-control">
-                                        <option value="Fondo uterino">Fondo uterino</option>
-                                        <option value="Segmento">Segmento</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Ubicacion</label>
+                                    <div>
+                                        <select name="saco_gestional_ubicacion" id="saco_gestional_ubicacion_pelvico" class="form-control">
+                                            <option value="Fondo uterino">Fondo uterino</option>
+                                            <option value="Segmento">Segmento</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Reaccion coridodecidual</label>
-                                <div>
-                                    <select name="reaccion_coridodecidual" id="reaccion_coridodecidual_pelvico" class="form-control">
-                                        <option value="Adecuada">Adecuada</option>
-                                        <option value="Inadecuada">Inadecuada</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Reaccion coridodecidual</label>
+                                    <div>
+                                        <select name="reaccion_coridodecidual" id="reaccion_coridodecidual_pelvico" class="form-control">
+                                            <option value="Adecuada">Adecuada</option>
+                                            <option value="Inadecuada">Inadecuada</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Presencia de vesicula vitelina</label>
-                                <div>
-                                    <select name="presencia_vesicula" id="presencia_vesicula_pelvico" class="form-control">
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Presencia de vesicula vitelina</label>
+                                    <div>
+                                        <select name="presencia_vesicula" id="presencia_vesicula_pelvico" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Presencia de yema embrionaria</label>
-                                <div>
-                                    <select name="presencia_yema" id="presencia_yema_pelvico" class="form-control">
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Presencia de yema embrionaria</label>
+                                    <div>
+                                        <select name="presencia_yema" id="presencia_yema_pelvico" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Vitalidad</label>
-                                <div>
-                                    <select name="vitalidad" id="vitalidad_pelvico" class="form-control">
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
-                                        <option value="No Valorable">No Valorable</option>
-                                    </select>
+                                <div class="col-md-3">
+                                    <label>Vitalidad</label>
+                                    <div>
+                                        <select name="vitalidad" id="vitalidad_pelvico" class="form-control">
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                            <option value="No Valorable">No Valorable</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Longitud craneo cauda (mm)</label>
-                                <div>
-                                    <input type="text" name="longitud_craneo" id="longitud_craneo_pelvico" class="form-control">
+                                <div class="col-md-3">
+                                    <label>Longitud craneo cauda (mm)</label>
+                                    <div>
+                                        <input type="text" name="longitud_craneo" id="longitud_craneo_pelvico" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Edad gestacional</label>
-                                <div>
-                                    <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control">
+                                <div class="col-md-3">
+                                    <label>Edad gestacional</label>
+                                    <div>
+                                        <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 cavidad_endometrial_si_form" style="display: none">
-                                <label>Fecha estimada de parto</label>
-                                <div>
-                                    <input type="date" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
+                                <div class="col-md-3">
+                                    <label>Fecha estimada de parto</label>
+                                    <div>
+                                        <input type="date" name="fecha_parto" id="fecha_parto_pelvico" class="form-control">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -6454,9 +6591,37 @@
                             </div>
                         </div>
                         <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_getacional" id="edad_getacional_doppler" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
                                 <input type="text" name="paridad" id="paridad_doppler" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_doppler" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control" name="rh_tipo" id="rh_tipo_doppler">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O positivo">O positivo</option>
+                                    <option value="A negativo">A negativo</option>
+                                    <option value="A positivo">A positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B positivo">B positivo</option>
+                                    <option value="O negativo">O negativo</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -7195,7 +7360,8 @@
                                     <option value="Hospital Cruz Azul">Hospital Cruz Azul</option>
                                     <option value="Hospital Salud Integral">Hospital Salud Integral</option>
                                     <option value="Hospital Militar">Hospital Militar</option>
-                                    <option value="Hospital Calos Roberto Huembes">Hospital Calos Roberto Huembes</option>
+                                    <option value="Hospital Carlos Roberto Huembes">Hospital Carlos Roberto Huembes</option>
+                                    <option value="Hospital Bautista">Hospital Bautista</option>
                                 </select>
                             </div>
                         </div>
@@ -7204,12 +7370,12 @@
                             <div>
                                 <select class="form-control" name="procedimiento" id="procedimiento_fecha_parto">
                                     <option value="Parto Vaginal">Parto Vaginal</option>
-                                    <option value="Parto por Cesa">Parto por Cesa</option>
+                                    <option value="Parto por Cesárea">Parto por Cesárea</option>
                                     <option value="AMEU">AMEU</option>
                                     <option value="Laparoatomia">Laparoatomia</option>
                                     <option value="Histerectomía">Histerectomía</option>
                                     <option value="Cerclaje Cervical">Cerclaje Cervical</option>
-                                    <option value="OTV">OTV</option>
+                                    <option value="OTB">OTB</option>
                                 </select>
                             </div>
                         </div>

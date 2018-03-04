@@ -3,31 +3,55 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1.1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $trimestre->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $trimestre->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $trimestre->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $trimestre->created_at->format('d/m/Y') }}</td>
-        </tr>
-        <tr>
-            <th>Paridad</th>
-            <td>{{ $trimestre->paridad }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $trimestre->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $trimestre->edad }} {!! ($trimestre->edad_gestacional != '') ? ' / '. $trimestre->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $trimestre->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $trimestre->date }} {!! ($trimestre->rh_tipo != '') ? ' / '. $trimestre->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $trimestre->paridad }} {!! ($trimestre->morbilidad != '') ? ' / '. $trimestre->morbilidad : '' !!} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul">ULTRASONIDO ESTRUCTURAL DE I TRIMESTRE</p>
 
@@ -44,45 +68,48 @@
 
         <p>Vitalidad: {{ $value->vitalidad_feto }}</p>
 
-        <p class="sub_titul"><b>SOMATOMETRIA</b></p>
-        <table>
-            <tr>
-                <th>LCC</th>
-                <td>{{ $value->somatometria_lcc }}mm / {{ $value->somatometria_semanas }}</td>
-            </tr>
-            <tr>
-                <th>DBP</th>
-                <td>{{ $value->somatometria_dbp }} Semanas</td>
-            </tr>
-            <tr>
-                <th>CC</th>
-                <td>{{ $value->somatometria_cc }} Semanas</td>
-            </tr>
-            <tr>
-                <th>CA</th>
-                <td>{{ $value->somatometria_ca }} Semanas</td>
-            </tr>
-            <tr>
-                <th>LF</th>
-                <td>{{ $value->somatometria_lf }} Semanas</td>
-            </tr>
-            <tr>
-                <th>FCF</th>
-                <td>{{ $value->somatometria_fcf }} latidos por min</td>
-            </tr>
-            <tr>
-                <th>Fetometría</th>
-                <td>{{ $value->somatometria_fetometria }} Semanas</td>
-            </tr>
-            <tr>
-                <th>TN</th>
-                <td>{{ $value->somatometria_tn }} mm</td>
-            </tr>
-            <tr>
-                <th>Fecha estimada de parto</th>
-                <td>{{ date('d/m/Y', strtotime($value->somatometria_fecha_estimada_parto)) }}</td>
-            </tr>
-        </table>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <table class="table-striped">
+                    <tr>
+                        <th>LCC</th>
+                        <td>{{ $value->somatometria_lcc }}mm / {{ $value->somatometria_semanas }}</td>
+                    </tr>
+                    <tr>
+                        <th>DBP</th>
+                        <td>{{ $value->somatometria_dbp }} Semanas</td>
+                    </tr>
+                    <tr>
+                        <th>CC</th>
+                        <td>{{ $value->somatometria_cc }} Semanas</td>
+                    </tr>
+                    <tr>
+                        <th>CA</th>
+                        <td>{{ $value->somatometria_ca }} Semanas</td>
+                    </tr>
+                    <tr>
+                        <th>LF</th>
+                        <td>{{ $value->somatometria_lf }} Semanas</td>
+                    </tr>
+                    <tr>
+                        <th>FCF</th>
+                        <td>{{ $value->somatometria_fcf }} latidos por min</td>
+                    </tr>
+                    <tr>
+                        <th>Fetometría</th>
+                        <td>{{ $value->somatometria_fetometria }} Semanas</td>
+                    </tr>
+                    <tr>
+                        <th>TN</th>
+                        <td>{{ $value->somatometria_tn }} mm</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha estimada de parto</th>
+                        <td>{{ date('d/m/Y', strtotime($value->somatometria_fecha_estimada_parto)) }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
         <p class="sub_titul"><b>I TAMIZAJE PARA DEFECTOS ESTRUCTURALES</b></p>
         <p>
@@ -112,25 +139,29 @@
 
         <p class="sub_titul"><b>II TAMIZAJE PARA EL ASESORAMIENTO CLÍNICO DE RIESGO DE CROMOSOMOPATÍA</b></p>
 
-        <div style="width: 50%; display: inline-block; vertical-align: top;">
-            <p class="sub_titul"><b>RIESGO  TRISOMÍA  21</b></p>
-            <table style="width: 100%">
-                <tr>
-                    <th>Basal (Edad)</th>
-                    <td>{{ $value->basal}}</td>
-                </tr>
-                <tr>
-                    <th>Edad + Translucencia Nucal</th>
-                    <td>{{ $value->edad_tn}}</td>
-                </tr>
-                <tr>
-                    <th>Edad +TN + Marcadores Emergentes</th>
-                    <td>{{ $value->edad_tn_marcadores}}</td>
-                </tr>
-            </table>
-        </div>
-        <div style="width: 49%; height: 220px; display: inline-block;">
-            <img style="margin: auto; display: block;" src="{{ asset('img/grafico_trimestre.png') }}" alt="">
+        <div class="row">
+            <div class="col-xs-5">
+                <table class="table-striped">
+                    <tr class="text-center">
+                        <th colspan="2" class="text-center">RIESGO TRISOMÍA 21</th>
+                    </tr>
+                    <tr>
+                        <th>Basal (Edad)</th>
+                        <td>{{ $value->basal}}</td>
+                    </tr>
+                    <tr>
+                        <th>Edad + Translucencia Nucal</th>
+                        <td>{{ $value->edad_tn}}</td>
+                    </tr>
+                    <tr>
+                        <th>Edad +TN + Marcadores Emergentes</th>
+                        <td>{{ $value->edad_tn_marcadores}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-5">
+                <img class="img-responsive" src="{{ asset('img/grafico_trimestre.png') }}" alt="">
+            </div>
         </div>
 
         @php

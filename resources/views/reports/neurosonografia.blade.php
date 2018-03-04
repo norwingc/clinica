@@ -3,31 +3,54 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $neurosono->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $neurosono->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $neurosono->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $neurosono->created_at->format('d/m/Y') }}</td>
-        </tr>
-        <tr>
-            <th>Paridad</th>
-            <td>{{ $neurosono->paridad }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $neurosono->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $neurosono->edad }} {!! ($neurosono->edad_gestacional != '') ? ' / '. $neurosono->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $neurosono->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $neurosono->date }} {!! ($neurosono->rh_tipo != '') ? ' / '. $neurosono->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $neurosono->paridad }} {!! ($neurosono->morbilidad != '') ? ' / '. $neurosono->morbilidad : '' !!} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul"><b>REPORTE DE NEUROSONOGRAFIA</b></p>
 
@@ -44,120 +67,122 @@
             Vitalidad: {{ $value->vitalidad_feto }}. <b>PRESENTACIÓN:</b> {{ $value->presentacion }}. <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
         </p>
 
-        <div>
-            <table style="width: 100%">
-                <tr>
-                    <th colspan="3" style="text-align: center">SOMATOMETRIA</th>
-                </tr>
-                <tr>
-                    <th>Parámetro</th>
-                    <th>Medida mm</th>
-                    <th>Semanas</th>
-                </tr>
-                <tr>
-                    <th>DBP</th>
-                    <td>{{ $value->dbp_medida }}</td>
-                    <td>{{ $value->dbp_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>CC</th>
-                    <td>{{ $value->cc_medida }}</td>
-                    <td>{{ $value->cc_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>CA</th>
-                    <td>{{ $value->ca_medida }}</td>
-                    <td>{{ $value->ca_semanas }}</td>
-                </tr>
-                <tr>
-                    <th>LF</th>
-                    <td>{{ $value->lf_medida }}</td>
-                    <td>{{ $value->lf_semanas }}</td>
-                </tr>
-                 <tr>
-                    <th>Fetometría promedio</th>
-                    <td colspan="2">{{ $value->fetometria_promedio }}</td>
-                </tr>
-                <tr>
-                    <th>Percentil</th>
-                    <td colspan="2">{{ $value->percentil }}</td>
-                </tr>
-                <tr>
-                    <th>Peso fetal</th>
-                    <td colspan="2">{{ $value->peso_fetal }}</td>
-                </tr>
-                <tr>
-                    <th>Fecha de parto estimada</th>
-                    <td colspan="2">{{ $value->fecha_parto }}</td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <table style="width: 100%">
-                <tr>
-                    <th colspan="3" style="text-align: center">Flujometria Doppler</th>
-                </tr>
-                <tr>
-                    <th>Vaso evaluado</th>
-                    <th>Percentil</th>
-                    <th>Valor</th>
-                </tr>
-                <tr>
-                    <th>IP medio de arterias uterinas</th>
-                    <td>{{ $value->percentil_ip_medio }}</td>
-                    <td>{{ $value->interpretacion_ip_medio }}</td>
-                </tr>
-                <tr>
-                    <th>Notch Arteria uterina Izquierda</th>
-                    <td>{{ $value->percentil_notch_izquierda }}</td>
-                    <td>{{ $value->interpretacion_notch_izquierda }}</td>
-                </tr>
-                <tr>
-                    <th>Notch Arteria uterina Derecha</th>
-                    <td>{{ $value->percentil_notch_derecha }}</td>
-                    <td>{{ $value->interpretacion_notch_derecha }}</td>
-                </tr>
-                <tr>
-                    <th>Índice Cerebro placentario</th>
-                    <td>{{ $value->percentil_cerebro_placentario }}</td>
-                    <td>{{ $value->interpretacion_cerebro_placentario }}</td>
-                </tr>
-                <tr>
-                    <th>Arteria cerebral media</th>
-                    <td>{{ $value->percentil_arteria_cerebral }}</td>
-                    <td>{{ $value->interpretacion_arteria_cerebral }}</td>
-                </tr>
-                <tr>
-                    <th>Arteria Umbilical</th>
-                    <td>{{ $value->percentil_arteria_umbilical }}</td>
-                    <td>{{ $value->interpretacion_arteria_umbilical }}</td>
-                </tr>
-                <tr>
-                    <th>Flujo diastólico de Arteria umbilical</th>
-                    <td>{{ $value->percentil_flojo_diasotolico }}</td>
-                    <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
-                </tr>
-                <tr>
-                    <th>Itsmo aórtico</th>
-                    <td>{{ $value->percentil_itsmo_aortico }}</td>
-                    <td>{{ $value->interpretacion_itsmo_aortico }}</td>
-                </tr>
-                <tr>
-                    <th>Ducto venoso</th>
-                    <td>{{ $value->percentil_ducto_venenoso }}</td>
-                    <td>{{ $value->interpretacion_ducto_venenoso }}</td>
-                </tr>
-                <tr>
-                    <th>Flujo diastólico de ducto venoso</th>
-                    <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
-                    <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
-                </tr>
-                <tr>
-                    <th>Vena umbilical</th>
-                    <td>{{ $value->percentil_vena_umbilical }}</td>
-                    <td>{{ $value->interpretacion_vena_umbilical }}</td>
-                </tr>
-            </table>
+        <div class="row">
+            <div class="col-xs-5">
+                <table class="table-striped">
+                        <tr>
+                            <th colspan="3" style="text-align: center">SOMATOMETRIA</th>
+                        </tr>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Medida mm</th>
+                            <th>Semanas</th>
+                        </tr>
+                        <tr>
+                            <th>DBP</th>
+                            <td>{{ $value->dbp_medida }}</td>
+                            <td>{{ $value->dbp_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CC</th>
+                            <td>{{ $value->cc_medida }}</td>
+                            <td>{{ $value->cc_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CA</th>
+                            <td>{{ $value->ca_medida }}</td>
+                            <td>{{ $value->ca_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>LF</th>
+                            <td>{{ $value->lf_medida }}</td>
+                            <td>{{ $value->lf_semanas }}</td>
+                        </tr>
+                         <tr>
+                            <th>Fetometría promedio</th>
+                            <td colspan="2">{{ $value->fetometria_promedio }}</td>
+                        </tr>
+                        <tr>
+                            <th>Percentil</th>
+                            <td colspan="2">{{ $value->percentil }}</td>
+                        </tr>
+                        <tr>
+                            <th>Peso fetal</th>
+                            <td colspan="2">{{ $value->peso_fetal }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de parto estimada</th>
+                            <td colspan="2">{{ $value->fecha_parto }}</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="col-xs-6">
+                <table class="table-striped">
+                    <tr>
+                        <th colspan="3" style="text-align: center">Flujometria Doppler</th>
+                    </tr>
+                    <tr>
+                        <th>Vaso evaluado</th>
+                        <th>Percentil</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <th>IP medio de arterias uterinas</th>
+                        <td>{{ $value->percentil_ip_medio }}</td>
+                        <td>{{ $value->interpretacion_ip_medio }}</td>
+                    </tr>
+                    <tr>
+                        <th>Notch Arteria uterina Izquierda</th>
+                        <td>{{ $value->percentil_notch_izquierda }}</td>
+                        <td>{{ $value->interpretacion_notch_izquierda }}</td>
+                    </tr>
+                    <tr>
+                        <th>Notch Arteria uterina Derecha</th>
+                        <td>{{ $value->percentil_notch_derecha }}</td>
+                        <td>{{ $value->interpretacion_notch_derecha }}</td>
+                    </tr>
+                    <tr>
+                        <th>Índice Cerebro placentario</th>
+                        <td>{{ $value->percentil_cerebro_placentario }}</td>
+                        <td>{{ $value->interpretacion_cerebro_placentario }}</td>
+                    </tr>
+                    <tr>
+                        <th>Arteria cerebral media</th>
+                        <td>{{ $value->percentil_arteria_cerebral }}</td>
+                        <td>{{ $value->interpretacion_arteria_cerebral }}</td>
+                    </tr>
+                    <tr>
+                        <th>Arteria Umbilical</th>
+                        <td>{{ $value->percentil_arteria_umbilical }}</td>
+                        <td>{{ $value->interpretacion_arteria_umbilical }}</td>
+                    </tr>
+                    <tr>
+                        <th>Flujo diastólico de Arteria umbilical</th>
+                        <td>{{ $value->percentil_flojo_diasotolico }}</td>
+                        <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
+                    </tr>
+                    <tr>
+                        <th>Itsmo aórtico</th>
+                        <td>{{ $value->percentil_itsmo_aortico }}</td>
+                        <td>{{ $value->interpretacion_itsmo_aortico }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ducto venoso</th>
+                        <td>{{ $value->percentil_ducto_venenoso }}</td>
+                        <td>{{ $value->interpretacion_ducto_venenoso }}</td>
+                    </tr>
+                    <tr>
+                        <th>Flujo diastólico de ducto venoso</th>
+                        <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
+                        <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
+                    </tr>
+                    <tr>
+                        <th>Vena umbilical</th>
+                        <td>{{ $value->percentil_vena_umbilical }}</td>
+                        <td>{{ $value->interpretacion_vena_umbilical }}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <p class="sub_titul"><b>Se realiza un barrido suave en sentido craneocaudal identificando las siguientes estructuras:</b></p>

@@ -17,6 +17,9 @@ class CreateDopplersTable extends Migration
             $table->increments('id');
             $table->integer('consulta_id');
             $table->string('edad', 30)->nullable();
+            $table->string('edad_gestacional')->nullable();
+            $table->string('morbilidad')->nullable();
+            $table->string('rh_tipo')->nullable();
             $table->string('date')->nullable();
             $table->string('paridad')->nullable();
             $table->string('referido')->nullable();

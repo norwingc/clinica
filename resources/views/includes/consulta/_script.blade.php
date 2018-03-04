@@ -54,6 +54,19 @@
         $('#presencia_quiste_si_neurosonografia').selectpicker();
     });
 
+    $('#cavidad_endometrial_ocupada_pelvico').change(function(){
+        if($(this).val() == 'Dispositivo intrauterino'){
+            $('.dispositivo_intrauterino_cual').show();
+            $('.cavidad_endometrial_embarazo').hide();
+        }else if ($(this).val() == 'Embarazo') {
+            $('.cavidad_endometrial_embarazo').show();
+            $('.dispositivo_intrauterino_cual').hide();
+        }else{
+            $('.cavidad_endometrial_embarazo').hide();
+            $('.dispositivo_intrauterino_cual').hide();
+        }
+    })
+
     function huesoNasalAusente(este) {
         (este.val() == 'Ausente') ? $('.medicion_nasal_1trimestre').hide() : $('.medicion_nasal_1trimestre').show();
     }
@@ -620,7 +633,7 @@
         let title           = 'Agregar Fecha de parto';
         $('.modal-title').html(title);
 
-        $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/FechaParto/store/"+paciente);
+        $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/FechaProcedimiento/store/"+paciente);
 
         $('#modalAddFechaParto').modal('show');
     }

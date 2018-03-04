@@ -3,31 +3,55 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1.1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $estructural->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $estructural->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $estructural->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $estructural->created_at->format('d/m/Y') }}</td>
-        </tr>
-        <tr>
-            <th>Paridad</th>
-            <td>{{ $estructural->paridad }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $estructural->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $estructural->edad }} {!! ($estructural->edad_gestacional != '') ? ' / '. $estructural->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $estructural->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $estructural->date }} {!! ($estructural->rh_tipo != '') ? ' / '. $estructural->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $estructural->paridad }} {!! ($estructural->morbilidad != '') ? ' / '. $estructural->morbilidad : '' !!} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul"><b>ULTRASONIDO MORFOLOGICO DE II TRIMESTRE</b></p>
 
@@ -44,93 +68,60 @@
             Vitalidad: {{ $value->vitalidad_feto }}. <b>PRESENTACIÓN:</b> {{ $value->presentacion }}. <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
         </p>
 
-        <div>
-            <p class="sub_titul"><b>SOMATOMETRIA</b></p>
-            <table style="width: 100%;">
+        <div class="row">
+            <div class="col-xs-5">
+                <table class="table-striped">
+                        <tr>
+                            <th colspan="3" style="text-align: center">SOMATOMETRIA</th>
+                        </tr>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Medida mm</th>
+                            <th>Semanas</th>
+                        </tr>
+                        <tr>
+                            <th>DBP</th>
+                            <td>{{ $value->dbp_medida }}</td>
+                            <td>{{ $value->dbp_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CC</th>
+                            <td>{{ $value->cc_medida }}</td>
+                            <td>{{ $value->cc_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>CA</th>
+                            <td>{{ $value->ca_medida }}</td>
+                            <td>{{ $value->ca_semanas }}</td>
+                        </tr>
+                        <tr>
+                            <th>LF</th>
+                            <td>{{ $value->lf_medida }}</td>
+                            <td>{{ $value->lf_semanas }}</td>
+                        </tr>
+                         <tr>
+                            <th>Fetometría promedio</th>
+                            <td colspan="2">{{ $value->fetometria_promedio }}</td>
+                        </tr>
+                        <tr>
+                            <th>Percentil</th>
+                            <td colspan="2">{{ $value->percentil }}</td>
+                        </tr>
+                        <tr>
+                            <th>Peso fetal</th>
+                            <td colspan="2">{{ $value->peso_fetal }}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de parto estimada</th>
+                            <td colspan="2">{{ $value->fecha_parto }}</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="col-xs-6">
+                <table class="table-striped">
                     <tr>
-                        <th>Parámetro</th>
-                        <th>Medida mm</th>
-                        <th>Semanas</th>
+                        <th colspan="3" style="text-align: center">Flujometria Doppler</th>
                     </tr>
-                    <tr>
-                        <th>DBP</th>
-                        <td>{{ $value->dbp_medida }}</td>
-                        <td>{{ $value->dbp_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>CC</th>
-                        <td>{{ $value->cc_medida }}</td>
-                        <td>{{ $value->cc_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>CA</th>
-                        <td>{{ $value->ca_medida }}</td>
-                        <td>{{ $value->ca_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>LF</th>
-                        <td>{{ $value->lf_medida }}</td>
-                        <td>{{ $value->lf_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Húmero</th>
-                        <td>{{ $value->humero_medida }}</td>
-                        <td>{{ $value->humero_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Radio</th>
-                        <td>{{ $value->radio_medida }}</td>
-                        <td>{{ $value->radio_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Cúbito</th>
-                        <td>{{ $value->cubito_medida }}</td>
-                        <td>{{ $value->cubito_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Tibia</th>
-                        <td>{{ $value->tibia_medida }}</td>
-                        <td>{{ $value->tibia_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Peroné</th>
-                        <td>{{ $value->perone_medida }}</td>
-                        <td>{{ $value->perone_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Cerebelo</th>
-                        <td>{{ $value->cerebelo_medida }}</td>
-                        <td>{{ $value->cerebelo_semanas }}</td>
-                    </tr>
-                    <tr>
-                        <th>Cisterna magna</th>
-                        <td colspan="2">{{ $value->cisterna_magna }}</td>
-                    </tr>
-                    <tr>
-                        <th>Pliegue nucal</th>
-                        <td colspan="2">{{ $value->pliegue_nucal }}</td>
-                    </tr>
-                    <tr>
-                        <th>Fetometría promedio</th>
-                        <td colspan="2">{{ $value->fetometria_promedio }}</td>
-                    </tr>
-                    <tr>
-                        <th>Percentil</th>
-                        <td colspan="2">{{ $value->percentil }}</td>
-                    </tr>
-                    <tr>
-                        <th>Peso fetal</th>
-                        <td colspan="2">{{ $value->peso_fetal }}</td>
-                    </tr>
-                    <tr>
-                        <th>Fecha de parto estimada</th>
-                        <td colspan="2">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
-                    </tr>
-            </table>
-        </div>
-        <div>
-            <p class="sub_titul"><b>Flujometria Doppler</b></p>
-            <table style="width: 100%">
                     <tr>
                         <th>Vaso evaluado</th>
                         <th>Percentil</th>
@@ -191,8 +182,10 @@
                         <td>{{ $value->percentil_vena_umbilical }}</td>
                         <td>{{ $value->interpretacion_vena_umbilical }}</td>
                     </tr>
-            </table>
+                </table>
+            </div>
         </div>
+
         <p>
             <b>Cráneo:</b> Forma normal: {{ $value->craneo }}. Dolicocefalia: {{ $value->dolicocefalia }}. Braquicefalia: {{ $value->braquicefalia }}. Tamaño normal: {{ $value->craneo_tamano }}.
             Suturas craneales normales: {{ $value->craneo_situras }}. A la leve compresión del transductor se aprecian deformidades: {{ $value->craneo_compresion }}.

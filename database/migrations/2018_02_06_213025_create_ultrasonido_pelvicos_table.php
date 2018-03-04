@@ -40,6 +40,7 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('endometrio')->nullable();
             $table->string('endometrio_modo')->nullable();
             $table->string('cavidad_endometrial')->nullable();
+            $table->string('cavidad_endometrial_ocupada')->nullable();
             $table->string('dispositivo_intrauterino')->nullable();
             $table->string('saco_gestional')->nullable();
             $table->string('saco_gestional_bordes')->nullable();

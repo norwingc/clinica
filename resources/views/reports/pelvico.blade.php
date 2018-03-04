@@ -3,27 +3,55 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Download</title>
-    <link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body{
+
+            text-align: justify;
+            font-size: 1.1em:
+            color: #404040;
+            padding-top: 7em;
+            padding-bottom: 4em;
+        }
+        .sub_titul{
+            color: #3c8dbc;
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Nombre:</th>
-            <td>{{ $pelvico->consulta->paciente->name }}</td>
-        </tr>
-         <tr>
-            <th>Edad:</th>
-            <td>{{ $pelvico->edad }}</td>
-        </tr>
-         <tr>
-            <th>Referido:</th>
-            <td>{{ $pelvico->referido }}</td>
-        </tr>
-        <tr>
-            <th>Fecha:</th>
-            <td>{{ $pelvico->created_at->format('d/m/Y') }}</td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <table class="table-striped">
+                <tr>
+                    <th>Nombre:</th>
+                    <td>{{ $pelvico->consulta->paciente->name }}</td>
+                </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $pelvico->edad }} {!! ($pelvico->edad_gestacional != '') ? ' / '. $pelvico->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $pelvico->referido }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha:</th>
+                    <td>{{ $pelvico->date }} {!! ($pelvico->rh_tipo != '') ? ' / '. $pelvico->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $pelvico->paridad }} {!! ($pelvico->morbilidad != '') ? ' / '. $pelvico->morbilidad : '' !!} </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <p class="sub_titul">Se realiza ultrasonido en tiempo real encontrando:</p>
 
@@ -38,21 +66,26 @@
         @if($pelvico->masa_uterino == 'Si')
             Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}.
         @endif
-            Presencia de tabique: {{ $pelvico->presencia_tabique }}.
-            @if($pelvico->presencia_tabique == 'Si')
-                   Medicion: {{ $pelvico->tabique_medicion }}.
-            @endif
-            <p>
-            Endometrio (mm): {{ $pelvico->endometrio }}. Modo: {{ $pelvico->endometrio_modo }}. Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
-            @if($pelvico->cavidad_endometrial == 'Si')
-                Dispositivo intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
-            </p>
-            <p>
-                Saco gestacional: {{ $pelvico->saco_gestional }}.
-                Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
-                Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
-                Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
-                Edad gestacional: {{ $pelvico->edad_gestacional }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
+
+        Presencia de tabique: {{ $pelvico->presencia_tabique }}.
+        @if($pelvico->presencia_tabique == 'Si')
+               Medicion: {{ $pelvico->tabique_medicion }}.
+        @endif
+
+        <p>
+            @if($pelvico->endometrio != '') Endometrio (mm): {{ $pelvico->endometrio }}. @endif Modo: {{ $pelvico->endometrio_modo }}. Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
+                @if($pelvico->cavidad_endometrial == 'Si')
+
+                 @if($pelvico->cavidad_endometrial_ocupada == 'Dispositivo intrauterino')
+                    Dispositivo Intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
+                @else
+                    Saco gestacional: {{ $pelvico->saco_gestional }}.
+                    Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
+                    Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
+                    Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
+                    Edad gestacional: {{ $pelvico->edad_gestacional }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
+                @endif
+
             @endif
         </p>
     @endif
