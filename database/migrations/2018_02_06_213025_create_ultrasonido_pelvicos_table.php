@@ -17,11 +17,10 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->increments('id');
             $table->string('referido')->nullable();
             $table->string('edad', 30)->nullable();
-            $table->integer('gesta')->nullable();
-            $table->integer('parto')->nullable();
-            $table->integer('aborto')->nullable();
-            $table->integer('cesarea')->nullable();
-            $table->integer('legrado')->nullable();
+            $table->string('date')->nullable();
+            $table->string('edad_gestacional')->nullable();
+            $table->string('morbilidad')->nullable();
+            $table->string('rh_tipo')->nullable();
             $table->string('bordes')->nullable();
             $table->string('ecos_interior')->nullable();
             $table->string('utero')->nullable();
