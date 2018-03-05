@@ -113,7 +113,7 @@
                         </tr>
                         <tr>
                             <th>Fecha de parto estimada</th>
-                            <td colspan="2">{{ $value->fecha_parto }}</td>
+                            <td colspan="2">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
                         </tr>
                     </table>
             </div>

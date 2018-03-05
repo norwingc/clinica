@@ -15,7 +15,7 @@ class Ecocardiografia extends Model
      * @var [type]
      */
     protected $fillable = [
-        "referido", "edad", "date", "paridad", "feto", "revision", "comentarios", "recomendaciones", "recordatorio"
+        "referido", "edad", "date", "edad_gestacional", "paridad", "morbilidad", "rh_tipo", "feto", "revision", "comentarios", "recomendaciones", "recordatorio"
     ];
 
      /**

@@ -1066,7 +1066,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_ecocardiografia" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_ecocardiografia" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -2123,7 +2123,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_neurosonografia" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_neurosonografia" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -3376,7 +3376,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_estructural" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_estructural" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -4938,7 +4938,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_1trimestre" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_1trimestre" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -5769,7 +5769,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_pelvico" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -6064,7 +6064,7 @@
                                 <div class="col-md-3">
                                     <label>Edad gestacional</label>
                                     <div>
-                                        <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control">
+                                        <input type="text" name="edad_gestacional_embarazo" id="edad_gestacional_embarazo_pelvico" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -6593,7 +6593,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_getacional" id="edad_getacional_doppler" class="form-control" required>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_doppler" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-3">

@@ -16,13 +16,13 @@ class CreateEcocardiografiasTable extends Migration
         Schema::create('ecocardiografias', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('consulta_id');
+            $table->string('referido')->nullable();
             $table->string('edad', 30)->nullable();
+            $table->string('date')->nullable();
             $table->string('edad_gestacional')->nullable();
+            $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
             $table->string('rh_tipo')->nullable();
-            $table->string('date')->nullable();
-            $table->string('paridad')->nullable();
-            $table->string('referido')->nullable();
             $table->string('feto');
             $table->string('revision')->nullable();
             $table->text('concluciones')->nullable();

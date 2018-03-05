@@ -18,6 +18,7 @@
             text-align: center;
             text-decoration: underline;
             font-weight: bold;
+            margin-top: 1em;
         }
         table{
             width: 100%;
@@ -27,7 +28,7 @@
 <body>
     <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
-            <table class="table table-striped">
+            <table class="table-striped">
                 <tr>
                     <th>Nombre:</th>
                     <td>{{ $neurosono->consulta->paciente->name }}</td>
@@ -112,7 +113,7 @@
                         </tr>
                         <tr>
                             <th>Fecha de parto estimada</th>
-                            <td colspan="2">{{ $value->fecha_parto }}</td>
+                            <td colspan="2">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
                         </tr>
                     </table>
             </div>

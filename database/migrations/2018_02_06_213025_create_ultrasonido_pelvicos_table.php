@@ -19,7 +19,9 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('edad', 30)->nullable();
             $table->string('date')->nullable();
             $table->string('edad_gestacional')->nullable();
+            $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
+            $table->string('rh_tipo')->nullable();
             $table->string('rh_tipo')->nullable();
             $table->string('bordes')->nullable();
             $table->string('ecos_interior')->nullable();
@@ -49,7 +51,7 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('presencia_yema')->nullable();
             $table->string('vitalidad')->nullable();
             $table->string('longitud_craneo')->nullable();
-            $table->string('edad_gestacional')->nullable();
+            $table->string('edad_gestacional_embarazo')->nullable();
             $table->string('fecha_parto')->nullable();
             $table->string('ovario_izquierdo')->nullable();
             $table->string('ovario_izquierdo_1')->nullable();

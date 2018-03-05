@@ -16,13 +16,13 @@ class CreateUltrasonidoTrimestresTable extends Migration
         Schema::create('ultrasonido_trimestres', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('consulta_id');
+            $table->string('referido')->nullable();
             $table->string('edad', 30)->nullable();
             $table->string('date')->nullable();
             $table->string('edad_gestacional')->nullable();
+            $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
             $table->string('rh_tipo')->nullable();
-            $table->string('paridad')->nullable();
-            $table->string('referido')->nullable();
             $table->string('feto');
             $table->string('historia_preecampsia_mama')->nullable();
             $table->string('historia_hipertension_mama')->nullable();

@@ -628,6 +628,11 @@
         $('#modalUpdatedUltrasonidoPelvico').modal('show');
     }
 
+    /**
+     * [saveFechaParto description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
     function saveFechaParto(este) {
         let paciente        = este.data('paciente');
         let title           = 'Agregar Fecha de parto';
