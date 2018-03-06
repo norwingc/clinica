@@ -1,5 +1,5 @@
 @if(\Auth::user()->nickname == 'pavon')
-    <footer>
+    <footer style="margin-top: 1em">
         <p>
             <b>Dr. Néstor Javier Pavón Gómez</b> <br>
             Médico Gineco Obstetra <br>
@@ -11,7 +11,7 @@
 @endif
 
 @if(\Auth::user()->nickname == 'bravo')
-    <footer>
+    <footer style="margin-top: 1em">
         <p>
             <b>Dra. Sugey del Carmen Bravo Cabrera</b> <br>
             Médico y Cirujana <br>

@@ -6,12 +6,11 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body{
-
             text-align: justify;
             font-size: 1.1em:
             color: #404040;
-            padding-top: 7em;
-            padding-bottom: 4em;
+            padding-top: 8em;
+            padding-bottom: 6em;
         }
         .sub_titul{
             color: #3c8dbc;
@@ -274,7 +273,7 @@
     @endif
 
     <p class="sub_titul"><b>Recomendaciones</b></p>
-    <p style="margin:0">Continuar vigilancia y curva de crecimiento (semanas): {{ $estructural->conclusion_vigilancia_crecimiento }}</p>
+    <p style="margin:0">{{ $estructural->recomendaciones }}</p>
 
     @include('includes._firmas')
 </body>

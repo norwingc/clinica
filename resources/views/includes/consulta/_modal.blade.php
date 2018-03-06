@@ -4616,8 +4616,8 @@
                                     <label>Engrosamiento de pared vesical</label>
                                     <div>
                                         <select name="engrosamiento_pared" id="engrosamiento_pared_estructural" class="form-control" required>
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>
