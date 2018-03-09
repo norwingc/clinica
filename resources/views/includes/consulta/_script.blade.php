@@ -142,7 +142,7 @@
       (este.val() == 'No') ? $('.examen_maduracion_si').hide() : $('.examen_maduracion_si').show();
     }
     function uteroGravidoSi(este) {
-      (este.val() == 'No') ? $('.utero_gravido_si').show() : $('.utero_gravido_si').hide();
+      (este.val() == 'Si') ? $('.utero_gravido_si').show() : $('.utero_gravido_si').hide();
     }
     function cefalopelvicaPrenatal(este) {
       (este.val() != 'No Valorable') ? $('.vagina_desproporcion_cefalopelvica_otro').show() : $('.vagina_desproporcion_cefalopelvica_otro').hide();
