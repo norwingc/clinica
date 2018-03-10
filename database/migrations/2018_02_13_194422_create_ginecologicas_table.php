@@ -19,7 +19,7 @@ class CreateGinecologicasTable extends Migration
         $table->string('referido')->nullable();
         $table->string('date')->nullable();
         $table->string('numero')->nullable();
-        $table->text('diagnostico_previo');
+        $table->text('diagnostico_previo')->nullable();
         $table->string('signos_vitales_fc')->nullable();
         $table->string('signos_vitales_fr')->nullable();
         $table->string('signos_vitales_pa')->nullable();

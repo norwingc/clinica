@@ -10,7 +10,7 @@
             font-size: 1.1em:
             color: #404040;
             padding-top: 8em;
-            padding-bottom: 6em;
+            padding-bottom: 7em;
         }
         .sub_titul{
             color: #3c8dbc;
@@ -55,7 +55,7 @@
 
     <p class="sub_titul"><b>Signos Vitales</b></p>
     <p>
-      Presion Arterial: {{ $ginecologica->signos_vitales_pa }}, Frecuencia Cardiaca: {{ $ginecologica->signos_vitales_fc }}. Frecuencia respiratoria: {{ $ginecologica->signos_vitales_fr }}.
+      Presion Arterial: {{ $ginecologica->signos_vitales_pa }} mmhg, Frecuencia Cardiaca: {{ $ginecologica->signos_vitales_fc }}. Frecuencia respiratoria: {{ $ginecologica->signos_vitales_fr }}.
       Peso Actual (lb): {{ $ginecologica->peso_actual }}, Incremente de peso (lb): {{ $ginecologica->incremento_peso }}.
     </p>
 

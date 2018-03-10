@@ -10,7 +10,7 @@
             font-size: 1.1em:
             color: #404040;
             padding-top: 8em;
-            padding-bottom: 6em;
+            padding-bottom: 7em;
         }
         .sub_titul{
             color: #3c8dbc;
@@ -100,19 +100,19 @@
                         </tr>
                          <tr>
                             <th>Fetometría promedio</th>
-                            <td colspan="2">{{ $value->fetometria_promedio }}</td>
+                            <td colspan="2" class="text-center">{{ $value->fetometria_promedio }}</td>
                         </tr>
                         <tr>
                             <th>Percentil</th>
-                            <td colspan="2">{{ $value->percentil }}</td>
+                            <td colspan="2" class="text-center">{{ $value->percentil }}</td>
                         </tr>
                         <tr>
                             <th>Peso fetal</th>
-                            <td colspan="2">{{ $value->peso_fetal }}</td>
+                            <td colspan="2" class="text-center">{{ $value->peso_fetal }}</td>
                         </tr>
                         <tr>
                             <th>Fecha de parto estimada</th>
-                            <td colspan="2">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
+                            <td colspan="2" class="text-center">{{ date('d/m/Y', strtotime($value->fecha_parto)) }}</td>
                         </tr>
                     </table>
             </div>
@@ -226,16 +226,20 @@
 
     <p>Revision: {{ $ecocardio->revision }}</p>
 
-    <p class="sub_titul"><b>Conclusion</b></p>
-    <p style="margin: 0">{{ $ecocardio->concluciones }}</p>
+    @if($ecocardio->concluciones != '')
+        <p class="sub_titul"><b>Conclusion</b></p>
+        <p style="margin: 0">{{ $ecocardio->concluciones }}</p>
+    @endif
 
-     @if($ecocardio->comentarios != '')
+    @if($ecocardio->comentarios != '')
         <p class="sub_titul"><b>Comentarios</b></p>
         <p>{{ $ecocardio->comentarios }}</p>
     @endif
 
-    <p class="sub_titul"><b>Recomendaciones</b></p>
-    <p>{{ $ecocardio->recomendaciones }}</p>
+    @if($ecocardio->recomendaciones != '')
+        <p class="sub_titul"><b>Recomendaciones</b></p>
+        <p>{{ $ecocardio->recomendaciones }}</p>
+    @endif
 
     @include('includes._firmas')
 </body>

@@ -27,7 +27,8 @@ class Prenatal extends Model
       "pospandrial_dos", "creatinina", "ego_leucocitos", "nitritos", "glucosa", "proteinas", "cilindros", "papanicolaou", "fecha_papanicolaou",
       "resultado_papanicolaou", "cultivos_vaginales", "rpr_positivo", "vih_positivo", "urocultivo", "transaminasas", "billiruinas", "ldh", "tp", "tpt",
       "fibrinogeno", "acido_urico", "ultrasonido", "ultrasonido_si", "edad_gestional_semanas", "edad_gestional_dias", "ila", "planceta_grado",
-      "doppler_normal", "incremento_peso_materno", "incremento_curva_fetal", "maduracion_pulmonar", "maduracion_pulmonal_semanas", "comentarios", "recordatorio"
+      "doppler_normal", "incremento_peso_materno", "incremento_curva_fetal", "maduracion_pulmonar", "maduracion_pulmonal_semanas", "plan_medico_otro",
+      'examen_laboratorio_otro', "comentarios", "recordatorio"
     ];
 
     public function consulta()

@@ -63,12 +63,12 @@
 
         Longitud: {{ $pelvico->longitud }}. Ancho: {{ $pelvico->ancho }}. Grosor: {{ $pelvico->grosor }}. Masas en musculo uterino: {{ $pelvico->masa_uterino }}.
         @if($pelvico->masa_uterino == 'Si')
-            Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}.
+            Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}mm.
         @endif
 
         Presencia de tabique: {{ $pelvico->presencia_tabique }}.
         @if($pelvico->presencia_tabique == 'Si')
-               Medicion: {{ $pelvico->tabique_medicion }}.
+               Medicion: {{ $pelvico->tabique_medicion }}mm.
         @endif
 
         <p>

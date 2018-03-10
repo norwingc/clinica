@@ -77,7 +77,7 @@
                         <div class="col-sm-4">
                             <label>Temeratura ºC</label>
                             <div>
-                                <input type="number" class="form-control" name="temperatura" id="temperatura_prenatal" >
+                                <input type="text" class="form-control" name="temperatura" id="temperatura_prenatal" >
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -209,15 +209,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+
+                        <div class="col-sm-3 utero_intrapelvico" style="display:none">
                             <label>Utero Intrapelvico</label>
                             <div>
                                 <select class="form-control" name="utero_intrapelvico" id="utero_intrapelvico_prenatal">
-                                    <option value="No">No</option>
                                     <option value="Si">Si</option>
+                                    <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
+
                         <div class="col-sm-3">
                             <label>Peristalsis</label>
                             <div>
@@ -575,8 +577,9 @@
                                 <label>Papanicolaou</label>
                                 <div>
                                    <select class="form-control" name="papanicolaou" id="papanicolaou_renatal" data-target='papanicolaou_si_form' onchange="selectShow($(this))">
-                                       <option value="No">No</option>
-                                       <option value="Si">Si</option>
+                                        <option value="">Selecione uno</option>
+                                        <option value="No">No</option>
+                                        <option value="Si">Si</option>
                                    </select>
                                 </div>
                             </div>
@@ -606,6 +609,7 @@
                                 <label>RPR</label>
                                 <div>
                                     <select class="form-control" name="rpr_positivo" id="rpr_positivo_prenatal">
+                                        <option value="">Selecione uno</option>
                                        <option value="Negativo">Negativo</option>
                                        <option value="Positivo">Positivo</option>
                                     </select>
@@ -615,8 +619,9 @@
                                 <label>VIH</label>
                                 <div>
                                     <select class="form-control" name="vih_positivo" id="vih_positivo_prenatal">
-                                       <option value="Negativo">Negativo</option>
-                                       <option value="Positivo">Positivo</option>
+                                        <option value="">Selecione uno</option>
+                                        <option value="Negativo">Negativo</option>
+                                        <option value="Positivo">Positivo</option>
                                     </select>
                                 </div>
                             </div>
@@ -624,6 +629,7 @@
                                 <label>Urocultivo</label>
                                 <div>
                                    <select class="form-control" name="urocultivo" id="urocultivo_prenatal">
+                                       <option value="">Selecione uno</option>
                                        <option value="Sin Crecimiento Bacteriano">Sin Crecimiento Bacteriano</option>
                                        <option value="Con Crecimiento Bacteriano">Con Crecimiento Bacteriano</option>
                                    </select>
@@ -854,6 +860,18 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <label>Plan medico otro (separar con ",")</label>
+                            <div class="">
+                                <input type="text" name="plan_medico_otro" id="plan_medico_otro_prenatal" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Examenes de Laboratorio otro (separar con ",")</label>
+                            <div class="">
+                                <input type="text" name="examen_laboratorio_otro" id="examen_laboratorio_otro_prenatal" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
@@ -932,9 +950,9 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Presion Arterial</label>
+                            <label>Presion Arterial (mmhg)</label>
                             <div>
-                                <input type="number" class="form-control" name="signos_vitales_pa" id="signos_vitales_pa_ginecologica" >
+                                <input type="text" class="form-control" name="signos_vitales_pa" id="signos_vitales_pa_ginecologica" >
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -2022,7 +2040,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ILA</label>
+                                    <label>Valor de ILA (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_ecocardiografia" class="form-control">
                                     </div>
@@ -3271,7 +3289,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ILA</label>
+                                    <label>Valor de ILA (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_neurosonografia" class="form-control">
                                     </div>
@@ -4444,7 +4462,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <label>Medicion</label>
+                                        <label>Medicion (mm)</label>
                                         <div>
                                             <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_estructural" class="form-control">
                                         </div>
@@ -4459,7 +4477,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <label>Medicion</label>
+                                        <label>Medicion (mm)</label>
                                         <div>
                                             <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_estructural" class="form-control">
                                         </div>
@@ -4793,7 +4811,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ILA</label>
+                                    <label>Valor de ILA (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_estructural" class="form-control">
                                     </div>
@@ -5135,7 +5153,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 medicion_nasal_1trimestre">
-                                    <label>Medición</label>
+                                    <label>Medición (mm)</label>
                                     <div>
                                         <input type="text" name="medicion_nasal" id="medicion_nasal_1trimestre" class="form-control" >
                                     </div>
@@ -5288,7 +5306,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 dilatacion_intra_abdominal_si" style="display: none">
-                                        <label>Medicion</label>
+                                        <label>Medicion (mm)</label>
                                         <div>
                                             <input type="text" name="medicion_intra_abdominal" id="medicion_intra_abdominal_1trimestre" class="form-control">
                                         </div>
@@ -5303,7 +5321,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 dilatacion_extra_abdominal_si" style="display: none">
-                                        <label>Medicion</label>
+                                        <label>Medicion (mm)</label>
                                         <div>
                                             <input type="text" name="medicion_extra_abdominal" id="medicion_extra_abdominal_1trimestre" class="form-control">
                                         </div>
@@ -5607,19 +5625,19 @@
 
                     <div class="form-group">
                         <div class="col-md-3">
-                            <label>Presion arterial brazo derecho</label>
+                            <label>Presion arterial brazo derecho (mmhg)</label>
                             <div>
                                <input type="text" name="pa_derecho" id="pa_derecho_1trimestre" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>Presion alterial brazo izquierdo</label>
+                            <label>Presion arterial brazo izquierdo (mmhg)</label>
                             <div>
                                <input type="text" name="pa_izquierdo" id="pa_izquierdo_1trimestre" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>IP medio de aretrias uterinas</label>
+                            <label>IP medio de arterias uterinas</label>
                             <div>
                                <input type="text" name="ip_artrias" id="ip_artrias_1trimestre" class="form-control">
                             </div>
@@ -5717,7 +5735,7 @@
                         <div class="col-md-12">
                             <label>Recomendaciones</label>
                             <div>
-                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revison estructural ente la semana 18 a 24</textarea>
+                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revision estructural ente la semana 18 a 24</textarea>
                             </div>
                         </div>
                     </div>
@@ -5939,7 +5957,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 presencia_tabique_si" style="display: none">
-                                <label>Medicion</label>
+                                <label>Medicion (mm)</label>
                                 <div>
                                     <input type="text" name="tabique_medicion" id="tabique_medicion_pelvico" class="form-control">
                                 </div>
@@ -7266,7 +7284,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Valor de ILA</label>
+                                    <label>Valor de ILA (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_doppler" class="form-control">
                                     </div>

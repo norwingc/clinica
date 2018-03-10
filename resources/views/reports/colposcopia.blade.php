@@ -10,7 +10,7 @@
             font-size: 1.1em:
             color: #404040;
             padding-top: 8em;
-            padding-bottom: 6em;
+            padding-bottom: 7em;
         }
         .sub_titul{
             color: #3c8dbc;

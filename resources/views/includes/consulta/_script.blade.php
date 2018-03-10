@@ -16,12 +16,6 @@
         if(este.val() == 'Si' || este.val() == 'Anormal'){
             if($(target).is(':hidden')){
                 $(target).toggle('1000');
-
-                let select = $(target).find('select');
-                select.prop('required', 'required');
-
-                let input = $(target).find('input');
-                input.prop('required', 'required');
             }
         }
 
@@ -30,15 +24,6 @@
                 return false;
             }else{
                 $(target).toggle('1000');
-
-                let select = $(target).find('select');
-                select.removeAttr('required');
-                select.val('');
-                select.selectpicker('deselectAll');
-
-                let input = $(target).find('input');
-                input.removeAttr('required');
-                input.val('');
             }
         }
     }
@@ -142,7 +127,14 @@
       (este.val() == 'No') ? $('.examen_maduracion_si').hide() : $('.examen_maduracion_si').show();
     }
     function uteroGravidoSi(este) {
-      (este.val() == 'Si') ? $('.utero_gravido_si').show() : $('.utero_gravido_si').hide();
+      if(este.val() == 'Si'){
+        $('.utero_gravido_si').show();
+        $('.utero_intrapelvico').hide();
+      }else{
+         $('.utero_gravido_si').hide();
+         $('.utero_intrapelvico').show();
+      }
+
     }
     function cefalopelvicaPrenatal(este) {
       (este.val() != 'No Valorable') ? $('.vagina_desproporcion_cefalopelvica_otro').show() : $('.vagina_desproporcion_cefalopelvica_otro').hide();

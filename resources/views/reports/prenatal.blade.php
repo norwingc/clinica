@@ -10,7 +10,7 @@
             font-size: 1.1em:
             color: #404040;
             padding-top: 8em;
-            padding-bottom: 6em;
+            padding-bottom: 7em;
         }
         .sub_titul{
             color: #3c8dbc;
@@ -21,6 +21,9 @@
         }
         table{
             width: 100%;
+        }
+        .page-break {
+            page-break-after: always;
         }
     </style>
 </head>
@@ -140,23 +143,52 @@
       Maduración Pulmonar: {{ $prenatal->maduracion_pulmonar }} @if($prenatal->maduracion_pulmonar == 'Si') Semanas que si cumplio maduracion: {{ $prenatal->maduracion_pulmonal_semanas }}. @endif
     </p>
 
-    @if($prenatal->comentarios != null)
-      <p>
-        <b>Comentarios: </b> <br>
-        {{ $prenatal->comentarios }}
-      </p>
+    @if($prenatal->comentarios != 'null')
+        <p>
+            <b>Comentarios: </b> <br>
+            {{ $prenatal->comentarios }}
+        </p>
     @endif
 
-    <p>
-      <b>Plan Medico:</b> <br>
-      {{ $prenatal->plan_medico }}
-    </p>
-
-    <p>
-      <b>Examenes de Laboratorio:</b><br>
-      {{ $prenatal->examen_laboratorio }}
-    </p>
 
     @include('includes._firmas')
+
+    @if($prenatal->plan_medico != '' || $prenatal->examen_laboratorio != '' || $prenatal->plan_medico_otro != '' || $prenatal->examen_laboratorio_otro != '')
+        <div class="page-break"></div>
+    @endif
+
+    @if($prenatal->plan_medico != ''  || $prenatal->plan_medico_otro != '')
+        <p class="sub_titul"><b>Plan Medico:</b></p>
+        @php
+            $plan1 = explode(',', $prenatal->plan_medico);
+            $plan2 = explode(',', $prenatal->plan_medico_otro);
+        @endphp
+
+        <ul>
+            @for ($i = 0; $i < count($plan1); $i++)
+                <li>{{ $plan1[$i] }}</li>
+            @endfor
+            @for ($i = 0; $i < count($plan2); $i++)
+                <li>{{ $plan2[$i] }}</li>
+            @endfor
+        </ul>
+    @endif
+
+    @if($prenatal->examen_laboratorio != '' || $prenatal->examen_laboratorio_otro != '')
+        <p class="sub_titul"><b>Examenes de Laboratorio:</b></p>
+        @php
+            $examen1 = explode(',', $prenatal->examen_laboratorio);
+            $examen2 = explode(',', $prenatal->examen_laboratorio_otro);
+        @endphp
+        <ul>
+            @for ($i = 0; $i < count($examen1); $i++)
+                <li>{{ $examen1[$i] }}</li>
+            @endfor
+            @for ($i = 0; $i < count($examen2); $i++)
+                <li>{{ $examen2[$i] }}</li>
+            @endfor
+        </ul>
+    @endif
+
 </body>
 </html>

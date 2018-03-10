@@ -113,6 +113,8 @@ class CreatePrenatalsTable extends Migration
             $table->string('maduracion_pulmonal_semanas')->nullable();
             $table->text('plan_medico')->nullable();
             $table->text('examen_laboratorio')->nullable();
+            $table->text('plan_medico_otro')->nullable();
+            $table->text('examen_laboratorio_otro')->nullable();
             $table->text('comentarios')->nullable();
             $table->text('recordatorio')->nullable();
             $table->timestamps();

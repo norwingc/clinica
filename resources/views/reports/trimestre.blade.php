@@ -10,7 +10,7 @@
             font-size: 1.1em:
             color: #404040;
             padding-top: 8em;
-            padding-bottom: 6em;
+            padding-bottom: 7em;
         }
         .sub_titul{
             color: #3c8dbc;
@@ -193,8 +193,10 @@
         <p>{{ $trimestre->comentarios }}</p>
     @endif
 
-    <p class="sub_titul"><b>Recomendaciones</b></p>
-    <p>{{ $trimestre->recomendaciones }}</p>
+    @if($trimestre->recomendaciones != '')
+        <p class="sub_titul"><b>Recomendaciones</b></p>
+        <p>{{ $trimestre->recomendaciones }}</p>
+    @endif
 
     @include('includes._firmas')
 </body>
