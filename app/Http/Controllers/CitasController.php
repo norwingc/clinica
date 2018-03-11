@@ -150,13 +150,61 @@ class CitasController extends Controller
         $cita->date       = $request->date;
         $cita->comentario = $request->comentario;
         $cita->title      = $request->comentario;
-        $cita->all_day    = true;
+
+        if($request->all_day == 'Si'){
+            $cita->all_day    = true;
+            $cita->start      = $request->date . ' 00:00:00';
+            $cita->end        = $request->date . ' 23:59:00';
+        }else{
+            $cita->start      = $request->date . ' ' . $request->start;
+            $cita->end        = $request->date . ' ' . $request->end;
+        }
+
         $cita->color      = '#ff0000';
-        $cita->start      = $request->date . ' 00:00:00';
-        $cita->end        = $request->date . ' 23:59:00';
         $cita->save();
 
         session()->flash('message_success', "Cita Agregada");
+        return back();
+    }
+
+    /**
+     * [bloqueadasDelete description]
+     * @param  [type] $cita [description]
+     * @return [type]       [description]
+     */
+    public function bloqueadasDelete(Cita $cita)
+    {
+        $cita->delete();
+
+        session()->flash('message_success', "Cita Borrada");
+        return back();
+    }
+
+    /**
+     * [bloqueadasUpdate description]
+     * @param  Request $request [description]
+     * @param  Cita    $cita    [description]
+     * @return [type]           [description]
+     */
+    public function bloqueadasUpdate(Request $request, Cita $cita)
+    {
+        $cita->date       = $request->date;
+        $cita->comentario = $request->comentario;
+        $cita->title      = $request->comentario;
+
+        if($request->all_day == 'Si'){
+            $cita->all_day    = true;
+            $cita->start      = $request->date . ' 00:00:00';
+            $cita->end        = $request->date . ' 23:59:00';
+        }else{
+            $cita->start      = $request->date . ' ' . $request->start;
+            $cita->end        = $request->date . ' ' . $request->end;
+        }
+
+        $cita->color      = '#ff0000';
+        $cita->save();
+
+        session()->flash('message_success', "Cita Modificada");
         return back();
     }
 
@@ -224,6 +272,26 @@ class CitasController extends Controller
 
         session()->flash('message_ganger', "Cita Eliminada");
         return back();
+    }
+
+    /**
+     * [bloqueadas description]
+     * @return [type] [description]
+     */
+    public function bloqueadas()
+    {
+        $bloqueadas = Cita::where('color', '#ff0000')->get();
+        return view('citas.bloqueadas', compact('bloqueadas'));
+    }
+
+    /**
+     * [today description]
+     * @return [type] [description]
+     */
+    public function today()
+    {
+        $citas = Cita::has('consulta')->where('date',date('Y-m-d'))->get();
+        return view('citas.today', compact('citas'));
     }
 
     /**

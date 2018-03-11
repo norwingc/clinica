@@ -43,6 +43,22 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @foreach ($citas as $value)
+                                    <tr>
+                                        <td>{{ $value->consulta->paciente->name }}</td>
+                                        <td>{{ date('d/m/Y') }}</td>
+                                        <td>{{ date('g:i a', strtotime($value->start)). ' - ' .date('g:i a', strtotime($value->end)) }}</td>
+                                        <td>{{ $value->consulta->doctor }}</td>
+                                        <td>{{ $value->consulta->examen_type }}</td>
+                                        <td class="actions">
+                                            <a href='{{ route('paciente.show', [$value->consulta->paciente]) }}' class='btn'><i class='ion-search'></i></a>
+                                            <button class='btn' data-paciente='{{ $value->consulta->paciente }}' data-cita='{{ $value->id }}' onclick='updateCita($(this))'><i class='ion-edit'></i></button>
+                                            <a href='{{ route('citas.delete', [$value->id]) }}' class='btn'><i class='fa fa-trash-o'></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -63,19 +79,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
 
 <script type="text/javascript">
-   $('#table').DataTable( {
-        processing: true,
-        serverSide: true,
-        ajax: '{!! route('citas.get') !!}',
-        columns:[
-            {data: 'consulta.paciente.name', name: 'consulta.paciente.name'},
-            {data: 'date', name: 'date'},
-            {data: 'horario', name: 'horario'},
-            {data: 'consulta.doctor', name: 'consulta.doctor'},
-            {data: 'consulta.examen_type', name: 'consulta.examen_type'},
-            {data: 'action', name: 'id', orderable: false, searchable: false}
-        ]
-    });
+   $('#table').DataTable();
 
 </script>
 @endsection

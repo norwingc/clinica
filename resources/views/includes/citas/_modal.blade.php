@@ -101,6 +101,29 @@
                                 <input type="date" class="form-control" name="date" required>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <label>Todo el dia</label>
+                            <div>
+                                <select class="form-control" name="all_day" onchange="allDayCita($(this))">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="allDayCita" style="display:none">
+                            <div class="col-md-3">
+                                <label>Hr de Inicio</label>
+                                <div>
+                                    <input type="time" class="form-control" name="start">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Hr de Fin</label>
+                                <div>
+                                    <input type="time" class="form-control" name="end">
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <label>Comentario</label>
                             <div>

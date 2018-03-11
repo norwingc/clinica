@@ -98,7 +98,12 @@ Route::middleware(['auth'])->group(function () {
 
         Route::name('citas.update')->post('/update/{cita}', 'CitasController@update');
         Route::name('citas.delete')->get('/delete/{cita}', 'CitasController@delete');
+
         Route::name('citas.all.day')->post('/AllDay', 'CitasController@storeCitaAllDay');
+        Route::name('citas.bloqueadas')->get('/Bloqueadas', 'CitasController@bloqueadas');
+        Route::name('citas.bloqueadas.delete')->get('/Bloqueadas/delete/{cita}', 'CitasController@bloqueadasDelete');
+        Route::name('citas.bloqueadas.update')->post('/Bloqueadas/update/{cita}', 'CitasController@bloqueadasUpdate');
+        Route::name('citas.today')->get('/Today', 'CitasController@today');
     });
 
     Route::prefix('Reports')->group(function () {

@@ -31,6 +31,8 @@
 
                 <li><a href="{{ route('citas') }}">Lista</a></li>
                 <li><a href="{{ route('citas.create') }}">Agregar Cita</a></li>
+                <li><a href="{{ route('citas.bloqueadas') }}">Consultas Bloqueadas</a></li>
+                <li><a href="{{ route('citas.today') }}">Citas del dia</a></li>
                 @role('doctor')
                     <li><a href="{{ route('fecha.procedimiento.show') }}">Procedimientos medicos</a></li>
                 @endrole

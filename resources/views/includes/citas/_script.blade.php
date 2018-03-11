@@ -18,6 +18,8 @@
 
             $('#costo').val(data.cita.consulta.costo);
             $('#comentario').val(data.cita.comentario);
+            $('#date').val(data.cita.date);
+
 
             $('#examen_type option').each(function(){
                 if($(this).val() == data.cita.consulta.examen_type){
@@ -38,7 +40,18 @@
     /**
      * [addAllDayCita description]
      */
-    function addAllDayCita() {
+    function addAllDayCita(este = null) {
+
+        if(este.data('id') != undefined){
+            var id = este.data('id');
+
+            $('.modal-title').html('Editar Cita Bloqueada');
+
+            $('.consulta-form').attr('action', "{{ url('/') }}/Citas/Bloqueadas/update/"+ id);
+        }else{
+            $('.modal-title').html('Agregar dia sin citas');
+        }
+
         $('#modalCitaAllDay').modal('show');
     }
 
@@ -55,6 +68,15 @@
         $('.consulta-form').attr('action', "{{ url('/') }}/Citas/store/"+ paciente);
 
         $('#modalUpdateCita').modal('show');
+    }
+
+    /**
+     * [allDayCita description]
+     * @param  {[type]} este [description]
+     * @return {[type]}      [description]
+     */
+    function allDayCita(este) {
+        (este.val() == 'Si') ? $('.allDayCita').hide() : $('.allDayCita').show();
     }
 
 </script>

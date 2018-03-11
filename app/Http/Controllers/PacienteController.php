@@ -142,6 +142,18 @@ class PacienteController extends Controller
 
         $paciente->update($request->all());
 
+        foreach ($paciente->consulta as $key => $value) {
+            $title = explode(':', $value->cita->title);
+
+            $new_title = 'Paciente: '. $paciente->name. ' Examen: ';
+            for ($i=3; $i < count($title); $i++) {
+                $new_title .=  $title[$i];
+            }
+
+            $value->cita->title = $new_title;
+            $value->cita->update();
+        }
+
         session()->flash('message_success', "Informacion Actualizada");
         return back();
     }
