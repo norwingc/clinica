@@ -127,7 +127,7 @@
                         <div class="col-md-4">
                             <label>Comentario</label>
                             <div>
-                                <textarea name="comentario" class="form-control"></textarea>
+                                <textarea name="comentario" class="form-control" required></textarea>
                             </div>
                         </div>
                     </div>

@@ -89,10 +89,10 @@ class CitasController extends Controller
             $end = \Carbon\Carbon::parse($start)->addMinutes(120);
         }
 
-        if($this->validateCita($start, $end, $request->doctor) == false){
-            session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
-            return back();
-        }
+        // if($this->validateCita($start, $end, $request->doctor) == false){
+        //     session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
+        //     return back();
+        // }
 
         if($paciente == null){
 
@@ -230,10 +230,10 @@ class CitasController extends Controller
             $end = \Carbon\Carbon::parse($start)->addMinutes(120);
         }
 
-        if($this->validateCita($start, $end, $request->doctor) == false){
-            session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
-            return back();
-        }
+        // if($this->validateCita($start, $end, $request->doctor) == false){
+        //     session()->flash('message_danger', "Ya existe una cita a esa hr para " . $request->doctor);
+        //     return back();
+        // }
 
         $cita->start      = $start;
         $cita->end        = $end;
