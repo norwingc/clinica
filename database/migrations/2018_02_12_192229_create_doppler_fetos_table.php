@@ -69,6 +69,12 @@ class CreateDopplerFetosTable extends Migration
             $table->string('indice_maduracion_basal', 10)->nullable();
             $table->string('indice_maduracion_pulmonar', 10)->nullable();
             $table->string('riesgo_distres', 10)->nullable();
+
+            $table->string('examen_oportunidad', 5)->nullable();
+            $table->string('parto_espontaneo')->nullable();
+            $table->string('cesarea_espontaneo')->nullable();
+            $table->string('cesarea_induccion')->nullable();
+
             $table->string('placenta_numero')->nullable();
             $table->string('placenta_posocion')->nullable();
             $table->text('placenta_grado')->nullable();

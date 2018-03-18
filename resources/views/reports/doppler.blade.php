@@ -208,6 +208,15 @@
                     RIESGO DE DISTRES RESPIRATORIO: {{ $value->riesgo_distres }}
                 </p>
             @endif
+
+            @if($value->examen_oportunidad == 'Si')
+                <p>
+                    <b>Oportunidad de parto o cesaria. Calculadora fetal medicine foundation (Programa de Screning I trimestre) ID104192</b><br>
+                    Oportunidad de parto espontaneo en los proximos 7 a 10 dias: {{ $value->parto_espontaneo }}.  <br>
+                    Oportunidad de cesarea despues de parto espontaneo: {{ $value->cesarea_espontaneo }}.  <br>
+                    Oportunidad de cesarea despues de induccion: {{ $value->cesarea_induccion }}. <br>
+                </p>
+            @endif
         @endif
 
         <p>

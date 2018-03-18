@@ -171,6 +171,17 @@
         (este.val() == 'Otro') ? $('.descripcion_carcinoma_otro').show() : $('.descripcion_carcinoma_otro').hide();
     }
 
+    function rinonDerecho(este) {
+        (este.val() == 'Presente') ? $('.rinon_derecho').show() : $('.rinon_derecho').hide();
+    }
+    function rinonIzquierdo(este) {
+        (este.val() == 'Presente') ? $('.rinon_izquierdo').show() : $('.rinon_izquierdo').hide();
+    }
+
+    function examenOportunidad(este) {
+        (este.val() == 'Si') ? $('.examen_oportunidad_si').show() : $('.examen_oportunidad_si').hide();
+    }
+
 
 
     $('.examen_agregar').click(function(){

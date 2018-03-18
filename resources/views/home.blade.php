@@ -87,7 +87,7 @@ $(document).ready(function() {
 
             height: 550,
             eventStartEditable: false,
-            defaultView: 'agendaWeek',
+            defaultView: 'agendaDay',
             header: {
                 left: 'prev,next today',
                 center: 'title',

@@ -21,8 +21,9 @@ class DopplerFeto extends Model
         "percentil_itsmo_aortico", "interpretacion_itsmo_aortico", "percentil_ducto_venenoso", "interpretacion_ducto_venenoso", "percentil_flujo_dicto_venenoso",
         "interpretacion_flujo_dicto_venenoso", "percentil_vena_umbilical", "interpretacion_vena_umbilical", "semanas", "movimiento_respiratorios", "tono_fetal",
         "movimiento_corporales", "liquido_amoniotico", "integridad_cardiaca", "examen_nst", "analisis_nst", "datos_nst", "examen_maduracion", "indice_maduracion_torax",
-        "indice_maduracion_basal", "indice_maduracion_pulmonar", "riesgo_distres", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto",
-        "longitud_cervix", "funneling", "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila",
+        "indice_maduracion_basal", "indice_maduracion_pulmonar", "riesgo_distres", "examen_oportunidad", "parto_espontaneo", "cesarea_espontaneo",
+        "cesarea_induccion", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto","longitud_cervix",
+        "funneling", "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila",
     ];
 
     /**

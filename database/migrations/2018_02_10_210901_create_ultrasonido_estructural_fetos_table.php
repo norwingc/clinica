@@ -136,15 +136,21 @@ class CreateUltrasonidoEstructuralFetosTable extends Migration
             $table->string('camara_gastrica', 5)->nullable();
             $table->string('vejiga_urinaria', 5)->nullable();
             $table->string('camara_gastrica_insitu')->nullable();
+
             $table->string('rinon_derecho', 20)->nullable();
             $table->string('rinon_derecho_tanano', 20)->nullable();
+            $table->string('pelvis_derecho')->nullable();
+            $table->string('hidronefosis_derecho', 5)->nullable();
+            $table->string('grado_derecho')->nullable();
+            $table->string('glandulas_suprarrenales_derecho', 20)->nullable();
+
             $table->string('rinon_izquierdo', 20)->nullable();
             $table->string('rinon_izquierdo_tanano', 20)->nullable();
-            $table->string('pelvis_derecha')->nullable();
-            $table->string('pelvis_izquierda')->nullable();
-            $table->string('hidronefosis', 5)->nullable();
-            $table->string('grado')->nullable();
-            $table->string('glandulas_suprarrenales', 20)->nullable();
+            $table->string('pelvis_izquierdo')->nullable();
+            $table->string('hidronefosis_izquierdo', 5)->nullable();
+            $table->string('grado_izquierdo')->nullable();
+            $table->string('glandulas_suprarrenales_izquierdo', 20)->nullable();
+
             $table->string('vejiga_urinaria_insitu')->nullable();
             $table->string('engrosamiento_pared', 5)->nullable();
             $table->string('extremidades_superiores', 5)->nullable();

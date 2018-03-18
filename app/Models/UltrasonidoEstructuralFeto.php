@@ -25,9 +25,10 @@ class UltrasonidoEstructuralFeto extends Model
         "torax_descripcion", "torax_nutricion_masa", "corazon_situs", "corazon_tamano", "corazon_cardiomegalia", "corazon_cardiomegalia_severa", "corazon_corte_camaras",
         "corazon_tracto_derecho", "corazon_tracto_izquierdo", "corazon_corte_vasos", "insercion_cordon", "presencia_vasos", "arteria_umbilical", "pared_integra", "defecto_umbilical",
         "defecto_cordon", "defecto_medida", "cubierta_membrana", "asas_intestino_delgado", "asas_intestino_grueso", "dilatacion_intra_abdominal", "medicion_intra_abdominal",
-        "dilatacion_extra_abdominal", "medicion_extra_abdominal", "sospecha_peritonitis", "camara_gastrica", "vejiga_urinaria", "camara_gastrica_insitu", "rinon_derecho", "rinon_derecho_tanano",
-        "rinon_izquierdo", "rinon_izquierdo_tanano", "pelvis_derecha", "pelvis_izquierda", "hidronefosis", "grado", "glandulas_suprarrenales", "vejiga_urinaria_insitu", "engrosamiento_pared",
-        "extremidades_superiores", "extremidades_superiores_integras", "extremidades_superiores_afectada", "extremidades_inferiores", "extremidades_inferiores_integras",
+        "dilatacion_extra_abdominal", "medicion_extra_abdominal", "sospecha_peritonitis", "camara_gastrica", "vejiga_urinaria", "camara_gastrica_insitu",
+        "rinon_derecho", "rinon_derecho_tanano", "pelvis_derecho", "hidronefosis_derecho", "grado_derecho", "glandulas_suprarrenales_derecho", "rinon_izquierdo",
+        "rinon_izquierdo_tanano", "pelvis_izquierdo", "hidronefosis_izquierdo", "grado_izquierdo", "glandulas_suprarrenales_izquierdo", "vejiga_urinaria_insitu",
+        "engrosamiento_pared", "extremidades_superiores", "extremidades_superiores_integras", "extremidades_superiores_afectada", "extremidades_inferiores", "extremidades_inferiores_integras",
         "extremidades_inferiores_afectada", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto", "longitud_cervix", "funneling",
         "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila"
     ];

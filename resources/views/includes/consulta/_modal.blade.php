@@ -4328,6 +4328,7 @@
                                         <select name="corazon_corte_camaras" id="corazon_corte_camaras_estructural" class="form-control" >
                                             <option value="Normal">Normal</option>
                                             <option value="Anormal">Anormal</option>
+                                            <option value="No Valorable">No Valorable</option>
                                         </select>
                                     </div>
                                 </div>
@@ -4538,89 +4539,124 @@
                                 <div class="col-md-3">
                                     <label>Riñon derecho</label>
                                     <div>
-                                        <select name="rinon_derecho" id="rinon_derecho_estructural" class="form-control" >
+                                        <select name="rinon_derecho" id="rinon_derecho_estructural" class="form-control" onchange="rinonDerecho($(this))">
                                             <option value="Presente">Presente</option>
                                             <option value="Ausente">Ausente</option>
                                             <option value="No Valorable">No Valorable</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Riñon derecho tamaño</label>
-                                    <div>
-                                        <select name="rinon_derecho_tanano" id="rinon_derecho_tanano_estructural" class="form-control" >
-                                            <option value="Normal">Normal</option>
-                                            <option value="Aumentado">Aumentado</option>
-                                            <option value="No Valorables">No Valorables</option>
-                                        </select>
+                                <div class="rinon_derecho">
+                                    <div class="col-md-3">
+                                        <label>Riñon derecho tamaño</label>
+                                        <div>
+                                            <select name="rinon_derecho_tanano" id="rinon_derecho_tanano_estructural" class="form-control" >
+                                                <option value="Normal">Normal</option>
+                                                <option value="Aumentado">Aumentado</option>
+                                                <option value="No Valorables">No Valorables</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Pelvis renal derecha (mm)</label>
+                                        <div>
+                                           <input type="text" name="pelvis_derecho" id="pelvis_derecho_esctructural" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Presencia de Hidronefrosis Derecho</label>
+                                        <div>
+                                            <select name="hidronefosis_derecho" id="hidronefosis_derecho_estructural" class="form-control" >
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Grado de Hidronefrosis Derecho</label>
+                                        <div>
+                                            <select name="grado_derecho" id="grado_derecho_estructural" class="form-control" >
+                                                <option value="Grado 0 Riñón normal sin hidronefrosis">Grado 0 Riñón normal sin hidronefrosis</option>
+                                                <option value="Grado 1 Pelvis renal ligeramente dilatada sin calectasia">Grado 1 Pelvis renal ligeramente dilatada sin calectasia</option>
+                                                <option value="Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.">Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.</option>
+                                                <option value="Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.">Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.</option>
+                                                <option value="Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.">Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Glandula suprarrenal Derecho</label>
+                                        <div>
+                                            <select name="glandulas_suprarrenales_derecho" id="glandulas_suprarrenales_derecho_estructural" class="form-control" >
+                                                <option value="Presente">Presente</option>
+                                                <option value="Ausente">Ausente</option>
+                                                <option value="No Valorable">No Valorable</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-
 
                                 <div class="col-md-3">
                                     <label>Riñon izquierdo</label>
                                     <div>
-                                        <select name="rinon_izquierdo" id="rinon_izquierdo_estructural" class="form-control" >
+                                        <select name="rinon_izquierdo" id="rinon_izquierdo_estructural" class="form-control" onchange="rinonIzquierdo($(this))">
                                             <option value="Presente">Presente</option>
                                             <option value="Ausente">Ausente</option>
                                             <option value="No Valorable">No Valorable</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Riñon izquierdo tamaño</label>
-                                    <div>
-                                        <select name="rinon_izquierdo_tanano" id="rinon_izquierdo_tanano_estructural" class="form-control" >
-                                            <option value="Normal">Normal</option>
-                                            <option value="Aumentado">Aumentado</option>
-                                            <option value="No Valorables">No Valorables</option>
-                                        </select>
+
+                                <div class="rinon_izquierdo">
+                                    <div class="col-md-3">
+                                        <label>Riñon izquierdo tamaño</label>
+                                        <div>
+                                            <select name="rinon_izquierdo_tanano" id="rinon_izquierdo_tanano_estructural" class="form-control" >
+                                                <option value="Normal">Normal</option>
+                                                <option value="Aumentado">Aumentado</option>
+                                                <option value="No Valorables">No Valorables</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Pelvis renal izquierdo (mm)</label>
+                                        <div>
+                                           <input type="text" name="pelvis_izquierdo" id="pelvis_izquierdo_esctructural" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Presencia de Hidronefrosis izquierdo</label>
+                                        <div>
+                                            <select name="hidronefosis_izquierdo" id="hidronefosis_izquierdo_estructural" class="form-control" >
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Grado de Hidronefrosis izquierdo</label>
+                                        <div>
+                                            <select name="grado_izquierdo" id="grado_izquierdo_estructural" class="form-control" >
+                                                <option value="Grado 0 Riñón normal sin hidronefrosis">Grado 0 Riñón normal sin hidronefrosis</option>
+                                                <option value="Grado 1 Pelvis renal ligeramente dilatada sin calectasia">Grado 1 Pelvis renal ligeramente dilatada sin calectasia</option>
+                                                <option value="Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.">Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.</option>
+                                                <option value="Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.">Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.</option>
+                                                <option value="Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.">Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Glandula suprarrenal izquierdo</label>
+                                        <div>
+                                            <select name="glandulas_suprarrenales_izquierdo" id="glandulas_suprarrenales_izquierdo_estructural" class="form-control" >
+                                                <option value="Presente">Presente</option>
+                                                <option value="Ausente">Ausente</option>
+                                                <option value="No Valorable">No Valorable</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label>Pelvis renal derecha (mm)</label>
-                                    <div>
-                                       <input type="text" name="pelvis_derecha" id="pelvis_derecha_esctructural" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Pelvis renal izquierda (mm)</label>
-                                    <div>
-                                       <input type="text" name="pelvis_izquierda" id="pelvis_izquierda_esctructural" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Presencia de Hidronefrosis</label>
-                                    <div>
-                                        <select name="hidronefosis" id="hidronefosis_estructural" class="form-control" >
-                                            <option value="No">No</option>
-                                            <option value="Si">Si</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Grado de Hidronefrosis</label>
-                                    <div>
-                                        <select name="grado" id="grado_estructural" class="form-control" >
-                                            <option value="Grado 0 Riñón normal sin hidronefrosis">Grado 0 Riñón normal sin hidronefrosis</option>
-                                            <option value="Grado 1 Pelvis renal ligeramente dilatada sin calectasia">Grado 1 Pelvis renal ligeramente dilatada sin calectasia</option>
-                                            <option value="Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.">Grado 2 Pelvis moderadamente dilatada con moderada dilatación caliceal.</option>
-                                            <option value="Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.">Grado 3 Pelvis renal grande, cálices dilatados y parénquima renal normal.</option>
-                                            <option value="Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.">Grado 4 Pelvis renal muy grande con cálices muy dilatados con adelgasamiento del parénquima renal.</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Glandulas suprarrenales</label>
-                                    <div>
-                                        <select name="glandulas_suprarrenales" id="glandulas_suprarrenales_estructural" class="form-control" >
-                                            <option value="Presentes">Presentes</option>
-                                            <option value="Ausentes">Ausentes</option>
-                                            <option value="No Valorables">No Valorables</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-md-3">
                                     <label>Vejiga urinaria</label>
                                     <div>
@@ -7114,7 +7150,7 @@
                                     </div>
                                 </div>
 
-                                <p class="sub_titul"><b>Maduracion pulmunar</b></p>
+                                <p class="sub_titul"><b>Maduracion pulmonar</b></p>
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <label>Examen Maduracion Realizado</label>
@@ -7162,6 +7198,43 @@
                                                     <option value="Bajo">Bajo</option>
                                                     <option value="Alto">Alto</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <p class="sub_titul"><b>Oportunidad de parto o cesaria. Calculadora fetal medicine foundation (Programa de Screning I trimestre) ID104192</b></p>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label>Examen realizado</label>
+                                        <div>
+                                            <select name="examen_oportunidad" id="examen_oportunidad_doppler" class="form-control" onchange="examenOportunidad($(this))">
+                                                <option value="No">No</option>
+                                                <option value="Si">Si</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="examen_oportunidad_si" style="display: none">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <label>Oportunidad de parto espontaneo en los proximos 7 a 10 dias</label>
+                                            <div>
+                                                <input type="text" name="parto_espontaneo" id="parto_espontaneo_doppler" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Oportunidad de cesarea despues de parto espontaneo</label>
+                                            <div>
+                                                <input type="text" name="cesarea_espontaneo" id="cesarea_espontaneo_doppler" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Oportunidad de cesarea despues de induccion</label>
+                                            <div>
+                                                <input type="text" name="cesarea_induccion" id="cesarea_induccion_doppler" class="form-control">
                                             </div>
                                         </div>
                                     </div>

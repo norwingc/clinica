@@ -15,6 +15,13 @@ atencion pernatal{
   porta examenes->esconder: TPT, Fibrinogeno, Acido Urico-> solo imprimir el que lleve resultado
 }
 
+riñon derecho no valorable hasta Vejiga urinaria. glandula suprarenal
+agenda como dia
+
+Oportunidad de parto o cesaria
+
+examen realizado no realizado 
+
 Archive:
  ✔ Vena umbilical ->dicrota, laminar(default) @done (18-02-05 21:04)
  ✔ Valor->interpretacion @done (18-02-05 21:04)

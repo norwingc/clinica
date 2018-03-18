@@ -237,9 +237,19 @@
 
             @endif
 
-            Cámara gástrica Insitu: {{ $value->camara_gastrica_insitu }}. Riñon Derecho: {{ $value->rinon_derecho }}. Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Riñon izquierdo: {{ $value->rinon_izquierdo }}. Riñon izquierdo tamaño: {{ $value->rinon_izquierdo_tanano }}.
-            Pelvis renal derecha: {{ $value->pelvis_derecha }}mm.  Pelvis renal izquierda: {{ $value->pelvis_izquierda }}mm. Presencia de Hidronefrosis: {{ $value->hidronefosis }}.
-            Grado de Hidronefrosis: {{ $value->grado }}. Glandulas suprarrenales: {{ $value->glandulas_suprarrenales }}. Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosamiento de pared vesical: {{ $value->engrosamiento_pared }}.
+            Cámara gástrica Insitu: {{ $value->camara_gastrica_insitu }}.
+
+            Riñon Derecho: {{ $value->rinon_derecho }}.
+            @if($value->rinon_derecho == 'Presente')
+                Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Pelvis renal derecha: {{ $value->pelvis_derecho }} (mm). Presencia de Hidronefrosis Derecho: {{ $value->hidronefosis_derecho }}. Grado de Hidronefrosis Derecho: {{ $value->grado_derecho }}. Glandula suprarrenal Derecho: {{ $value->glandulas_suprarrenales_derecho }}.
+            @endif
+
+            Riñon izquierdo: {{ $value->rinon_izquierdo }}.
+            @if($value->rinon_izquierdo == 'Presente')
+                Riñon derecho tamaño: {{ $value->rinon_derecho_tanano }}. Pelvis renal izquierda: {{ $value->pelvis_izquierdoq }} (mm). Presencia de Hidronefrosis Izquierdo: {{ $value->hidronefosis_izquierdo }}. Grado de Hidronefrosis Izquierdo: {{ $value->grado_izquierdo }}. Glandula suprarrenal Izquierdo: {{ $value->glandulas_suprarrenales_izquierdo }}.
+            @endif
+
+            Vejiga urinaria: {{ $value->vejiga_urinaria_insitu }}. Engrosamiento de pared vesical: {{ $value->engrosamiento_pared }}.
         </p>
 
          <p>
