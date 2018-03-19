@@ -181,7 +181,19 @@ class PacienteController extends Controller
      */
     public function storeHistoria(Request $request, Paciente $paciente)
     {
-        return $request;
+        $historia = new HistoriaClinica($request->all());
+        (isset($request->diabetes_familiar_si)) ? $historia->diabetes_familiar_si = implode(', ', $request->diabetes_familiar_si) : '';
+        (isset($request->hipertension_arterial_familiar_si)) ? $historia->hipertension_arterial_familiar_si = implode(', ', $request->hipertension_arterial_familiar_si) : '';
+        (isset($request->cardiopatia_familiar_si)) ? $historia->cardiopatia_familiar_si = implode(', ', $request->cardiopatia_familiar_si) : '';
+        (isset($request->nefropatias_familiar_si)) ? $historia->nefropatias_familiar_si = implode(', ', $request->nefropatias_familiar_si) : '';
+        (isset($request->tiroidea_si_emfermedad)) ? $historia->tiroidea_si_emfermedad = implode(', ', $request->tiroidea_si_emfermedad) : '';
+
+        (isset($request->tiroidea_si_familiar)) ? $historia->tiroidea_si_familiar = implode(', ', $request->tiroidea_si_familiar) : '';
+        (isset($request->enfermedad_inmunologica_familiar_si)) ? $historia->enfermedad_inmunologica_familiar_si = implode(', ', $request->enfermedad_inmunologica_familiar_si) : '';
+        (isset($request->pre_eclampsia_familiar_si)) ? $historia->pre_eclampsia_familiar_si = implode(', ', $request->pre_eclampsia_familiar_si) : '';
+        (isset($request->inmunologica_tipo)) ? $historia->inmunologica_tipo = implode(', ', $request->inmunologica_tipo) : '';
+
+        return $historia;
     }
 
     /**

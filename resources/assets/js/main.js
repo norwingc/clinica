@@ -124,6 +124,8 @@ function edadGestional() {
 
     let resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
     textarea.html(resultado);
+
+    $('#edad_gestional').html(resultado);
 }
 
 function dispDate(dateObj) {

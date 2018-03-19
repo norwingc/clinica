@@ -22,7 +22,6 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
             $table->string('rh_tipo')->nullable();
-            $table->string('rh_tipo')->nullable();
             $table->string('bordes')->nullable();
             $table->string('ecos_interior')->nullable();
             $table->string('utero')->nullable();

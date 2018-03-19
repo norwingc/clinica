@@ -12,6 +12,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+
+        User::truncate();
+
         User::create([
             'nickname' => 'admin',
             'password' => bcrypt('123456789'),

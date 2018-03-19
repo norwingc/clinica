@@ -16,6 +16,18 @@ class CreateHistoriClinicasTable extends Migration
         Schema::create('historia_clinicas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('paciente_id');
+            $table->text('motivo')->nullable();
+            $table->text('diabetes_familiar', 5)->nullable();
+            $table->text('hipertension_arterial_familiar', 5)->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
+            $table->text('motivo')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
