@@ -22,7 +22,7 @@ class HistoriaClinica extends Model
         "hipertension_arterial", "hipertension_arterial_tratamiento", "cardiopatia", "cardiopatia_tipo", "nefropatias", "nefropatias_tipo",
         "tiroidea", "tiroidea_tipo", "inmunologica", "oncologica", "oncologica_tipo", "malformacion_congenita", "malformacion_congenita_tipo",
         "pre_eclampsia", "manejo_pre_eclampsia", "hospitalizacion_previa", "hospitalizacion_previa_si", "menarca", "vida_sexual_inicio", "gesta",
-        "gesta_parto", "gesta_aborto", "gesta_cesarea", "gesta_embarazo_etopico", "gesta_gemelar_previo", "gesta_informacion",
+        "gesta_parto", "gesta_legrado", "gesta_aborto", "gesta_cesarea", "gesta_embarazo_etopico", "gesta_gemelar_previo", "gesta_informacion",
         "gesta_nacidos_vivos", "gesta_nacidos_muertos", "gesta_muertos_primeros_dias", "gesta_muertos_mayor_dias", "planificacion",
         "planificacion_tipo", "menopausia", "menopausia_si", "papanicolaou", "papanicolaou_si", "ultima_regla", "embarazada", "edad_gestional",
         "fecha_ultrasonido", "fc_minuto", "fr_minuto", "persion_arterial_derecho", "persion_arterial_izquierdo", "temperatura", "peso", "talla",
@@ -39,7 +39,7 @@ class HistoriaClinica extends Model
     ];
 
     //diabetes_familiar_si, hipertension_arterial_familiar_si, cardiopatia_familiar_si, nefropatias_familiar_si, tiroidea_si_emfermedad,
-    //tiroidea_si_familiar, enfermedad_inmunologica_familiar_si, pre_eclampsia_familiar_si, inmunologica_tipo
+    //tiroidea_si_familiar, enfermedad_inmunologica_familiar_si_efermedad, enfermedad_inmunologica_familiar_si_familiar, pre_eclampsia_familiar_si, inmunologica_tipo
 
      /**
      * [paciente description]

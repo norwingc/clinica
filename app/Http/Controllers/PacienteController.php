@@ -7,6 +7,7 @@ use App\Models\Paciente;
 use App\Models\HistoriaClinica;
 
 use DataTables;
+use PDF;
 
 class PacienteController extends Controller
 {
@@ -189,21 +190,40 @@ class PacienteController extends Controller
         (isset($request->tiroidea_si_emfermedad)) ? $historia->tiroidea_si_emfermedad = implode(', ', $request->tiroidea_si_emfermedad) : '';
 
         (isset($request->tiroidea_si_familiar)) ? $historia->tiroidea_si_familiar = implode(', ', $request->tiroidea_si_familiar) : '';
+        (isset($request->enfermedad_inmunologica_familiar_si_familiar)) ? $historia->enfermedad_inmunologica_familiar_si_familiar = implode(', ', $request->enfermedad_inmunologica_familiar_si_familiar) : '';
         (isset($request->enfermedad_inmunologica_familiar_si)) ? $historia->enfermedad_inmunologica_familiar_si = implode(', ', $request->enfermedad_inmunologica_familiar_si) : '';
         (isset($request->pre_eclampsia_familiar_si)) ? $historia->pre_eclampsia_familiar_si = implode(', ', $request->pre_eclampsia_familiar_si) : '';
         (isset($request->inmunologica_tipo)) ? $historia->inmunologica_tipo = implode(', ', $request->inmunologica_tipo) : '';
 
-        return $historia;
+
+        $paciente->historia()->save($historia);
+
+
+        session()->flash('message_success', "Historia Clinica Agregada");
+        return back();
     }
 
     /**
-     * [updateHistoria description]
-     * @param  Request         $request         [description]
+     * [deleteHistoria description]
      * @param  HistoriaClinica $historiaclinica [description]
      * @return [type]                           [description]
      */
-    public function updateHistoria(Request $request, HistoriaClinica $historiaclinica)
+    public function deleteHistoria(HistoriaClinica $historiaclinica)
     {
-        return $request;
+        $historiaclinica->delete();
+
+        session()->flash('message_danger', "Historia Clinica Borrada");
+        return back();
+    }
+
+    /**
+     * [downloadHistoria description]
+     * @param  HistoriaClinica $historiaclinica [description]
+     * @return [type]                           [description]
+     */
+    public function downloadHistoria(HistoriaClinica $historiaclinica)
+    {
+        $pdf = \PDF::loadView('reports.historia', compact('historiaclinica'));
+        return $pdf->stream();
     }
 }

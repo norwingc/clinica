@@ -45,12 +45,11 @@ Route::middleware(['auth'])->group(function () {
         Route::name('paciente.personal.update')->put('User/PersonalInformation/{paciente}', 'PacienteController@updatePersonal');
 
         Route::name('paciente.personal')->get('User/PersonalInformation/{paciente}', 'PacienteController@personal');
+
         Route::name('paciente.historia')->get('User/ClinicHistory/{paciente}', 'PacienteController@historia');
-
         Route::name('paciente.historia.store')->post('/Historia/store/{paciente}', 'PacienteController@storeHistoria');
-        Route::name('paciente.historia.update')->post('/Historia/update/{historiaclinica}', 'PacienteController@updateHistoria');
-        Route::name('paciente.historia.get')->get('/Historia/get/{paciente}', 'PacienteController@getHistoria');
-
+        Route::name('paciente.historia.delete')->get('/Historia/delete/{historiaclinica}', 'PacienteController@deleteHistoria');
+        Route::name('paciente.historia.download')->get('/Historia/Download/{historiaclinica}', 'PacienteController@downloadHistoria');
     });
 
     Route::prefix('Consultas')->group(function () {
