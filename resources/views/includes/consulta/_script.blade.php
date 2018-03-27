@@ -182,44 +182,54 @@
         (este.val() == 'Si') ? $('.examen_oportunidad_si').show() : $('.examen_oportunidad_si').hide();
     }
 
+    function cavidadEndometrial(este) {
+        if(este.val() == 'Si'){
+            $('.cavidad_endometrial_ocupada').show();
+            $('.dispositivo_intrauterino_cual').hide();
+            $('.cavidad_endometrial_embarazo').hide();
+        }else{
+            $('.cavidad_endometrial_ocupada').hide();
+            $('.dispositivo_intrauterino_cual').hide();
+            $('.cavidad_endometrial_embarazo').hide();
+        }
+    }
 
+    function agregarExamen(este) {
 
-    $('.examen_agregar').click(function(){
-
-        let examen = $('.examen_tipo').val();
+        var examen = este.parent(0).parent(0).parent(0).find('.examen_tipo').val();
 
         if(examen == '') return false;
 
+
         if(examen == 0){
-            updateColposcopia($(this));
+            updateColposcopia(este);
         }
         if(examen == 1){
-            updateAtencionPretanal($(this));
+            updateAtencionPretanal(este);
         }
         if(examen == 2){
-            updatedConsultaGinecologica($(this));
+            updatedConsultaGinecologica(este);
         }
         if(examen == 3){
-            updatedConsultaDoppler($(this));
+            updatedConsultaDoppler(este);
         }
         if(examen == 4){
-            updatedEcocardiografia($(this));
+            updatedEcocardiografia(este);
         }
         if(examen == 5){
-            updatedNeurosonografia($(this));
+            updatedNeurosonografia(este);
         }
         if(examen == 6){
-            updatedEstructural($(this));
+            updatedEstructural(este);
         }
         if(examen == 7){
-            updatedITrimestre($(this));
+            updatedITrimestre(este);
         }
         if(examen == 8){
-            updatedUltrasonidoPelvico($(this));
+            updatedUltrasonidoPelvico(este);
         }
-    });
 
-
+    }
 
     ////////////////////
     //ecocardiografia //

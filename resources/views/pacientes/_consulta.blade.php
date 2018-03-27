@@ -45,10 +45,9 @@
             <div class="col-sm-12 col-lg-6">
                 <label>&nbsp;</label>
                 <div>
-                    <button class="btn btn-success examen_agregar" data-consulta='{{ $value->id }}' data-paciente='{{ $paciente->name }}' data-id='false'>Agregar</button>
+                    <button class="btn btn-success" data-consulta='{{ $value->id }}' data-paciente='{{ $paciente->name }}' data-id='false' onClick="agregarExamen($(this))">Agregar</button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

@@ -6017,9 +6017,9 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-3">
-                                <label>Cavidad endometrial ocupada</label>
+                                <label>Cavidad endometrial ocupada</label> {{--  quitar todo --}}
                                 <div>
-                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" data-target="cavidad_endometrial_ocupada" onchange="selectShow($(this))">
+                                    <select name="cavidad_endometrial" id="cavidad_endometrial_pelvico" class="form-control" onchange="cavidadEndometrial($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                     </select>
@@ -6357,6 +6357,12 @@
                                     <option value="Miomatosis uterina">Miomatosis uterina</option>
                                     <option value="Ovarios Poliquisticos">Ovarios Poliquisticos</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Otras Conclusiones</label>
+                            <div>
+                                <textarea name="concluciones_otras" id="concluciones_otras_1trimestre" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -7204,7 +7210,7 @@
                                 </div>
 
 
-                                <p class="sub_titul"><b>Oportunidad de parto o cesaria. Calculadora fetal medicine foundation (Programa de Screning I trimestre) ID104192</b></p>
+                                <p class="sub_titul"><b>Oportunidad de parto o cesárea. Calculadora fetal medicine foundation (Programa de Screning I trimestre) ID104192</b></p>
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <label>Examen realizado</label>

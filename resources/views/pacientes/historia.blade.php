@@ -1034,14 +1034,14 @@
                                 <label>Utero Grávido Abdominal</label>
                                 <div>
                                     <select name="utero_gravido_abdominal" id="utero_gravido_abdominal" class="form-control" onchange="uteroGravido($(this))"> {{-- poner la opcion al revez si es si cerrar todo Presentacion Situacion Posicion Frecuencia cardiaca fetal--}}
-                                        <option value="No">No</option>
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="utero_gravido_abdominal_si_form">
                                 <div class="col-sm-3">
-                                    <label>Presentecion</label>
+                                    <label>Presentacion</label>
                                     <div>
                                        <input type="text" name="presentacion" id="presentacion" class="form-control">
                                     </div>
@@ -1370,9 +1370,7 @@
         }
 
         function uteroGravido(este) {
-            (este.val() == 'Si') ? $('.utero_gravido_abdominal_si_form').hide() : $('.utero_gravido_abdominal_si_form').show()
+            (este.val() == 'No') ? $('.utero_gravido_abdominal_si_form').hide() : $('.utero_gravido_abdominal_si_form').show()
         }
     </script>
 @endsection
-
-
