@@ -118,6 +118,7 @@
     <p class="sub_titul">Conclusiones</p>
     <ul>
         <li>{{ $pelvico->concluciones }}</li>
+        <li>{{ $pelvico->concluciones_otras }}</li>
         @if($pelvico->embarazo_lcc_semanas != '')
             <li>Embarazo por longitud craneo caudal (semanas): {{ $pelvico->embarazo_lcc_semanas }}</li>
         @endif
