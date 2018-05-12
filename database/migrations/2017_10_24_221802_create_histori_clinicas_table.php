@@ -123,7 +123,7 @@ class CreateHistoriClinicasTable extends Migration
             $table->string('frecuencia_cardiaca_fetal')->nullable();
             $table->string('utero_intrapelvico', 5)->nullable();
             $table->string('afu')->nullable();
-            $table->string('feto_unico')->nullable();
+            $table->text('otros_hallazgos_utero_gravido')->nullable();
             $table->string('examen_ginecologico', 5)->nullable();
             $table->string('genitales_externos', 10)->nullable();
             $table->string('vagina_normo_terminca', 5)->nullable();

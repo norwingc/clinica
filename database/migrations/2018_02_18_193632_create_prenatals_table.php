@@ -43,6 +43,7 @@ class CreatePrenatalsTable extends Migration
             $table->string('posicion')->nullable();
             $table->string('utero_intrapelvico', 5)->nullable();
             $table->string('peristalsis')->nullable();
+            $table->text('otros_hallazgos')->nullable();
             $table->string('afu')->nullable();
             $table->string('examen_ginecologico', 5)->nullable();
             $table->string('genitales_externos', 10)->nullable();
@@ -116,6 +117,8 @@ class CreatePrenatalsTable extends Migration
             $table->text('plan_medico_otro')->nullable();
             $table->text('examen_laboratorio_otro')->nullable();
             $table->text('comentarios')->nullable();
+            $table->text('diagnostico')->nullable();
+            $table->text('factores_riesgo')->nullable();
             $table->text('recordatorio')->nullable();
             $table->timestamps();
             $table->softDeletes();

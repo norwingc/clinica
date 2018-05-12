@@ -118,15 +118,23 @@
     <p class="sub_titul">Conclusiones</p>
     <ul>
         <li>{{ $pelvico->concluciones }}</li>
-        <li>{{ $pelvico->concluciones_otras }}</li>
+        @if($pelvico->concluciones_otras != '')
+            <li>{{ $pelvico->concluciones_otras }}</li>
+        @endif
         @if($pelvico->embarazo_lcc_semanas != '')
             <li>Embarazo por longitud craneo caudal (semanas): {{ $pelvico->embarazo_lcc_semanas }}</li>
         @endif
     </ul>
 
+
     @if($pelvico->comentarios != '')
         <p class="sub_titul">Comentarios</p>
         <p>{{ $pelvico->comentarios }}</p>
+    @endif
+
+    @if($pelvico->recomendaciones != '')
+        <p class="sub_titul">Recomendaciones</p>
+        <p>{{ $pelvico->recomendaciones }}</p>
     @endif
 
     @include('includes._firmas')

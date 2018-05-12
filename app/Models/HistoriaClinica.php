@@ -30,7 +30,7 @@ class HistoriaClinica extends Model
         "craneo", "orl", "boca", "cuello", "torax", "mamas_simetricas", "mamas_lesiones_vasculares", "mamas_nodulos", "mamas_localizacion_derecho",
         "mamas_tamanno_derecho", "mamas_localizacion_izquierdo", "mamas_tamanno_izquierdo", "mamas_galactorrea", "mamas_galactorragia",
         "mamas_campos_pulmonares", "mamas_campos_pulmonares_si", "mamas_cardiaco", "mamas_cardiaco_si", "peristalsis", "utero_gravido_abdominal",
-        "presentacion", "situacion", "posicion", "frecuencia_cardiaca_fetal", "utero_intrapelvico", "afu", "feto_unico", "examen_ginecologico",
+        "presentacion", "situacion", "posicion", "frecuencia_cardiaca_fetal", "utero_intrapelvico", "afu", "otros_hallazgos_utero_gravido", "examen_ginecologico",
         "genitales_externos", "vagina_normo_terminca", "vagina_normo_elastica", "vagina_lesiones", "vagina_describa", "vagina_leucorrea",
         "vagina_fetidez", "vagina_sangrado", "vagina_hidrorrea", "vagina_cervix", "vagina_consistencia", "vagina_calotas",
         "vagina_membranas_integras", "vagina_calotas_solidas", "vagina_plano", "vagina_pelvis", "vagina_desproporcion_cefalopelvica",

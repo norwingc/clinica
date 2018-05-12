@@ -25,13 +25,13 @@
                          <div class="col-sm-4">
                             <label>Edad gestacional por ulrasonido</label>
                             <div>
-                                <input type="text" class="form-control" name="edad_gestacional" id="edad_gestacinal_prenatal" value="De historia clinica" readonly>
+                                <textarea name="edad_gestacional" id="edad_gestacinal_prenatal" class="form-control">{!! ($paciente->historia) ? $paciente->historia->edad_gestional : 'No existe historia clinica' !!}</textarea>
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Consutal de atencion prenatal NO</label>
+                            <label>Consulta de atencion prenatal No</label>
                             <div>
-                                <input type="text" class="form-control" name="numero" id="numero_prenatal" readonly value="{{ \App\Models\Prenatal::count() + 1 }}">
+                                <input type="text" class="form-control" name="numero" id="numero_prenatal">
                             </div>
                         </div>
                     </div>
@@ -47,31 +47,31 @@
                       <div class="col-sm-4">
                         <label>Presion Arterial Brazo Derecho (mmhg)</label>
                         <div>
-                            <input type="number" class="form-control" name="presion_arterial_derecho" id="presion_arterial_derecho_prenatal" >
+                            <input type="text" class="form-control" name="presion_arterial_derecho" id="presion_arterial_derecho_prenatal" >
                         </div>
                       </div>
                       <div class="col-sm-4">
                         <label>Presion Arterial Brazo Izquierdo (mmhg)</label>
                         <div>
-                            <input type="number" class="form-control" name="presion_arterial_izquierdo" id="presion_arterial_izquierdo_prenatal" >
+                            <input type="text" class="form-control" name="presion_arterial_izquierdo" id="presion_arterial_izquierdo_prenatal" >
                         </div>
                       </div>
                       <div class="col-sm-4">
                         <label>Presion Arterial Media (mmhg)</label>
                         <div>
-                            <input type="number" class="form-control" name="presion_arterial_media" id="presion_arterial_media_prenatal" >
+                            <input type="text" class="form-control" name="presion_arterial_media" id="presion_arterial_media_prenatal" >
                         </div>
                       </div>
                       <div class="col-sm-4">
-                          <label>Frecuencia Cardiaca</label>
+                          <label>Frecuencia Cardiaca (por minuto)</label>
                           <div>
-                              <input type="number" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_prenatal" >
+                              <input type="text" class="form-control" name="signos_vitales_fc" id="signos_vitales_fc_prenatal" >
                           </div>
                       </div>
                       <div class="col-sm-4">
-                          <label>Frecuencia Respiratoria</label>
+                          <label>Frecuencia Respiratoria (por minuto)</label>
                             <div>
-                                <input type="number" class="form-control" name="signos_vitales_fr" id="signos_vitales_fr_prenatal" >
+                                <input type="text" class="form-control" name="signos_vitales_fr" id="signos_vitales_fr_prenatal" >
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Peso Actual (lb)</label>
+                            <label>Peso Actual (lb)</label> <small>{!! ($paciente->historia) ? 'Peso Anterior (lb) ' . $paciente->historia->peso : ''  !!}</small>
                             <div>
                                 <input type="number" class="form-control" name="peso_actual" id="peso_actual_prenatal" >
                             </div>
@@ -89,7 +89,7 @@
                         <div class="col-sm-4">
                             <label>Incremente de peso (lb)</label>
                             <div>
-                                <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_prenatal" readonly value="calcular con el peso anteriro de historia clinica">
+                                <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_prenatal" data-peso='{!! ($paciente->historia) ? $paciente->historia->peso : 'No Existe historia clinica'  !!}'>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-sm-3 utero_intrapelvico" style="display:none">
                             <label>Utero Intrapelvico</label>
                             <div>
@@ -219,7 +218,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="col-sm-3">
                             <label>Peristalsis</label>
                             <div>
@@ -230,7 +228,12 @@
                                 </select>
                             </div>
                         </div>
-
+                        <div class="col-sm-3">
+                            <label>Otros Hallazgos</label>
+                            <div>
+                                <textarea name="otros_hallazgos" id="otros_hallazgos_prenatal" class="form-control"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <p class="sub_titul"><b>Ginecologico</b></p>
                     <div class="form-group">
@@ -480,7 +483,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Segmentos %</label>
+                                <label>Segmentados %</label>
                                 <div>
                                    <input type="text" class="form-control" name="segmentos" id="segmentos_prenatal">
                                 </div>
@@ -510,7 +513,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Resticulocitos</label>
+                                <label>Reticulocitos</label>
                                 <div>
                                    <input type="text" class="form-control" name="resticulocitos" id="resticulocitos_prenatal">
                                 </div>
@@ -586,7 +589,7 @@
                             <div class="col-sm-3 papanicolaou_si_form" style="display: none">
                                 <label>Fecha Papanicolaou</label>
                                 <div>
-                                   <input type="date" class="form-control" name="fecha_papanicolaou" id="fecha_papanicolaou_prenatal">
+                                   <input type="text" class="form-control" name="fecha_papanicolaou" id="fecha_papanicolaou_prenatal">
                                 </div>
                             </div>
                             <div class="col-sm-3 papanicolaou_si_form" style="display: none">
@@ -870,6 +873,20 @@
                             <label>Examenes de Laboratorio otro (separar con ",")</label>
                             <div class="">
                                 <input type="text" name="examen_laboratorio_otro" id="examen_laboratorio_otro_prenatal" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Diagnostico</label>
+                            <div>
+                                <textarea name="diagnostico" id="diagnostico_prenatal" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Factores de Riesgos</label>
+                            <div>
+                                <textarea name="factores_riesgo" id="factores_riesgo_prenatal" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -4877,11 +4894,11 @@
                         <div class="col-md-6">
                             <label>Embarazo por fetometría (Semanas)</label>
                             <div>
-                                <input type="text" name="conclusion_embarazo_fetometria" id="conclusion_embarazo_fetometria_estructural"  class="form-control">
+                                <textarea name="conclusion_embarazo_fetometria" id="conclusion_embarazo_fetometria_estructural" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label></label>
+                            <label>Conclusion</label>
                             <div>
                                 <textarea name="concluciones" id="concluciones_estructural" class="form-control">Sin alteraciones estructurales evidentes ni marcadores para cromosomopatías de los aun detectables a esta edad gestacional</textarea>
                             </div>
@@ -5706,7 +5723,7 @@
                         <div class="col-md-3">
                             <label>Feto por longitud craneo cauda</label>
                             <div>
-                                <input type="text" name="conclusion_lcc" id="conclusion_lcc_1trimestre"  class="form-control">
+                                <textarea name="conclusion_lcc" id="conclusion_lcc_1trimestre"  class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -6362,7 +6379,7 @@
                         <div class="col-md-6">
                             <label>Otras Conclusiones</label>
                             <div>
-                                <textarea name="concluciones_otras" id="concluciones_otras_1trimestre" class="form-control"></textarea>
+                                <textarea name="concluciones_otras" id="concluciones_otras_pelvico" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -6376,7 +6393,15 @@
                         <div class="col-md-12">
                             <label>Comentarios</label>
                             <div>
-                                <textarea name="comentarios" id="comentarios_1trimestre" class="form-control"></textarea>
+                                <textarea name="comentarios" id="comentarios_pelvico" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_pelvico" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -6384,7 +6409,7 @@
                         <div class="col-md-12">
                             <label>Recordatorios</label>
                             <div>
-                                <textarea name="recordatorios" id="recordatorios_1trimestre" class="form-control"></textarea>
+                                <textarea name="recordatorios" id="recordatorios_pelvico" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

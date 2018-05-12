@@ -1060,29 +1060,26 @@
                                            <input type="text" name="frecuencia_cardiaca_fetal" id="frecuencia_cardiaca_fetal" class="form-control">
                                         </div>
                                     </div>
+                                    <div class="col-sm-3">
+                                        <label>AFU (cms)</label>
+                                        <div>
+                                            <input type="number" name="afu" id="afu" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Otros Hallazgos</label>
+                                        <div>
+                                            <textarea name="otros_hallazgos_utero_gravido" id="otros_hallazgos_utero_gravido" class="form-control"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 utero_intrapelvico_form" style="display:none">
                                     <label>Útero Intrapelvico</label>
                                     <div>
-                                        <select name="utero_intrapelvico" id="utero_intrapelvico" class="form-control" data-target="utero_intrapelvico_si_form" onchange="selectShow($(this))">
-                                            <option value="No">No</option>
+                                        <select name="utero_intrapelvico" id="utero_intrapelvico" class="form-control">
                                             <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 utero_intrapelvico_si_form" style="display: none">
-                                    <label>AFU (cms)</label>
-                                    <div>
-                                        <input type="number" name="afu" id="afu" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group utero_intrapelvico_si_form" style="display: none">
-                                <div class="col-sm-3">
-                                    <label>Unico</label>
-                                    <div>
-                                        <input type="text" name="feto_unico" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -1201,66 +1198,68 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <label>Se Palpan Calotas</label>
-                                        <div>
-                                            <select name="vagina_calotas" id="vagina_calotas" class="form-control">
-                                                <option value="No">No</option>
-                                                <option value="Si">Si</option>
-                                            </select>
+                                    <div class="examen_ginecologico_embarazada">
+                                        <div class="col-sm-3">
+                                            <label>Se Palpan Calotas</label>
+                                            <div>
+                                                <select name="vagina_calotas" id="vagina_calotas" class="form-control">
+                                                    <option value="No">No</option>
+                                                    <option value="Si">Si</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label>Membranas Integras</label>
-                                        <div>
-                                            <select name="vagina_membranas_integras" id="vagina_membranas_integras" class="form-control">
-                                                <option value="No Valorables">No Valorables</option>
-                                                <option value="No">No</option>
-                                                <option value="Si">Si</option>
-                                            </select>
+                                        <div class="col-sm-3">
+                                            <label>Membranas Integras</label>
+                                            <div>
+                                                <select name="vagina_membranas_integras" id="vagina_membranas_integras" class="form-control">
+                                                    <option value="No Valorables">No Valorables</option>
+                                                    <option value="No">No</option>
+                                                    <option value="Si">Si</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label>Calotas Solidas</label>
-                                        <div>
-                                            <select name="vagina_calotas_solidas" id="vagina_calotas_solidas" class="form-control">
-                                                <option value="No Valorables">No Valorables</option>
-                                                <option value="No">No</option>
-                                                <option value="Si">Si</option>
-                                            </select>
+                                        <div class="col-sm-3">
+                                            <label>Calotas Solidas</label>
+                                            <div>
+                                                <select name="vagina_calotas_solidas" id="vagina_calotas_solidas" class="form-control">
+                                                    <option value="No Valorables">No Valorables</option>
+                                                    <option value="No">No</option>
+                                                    <option value="Si">Si</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label>Plano</label>
-                                        <div>
-                                            <select name="vagina_plano" id="vagina_plano" class="form-control">
-                                                <option value="No Valorables">No Valorables</option>
-                                                <option value="Plano I">Plano I</option>
-                                                <option value="Plano II">Plano II</option>
-                                                <option value="Plano III">Plano III</option>
-                                                <option value="Plano IV">Plano IV</option>
-                                            </select>
+                                        <div class="col-sm-3">
+                                            <label>Plano</label>
+                                            <div>
+                                                <select name="vagina_plano" id="vagina_plano" class="form-control">
+                                                    <option value="No Valorables">No Valorables</option>
+                                                    <option value="Plano I">Plano I</option>
+                                                    <option value="Plano II">Plano II</option>
+                                                    <option value="Plano III">Plano III</option>
+                                                    <option value="Plano IV">Plano IV</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label>Pelvis</label>
-                                        <div>
-                                            <select name="vagina_pelvis" id="vagina_pelvis" class="form-control">
-                                                <option value="No Valorables">No Valorables</option>
-                                                <option value="Util">Util</option>
-                                                <option value="No Util">No Util</option>
-                                            </select>
+                                        <div class="col-sm-3">
+                                            <label>Pelvis</label>
+                                            <div>
+                                                <select name="vagina_pelvis" id="vagina_pelvis" class="form-control">
+                                                    <option value="No Valorables">No Valorables</option>
+                                                    <option value="Util">Util</option>
+                                                    <option value="No Util">No Util</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label>Desproporcion Cefalopelvica</label>
-                                        <div>
-                                            <select name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica" class="form-control">
-                                                <option value="No Valorables">No Valorables</option>
-                                                <option value="Estrecho Superior">Estrecho Superior</option>
-                                                <option value="Inferior">Inferior</option>
-                                                <option value="Medio">Medio</option>
-                                            </select>
+                                        <div class="col-sm-3">
+                                            <label>Desproporcion Cefalopelvica</label>
+                                            <div>
+                                                <select name="vagina_desproporcion_cefalopelvica" id="vagina_desproporcion_cefalopelvica" class="form-control">
+                                                    <option value="No Valorables">No Valorables</option>
+                                                    <option value="Estrecho Superior">Estrecho Superior</option>
+                                                    <option value="Inferior">Inferior</option>
+                                                    <option value="Medio">Medio</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -1363,6 +1362,8 @@
 
     <script type="text/javascript">
 
+        var embarazada = false;
+
         function selectShow(este) {
             if(este.data('target') == undefined) return false;
 
@@ -1383,8 +1384,37 @@
             }
         }
 
+        $('#embarazada').change(function(){
+            if($(this).val() == 'Si'){
+                $('.utero_gravido_abdominal_si_form').hide();
+                $('#utero_gravido_abdominal').val('No');
+                $('.utero_intrapelvico_form').show();
+                $('.examen_ginecologico_embarazada').hide()
+                embarazada = true;
+            }else{
+                $('.examen_ginecologico_embarazada').show()
+                embarazada = false;
+            }
+        });
+
+        $('#examen_ginecologico').change(function(){
+            if($(this).val() == 'Si'){
+                if(embarazada){
+                    $('.examen_ginecologico_embarazada').hide()
+                }else{
+                    $('.examen_ginecologico_embarazada').show()
+                }
+            }
+        });
+
         function uteroGravido(este) {
-            (este.val() == 'No') ? $('.utero_gravido_abdominal_si_form').hide() : $('.utero_gravido_abdominal_si_form').show()
+            if(este.val() == 'No'){
+                $('.utero_gravido_abdominal_si_form').hide();
+                $('.utero_intrapelvico_form').show();
+            }else{
+                $('.utero_gravido_abdominal_si_form').show();
+                $('.utero_intrapelvico_form').hide();
+            }
         }
     </script>
 @endsection

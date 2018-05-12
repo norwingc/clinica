@@ -29,7 +29,7 @@ class CreateUltrasonidoEstructuralsTable extends Migration
             $table->string('conclusion_riesgo_preeclampsia')->nullable();
             $table->string('conclusion_riesgo_hipertension')->nullable();
             $table->string('conclusion_riesgo_restriccion_crecimiento')->nullable();
-            $table->string('conclusion_embarazo_fetometria')->nullable();
+            $table->text('conclusion_embarazo_fetometria')->nullable();
             $table->text('concluciones')->nullable();
             $table->text('comentarios')->nullable();
             $table->text('recomendaciones')->nullable();

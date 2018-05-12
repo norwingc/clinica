@@ -194,6 +194,18 @@
         }
     }
 
+    $('#peso_actual_prenatal').focusout(function(){
+        var peso_actual = $(this).val();
+
+        if(peso_actual != ''){
+            var peso_anterior = $('#incremento_peso_prenatal').data('peso');
+            if(peso_anterior != 'No Existe historia clinica'){
+                var diferencia_peso =  peso_actual - peso_anterior;
+                $('#incremento_peso_prenatal').val(diferencia_peso);
+            }
+        }
+    });
+
     function agregarExamen(este) {
 
         var examen = este.parent(0).parent(0).parent(0).find('.examen_tipo').val();

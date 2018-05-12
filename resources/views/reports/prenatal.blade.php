@@ -54,14 +54,14 @@
     <p class="sub_titul">Consulta de atencion prenatal: {{ $prenatal->numero }}</p>
 
     <p>
-      Edad gestacional por ulrasonido: {{ $prenatal->edad_gestacional }}
+      Edad gestacional por ulrasonido: {!! $prenatal->edad_gestacional !!}
     </p>
     <p>Diagnostico Previo: {{ $prenatal->diagnostico_previo }}</p>
 
     <p>
       Presion Arterial Brazo Derecho: {{ $prenatal->presion_arterial_derecho }}mmhg. Presion Arterial Brazo Izquierdo: {{ $prenatal->presion_arterial_izquierdo }}mmhg.
-      Presion Arterial Media: {{ $prenatal->presion_arterial_media }}mmhg. Frecuencia Cardiaca: {{ $prenatal->signos_vitales_fc }}. Frecuencia Respiratoria: {{ $prenatal->signos_vitales_fr }}.
-      Temeratura: {{ $prenatal->temperatura }} ºC. Peso Actual {{ $prenatal->peso_actual }}lb. Incremente de peso: {{ $prenatal->incremento_peso }}lb.
+      Presion Arterial Media: {{ $prenatal->presion_arterial_media }}mmhg. Frecuencia Cardiaca: {{ $prenatal->signos_vitales_fc }} por minuto. Frecuencia Respiratoria: {{ $prenatal->signos_vitales_fr }} por minuto.
+      Temeratura: {{ $prenatal->temperatura }} ºC. Peso Actual {{ $prenatal->peso_actual }} lb. Incremente de peso: {{ $prenatal->incremento_peso }} lb.
     </p>
 
     <p><b>Subjetivo:</b> {{ $prenatal->subjetivo }}</p>
@@ -74,7 +74,11 @@
       @if($prenatal->utero_gravido == 'Si')
         Presentacion: {{ $prenatal->presentacion }}. Situacion: {{ $prenatal->situacion }}. Posicion: {{ $prenatal->posicion }}.
       @endif
-      Utero Intrapelvico: {{ $prenatal->utero_intrapelvico }}. Peristalsis: {{ $prenatal->peristalsis }}. AFU: {{ $prenatal->afu }}.
+      Utero Intrapelvico: {{ $prenatal->utero_intrapelvico }}. Peristalsis: {{ $prenatal->peristalsis }}.
+      @if($prenatal->otros_hallazgos != '')
+          Otros Hallazgos: {{ $prenatal->otros_hallazgos }}.
+      @endif
+      AFU: {{ $prenatal->afu }}.
     </p>
 
     <p>
@@ -96,12 +100,12 @@
       <b>Examen de laboratorio: {{ $prenatal->porta_examen }}</b> <br>
       @if($prenatal->porta_examen == 'Si')
         {!! ($prenatal->leocitos != null) ? "Leucocitos xmm3:  $prenatal->leocitos." : "" !!}
-        {!! ($prenatal->segmentos != null) ? "Segmentos:  $prenatal->segmentos%." : "" !!}
+        {!! ($prenatal->segmentos != null) ? "Segmentados:  $prenatal->segmentos%." : "" !!}
         {!! ($prenatal->linfocitos != null) ? "Linfocitos:  $prenatal->linfocitos%." : "" !!}
         {!! ($prenatal->hemoglobina != null) ? "Hemoglobina gr/dl:  $prenatal->hemoglobina." : "" !!}
         {!! ($prenatal->hematocrito != null) ? "Hematocrito:  $prenatal->hematocrito%." : "" !!}
         {!! ($prenatal->eosinofilos != null) ? "Eosinofilos:  $prenatal->eosinofilos." : "" !!}
-        {!! ($prenatal->resticulocitos != null) ? "Resticulocitos:  $prenatal->resticulocitos." : "" !!}
+        {!! ($prenatal->resticulocitos != null) ? "Reticulocitos:  $prenatal->resticulocitos." : "" !!}
         {!! ($prenatal->glicemia != null) ? "Glicemia gr/dl:  $prenatal->glicemia." : "" !!}
         {!! ($prenatal->pospandrial_una != null) ? "1 Hr Pospandrial gr/dl:  $prenatal->pospandrial_una." : "" !!}
         {!! ($prenatal->pospandrial_dos != null) ? "2 Hr Pospandrial gr/dl:  $prenatal->pospandrial_dos." : "" !!}
@@ -142,6 +146,20 @@
       Doppler Normal: {{ $prenatal->doppler_normal }}. Incremento de Peso Materno: {{ $prenatal->incremento_peso_materno }}. Incremento de Curva Fetal: {{ $prenatal->incremento_curva_fetal }}.
       Maduración Pulmonar: {{ $prenatal->maduracion_pulmonar }} @if($prenatal->maduracion_pulmonar == 'Si') Semanas que si cumplio maduracion: {{ $prenatal->maduracion_pulmonal_semanas }}. @endif
     </p>
+
+    @if($prenatal->diagnostico != 'null')
+        <p>
+            <b>Diagnostico: </b> <br>
+            {{ $prenatal->diagnostico }}
+        </p>
+    @endif
+
+    @if($prenatal->factores_riesgo != 'null')
+        <p>
+            <b>Factores de Riesgos: </b> <br>
+            {{ $prenatal->factores_riesgo }}
+        </p>
+    @endif
 
     @if($prenatal->comentarios != 'null')
         <p>

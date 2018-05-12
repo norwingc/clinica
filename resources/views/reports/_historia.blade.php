@@ -133,11 +133,12 @@
         Situacion: {{ $historia->situacion }}.
         Posicion: {{ $historia->posicion }}.
         Frecuencia cardiaca fetal: {{ $historia->frecuencia_cardiaca_fetal }}.
-    @endif
-    Útero Intrapelvico: {{ $historia->utero_intrapelvico }}.
-    @if($historia->utero_intrapelvico == 'Si')
         AFU (cms): {{ $historia->afu }}.
-        Unico: {{ $historia->feto_unico }}.
+        @if($historia->otros_hallazgos_utero_gravido !='')
+            Atros Hallazgos: {{ $historia->otros_hallazgos_utero_gravido }}.
+        @endif
+    @else
+        Útero Intrapelvico: {{ $historia->utero_intrapelvico }}.
     @endif
 
     <br> <b>Examen Ginecologico</b> <br>
@@ -156,12 +157,16 @@
         Hidrorrea: {{ $historia->vagina_hidrorrea }}.
         Cervix: {{ $historia->vagina_cervix }}.
         Consistencia: {{ $historia->vagina_consistencia }}.
-        Se Palpan Calotas: {{ $historia->vagina_calotas }}.
-        Membranas Integras: {{ $historia->vagina_membranas_integras }}.
-        Calotas Solidas: {{ $historia->vagina_calotas_solidas }}.
-        Plano: {{ $historia->vagina_plano }}.
-        Pelvis: {{ $historia->vagina_pelvis }}.
-        Desproporcion Cefalopelvica: {{ $historia->vagina_desproporcion_cefalopelvica }}.
+
+        @if($historia->embarazada == 'Si')
+            Se Palpan Calotas: {{ $historia->vagina_calotas }}.
+            Membranas Integras: {{ $historia->vagina_membranas_integras }}.
+            Calotas Solidas: {{ $historia->vagina_calotas_solidas }}.
+            Plano: {{ $historia->vagina_plano }}.
+            Pelvis: {{ $historia->vagina_pelvis }}.
+            Desproporcion Cefalopelvica: {{ $historia->vagina_desproporcion_cefalopelvica }}.
+        @endif
+        
         Miembros Inferiores Edema: {{ $historia->vagina_miembros_inferiores }}.
         @if($historia->vagina_miembros_inferiores == 'Si')
             {{ $historia->vagina_miembros_inferiores_si }}.

@@ -36,7 +36,7 @@ class CreateUltrasonidoTrimestresTable extends Migration
             $table->string('ip_artrias')->nullable();
             $table->string('bidimensional')->nullable();
             $table->string('doppler_color')->nullable();
-            $table->string('conclusion_lcc')->nullable();
+            $table->text('conclusion_lcc')->nullable();
             $table->string('conclusion_riesago_cromosomopatias')->nullable();
             $table->string('conclusion_riesago_preeclampsia')->nullable();
             $table->string('conclusion_riesago_hipertensivos')->nullable();

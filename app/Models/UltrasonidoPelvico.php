@@ -23,7 +23,7 @@ class UltrasonidoPelvico extends Model
         "ovario_izquierdo_septos", "ovario_izquierdo_irregularidad_masa", "ovario_izquierdo_vaso_nutricio", "ovario_izquierdo_patron_vascular", "ovario_derecho",
         "ovario_derecho_1", "ovario_derecho_2", "presencia_masa_anexial_derecho", "ovario_derecho_tipo", "ovario_derecho_vegetaciones", "ovario_derecho_septos",
         "ovario_derecho_irregularidad_masa", "ovario_derecho_vaso_nutricio", "ovario_derecho_patron_vascular", "liquido_libre", "cantidad_liquido_libre",
-        "ovario_ascitis", "embarazo_lcc_semanas", "comentarios", "recordatorios"
+        "ovario_ascitis", "concluciones_otras", "embarazo_lcc_semanas", "comentarios", "recomendaciones", "recordatorios"
     ];
 
     public function consulta()
