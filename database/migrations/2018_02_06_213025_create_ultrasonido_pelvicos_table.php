@@ -80,7 +80,7 @@ class CreateUltrasonidoPelvicosTable extends Migration
             $table->string('concluciones_otras')->nullable();
             $table->text('comentarios')->nullable();
             $table->text('recomendaciones')->nullable();
-            $table->text('recordatorios')->nullable();
+            $table->text('recordatorio')->nullable();
             $table->integer('consulta_id');
             $table->timestamps();
             $table->softDeletes();

@@ -72,10 +72,10 @@
         @endif
 
         <p>
-            @if($pelvico->endometrio != '') Endometrio (mm): {{ $pelvico->endometrio }}. @endif Modo: {{ $pelvico->endometrio_modo }}. Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
-                @if($pelvico->cavidad_endometrial == 'Si')
-
-                 @if($pelvico->cavidad_endometrial_ocupada == 'Dispositivo intrauterino')
+            @if($pelvico->endometrio != '') Endometrio (mm): {{ $pelvico->endometrio }}. Modo: {{ $pelvico->endometrio_modo }}.@endif
+            Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
+            @if($pelvico->cavidad_endometrial == 'Si')
+                @if($pelvico->cavidad_endometrial_ocupada == 'Dispositivo intrauterino')
                     Dispositivo Intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
                 @else
                     Saco gestacional: {{ $pelvico->saco_gestional }}.
@@ -84,7 +84,6 @@
                     Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
                     Edad gestacional: {{ $pelvico->edad_gestacional_embarazo }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
                 @endif
-
             @endif
         </p>
     @endif

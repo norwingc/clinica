@@ -28,6 +28,8 @@
         }
     }
 
+    $(".tipo_rh").val("{{ $paciente->tipo_rh }}");
+
     $('#ovario_izquierdo_pelvico').change(function(event) {
         ($(this).val() == 'Presente') ? $('.ovario_izquierdo_ausente').show() : $('.ovario_izquierdo_ausente').hide();
     });
@@ -112,6 +114,9 @@
     }
     function examenNst(este) {
         (este.val() == 'No') ? $('.examen_nst_si').hide() : $('.examen_nst_si').show();
+    }
+    function vitalidadFeto(este) {
+        (este.val() == 'Ausencia de vitalidad') ? $('.feto_no_vitalidad').hide() : $('.feto_no_vitalidad').show()
     }
     function datosNst(este) {
        var html = ''
@@ -413,6 +418,8 @@
         }else{
             $('.nextChild').html('');
         }
+        
+        $('.localizacion_feto_mayor').show();
     }
 
     /**
@@ -428,6 +435,79 @@
         if(cantidad < 0) cantidad = 0;
         addFeto(child, este.data('examen'))
         setChild(child, cantidad);
+    }
+
+    function edadGestional(fecha) {
+
+        if(fecha == '') return false;
+
+        fecha = fecha.split("-");
+
+        fecha_inicio = new Date();
+        dia_parto    = new Date();
+        hoy          = new Date();
+        lleva        = new Date();
+        falta        = new Date();
+
+        day   = fecha[2];
+        month = fecha[1];
+        year  = fecha[0];
+
+        fecha_dada = new Date(year, (month-1), day);//month+"/"+day+"/"+year
+
+         //Calculamos la fecha probable del parto
+        fecha_inicio.setTime(fecha_dada.getTime());
+        dia_parto.setTime(fecha_inicio.getTime() + (280 * 86400000)); //(14 * 86400000) es la fecha de concepción
+
+        //Calculamos el tiempo que lleva
+        lleva.setTime(hoy.getTime() - fecha_inicio.getTime());
+        llevasemanas = parseInt(((lleva.getTime()/86400000)/7));
+        llevadias = Math.floor(((lleva.getTime()/86400000)%7));
+        //Calculamos el tiempo faltante
+        falta.setTime(dia_parto.getTime() - hoy.getTime());
+
+        faltasemanas = parseInt(((falta.getTime()/86400000)/7));
+        faltadias = parseInt(((falta.getTime()/86400000)%7));
+
+        let semanas = llevasemanas + " semanas y " + llevadias +" d&iacute;as";
+        let faltante = faltasemanas + " semanas y " + faltadias+ " d&iacute;as";
+        let fechap = dispDate(dia_parto)+", est&aacute; en la semana "+llevasemanas+" de embarazo.";
+
+        var resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
+
+        return resultado;
+    }
+
+    function dispDate(dateObj) {
+
+        month = dateObj.getMonth()+1;
+        var months = new Array(12);
+        months[1] = "Enero";
+        months[2] = "Febrero";
+        months[3] = "Marzo";
+        months[4] = "Abril";
+        months[5] = "Mayo";
+        months[6] = "Junio";
+        months[7] = "Julio";
+        months[8] = "Agosto";
+        months[9] = "Septiembre";
+        months[10] = "Octubre";
+        months[11] = "Noviembre";
+        months[12] = "Diciembre";
+        day   = dateObj.getDate();
+        var days = new Array(7);
+        days[0] = "Domingo";
+        days[1] = "Lunes";
+        days[2] = "Martes";
+        days[3] = "Mi&eacute;rcoles";
+        days[4] = "Jueves";
+        days[5] = "Viernes";
+        days[6] = "S&aacute;bado";
+        dayw = dateObj.getDay();
+        day = (day < 10) ? "0" + day : day;
+        year  = dateObj.getYear();
+        if (year < 2000) year += 1900;
+        return (days[dayw] + " " + day + " de " + months[month] + " del " + year);
     }
 
     /**
@@ -477,6 +557,10 @@
             $.get("{{ url('/') }}/Consultas/Prenatal/get/"+prenatal, function(data){
                 console.log(data);
             });
+        }
+
+        if($('#edad_gestacinal_prenatal').data('historia') != 'No'){
+            $('#edad_gestacinal_prenatal').val(edadGestional($('#edad_gestacinal_prenatal').data('historia')));
         }
 
         $('#modalUpdateAtencionPrenatal').modal('show');

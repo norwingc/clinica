@@ -64,7 +64,9 @@
         <p class="sub_titul"><b>Analizando el feto: {{ $count }}</b></p>
 
         <p>
-            Vitalidad: {{ $value->vitalidad_feto }}. <b>PRESENTACIÓN:</b> {{ $value->presentacion }}. <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto.
+            Vitalidad: {{ $value->vitalidad_feto }}. <b>Localizacion:</b> {{ $value->localizacion_feto }}.
+            @if($value->presentacion != 'N/A')<b>PRESENTACIÓN:</b> {{ $value->presentacion }}.@endif
+            <b>SITUACION</b> {{ $value->situacion }}. <b>POSICION</b> {{ $value->posicion }}. <b>FCF:</b> {{ $value->fcf }}  latidos por minuto. <b>Sexo: </b> {{ $value->sexo_feto }}
         </p>
 
         <div class="row">
@@ -98,7 +100,45 @@
                             <td>{{ $value->lf_medida }}</td>
                             <td>{{ $value->lf_semanas }}</td>
                         </tr>
-                         <tr>
+                        <tr>
+                            <th>Humero</th>
+                            <th>{{ $value->humero_medida }}</th>
+                            <th>{{ $value->humero_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Radio</th>
+                            <th>{{ $value->radio_medida }}</th>
+                            <th>{{ $value->radio_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Cúbito</th>
+                            <th>{{ $value->cubito_medida }}</th>
+                            <th>{{ $value->cubito_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Tibia</th>
+                            <th>{{ $value->tibia_medida }}</th>
+                            <th>{{ $value->tibia_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Peroné</th>
+                            <th>{{ $value->perone_medida }}</th>
+                            <th>{{ $value->perone_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Cerebelo</th>
+                            <th>{{ $value->cerebelo_medida }}</th>
+                            <th>{{ $value->cerebelo_semanas }}</th>
+                        </tr>
+                        <tr>
+                            <th>Cisterna magna</th>
+                            <td colspan="2" class="text-center">{{ $value->cisterna_magna }}</td>
+                        </tr>
+                        <tr>
+                            <th>Pliegue nucal</th>
+                            <td colspan="2" class="text-center">{{ $value->pliegue_nucal }}</td>
+                        </tr>
+                        <tr>
                             <th>Fetometría promedio</th>
                             <td colspan="2" class="text-center">{{ $value->fetometria_promedio }}</td>
                         </tr>
@@ -141,46 +181,48 @@
                         <td>{{ $value->percentil_notch_derecha }}</td>
                         <td>{{ $value->interpretacion_notch_derecha }}</td>
                     </tr>
-                    <tr>
-                        <th>Índice Cerebro placentario</th>
-                        <td>{{ $value->percentil_cerebro_placentario }}</td>
-                        <td>{{ $value->interpretacion_cerebro_placentario }}</td>
-                    </tr>
-                    <tr>
-                        <th>Arteria cerebral media</th>
-                        <td>{{ $value->percentil_arteria_cerebral }}</td>
-                        <td>{{ $value->interpretacion_arteria_cerebral }}</td>
-                    </tr>
-                    <tr>
-                        <th>Arteria Umbilical</th>
-                        <td>{{ $value->percentil_arteria_umbilical }}</td>
-                        <td>{{ $value->interpretacion_arteria_umbilical }}</td>
-                    </tr>
-                    <tr>
-                        <th>Flujo diastólico de Arteria umbilical</th>
-                        <td>{{ $value->percentil_flojo_diasotolico }}</td>
-                        <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
-                    </tr>
-                    <tr>
-                        <th>Itsmo aórtico</th>
-                        <td>{{ $value->percentil_itsmo_aortico }}</td>
-                        <td>{{ $value->interpretacion_itsmo_aortico }}</td>
-                    </tr>
-                    <tr>
-                        <th>Ducto venoso</th>
-                        <td>{{ $value->percentil_ducto_venenoso }}</td>
-                        <td>{{ $value->interpretacion_ducto_venenoso }}</td>
-                    </tr>
-                    <tr>
-                        <th>Flujo diastólico de ducto venoso</th>
-                        <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
-                        <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
-                    </tr>
-                    <tr>
-                        <th>Vena umbilical</th>
-                        <td>{{ $value->percentil_vena_umbilical }}</td>
-                        <td>{{ $value->interpretacion_vena_umbilical }}</td>
-                    </tr>
+                    @if($value->vitalidad_feto != 'Ausencia de vitalidad')
+                        <tr>
+                            <th>Índice Cerebro placentario</th>
+                            <td>{{ $value->percentil_cerebro_placentario }}</td>
+                            <td>{{ $value->interpretacion_cerebro_placentario }}</td>
+                        </tr>
+                        <tr>
+                            <th>Arteria cerebral media</th>
+                            <td>{{ $value->percentil_arteria_cerebral }}</td>
+                            <td>{{ $value->interpretacion_arteria_cerebral }}</td>
+                        </tr>
+                        <tr>
+                            <th>Arteria Umbilical</th>
+                            <td>{{ $value->percentil_arteria_umbilical }}</td>
+                            <td>{{ $value->interpretacion_arteria_umbilical }}</td>
+                        </tr>
+                        <tr>
+                            <th>Flujo diastólico de Arteria umbilical</th>
+                            <td>{{ $value->percentil_flojo_diasotolico }}</td>
+                            <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
+                        </tr>
+                        <tr>
+                            <th>Itsmo aórtico</th>
+                            <td>{{ $value->percentil_itsmo_aortico }}</td>
+                            <td>{{ $value->interpretacion_itsmo_aortico }}</td>
+                        </tr>
+                        <tr>
+                            <th>Ducto venoso</th>
+                            <td>{{ $value->percentil_ducto_venenoso }}</td>
+                            <td>{{ $value->interpretacion_ducto_venenoso }}</td>
+                        </tr>
+                        <tr>
+                            <th>Flujo diastólico de ducto venoso</th>
+                            <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
+                            <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
+                        </tr>
+                        <tr>
+                            <th>Vena umbilical</th>
+                            <td>{{ $value->percentil_vena_umbilical }}</td>
+                            <td>{{ $value->interpretacion_vena_umbilical }}</td>
+                        </tr>
+                    @endif
                 </table>
             </div>
         </div>
@@ -263,6 +305,10 @@
             Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}. @if($value->liquido_amniotico != 'Normal') Clasificacion: {{ $value->clasificacion_liquido_amniotico }}. @endif
             Valor de ILA: {{ $value->valor_ila }} cms.
         </p>
+
+        @php
+            $count--;
+        @endphp
     @endforeach
 
     <p>Revision: {{ $estructural->revision }}</p>

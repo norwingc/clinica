@@ -510,6 +510,21 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
+                                    <label>Cirugias Previas</label>
+                                    <div>
+                                        <select name="cirugias_previas" id="cirugias_previas" class="form-control" data-target="cirugias_previas_si_form" onchange="selectShow($(this))">
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 cirugias_previas_si_form" style="display: none">
+                                    <label>Fecha / Causa / Tipo de anestecia</label>
+                                    <div>
+                                        <textarea name="cirugias_previas_si" id="cirugias_previas_si" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
                                     <label>Hospitalizaciones previas</label>
                                     <div>
                                         <select name="hospitalizacion_previa" id="hospitalizacion_previa" class="form-control" data-target="hospitalizacion_previa_si_form" onchange="selectShow($(this))">
@@ -521,7 +536,7 @@
                                 <div class="col-sm-3 hospitalizacion_previa_si_form" style="display: none">
                                     <label>Fecha / Causa</label>
                                     <div>
-                                       <input type="text" name="hospitalizacion_previa_si" id="hospitalizacion_previa_si" class="form-control">
+                                        <textarea name="hospitalizacion_previa_si" id="hospitalizacion_previa_si" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -664,6 +679,8 @@
                                         <select name="planificacion_tipo" id="planificacion_tipo" class="form-control">
                                             <option value="">Seleccione Uno</option>
                                             <option value="Barrera">Barrera</option>
+                                            <option value="Esterilización Quirúrgica Femenina">Esterilización Quirúrgica Femenina</option>
+                                            <option value="Esterilización Quirúrgica Masculina">Esterilización Quirúrgica Masculina</option>
                                             <option value="Inyectables">Inyectables</option>
                                             <option value="Inyectable Trimestral">Inyectable Trimestral</option>
                                             <option value="Mensual">Mensual</option>
@@ -1297,6 +1314,25 @@
                                     <label>Alteracion</label>
                                     <div>
                                         <input type="text" name="vagina_neurologico_conservado_si" id="vagina_neurologico_conservado_si" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Ultrasonido</p>
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <label>Ultrasonido</label>
+                                    <div>
+                                        <select name="ultrasonido" id="ultrasonido" class="form-control" data-target="ultrasonido_si" onchange="selectShow($(this))"> {{-- si es no cerar hasta Miembros Inferiores Edema --}}
+                                            <option value="No">No</option>
+                                            <option value="Si">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 ultrasonido_si" style="display:none">
+                                    <label>Observaciones</label>
+                                    <div>
+                                        <textarea name="ultrasonido_observaciones" id="ultrasonido_observaciones" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>

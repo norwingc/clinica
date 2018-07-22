@@ -14,7 +14,7 @@ class EcocardiografiaFeto extends Model
      * @var array
      */
     protected $fillable = [
-        "vitalidad_feto", "presentacion", "situacion", "posicion", "fcf", "dbp_medida", "dbp_semanas", "cc_medida", "cc_semanas", "ca_medida",
+        "vitalidad_feto", "localizacion_feto", "presentacion", "situacion", "posicion", "fcf", "sexo_feto", "dbp_medida", "dbp_semanas", "cc_medida", "cc_semanas", "ca_medida",
         "ca_semanas", "lf_medida", "lf_semanas", "fetometria_promedio", "percentil", "peso_fetal", "fecha_parto", "percentil_ip_medio", "interpretacion_ip_medio",
         "percentil_notch_izquierda", "interpretacion_notch_izquierda", "percentil_notch_derecha", "interpretacion_notch_derecha", "percentil_cerebro_placentario",
         "interpretacion_cerebro_placentario", "percentil_arteria_cerebral", "interpretacion_arteria_cerebral", "percentil_arteria_umbilical", "interpretacion_arteria_umbilical",

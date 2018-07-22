@@ -75,18 +75,20 @@ $('#gesta').change(function(){
 
 $('#embarazada').change(function(){
     if($(this).val() == 'Si'){
-        edadGestional();
+        var edad = edadGestional($('#ultima_regla').val());
+        $('#edad_gestional_view').html(edad);
+        $('#edad_gestional').val(edad);
     }
 });
 
 $('#ultima_regla').focusout(function() {
-    edadGestional();
+    var edad = edadGestional($('#ultima_regla').val(), $('#edad_gestional_view'));
+    $('#edad_gestional_view').html(edad);
+    $('#edad_gestional').val(edad);
 });
 
 
-function edadGestional() {
-    let fecha    = $('#ultima_regla').val(); //annio-mes-dia
-    let textarea = $('#edad_gestional_view');
+function edadGestional(fecha) {
 
     if(fecha == '') return false;
 
@@ -122,10 +124,9 @@ function edadGestional() {
     let faltante = faltasemanas + " semanas y " + faltadias+ " d&iacute;as";
     let fechap = dispDate(dia_parto)+", est&aacute; en la semana "+llevasemanas+" de embarazo.";
 
-    let resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
-    textarea.html(resultado);
+    var resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
 
-    $('#edad_gestional').html(resultado);
+    return resultado;
 }
 
 function dispDate(dateObj) {

@@ -17,7 +17,7 @@ class Paciente extends Model
      */
     protected $fillable = [
         'name', 'id_number', 'phone', 'compania_phone', 'referido', 'email', 'birthday', 'convencional', 'address', 'estado_civil', 'contacto', 'parentesco',
-        'contacto_celular', 'trabajo', 'escolaridad'
+        'contacto_celular', 'trabajo', 'escolaridad', 'tipo_rh', 'paridad', 'morbilidad'
     ];
 
 
@@ -44,7 +44,7 @@ class Paciente extends Model
     {
         return $this->hasOne('App\Models\Consulta', 'paciente_id')->latest();
     }
-    
+
      /**
      * [getAge description]
      * @return [type] [description]

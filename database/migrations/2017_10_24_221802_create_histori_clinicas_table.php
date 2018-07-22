@@ -56,8 +56,10 @@ class CreateHistoriClinicasTable extends Migration
             $table->string('malformacion_congenita_tipo')->nullable();
             $table->string('pre_eclampsia', 5)->nullable();
             $table->string('manejo_pre_eclampsia')->nullable();
+            $table->string('cirugias_previas', 5)->nullable();
+            $table->text('cirugias_previas_si')->nullable();
             $table->string('hospitalizacion_previa', 5)->nullable();
-            $table->string('hospitalizacion_previa_si')->nullable();
+            $table->text('hospitalizacion_previa_si')->nullable();
             $table->string('menarca')->nullable();
             $table->string('vida_sexual_inicio')->nullable();
             $table->integer('gesta')->nullable();
@@ -146,6 +148,8 @@ class CreateHistoriClinicasTable extends Migration
             $table->string('vagina_miembros_inferiores_si')->nullable();
             $table->string('vagina_neurologico_conservado', 5)->nullable();
             $table->string('vagina_neurologico_conservado_si')->nullable();
+            $table->string('ultrasonido', 5)->nullable();
+            $table->text('ultrasonido_observaciones')->nullable();
             $table->text('observaciones')->nullable();
             $table->text('diagnosticos')->nullable();
             $table->text('recordatorio')->nullable();

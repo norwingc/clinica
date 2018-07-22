@@ -149,6 +149,36 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <label>Typo y RH</label>
+                                <div>
+                                    <select class="form-control" name="tipo_rh" id="tipo_rh" value="{{ $paciente->tipo_rh }}">
+                                        <option value="">Selecione Uno</option>
+                                        <option value="O Positivo">O Positivo</option>
+                                        <option value="A Negativo">A Negativo</option>
+                                        <option value="A Positivo">A Positivo</option>
+                                        <option value="AB Negativo">AB Negativo</option>
+                                        <option value="AB Positivo">AB Positivo</option>
+                                        <option value="B Negativo">B Negativo</option>
+                                        <option value="B Positivo">B Positivo</option>
+                                        <option value="O Negativo">O Negativo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Paridad</label>
+                                <div>
+                                    <input type="text" name="paridad" id="paridad" class="form-control" value="{{ $paciente->paridad }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Morbilidad</label>
+                                <div>
+                                    <input type="text" name="morbilidad" id="morbilidad" class="form-control" value="{{ $paciente->morbilidad }}">
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center col-md-12">
                             <button type="submit" class="btn btn-success btn-submit">Actualizar</button>
                         </div>
@@ -166,15 +196,8 @@
 
 @section('js')
     <script>
-        $('#escolaridad option').each(function(){
-            if($(this).val() == '{{ $paciente->escolaridad }}'){
-                $(this).prop('selected', 'selected');
-            }
-        });
-        $('#compania_phone option').each(function(){
-            if($(this).val() == '{{ $paciente->compania_phone }}'){
-                $(this).prop('selected', 'selected');
-            }
-        });
+        $('#compania_phone').val("{{ $paciente->compania_phone }}");
+        $('#escolaridad').val("{{ $paciente->escolaridad }}");
+        $('#tipo_rh').val("{{ $paciente->tipo_rh }}");
     </script>
 @endsection

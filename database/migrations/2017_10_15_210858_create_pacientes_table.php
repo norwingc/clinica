@@ -30,6 +30,9 @@ class CreatePacientesTable extends Migration
             $table->string('contacto_celular')->nullable();
             $table->string('trabajo')->nullable();
             $table->string('escolaridad')->nullable();
+            $table->string('tipo_rh')->nullable();
+            $table->string('paridad')->nullable();
+            $table->string('morbilidad')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

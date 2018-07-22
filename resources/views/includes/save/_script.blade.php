@@ -234,6 +234,7 @@
         if(examen == 'UltrasonidoTrimestre'){
             fetos.push({
                 "vitalidad_feto"                    : $(child).find('#vitalidad_feto_1trimestre').val(),
+                "localizacion_feto"                 : $(child).find('#localizacion_feto_1trimestre').val(),
                 "somatometria_lcc"                  : $(child).find('#somatometria_lcc_1trimestre').val(),
                 "somatometria_semanas"              : $(child).find('#somatometria_semanas_1trimestre').val(),
                 "somatometria_semanas"              : $(child).find('#somatometria_semanas_1trimestre').val(),
@@ -298,10 +299,12 @@
         if(examen == 'UltrasonidoEstructural'){
             fetos.push({
                 "vitalidad_feto"                     : $(child).find('#vitalidad_feto_estructural').val(),
+                "localizacion_feto"                  : $(child).find('#localizacion_feto_estructural').val(),
                 "presentacion"                       : $(child).find('#presentacion_estructural').val(),
                 "situacion"                          : $(child).find('#situacion_estructural').val(),
                 "posicion"                           : $(child).find('#posicion_estructural').val(),
                 "fcf"                                : $(child).find('#fcf_estructural').val(),
+                "sexo_feto"                          : $(child).find('#sexo_feto_estructural').val(),
                 "dbp_medida"                         : $(child).find('#dbp_medida_estructural').val(),
                 "dbp_semanas"                        : $(child).find('#dbp_semanas_estructural').val(),
                 "cc_medida"                          : $(child).find('#cc_medida_estructural').val(),
@@ -456,10 +459,12 @@
         if(examen == 'Neurosonografia'){
             fetos.push({
                 "vitalidad_feto"                        : $(child).find('#vitalidad_feto_neurosonografia').val(),
+                "localizacion_feto"                     : $(child).find('#localizacion_feto_neurosonografia').val(),
                 "presentacion"                          : $(child).find('#presentacion_neurosonografia').val(),
                 "situacion"                             : $(child).find('#situacion_neurosonografia').val(),
                 "posicion"                              : $(child).find('#posicion_neurosonografia').val(),
                 "fcf"                                   : $(child).find('#fcf_neurosonografia').val(),
+                "sexo_feto"                             : $(child).find('#sexo_feto_neurosonografia').val(),
                 "dbp_medida"                            : $(child).find('#dbp_medida_neurosonografia').val(),
                 "dbp_semanas"                           : $(child).find('#dbp_semanas_neurosonografia').val(),
                 "cc_medida"                             : $(child).find('#cc_medida_neurosonografia').val(),
@@ -581,10 +586,12 @@
         if(examen == 'Ecocardiografia'){
             fetos.push({
                 "vitalidad_feto"                     : $(child).find('#vitalidad_feto_ecocardiografia').val(),
+                "localizacion_feto"                  : $(child).find('#localizacion_feto_ecocardiografia').val(),
                 "presentacion"                       : $(child).find('#presentacion_ecocardiografia').val(),
                 "situacion"                          : $(child).find('#situacion_ecocardiografia').val(),
                 "posicion"                           : $(child).find('#posicion_ecocardiografia').val(),
                 "fcf"                                : $(child).find('#fcf_ecocardiografia').val(),
+                "sexo_feto"                          : $(child).find('#sexo_feto_ecocardiografia').val(),
                 "dbp_medida"                         : $(child).find('#dbp_medida_ecocardiografia').val(),
                 "dbp_semanas"                        : $(child).find('#dbp_semanas_ecocardiografia').val(),
                 "cc_medida"                          : $(child).find('#cc_medida_ecocardiografia').val(),
@@ -680,10 +687,12 @@
         if(examen == 'Doppler'){
             fetos.push({
                 "vitalidad_feto"                     : $(child).find('#vitalidad_feto_doppler').val(),
+                "localizacion_feto"                  : $(child).find('#localizacion_feto_doppler').val(),
                 "presentacion"                       : $(child).find('#presentacion_doppler').val(),
                 "situacion"                          : $(child).find('#situacion_doppler').val(),
                 "posicion"                           : $(child).find('#posicion_doppler').val(),
                 "fcf"                                : $(child).find('#fcf_doppler').val(),
+                "sexo_feto"                          : $(child).find('#sexo_feto_doppler').val(),
                 "dbp_medida"                         : $(child).find('#dbp_medida_doppler').val(),
                 "dbp_semanas"                        : $(child).find('#dbp_semanas_doppler').val(),
                 "cc_medida"                          : $(child).find('#cc_medida_doppler').val(),

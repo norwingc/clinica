@@ -15,7 +15,7 @@ class UltrasonidoTrimestreFeto extends Model
      * @var [type]
      */
     protected $fillable = [
-        "vitalidad_feto", "somatometria_lcc", "somatometria_semanas", "somatometria_dbp", "somatometria_cc", "somatometria_ca", "somatometria_lf", "somatometria_fcf",
+        "vitalidad_feto", "localizacion_feto","somatometria_lcc", "somatometria_semanas", "somatometria_dbp", "somatometria_cc", "somatometria_ca", "somatometria_lf", "somatometria_fcf",
         "somatometria_fetometria", "somatometria_tn", "somatometria_fecha_estimada_parto", "craneo", "craneo_forma", "pexos_caroideos", "quiste_plexos", "hueso_nasal",
         "medicion_nasal", "torax_normal", "localizacion_intratoracica", "ectopia_cordis", "anomalia_cardica", "descripcion_anomalia_cardica", "insercion_cordon", "presencia_vasos",
         "arteria_umbilical", "pared_integra", "localizacion_defecto_abdominal", "defecto_medida", "cubierta_membrana", "asas_intestino_delgado", "asas_intestino_grueso",

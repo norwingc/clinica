@@ -1,6 +1,6 @@
 @if($value->pelvico)
-    @if($value->pelvico->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->pelvico->recordatorios }}</p>
+    @if($value->pelvico->recordatorio != null)
+        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->pelvico->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.pelvico', $value->pelvico) }}" class="btn btn-info">Descargar reporte Ultrasonido pelvico</a>
@@ -9,8 +9,8 @@
 @endif
 
 @if($value->trimestre)
-    @if($value->trimestre->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->trimestre->recordatorios }}</p>
+    @if($value->trimestre->recordatorio != null)
+        <p><b class="red">Recordatorio Ultrasonido I Trimestre:</b> {{ $value->trimestre->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.trimestre', $value->trimestre) }}" class="btn btn-info">Descargar reporte Ultrasonido I Trimestre</a>
@@ -19,8 +19,8 @@
 @endif
 
 @if($value->estructural)
-    @if($value->estructural->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->estructural->recordatorios }}</p>
+    @if($value->estructural->recordatorio != null)
+        <p><b class="red">Recordatorio Ultrasonido Estructural:</b> {{ $value->estructural->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.estructural', $value->estructural) }}" class="btn btn-info">Descargar reporte Ultrasonido Estructural</a>
@@ -29,8 +29,8 @@
 @endif
 
 @if($value->neurosonografia)
-    @if($value->neurosonografia->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->neurosonografia->recordatorios }}</p>
+    @if($value->neurosonografia->recordatorio != null)
+        <p><b class="red">Recordatorio Neurosonografia:</b> {{ $value->neurosonografia->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.neurosonografia', $value->neurosonografia) }}" class="btn btn-info">Descargar reporte Neurosonografia</a>
@@ -39,8 +39,8 @@
 @endif
 
 @if($value->ecocardiografia)
-    @if($value->ecocardiografia->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->ecocardiografia->recordatorios }}</p>
+    @if($value->ecocardiografia->recordatorio != null)
+        <p><b class="red">Recordatorio Ecocardiografia:</b> {{ $value->ecocardiografia->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.ecocardiografia', $value->ecocardiografia) }}" class="btn btn-info">Descargar reporte Ecocardiografia</a>
@@ -49,8 +49,8 @@
 @endif
 
 @if($value->doppler)
-    @if($value->doppler->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->doppler->recordatorios }}</p>
+    @if($value->doppler->recordatorio != null)
+        <p><b class="red">Recordatorio Curva de crecimiento / Doppler:</b> {{ $value->doppler->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.doppler', $value->doppler) }}" class="btn btn-info">Descargar reporte Curva de crecimiento / Doppler</a>
@@ -59,8 +59,8 @@
 @endif
 
 @if($value->ginecologica)
-    @if($value->ginecologica->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->ginecologica->recordatorios }}</p>
+    @if($value->ginecologica->recordatorio != null)
+        <p><b class="red">Recordatorio Consulta Ginecologica:</b> {{ $value->ginecologica->recordatorio }}</p>
     @endif
     <p>
         <a href="{{ route('report.ginecologica', $value->ginecologica) }}" class="btn btn-info">Descargar reporte Consulta Ginecologica</a>
@@ -69,8 +69,8 @@
 @endif
 
 @if($value->prenatal)
-    @if($value->prenatal->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->prenatal->recordatorios }}</p>
+    @if($value->prenatal->recordatorio != null)
+        <p><b class="red">Recordatorio Atencion Prenatal:</b> {{ $value->prenatal->recordatorio }}</p>
     @endif
   <p>
       <a href="{{ route('report.prenatal', $value->prenatal) }}" class="btn btn-info">Descargar reporte Consulta Atencion Prenatal</a>
@@ -79,8 +79,8 @@
 @endif
 
 @if($value->colposcopia)
-    @if($value->colposcopia->recordatorios != null)
-        <p><b class="red">Recordatorio Ultrasonido Pelvico:</b> {{ $value->colposcopia->recordatorios }}</p>
+    @if($value->colposcopia->recordatorio != null)
+        <p><b class="red">Recordatorio Colposcopia / Crioterapia:</b> {{ $value->colposcopia->recordatorio }}</p>
     @endif
   <p>
       <a href="{{ route('report.colposcopia', $value->colposcopia) }}" class="btn btn-info">Descargar reporte Colposcopia / Crioterapia</a>

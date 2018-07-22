@@ -17,6 +17,7 @@ class CreateUltrasonidoTrimestreFetosTable extends Migration
             $table->increments('id');
             $table->integer('examen_id');
             $table->string('vitalidad_feto')->nullable();
+            $table->string('localizacion_feto')->nullable();
             $table->string('somatometria_lcc')->nullable();
             $table->string('somatometria_semanas')->nullable();
             $table->string('somatometria_dbp')->nullable();

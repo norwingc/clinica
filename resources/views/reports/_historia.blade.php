@@ -166,7 +166,7 @@
             Pelvis: {{ $historia->vagina_pelvis }}.
             Desproporcion Cefalopelvica: {{ $historia->vagina_desproporcion_cefalopelvica }}.
         @endif
-        
+
         Miembros Inferiores Edema: {{ $historia->vagina_miembros_inferiores }}.
         @if($historia->vagina_miembros_inferiores == 'Si')
             {{ $historia->vagina_miembros_inferiores_si }}.
@@ -177,8 +177,14 @@
         Alteracion: {{ $historia->vagina_neurologico_conservado_si }}.
     @endif
 
+@if($historia->ultrasonido != NULL)
+    <p><b>Ultrasonido Observaciones: </b> {{ $historia->ultrasonido_observaciones }}</p>
+@endif
+
 <p class="sub_titul">Observaciones y Análisis</p>
 <p>{{ $historia->observaciones }}</p>
 
 <p class="sub_titul">Diagnósticos o Problemas</p>
 <p>{{ $historia->diagnosticos }}</p>
+
+@include('includes._firmas')

@@ -25,7 +25,7 @@
                          <div class="col-sm-4">
                             <label>Edad gestacional por ulrasonido</label>
                             <div>
-                                <textarea name="edad_gestacional" id="edad_gestacinal_prenatal" class="form-control">{!! ($paciente->historia) ? $paciente->historia->edad_gestional : 'No existe historia clinica' !!}</textarea>
+                                <textarea name="edad_gestacional" id="edad_gestacinal_prenatal" class="form-control" data-historia={{ ($paciente->historia) ? $paciente->historia->ultima_regla : 'No' }}></textarea>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -178,6 +178,7 @@
                                  <select name="presentacion" id="presentacion_prenatal" class="form-control" >
                                      <option value="Cefálico">Cefálico</option>
                                      <option value="Pélvico">Pélvico</option>
+                                     <option value="N/A">N/A</option>
                                  </select>
                              </div>
                           </div>
@@ -356,13 +357,24 @@
                             <div class="col-sm-3">
                                 <label>Borramiento (%)</label>
                                 <div>
-                                  <input type="text" name="borramiento" id="borramiento_prenatal" class="form-control" value="0">
+                                    <select name="borramiento" id="borramiento_prenatal" class="form-control">
+                                        <option value="<50"> <50 </option>
+                                        <option value="60">60</option>
+                                        <option value="70">70</option>
+                                        <option value="80">80</option>
+                                        <option value="90">90</option>
+                                        <option value="100">100</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Dilatacion (cm)</label>
+                                <label>Dilatacion (cms)</label>
                                 <div>
-                                  <input type="text" name="dilatacion" id="dilatacion_prenatal" class="form-control" value="0">
+                                    <select name="dilatacion" id="dilatacion_prenatal" class="form-control">
+                                        @for ($i=1; $i <= 10; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -981,7 +993,7 @@
                         <div class="col-sm-4">
                             <label>Incremente de peso (lb)</label>
                             <div>
-                                <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_ginecologica" readonly value="calcular con el peso anteriro de historia clinica">
+                                <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_ginecologica">
                             </div>
                         </div>
                     </div>
@@ -1108,28 +1120,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_ecocardiografia" class="form-control">
+                                <input type="text" name="paridad" id="paridad_ecocardiografia" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_ecocardiografia" class="form-control">
+                                <input type="text" name="morbilidad" id="morbilidad_ecocardiografia" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_ecocardiografia">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_ecocardiografia" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -1164,10 +1176,22 @@
                                 <div class="col-md-5">
                                     <label>Vitalidad</label>
                                     <div>
-                                        <select name="vitalidad_feto" id="vitalidad_feto_ecocardiografia" class="form-control">
+                                        <select name="vitalidad_feto" id="vitalidad_feto_ecocardiografia" class="form-control" onchange="vitalidadFeto($(this))">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
                                             <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
+                                            <option value="Feto con disminucion de movimientos corporales">Feto con disminucion de movimientos corporales</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 localizacion_feto_mayor" style="display:none">
+                                    <label>Localizacion abdomen materno</label>
+                                    <div>
+                                        <select name="localizacion_feto" id="localizacion_feto_ecocardiografia" class="form-control">
+                                            <option value="Hemiabdomen Derecho">Hemiabdomen Derecho</option>
+                                            <option value="Hemiabdomen Izquierdo">Hemiabdomen Izquierdo</option>
+                                            <option value="Hemiabdomen Superior">Hemiabdomen Superior</option>
+                                            <option value="Hemiabdomen Inferior">Hemiabdomen Inferior</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1179,6 +1203,7 @@
                                        <select name="presentacion" id="presentacion_ecocardiografia" class="form-control">
                                            <option value="Cefálico">Cefálico</option>
                                            <option value="Pélvico">Pélvico</option>
+                                           <option value="N/A">N/A</option>
                                        </select>
                                    </div>
                                 </div>
@@ -1204,11 +1229,21 @@
                                    </div>
                                 </div>
                                 <div class="col-md-3">
-                                   <label>FCF (latidos por minuto)</label>
-                                   <div>
-                                      <input type="number" name="fcf" id="fcf_ecocardiografia" class="form-control">
-                                   </div>
-                               </div>
+                                    <label>FCF (latidos por minuto)</label>
+                                    <div>
+                                        <input type="number" name="fcf" id="fcf_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Sexo</label>
+                                    <div>
+                                        <select class="form-control" name="sexo_feto" id="sexo_feto_ecocardiografia">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
+                                            <option value="No valorable por posicion fetal">No valorable por posicion fetal</option>
+                                        </select>
+                                    </div>
+                              </div>
                             </div>
 
                             <p class="sub_titul"><b>Tabla somatometria</b></p>
@@ -1346,161 +1381,156 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario Percentil</label>
-                                    <div>
-                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_ecocardiografia" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                <div class="feto_no_vitalidad">
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario Percentil</label>
+                                        <div>
+                                            <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_ecocardiografia" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_ecocardiografia" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_ecocardiografia" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_ecocardiografia" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_ecocardiografia" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_ecocardiografia" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
-                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
-                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
-                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_ecocardiografia" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                                <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                                <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                                <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico Percentil</label>
-                                    <div>
-                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_ecocardiografia" class="form-control">
-                                            <option value="Estadio I">Estadio I</option>
-                                            <option value="Estadio II">Estadio II</option>
-                                            <option value="Estadio III">Estadio III</option>
-                                            <option value="Estadio IV">Estadio IV</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico Percentil</label>
+                                        <div>
+                                            <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_ecocardiografia" class="form-control">
+                                                <option value="Estadio I">Estadio I</option>
+                                                <option value="Estadio II">Estadio II</option>
+                                                <option value="Estadio III">Estadio III</option>
+                                                <option value="Estadio IV">Estadio IV</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_ecocardiografia" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_ecocardiografia" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_ecocardiografia" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Onda A ausente">Onda A ausente</option>
-                                            <option value="Onda A reversa">Onda A reversa</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_ecocardiografia" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Onda A ausente">Onda A ausente</option>
+                                                <option value="Onda A reversa">Onda A reversa</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                 <div class="col-md-3">
-                                    <label>Vena umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_ecocardiografia" class="form-control">
-                                            <option value="Laminar">Laminar</option>
-                                            <option value="Dicrota">Dicrota</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_ecocardiografia" class="form-control">
+                                                <option value="Laminar">Laminar</option>
+                                                <option value="Dicrota">Dicrota</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Vena umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_ecocardiografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_ecocardiografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2165,28 +2195,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_neurosonografia" class="form-control">
+                                <input type="text" name="paridad" id="paridad_neurosonografia" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_neurosonografia" class="form-control">
+                                <input type="text" name="morbilidad" id="morbilidad_neurosonografia" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_neurosonografia">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_neurosonografia" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -2220,10 +2250,22 @@
                                 <div class="col-md-5">
                                     <label>Vitalidad</label>
                                     <div>
-                                        <select name="vitalidad_feto" id="vitalidad_feto_neurosonografia" class="form-control">
+                                        <select name="vitalidad_feto" id="vitalidad_feto_neurosonografia" class="form-control" onchange="vitalidadFeto($(this))">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
                                             <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
+                                            <option value="Feto con disminucion de movimientos corporales">Feto con disminucion de movimientos corporales</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 localizacion_feto_mayor" style="display:none">
+                                    <label>Localizacion abdomen materno</label>
+                                    <div>
+                                        <select name="localizacion_feto" id="localizacion_feto_neurosonografia" class="form-control">
+                                            <option value="Hemiabdomen Derecho">Hemiabdomen Derecho</option>
+                                            <option value="Hemiabdomen Izquierdo">Hemiabdomen Izquierdo</option>
+                                            <option value="Hemiabdomen Superior">Hemiabdomen Superior</option>
+                                            <option value="Hemiabdomen Inferior">Hemiabdomen Inferior</option>
                                         </select>
                                     </div>
                                 </div>
@@ -2235,6 +2277,7 @@
                                        <select name="presentacion" id="presentacion_neurosonografia" class="form-control">
                                            <option value="Cefálico">Cefálico</option>
                                            <option value="Pélvico">Pélvico</option>
+                                           <option value="N/A">N/A</option>
                                        </select>
                                    </div>
                                 </div>
@@ -2263,6 +2306,16 @@
                                    <label>FCF (latidos por minuto)</label>
                                    <div>
                                       <input type="number" name="fcf" id="fcf_neurosonografia" class="form-control" >
+                                   </div>
+                               </div>
+                               <div class="col-md-3">
+                                   <label>Sexo</label>
+                                   <div>
+                                       <select class="form-control" name="sexo_feto" id="sexo_feto_neurosonografia">
+                                           <option value="Masculino">Masculino</option>
+                                           <option value="Femenino">Femenino</option>
+                                           <option value="No valorable por posicion fetal">No valorable por posicion fetal</option>
+                                       </select>
                                    </div>
                                </div>
                             </div>
@@ -2402,165 +2455,159 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario Percentil</label>
-                                    <div>
-                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_neurosonografia" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                <div class="feto_no_vitalidad">
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario Percentil</label>
+                                        <div>
+                                            <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_neurosonografia" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_neurosonografia" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_neurosonografia" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_neurosonografia" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_neurosonografia" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_neurosonografia" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
-                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
-                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
-                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_neurosonografia" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                                <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                                <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                                <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico Percentil</label>
-                                    <div>
-                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_neurosonografia" class="form-control">
-                                            <option value="Estadio I">Estadio I</option>
-                                            <option value="Estadio II">Estadio II</option>
-                                            <option value="Estadio III">Estadio III</option>
-                                            <option value="Estadio IV">Estadio IV</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico Percentil</label>
+                                        <div>
+                                            <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_neurosonografia" class="form-control">
+                                                <option value="Estadio I">Estadio I</option>
+                                                <option value="Estadio II">Estadio II</option>
+                                                <option value="Estadio III">Estadio III</option>
+                                                <option value="Estadio IV">Estadio IV</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_neurosonografia" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_neurosonografia" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_neurosonografia" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Onda A ausente">Onda A ausente</option>
-                                            <option value="Onda A reversa">Onda A reversa</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_neurosonografia" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Onda A ausente">Onda A ausente</option>
+                                                <option value="Onda A reversa">Onda A reversa</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                 <div class="col-md-3">
-                                    <label>Vena umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_neurosonografia" class="form-control">
-                                            <option value="Laminar">Laminar</option>
-                                            <option value="Dicrota">Dicrota</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_neurosonografia" class="form-control">
+                                                <option value="Laminar">Laminar</option>
+                                                <option value="Dicrota">Dicrota</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Vena umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_neurosonografia" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_neurosonografia" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
 
                             <p class="sub_titul"><b>Planos Axiales</b></p>
                             <p class="sub_titul"><b>Craneo</b></p>
@@ -3418,28 +3465,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_estructural" class="form-control" >
+                                <input type="text" name="paridad" id="paridad_estructural" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_estructural" class="form-control" >
+                                <input type="text" name="morbilidad" id="morbilidad_estructural" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_estructural">
+                                <select class="form-control a" name="rh_tipo" id="rh_tipo_estructural" data-value="{{ $paciente->a }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -3473,10 +3520,22 @@
                                 <div class="col-md-5">
                                     <label>Vitalidad</label>
                                     <div>
-                                        <select name="vitalidad_feto" id="vitalidad_feto_estructural" class="form-control">
+                                        <select name="vitalidad_feto" id="vitalidad_feto_estructural" class="form-control" onchange="vitalidadFeto($(this))">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
                                             <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
+                                            <option value="Feto con disminucion de movimientos corporales">Feto con disminucion de movimientos corporales</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 localizacion_feto_mayor" style="display:none">
+                                    <label>Localizacion abdomen materno</label>
+                                    <div>
+                                        <select name="localizacion_feto" id="localizacion_feto_estructural" class="form-control">
+                                            <option value="Hemiabdomen Derecho">Hemiabdomen Derecho</option>
+                                            <option value="Hemiabdomen Izquierdo">Hemiabdomen Izquierdo</option>
+                                            <option value="Hemiabdomen Superior">Hemiabdomen Superior</option>
+                                            <option value="Hemiabdomen Inferior">Hemiabdomen Inferior</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3489,6 +3548,7 @@
                                        <select name="presentacion" id="presentacion_estructural" class="form-control" >
                                            <option value="Cefálico">Cefálico</option>
                                            <option value="Pélvico">Pélvico</option>
+                                           <option value="N/A">N/A</option>
                                        </select>
                                    </div>
                                 </div>
@@ -3517,6 +3577,16 @@
                                    <label>FCF (latidos por minuto)</label>
                                    <div>
                                       <input type="number" name="fcf" id="fcf_estructural" class="form-control" >
+                                   </div>
+                               </div>
+                               <div class="col-md-3">
+                                   <label>Sexo</label>
+                                   <div>
+                                       <select class="form-control" name="sexo_feto" id="sexo_feto_estructural">
+                                           <option value="Masculino">Masculino</option>
+                                           <option value="Femenino">Femenino</option>
+                                           <option value="No valorable por posicion fetal">No valorable por posicion fetal</option>
+                                       </select>
                                    </div>
                                </div>
                             </div>
@@ -3740,161 +3810,156 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario Percentil</label>
-                                    <div>
-                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_estructural" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                <div class="feto_no_vitalidad">
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario Percentil</label>
+                                        <div>
+                                            <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_estructural" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_estructural" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_estructural" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_estructural" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_estructural" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_estructural" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
-                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
-                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
-                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_estructural" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                                <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                                <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                                <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico Percentil</label>
-                                    <div>
-                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_estructural" class="form-control">
-                                            <option value="Estadio I">Estadio I</option>
-                                            <option value="Estadio II">Estadio II</option>
-                                            <option value="Estadio III">Estadio III</option>
-                                            <option value="Estadio IV">Estadio IV</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico Percentil</label>
+                                        <div>
+                                            <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_estructural" class="form-control">
+                                                <option value="Estadio I">Estadio I</option>
+                                                <option value="Estadio II">Estadio II</option>
+                                                <option value="Estadio III">Estadio III</option>
+                                                <option value="Estadio IV">Estadio IV</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_estructural" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_estructural" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_estructural" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Onda A ausente">Onda A ausente</option>
-                                            <option value="Onda A reversa">Onda A reversa</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_estructural" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Onda A ausente">Onda A ausente</option>
+                                                <option value="Onda A reversa">Onda A reversa</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                 <div class="col-md-3">
-                                    <label>Vena umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_estructural" class="form-control">
-                                            <option value="Laminar">Laminar</option>
-                                            <option value="Dicrota">Dicrota</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_estructural" class="form-control">
+                                                <option value="Laminar">Laminar</option>
+                                                <option value="Dicrota">Dicrota</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Vena umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_estructural" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_estructural" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -5016,28 +5081,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_1trimestre" class="form-control" >
+                                <input type="text" name="paridad" id="paridad_1trimestre" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_1trimestre" class="form-control" >
+                                <input type="text" name="morbilidad" id="morbilidad_1trimestre" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_1trimestre">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_1trimestre" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -5075,7 +5140,19 @@
                                         <select name="vitalidad_feto" id="vitalidad_feto_1trimestre" class="form-control">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
                                             <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
+                                            <option value="Feto con disminucion de movimientos corporales">Feto con disminucion de movimientos corporales</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 localizacion_feto_mayor" style="display:none">
+                                    <label>Localizacion abdomen materno</label>
+                                    <div>
+                                        <select name="localizacion_feto" id="localizacion_feto_1trimestre" class="form-control">
+                                            <option value="Hemiabdomen Derecho">Hemiabdomen Derecho</option>
+                                            <option value="Hemiabdomen Izquierdo">Hemiabdomen Izquierdo</option>
+                                            <option value="Hemiabdomen Superior">Hemiabdomen Superior</option>
+                                            <option value="Hemiabdomen Inferior">Hemiabdomen Inferior</option>
                                         </select>
                                     </div>
                                 </div>
@@ -5847,28 +5924,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_pelvico" class="form-control" >
+                                <input type="text" name="paridad" id="paridad_pelvico" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_pelvico" class="form-control" >
+                                <input type="text" name="morbilidad" id="morbilidad_pelvico" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_pelvico">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_pelvico" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -6368,7 +6445,8 @@
                             <label>Conclusion</label>
                             <div>
                                 <select class="form-control selectpicker" name="concluciones[]" id="concluciones_pelvico" multiple>
-                                    <option value="Útero y ovarios normales">Útero y ovarios normales</option>
+                                    <option value="Útero de aspecto normal">Útero de aspecto normal</option>
+                                    <option value="Ovarios de aspectos normales">Ovarios de aspectos normales</option>
                                     <option value="T de Cobre in Situ sin alteraciones.">T de Cobre in Situ sin alteraciones.</option>
                                     <option value="Embarazo temprano menor a 5 semanas por saco gestacional">Embarazo temprano menor a 5 semanas por saco gestacional</option>
                                     <option value="Miomatosis uterina">Miomatosis uterina</option>
@@ -6407,9 +6485,9 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <label>Recordatorios</label>
+                            <label>Recordatorio</label>
                             <div>
-                                <textarea name="recordatorios" id="recordatorios_pelvico" class="form-control"></textarea>
+                                <textarea name="recordatorio" id="recordatorio_pelvico" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -6685,28 +6763,28 @@
                         <div class="col-md-3">
                             <label>Paridad</label>
                             <div>
-                                <input type="text" name="paridad" id="paridad_doppler" class="form-control" >
+                                <input type="text" name="paridad" id="paridad_doppler" class="form-control" value="{{ $paciente->paridad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Morbilidad</label>
                             <div>
-                                <input type="text" name="morbilidad" id="morbilidad_doppler" class="form-control" >
+                                <input type="text" name="morbilidad" id="morbilidad_doppler" class="form-control" value="{{ $paciente->morbilidad }}">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control" name="rh_tipo" id="rh_tipo_doppler">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_doppler" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
-                                    <option value="O positivo">O positivo</option>
-                                    <option value="A negativo">A negativo</option>
-                                    <option value="A positivo">A positivo</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
                                     <option value="AB Negativo">AB Negativo</option>
                                     <option value="AB Positivo">AB Positivo</option>
                                     <option value="B Negativo">B Negativo</option>
-                                    <option value="B positivo">B positivo</option>
-                                    <option value="O negativo">O negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
                                 </select>
                             </div>
                         </div>
@@ -6740,10 +6818,22 @@
                                 <div class="col-md-5">
                                     <label>Vitalidad</label>
                                     <div>
-                                        <select name="vitalidad_feto" id="vitalidad_feto_doppler" class="form-control">
+                                        <select name="vitalidad_feto" id="vitalidad_feto_doppler" class="form-control"  onchange="vitalidadFeto($(this))">
                                             <option value="Feto Vivo con movimientos corporales y respiratorios presentes">Feto Vivo con movimientos corporales y respiratorios presentes</option>
                                             <option value="Feto con disminución de movimientos respiratorios y ausencia de tono">Feto con disminución de movimientos respiratorios y ausencia de tono</option>
+                                            <option value="Feto con disminucion de movimientos corporales">Feto con disminucion de movimientos corporales</option>
                                             <option value="Ausencia de vitalidad">Ausencia de vitalidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 localizacion_feto_mayor" style="display:none">
+                                    <label>Localizacion abdomen materno</label>
+                                    <div>
+                                        <select name="localizacion_feto" id="localizacion_feto_doppler" class="form-control">
+                                            <option value="Hemiabdomen Derecho">Hemiabdomen Derecho</option>
+                                            <option value="Hemiabdomen Izquierdo">Hemiabdomen Izquierdo</option>
+                                            <option value="Hemiabdomen Superior">Hemiabdomen Superior</option>
+                                            <option value="Hemiabdomen Inferior">Hemiabdomen Inferior</option>
                                         </select>
                                     </div>
                                 </div>
@@ -6755,6 +6845,7 @@
                                        <select name="presentacion" id="presentacion_doppler" class="form-control" >
                                            <option value="Cefálico">Cefálico</option>
                                            <option value="Pélvico">Pélvico</option>
+                                           <option value="N/A">N/A</option>
                                        </select>
                                    </div>
                                 </div>
@@ -6785,6 +6876,16 @@
                                       <input type="number" name="fcf" id="fcf_doppler" class="form-control" >
                                    </div>
                                </div>
+                               <div class="col-md-3">
+                                  <label>Sexo</label>
+                                  <div>
+                                    <select class="form-control" name="sexo_feto" id="sexo_feto_doppler">
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="No valorable por posicion fetal">No valorable por posicion fetal</option>
+                                    </select>
+                                  </div>
+                              </div>
                             </div>
 
                             <p class="sub_titul"><b>Tabla somatometria</b></p>
@@ -6922,161 +7023,157 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario Percentil</label>
-                                    <div>
-                                        <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_doppler" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Índice Cerebro placentario interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_doppler" class="form-control">
-                                            <option value="> Percentil 5">> Percentil 5</option>
-                                            <option value="< Percentil 5">< Percentil 5</option>
-                                        </select>
+                                <div class="feto_no_vitalidad">
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario Percentil</label>
+                                        <div>
+                                            <select name="percentil_cerebro_placentario" id="percentil_cerebro_placentario_doppler" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria cerebral media interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Índice Cerebro placentario interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_cerebro_placentario" id="interpretacion_cerebro_placentario_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_doppler" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_cerebral" id="percentil_arteria_cerebral_doppler" class="form-control">
+                                                <option value="> Percentil 5">> Percentil 5</option>
+                                                <option value="< Percentil 5">< Percentil 5</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Arteria Umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria cerebral media interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_cerebral" id="interpretacion_arteria_cerebral_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_doppler" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
-                                            <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
-                                            <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
-                                            <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_arteria_umbilical" id="percentil_arteria_umbilical_doppler" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Arteria Umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_arteria_umbilical" id="interpretacion_arteria_umbilical_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico Percentil</label>
-                                    <div>
-                                        <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_doppler" class="form-control">
-                                            <option value="Estadio I">Estadio I</option>
-                                            <option value="Estadio II">Estadio II</option>
-                                            <option value="Estadio III">Estadio III</option>
-                                            <option value="Estadio IV">Estadio IV</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_flojo_diasotolico" id="percentil_flojo_diasotolico_doppler" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Flujo diastolico ausente en una arteria">Flujo diastolico ausente en una arteria</option>
+                                                <option value="Flujo diastolico ausente en dos arterias">Flujo diastolico ausente en dos arterias</option>
+                                                <option value="Flujo diastolico reverso en una arteria">Flujo diastolico reverso en una arteria</option>
+                                                <option value="Flujo diastolico reverso en dos arterias">Flujo diastolico reverso en dos arterias</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Itsmo aórtico interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label style="font-size: 10px">Flujo diastólico de Arteria umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flojo_diasotolico" id="interpretacion_flojo_diasotolico_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_doppler" class="form-control">
-                                            <option value="< Percentil 95">< Percentil 95</option>
-                                            <option value="> Percentil 95">> Percentil 95</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico Percentil</label>
+                                        <div>
+                                            <select name="percentil_itsmo_aortico" id="percentil_itsmo_aortico_doppler" class="form-control">
+                                                <option value="Estadio I">Estadio I</option>
+                                                <option value="Estadio II">Estadio II</option>
+                                                <option value="Estadio III">Estadio III</option>
+                                                <option value="Estadio IV">Estadio IV</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Itsmo aórtico interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_itsmo_aortico" id="interpretacion_itsmo_aortico_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso Percentil</label>
-                                    <div>
-                                        <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_doppler" class="form-control">
-                                            <option value="Flujo diastolico presente">Flujo diastolico presente</option>
-                                            <option value="Onda A ausente">Onda A ausente</option>
-                                            <option value="Onda A reversa">Onda A reversa</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_ducto_venenoso" id="percentil_ducto_venenoso_doppler" class="form-control">
+                                                <option value="< Percentil 95">< Percentil 95</option>
+                                                <option value="> Percentil 95">> Percentil 95</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Flujo diastólico de ducto venoso interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_ducto_venenoso" id="interpretacion_ducto_venenoso_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-
-                                 <div class="col-md-3">
-                                    <label>Vena umbilical Percentil</label>
-                                    <div>
-                                        <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_doppler" class="form-control">
-                                            <option value="Laminar">Laminar</option>
-                                            <option value="Dicrota">Dicrota</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso Percentil</label>
+                                        <div>
+                                            <select name="percentil_flujo_dicto_venenoso" id="percentil_flujo_dicto_venenoso_doppler" class="form-control">
+                                                <option value="Flujo diastolico presente">Flujo diastolico presente</option>
+                                                <option value="Onda A ausente">Onda A ausente</option>
+                                                <option value="Onda A reversa">Onda A reversa</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label>Vena umbilical interpretacion</label>
-                                    <div>
-                                        <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_doppler" class="form-control">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <label>Flujo diastólico de ducto venoso interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_flujo_dicto_venenoso" id="interpretacion_flujo_dicto_venenoso_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical Percentil</label>
+                                        <div>
+                                            <select name="percentil_vena_umbilical" id="percentil_vena_umbilical_doppler" class="form-control">
+                                                <option value="Laminar">Laminar</option>
+                                                <option value="Dicrota">Dicrota</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Vena umbilical interpretacion</label>
+                                        <div>
+                                            <select name="interpretacion_vena_umbilical" id="interpretacion_vena_umbilical_doppler" class="form-control">
+                                                <option value="Normal">Normal</option>
+                                                <option value="Anormal">Anormal</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

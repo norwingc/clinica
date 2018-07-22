@@ -17,10 +17,12 @@ class CreateEcocardiografiaFetosTable extends Migration
             $table->increments('id');
             $table->integer('examen_id');
             $table->string('vitalidad_feto')->nullable();
+            $table->string('localizacion_feto')->nullable();
             $table->string('presentacion')->nullable();
             $table->string('situacion')->nullable();
             $table->string('posicion')->nullable();
             $table->string('fcf')->nullable();
+            $table->string('sexo_feto')->nullable();
             $table->string('dbp_medida', 20)->nullable();
             $table->string('dbp_semanas', 20)->nullable();
             $table->string('cc_medida', 20)->nullable();

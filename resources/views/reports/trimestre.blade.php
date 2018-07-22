@@ -65,7 +65,9 @@
     @foreach ($trimestre->fetos as $value)
         <p class="sub_titul"><b>Revision de feto: {{ $count }}</b></p>
 
-        <p>Vitalidad: {{ $value->vitalidad_feto }}</p>
+        <p>
+            <b>Vitalidad:</b> {{ $value->vitalidad_feto }}. <b>Localizacion: </b> {{ $value->localizacion_feto }}
+        </p>
 
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">

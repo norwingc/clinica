@@ -115,7 +115,7 @@ class CitasController extends Controller
         $cita->end        = $end;
         $cita->date       = $request->date;
         $cita->comentario = $request->comentario;
-        $cita->title = 'Paciente: '. $request->name . ' Examen: '. $request->examen_type .' Costo: $'. $request->costo . ' Comentario: '. $request->comentario;
+        $cita->title = 'Paciente: '. $paciente->name . ' Examen: '. $request->examen_type .' Costo: $'. $request->costo . ' Comentario: '. $request->comentario;
         $cita->url   = '/Pacientes/User/View/'.$paciente->id;
 
         if($request->doctor == 'Dr. Pavon'){
