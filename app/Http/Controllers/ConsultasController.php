@@ -397,10 +397,14 @@ class ConsultasController extends Controller
      */
     public function storeGinecologica(Request $request, Consulta $consulta)
     {
-      $consulta->ginecologica()->save(new Ginecologica($request->all()));
+        $ginecologica = new Ginecologica($request->all());
+        (isset($request->plan_medico)) ? $ginecologica->plan_medico = implode(', ', $request->plan_medico) : '';
+        (isset($request->examen_laboratorio)) ? $ginecologica->examen_laboratorio = implode(', ', $request->examen_laboratorio) : '';
 
-      session()->flash('message_success', "Examen Agregado");
-      return back();
+        $consulta->ginecologica()->save($ginecologica);
+
+        session()->flash('message_success', "Examen Agregado");
+        return back();
     }
 
     /**

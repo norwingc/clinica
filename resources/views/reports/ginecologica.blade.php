@@ -22,6 +22,9 @@
         table{
             width: 100%;
         }
+        .page-break {
+            page-break-after: always;
+        }
     </style>
 </head>
 <body>
@@ -69,13 +72,7 @@
 
     <p class="sub_titul"><b>Ginecologico</b></p>
     <p>
-      Genitales Externos: {{ $ginecologica->genitales_externos }}. Cervix Posicion Y Consistencia: {{ $ginecologica->cervix }}.
-      Examenes De Laboratorio: {{ $ginecologica->examenes }}. Ultrasonido: {{ $ginecologica->ultrasonido }}.
-    </p>
-
-    <p>
-      <b>Plan:</b>
-      {{ $ginecologica->plan }}
+      Genitales Externos: {{ $ginecologica->genitales_externos }}. Cervix Posicion Y Consistencia: {{ $ginecologica->cervix }}. Ultrasonido: {{ $ginecologica->ultrasonido }}.
     </p>
 
     @if($ginecologica->comentarios != '')
@@ -84,5 +81,42 @@
     @endif
 
     @include('includes._firmas')
+
+    @if($ginecologica->plan_medico != '' || $ginecologica->examen_laboratorio != '' || $ginecologica->plan_medico_otro != '' || $ginecologica->examen_laboratorio_otro != '')
+        <div class="page-break"></div>
+    @endif
+
+    @if($ginecologica->plan_medico != ''  || $ginecologica->plan_medico_otro != '')
+        <p class="sub_titul"><b>Plan Medico:</b></p>
+        @php
+            $plan1 = explode(',', $ginecologica->plan_medico);
+            $plan2 = explode(',', $ginecologica->plan_medico_otro);
+        @endphp
+
+        <ul>
+            @for ($i = 0; $i < count($plan1); $i++)
+                <li>{{ $plan1[$i] }}</li>
+            @endfor
+            @for ($i = 0; $i < count($plan2); $i++)
+                <li>{{ $plan2[$i] }}</li>
+            @endfor
+        </ul>
+    @endif
+
+    @if($ginecologica->examen_laboratorio != '' || $ginecologica->examen_laboratorio_otro != '')
+        <p class="sub_titul"><b>Examenes de Laboratorio:</b></p>
+        @php
+            $examen1 = explode(',', $ginecologica->examen_laboratorio);
+            $examen2 = explode(',', $ginecologica->examen_laboratorio_otro);
+        @endphp
+        <ul>
+            @for ($i = 0; $i < count($examen1); $i++)
+                <li>{{ $examen1[$i] }}</li>
+            @endfor
+            @for ($i = 0; $i < count($examen2); $i++)
+                <li>{{ $examen2[$i] }}</li>
+            @endfor
+        </ul>
+    @endif
 </body>
 </html>

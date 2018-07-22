@@ -30,11 +30,13 @@ class CreateGinecologicasTable extends Migration
         $table->string('cardioplumonar')->nullable();
         $table->string('genitales_externos')->nullable();
         $table->string('cervix')->nullable();
-        $table->string('examenes')->nullable();
         $table->string('ultrasonido')->nullable();
-        $table->text('plan')->nullable();
         $table->text('comentarios')->nullable();
         $table->text('recordatorio')->nullable();
+        $table->text('examen_laboratorio')->nullable();
+        $table->text('examen_laboratorio_otro')->nullable();
+        $table->text('plan_medico')->nullable();
+        $table->text('plan_medico_otro')->nullable();
         $table->timestamps();
         $table->softDeletes();
       });

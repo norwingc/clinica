@@ -11,7 +11,7 @@ class Ginecologica extends Model
 
   protected $fillable = [
     "referido", "date", "numero", "diagnostico_previo", "signos_vitales_fc", "signos_vitales_fr", "signos_vitales_pa", "peso_actual", "incremento_peso", "subjetivo",
-    "estado_general", "cardioplumonar", "genitales_externos", "cervix", "examenes", "ultrasonido", "plan", "comentarios", "recordatorio"
+    "estado_general", "cardioplumonar", "genitales_externos", "cervix", "ultrasonido", "comentarios", "recordatorio", 'plan_medico_otro', 'examen_laboratorio_otro'
   ];
 
   /**

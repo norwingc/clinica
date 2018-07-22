@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.colposcopia.delete')->get('/Colposcopia/delete/{colposcopia}', 'ConsultasController@deleteColposcopia');
 
         Route::name('consulta.genecologica.store')->post('/Ginecologica/store/{consulta}', 'ConsultasController@storeGinecologica');
-        Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{genecologica}', 'ConsultasController@deleteGinecologica');
+        Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{ginecologica}', 'ConsultasController@deleteGinecologica');
 
         Route::name('consulta.pelvico.store')->post('/UltrasonidoPelvico/store/{consulta}', 'ConsultasController@storePelvico');
         Route::name('consulta.pelvico.delete')->get('/UltrasonidoPelvico/delete/{pelvico}', 'ConsultasController@deletePelvico');
