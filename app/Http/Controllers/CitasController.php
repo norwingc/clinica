@@ -18,7 +18,7 @@ class CitasController extends Controller
      */
     public function api()
     {
-        return Cita::get();
+        return Cita::with('consulta')->get();
     }
 
     /**

@@ -96,6 +96,15 @@ $(document).ready(function() {
             navLinks: true,
             editable: false,
             eventLimit: true,
+            eventRender: function(eventObj, $el) {
+                $el.popover({
+                    title: eventObj.title,
+                    content: eventObj.comentario,
+                    trigger: 'hover',
+                    placement: 'top',
+                    container: 'body'
+                });
+            },
             events:{
                 url: '{{ route('citas.api') }}'
             }
