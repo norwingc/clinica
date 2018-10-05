@@ -35,7 +35,7 @@ class UsersController extends Controller
         );
 
         if (Auth::attempt($userdata, true)){
-            return redirect('/');
+            return redirect()->intended('home');
         }else{
             session()->flash('message', "Username or Password incorrect");
             return back();
