@@ -4106,8 +4106,8 @@
                                     <label>Compresión del transductor se aprecian deformidades</label>
                                     <div>
                                         <select name="craneo_compresion" id="craneo_compresion_estructural" class="form-control" >
-                                            <option value="Si">Si</option>
                                             <option value="No">No</option>
+                                            <option value="Si">Si</option>
                                         </select>
                                     </div>
                                 </div>

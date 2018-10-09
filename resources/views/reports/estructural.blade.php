@@ -24,6 +24,9 @@
         table{
             width: 100%;
         }
+        .bold{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -176,53 +179,53 @@
                     <tr>
                         <th>Notch Arteria uterina Izquierda</th>
                         <td>{{ $value->percentil_notch_izquierda }}</td>
-                        <td>{{ $value->interpretacion_notch_izquierda }}</td>
+                        <td class="{{ $value->interpretacion_notch_izquierda != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_notch_izquierda }}</td>
                     </tr>
                     <tr>
                         <th>Notch Arteria uterina Derecha</th>
                         <td>{{ $value->percentil_notch_derecha }}</td>
-                        <td>{{ $value->interpretacion_notch_derecha }}</td>
+                        <td class="{{ $value->interpretacion_notch_derecha != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_notch_derecha }}</td>
                     </tr>
                     @if($value->vitalidad_feto != 'Ausencia de vitalidad')
                         <tr>
                             <th>Índice Cerebro placentario</th>
                             <td>{{ $value->percentil_cerebro_placentario }}</td>
-                            <td>{{ $value->interpretacion_cerebro_placentario }}</td>
+                            <td class="{{ $value->interpretacion_cerebro_placentario != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_cerebro_placentario }}</td>
                         </tr>
                         <tr>
                             <th>Arteria cerebral media</th>
                             <td>{{ $value->percentil_arteria_cerebral }}</td>
-                            <td>{{ $value->interpretacion_arteria_cerebral }}</td>
+                            <td class="{{ $value->interpretacion_arteria_cerebral != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_arteria_cerebral }}</td>
                         </tr>
                         <tr>
                             <th>Arteria Umbilical</th>
                             <td>{{ $value->percentil_arteria_umbilical }}</td>
-                            <td>{{ $value->interpretacion_arteria_umbilical }}</td>
+                            <td class="{{ $value->interpretacion_arteria_umbilical != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_arteria_umbilical }}</td>
                         </tr>
                         <tr>
                             <th>Flujo diastólico de Arteria umbilical</th>
                             <td>{{ $value->percentil_flojo_diasotolico }}</td>
-                            <td>{{ $value->interpretacion_flojo_diasotolico }}</td>
+                            <td class="{{ $value->interpretacion_flojo_diasotolico != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_flojo_diasotolico }}</td>
                         </tr>
                         <tr>
                             <th>Itsmo aórtico</th>
                             <td>{{ $value->percentil_itsmo_aortico }}</td>
-                            <td>{{ $value->interpretacion_itsmo_aortico }}</td>
+                            <td class="{{ $value->interpretacion_itsmo_aortico != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_itsmo_aortico }}</td>
                         </tr>
                         <tr>
                             <th>Ducto venoso</th>
                             <td>{{ $value->percentil_ducto_venenoso }}</td>
-                            <td>{{ $value->interpretacion_ducto_venenoso }}</td>
+                            <td class="{{ $value->interpretacion_ducto_venenoso != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_ducto_venenoso }}</td>
                         </tr>
                         <tr>
                             <th>Flujo diastólico de ducto venoso</th>
                             <td>{{ $value->percentil_flujo_dicto_venenoso }}</td>
-                            <td>{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
+                            <td class="{{ $value->interpretacion_flujo_dicto_venenoso != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_flujo_dicto_venenoso }}</td>
                         </tr>
                         <tr>
                             <th>Vena umbilical</th>
                             <td>{{ $value->percentil_vena_umbilical }}</td>
-                            <td>{{ $value->interpretacion_vena_umbilical }}</td>
+                            <td class="{{ $value->interpretacion_vena_umbilical != 'Normal'? 'bold' : '' }}">{{ $value->interpretacion_vena_umbilical }}</td>
                         </tr>
                     @endif
                 </table>
@@ -266,7 +269,7 @@
         <p>
             <b>CORAZON</b> Situs: {{ $value->corazon_situs }}. Tamaño Normal: {{ $value->corazon_tamano }}. @if($value->corazon_tamano == 'No') Cardiomegalia: {{ $value->corazon_cardiomegalia }}.@endif
             Eje cardico: {{ $value->corazon_cardiomegalia_severa }}. <b>CORTE DE 4 CÁMARAS:</b> {{ $value->corazon_corte_camaras }}. Tracto de salida de Ventrículo derecho: {{ $value->corazon_tracto_derecho }}.
-            Tracto de salida de Ventrículo derecho: {{ $value->corazon_tracto_izquierdo }}. Corte de 3 vasos: {{ $value->corazon_corte_vasos  }}.
+            Tracto de salida de Ventrículo izquierdo: {{ $value->corazon_tracto_izquierdo }}. Corte de 3 vasos: {{ $value->corazon_corte_vasos  }}.
         </p>
 
         <p>

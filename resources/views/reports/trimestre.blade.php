@@ -24,6 +24,9 @@
         table{
             width: 100%;
         }
+        .bold{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -136,7 +139,7 @@
             <b>Extremidades inferiores</b> Ambas presentes: {{ $value->extremidades_inferiores }}. Integras: {{ $value->extremidades_inferiores_integras }}. @if($value->extremidades_inferiores_integras == 'No') Extremidad afectada: {{ $value->extremidades_inferiores_afectada }}. @endif
         </p>
         <p>
-            <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm.
+            <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Fusion de membranas: {{ $value->fusion_membranas }}. Grado: {{ $value->placenta_grado }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm.
             Funneling:  {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}.@endif Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}
         </p>
 
