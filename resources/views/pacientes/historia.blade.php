@@ -1304,13 +1304,13 @@
                                 <div class="col-sm-3">
                                     <label>Neurologico Conservado</label>
                                     <div>
-                                        <select name="vagina_neurologico_conservado" id="vagina_neurologico_conservado" class="form-control" data-target="vagina_neurologico_conservado_si_form" onchange="selectShow($(this))">
-                                            <option value="No">No</option>
+                                        <select name="vagina_neurologico_conservado" id="vagina_neurologico_conservado" class="form-control" onchange="vaginaNeurologicoConcervadoNo($(this))">
                                             <option value="Si">Si</option>
+                                            <option value="No">No</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-3 vagina_neurologico_conservado_si_form" style="display: none">
+                                <div class="col-sm-3 vagina_neurologico_conservado_no_form" style="display: none">
                                     <label>Alteracion</label>
                                     <div>
                                         <input type="text" name="vagina_neurologico_conservado_si" id="vagina_neurologico_conservado_si" class="form-control">
@@ -1435,7 +1435,7 @@
 
         $('#examen_ginecologico').change(function(){
             if($(this).val() == 'Si'){
-                if(embarazada){
+                if(!embarazada){
                     $('.examen_ginecologico_embarazada').hide()
                 }else{
                     $('.examen_ginecologico_embarazada').show()
@@ -1450,6 +1450,14 @@
             }else{
                 $('.utero_gravido_abdominal_si_form').show();
                 $('.utero_intrapelvico_form').hide();
+            }
+        }
+
+        function vaginaNeurologicoConcervadoNo(este) {
+            if(este.val() == 'No'){
+                $('.vagina_neurologico_conservado_no_form').show();
+            }else{
+                $('.vagina_neurologico_conservado_no_form').hide();
             }
         }
     </script>

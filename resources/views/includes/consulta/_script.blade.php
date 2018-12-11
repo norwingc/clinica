@@ -211,6 +211,14 @@
         }
     });
 
+    function vaginaNeurologicoConcervadoNo(este) {
+        if(este.val() == 'No'){
+            $('.vagina_ceurologico_conservado_no_form').show();
+        }else{
+            $('.vagina_ceurologico_conservado_no_form').hide();
+        }
+    }
+
     function agregarExamen(este) {
 
         var examen = este.parent(0).parent(0).parent(0).find('.examen_tipo').val();

@@ -56,14 +56,14 @@
     <p class="sub_titul">Consulta de atencion prenatal: {{ $prenatal->numero }}</p>
 
     <p>
-      Edad gestacional por ulrasonido: {!! $prenatal->edad_gestacional !!}
+      Edad gestacional por ultrasonido: {!! $prenatal->edad_gestacional !!}
     </p>
     <p>Diagnostico Previo: {{ $prenatal->diagnostico_previo }}</p>
 
     <p>
       Presion Arterial Brazo Derecho: {{ $prenatal->presion_arterial_derecho }}mmhg. Presion Arterial Brazo Izquierdo: {{ $prenatal->presion_arterial_izquierdo }}mmhg.
       Presion Arterial Media: {{ $prenatal->presion_arterial_media }}mmhg. Frecuencia Cardiaca: {{ $prenatal->signos_vitales_fc }} por minuto. Frecuencia Respiratoria: {{ $prenatal->signos_vitales_fr }} por minuto.
-      Temeratura: {{ $prenatal->temperatura }} ºC. Peso Actual {{ $prenatal->peso_actual }} lb. Incremente de peso: {{ $prenatal->incremento_peso }} lb.
+      Temperatura: {{ $prenatal->temperatura }} ºC. Peso Actual {{ $prenatal->peso_actual }} lb. Incremento de peso: {{ $prenatal->incremento_peso }} lb.
     </p>
 
     <p><b>Subjetivo:</b> {{ $prenatal->subjetivo }}</p>

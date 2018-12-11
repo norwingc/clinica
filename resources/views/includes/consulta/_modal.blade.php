@@ -23,7 +23,7 @@
                             </div>
                         </div>
                          <div class="col-sm-4">
-                            <label>Edad gestacional por ulrasonido</label>
+                            <label>Edad gestacional por ultrasonido</label>
                             <div>
                                 <textarea name="edad_gestacional" id="edad_gestacinal_prenatal" class="form-control" data-historia={{ ($paciente->historia) ? $paciente->historia->ultima_regla : 'No' }}></textarea>
                             </div>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Temeratura ºC</label>
+                            <label>Temperatura ºC</label>
                             <div>
                                 <input type="text" class="form-control" name="temperatura" id="temperatura_prenatal" >
                             </div>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="col-sm-4">
-                            <label>Incremente de peso (lb)</label>
+                            <label>Incremento de peso (lb)</label>
                             <div>
                                 <input type="text" class="form-control" name="incremento_peso" id="incremento_peso_prenatal" data-peso='{!! ($paciente->historia) ? $paciente->historia->peso : 'No Existe historia clinica'  !!}'>
                             </div>
@@ -358,6 +358,7 @@
                                 <label>Borramiento (%)</label>
                                 <div>
                                     <select name="borramiento" id="borramiento_prenatal" class="form-control">
+                                        <option value="No hay borramiento">No hay borramiento</option>
                                         <option value="<50"> <50 </option>
                                         <option value="60">60</option>
                                         <option value="70">70</option>
@@ -371,6 +372,7 @@
                                 <label>Dilatacion (cms)</label>
                                 <div>
                                     <select name="dilatacion" id="dilatacion_prenatal" class="form-control">
+                                        <option value="Cerrado">Cerrado</option>
                                         @for ($i=1; $i <= 10; $i++)
                                             <option value="{{ $i }}">{{ $i }}</option>
                                         @endfor
@@ -461,13 +463,13 @@
                             <div class="col-sm-3">
                                 <label>Neurológico Conservado</label>
                                 <div>
-                                    <select class="form-control" name="vagina_ceurologico_conservado" id="vagina_ceurologico_conservado_prenatal" data-target='vagina_ceurologico_conservado_si_form' onchange="selectShow($(this))">
-                                        <option value="No">No</option>
+                                    <select class="form-control" name="vagina_ceurologico_conservado" id="vagina_ceurologico_conservado_prenatal" onchange="vaginaNeurologicoConcervadoNo($(this))">
                                         <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3 vagina_ceurologico_conservado_si_form" style="display: none">
+                            <div class="col-sm-3 vagina_ceurologico_conservado_no_form" style="display: none">
                                 <label>Alteracion</label>
                                 <div>
                                    <input class="form-control" type="text" name="vagina_ceurologico_conservado_si" id="vagina_ceurologico_conservado_si">
