@@ -9,7 +9,7 @@
     <style>
         body{
             text-align: justify;
-            font-size: 1.1em:
+            font-size: 1.1em;
             color: #404040;
             padding-top: 8em;
             padding-bottom: 6em;

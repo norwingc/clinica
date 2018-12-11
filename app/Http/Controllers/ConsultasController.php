@@ -184,10 +184,8 @@ class ConsultasController extends Controller
      */
     public function storeEstructural(Request $request, Consulta $consulta)
     {
-        //return $request;
-
         $UltrasonidoEstructural = new UltrasonidoEstructural($request->all());
-        $consulta->trimestre()->save($UltrasonidoEstructural);
+        $consulta->estructural()->save($UltrasonidoEstructural);
 
         foreach ($request->fetos as $key => $value) {
 

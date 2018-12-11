@@ -433,8 +433,8 @@
         let cantidad = este.data('cantidad') - 1 ;
 
         if(cantidad < 0) cantidad = 0;
-        addFeto(child, este.data('examen'))
-        setChild(child, cantidad);
+        addFeto(child, este.data('examen'));
+        setChild(child, cantidad, este.data('examen'));
     }
 
     function edadGestional(fecha) {
