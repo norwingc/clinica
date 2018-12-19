@@ -11,7 +11,7 @@
             text-align: justify;
             font-size: 1.1em;
             color: #404040;
-            padding-top: 8em;
+            padding-top: 12em;
             padding-bottom: 8em;
         }
         .sub_titul{
