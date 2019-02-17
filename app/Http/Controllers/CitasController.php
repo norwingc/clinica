@@ -13,12 +13,21 @@ use DataTables;
 class CitasController extends Controller
 {
     /**
+     * [__construct description]
+     */
+    function __construct()
+    {
+        ini_set('memory_limit', '-1');
+		ini_set('max_execution_time', '-1');
+    }
+
+    /**
      * [api description]
      * @return [type] [description]
      */
     public function api()
     {
-        return Cita::with('consulta')->get();
+        return Cita::with('consulta')->whereBetween('date', [\Carbon\Carbon::now()->subMonths(2)->format('Y-m-d'), \Carbon\Carbon::now()->addMonths(2)->format('Y-m-d')])->get();
     }
 
     /**
