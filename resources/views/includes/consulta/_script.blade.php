@@ -430,7 +430,7 @@
         }else{
             $('.nextChild').html('');
         }
-        
+
         $('.localizacion_feto_mayor').show();
     }
 

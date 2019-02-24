@@ -23,7 +23,6 @@ Route::name('logout')->delete('login', 'UsersController@logout');
 Route::middleware(['auth'])->group(function () {
     Route::view('/', 'home')->name('home');
 
-
     Route::prefix('Profile')->group(function(){
         Route::name('profile')->get('/', 'ProfileController@index');
         Route::name('profile.avatar')->post('/avatar', 'ProfileController@avatar');
@@ -82,10 +81,12 @@ Route::middleware(['auth'])->group(function () {
         Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
         Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');
 
+        Route::view('/FechaProcedimiento/show/', 'citas.fecha_procedimiento')->name('fecha.procedimiento.show');
+        Route::name('fecha.procedimiento.api')->get('/FechaProcedimiento/api/', 'ConsultasController@apiFechaProcedimiento');
+        Route::name('fecha.procedimiento.get')->get('/FechaProcedimiento/get/{fechaprocedimiento}', 'ConsultasController@getFechaProcedimiento');
         Route::name('fecha.procedimiento.store')->post('/FechaProcedimiento/store/{paciente}', 'ConsultasController@storeFechaProcedimiento');
-        Route::name('fecha.procedimiento.show')->get('/FechaProcedimiento/show/', 'ConsultasController@showFechaProcedimiento');
-        Route::name('fecha.procedimiento.get')->get('/FechaProcedimiento/get/', 'ConsultasController@getFechaProcedimiento');
-
+        Route::name('fecha.procedimiento.update')->post('/FechaProcedimiento/update/{fechaprocedimiento}', 'ConsultasController@updateFechaProcedimiento');
+        Route::name('fecha.procedimiento.delete')->post('/FechaProcedimiento/delete/{fechaprocedimiento}', 'ConsultasController@deleteFechaProcedimiento');
     });
 
     Route::prefix('Citas')->group(function () {

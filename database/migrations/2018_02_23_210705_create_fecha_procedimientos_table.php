@@ -15,11 +15,18 @@ class CreateFechaProcedimientosTable extends Migration
     {
         Schema::create('fecha_procedimientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paciente_id');
-            $table->string('hospital');
-            $table->string('procedimiento');
             $table->date('date');
-            $table->string('costo');
+            $table->string('hospital');
+			$table->string('procedimiento');
+            $table->string('codigo');
+			$table->string('anestesiologo');
+			$table->string('hr_nacimiento');
+			$table->string('peso_fetal');
+			$table->string('complicacion_maternal');
+			$table->string('complicacion_fetal');
+			$table->string('pediatra');
+			$table->text('comentario');
+            $table->integer('paciente_id');
             $table->timestamps();
             $table->softDeletes();
         });

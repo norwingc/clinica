@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" onclick="saveFechaParto($(this))">Agregar fecha de procedimiento</button>
+                    <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="updatePocedimiento($(this))">Agregar fecha de procedimiento</button>
                 </div>
 
                 <div class="row">
@@ -144,5 +144,8 @@
 @include('includes.consulta._modal')
 @include('includes.consulta._script')
 @include('includes.save._script')
+
+@include('includes.procedimiento._modal')
+@include('includes.procedimiento._script')
 
 @endsection

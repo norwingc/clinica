@@ -474,6 +474,35 @@ class ConsultasController extends Controller
 
         $pdf = \PDF::loadView('reports.colposcopia', compact('colposcopia'));
         return $pdf->stream();
+	}
+
+	 /**
+     * [getFechaProcedimiento description]
+     * @param   FechaProcedimiento  $fechaprocedimiento  [$fechaprocedimiento description]
+     * @return  [type]                                   [return description]
+     */
+    public function getFechaProcedimiento(FechaProcedimiento $fechaprocedimiento)
+    {
+        return response()->json([
+            'fechaprocedimiento' => $fechaprocedimiento->load('paciente')
+        ]);
+	}
+
+	/**
+	 * [apiFechaProcedimiento description]
+	 * @return  [type]  [return description]
+	 */
+    public function apiFechaProcedimiento()
+    {
+        $fecha = FechaProcedimiento::with('paciente');
+
+        return Datatables::of($fecha)->addColumn('action', function($fecha){
+            return "<div class='actions'>
+                        <a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a>
+                        <button class='btn' data-id='{$fecha->id}' onclick='updatePocedimiento($(this))'><i class='ion-edit'></i></button>
+                        <a href='". route('fecha.procedimiento.delete', [$fecha->id]) ."' class='btn'><i class='fa fa-trash-o'></i></a>
+                    </div>";
+        })->make(true);
     }
 
     /**
@@ -492,25 +521,31 @@ class ConsultasController extends Controller
         return back();
     }
 
-    /**
-     * [showFechaProcedimiento description]
-     * @return [type] [description]
-     */
-    public function showFechaProcedimiento()
-    {
-        return view('citas.fecha_procedimiento');
-    }
+	/**
+	 * [updateFechaProcedimiento description]
+	 * @param   Request             $request             [$request description]
+	 * @param   FechaProcedimiento  $fechaprocedimiento  [$fechaprocedimiento description]
+	 * @return  [type]                                   [return description]
+	 */
+	public function updateFechaProcedimiento(Request $request, FechaProcedimiento $fechaprocedimiento)
+	{
+		$fechaprocedimiento->update($request->all());
+
+		session()->flash('message_success', "Fecha de procedimiento modificada");
+        return back();
+
+	}
 
     /**
-     * w
-     * @return [type] [description]
+     * [deleteFechaProcedimiento description]
+     * @param   FechaProcedimiento  $fechaprocedimiento  [$fechaprocedimiento description]
+     * @return  [type]                                   [return description]
      */
-    public function getFechaProcedimiento()
+    public function deleteFechaProcedimiento(FechaProcedimiento $fechaprocedimiento)
     {
-        $fecha = FechaProcedimiento::with('paciente');
+        $fechaprocedimiento->delete();
 
-        return Datatables::of($fecha)->addColumn('action', function($fecha){
-            return "<div class='actions'><a href='". route('paciente.show', [$fecha->paciente->id]) ."' class='btn'><i class='ion-search'></i></a></div>";
-        })->make(true);
+        session()->flash('message_danger', "Fecha de procedimiento eliminada");
+        return back();
     }
 }

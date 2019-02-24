@@ -30,26 +30,28 @@
                 </div>
                 @include('includes._message')
                 <div class="box-body">
-                    <div class="table-responsive">
-                        <table id="table" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Paciente</th>
-                                    <th>Telefono</th>
-                                    <th>Hospital</th>
-                                    <th>Via de nacimiento</th>
-                                    <th>Dia</th>
-                                    <th>Codigo</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+					<table id="table" class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Fecha</th>
+								<th>Paciente</th>
+								<th>Telefono</th>
+								<th>Hospital</th>
+								<th>Procedimiento</th>
+								<th>Codigo</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+					</table>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+@include('includes.procedimiento._modal')
+@include('includes.procedimiento._script')
+
 @endsection
 
 @section('js')
@@ -61,14 +63,15 @@
    $('#table').DataTable( {
         processing: true,
         serverSide: true,
-        ajax: '{!! route('fecha.procedimiento.get') !!}',
+        ajax: '{!! route('fecha.procedimiento.api') !!}',
+        "order": [[ 0, "desc" ]],
         columns:[
+            {data: 'date', name: 'date'},
             {data: 'paciente.name', name: 'paciente.name'},
             {data: 'paciente.phone', name: 'paciente.phone'},
             {data: 'hospital', name: 'hospital'},
             {data: 'procedimiento', name: 'procedimiento'},
-            {data: 'date', name: 'date'},
-            {data: 'costo', name: 'costo'},
+            {data: 'codigo', name: 'codigo'},
             {data: 'action', name: 'action'},
         ]
     });

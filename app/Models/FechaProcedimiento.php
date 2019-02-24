@@ -14,7 +14,8 @@ class FechaProcedimiento extends Model
      * @var [type]
      */
     protected $fillable = [
-        'hospital', 'procedimiento', 'date', 'costo'
+		'hospital', 'procedimiento', 'date', 'codigo', 'anestesiologo', 'hr_nacimiento', 'peso_fetal', 'complicacion_maternal', 'complicacion_fetal', 'pediatra',
+		'comentario'
     ];
 
     public function paciente()
