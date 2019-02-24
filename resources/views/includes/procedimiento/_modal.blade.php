@@ -25,7 +25,7 @@
                         <div class="col-md-3">
                             <label>procedimiento</label>
                             <div>
-                                <select class="form-control" name="procedimiento" id="procedimiento_procedimiento" required  onchange="procedimientoChange($(this))">
+                                <select class="form-control" name="procedimiento" id="procedimiento_procedimiento" required>
 									<option value="">Seleccione uno</option>
                                     <option value="Parto Vaginal">Parto Vaginal</option>
                                     <option value="Parto por Cesárea">Parto por Cesárea</option>
@@ -55,7 +55,7 @@
 								<input type="text" name="anestesiologo" id="anestesiologo" class="form-control" value="Dr. Serge Amador">
 							</div>
 						</div>
-						<div style="display:none" class="procedimiento_parto">
+						<div class="procedimiento_parto">
 							<div class="col-md-3">
 								<label>Hora de nacimiento</label>
 								<div>
@@ -71,13 +71,13 @@
 							<div class="col-md-3">
 								<label>Complicacion maternal</label>
 								<div>
-									<input type="text" name="complicacion_maternal" id="complicacion_maternal" class="form-control">
+									<textarea name="complicacion_maternal" id="complicacion_maternal" class="form-control"></textarea>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<label>Complicacion fetal</label>
 								<div>
-									<input type="text" name="complicacion_fetal" id="complicacion_fetal" class="form-control">
+									<textarea name="complicacion_fetal" id="complicacion_fetal" class="form-control"></textarea>
 								</div>
 							</div>
 							<div class="col-md-3">

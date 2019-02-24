@@ -23,22 +23,22 @@
 				$('#pediatra').val(data.fechaprocedimiento.pediatra);
 				$('#comentario_procedimiento').val(data.fechaprocedimiento.comentario);
 
-				if(data.fechaprocedimiento.procedimiento == 'Parto Vaginal' || data.fechaprocedimiento.procedimiento == 'Parto por Cesárea'){
-					$('.procedimiento_parto').show();
-				}
+				// if(data.fechaprocedimiento.procedimiento == 'Parto Vaginal' || data.fechaprocedimiento.procedimiento == 'Parto por Cesárea'){
+				// 	$('.procedimiento_parto').show();
+				// }
             });
         }
 
         $('#modalUpdateProcedimiento').modal('show');
     }
 
-	function procedimientoChange(este) {
-		if(este.val() == 'Parto Vaginal' || este.val() == 'Parto por Cesárea'){
-			$('.procedimiento_parto').show();
-		}else{
-			$('.procedimiento_parto').hide();
-		}
-	}
+	// function procedimientoChange(este) {
+	// 	if(este.val() == 'Parto Vaginal' || este.val() == 'Parto por Cesárea'){
+	// 		$('.procedimiento_parto').show();
+	// 	}else{
+	// 		$('.procedimiento_parto').hide();
+	// 	}
+	// }
 </script>
 
 @endpush
