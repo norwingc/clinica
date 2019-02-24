@@ -219,6 +219,10 @@
         }
     }
 
+    function masaUterino(este) {
+        (este.val() == 'No') ? $('.masa_uterino_si').hide() : $('.masa_uterino_si').show()
+    }
+
     function agregarExamen(este) {
 
         var examen = este.parent(0).parent(0).parent(0).find('.examen_tipo').val();

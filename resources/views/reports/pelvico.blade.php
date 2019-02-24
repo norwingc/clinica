@@ -64,7 +64,7 @@
        Forma: {{ $pelvico->forma }}. Bordes: {{ $pelvico->bordes }}. Paredes: {{ $pelvico->paredes }}
 
         Longitud: {{ $pelvico->longitud }}. Ancho: {{ $pelvico->ancho }}. Grosor: {{ $pelvico->grosor }}. Masas en musculo uterino: {{ $pelvico->masa_uterino }}.
-        @if($pelvico->masa_uterino == 'Si')
+        @if($pelvico->masa_uterino == 'Si' || $pelvico->masa_uterino == 'Unica' || $pelvico->masa_uterino == 'Multiple')
             Numero de masas: {{ $pelvico->masa_uterino_cuantas }}. Cara: {{ $pelvico->cara }}. Localizacion de la masa: {{ $pelvico->localizacion_masa }}. Mediciones: {{ $pelvico->mediciones }}mm.
         @endif
 

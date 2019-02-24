@@ -6129,7 +6129,7 @@
                             <div class="col-md-3">
                                 <label>Masas en musculo uterino</label>
                                 <div>
-                                    <select name="masa_uterino" id="masa_uterino_pelvico" class="form-control" data-target="masa_uterino_si" onchange="selectShow($(this))">
+                                    <select name="masa_uterino" id="masa_uterino_pelvico" class="form-control" data-target="masa_uterino_si" onchange="masaUterino($(this))">
                                         <option value="No">No</option>
                                         <option value="Si">Si</option>
                                         <option value="Unica">Unica</option>
