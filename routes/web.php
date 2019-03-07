@@ -104,7 +104,14 @@ Route::middleware(['auth'])->group(function () {
         Route::name('citas.bloqueadas.delete')->get('/Bloqueadas/delete/{cita}', 'CitasController@bloqueadasDelete');
         Route::name('citas.bloqueadas.update')->post('/Bloqueadas/update/{cita}', 'CitasController@bloqueadasUpdate');
         Route::name('citas.today')->get('/Today', 'CitasController@today');
-    });
+	});
+	
+	Route::prefix('Comentarios')->group(function () {
+		Route::name('comentario.get')->get('/get/{comentario}', 'ComentarioController@get');
+		Route::name('comentario.store')->post('/store/{paciente}', 'ComentarioController@store');
+		Route::name('comentario.update')->post('/update/{comentario}', 'ComentarioController@update');
+		Route::name('comentario.delete')->get('/delete/{comentario}', 'ComentarioController@delete');
+	});
 
     Route::prefix('Reports')->group(function () {
         Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');

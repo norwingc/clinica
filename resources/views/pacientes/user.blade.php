@@ -47,8 +47,10 @@
                         <p><strong>Paridad:</strong> {{ $paciente->paridad }}</p>
                         <p><strong>Morbilidad:</strong> {{ $paciente->morbilidad }}</p>
                     </div>
-                </div>
-
+				</div>
+				
+				@include('pacientes._comentarios')
+			
                 <div class="text-center">
                     <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="updatePocedimiento($(this))">Agregar fecha de procedimiento</button>
                 </div>
@@ -103,7 +105,7 @@
                                     <label>Tipo de Examen</label>
                                     <div>
                                         <select name="examen_type" id="examen_type" class="form-control" required>
-                                            <option value="">Seleccione el Examen</option>
+											<option value="">Seleccione el Examen</option>
                                             <option value="Colposcopia / Crioterapia">Colposcopia / Crioterapia</option>
                                             <option value="Consulta de Atención Prenatal">Consulta de Atención Prenatal</option>
                                             <option value="Consulta Ginecologica">Consulta Ginecologica</option>

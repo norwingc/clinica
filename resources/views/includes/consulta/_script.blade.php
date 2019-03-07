@@ -257,6 +257,9 @@
         if(examen == 8){
             updatedUltrasonidoPelvico(este);
         }
+		if(examen == 9){
+			updateComentarios(este);
+		}
 
     }
 
@@ -763,5 +766,24 @@
 
         $('#modalAddFechaParto').modal('show');
     }
+
+	function updateComentarios(este) {
+		let paciente = {{ $paciente->id }};
+		let id = este.data('id');
+
+        $('.modal-title').html("Comentario para Paciente: " + este.data('paciente'));
+
+		if(!id){
+			$('.consulta-form').attr('action', "{{ url('/') }}/Comentarios/store/"+paciente);
+		}else{
+			$('.consulta-form').attr('action', "{{ url('/') }}/Comentarios/update/"+id);
+
+			$.get("{{ url('/') }}/Comentarios/get/"+id, function(data){
+				$('#comentarios_comentarios').val(data.comentario.comentario);
+			});
+		}
+
+		$('#modalComentarios').modal('show');
+	}
 </script>
 @endpush

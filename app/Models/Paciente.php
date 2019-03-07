@@ -29,6 +29,11 @@ class Paciente extends Model
     public function historia()
     {
         return $this->hasOne('App\Models\HistoriaClinica', 'paciente_id');
+	}
+
+	public function comentarios()
+    {
+        return $this->hasMany('App\Models\Comentario', 'paciente_id');
     }
 
     public function fecha_procedimiento()

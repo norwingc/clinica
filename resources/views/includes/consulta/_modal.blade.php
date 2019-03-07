@@ -7654,3 +7654,31 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalComentarios">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Comentario</label>
+                            <div>
+                                <textarea name="comentario" id="comentarios_comentarios" class="form-control" style="height: 200px"></textarea>
+                            </div>
+						</div>
+					</div>
+					<div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+				{{ Form::close() }}
+			</div>
+		</div>
+	</div>
+</div>
+

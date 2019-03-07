@@ -41,7 +41,7 @@ class HistoriaClinica extends Model
     //diabetes_familiar_si, hipertension_arterial_familiar_si, cardiopatia_familiar_si, nefropatias_familiar_si, tiroidea_si_emfermedad,
     //tiroidea_si_familiar, enfermedad_inmunologica_familiar_si_efermedad, enfermedad_inmunologica_familiar_si_familiar, pre_eclampsia_familiar_si, inmunologica_tipo
 
-     /**
+    /**
      * [paciente description]
      * @return [type] [description]
      */
