@@ -50,7 +50,7 @@
                             </div>
 						</div>
 						<div class="col-md-3">
-							<label>Anestesilogo</label>
+							<label>Anestesiólogo</label>
 							<div>
 								<input type="text" name="anestesiologo" id="anestesiologo" class="form-control" value="Dr. Serge Amador">
 							</div>

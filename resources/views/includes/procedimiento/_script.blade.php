@@ -4,12 +4,12 @@
     function updatePocedimiento(este) {
 
         if(este.data('id') == 'no'){
-            $('.modal-title').html('Agregar procedimiento medico');
+            $('.modal-title').html('Agregar procedimiento médico');
 			$('.form_procedimiento').attr('action', '/Consultas/FechaProcedimiento/store/'+este.data('paciente'))
         }else{
 			$('.form_procedimiento').attr('action', '/Consultas/FechaProcedimiento/update/'+este.data('id'))
             $.get('/Consultas/FechaProcedimiento/get/'+este.data('id'), function(data){
-                $('.modal-title').html('Modificar procedimiento mefico / ' + data.fechaprocedimiento.paciente.name);
+                $('.modal-title').html('Modificar procedimiento médico / ' + data.fechaprocedimiento.paciente.name);
 
 				$('#hospital_procedimiento').val(data.fechaprocedimiento.hospital);
 				$('#procedimiento_procedimiento').val(data.fechaprocedimiento.procedimiento);

@@ -452,7 +452,7 @@
         setChild(child, cantidad, este.data('examen'));
     }
 
-    function edadGestional(fecha) {
+    function edadGestional(fecha, modal = null) {
 
         if(fecha == '') return false;
 
@@ -488,7 +488,12 @@
         let faltante = faltasemanas + " semanas y " + faltadias+ " d&iacute;as";
         let fechap = dispDate(dia_parto)+", est&aacute; en la semana "+llevasemanas+" de embarazo.";
 
-        var resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
+		if(modal == null){
+        	var resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
+		}else{
+			var resultado = 'Semanas de embarazo: ' + semanas + ' Dias que faltan de embarazo: ' + faltante + ' Fecha probable de parto: ' + fechap;
+		}
+
 
         return resultado;
     }
@@ -560,7 +565,7 @@
         let consulta = este.data('consulta');
         let title    = 'Consulta de Atención Prenatal: ' + este.data('paciente');
         let prenatal = este.data('id');
-        $('.modal-title').html(title);
+		$('.modal-title').html(title);
 
         if(!prenatal){//agregar examen
             $('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Prenatal/store/"+consulta);
@@ -575,8 +580,10 @@
         }
 
         if($('#edad_gestacinal_prenatal').data('historia') != 'No'){
-            $('#edad_gestacinal_prenatal').val(edadGestional($('#edad_gestacinal_prenatal').data('historia')));
-        }
+            $('#edad_gestacinal_prenatal').val(edadGestional($('#edad_gestacinal_prenatal').data('edad_gestacional'), 'modal'));
+		}
+
+		$('#rh_tipo_prenatal').val($('#rh_tipo_prenatal').data('value'));
 
         $('#modalUpdateAtencionPrenatal').modal('show');
     }

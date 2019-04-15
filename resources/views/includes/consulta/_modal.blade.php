@@ -8,33 +8,67 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label>Referido</label>
-                            <div>
-                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <label>Fecha y Hora</label>
-                            <div>
-                                <input type="text" class="form-control" name="date" id="date_prenatal" readonly value="{{ date('d/m/Y h:i a') }}">
-                            </div>
-                        </div>
-                         <div class="col-sm-4">
-                            <label>Edad gestacional por ultrasonido</label>
-                            <div>
-                                <textarea name="edad_gestacional" id="edad_gestacinal_prenatal" class="form-control" data-historia={{ ($paciente->historia) ? $paciente->historia->ultima_regla : 'No' }}></textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
+				{!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label>Referido</label>
+							<div>
+								<input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Edad</label>
+							<div>
+								<input type="text" name="edad" id="edad_prenatal" class="form-control"  value="{{ $paciente->getAge() }}">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Fecha</label>
+							<div>
+								<input type="text" name="date" id="date_prenatal" class="form-control" value="{{ date('d/m/Y h:i a') }}">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Edad Gestacional</label>
+							<div>
+								<input type="text" name="edad_gestacional" id="edad_gestacinal_prenatal" data-edad_gestacional="{{ ($paciente->historia)?$paciente->historia->ultima_regla:'No' }}" class="form-control" >
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Paridad</label>
+							<div>
+								<input type="text" name="paridad" id="paridad_prenatal" class="form-control" value="{{ $paciente->paridad }}">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Morbilidad</label>
+							<div>
+								<input type="text" name="morbilidad" id="morbilidad_prenatal" class="form-control" value="{{ $paciente->morbilidad }}">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Tipo y RH</label>
+							<div>
+								<select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_prenatal" data-value="{{ $paciente->tipo_rh }}">
+									<option value="">Seleccione uno</option>
+									<option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-3">
                             <label>Consulta de atencion prenatal No</label>
                             <div>
-                                <input type="text" class="form-control" name="numero" id="numero_prenatal">
+                                <input type="number" class="form-control" name="numero" id="numero_prenatal">
                             </div>
                         </div>
-                    </div>
+					</div>
                     <div class="form-group">
                         <div class="col-sm-12">
                             <label>Diagnostico Previo</label>
@@ -3570,7 +3604,7 @@
                         <div class="col-md-3">
                             <label>Tipo y RH</label>
                             <div>
-                                <select class="form-control a" name="rh_tipo" id="rh_tipo_estructural" data-value="{{ $paciente->a }}">
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_estructural" data-value="{{ $paciente->tipo_rh }}">
                                     <option value="">Seleccione uno</option>
                                     <option value="O Positivo">O Positivo</option>
                                     <option value="A Negativo">A Negativo</option>

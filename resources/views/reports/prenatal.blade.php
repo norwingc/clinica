@@ -32,24 +32,28 @@
 <body>
     <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
-            <table class="table-striped">
-                <tr>
-                    <th>Nombre:</th>
-                    <td>{{ $prenatal->consulta->paciente->name }}</td>
-                </tr>
-                 <tr>
-                    <th>Edad:</th>
-                    <td>{{ $prenatal->edad }}</td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $prenatal->referido }}</td>
-                </tr>
-                <tr>
-                    <th>Fecha:</th>
-                    <td>{{ $prenatal->date }}</td>
-                </tr>
-            </table>
+			<table class="table-striped">
+				<tr>
+					<th>Nombre:</th>
+					<td>{{ $prenatal->consulta->paciente->name }}</td>
+				</tr>
+					<tr>
+					<th>Edad:</th>
+					<td>{{ $prenatal->edad }} </td>
+				</tr>
+					<tr>
+					<th>Referido:</th>
+					<td>{{ $prenatal->referido }}</td>
+				</tr>
+				<tr>
+					<th>Fecha:</th>
+					<td>{{ $prenatal->date }} {!! ($prenatal->rh_tipo != '') ? ' / '. $prenatal->rh_tipo : '' !!}</td>
+				</tr>
+				<tr>
+					<th>Paridad</th>
+					<td>{{ $prenatal->paridad }} {!! ($prenatal->morbilidad != '') ? ' / '. $prenatal->morbilidad : '' !!} </td>
+				</tr>
+			</table>
         </div>
     </div>
 

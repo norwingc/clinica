@@ -36,9 +36,21 @@
                     <th>Nombre:</th>
                     <td>{{ $historiaclinica->paciente->name }}</td>
                 </tr>
+                 <tr>
+                    <th>Edad:</th>
+                    <td>{{ $historiaclinica->paciente->getAge() }} {!! ($historiaclinica->edad_gestacional != '') ? ' / '. $historiaclinica->edad_gestacional : '' !!} </td>
+                </tr>
+                 <tr>
+                    <th>Referido:</th>
+                    <td>{{ $historiaclinica->paciente->referido }}</td>
+                </tr>
                 <tr>
                     <th>Fecha:</th>
-                    <td>{{ date('d/m/Y') }}</td>
+                    <td>{{ date('m/d/Y') }} / {{ $historiaclinica->paciente->tipo_rh }}</td>
+				</tr>
+				<tr>
+                    <th>Paridad</th>
+                    <td>{{ $historiaclinica->paciente->paridad }} {!! ($historiaclinica->paciente->morbilidad != '') ? ' / '. $historiaclinica->paciente->morbilidad : '' !!} </td>
                 </tr>
             </table>
         </div>

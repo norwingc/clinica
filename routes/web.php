@@ -86,7 +86,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('fecha.procedimiento.get')->get('/FechaProcedimiento/get/{fechaprocedimiento}', 'ConsultasController@getFechaProcedimiento');
         Route::name('fecha.procedimiento.store')->post('/FechaProcedimiento/store/{paciente}', 'ConsultasController@storeFechaProcedimiento');
         Route::name('fecha.procedimiento.update')->post('/FechaProcedimiento/update/{fechaprocedimiento}', 'ConsultasController@updateFechaProcedimiento');
-        Route::name('fecha.procedimiento.delete')->post('/FechaProcedimiento/delete/{fechaprocedimiento}', 'ConsultasController@deleteFechaProcedimiento');
+        Route::name('fecha.procedimiento.delete')->get('/FechaProcedimiento/delete/{fechaprocedimiento}', 'ConsultasController@deleteFechaProcedimiento');
     });
 
     Route::prefix('Citas')->group(function () {
@@ -105,7 +105,7 @@ Route::middleware(['auth'])->group(function () {
         Route::name('citas.bloqueadas.update')->post('/Bloqueadas/update/{cita}', 'CitasController@bloqueadasUpdate');
         Route::name('citas.today')->get('/Today', 'CitasController@today');
 	});
-	
+
 	Route::prefix('Comentarios')->group(function () {
 		Route::name('comentario.get')->get('/get/{comentario}', 'ComentarioController@get');
 		Route::name('comentario.store')->post('/store/{paciente}', 'ComentarioController@store');
@@ -124,5 +124,4 @@ Route::middleware(['auth'])->group(function () {
         Route::name('report.prenatal')->get('Prenatal/{prenatal}', 'ConsultasController@reportPrenatal');
         Route::name('report.colposcopia')->get('Colposcopia/{colposcopia}', 'ConsultasController@reportColposcopia');
     });
-
 });
