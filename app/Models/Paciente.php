@@ -48,7 +48,16 @@ class Paciente extends Model
     public function lastConsulta()
     {
         return $this->hasOne('App\Models\Consulta', 'paciente_id')->latest();
-    }
+	}
+
+	/**
+	 * [orden_ingreso description]
+	 * @return  [type]  [return description]
+	 */
+	public function orden_ingreso()
+    {
+        return $this->hasMany('App\Models\PacienteOrdenIngreso', 'paciente_id');
+	}
 
      /**
      * [getAge description]

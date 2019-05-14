@@ -113,6 +113,11 @@ Route::middleware(['auth'])->group(function () {
 		Route::name('comentario.delete')->get('/delete/{comentario}', 'ComentarioController@delete');
 	});
 
+	Route::group(['prefix' => 'OrdenIngreso'], function () {
+		Route::name('ordeningreso.store')->post('/store/{paciente}', 'OrdenIngresoController@store');
+		Route::name('ordeningreso.report')->get('/Report/{pacienteordeningreso}', 'OrdenIngresoController@report');
+	});
+
     Route::prefix('Reports')->group(function () {
         Route::name('report.pelvico')->get('Pelvico/{pelvico}', 'ConsultasController@reportPelvico');
         Route::name('report.trimestre')->get('Trimestre/{trimestre}', 'ConsultasController@reportTrimestre');

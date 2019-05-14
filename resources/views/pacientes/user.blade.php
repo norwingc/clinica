@@ -45,15 +45,22 @@
                         <p><strong>Telefono:</strong> {{ $paciente->phone }}</p>
                         <p><strong>Tipo y RH:</strong> {{ $paciente->tipo_rh }}</p>
                         <p><strong>Paridad:</strong> {{ $paciente->paridad }}</p>
-                        <p><strong>Morbilidad:</strong> {{ $paciente->morbilidad }}</p>
+						<p><strong>Morbilidad:</strong> {{ $paciente->morbilidad }}</p>
+						<p>
+							@foreach($paciente->orden_ingreso  as $value)
+								<a href="{{ route('ordeningreso.report', $value) }}" target="new">Ingreso: {{ $value->date }}</a>
+								<br>
+							@endforeach
+						</p>
                     </div>
 				</div>
-				
+
 				@include('pacientes._comentarios')
-			
+
                 <div class="text-center">
                     <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="updatePocedimiento($(this))">Agregar fecha de procedimiento</button>
-                </div>
+					<button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="$('#modalOrdeIngreso').modal('show')">Agregar orden de ingreso</button>
+				</div>
 
                 <div class="row">
                     <div class="col-sm-12">

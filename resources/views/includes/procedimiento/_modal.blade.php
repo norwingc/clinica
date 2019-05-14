@@ -103,3 +103,66 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalOrdeIngreso">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Orde de ingreso paciente: {{ $paciente->name }}</h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['route' => ['ordeningreso.store', $paciente], 'class' => 'consulta-form form-examen form-horizontal form_procedimiento']) !!}
+                    <div class="form-group">
+						<div class="col-md-3">
+							<label>Fecha</label>
+							<div>
+								<input type="date" class="form-control" name="date" required>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Hospital</label>
+							<div>
+								<input type="text" class="form-control" name="hospital" required>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Sala</label>
+							<div>
+								<input type="text" class="form-control" name="sala" required>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Procedimiento</label>
+							<div>
+								<input type="text" class="form-control" name="procedimiento" required>
+							</div>
+						</div>
+                        <div class="col-md-6">
+							<label>Motivo de ingreso</label>
+							<div>
+								<textarea class="form-control" name="motivo_ingreso" required></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Diagnostico de ingreso</label>
+							<div>
+								<textarea class="form-control" name="diagnostico_ingreso" required></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Indicaciones (separa por coma)</label>
+							<div>
+								<textarea class="form-control" name="indicaciones" required></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+					</div>
+				{{ Form::close() }}
+			</div>
+		</div>
+	</div>
+</div>
