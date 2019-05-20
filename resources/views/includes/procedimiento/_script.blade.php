@@ -39,6 +39,11 @@
 	// 		$('.procedimiento_parto').hide();
 	// 	}
 	// }
+
+	function addOrdenIngreso(este) {
+		$('.form_procedimiento').attr('action', '/OrdenIngreso/store/'+este.data('paciente'))
+		$('#modalOrdeIngreso').modal('show');
+	}
 </script>
 
 @endpush

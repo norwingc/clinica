@@ -109,10 +109,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Orde de ingreso paciente: {{ $paciente->name }}</h4>
+                <h4 class="modal-title">Agregar orden de ingreso</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['route' => ['ordeningreso.store', $paciente], 'class' => 'consulta-form form-examen form-horizontal form_procedimiento']) !!}
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal form_procedimiento']) !!}
                     <div class="form-group">
 						<div class="col-md-3">
 							<label>Fecha</label>

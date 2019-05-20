@@ -59,7 +59,7 @@
 
                 <div class="text-center">
                     <button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="updatePocedimiento($(this))">Agregar fecha de procedimiento</button>
-					<button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="$('#modalOrdeIngreso').modal('show')">Agregar orden de ingreso</button>
+					<button class="btn btn-lg btn-warning" data-paciente="{{ $paciente->id }}" data-id="no" onclick="addOrdenIngreso($(this))">Agregar orden de ingreso</button>
 				</div>
 
                 <div class="row">
