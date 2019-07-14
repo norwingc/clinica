@@ -322,10 +322,10 @@
     <p style="margin:0">Embarazo por fetometría: {{ $estructural->conclusion_embarazo_fetometria }}</p>
     <p style="margin:0">{{ $estructural->concluciones }}</p>
     <p style="margin:0">
-        Riesgo de parto Pretermino: {{ $estructural->conclusion_riesgo_parto_pretermino }}.
-        Riesgo de Pre eclampsia: {{ $estructural->conclusion_riesgo_preeclampsia }}.
-        Riesgo de Hipertensión tardía: {{ $estructural->conclusion_riesgo_hipertension }}.
-        Riesgo de Restricción del Crecimiento: {{ $estructural->conclusion_riesgo_restriccion_crecimiento }}.
+        Riesgo de parto Pretermino: <b>{{ $estructural->conclusion_riesgo_parto_pretermino }}.</b>
+        Riesgo de Pre eclampsia: <b>{{ $estructural->conclusion_riesgo_preeclampsia }}.</b>
+        Riesgo de Hipertensión tardía: <b>{{ $estructural->conclusion_riesgo_hipertension }}.</b>
+        Riesgo de Restricción del Crecimiento: <b>{{ $estructural->conclusion_riesgo_restriccion_crecimiento }}.</b>
     </p>
 
     @if($estructural->comentarios != '')

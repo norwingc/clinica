@@ -50,30 +50,34 @@
         </div>
     </div>
 
-    <p class="sub_titul">Mapa del cuello uterino</p>
+	<p class="sub_titul">Historia</p>
+	<p>{{ $colposcopia->historia }}</p>
 
-    <p>
-        <b>Inspeccion Visual Con Acido Acetico</b><br>
-        Interpretacion de IVAA: {{ $colposcopia->interpretacion_ivaa }}
 
-        <div style="height: 130px; width: 50%">
-            <img src="{{ asset('img/colposcopia1.jpg') }}" style="margin: auto; display: block">
-        </div>
-    </p>
+	<p class="sub_titul">Mapa del cuello uterino</p>
 
-    <p>
-        <b>Aplicación De Lugol (Test De Schiller)</b><br>
-        Interpretacion de aplicación de lugol: {{ $colposcopia->interpretacion_lugol }}
+	<div class="row">
+		<div class="col-xs-6">
+			<p>
+				<b>Inspeccion Visual Con Acido Acetico</b><br>
+				Interpretacion de IVAA: <br> {{ $colposcopia->interpretacion_ivaa }}
+			</p>
+			<img src="{{ asset('img/colposcopia1.jpg') }}">
+		</div>
+		<div class="col-xs-6">
+			<p>
+				<b>Aplicación De Lugol (Test De Schiller)</b> <br>
+				Interpretacion de aplicación de lugol: <br> {{ $colposcopia->interpretacion_lugol }}
+			</p>
+			<img src="{{ asset('img/colposcopia1.jpg') }}">
+		</div>
+	</div>
 
-        <div style="height: 130px; width: 50%">
-            <img src="{{ asset('img/colposcopia1.jpg') }}" style="margin: auto; display: block">
-        </div>
-    </p>
+	<p>
+		<b>Colposcopiaa</b><br>
+		Clasificacion de colposcopia: {{ $colposcopia->clasificacion }}. Descripcion: {{ $colposcopia->descripcion_colposcopia }}.
+	</p>
 
-    <p>
-        <b>Colposcopiaa</b><br>
-        Clasificacion de colposcopia: {{ $colposcopia->clasificacion }}. Descripcion: {{ $colposcopia->descripcion_colposcopia }}.
-    </p>
 
     <p>
         <b>Descripicon de resultado de colposcopia</b><br>

@@ -5992,7 +5992,7 @@
                         <div class="col-md-12">
                             <label>Recomendaciones</label>
                             <div>
-                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revision estructural ente la semana 18 a 24</textarea>
+                                <textarea name="recomendaciones" id="recomendaciones_1trimestre" class="form-control">Realizar revisión estructural entre la semana 18 a 24</textarea>
                             </div>
                         </div>
                     </div>
@@ -7650,7 +7650,7 @@
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
-                                <textarea name="concluciones" id="concluciones_doppler" class="form-control" style="height: 100px">Perfil Biofísico: 8/8. Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado
+								<textarea name="concluciones" id="concluciones_doppler" class="form-control" style="height: 100px">1. Curva de crecimiento fetal acorde a edad gestacional y percentil esperado 2. Flujometria Doppler Normal 3. Líquido aminiótico y placenta de características normales 4. Perfil Biofísico: 8/8. Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado
                                 </textarea>
                             </div>
                         </div>
