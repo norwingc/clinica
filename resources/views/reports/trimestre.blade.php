@@ -187,12 +187,12 @@
 
     <p class="sub_titul"><b>Conclusiones</b></p>
     <p style="margin: 0">
-        Feto por longitud craneo cauda {{ $trimestre->conclusion_lcc }}.
-        Riesgo para procesos de cromosomopatías (Síndrome de Down) {{ $trimestre->conclusion_riesago_cromosomopatias }}. <br>
-        Riesgo para Pre eclampsia de aparición temprana: {{ $trimestre->conclusion_riesago_preeclampsia }}.
-        Riesgo fenómenos hipertensivos tardíos: {{ $trimestre->conclusion_riesago_hipertensivos }}.
-        Riesgo para Restricción del Crecimiento Intrauterino: {{ $trimestre->conclusion_riesago_restiaccion }}.
-        Riesgo para Parto Pretermino: {{ $trimestre->conclusion_riesago_parto_pretermino }}.
+        Feto por longitud craneo cauda <b>{{ $trimestre->conclusion_lcc }}.</b> <br>
+		Riesgo para procesos de cromosomopatías (Síndrome de Down) <b>{{ $trimestre->conclusion_riesago_cromosomopatias }}.</b> <br>
+        Riesgo para Pre eclampsia de aparición temprana: <b>{{ $trimestre->conclusion_riesago_preeclampsia }}.</b> <br>
+        Riesgo fenómenos hipertensivos tardíos: <b>{{ $trimestre->conclusion_riesago_hipertensivos }}.</b> <br>
+        Riesgo para Restricción del Crecimiento Intrauterino: <b>{{ $trimestre->conclusion_riesago_restiaccion }}.</b> <br>
+        Riesgo para Parto Pretermino: <b>{{ $trimestre->conclusion_riesago_parto_pretermino }}.</b> <br>
     </p>
 
     @if($trimestre->comentarios != '')

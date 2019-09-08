@@ -163,7 +163,7 @@ function dispDate(dateObj) {
 
 
 $('#peso').focusout(function(event) {
-   if($(this).val() != ''){
+   if($(this).val() !== ''){
         let peso = ( $('#peso').val()  / 2.2);
         $('#peso_kg').html(Math.round(peso*10)/10 + ' kg');
    }

@@ -3,7 +3,6 @@
 <script type="text/javascript">
     var _token = window.Laravel.csrfToken;
 
-
     $('.form-examen select').change(function(){
         //selectShow($(this));
     });
@@ -454,7 +453,7 @@
 
     function edadGestional(fecha, modal = null) {
 
-        if(fecha == '') return false;
+        if(fecha == '') return '';
 
         fecha = fecha.split("-");
 
@@ -484,16 +483,15 @@
         faltasemanas = parseInt(((falta.getTime()/86400000)/7));
         faltadias = parseInt(((falta.getTime()/86400000)%7));
 
-        let semanas = llevasemanas + " semanas y " + llevadias +" d&iacute;as";
+        let semanas = llevasemanas + " semanas y " + llevadias +" días";
         let faltante = faltasemanas + " semanas y " + faltadias+ " d&iacute;as";
         let fechap = dispDate(dia_parto)+", est&aacute; en la semana "+llevasemanas+" de embarazo.";
 
 		if(modal == null){
         	var resultado = '<b>Semanas de embarazo:</b> ' + semanas + ' <b>Dias que faltan de embarazo:</b> ' + faltante + ' <b>Fecha probable de parto:</b> ' + fechap;
 		}else{
-			var resultado = 'Semanas de embarazo: ' + semanas + ' Dias que faltan de embarazo: ' + faltante + ' Fecha probable de parto: ' + fechap;
+			var resultado = 'Semanas de embarazo: ' + semanas;
 		}
-
 
         return resultado;
     }
@@ -579,11 +577,9 @@
             });
         }
 
-        if($('#edad_gestacinal_prenatal').data('historia') != 'No'){
-            $('#edad_gestacinal_prenatal').val(edadGestional($('#edad_gestacinal_prenatal').data('edad_gestacional'), 'modal'));
-		}
-
 		$('#rh_tipo_prenatal').val($('#rh_tipo_prenatal').data('value'));
+
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
 
         $('#modalUpdateAtencionPrenatal').modal('show');
     }
@@ -609,7 +605,6 @@
                 console.log(data);
             });
         }
-
         $('#modalUpdatedConsultaGinecologica').modal('show');
     }
 
@@ -630,7 +625,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedDoppler').modal('show');
     }
 
@@ -656,7 +651,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedEcocardiografia').modal('show');
     }
 
@@ -682,7 +677,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedNeurosonografia').modal('show');
     }
 
@@ -708,7 +703,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedEstructural').modal('show');
     }
 
@@ -734,7 +729,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedITrimestre').modal('show');
     }
 
@@ -755,7 +750,7 @@
                 console.log(data);
             });
         }
-
+        $('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
         $('#modalUpdatedUltrasonidoPelvico').modal('show');
     }
 

@@ -31,7 +31,7 @@
 						<div class="col-md-3">
 							<label>Edad Gestacional</label>
 							<div>
-								<input type="text" name="edad_gestacional" id="edad_gestacinal_prenatal" data-edad_gestacional="{{ ($paciente->historia)?$paciente->historia->ultima_regla:'No' }}" class="form-control" >
+								<input type="text" name="edad_gestacional" data-edad="{{ $paciente->ultima_regla  }}" id="edad_gestacinal_prenatal" class="form-control edad_gestacional_calculator" >
 							</div>
 						</div>
 						<div class="col-md-3">
@@ -417,9 +417,9 @@
                                 <label>Calotas</label>
                                 <div>
                                     <select class="form-control" name="vagina_calotas" id="vagina_calotas_prenatal">
-                                        <option value="Solidas">No</option>
-                                        <option value="Blandas">Blandas</option>
                                         <option value="No Valorables">No Valorables</option>
+                                        <option value="Solidas">Solidas</option>
+                                        <option value="Blandas">Blandas</option>
                                     </select>
                                 </div>
                             </div>
@@ -990,7 +990,7 @@
                         <div class="col-sm-4">
                             <label>Consuta ginecologica</label>
                             <div>
-                                <input type="text" class="form-control" name="numero" id="numero_ginecologica" readonly value="{{ \App\Models\Prenatal::count() + 1 }}">
+                                <input type="text" class="form-control" name="numero" id="numero_ginecologica">
                             </div>
                         </div>
                     </div>
@@ -1042,7 +1042,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="sub_titul"><b>Objetivo</b</p>
+                    <p class="sub_titul"><b>Objetivo</b></p>
                     <div class="form-group">
                         <div class="col-md-6">
                            <label>Estado General</label>
@@ -1241,7 +1241,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_ecocardiografia" class="form-control">
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_ecocardiografia" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -2316,7 +2316,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_neurosonografia" class="form-control">
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_neurosonografia" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -3586,7 +3586,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_estructural" class="form-control" >
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_estructural" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -5191,7 +5191,8 @@
                         <div class="col-md-3">
                             <label>Edad</label>
                             <div>
-                                <input type="text" name="edad" id="edad_1trimestre" class="form-control"  value="{{ $paciente->getAge() }}">                            </div>
+                                <input type="text" name="edad" id="edad_1trimestre" class="form-control"  value="{{ $paciente->getAge() }}">
+							</div>
                         </div>
                         <div class="col-md-3">
                             <label>Fecha</label>
@@ -5202,7 +5203,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_1trimestre" class="form-control" >
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_1trimestre" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -6045,7 +6046,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" class="form-control" >
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_pelvico" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -6254,6 +6255,8 @@
                                         <option value="">Seleccione uno</option>
                                         <option value="Dispositivo intrauterino">Dispositivo intrauterino</option>
                                         <option value="Embarazo">Embarazo</option>
+										 <option value="Probable pólipo">Probable pólipo</option>
+										 <option value="Restos ovulares">Restos ovulares</option>
                                     </select>
                                 </div>
                             </div>
@@ -6884,7 +6887,7 @@
                         <div class="col-md-3">
                             <label>Edad Gestacional</label>
                             <div>
-                                <input type="text" name="edad_gestacional" id="edad_gestacional_doppler" class="form-control" >
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_doppler" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -7650,7 +7653,7 @@
                         <div class="col-md-6">
                             <label>Conclusiones</label>
                             <div>
-								<textarea name="concluciones" id="concluciones_doppler" class="form-control" style="height: 100px">1. Curva de crecimiento fetal acorde a edad gestacional y percentil esperado 2. Flujometria Doppler Normal 3. Líquido aminiótico y placenta de características normales 4. Perfil Biofísico: 8/8. Evaluación y Pruebas de bienestar fetal traducen adecuadas reservas e intercambio materno fetal adecuado
+								<textarea name="concluciones" id="concluciones_doppler" class="form-control" style="height: 100px">1. Curva de crecimiento fetal acorde a edad gestacional y percentil esperado 2. Flujometria Doppler Normal 3. Líquido amniótico y placenta de características normales 4. Perfil Biofísico: 8/8. Evaluación y Pruebas de Bienestar fetal no traducen acidosis o daño fetal en este momento
                                 </textarea>
                             </div>
                         </div>

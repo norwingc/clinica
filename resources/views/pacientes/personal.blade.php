@@ -98,7 +98,13 @@
                                     <input type="text" name="referido" class="form-control" id="referido" value="{{ $paciente->referido }}">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+							<div class="col-sm-3">
+								<label>Referido por paciente</label>
+								<div>
+									<input type="text" name="referido_paciente" class="form-control" id="referido_paciente" value="{{ $paciente->referido_paciente }}">
+								</div>
+							</div>
+                            <div class="col-sm-9">
                                 <label>Direccion</label>
                                 <div>
                                     <input type="text" name="address" class="form-control" id="address" value="{{ $paciente->address }}">
@@ -179,6 +185,21 @@
                                 </div>
                             </div>
                         </div>
+						<div class="form-group">
+							<div class="col-sm-3 ">
+								<label>Fecha de ultima regla</label>
+								<div>
+									<input type="date" name="ultima_regla" id="ultima_regla" class="form-control" value="{{ $paciente->ultima_regla }}">
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<label>Edad Gestacional</label>
+								<div>
+									<p id="edad_gestional_view"></p>
+									<textarea name="edad_gestional" id="edad_gestional" class="form-control" style="display: none"></textarea>
+								</div>
+							</div>
+						</div>
                         <div class="text-center col-md-12">
                             <button type="submit" class="btn btn-success btn-submit">Actualizar</button>
                         </div>
@@ -199,5 +220,52 @@
         $('#compania_phone').val("{{ $paciente->compania_phone }}");
         $('#escolaridad').val("{{ $paciente->escolaridad }}");
         $('#tipo_rh').val("{{ $paciente->tipo_rh }}");
+
+        $(document).ready(function(){
+            edadGestional($('#ultima_regla').val());
+		})
     </script>
+
+	<script>
+        $('#ultima_regla').focusout(function() {
+            edadGestional($('#ultima_regla').val());
+        });
+        $('#ultima_regla').focus(function() {
+            edadGestional($('#ultima_regla').val());
+        });
+
+        function edadGestional(fecha) {
+
+            if(fecha === '') return false;
+
+            fecha = fecha.split("-");
+
+            fecha_inicio = new Date();
+            dia_parto    = new Date();
+            hoy          = new Date();
+            lleva        = new Date();
+            falta        = new Date();
+
+            day   = fecha[2];
+            month = fecha[1];
+            year  = fecha[0];
+
+            fecha_dada = new Date(year, (month-1), day);//month+"/"+day+"/"+year
+
+            //Calculamos la fecha probable del parto
+            fecha_inicio.setTime(fecha_dada.getTime());
+            dia_parto.setTime(fecha_inicio.getTime() + (280 * 86400000)); //(14 * 86400000) es la fecha de concepción
+
+            //Calculamos el tiempo que lleva
+            lleva.setTime(hoy.getTime() - fecha_inicio.getTime());
+            llevasemanas = parseInt(((lleva.getTime()/86400000)/7));
+            llevadias = Math.floor(((lleva.getTime()/86400000)%7));
+
+            let semanas = llevasemanas + " semanas y " + llevadias +" d&iacute;as";
+
+            var resultado = '<b>Semanas de embarazo:</b> ' + semanas;
+
+            $('#edad_gestional_view').html(resultado);
+        }
+	</script>
 @endsection

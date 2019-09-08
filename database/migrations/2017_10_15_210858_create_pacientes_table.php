@@ -21,6 +21,7 @@ class CreatePacientesTable extends Migration
             $table->string('phone')->nullable()->unique();
             $table->string('compania_phone')->nullable();
             $table->string('referido')->nullable();
+			$table->string('referido_paciente')->nullable();
             $table->date('birthday')->nullable();
             $table->string('convencional')->nullable();
             $table->string('address')->nullable();
@@ -33,7 +34,8 @@ class CreatePacientesTable extends Migration
             $table->string('tipo_rh')->nullable();
             $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
-            $table->timestamps();
+			$table->date('ultima_regla')->nullable();
+			$table->timestamps();
             $table->softDeletes();
         });
     }

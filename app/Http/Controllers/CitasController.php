@@ -293,24 +293,24 @@ class CitasController extends Controller
         return view('citas.bloqueadas', compact('bloqueadas'));
     }
 
-    /**
-     * [today description]
-     * @return [type] [description]
-     */
-    public function today()
+
+	/**
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function today()
     {
         $citas = Cita::has('consulta')->where('date',date('Y-m-d'))->get();
         return view('citas.today', compact('citas'));
     }
 
-    /**
-     * [validateCita description]
-     * @param  [type] $start  [description]
-     * @param  [type] $end    [description]
-     * @param  [type] $doctor [description]
-     * @return [type]         [description]
-     */
-    public function validateCita($start, $end, $doctor)
+
+	/**
+	 * @param $start
+	 * @param $end
+	 * @param $doctor
+	 * @return bool
+	 */
+	public function validateCita($start, $end, $doctor)
     {
         if($end == null) return false;
 
