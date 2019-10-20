@@ -40,11 +40,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $trimestre->edad }} {!! ($trimestre->edad_gestacional != '') ? ' / '. $trimestre->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $trimestre->referido }}</td>
-                </tr>
+				</tr>
+				@if($trimestre->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $trimestre->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $trimestre->date }} {!! ($trimestre->rh_tipo != '') ? ' / '. $trimestre->rh_tipo : '' !!}</td>

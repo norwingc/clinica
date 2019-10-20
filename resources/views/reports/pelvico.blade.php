@@ -37,11 +37,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $pelvico->edad }} {!! ($pelvico->edad_gestacional != '') ? ' / '. $pelvico->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $pelvico->referido }}</td>
-                </tr>
+				</tr>
+				@if($pelvico->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $pelvico->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $pelvico->date }} {!! ($pelvico->rh_tipo != '') ? ' / '. $pelvico->rh_tipo : '' !!}</td>

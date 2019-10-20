@@ -40,11 +40,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $ecocardio->edad }} {!! ($ecocardio->edad_gestacional != '') ? ' / '. $ecocardio->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $ecocardio->referido }}</td>
-                </tr>
+				</tr>
+				@if($ecocardio->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $ecocardio->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $ecocardio->date }} {!! ($ecocardio->rh_tipo != '') ? ' / '. $ecocardio->rh_tipo : '' !!}</td>

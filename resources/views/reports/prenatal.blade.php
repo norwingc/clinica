@@ -37,14 +37,16 @@
 					<th>Nombre:</th>
 					<td>{{ $prenatal->consulta->paciente->name }}</td>
 				</tr>
-					<tr>
+				<tr>
 					<th>Edad:</th>
 					<td>{{ $prenatal->edad }} </td>
 				</tr>
+				@if($prenatal->referido != '')
 					<tr>
-					<th>Referido:</th>
-					<td>{{ $prenatal->referido }}</td>
-				</tr>
+						<th>Referido:</th>
+						<td>{{ $prenatal->referido }}</td>
+					</tr>
+				@endif
 				<tr>
 					<th>Fecha:</th>
 					<td>{{ $prenatal->date }} {!! ($prenatal->rh_tipo != '') ? ' / '. $prenatal->rh_tipo : '' !!}</td>

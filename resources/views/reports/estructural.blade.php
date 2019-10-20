@@ -40,11 +40,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $estructural->edad }} {!! ($estructural->edad_gestacional != '') ? ' / '. $estructural->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $estructural->referido }}</td>
-                </tr>
+				</tr>
+				@if($estructural->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $estructural->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $estructural->date }} {!! ($estructural->rh_tipo != '') ? ' / '. $estructural->rh_tipo : '' !!}</td>

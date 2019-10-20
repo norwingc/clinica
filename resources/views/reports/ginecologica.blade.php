@@ -35,19 +35,25 @@
             <table class="table-striped">
                 <tr>
                     <th>Nombre:</th>
-                    <td>{{ $ginecologica->consulta->paciente->name }}</td>
+                    <td>{{ $ginecologica->consulta->paciente->name }} {!! ($ginecologica->edad_gestacional != '') ? ' / '. $ginecologica->edad_gestacional : '' !!}</td>
                 </tr>
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $ginecologica->edad }}</td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $ginecologica->referido }}</td>
-                </tr>
+				</tr>
+				@if($ginecologica->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $ginecologica->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
-                    <td>{{ $ginecologica->date }}</td>
+                    <td>{{ $ginecologica->date }} {!! ($ginecologica->rh_tipo != '') ? ' / '. $ginecologica->rh_tipo : '' !!}</td>
+                </tr>
+                <tr>
+                    <th>Paridad</th>
+                    <td>{{ $ginecologica->paridad }} {!! ($ginecologica->morbilidad != '') ? ' / '. $ginecologica->morbilidad : '' !!} </td>
                 </tr>
             </table>
         </div>

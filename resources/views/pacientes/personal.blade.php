@@ -77,19 +77,15 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <label>Telefono Celular</label>
+                                <label>Telefono Celular Claro</label>
                                 <div>
-                                    <input type="text" class="form-control phone" name="phone" id="phone" value="{{ $paciente->phone }}">
+                                    <input type="text" class="form-control phone" name="phone_claro" id="phone_claro" value="{{ $paciente->phone_claro }}">
                                 </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label>Compañia Celular</label>
+							</div>
+							<div class="col-sm-3">
+                                <label>Telefono Celular Movistar</label>
                                 <div>
-                                    <select class="form-control" name="compania_phone" id="compania_phone">
-                                        <option value="">Seleccione una</option>
-                                        <option value="Claro">Claro</option>
-                                        <option value="Movistar">Movistar</option>
-                                    </select>
+                                    <input type="text" class="form-control phone" name="phone_movistar" id="phone_movistar" value="{{ $paciente->phone_movistar }}">
                                 </div>
                             </div>
                             <div class="col-sm-3">

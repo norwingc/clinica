@@ -37,11 +37,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $colposcopia->edad }}</td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $colposcopia->referido }}</td>
-                </tr>
+				</tr>
+				@if($colposcopia->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $colposcopia->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $colposcopia->date }}</td>

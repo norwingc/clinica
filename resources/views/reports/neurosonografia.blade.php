@@ -40,11 +40,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $neurosono->edad }} {!! ($neurosono->edad_gestacional != '') ? ' / '. $neurosono->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $neurosono->referido }}</td>
-                </tr>
+				</tr>
+				@if($neurosono->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $neurosono->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $neurosono->date }} {!! ($neurosono->rh_tipo != '') ? ' / '. $neurosono->rh_tipo : '' !!}</td>

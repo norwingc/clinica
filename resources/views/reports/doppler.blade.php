@@ -40,11 +40,13 @@
                  <tr>
                     <th>Edad:</th>
                     <td>{{ $doppler->edad }} {!! ($doppler->edad_gestacional != '') ? ' / '. $doppler->edad_gestacional : '' !!} </td>
-                </tr>
-                 <tr>
-                    <th>Referido:</th>
-                    <td>{{ $doppler->referido }}</td>
-                </tr>
+				</tr>
+				@if($doppler->referido != '')
+					<tr>
+						<th>Referido:</th>
+						<td>{{ $doppler->referido }}</td>
+					</tr>
+				@endif
                 <tr>
                     <th>Fecha:</th>
                     <td>{{ $doppler->date }} {!! ($doppler->rh_tipo != '') ? ' / '. $doppler->rh_tipo : '' !!}</td>
