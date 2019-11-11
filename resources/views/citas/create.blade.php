@@ -106,7 +106,10 @@
                                 <label>Duracion</label>
                                 <div>
                                     <select class="form-control" name="duracion" id="duracion" required>
-                                        <option value="30 min">30 min</option>
+										<option value="30 min">5 min</option>
+										<option value="30 min">15 min</option>
+										<option value="30 min">20 min</option>
+										<option value="30 min">30 min</option>
                                         <option value="1 hr">1 hr</option>
                                         <option value="1 hr 30 min">1 hr 30 min</option>
                                         <option value="2 hr">2 hr</option>

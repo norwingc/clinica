@@ -81,12 +81,13 @@
         (este.val() == 'Si') ? $('.corazon_tamano_no').hide() : $('.corazon_tamano_no').show();
     }
     function claficicaionLiquidoAmniotico(este) {
+		$('.liquido_amniotico_clasificacion').val('')
         if(este.val() == 'Indice de líquido amniótico (ILA)'){
-			$('#clasificacion_liquido_amniotico_ecocardiografia').find("optgroup[label='Indice de líquido amniótico (ILA)']").show()
-			$('#clasificacion_liquido_amniotico_ecocardiografia').find("optgroup[label='Maxima columna vertical (bolisllo único)']").hide();
+			$('.liquido_amniotico_clasificacion').find("optgroup[label='Indice de líquido amniótico (ILA)']").show()
+			$('.liquido_amniotico_clasificacion').find("optgroup[label='Maxima columna vertical (bolsillo único)']").hide();
 	   }else{
-			$('#clasificacion_liquido_amniotico_ecocardiografia').find("optgroup[label='Indice de líquido amniótico (ILA)']").hide()
-			$('#clasificacion_liquido_amniotico_ecocardiografia').find("optgroup[label='Maxima columna vertical (bolisllo único)']").show();
+			$('.liquido_amniotico_clasificacion').find("optgroup[label='Indice de líquido amniótico (ILA)']").hide()
+			$('.liquido_amniotico_clasificacion').find("optgroup[label='Maxima columna vertical (bolsillo único)']").show();
 	   }
     }
     function presenciaQuiste(este) {
