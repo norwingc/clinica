@@ -7,32 +7,32 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cita extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
-    /*
+	/*
      * [$fillable description]
      * @var [type]
      */
-    protected $fillable = [
-        'title', 'start', 'end', 'comentario'
-    ];
+	protected $fillable = [
+		'title', 'start', 'end', 'comentario'
+	];
 
 
-    /**
-     * [consulta description]
-     * @return [type] [description]
-     */
-    public function consulta()
-    {
-        return $this->hasOne('App\Models\Consulta', 'cita_id');
-    }
+	/**
+	 * [consulta description]
+	 * @return [type] [description]
+	 */
+	public function consulta()
+	{
+		return $this->hasOne('App\Models\Consulta', 'cita_id');
+	}
 
-    /**
-     * [getCitasToday description]
-     * @return [type] [description]
-     */
-    public static function getCitasToday()
-    {
-        return self::where('date', date('Y-m-d'));
-    }
+	/**
+	 * [getCitasToday description]
+	 * @return [type] [description]
+	 */
+	public static function getCitasToday()
+	{
+		return self::where('date', date('Y-m-d'));
+	}
 }

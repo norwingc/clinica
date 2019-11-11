@@ -14,7 +14,7 @@ class ComentarioController extends Controller
 	 *
 	 * @return  [type]                   [return description]
 	 */
-    public function get(Comentario $comentario)
+	public function get(Comentario $comentario)
 	{
 		return response()->json([
 			'comentario' => $comentario
@@ -34,7 +34,7 @@ class ComentarioController extends Controller
 		$paciente->comentarios()->save(new Comentario($request->all()));
 
 		session()->flash('message_success', "Comentario agregado");
-        return back();
+		return back();
 	}
 
 	/**
@@ -45,12 +45,12 @@ class ComentarioController extends Controller
 	 *
 	 * @return  [type]                   [return description]
 	 */
-	public function update(Request $request,Comentario $comentario)
+	public function update(Request $request, Comentario $comentario)
 	{
 		$comentario->update($request->all());
 
 		session()->flash('message_success', "Comentario actualizado");
-        return back();
+		return back();
 	}
 
 	/**
@@ -65,6 +65,6 @@ class ComentarioController extends Controller
 		$comentario->delete();
 
 		session()->flash('message_success', "Comentario borrado");
-        return back();
+		return back();
 	}
 }

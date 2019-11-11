@@ -13,16 +13,16 @@ class PacienteOrdenIngreso extends Model
 	 * [$fillable description]
 	 * @var [type]
 	 */
-    protected $fillable = [
+	protected $fillable = [
 		'date', 'hospital', 'sala', 'procedimiento', 'motivo_ingreso', 'diagnostico_ingreso', 'indicaciones',
 	];
 
 	/**
-     * [paciente description]
-     * @return [type] [description]
-     */
-    public function paciente()
-    {
-        return $this->belongsTo('App\Models\Paciente', 'paciente_id');
-    }
+	 * [paciente description]
+	 * @return [type] [description]
+	 */
+	public function paciente()
+	{
+		return $this->belongsTo('App\Models\Paciente', 'paciente_id');
+	}
 }

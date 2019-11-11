@@ -2231,30 +2231,36 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Líquido amniótico</label>
+                                    <label>Evaluacion de líquido amniótico</label>
                                     <div>
-                                        <select name="liquido_amniotico" id="liquido_amniotico_ecocardiografia" class="form-control" onchange="claficicaionLiquidoAmnioticoecocardiografia($(this))">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 liquido_amniotico_anormal" style="display: none">
-                                    <label>Clasificaion Líquido amniótico</label>
-                                    <div>
-                                        <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_ecocardiografia" class="form-control">
-                                            <option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
-                                            <option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-                                            <option value="5 -25 cm Normal">5 -25 cm Normal</option>
-                                            <option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
-                                            <option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_ecocardiografia" class="form-control" onchange="claficicaionLiquidoAmniotico($(this))">
+                                            <option value="Indice de líquido amniótico (ILA)">Indice de líquido amniótico (ILA)</option>
+                                            <option value="Maxima columna vertical (bolisllo único)">Maxima columna vertical (bolisllo único)</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Bolsillo &uacute;nico (cms)</label>
+                                    <label>Clasificaion líquido amniótico</label>
+                                    <div>
+                                        <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_ecocardiografia" class="form-control">
+											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
+												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
+												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
+												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											</optgroup>
+											<optgroup label="Maxima columna vertical (bolisllo único)" style="display:none">
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
+												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
+											</optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Medicion líquido amniótico (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_ecocardiografia" class="form-control">
                                     </div>
@@ -3497,11 +3503,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Líquido amniótico</label>
+									<label>Evaluacion de líquido amniótico</label>
                                     <div>
-                                        <select name="liquido_amniotico" id="liquido_amniotico_neurosonografia" class="form-control"  onchange="claficicaionLiquidoAmnioticoneurosonografia($(this))">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_neurosonografia" class="form-control"  onchange="claficicaionLiquidoAmniotico($(this))">
+											<option value="Indice de líquido amniótico (ILA)">Indice de líquido amniótico (ILA)</option>
+											<option value="Maxima columna vertical (bolisllo único)">Maxima columna vertical (bolisllo único)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -3510,17 +3516,23 @@
                                     <label>Clasificaion Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_neurosonografia" class="form-control" >
-                                            <option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
-                                            <option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-                                            <option value="5 -25 cm Normal">5 -25 cm Normal</option>
-                                            <option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
-                                            <option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
+												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
+												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
+												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											</optgroup>
+											<optgroup label="Maxima columna vertical (bolisllo único)" style="display:none">
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
+												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
+											</optgroup>
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="col-md-3">
-                                    <label>Bolsillo &uacute;nico (cms)</label>
+									<label>Medicion líquido amniótico (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_neurosonografia" class="form-control">
                                     </div>
@@ -5073,11 +5085,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Líquido amniótico</label>
+									<label>Evaluacion de líquido amniótico</label>
                                     <div>
-                                        <select name="liquido_amniotico" id="liquido_amniotico_estructural" class="form-control"  onchange="claficicaionLiquidoAmnioticoEstructural($(this))">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_estructural" class="form-control"  onchange="claficicaionLiquidoAmniotico($(this))">
+											<option value="Indice de líquido amniótico (ILA)">Indice de líquido amniótico (ILA)</option>
+											<option value="Maxima columna vertical (bolisllo único)">Maxima columna vertical (bolisllo único)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -5086,17 +5098,24 @@
                                     <label>Clasificaion Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_estructural" class="form-control" >
-                                            <option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
-                                            <option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-                                            <option value="5 -25 cm Normal">5 -25 cm Normal</option>
-                                            <option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
-                                            <option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
+												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
+												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
+												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											</optgroup>
+											<optgroup label="Maxima columna vertical (bolisllo único)" style="display:none">
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
+												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
+											</optgroup>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Bolsillo &uacute;nico (cms)</label>
+									<label>Medicion líquido amniótico (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_estructural" class="form-control">
                                     </div>
@@ -7632,30 +7651,36 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Líquido amniótico</label>
+									<label>Evaluacion de líquido amniótico</label>
                                     <div>
-                                        <select name="liquido_amniotico" id="liquido_amniotico_doppler" class="form-control"  onchange="claficicaionLiquidoAmnioticodoppler($(this))">
-                                            <option value="Normal">Normal</option>
-                                            <option value="Anormal">Anormal</option>
+                                        <select name="liquido_amniotico" id="liquido_amniotico_doppler" class="form-control"  onchange="claficicaionLiquidoAmniotico($(this))">
+											<option value="Indice de líquido amniótico (ILA)">Indice de líquido amniótico (ILA)</option>
+											<option value="Maxima columna vertical (bolisllo único)">Maxima columna vertical (bolisllo único)</option>
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3 liquido_amniotico_anormal" style="display: none">
+                                <div class="col-md-3 liquido_amniotico_anormal">
                                     <label>Clasificaion Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_doppler" class="form-control" >
-                                            <option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
-                                            <option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-                                            <option value="5 -25 cm Normal">5 -25 cm Normal</option>
-                                            <option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
-                                            <option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
+												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
+												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
+												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
+											</optgroup>
+											<optgroup label="Maxima columna vertical (bolisllo único)" style="display:none">
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
+												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
+											</optgroup>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>Bolsillo &uacute;nico (cms)</label>
+									<label>Medicion líquido amniótico (cms)</label>
                                     <div>
                                        <input type="text" name="valor_ila" id="valor_ila_doppler" class="form-control">
                                     </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Comentario extends Model
 {
 	use SoftDeletes;
-	
+
 	/**
 	 * [$filable description]
 	 *
@@ -17,11 +17,11 @@ class Comentario extends Model
 	protected $fillable = ['comentario'];
 
 	/**
-     * [paciente description]
-     * @return [type] [description]
-     */
-    public function paciente()
-    {
-        return $this->belongsTo('App\Models\Paciente', 'paciente_id');
-    }
+	 * [paciente description]
+	 * @return [type] [description]
+	 */
+	public function paciente()
+	{
+		return $this->belongsTo('App\Models\Paciente', 'paciente_id');
+	}
 }

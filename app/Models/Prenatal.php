@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Prenatal extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
-    /*
+	/*
      * [$fillable description]
      * @var [type]
      */
-    protected $fillable = [
+	protected $fillable = [
 		"referido", "edad", "date", "edad_gestacional", "paridad", "morbilidad", "rh_tipo", "numero", "diagnostico_previo", "presion_arterial_derecho",
 		"presion_arterial_izquierdo", "presion_arterial_media", "signos_vitales_fc", "signos_vitales_fr", "temperatura", "peso_actual", "incremento_peso", "subjetivo",
 		"alteraciones_hermodinamicas", "alteraciones_cardiopulmonar", "pezon_areola", "movimientos_fetales", "fcf_minuto", "actividad_uterina",
@@ -29,11 +29,10 @@ class Prenatal extends Model
 		"fibrinogeno", "acido_urico", "ultrasonido", "ultrasonido_si", "edad_gestional_semanas", "edad_gestional_dias", "ila", "planceta_grado",
 		"doppler_normal", "incremento_peso_materno", "incremento_curva_fetal", "maduracion_pulmonar", "maduracion_pulmonal_semanas", "plan_medico_otro",
 		'examen_laboratorio_otro', "comentarios", "diagnostico", "factores_riesgo", "recordatorio"
-    ];
+	];
 
-    public function consulta()
-    {
-        return $this->belongsTo('App\Models\Consulta', 'consulta_id');
-    }
-
+	public function consulta()
+	{
+		return $this->belongsTo('App\Models\Consulta', 'consulta_id');
+	}
 }

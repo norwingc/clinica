@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\Auth;
 class ResourcesController extends Controller
 {
 
-    /**
-     * [notFoud description]
-     * @return [type] [description]
-     */
-    public function notFoud()
-    {
-       if (Auth::check()) {
-            return view('404', ['message' => 'Pagina no encontrada']);
-        }else{
-            return redirect('login');
-        }
-    }
+	/**
+	 * [notFoud description]
+	 * @return [type] [description]
+	 */
+	public function notFoud()
+	{
+		if (Auth::check()) {
+			return view('404', ['message' => 'Pagina no encontrada']);
+		} else {
+			return redirect('login');
+		}
+	}
 }

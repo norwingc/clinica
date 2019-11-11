@@ -196,6 +196,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="col-sm-6">
+								<label>Comentarios</label>
+								<div>
+									<textarea name="personal_comentarios" class="form-control">{{ $paciente->personal_comentarios }}</textarea>
+								</div>
+							</div>
+						</div>
                         <div class="text-center col-md-12">
                             <button type="submit" class="btn btn-success btn-submit">Actualizar</button>
                         </div>

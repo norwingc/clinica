@@ -76,7 +76,7 @@
 	</div>
 
 	<p>
-		<b>Colposcopiaa</b><br>
+		<b>Colposcopia</b><br>
 		Clasificacion de colposcopia: {{ $colposcopia->clasificacion }}. Descripcion: {{ $colposcopia->descripcion_colposcopia }}.
 	</p>
 

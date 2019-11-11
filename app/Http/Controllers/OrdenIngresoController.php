@@ -14,7 +14,7 @@ class OrdenIngresoController extends Controller
 	 * @param   Paciente  $paciente  [$paciente description]
 	 * @return  [type]               [return description]
 	 */
-    public function store(Request $request, Paciente $paciente)
+	public function store(Request $request, Paciente $paciente)
 	{
 		$orden = $paciente->orden_ingreso()->save(new PacienteOrdenIngreso($request->all()));
 

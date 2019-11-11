@@ -7,31 +7,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Doppler extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
-    /**
-     * [$fillable description]
-     * @var [type]
-    */
-    protected $fillable = [
-        "referido", "edad", "date", "edad_gestacional", "paridad", "morbilidad", "rh_tipo","feto", "revision", "conclusion_embarazo_gestacion", "concluciones", "comentarios", "recomendaciones", "recordatorio"
-    ];
+	/**
+	 * [$fillable description]
+	 * @var [type]
+	 */
+	protected $fillable = [
+		"referido", "edad", "date", "edad_gestacional", "paridad", "morbilidad", "rh_tipo", "feto", "revision", "conclusion_embarazo_gestacion", "concluciones", "comentarios", "recomendaciones", "recordatorio"
+	];
 
-    /**
-     * [consulta description]
-     * @return [type] [description]
-    */
-    public function consulta()
-    {
-        return $this->belongsTo('App\Models\Consulta', 'consulta_id');
-    }
+	/**
+	 * [consulta description]
+	 * @return [type] [description]
+	 */
+	public function consulta()
+	{
+		return $this->belongsTo('App\Models\Consulta', 'consulta_id');
+	}
 
-    /**
-     * [fetos description]
-     * @return [type] [description]
-     */
-    public function fetos()
-    {
-        return $this->hasMany('App\Models\DopplerFeto', 'examen_id');
-    }
+	/**
+	 * [fetos description]
+	 * @return [type] [description]
+	 */
+	public function fetos()
+	{
+		return $this->hasMany('App\Models\DopplerFeto', 'examen_id');
+	}
 }

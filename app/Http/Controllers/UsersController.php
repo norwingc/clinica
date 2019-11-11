@@ -10,45 +10,45 @@ use App\Models\User;
 class UsersController extends Controller
 {
 
-    /**
-     * @return [type]
-     */
-    public function viewLogin()
-    {
-        if(!Auth::check()) {
-            return View('login');
-        }else{
-            return redirect()->route('home');
-        }
-    }
+	/**
+	 * @return [type]
+	 */
+	public function viewLogin()
+	{
+		if (!Auth::check()) {
+			return View('login');
+		} else {
+			return redirect()->route('home');
+		}
+	}
 
-    /**
-     * [login description]
-     * @param  Request $request [description]
-     * @return [type]           [description]
-     */
-    public function login(Request $request)
-    {
-        $userdata = array(
-            'nickname' => $request->nickname,
-            'password' => $request->password,
-        );
+	/**
+	 * [login description]
+	 * @param  Request $request [description]
+	 * @return [type]           [description]
+	 */
+	public function login(Request $request)
+	{
+		$userdata = array(
+			'nickname' => $request->nickname,
+			'password' => $request->password,
+		);
 
-        if (Auth::attempt($userdata, true)){
-            return redirect()->intended('home');
-        }else{
-            session()->flash('message', "Username or Password incorrect");
-            return back();
-        }
-    }
+		if (Auth::attempt($userdata, true)) {
+			return redirect()->intended('home');
+		} else {
+			session()->flash('message', "Username or Password incorrect");
+			return back();
+		}
+	}
 
-    /**
-     * [logout description]
-     * @return [type] [description]
-     */
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/');
-    }
+	/**
+	 * [logout description]
+	 * @return [type] [description]
+	 */
+	public function logout()
+	{
+		Auth::logout();
+		return redirect('/');
+	}
 }
