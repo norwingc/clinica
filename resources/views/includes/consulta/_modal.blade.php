@@ -5919,7 +5919,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="form-group">
+                	<div class="form-group">
                         <div class="col-sm-4">
                             <label>Peso (lb) <small id="peso_kg"></small></label>
                             <div>
@@ -5952,11 +5952,36 @@
                             <div>
                                <input type="text" name="pa_izquierdo" id="pa_izquierdo_1trimestre" class="form-control">
                             </div>
+						</div>
+						<div class="col-md-3">
+                            <label>PAM (Presión arterial media mmhg)</label>
+                            <div>
+                               <input type="text" name="pam" id="pam_1trimestre" class="form-control">
+                            </div>
                         </div>
                         <div class="col-md-3">
                             <label>IP medio de arterias uterinas</label>
                             <div>
                                <input type="text" name="ip_artrias" id="ip_artrias_1trimestre" class="form-control">
+                            </div>
+						</div>
+						<div class="col-md-3">
+                            <label>Notch</label>
+                            <div>
+                                <select name="notch" id="notch_1trimestre" class="form-control" >
+                                    <option value="Unilateral">Unilateral</option>
+									<option value="Bilateral">Bilateral</option>
+									<option value="Ausente">Ausente</option>
+                                </select>
+                            </div>
+						</div>
+						<div class="col-md-3">
+                            <label>RESISTENCIA VASCULAR PERIFERICA</label>
+                            <div>
+                                <select name="resistencia_vascular_periferica" id="resistencia_vascular_periferica_1trimestre" class="form-control" >
+									<option value="Ausente">Ausente</option>
+                                    <option value="Presente">Presente</option>
+                                </select>
                             </div>
                         </div>
                     </div>

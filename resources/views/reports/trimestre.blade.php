@@ -182,7 +182,15 @@
         <b>Antecedentes Maternos:</b> Historia de Madre con Pre eclampsia: {{ $trimestre->historia_preecampsia_mama }}. Historia de Madre con Hipertensión: {{ $trimestre->historia_hipertension_mama }}.
         Historia de hermana con Pre eclampsia: {{ $trimestre->historia_preecampsia_hermana }}. <b>Historia personal de hipertensión</b> Pre eclampsia previa {{ $trimestre->historia_hipertension_personal }}
     </p>
-    <p>Peso actual: {{ $trimestre->peso }}. Talla: {{ $trimestre->talla }}. IMC: {{ $trimestre->imc }}.  Presion arterial brazo derecho: {{ $trimestre->pa_derecho }} mmhg. Presion arterial brazo izquierdo {{ $trimestre->pa_izquierdo }} mmhg. IP medio de arterias uterinas: {{ $trimestre->ip_artrias }}.</p>
+    <p>
+		Peso actual: {{ $trimestre->peso }}. Talla: {{ $trimestre->talla }}. IMC: {{ $trimestre->imc }}.
+		Presion arterial brazo derecho: {{ $trimestre->pa_derecho }} mmhg.
+		Presion arterial brazo izquierdo {{ $trimestre->pa_izquierdo }} mmhg.
+		PAM (Presión arterial media): {{ $trimestre->pam }} mmhg.
+		IP medio de arterias uterinas: {{ $trimestre->ip_artrias }}.
+		Notch: {{ $trimestre->notch }}.
+		RESISTENCIA VASCULAR PERIFERICA: @if($trimestre->resistencia_vascular_periferica == 'Presente') <b>Presente</b> @else Ausente @endif
+	</p>
 
     <p class="sub_titul"><b>Tamizaje De Vasa Previa</b></p>
     <p>Bidimensional: {{ $trimestre->bidimensional }}. Doppler color: {{ $trimestre->doppler_color }}</p>
