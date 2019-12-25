@@ -26,6 +26,11 @@ class Paciente extends Model
 		return $this->hasMany('App\Models\Consulta', 'paciente_id');
 	}
 
+	public function last_consulta()
+	{
+		return $this->hasOne('App\Models\Consulta', 'paciente_id')->latest();
+	}
+
 	public function historia()
 	{
 		return $this->hasOne('App\Models\HistoriaClinica', 'paciente_id');

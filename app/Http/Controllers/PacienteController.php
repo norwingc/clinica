@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cita;
+use App\Models\Consulta;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\HistoriaClinica;
@@ -221,5 +223,34 @@ class PacienteController extends Controller
 	{
 		$pdf = \PDF::loadView('reports.historia', compact('historiaclinica'));
 		return $pdf->stream();
+	}
+
+	/**
+	 * [deleteLastCita description]
+	 * @param   Paciente  $paciente  [$paciente description]
+	 * @return  [type]               [return description]
+	 */
+	public function deleteLastCita(Paciente $paciente)
+	{
+		if($paciente->last_consulta){
+			if($paciente->last_consulta->cita->date == date('Y-m-d')){
+				$id = $paciente->last_consulta->id;
+
+				$consulta = Consulta::find($id);
+				$cita = Cita::find($consulta->cita_id);
+
+				$consulta->delete();
+				$cita->delete();
+
+				session()->flash('message_danger', "Consulta Eliminada");
+				return back();
+			}else{
+				session()->flash('message_danger', "El paciente no tienen consultas agendadas para hoy");
+				return back();
+			}
+		}
+
+		session()->flash('message_danger', "El paciente no tienen Consultas");
+		return back();
 	}
 }

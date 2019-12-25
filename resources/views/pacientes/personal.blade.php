@@ -29,6 +29,7 @@
                     <i class="ion ion-clipboard"></i>
                     <h3 class="box-title">Crear Cita</h3>
                     <div class="box-tools pull-right">
+						<a href="{{ route('paciente.consulta.delete.last', $paciente) }}" class="btn btn-danger">Borrar Cita del dia</a>
                         <button type="button" class="btn btn-info" data-paciente="{{ $paciente->id }}" onclick="addNextCita($(this))">Agregar Proxima Cita</button>
                     </div>
                 </div>

@@ -52,6 +52,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 		Route::name('paciente.image.store')->post('/Image/store/{paciente}', 'PacienteImageController@store');
 		Route::name('paciente.image.delete')->get('/Image/delete/{PacienteImage}', 'PacienteImageController@delete');
+
+		Route::name('paciente.consulta.delete.last')->get('Consultas/deletea/last/{paciente}', 'PacienteController@deleteLastCita');
 	});
 
 	Route::group(['prefix' => 'Consultas'], function () {
