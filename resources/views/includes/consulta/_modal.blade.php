@@ -2239,15 +2239,20 @@
                                         </select>
                                     </div>
                                 </div>
-
+								<div class="col-md-3">
+                                    <label>Medición líquido amniótico (cms)</label>
+                                    <div>
+                                       <input type="text" name="valor_ila" id="valor_ila_ecocardiografia" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
-                                    <label>Clasificación líquido amniótico</label>
+                                    <label>Clasificación Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_ecocardiografia" class="form-control liquido_amniotico_clasificacion">
 											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
 												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
@@ -2259,14 +2264,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label>Medición líquido amniótico (cms)</label>
-                                    <div>
-                                       <input type="text" name="valor_ila" id="valor_ila_ecocardiografia" class="form-control">
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -3511,15 +3509,20 @@
                                         </select>
                                     </div>
                                 </div>
-
+								<div class="col-md-3">
+									<label>Medición líquido amniótico (cms)</label>
+                                    <div>
+                                       <input type="text" name="valor_ila" id="valor_ila_neurosonografia" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
                                     <label>Clasificación Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_neurosonografia" class="form-control liquido_amniotico_clasificacion">
 											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
 												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
@@ -3529,12 +3532,6 @@
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-									<label>Medición líquido amniótico (cms)</label>
-                                    <div>
-                                       <input type="text" name="valor_ila" id="valor_ila_neurosonografia" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -5093,15 +5090,20 @@
                                         </select>
                                     </div>
                                 </div>
-
+								<div class="col-md-3">
+									<label>Medición líquido amniótico (cms)</label>
+                                    <div>
+                                       <input type="text" name="valor_ila" id="valor_ila_estructural" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
                                     <label>Clasificación Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_estructural" class="form-control liquido_amniotico_clasificacion">
 											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
 												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
@@ -5111,13 +5113,6 @@
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-									<label>Medición líquido amniótico (cms)</label>
-                                    <div>
-                                       <input type="text" name="valor_ila" id="valor_ila_estructural" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -7683,15 +7678,21 @@
 											<option value="Maxima columna vertical (bolsillo único)">Maxima columna vertical (bolsillo único)</option>
                                         </select>
                                     </div>
+								</div>
+								<div class="col-md-3">
+									<label>Medición líquido amniótico (cms)</label>
+                                    <div>
+                                       <input type="text" name="valor_ila" id="valor_ila_doppler" class="form-control">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <label>Clasificación Líquido amniótico</label>
                                     <div>
                                         <select name="clasificacion_liquido_amniotico" id="clasificacion_liquido_amniotico_doppler" class="form-control liquido_amniotico_clasificacion">
 											<optgroup label="Indice de líquido amniótico (ILA)">
+												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Menor a 2 cm Oligohidramnios severo">Menor a 2 cm Oligohidramnios severo</option>
 												<option value="Menor a 5 cm Oligohidramnios">Menor a 5 cm Oligohidramnios</option>
-												<option value="5 -25 cm Normal">5 -25 cm Normal</option>
 												<option value="Mayor a 25 cm Polihidramnios">Mayor a 25 cm Polihidramnios</option>
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
@@ -7703,15 +7704,7 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3">
-									<label>Medición líquido amniótico (cms)</label>
-                                    <div>
-                                       <input type="text" name="valor_ila" id="valor_ila_doppler" class="form-control">
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
 
