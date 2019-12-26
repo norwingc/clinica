@@ -2257,8 +2257,8 @@
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
 											<optgroup label="Maxima columna vertical (bolsillo único)" style="display:none">
-												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
@@ -3527,8 +3527,8 @@
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
 											<optgroup label="Maxima columna vertical (bolsillo único)" style="display:none">
-												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
@@ -5108,8 +5108,8 @@
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
 											<optgroup label="Maxima columna vertical (bolsillo único)" style="display:none">
-												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
@@ -7697,8 +7697,8 @@
 												<option value="Mayor a 32 cm Polihidramnios severo">Mayor a 32 cm Polihidramnios severo</option>
 											</optgroup>
 											<optgroup label="Maxima columna vertical (bolsillo único)" style="display:none">
-												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="3 - 10 cm Normal">3 - 10 cm Normal</option>
+												<option value="Menor a 2 cm Oligohidramnios">Menor a 2 cm Oligohidramnios</option>
 												<option value="Mayor a 11 cm Polihidramnios">Mayor a 11 cm Polihidramnios</option>
 											</optgroup>
                                         </select>
