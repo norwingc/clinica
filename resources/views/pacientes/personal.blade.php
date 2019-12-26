@@ -236,6 +236,7 @@
         $('#compania_phone').val("{{ $paciente->compania_phone }}");
         $('#escolaridad').val("{{ $paciente->escolaridad }}");
         $('#tipo_rh').val("{{ $paciente->tipo_rh }}");
+		$('#embarazada').val("{{ $paciente->embarazada }}");
 
         $(document).ready(function(){
 			if($('#embarazada').data('embarazada') == 'Si'){
