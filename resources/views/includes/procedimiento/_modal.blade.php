@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label>procedimiento</label>
+                            <label>Procedimiento</label>
                             <div>
                                 <select class="form-control" name="procedimiento" id="procedimiento_procedimiento" required>
 									<option value="">Seleccione uno</option>
@@ -33,8 +33,15 @@
                                     <option value="Laparoatomia">Laparoatomia</option>
                                     <option value="Histerectomía">Histerectomía</option>
                                     <option value="Cerclaje Cervical">Cerclaje Cervical</option>
-                                    <option value="OTB">OTB</option>
+									<option value="OTB">OTB</option>
+									<option value="Otros">Otros</option>
                                 </select>
+                            </div>
+						</div>
+						<div class="col-md-3" id="otro_procedimiento" style="display:none">
+                            <label>Otro Procedimiento</label>
+                            <div>
+                                <input type="text" name="otro" id="otro_procedimiento" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">

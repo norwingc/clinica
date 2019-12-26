@@ -65,8 +65,7 @@
 	</p>
 
 	<h5 class="sub_titul text-uppercase" style="text-align:left; margin: 2em 0"><b>Motivo de ingreso</b></h5>
-	<p>Ingreso para <b>{{ $orden->motivo_ingreso }}</b>. {{ $orden->procedimiento }}</p>
-
+	<p>Ingreso para <b>{{ $orden->motivo_ingreso }}</b>. @if($orden->procedimiento == 'Otros') {{ $orden->otro }}  @else {{ $orden->procedimiento }} @endif</p>
 
 	<h5 class="sub_titul text-uppercase" style="text-align:left; margin: 2em 0"><b>Sala</b></h5>
 	<p>{{ $orden->sala }}</p>

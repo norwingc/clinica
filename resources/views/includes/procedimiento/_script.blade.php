@@ -1,6 +1,11 @@
 @push('scripts')
 
 <script>
+
+	$('#procedimiento_procedimiento').change(function(event) {
+        ($(this).val() == 'Otros') ? $('#otro_procedimiento').show() : $('#otro_procedimiento').hide();
+    });
+
     function updatePocedimiento(este) {
 
         if(este.data('id') == 'no'){
@@ -22,6 +27,8 @@
 				$('#complicacion_fetal').val(data.fechaprocedimiento.complicacion_fetal);
 				$('#pediatra').val(data.fechaprocedimiento.pediatra);
 				$('#comentario_procedimiento').val(data.fechaprocedimiento.comentario);
+
+				if(data.fechaprocedimiento.procedimiento == 'Otros') $('#otro_procedimiento').show();
 
 				// if(data.fechaprocedimiento.procedimiento == 'Parto Vaginal' || data.fechaprocedimiento.procedimiento == 'Parto por Cesárea'){
 				// 	$('.procedimiento_parto').show();
