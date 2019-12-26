@@ -17,7 +17,7 @@ class Paciente extends Model
      */
 	protected $fillable = [
 		'name', 'id_number', 'phone', 'phone_claro', 'phone_movistar', 'referido', 'referido_paciente', 'email', 'birthday', 'convencional', 'address', 'estado_civil', 'contacto', 'parentesco',
-		'contacto_celular', 'trabajo', 'escolaridad', 'tipo_rh', 'paridad', 'morbilidad', 'ultima_regla', 'personal_comentarios'
+		'contacto_celular', 'trabajo', 'escolaridad', 'tipo_rh', 'paridad', 'morbilidad', 'embarazada', 'ultima_regla', 'personal_comentarios'
 	];
 
 

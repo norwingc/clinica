@@ -184,16 +184,27 @@
                         </div>
 						<div class="form-group">
 							<div class="col-sm-3 ">
-								<label>Fecha de ultima regla</label>
+								<label>Embarazada</label>
 								<div>
-									<input type="date" name="ultima_regla" id="ultima_regla" class="form-control" value="{{ $paciente->ultima_regla }}">
+									<select name="embarazada" class="form-control" id="embarazada" data-embarazada="{{ $paciente->embarazada }}">
+										<option value="No">No</option>
+										<option value="Si">Si</option>
+									</select>
 								</div>
 							</div>
-							<div class="col-sm-3">
-								<label>Edad Gestacional</label>
-								<div>
-									<p id="edad_gestional_view"></p>
-									<textarea name="edad_gestional" id="edad_gestional" class="form-control" style="display: none"></textarea>
+							<div id="embarazada-si" style="display:none">
+								<div class="col-sm-3">
+									<label>Fecha de ultima regla</label>
+									<div>
+										<input type="date" name="ultima_regla" id="ultima_regla" class="form-control" value="{{ $paciente->ultima_regla }}">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<label>Edad Gestacional</label>
+									<div>
+										<p id="edad_gestional_view"></p>
+										<textarea name="edad_gestional" id="edad_gestional" class="form-control" style="display: none"></textarea>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -227,11 +238,21 @@
         $('#tipo_rh').val("{{ $paciente->tipo_rh }}");
 
         $(document).ready(function(){
-            edadGestional($('#ultima_regla').val());
+			if($('#embarazada').data('embarazada') == 'Si'){
+				$('#embarazada-si').show();
+            	edadGestional($('#ultima_regla').val());
+			}else{
+				$('#embarazada-si').hide();
+			}
+
 		})
     </script>
 
 	<script>
+		$('#embarazada').change(function(){
+			($(this).val() == 'Si') ? $('#embarazada-si').show() : $('#embarazada-si').hide()
+		});
+
         $('#ultima_regla').focusout(function() {
             edadGestional($('#ultima_regla').val());
         });
