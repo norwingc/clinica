@@ -86,6 +86,9 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::name('consulta.doppler.store')->post('/Doppler/store/{consulta}', 'ConsultasController@storeDoppler');
 		Route::name('consulta.doppler.delete')->get('/Doppler/delete/{doppler}', 'ConsultasController@deleteDoppler');
 
+		Route::name('consulta.malformacion.store')->post('/MalformacionFetal/store/{consulta}', 'ConsultasController@storeMalformacionFetal');
+		Route::name('consulta.malformacion.delete')->get('/MalformacionFetal/delete/{MalformacionFetal}', 'ConsultasController@deleteMalformacionFetal');
+
 		Route::view('/FechaProcedimiento/show/', 'citas.fecha_procedimiento')->name('fecha.procedimiento.show');
 		Route::name('fecha.procedimiento.api')->get('/FechaProcedimiento/api/', 'ConsultasController@apiFechaProcedimiento');
 		Route::name('fecha.procedimiento.get')->get('/FechaProcedimiento/get/{fechaprocedimiento}', 'ConsultasController@getFechaProcedimiento');
@@ -133,5 +136,6 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::name('report.ginecologica')->get('Ginecologica/{ginecologica}', 'ConsultasController@reportGinecologica');
 		Route::name('report.prenatal')->get('Prenatal/{prenatal}', 'ConsultasController@reportPrenatal');
 		Route::name('report.colposcopia')->get('Colposcopia/{colposcopia}', 'ConsultasController@reportColposcopia');
+		Route::name('report.malformacion')->get('MalformacionFetal/{MalformacionFetal}', 'ConsultasController@reportMalformacion');
 	});
 });

@@ -83,4 +83,9 @@ class Consulta extends Model
 	{
 		return $this->hasOne('App\Models\Colposcopia', 'consulta_id');
 	}
+
+	public function malformacion()
+	{
+		return $this->hasOne('App\Models\MalformacionFetal', 'consulta_id');
+	}
 }

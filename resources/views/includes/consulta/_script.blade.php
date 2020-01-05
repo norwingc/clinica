@@ -254,6 +254,9 @@
 		if(examen == 9){
 			updateComentarios(este);
 		}
+		if(examen == 10){
+			updateMalFormacionFetal(este);
+		}
 
     }
 
@@ -781,6 +784,17 @@
 		}
 
 		$('#modalComentarios').modal('show');
+	}
+
+	function updateMalFormacionFetal(este){
+		let consulta        = este.data('consulta');
+        let title           = 'Malformacion Fetal: ' + este.data('paciente');
+        let ultrasonido = este.data('id');
+		$('.modal-title').html(title);
+
+		$('.consulta-form').attr('action', "{{ url('/') }}/Consultas/MalformacionFetal/store/"+consulta);
+		$('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
+		$('#modalUpdatedMalformacionFetal').modal('show');
 	}
 </script>
 @endpush

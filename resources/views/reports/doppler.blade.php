@@ -242,7 +242,7 @@
         @endphp
     @endforeach
 
-     <p>Revision: {{ $doppler->revision }}</p>
+    <p>Revision: {{ $doppler->revision }}</p>
 
     <p class="sub_titul"><b>Conclusion</b></p>
 

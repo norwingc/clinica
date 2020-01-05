@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaProcedimiento};
+use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaProcedimiento, MalformacionFetal};
 
 use PDF;
 use DataTables;
@@ -546,5 +546,44 @@ class ConsultasController extends Controller
 
 		session()->flash('message_danger', "Fecha de procedimiento eliminada");
 		return back();
+	}
+
+	/**
+	 * [storeMalformacionFetal description]
+	 * @param   Request   $request   [$request description]
+	 * @param   Consulta  $consulta  [$consulta description]
+	 * @return  [type]               [return description]
+	 */
+	public function storeMalformacionFetal(Request $request, Consulta $consulta)
+	{
+		$MalformacionFetal = new MalformacionFetal($request->all());
+		$consulta->malformacion()->save($MalformacionFetal);
+
+		session()->flash('message_success', "Examen Agregado");
+		return back();
+	}
+
+	/**
+	 * [deleteMalformacionFetal description]
+	 * @param   MalformacionFetal  $MalformacionFetal  [$MalformacionFetal description]
+	 * @return  [type]                                 [return description]
+	 */
+	public function deleteMalformacionFetal(MalformacionFetal $MalformacionFetal)
+	{
+		$MalformacionFetal->delete();
+
+		session()->flash('message_success', "Examen Eliminado");
+		return back();
+	}
+
+	/**
+	 * [reportMalformacion description]
+	 * @param   MalformacionFetal  $MalformacionFetal  [$MalformacionFetal description]
+	 * @return  [type]                                 [return description]
+	 */
+	public function reportMalformacion(MalformacionFetal $MalformacionFetal)
+	{
+		$pdf = \PDF::loadView('reports.malformacion', ['malformacion' => $MalformacionFetal]);
+		return $pdf->stream();
 	}
 }

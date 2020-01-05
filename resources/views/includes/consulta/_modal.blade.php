@@ -7712,7 +7712,7 @@
                         <div class="col-md-12 nextChild"></div>
                     </div>
 
-                     <div class="form-group">
+                    <div class="form-group">
                         <div class="col-md-6">
                             <label>Revision</label>
                             <div>
@@ -7797,6 +7797,138 @@
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </div>
 				{{ Form::close() }}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalUpdatedMalformacionFetal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal', 'id' => 'Malformacion']) !!}
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Edad</label>
+                            <div>
+                                <input type="text" name="edad" id="edad_malformacion" class="form-control"  value="{{ $paciente->getAge() }}">
+                            </div>
+                        </div>
+                         <div class="col-md-3">
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" name="date" id="date_malformacion" class="form-control" value="{{ date('d/m/Y h:i a') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Edad Gestacional</label>
+                            <div>
+                                <input type="text" name="edad_gestacional" id="edad_gestacional_malformacion" data-edad="{{ $paciente->ultima_regla  }}" class="form-control edad_gestacional_calculator">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Paridad</label>
+                            <div>
+                                <input type="text" name="paridad" id="paridad_malformacion" class="form-control" value="{{ $paciente->paridad }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Morbilidad</label>
+                            <div>
+                                <input type="text" name="morbilidad" id="morbilidad_malformacion" class="form-control" value="{{ $paciente->morbilidad }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo y RH</label>
+                            <div>
+                                <select class="form-control tipo_rh" name="rh_tipo" id="rh_tipo_malformacion" data-value="{{ $paciente->tipo_rh }}">
+                                    <option value="">Seleccione uno</option>
+                                    <option value="O Positivo">O Positivo</option>
+                                    <option value="A Negativo">A Negativo</option>
+                                    <option value="A Positivo">A Positivo</option>
+                                    <option value="AB Negativo">AB Negativo</option>
+                                    <option value="AB Positivo">AB Positivo</option>
+                                    <option value="B Negativo">B Negativo</option>
+                                    <option value="B Positivo">B Positivo</option>
+                                    <option value="O Negativo">O Negativo</option>
+                                </select>
+                            </div>
+                        </div>
+					</div>
+					<p class="sub_titul"><b>Descripcion Fetal</b></p>
+					<div class="form-group">
+						<div class="col-md-12">
+							<textarea name="descripcion_fetal" id="descripcion_fetal_malformacion" class="form-control" style="height:200px" required></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="col-md-6">
+                            <label>Revision</label>
+                            <div>
+                                <select name="revision" id="revision_malformacion" class="form-control">
+                                    <option value="Adecuada">Adecuada</option>
+                                    <option value="Limitada">Limitada</option>
+                                    <option value="Muy Limitada">Muy Limitada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="sub_titul"><b>Conclusiones</b></p>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Embarazo por fetometría (Semanas)</label>
+                            <div>
+                                <input type="text" name="conclusion_embarazo_gestacion" id="conclusion_embarazo_gestacion_malformacion" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Conclusiones</label>
+                            <div>
+								<textarea name="concluciones" id="concluciones_malformacion" class="form-control" style="height: 100px">1. Curva de crecimiento fetal acorde a edad gestacional y percentil esperado 2. Flujometria Doppler Normal 3. Líquido amniótico y placenta de características normales 4. Perfil Biofísico: 8/8. Evaluación y Pruebas de Bienestar fetal no traducen acidosis o daño fetal en este momento
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Comentarios</label>
+                            <div>
+                                <textarea name="comentarios" id="comentarios_malformacion" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recomendaciones</label>
+                            <div>
+                                <textarea name="recomendaciones" id="recomendaciones_malformacion" class="form-control">Continuar vigilancia y curva de crecimiento en semanas.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_malformacion" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+				{!! Form::close() !!}
 			</div>
 		</div>
 	</div>

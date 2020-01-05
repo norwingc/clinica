@@ -87,3 +87,13 @@
       <a href="{{ route('consulta.colposcopia.delete', $value->colposcopia) }}" class="btn btn-danger">Eliminar examen</a>
   </p>
 @endif
+
+@if($value->malformacion)
+    @if($value->malformacion->recordatorio != null)
+        <p><b class="red">Recordatorio Malformacion Fetal:</b> {{ $value->malformacion->recordatorio }}</p>
+    @endif
+    <p>
+        <a href="{{ route('report.malformacion', $value->malformacion) }}" class="btn btn-info">Descargar reporte Malformacion Fetal</a>
+        <a href="{{ route('consulta.malformacion.delete', $value->malformacion) }}" class="btn btn-danger">Eliminar examen</a>
+    </p>
+@endif

@@ -36,7 +36,8 @@
                         <option value="2">Consulta Ginecologica</option>
                         <option value="3">Curva de crecimiento / Doppler Fetal</option>
                         <option value="4">Ecocardiografia</option>
-                        <option value="5">Neurosonografia</option>
+						<option value="5">Neurosonografia</option>
+						<option value="10">Malformación Fetal</option>
                         <option value="6">Ultrasonido Estructural</option>
                         <option value="7">Ultrasonido I Trimestre</option>
                         <option value="8">Ultrasonido Pelvico</option>

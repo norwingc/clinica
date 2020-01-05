@@ -131,7 +131,7 @@
                                             <option value="Consulta medica por primera vez">Consulta medica por primera vez</option>
                                             <option value="Curva de crecimiento">Curva de crecimiento</option>
                                             <option value="Doppler Fetal">Doppler Fetal</option>
-                                            <option value="Ecocardiografia">Ecocardiografia</option>
+											<option value="Ecocardiografia">Ecocardiografia</option>
                                             <option value="Neurosonografia">Neurosonografia</option>
                                             <option value="Toma de Exámenes / Perfil Vaginal">Toma de Exámenes / Perfil Vaginal</option>
                                             <option value="Ultrasonido Estructural">Ultrasonido Estructural</option>
