@@ -6341,9 +6341,9 @@
                             </div>
 
                             <div class="col-md-3 dispositivo_intrauterino_cual" style="display:none">
-                                <label>Cual Dispositivo</label>
+                                <label>Descripcion</label>
                                 <div>
-                                    <input type="text" name="dispositivo_intrauterino" id="dispositivo_intrauterino_pelvico" class="form-control">
+									<textarea name="dispositivo_intrauterino" id="dispositivo_intrauterino_pelvico" class="form-control"></textarea>
                                 </div>
                             </div>
 

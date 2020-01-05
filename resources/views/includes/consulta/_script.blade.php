@@ -41,14 +41,11 @@
     });
 
     $('#cavidad_endometrial_ocupada_pelvico').change(function(){
-        if($(this).val() == 'Dispositivo intrauterino'){
+        if($(this).val() == 'Dispositivo intrauterino' || $(this).val() == 'Probable pólipo' || $(this).val() == 'Restos ovulares'){
             $('.dispositivo_intrauterino_cual').show();
             $('.cavidad_endometrial_embarazo').hide();
         }else if ($(this).val() == 'Embarazo') {
             $('.cavidad_endometrial_embarazo').show();
-            $('.dispositivo_intrauterino_cual').hide();
-        }else{
-            $('.cavidad_endometrial_embarazo').hide();
             $('.dispositivo_intrauterino_cual').hide();
         }
     })

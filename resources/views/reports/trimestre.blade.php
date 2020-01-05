@@ -188,7 +188,7 @@
 		Presion arterial brazo izquierdo {{ $trimestre->pa_izquierdo }} mmhg.
 		PAM (Presión arterial media): {{ $trimestre->pam }} mmhg.
 		IP medio de arterias uterinas: {{ $trimestre->ip_artrias }}.
-		Notch: {{ $trimestre->notch }}.
+		Notch: <b>{{ $trimestre->notch }}.</b>
 		RESISTENCIA VASCULAR PERIFERICA: @if($trimestre->resistencia_vascular_periferica == 'Presente') <b>Presente</b> @else Ausente @endif
 	</p>
 

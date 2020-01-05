@@ -79,14 +79,14 @@
             @if($pelvico->endometrio != '') Endometrio (mm): {{ $pelvico->endometrio }}. Modo: {{ $pelvico->endometrio_modo }}.@endif
             Cavidad endometrial ocupada: {{ $pelvico->cavidad_endometrial }}.
             @if($pelvico->cavidad_endometrial == 'Si')
-                @if($pelvico->cavidad_endometrial_ocupada == 'Dispositivo intrauterino')
-                    Dispositivo Intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
+                @if($pelvico->cavidad_endometrial_ocupada == 'Embarazo')
+					Saco gestacional: {{ $pelvico->saco_gestional }}.
+					Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
+					Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
+					Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
+					Edad gestacional: {{ $pelvico->edad_gestacional_embarazo }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
                 @else
-                    Saco gestacional: {{ $pelvico->saco_gestional }}.
-                    Saco gestacional Bordes: {{ $pelvico->saco_gestional_bordes }}. Ubicacion: {{ $pelvico->saco_gestional_ubicacion }}.
-                    Reaccion coridodecidual: {{ $pelvico->reaccion_coridodecidual }}. Presencia de vesicula vitelina: {{ $pelvico->presencia_vesicula }}.
-                    Presencia de yema embrionaria: {{ $pelvico->presencia_yema }}. Vitalidad: {{ $pelvico->vitalidad }}. Longitud craneo cauda (mm): {{ $pelvico->longitud_craneo }}.
-                    Edad gestacional: {{ $pelvico->edad_gestacional_embarazo }}. Fecha estimada de parto: {{ date('d/m/Y', strtotime($pelvico->fecha_parto)) }}.
+					Dispositivo Intrauterino: {{ $pelvico->dispositivo_intrauterino }}.
                 @endif
             @endif
         </p>

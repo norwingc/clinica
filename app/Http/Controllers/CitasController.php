@@ -88,11 +88,13 @@ class CitasController extends Controller
 		$start = date('Y-m-d H:i:s', strtotime($start));
 		$end   = null;
 
-		if ($request->duracion == '5min') {
+		if ($request->duracion == '5 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(5);
-		} else if ($request->duracion == '15min') {
+		} else if ($request->duracion == '10 min') {
+			$end = \Carbon\Carbon::parse($start)->addMinutes(10);
+		} else if ($request->duracion == '15 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(15);
-		} else if ($request->duracion == '20min') {
+		} else if ($request->duracion == '20 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(20);
 		} else if ($request->duracion == '30 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(30);
