@@ -37,6 +37,7 @@
 			"pam"                       		 : $(form).find('#pam_1trimestre').val(),
             "ip_artrias"                         : $(form).find('#ip_artrias_1trimestre').val(),
 			"notch"                         	 : $(form).find('#notch_1trimestre').val(),
+			"resistencia_vascular_periferica"    : $(form).find('#resistencia_vascular_periferica_1trimestre').val(),
             "bidimensional"                      : $(form).find('#bidimensional_1trimestre').val(),
             "doppler_color"                      : $(form).find('#doppler_color_1trimestre').val(),
             "conclusion_lcc"                     : $(form).find('#conclusion_lcc_1trimestre').val(),
