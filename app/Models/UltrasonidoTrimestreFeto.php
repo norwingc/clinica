@@ -22,7 +22,8 @@ class UltrasonidoTrimestreFeto extends Model
 		"dilatacion_intra_abdominal", "medicion_intra_abdominal", "dilatacion_extra_abdominal", "medicion_extra_abdominal", "sospecha_peritonitis", "camara_gastrica", "vejiga_urinaria",
 		"vejiga", "extremidades_superiores", "extremidades_superiores_integras", "extremidades_superiores_afectada", "extremidades_inferiores", "extremidades_inferiores_integras",
 		"extremidades_inferiores_afectada", "placenta_numero", "placenta_posocion", "fusion_membranas", "placenta_grado", "longitud_cervix",  "funneling", "porcentaje_funneling",
-		"sludge", "liquido_amniotico", "basal", "edad_tn", "edad_tn_marcadores"
+		"sludge", "liquido_amniotico", "basal", "edad_tn", "edad_tn_marcadores",
+		"ducto_venoso", "regurgitacion_tricuspidea"
 	];
 
 	/**

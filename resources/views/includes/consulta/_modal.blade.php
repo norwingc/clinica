@@ -5652,8 +5652,29 @@
                                     <div>
                                         <input type="number" name="somatometria_tn" id="somatometria_tn_1trimestre" class="form-control">
                                     </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Ducto Venoso</label>
+                                    <div>
+                                        <select name="ducto_venoso" id="ducto_venoso_1trimestre" class="form-control" >
+                                            <option value="Onda A presente">Onda A presente</option>
+											<option value="Onda A reversa">Onda A reversa</option>
+											<option value="No valorable">No valorable</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Regurgitación Tricuspídea</label>
+                                    <div>
+                                        <select name="regurgitacion_tricuspidea" id="regurgitacion_tricuspidea_1trimestre" class="form-control">
+											<option value="Ausente">Ausente</option>
+                                            <option value="Presente">Presente</option>
+											<option value="No valorable">No valorable</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                 <div class="col-md-3">
+
+                                <div class="col-md-3">
                                     <label>Fecha estimada de parto</label>
                                     <div>
                                         <input type="date" name="somatometria_fecha_estimada_parto" id="somatometria_fecha_estimada_parto_1trimestre" class="form-control">
