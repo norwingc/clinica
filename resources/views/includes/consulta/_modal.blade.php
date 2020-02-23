@@ -3715,7 +3715,100 @@
                             </div>
                         </div>
                     </div>
-                    <p class="sub_titul"><b>Ultrasonido Morfologico De II Trimestre</b></p>
+					<p class="sub_titul"><b>Ultrasonido Morfologico De II Trimestre</b></p>
+
+					<div class="form-group">
+						<div class="col-md-3">
+							<label>Anomalías familiares</label>
+							<div>
+								<select name="anomalias_familiares" id="anomalias_familiares_estructural" class="form-control" data-target="anomalias_familiares_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 anomalias_familiares_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="anomalias_familiares_descripcion" id="anomalias_familiares_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Trastorno de desarrollo intelectual</label>
+							<div>
+								<select name="transtorno_desarrollo_intelectual" id="transtorno_desarrollo_intelectual_estructural" class="form-control" data-target="transtorno_desarrollo_intelectual_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 transtorno_desarrollo_intelectual_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="transtorno_desarrollo_intelectual_descripcion" id="transtorno_desarrollo_intelectual_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Enfermedad genética</label>
+							<div>
+								<select name="enfermdad_genetica" id="enfermdad_genetica_estructural" class="form-control" data-target="enfermdad_genetica_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 enfermdad_genetica_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="enfermdad_genetica_descripcion" id="enfermdad_genetica_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Pérdida gestacional recurrente</label>
+							<div>
+								<select name="perdida_gestacional_recurrente" id="perdida_gestacional_recurrente_estructural" class="form-control" data-target="perdida_gestacional_recurrente_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 perdida_gestacional_recurrente_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="perdida_gestacional_recurrente_descripcion" id="perdida_gestacional_recurrente_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Infertilidad</label>
+							<div>
+								<select name="infertilidad" id="infertilidad_estructural" class="form-control" data-target="infertilidad_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 infertilidad_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="infertilidad_descripcion" id="infertilidad_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Consanguinidad</label>
+							<div>
+								<select name="consanguinidad" id="consanguinidad_estructural" class="form-control" data-target="consanguinidad_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 consanguinidad_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="consanguinidad_descripcion" id="consanguinidad_descripcion_estructural" class="form-control">
+							</div>
+						</div>
+					</div>
                     <div class="form-group">
                        <div class="col-md-3">
                            <label>Feto</label>
@@ -5361,7 +5454,99 @@
                             </div>
                         </div>
                     </div>
-                    <p class="sub_titul"><b>Ultrasonido De I Trimestre</b></p>
+					<p class="sub_titul"><b>Ultrasonido De I Trimestre</b></p>
+					<div class="form-group">
+						<div class="col-md-3">
+							<label>Anomalías familiares</label>
+							<div>
+								<select name="anomalias_familiares" id="anomalias_familiares_1trimestre" class="form-control" data-target="anomalias_familiares_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 anomalias_familiares_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="anomalias_familiares_descripcion" id="anomalias_familiares_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Trastorno de desarrollo intelectual</label>
+							<div>
+								<select name="transtorno_desarrollo_intelectual" id="transtorno_desarrollo_intelectual_1trimestre" class="form-control" data-target="transtorno_desarrollo_intelectual_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 transtorno_desarrollo_intelectual_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="transtorno_desarrollo_intelectual_descripcion" id="transtorno_desarrollo_intelectual_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Enfermedad genética</label>
+							<div>
+								<select name="enfermdad_genetica" id="enfermdad_genetica_1trimestre" class="form-control" data-target="enfermdad_genetica_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 enfermdad_genetica_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="enfermdad_genetica_descripcion" id="enfermdad_genetica_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Pérdida gestacional recurrente</label>
+							<div>
+								<select name="perdida_gestacional_recurrente" id="perdida_gestacional_recurrente_1trimestre" class="form-control" data-target="perdida_gestacional_recurrente_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 perdida_gestacional_recurrente_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="perdida_gestacional_recurrente_descripcion" id="perdida_gestacional_recurrente_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Infertilidad</label>
+							<div>
+								<select name="infertilidad" id="infertilidad_1trimestre" class="form-control" data-target="infertilidad_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 infertilidad_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="infertilidad_descripcion" id="infertilidad_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label>Consanguinidad</label>
+							<div>
+								<select name="consanguinidad" id="consanguinidad_1trimestre" class="form-control" data-target="consanguinidad_si" onchange="selectShow($(this))" required>
+									<option value="No">No</option>
+									<option value="Si">Si</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3 consanguinidad_si" style="display:none">
+							<label>Descripcion</label>
+							<div>
+								<input type="text" name="consanguinidad_descripcion" id="consanguinidad_descripcion_1trimestre" class="form-control">
+							</div>
+						</div>
+					</div>
                     <p><b>Se realizó estudio ultrasonográfico en tiempo real encontrando:</b></p>
                     <div class="form-group">
                        <div class="col-md-3">

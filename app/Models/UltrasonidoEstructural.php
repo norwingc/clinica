@@ -15,7 +15,11 @@ class UltrasonidoEstructural extends Model
 	 */
 	protected $fillable = [
 		"referido", "edad", "date", "edad_gestacional", "paridad", "morbilidad", "rh_tipo", "feto", "revision", "conclusion_riesgo_parto_pretermino", "conclusion_riesgo_preeclampsia", "conclusion_riesgo_hipertension",
-		"conclusion_riesgo_restriccion_crecimiento", "conclusion_embarazo_fetometria", "concluciones", "comentarios", "recomendaciones", "recordatorio"
+		"conclusion_riesgo_restriccion_crecimiento", "conclusion_embarazo_fetometria", "concluciones", "comentarios", "recomendaciones", "recordatorio",
+
+		"anomalias_familiares", "anomalias_familiares_descripcion", "transtorno_desarrollo_intelectual", "transtorno_desarrollo_intelectual_descripcion",
+		"enfermdad_genetica", "enfermdad_genetica_descripcion", "perdida_gestacional_recurrente", "perdida_gestacional_recurrente_descripcion",
+		"infertilidad", "infertilidad_descripcion", "consanguinidad", "consanguinidad_descripcion"
 	];
 
 	/**

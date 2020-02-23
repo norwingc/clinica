@@ -61,6 +61,15 @@
 
     <p class="sub_titul">ULTRASONIDO ESTRUCTURAL DE I TRIMESTRE</p>
 
+	<p>
+		Anomalías familiares: {{ $trimestre->anomalias_familiares }}. @if( $trimestre->anomalias_familiares == 'Si') Descripcion: {{ $trimestre->anomalias_familiares_descripcion }}.  @endif
+		Trastorno de desarrollo intelectual: {{ $trimestre->transtorno_desarrollo_intelectual }}. @if( $trimestre->transtorno_desarrollo_intelectual == 'Si') Descripcion: {{ $trimestre->transtorno_desarrollo_intelectual_descripcion }}.  @endif
+		Enfermedad genética: {{ $trimestre->enfermdad_genetica }}. @if( $trimestre->enfermdad_genetica == 'Si') Descripcion: {{ $trimestre->enfermdad_genetica_descripcion }}.  @endif
+		Pérdida gestacional recurrente: {{ $trimestre->perdida_gestacional_recurrente }}. @if( $trimestre->perdida_gestacional_recurrente == 'Si') Descripcion: {{ $trimestre->perdida_gestacional_recurrente_descripcion }}.  @endif
+		Infertilidad: {{ $trimestre->infertilidad }}. @if( $trimestre->infertilidad == 'Si') Descripcion: {{ $trimestre->infertilidad_descripcion }}.  @endif
+		Consanguinidad: {{ $trimestre->consanguinidad }}. @if( $trimestre->consanguinidad == 'Si') Descripcion: {{ $trimestre->consanguinidad_descripcion }}.  @endif
+	</p>
+
     <p>
         <b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b>
         Fetos: @if($trimestre->feto == 1) Unico @elseif($trimestre->feto == 2) Gemelo @else {{ $trimestre->fetos->count() }} @endif

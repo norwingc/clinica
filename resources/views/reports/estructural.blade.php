@@ -61,6 +61,15 @@
 
     <p class="sub_titul"><b>ULTRASONIDO MORFOLOGICO DE II TRIMESTRE</b></p>
 
+	<p>
+		Anomalías familiares: {{ $estructural->anomalias_familiares }}. @if( $estructural->anomalias_familiares == 'Si') Descripcion: {{ $estructural->anomalias_familiares_descripcion }}.  @endif
+		Trastorno de desarrollo intelectual: {{ $estructural->transtorno_desarrollo_intelectual }}. @if( $estructural->transtorno_desarrollo_intelectual == 'Si') Descripcion: {{ $estructural->transtorno_desarrollo_intelectual_descripcion }}.  @endif
+		Enfermedad genética: {{ $estructural->enfermdad_genetica }}. @if( $estructural->enfermdad_genetica == 'Si') Descripcion: {{ $estructural->enfermdad_genetica_descripcion }}.  @endif
+		Pérdida gestacional recurrente: {{ $estructural->perdida_gestacional_recurrente }}. @if( $estructural->perdida_gestacional_recurrente == 'Si') Descripcion: {{ $estructural->perdida_gestacional_recurrente_descripcion }}.  @endif
+		Infertilidad: {{ $estructural->infertilidad }}. @if( $estructural->infertilidad == 'Si') Descripcion: {{ $estructural->infertilidad_descripcion }}.  @endif
+		Consanguinidad: {{ $estructural->consanguinidad }}. @if( $estructural->consanguinidad == 'Si') Descripcion: {{ $estructural->consanguinidad_descripcion }}.  @endif
+	</p>
+
     <p><b>Se realizó estudio ultrasonográfico en tiempo real, observando:</b> Fetos: @if($estructural->feto == 1) Unico @elseif($estructural->feto == 2) Gemelo @else {{ $estructural->fetos->count() }} @endif</p>
 
     @php
