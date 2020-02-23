@@ -52,14 +52,6 @@
 								<br>
 							@endforeach
 						</p>
-						{!! Form::open(['route' => ['paciente.image.store', $paciente], 'class' => 'form-inline', 'files' => 'true']) !!}
-							<label>Agregar Imagen</label>
-							<input type="file" name="image" accept="image/*" class="form-control">
-							<button type="submit" class="btn btn-success">Agregar</button>
-						{!! Form::close() !!}
-						@if($paciente->images->count() > 0)
-							<button class="btn btn-primary" onclick="$('#modalPacienteImage').modal('show')">Ver Imagenes</button>
-						@endif
                     </div>
 				</div>
 
@@ -168,6 +160,6 @@
 
 @include('includes.procedimiento._modal')
 @include('includes.procedimiento._script')
-@include('pacientes._modalImage')
+
 
 @endsection

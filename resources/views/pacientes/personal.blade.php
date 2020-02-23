@@ -219,15 +219,33 @@
                         <div class="text-center col-md-12">
                             <button type="submit" class="btn btn-success btn-submit">Actualizar</button>
                         </div>
-                    {!! Form::close() !!}
+					{!! Form::close() !!}
                 </div>
-            </div>
+			</div>
+			<div class="box box-info">
+                <div class="box-header with-border">
+                    <i class="ion ion-clipboard"></i>
+                    <h3 class="box-title">Imagenes</h3>
+                </div>
+                <div class="box-body">
+					{!! Form::open(['route' => ['paciente.image.store', $paciente], 'class' => 'form-inline', 'files' => 'true']) !!}
+						<label>Agregar Imagen</label>
+						<input type="file" name="image" accept="image/*" class="form-control" required>
+						<button type="submit" class="btn btn-success">Agregar</button>
+					{!! Form::close() !!}
+					@if($paciente->images->count() > 0)
+						<button class="btn btn-primary" onclick="$('#modalPacienteImage').modal('show')" style="margin-top: 2em">Ver Imagenes</button>
+					@endif
+				</div>
+			</div>
         </div>
     </div>
 </section>
 
 @include('includes.citas._modal')
 @include('includes.citas._script')
+
+@include('pacientes._modalImage')
 
 @endsection
 
