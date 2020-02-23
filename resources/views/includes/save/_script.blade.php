@@ -291,7 +291,10 @@
                 "longitud_cervix"                   : $(child).find('#longitud_cervix_1trimestre').val(),
                 "funneling"                         : $(child).find('#funneling_1trimestre').val(),
                 "porcentaje_funneling"              : $(child).find('#porcentaje_funneling_1trimestre').val(),
-                "sludge"                            : $(child).find('#sludge_1trimestre').val(),
+				"sludge"                            : $(child).find('#sludge_1trimestre').val(),
+				"elastografia" 						: $(child).find('#elastografia_1trimestre').val(),
+				"consistencia_cervical" 			: $(child).find('#consistencia_cervical_1trimestre').val(),
+				"cervix_prueba_funcional"			: $(child).find('#cervix_prueba_funcional_1trimestre').val(),
                 "liquido_amniotico"                 : $(child).find('#liquido_amniotico_1trimestre').val(),
                 "basal"                             : $(child).find('#basal_1trimestre').val(),
                 "edad_tn"                           : $(child).find('#edad_tn_1trimestre').val(),
@@ -452,7 +455,10 @@
                 "longitud_cervix"                    : $(child).find('#longitud_cervix_estructural').val(),
                 "funneling"                          : $(child).find('#funneling_estructural').val(),
                 "porcentaje_funneling"               : $(child).find('#porcentaje_funneling_estructural').val(),
-                "sludge"                             : $(child).find('#sludge_estructural').val(),
+				"sludge"                             : $(child).find('#sludge_estructural').val(),
+				"elastografia" 						: $(child).find('#elastografia_estructural').val(),
+				"consistencia_cervical" 			: $(child).find('#consistencia_cervical_estructural').val(),
+				"cervix_prueba_funcional"			: $(child).find('#cervix_prueba_funcional_estructural').val(),
                 "liquido_amniotico"                  : $(child).find('#liquido_amniotico_estructural').val(),
                 "clasificacion_liquido_amniotico"    : $(child).find('#clasificacion_liquido_amniotico_estructural').val(),
                 "valor_ila"                          : $(child).find('#valor_ila_estructural').val()
@@ -579,7 +585,10 @@
                 "longitud_cervix"                       : $(child).find('#longitud_cervix_neurosonografia').val(),
                 "funneling"                             : $(child).find('#funneling_neurosonografia').val(),
                 "porcentaje_funneling"                  : $(child).find('#porcentaje_funneling_neurosonografia').val(),
-                "sludge"                                : $(child).find('#sludge_neurosonografia').val(),
+				"sludge"                                : $(child).find('#sludge_neurosonografia').val(),
+				"elastografia" 							: $(child).find('#elastografia_neurosonografia').val(),
+				"consistencia_cervical" 				: $(child).find('#consistencia_cervical_neurosonografia').val(),
+				"cervix_prueba_funcional"				: $(child).find('#cervix_prueba_funcional_neurosonografia').val(),
                 "liquido_amniotico"                     : $(child).find('#liquido_amniotico_neurosonografia').val(),
                 "clasificacion_liquido_amniotico"       : $(child).find('#clasificacion_liquido_amniotico_neurosonografia').val(),
                 "valor_ila"                             : $(child).find('#valor_ila_neurosonografia').val()
@@ -680,7 +689,10 @@
                 "longitud_cervix"                    : $(child).find('#longitud_cervix_ecocardiografia').val(),
                 "funneling"                          : $(child).find('#funneling_ecocardiografia').val(),
                 "porcentaje_funneling"               : $(child).find('#porcentaje_funneling_ecocardiografia').val(),
-                "sludge"                             : $(child).find('#sludge_ecocardiografia').val(),
+				"sludge"                             : $(child).find('#sludge_ecocardiografia').val(),
+				"elastografia" 						 : $(child).find('#elastografia_ecocardiografia').val(),
+				"consistencia_cervical" 			 : $(child).find('#consistencia_cervical_ecocardiografia').val(),
+				"cervix_prueba_funcional"			 : $(child).find('#cervix_prueba_funcional_ecocardiografia').val(),
                 "liquido_amniotico"                  : $(child).find('#liquido_amniotico_ecocardiografia').val(),
                 "clasificacion_liquido_amniotico"    : $(child).find('#clasificacion_liquido_amniotico_ecocardiografia').val(),
                 "valor_ila"                          : $(child).find('#valor_ila_ecocardiografia').val()
@@ -756,16 +768,16 @@
                 "longitud_cervix"                    : $(child).find('#longitud_cervix_doppler').val(),
                 "funneling"                          : $(child).find('#funneling_doppler').val(),
                 "porcentaje_funneling"               : $(child).find('#porcentaje_funneling_doppler').val(),
-                "sludge"                             : $(child).find('#sludge_doppler').val(),
+				"sludge"                             : $(child).find('#sludge_doppler').val(),
+				"elastografia" 						 : $(child).find('#elastografia_doppler').val(),
+				"consistencia_cervical" 			 : $(child).find('#consistencia_cervical_doppler').val(),
+				"cervix_prueba_funcional"			 : $(child).find('#cervix_prueba_funcional_doppler').val(),
                 "liquido_amniotico"                  : $(child).find('#liquido_amniotico_doppler').val(),
                 "clasificacion_liquido_amniotico"    : $(child).find('#clasificacion_liquido_amniotico_doppler').val(),
                 "valor_ila"                          : $(child).find('#valor_ila_doppler').val()
-
             });
         }
     }
-
-
 </script>
 
 @endpush

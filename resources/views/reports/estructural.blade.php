@@ -309,7 +309,9 @@
         <p>
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Grado: {{ $value->placenta_grado }}. Presencia de calcificaciones probablemente patológicas: {{ $value->presencia_patologicas }}.
             Áreas de infartos placentarios: {{ $value->areas_infarto }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm. Funneling: {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}. @endif
-            Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}. @if($value->liquido_amniotico != 'Normal') Clasificacion: {{ $value->clasificacion_liquido_amniotico }}. @endif
+			Sludge: {{ $value->sludge }}. Elastografia: {{ $value->elastografia }}. Consistencia cervical {{ $value->consistencia_cervical }}%. Cervix prueba funcional {{ $value->cervix_prueba_funcional }}.
+			Líquido amniótico: {{ $value->liquido_amniotico }}. @if($value->liquido_amniotico != 'Normal')
+			Clasificacion: {{ $value->clasificacion_liquido_amniotico }}. @endif
             Valor de ILA: {{ $value->valor_ila }} cms.
         </p>
 

@@ -142,7 +142,9 @@
         </p>
         <p>
             <b>Placenta:</b>  Numero: {{ $value->placenta_numero }}. Posicion: {{ $value->placenta_posocion }}. Fusion de membranas: {{ $value->fusion_membranas }}. Grado: {{ $value->placenta_grado }}. Longitud de cérvix: {{ $value->longitud_cervix }}mm.
-            Funneling:  {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}.@endif Sludge: {{ $value->sludge }}. Líquido amniótico: {{ $value->liquido_amniotico }}
+			Funneling:  {{ $value->funneling }}. @if($value->funneling == 'Positivo') Porcentaje: {{ $value->porcentaje_funneling }}.@endif
+			Sludge: {{ $value->sludge }}. Elastografia: {{ $value->elastografia }}. Consistencia cervical {{ $value->consistencia_cervical }}%. Cervix prueba funcional {{ $value->cervix_prueba_funcional }}.
+			Líquido amniótico: {{ $value->liquido_amniotico }}
         </p>
 
         <p class="sub_titul"><b>II TAMIZAJE PARA EL ASESORAMIENTO CLÍNICO DE RIESGO DE CROMOSOMOPATÍA</b></p>

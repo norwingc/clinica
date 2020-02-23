@@ -31,7 +31,7 @@ class UltrasonidoEstructuralFeto extends Model
 		"rinon_izquierdo_tanano", "pelvis_izquierdo", "hidronefosis_izquierdo", "grado_izquierdo", "glandulas_suprarrenales_izquierdo", "vejiga_urinaria_insitu",
 		"engrosamiento_pared", "extremidades_superiores", "extremidades_superiores_integras", "extremidades_superiores_afectada", "extremidades_inferiores", "extremidades_inferiores_integras",
 		"extremidades_inferiores_afectada", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto", "longitud_cervix", "funneling",
-		"porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila"
+		"porcentaje_funneling", "sludge", "elastografia", "consistencia_cervical", "cervix_prueba_funcional", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila"
 	];
 
 	/**

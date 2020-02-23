@@ -2229,7 +2229,31 @@
                                             <option value="Positivo">Positivo</option>
                                         </select>
                                     </div>
-                                </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Elastografia</label>
+                                    <div>
+                                        <select name="elastografia" id="elastografia_ecocardiografia" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Consistencia cervical (%)</label>
+                                    <div>
+										<input type="text" name="consistencia_cervical" id="consistencia_cervical_ecocardiografia" class="form-control">
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Cervix prueba funcional</label>
+                                    <div>
+                                        <select name="cervix_prueba_funcional" id="cervix_prueba_funcional_ecocardiografia" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
                                 <div class="col-md-3">
                                     <label>Evaluacion de líquido amniótico</label>
                                     <div>
@@ -3499,7 +3523,31 @@
                                             <option value="Positivo">Positivo</option>
                                         </select>
                                     </div>
-                                </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Elastografia</label>
+                                    <div>
+                                        <select name="elastografia" id="elastografia_neurosonografia" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Consistencia cervical (%)</label>
+                                    <div>
+										<input type="text" name="consistencia_cervical" id="consistencia_cervical_neurosonografia" class="form-control">
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Cervix prueba funcional</label>
+                                    <div>
+                                        <select name="cervix_prueba_funcional" id="cervix_prueba_funcional_neurosonografia" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
                                 <div class="col-md-3">
 									<label>Evaluacion de líquido amniótico</label>
                                     <div>
@@ -5080,7 +5128,31 @@
                                             <option value="Positivo">Positivo</option>
                                         </select>
                                     </div>
-                                </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Elastografia</label>
+                                    <div>
+                                        <select name="elastografia" id="elastografia_estructural" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Consistencia cervical (%)</label>
+                                    <div>
+										<input type="text" name="consistencia_cervical" id="consistencia_cervical_estructural" class="form-control">
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Cervix prueba funcional</label>
+                                    <div>
+                                        <select name="cervix_prueba_funcional" id="cervix_prueba_funcional_estructural" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
                                 <div class="col-md-3">
 									<label>Evaluacion de líquido amniótico</label>
                                     <div>
@@ -5833,7 +5905,31 @@
                                             <option value="Positivo">Positivo</option>
                                         </select>
                                     </div>
-                                </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Elastografia</label>
+                                    <div>
+                                        <select name="elastografia" id="elastografia_1trimestre" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Consistencia cervical (%)</label>
+                                    <div>
+										<input type="text" name="consistencia_cervical" id="consistencia_cervical_1trimestre" class="form-control">
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Cervix prueba funcional</label>
+                                    <div>
+                                        <select name="cervix_prueba_funcional" id="cervix_prueba_funcional_1trimestre" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
                                 <div class="col-md-3">
                                     <label>Líquido amniótico</label>
                                     <div>
@@ -7669,7 +7765,31 @@
                                             <option value="Positivo">Positivo</option>
                                         </select>
                                     </div>
-                                </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Elastografia</label>
+                                    <div>
+                                        <select name="elastografia" id="elastografia_doppler" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Consistencia cervical (%)</label>
+                                    <div>
+										<input type="text" name="consistencia_cervical" id="consistencia_cervical_doppler" class="form-control">
+                                    </div>
+								</div>
+								<div class="col-md-3">
+                                    <label>Cervix prueba funcional</label>
+                                    <div>
+                                        <select name="cervix_prueba_funcional" id="cervix_prueba_funcional_doppler" class="form-control">
+                                            <option value="Negativo">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                        </select>
+                                    </div>
+								</div>
                                 <div class="col-md-3">
 									<label>Evaluacion de líquido amniótico</label>
                                     <div>

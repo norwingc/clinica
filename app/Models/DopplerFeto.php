@@ -23,7 +23,8 @@ class DopplerFeto extends Model
 		"movimiento_corporales", "liquido_amoniotico", "integridad_cardiaca", "examen_nst", "analisis_nst", "datos_nst", "examen_maduracion", "indice_maduracion_torax",
 		"indice_maduracion_basal", "indice_maduracion_pulmonar", "riesgo_distres", "examen_oportunidad", "parto_espontaneo", "cesarea_espontaneo",
 		"cesarea_induccion", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto", "longitud_cervix",
-		"funneling", "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila",
+		"funneling", "porcentaje_funneling", "sludge", "elastografia", "consistencia_cervical", "cervix_prueba_funcional", "liquido_amniotico",
+		"clasificacion_liquido_amniotico", "valor_ila",
 	];
 
 	/**

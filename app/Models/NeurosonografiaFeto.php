@@ -25,8 +25,8 @@ class NeurosonografiaFeto extends Model
 		"tronco_encefalico", "torcula_tendorio", "doppler_visualiza", "pericallosa", "vena_galeno", "cisuras_silvio", "cisura_occipital", "cisura_calcarina", "cisura_cingulada",
 		"cortes_sagitales", "identifica_cono", "observa_osificacion", "integridad_cuerpos", "evidencia_mielocele", "evidencia_mielocele_descripcion", "evidencia_mielomeningocele",
 		"evidencia_mielomeningocele_descripcion", "evidencia_mielosquisis", "evidencia_mielosquisise_descripcion", "placenta_numero", "placenta_posocion", "placenta_grado",
-		"presencia_patologicas", "areas_infarto", "longitud_cervix", "funneling", "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico",
-		"valor_ila"
+		"presencia_patologicas", "areas_infarto", "longitud_cervix", "funneling", "porcentaje_funneling", "sludge", "elastografia", "consistencia_cervical",
+		"cervix_prueba_funcional", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila"
 	];
 
 	/**

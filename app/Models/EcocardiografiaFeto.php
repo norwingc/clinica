@@ -26,7 +26,8 @@ class EcocardiografiaFeto extends Model
 		"funcion_rendimiento_cardiaco", "funcion_ritmo", "funcion_extrasistoles", "numero_vasos", "pulmonar", "aorta", "vena_cava", "tamano_vasos", "tamano_vasos_normal",
 		"tamano_vasos_anormal", "arteria_pulmonar_izquierda", "aorta_medio", "vena_cava_derecha", "disposicion_normal", "disposicion_anormal", "vista_bi_cava", "vestibulo_venoso",
 		"arco_aortico", "arco_ductal", "eje_corto_vasos", "eje_corto_centriculos", "placenta_numero", "placenta_posocion", "placenta_grado", "presencia_patologicas", "areas_infarto",
-		"longitud_cervix", "funneling", "porcentaje_funneling", "sludge", "liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila",
+		"longitud_cervix", "funneling", "porcentaje_funneling", "sludge", "elastografia", "consistencia_cervical", "cervix_prueba_funcional",
+		"liquido_amniotico", "clasificacion_liquido_amniotico", "valor_ila",
 	];
 
 	/**
