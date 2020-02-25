@@ -1,6 +1,6 @@
 @if(\Auth::user()->nickname == 'pavon')
     <footer style="margin-top: 1em">
-        <p>
+        <p sytyle="margin: 0">
             <b>Dr. Néstor Javier Pavón Gómez</b> <br>
             Médico Gineco Obstetra <br>
             Sub Especialista en Medicina Materno Fetal - <b>INPER México</b> <br>
@@ -12,7 +12,7 @@
 
 @if(\Auth::user()->nickname == 'bravo')
     <footer style="margin-top: 1em">
-        <p>
+        <p sytyle="margin: 0">
             <b>Dra. Sugey del Carmen Bravo Cabrera</b> <br>
             Médico y Cirujana <br>
             Especialista en Ginecologia y Obstetrica <br>
