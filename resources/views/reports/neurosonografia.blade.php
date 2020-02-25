@@ -281,8 +281,8 @@
     @endif
 
 	@include('includes._firmas')
-	<small>
-		<b>Importante:</b> La ecografía es un medio diagnostico sujeto a múltiples variables individuales de interpretación del medio en el que se realzan, por lo que resulta útil, válido y segura, pero no es infalible ni exacta
+	<small style="font-size: 0.8em">
+		<b>Importante:</b> La ecografía es un medio diagnóstico sujeto a múltiples variables individuales de interpretación del medio en el que se realizan, por lo que resulta útil, válido y segura, pero no es infalible ni exacta
 	</small>
 </body>
 </html>
