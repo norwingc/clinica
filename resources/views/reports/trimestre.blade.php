@@ -120,6 +120,14 @@
                         <th>TN</th>
                         <td>{{ $value->somatometria_tn }} mm</td>
                     </tr>
+					<tr>
+                        <th>Ducto Venoso</th>
+                        <td>{{ $value->ducto_venoso }}</td>
+                    </tr>
+					<tr>
+                        <th>Regurgitación Tricuspídea</th>
+                        <td>{{ $value->regurgitacion_tricuspidea }}</td>
+                    </tr>
                     <tr>
                         <th>Fecha estimada de parto</th>
                         <td>{{ date('d/m/Y', strtotime($value->somatometria_fecha_estimada_parto)) }}</td>
