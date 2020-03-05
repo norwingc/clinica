@@ -61,8 +61,6 @@
 				"infertilidad_descripcion": $(form).find('#infertilidad_descripcion_1trimestre').val(),
 				"consanguinidad": $(form).find('#consanguinidad_1trimestre').val(),
 				"consanguinidad_descripcion": $(form).find('#consanguinidad_descripcion_1trimestre').val(),
-				"ducto_venoso": $(form).find('#ducto_venoso_1trimestre').val(),
-				"regurgitacion_tricuspidea": $(form).find('#regurgitacion_tricuspidea_1trimestre').val(),
 				"fetos": fetos
 			};
 
@@ -321,7 +319,9 @@
 					"liquido_amniotico": $(child).find('#liquido_amniotico_1trimestre').val(),
 					"basal": $(child).find('#basal_1trimestre').val(),
 					"edad_tn": $(child).find('#edad_tn_1trimestre').val(),
-					"edad_tn_marcadores": $(child).find('#edad_tn_marcadores_1trimestre').val()
+					"edad_tn_marcadores": $(child).find('#edad_tn_marcadores_1trimestre').val(),
+					"ducto_venoso": $(child).find('#ducto_venoso_1trimestre').val(),
+					"regurgitacion_tricuspidea": $(child).find('#regurgitacion_tricuspidea_1trimestre').val(),
 				});
 			}
 
