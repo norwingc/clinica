@@ -209,12 +209,30 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<div class="col-sm-3">
+                                <label>Nombre del bebe</label>
+                                <div>
+                                    <input type="text" class="form-control" id="nombre_bebe" name="nombre_bebe" value="{{ $paciente->nombre_bebe }}">
+                                </div>
+							</div>
 							<div class="col-sm-6">
 								<label>Comentarios</label>
 								<div>
 									<textarea name="personal_comentarios" class="form-control">{{ $paciente->personal_comentarios }}</textarea>
 								</div>
 							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-4">
+                                <label>Actualizado por</label>
+                                <div>
+                                    <select class="form-control" name="actualizado_por" id="actualizado_por" value="{{ $paciente->actualizado_por }}" required>
+                                        <option value="">Selecione Uno</option>
+                                        <option value="Tatiana Bravo">Tatiana Bravo</option>
+                                        <option value="Cleyda Huete">Cleyda Huete</option>
+                                    </select>
+                                </div>
+                            </div>
 						</div>
                         <div class="text-center col-md-12">
                             <button type="submit" class="btn btn-success btn-submit">Actualizar</button>

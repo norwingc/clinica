@@ -35,6 +35,8 @@ class CreatePacientesTable extends Migration
             $table->string('paridad')->nullable();
             $table->string('morbilidad')->nullable();
 			$table->date('ultima_regla')->nullable();
+			$table->string('nombre_bebe')->nullable();
+			$table->string('actualizado_por');
 			$table->timestamps();
             $table->softDeletes();
         });
