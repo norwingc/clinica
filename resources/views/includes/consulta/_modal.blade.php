@@ -6746,7 +6746,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="presencia_masa_anexial_izquierdo_si" style="display: none">
+							<div class="presencia_masa_anexial_izquierdo_si" style="display: none">
+								<div class="col-md-3">
+                                    <label>Descripcion</label>
+                                    <div>
+										<input type="text" name="ovario_izquierdo_descripcion" id="ovario_izquierdo_descripcion_pelvico" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
                                     <label>Tipo</label>
                                     <div>
@@ -6838,7 +6844,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="presencia_masa_anexial_derecho_si" style="display: none">
+							<div class="presencia_masa_anexial_derecho_si" style="display: none">
+								<div class="col-md-3">
+                                    <label>Descripcion</label>
+                                    <div>
+										<input type="text" name="ovario_derecho_descripcion" id="ovario_derecho_descripcion_pelvico" class="form-control">
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
                                     <label>Tipo</label>
                                     <div>
