@@ -8230,6 +8230,90 @@
 							</div>
 						</div>
 						<div class="col-md-2">
+							<label>Humero (mm)</label>
+							<div>
+								<input type="number" name="humero_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Humero (semanas)</label>
+							<div>
+								<input type="number" name="humero_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Radio (mm)</label>
+							<div>
+								<input type="number" name="radio_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Radio (semanas)</label>
+							<div>
+								<input type="number" name="radio_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Cúbito (mm)</label>
+							<div>
+								<input type="number" name="cubito_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Cúbito (semanas)</label>
+							<div>
+								<input type="number" name="cubito_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Tibia (mm)</label>
+							<div>
+								<input type="number" name="tibia_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Tibia (semanas)</label>
+							<div>
+								<input type="number" name="tibia_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Peroné (mm)</label>
+							<div>
+								<input type="number" name="perone_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Peroné (semanas)</label>
+							<div>
+								<input type="number" name="perone_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Cerebelo (mm)</label>
+							<div>
+								<input type="number" name="cerebelo_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Cerebelo (semanas)</label>
+							<div>
+								<input type="number" name="cerebelo_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Cisterna magna</label>
+							<div>
+								<input type="text" name="cisterna_magna" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Pliegue nucal</label>
+							<div>
+								<input type="text" name="pliegue_nucal" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
 							<label>Fetometría promedio</label>
 							<div>
 								<input type="text" name="fetometria_promedio" class="form-control">
@@ -8254,6 +8338,7 @@
 							</div>
 						</div>
 					</div>
+
 					<p class="sub_titul"><b>Descripcion Fetal</b></p>
 					<div class="form-group">
 						<div class="col-md-12">

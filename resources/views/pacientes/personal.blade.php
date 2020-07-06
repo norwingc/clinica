@@ -273,6 +273,7 @@
         $('#escolaridad').val("{{ $paciente->escolaridad }}");
         $('#tipo_rh').val("{{ $paciente->tipo_rh }}");
 		$('#embarazada').val("{{ $paciente->embarazada }}");
+		$('#actualizado_por').val("{{ $paciente->actualizado_por }}");
 
         $(document).ready(function(){
 			if($('#embarazada').data('embarazada') == 'Si'){
