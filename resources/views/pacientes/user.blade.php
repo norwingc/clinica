@@ -42,7 +42,11 @@
                         <p><strong>Cedula:</strong> {{ $paciente->id_number }}</p>
                         <p><strong>Direccion:</strong> {{ $paciente->address }}</p>
                         <p><strong>Email:</strong> {{ $paciente->email }}</p>
-                        <p><strong>Telefono:</strong> {{ $paciente->phone }}</p>
+                        <p><strong>Telefono:</strong>
+							@if($paciente->convencional != null) Convencional: {{ $paciente->convencional }} @endif
+							@if($paciente->phone_claro != null) Claro: {{ $paciente->phone_claro }} @endif
+							@if($paciente->phone_movistar != null) Movistar: {{ $paciente->phone_movistar }} @endif
+						</p>
                         <p><strong>Tipo y RH:</strong> {{ $paciente->tipo_rh }}</p>
                         <p><strong>Paridad:</strong> {{ $paciente->paridad }}</p>
 						<p><strong>Morbilidad:</strong> {{ $paciente->morbilidad }}</p>

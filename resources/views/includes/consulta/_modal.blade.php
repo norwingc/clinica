@@ -8179,6 +8179,81 @@
                             </div>
                         </div>
 					</div>
+					<p class="sub_titul"><b>Tabla somatometria</b></p>
+					<div class="form-group">
+						<div class="col-md-2">
+							<label>DBP (mm)</label>
+							<div>
+								<input type="number" name="dbp_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>DBP (Semanas)</label>
+							<div>
+								<input type="number" name="dbp_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>CC (mm)</label>
+							<div>
+								<input type="number" name="cc_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>CC (Semanas)</label>
+							<div>
+								<input type="number" name="cc_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>CA (mm)</label>
+							<div>
+								<input type="number" name="ca_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>CA (Semanas)</label>
+							<div>
+								<input type="number" name="ca_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>LF (mm)</label>
+							<div>
+								<input type="number" name="lf_medida" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>LF (Semanas)</label>
+							<div>
+								<input type="number" name="lf_semanas" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Fetometría promedio</label>
+							<div>
+								<input type="text" name="fetometria_promedio" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Percentil</label>
+							<div>
+								<input type="text" name="percentil" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label>Peso fetal</label>
+							<div>
+								<input type="text" name="peso_fetal" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label style="font-size: 13px">Fecha de parto estimada</label>
+							<div>
+								<input type="date" name="fecha_parto" class="form-control">
+							</div>
+						</div>
+					</div>
 					<p class="sub_titul"><b>Descripcion Fetal</b></p>
 					<div class="form-group">
 						<div class="col-md-12">

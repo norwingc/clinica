@@ -91,7 +91,7 @@ class PacienteController extends Controller
 	 */
 	public function findPhone($phone)
 	{
-		$paciente = Paciente::where('phone', $phone)->first();
+		$paciente = Paciente::where('convencional', $phone)->orWhere('phone_claro', $phone)->orWhere('phone_movistar', $phone)->first();
 
 		return response()->json([
 			'paciente' => $paciente

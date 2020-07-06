@@ -36,7 +36,9 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Cedula</th>
-                                    <th>Phone</th>
+									<th>Telefono convencional</th>
+									<th>Telefono movistar</th>
+									<th>Telefono claro</th>
                                     <th>Ultima Consulta</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -63,7 +65,9 @@
         columns:[
             {data: 'name', name: 'name'},
             {data: 'id_number', name: 'id_number'},
-            {data: 'phone', name: 'phone'},
+            {data: 'convencional', name: 'convencional'},
+			{data: 'phone_movistar', name: 'phone_movistar'},
+			{data: 'phone_claro', name: 'phone_claro'},
             {data: 'lastConsulta', name: 'lastConsulta'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]

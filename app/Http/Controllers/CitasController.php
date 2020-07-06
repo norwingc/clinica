@@ -57,6 +57,7 @@ class CitasController extends Controller
 			'cita' => Cita::find($id)->load('consulta.paciente')
 		]);
 	}
+
 	/**
 	 * [index description]
 	 * @return [type] [description]
@@ -77,7 +78,7 @@ class CitasController extends Controller
 
 	/**
 	 * [store description]
-	 * @param  Request $request [description]
+	 * @param Request $request [description]
 	 * @return [type]           [description]
 	 */
 	public function store(Request $request, Paciente $paciente = null)
@@ -86,7 +87,7 @@ class CitasController extends Controller
 		$fecha = $request->date;
 		$start = $fecha . ' ' . $request->start;
 		$start = date('Y-m-d H:i:s', strtotime($start));
-		$end   = null;
+		$end = null;
 
 		if ($request->duracion == '5 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(5);
@@ -114,26 +115,28 @@ class CitasController extends Controller
 		if ($paciente == null) {
 
 			$request->validate([
-				'phone'     => 'unique:pacientes',
+				'convencional' => 'unique:pacientes',
 				'id_number' => 'unique:pacientes',
 			]);
 
 			$paciente = Paciente::where('phone', $request->phone)->first();
 
+			$paciente = Paciente::where('convencional', $request->convencional)->orWhere('phone_claro', $request->convencional)->orWhere('phone_movistar', $request->convencional)->first();
+
 			if (!$paciente) {
-				$paciente       = new Paciente($request->all());
+				$paciente = new Paciente($request->all());
 				$paciente->name = ucwords(strtolower($request->name));
 				$paciente->save();
 			}
 		}
 
-		$cita             = new Cita();
-		$cita->start      = $start;
-		$cita->end        = $end;
-		$cita->date       = $request->date;
+		$cita = new Cita();
+		$cita->start = $start;
+		$cita->end = $end;
+		$cita->date = $request->date;
 		$cita->comentario = $request->comentario;
 		$cita->title = 'Paciente: ' . $paciente->name . ' Examen: ' . $request->examen_type . ' Costo: $' . $request->costo . ' Comentario: ' . $request->comentario;
-		$cita->url   = '/Pacientes/User/View/' . $paciente->id;
+		$cita->url = '/Pacientes/User/View/' . $paciente->id;
 
 		if ($request->doctor == 'Dr. Pavon') {
 			$cita->color = '#3c8dbc';
@@ -158,26 +161,26 @@ class CitasController extends Controller
 
 	/**
 	 * [storeCitaAllDay description]
-	 * @param  Request $request [description]
+	 * @param Request $request [description]
 	 * @return [type]           [description]
 	 */
 	public function storeCitaAllDay(Request $request)
 	{
-		$cita             = new Cita();
-		$cita->date       = $request->date;
+		$cita = new Cita();
+		$cita->date = $request->date;
 		$cita->comentario = $request->comentario;
-		$cita->title      = $request->comentario;
+		$cita->title = $request->comentario;
 
 		if ($request->all_day == 'Si') {
-			$cita->all_day    = true;
-			$cita->start      = $request->date . ' 00:00:00';
-			$cita->end        = $request->date . ' 23:59:00';
+			$cita->all_day = true;
+			$cita->start = $request->date . ' 00:00:00';
+			$cita->end = $request->date . ' 23:59:00';
 		} else {
-			$cita->start      = $request->date . ' ' . $request->start;
-			$cita->end        = $request->date . ' ' . $request->end;
+			$cita->start = $request->date . ' ' . $request->start;
+			$cita->end = $request->date . ' ' . $request->end;
 		}
 
-		$cita->color      = '#ff0000';
+		$cita->color = '#ff0000';
 		$cita->save();
 
 		session()->flash('message_success', "Cita Agregada");
@@ -199,26 +202,26 @@ class CitasController extends Controller
 
 	/**
 	 * [bloqueadasUpdate description]
-	 * @param  Request $request [description]
-	 * @param  Cita    $cita    [description]
+	 * @param Request $request [description]
+	 * @param Cita $cita [description]
 	 * @return [type]           [description]
 	 */
 	public function bloqueadasUpdate(Request $request, Cita $cita)
 	{
-		$cita->date       = $request->date;
+		$cita->date = $request->date;
 		$cita->comentario = $request->comentario;
-		$cita->title      = $request->comentario;
+		$cita->title = $request->comentario;
 
 		if ($request->all_day == 'Si') {
-			$cita->all_day    = true;
-			$cita->start      = $request->date . ' 00:00:00';
-			$cita->end        = $request->date . ' 23:59:00';
+			$cita->all_day = true;
+			$cita->start = $request->date . ' 00:00:00';
+			$cita->end = $request->date . ' 23:59:00';
 		} else {
-			$cita->start      = $request->date . ' ' . $request->start;
-			$cita->end        = $request->date . ' ' . $request->end;
+			$cita->start = $request->date . ' ' . $request->start;
+			$cita->end = $request->date . ' ' . $request->end;
 		}
 
-		$cita->color      = '#ff0000';
+		$cita->color = '#ff0000';
 		$cita->save();
 
 		session()->flash('message_success', "Cita Modificada");
@@ -235,7 +238,7 @@ class CitasController extends Controller
 		$fecha = $request->date;
 		$start = $fecha . ' ' . $request->start;
 		$start = date('Y-m-d H:i:s', strtotime($start));
-		$end   = null;
+		$end = null;
 
 		if ($request->duracion == '30 min') {
 			$end = \Carbon\Carbon::parse($start)->addMinutes(30);
@@ -252,12 +255,12 @@ class CitasController extends Controller
 		//     return back();
 		// }
 
-		$cita->start      = $start;
-		$cita->end        = $end;
-		$cita->date       = $request->date;
+		$cita->start = $start;
+		$cita->end = $end;
+		$cita->date = $request->date;
 		$cita->comentario = $request->comentario;
 		$cita->title = 'Paciente: ' . $request->name . ' Examen: ' . $request->examen_type . ' Costo: $' . $request->costo . ' Comentario: ' . $request->comentario;
-		$cita->url   = '/Pacientes/User/View/' . $cita->consulta->paciente->id;
+		$cita->url = '/Pacientes/User/View/' . $cita->consulta->paciente->id;
 
 		if ($request->doctor == 'Dr. Pavon') {
 			$cita->color = '#3c8dbc';
@@ -281,7 +284,7 @@ class CitasController extends Controller
 
 	/**
 	 * [delete description]
-	 * @param  Cita   $cita [description]
+	 * @param Cita $cita [description]
 	 * @return [type]       [description]
 	 */
 	public function delete(Cita $cita)

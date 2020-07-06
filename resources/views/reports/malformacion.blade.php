@@ -58,6 +58,94 @@
             </table>
         </div>
 	</div>
+	<div class="row">
+		<div class="col-xs-5 col-xs-offset-3">
+			<table class="table-striped">
+				<tr>
+					<th colspan="3" style="text-align: center">SOMATOMETRIA</th>
+				</tr>
+				<tr>
+					<th>Parámetro</th>
+					<th>Medida mm</th>
+					<th>Semanas</th>
+				</tr>
+				<tr>
+					<th>DBP</th>
+					<td>{{ $malformacion->dbp_medida }}</td>
+					<td>{{ $malformacion->dbp_semanas }}</td>
+				</tr>
+				<tr>
+					<th>CC</th>
+					<td>{{ $malformacion->cc_medida }}</td>
+					<td>{{ $malformacion->cc_semanas }}</td>
+				</tr>
+				<tr>
+					<th>CA</th>
+					<td>{{ $malformacion->ca_medida }}</td>
+					<td>{{ $malformacion->ca_semanas }}</td>
+				</tr>
+				<tr>
+					<th>LF</th>
+					<td>{{ $malformacion->lf_medida }}</td>
+					<td>{{ $malformacion->lf_semanas }}</td>
+				</tr>
+				<tr>
+					<th>Humero</th>
+					<th>{{ $malformacion->humero_medida }}</th>
+					<th>{{ $malformacion->humero_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Radio</th>
+					<th>{{ $malformacion->radio_medida }}</th>
+					<th>{{ $malformacion->radio_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Cúbito</th>
+					<th>{{ $malformacion->cubito_medida }}</th>
+					<th>{{ $malformacion->cubito_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Tibia</th>
+					<th>{{ $malformacion->tibia_medida }}</th>
+					<th>{{ $malformacion->tibia_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Peroné</th>
+					<th>{{ $malformacion->perone_medida }}</th>
+					<th>{{ $malformacion->perone_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Cerebelo</th>
+					<th>{{ $malformacion->cerebelo_medida }}</th>
+					<th>{{ $malformacion->cerebelo_semanas }}</th>
+				</tr>
+				<tr>
+					<th>Cisterna magna</th>
+					<td colspan="2" class="text-center">{{ $malformacion->cisterna_magna }}</td>
+				</tr>
+				<tr>
+					<th>Pliegue nucal</th>
+					<td colspan="2" class="text-center">{{ $malformacion->pliegue_nucal }}</td>
+				</tr>
+				<tr>
+					<th>Fetometría promedio</th>
+					<td colspan="2" class="text-center">{{ $malformacion->fetometria_promedio }}</td>
+				</tr>
+				<tr>
+					<th>Percentil</th>
+					<td colspan="2" class="text-center">{{ $malformacion->percentil }}</td>
+				</tr>
+				<tr>
+					<th>Peso fetal</th>
+					<td colspan="2" class="text-center">{{ $malformacion->peso_fetal }}</td>
+				</tr>
+				<tr>
+					<th>Fecha de parto estimada</th>
+					<td colspan="2">{{ date('d/m/Y', strtotime($malformacion->fecha_parto)) }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 
 	<p class="sub_titul"><b>Descripcion Fetal</b></p>
 

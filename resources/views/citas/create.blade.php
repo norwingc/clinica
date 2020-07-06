@@ -30,7 +30,7 @@
                             <div class="col-sm-3">
                                 <label>Telefono Paciente</label>
                                 <div>
-                                    <input type="text" class="form-control phone" name="phone" id="phone">
+                                    <input type="text" class="form-control phone" name="convencional" id="phone">
                                 </div>
                             </div>
                             <div class="col-sm-3">
