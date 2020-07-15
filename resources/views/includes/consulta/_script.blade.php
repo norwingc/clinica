@@ -71,6 +71,9 @@
     function uteroPelvico(este) {
         (este.val() == 'Presente') ? $('.utero_pelvico_ausente').show() : $('.utero_pelvico_ausente').hide();
     }
+	function formaPelvico(este) {
+        (este.val() == 'Retroversion') ? $('.forma_pelvico').show() : $('.forma_pelvico').hide();
+    }
     function labioNormal(este) {
         (este.val() == 'No') ? $('.labio_normal_no').show() : $('.labio_normal_no').hide();
     }

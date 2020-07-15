@@ -6471,9 +6471,20 @@
                             <div class="col-md-3">
                                 <label>Forma</label>
                                 <div>
-                                    <select name="forma" id="forma_pelvico" class="form-control">
+                                    <select name="forma" id="forma_pelvico" class="form-control" onchange="formaPelvico($(this))">
                                         <option value="Anteversion">Anteversion</option>
                                         <option value="Retroversion">Retroversion</option>
+                                    </select>
+                                </div>
+							</div>
+							<div class="col-md-3 forma_pelvico" style="display: none">
+                                <label>Forma</label>
+                                <div>
+                                    <select name="grado" id="grado_pelvico" class="form-control">
+										<option value="I">I</option>
+										<option value="II">II</option>
+										<option value="III">III</option>
+										<option value="IV">IV</option>
                                     </select>
                                 </div>
                             </div>
@@ -8102,7 +8113,7 @@
                         <div class="col-sm-12">
                             <label>Comentario</label>
                             <div>
-                                <textarea name="comentario" id="comentarios_comentarios" class="form-control" style="height: 200px"></textarea>
+                                <textarea name="comentario" id="comentarios_comentarios" class="form-control" style="height: 200px" required></textarea>
                             </div>
 						</div>
 					</div>

@@ -63,7 +63,9 @@
     <p>Utero: {{ $pelvico->utero }}.
 
     @if($pelvico->utero == 'Presente')
-       Forma: {{ $pelvico->forma }}. Bordes: {{ $pelvico->bordes }}. Paredes: {{ $pelvico->paredes }}
+	   Forma: {{ $pelvico->forma }}.
+	   @if($pelvico->forma == 'Retroversion') Grado: {{ $pelvico->grado }} @endif
+	   Bordes: {{ $pelvico->bordes }}. Paredes: {{ $pelvico->paredes }}
 
         Longitud: {{ $pelvico->longitud }}. Ancho: {{ $pelvico->ancho }}. Grosor: {{ $pelvico->grosor }}. Masas en musculo uterino: {{ $pelvico->masa_uterino }}.
         @if($pelvico->masa_uterino == 'Si' || $pelvico->masa_uterino == 'Unica' || $pelvico->masa_uterino == 'Multiple')
