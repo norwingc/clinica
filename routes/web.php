@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('test', function () { });
+Route::get('test', function () {
+});
 
 Route::fallback('ResourcesController@notFoud');
 
@@ -54,6 +55,16 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::name('paciente.image.delete')->get('/Image/delete/{PacienteImage}', 'PacienteImageController@delete');
 
 		Route::name('paciente.consulta.delete.last')->get('Consultas/deletea/last/{paciente}', 'PacienteController@deleteLastCita');
+
+		Route::group(['prefix' => 'AtencionPrenatal/{paciente}'], function () {
+			Route::get('/', 'PacienteAtencionPrenatalController@index')->name('paciente.atencionprenatal.index');
+			Route::post('/store', 'PacienteAtencionPrenatalController@store')->name('paciente.atencionprenatal.store');
+
+			Route::post('/store/cita/{PacienteAtencionPrenatal}', 'PacienteAtencionPrenatalController@storeCita')->name('paciente.atencionprenatal.store.cita');
+
+			Route::get('/report', 'PacienteAtencionPrenatalController@report')->name('paciente.atencionprenatal.report');
+
+		});
 	});
 
 	Route::group(['prefix' => 'Consultas'], function () {

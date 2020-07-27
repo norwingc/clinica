@@ -92,4 +92,9 @@ class Paciente extends Model
 	{
 		return Carbon::parse($this->attributes['birthday'])->age;
 	}
+
+	public function atencion_prenatal()
+	{
+		return $this->hasOne('App\Models\PacienteAtencionPrenatal', 'paciente_id');
+	}
 }
