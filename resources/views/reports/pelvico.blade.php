@@ -100,7 +100,8 @@
         Ovario: {{ $pelvico->ovario_izquierdo }}.
         @if($pelvico->ovario_izquierdo == 'Presente')
             Mide (mm): {{ $pelvico->ovario_izquierdo_1 }}. X (mm): {{ $pelvico->ovario_izquierdo_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_izquierdo }}
-            @if($pelvico->presencia_masa_anexial_izquierdo == 'Si')
+			@if($pelvico->presencia_masa_anexial_izquierdo == 'Si')
+				Descripción: {{ $pelvico->ovario_izquierdo_descripcion }}
                 Tipo: {{ $pelvico->ovario_izquierdo_tipo }}. Vegetaciones: {{ $pelvico->ovario_izquierdo_vegetaciones }}. Septos: {{ $pelvico->ovario_izquierdo_septos }}.
                 Irregularidad de la masa: {{ $pelvico->ovario_izquierdo_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_izquierdo_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_izquierdo_patron_vascular }}.
             @endif
@@ -113,7 +114,8 @@
         Ovario: {{ $pelvico->ovario_derecho }}
         @if($pelvico->ovario_derecho == 'Presente')
             Mide (mm): {{ $pelvico->ovario_derecho_1 }}. X (mm): {{ $pelvico->ovario_derecho_2 }}. Presencia de masa anexial: {{ $pelvico->presencia_masa_anexial_derecho }}
-            @if($pelvico->presencia_masa_anexial_derecho == 'Si')
+			@if($pelvico->presencia_masa_anexial_derecho == 'Si')
+				Descripción: {{ $pelvico->ovario_derecho_descripcion }}
                 Tipo: {{ $pelvico->ovario_derecho_tipo }}. Vegetaciones: {{ $pelvico->ovario_derecho_vegetaciones }}. Septos: {{ $pelvico->ovario_derecho_septos }}.
                 Irregularidad de la masa: {{ $pelvico->ovario_derecho_irregularidad_masa }}. Vaso nutricio: {{ $pelvico->ovario_derecho_vaso_nutricio }}. Patron vascular: {{ $pelvico->ovario_derecho_patron_vascular }}.
             @endif

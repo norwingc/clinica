@@ -6478,7 +6478,7 @@
                                 </div>
 							</div>
 							<div class="col-md-3 forma_pelvico" style="display: none">
-                                <label>Forma</label>
+                                <label>Grado</label>
                                 <div>
                                     <select name="grado" id="grado_pelvico" class="form-control">
 										<option value="I">I</option>
@@ -7206,17 +7206,8 @@
                             <div>
                                 <textarea class="form-control" name="lesiones_perianales_descipcion" id="lesiones_perianales_descipcion_colposcopia"></textarea>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <label>Comentarios</label>
-                            <div>
-                                <textarea name="comentarios" id="comentarios_colposcopia" class="form-control"></textarea>
-                            </div>
-                        </div>
-                    </div>
+						</div>
+					</div>
                     <div class="form-group">
                         <div class="col-md-12">
                             <label>Recordatorio</label>
@@ -7225,7 +7216,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
@@ -8201,7 +8191,7 @@
 						<div class="col-md-2">
 							<label>DBP (Semanas)</label>
 							<div>
-								<input type="number" name="dbp_semanas" class="form-control">
+								<input type="text" name="dbp_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8213,7 +8203,7 @@
 						<div class="col-md-2">
 							<label>CC (Semanas)</label>
 							<div>
-								<input type="number" name="cc_semanas" class="form-control">
+								<input type="text" name="cc_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8225,7 +8215,7 @@
 						<div class="col-md-2">
 							<label>CA (Semanas)</label>
 							<div>
-								<input type="number" name="ca_semanas" class="form-control">
+								<input type="text" name="ca_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8237,7 +8227,7 @@
 						<div class="col-md-2">
 							<label>LF (Semanas)</label>
 							<div>
-								<input type="number" name="lf_semanas" class="form-control">
+								<input type="text" name="lf_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8249,7 +8239,7 @@
 						<div class="col-md-2">
 							<label>Humero (semanas)</label>
 							<div>
-								<input type="number" name="humero_semanas" class="form-control">
+								<input type="text" name="humero_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8261,7 +8251,7 @@
 						<div class="col-md-2">
 							<label>Radio (semanas)</label>
 							<div>
-								<input type="number" name="radio_semanas" class="form-control">
+								<input type="text" name="radio_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8273,7 +8263,7 @@
 						<div class="col-md-2">
 							<label>Cúbito (semanas)</label>
 							<div>
-								<input type="number" name="cubito_semanas" class="form-control">
+								<input type="text" name="cubito_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8285,7 +8275,7 @@
 						<div class="col-md-2">
 							<label>Tibia (semanas)</label>
 							<div>
-								<input type="number" name="tibia_semanas" class="form-control">
+								<input type="a" name="tibia_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8297,7 +8287,7 @@
 						<div class="col-md-2">
 							<label>Peroné (semanas)</label>
 							<div>
-								<input type="number" name="perone_semanas" class="form-control">
+								<input type="text" name="perone_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -8309,7 +8299,7 @@
 						<div class="col-md-2">
 							<label>Cerebelo (semanas)</label>
 							<div>
-								<input type="number" name="cerebelo_semanas" class="form-control">
+								<input type="text" name="cerebelo_semanas" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
