@@ -260,6 +260,9 @@
 		if(examen == 10){
 			updateMalFormacionFetal(este);
 		}
+		if(examen == 11){
+			updateCrioterapia(este);
+		}
 
     }
 
@@ -798,6 +801,17 @@
 		$('.consulta-form').attr('action', "{{ url('/') }}/Consultas/MalformacionFetal/store/"+consulta);
 		$('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
 		$('#modalUpdatedMalformacionFetal').modal('show');
+	}
+
+	function updateCrioterapia(este){
+		let consulta        = este.data('consulta');
+        let title           = 'Crioterapia: ' + este.data('paciente');
+        let crioterapia = este.data('id');
+		$('.modal-title').html(title);
+
+		$('.consulta-form').attr('action', "{{ url('/') }}/Consultas/Crioterapia/store/"+consulta);
+		$('.edad_gestacional_calculator').val(edadGestional($('.edad_gestacional_calculator').data('edad'), 'modal'));
+		$('#modalUpdatedCrioterapia').modal('show');
 	}
 </script>
 @endpush

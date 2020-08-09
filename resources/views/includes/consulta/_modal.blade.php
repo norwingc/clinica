@@ -8409,3 +8409,90 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modalUpdatedCrioterapia">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['url' => '', 'class' => 'consulta-form form-examen form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label>Referido</label>
+                            <div>
+                                <input type="text" class="form-control" name="referido" id="referido" value="{{ $paciente->referido }}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                           <label>Edad</label>
+                           <div>
+                               <input type="text" name="edad" id="edad_crioterapia" class="form-control" value="{{ $paciente->getAge() }}">
+                           </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Fecha</label>
+                            <div>
+                                <input type="text" class="form-control" name="date" id="date_crioterapia" readonly value="{{ date('d/m/Y h:i a') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Historia</label>
+                             <div>
+                                 <textarea name="historia" id="historia_crioterapia" class="form-control"></textarea>
+                             </div>
+                        </div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6">
+							<label>Diagnóstico preoperatorio</label>
+							<div>
+								<textarea name="diagnostico_preoperatorio" id="diagnostico_preoperatorio_crioterapia" class="form-control" required></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Hallazgos</label>
+							<div>
+								<textarea name="hallazgos" id="hallazgos_crioterapia" class="form-control" required></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Esquema de crioterapia</label>
+							<div>
+								<textarea name="esquema_crioterapia" id="esquema_crioterapia_crioterapia" class="form-control" required></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label>Complicaciones</label>
+							<div>
+								<textarea name="complicaciones" id="complicaciones_crioterapia" class="form-control" required></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="col-md-12">
+                            <label>Comentarios</label>
+                            <div>
+                                <textarea name="comentarios" id="comentarios_crioterapia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Recordatorio</label>
+                            <div>
+                                <textarea name="recordatorio" id="recordatorio_crioterapia" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+					<div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+				{!! Form::close() !!}
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -80,7 +80,7 @@
 
 @if($value->colposcopia)
     @if($value->colposcopia->recordatorio != null)
-        <p><b class="red">Recordatorio Colposcopia / Crioterapia:</b> {{ $value->colposcopia->recordatorio }}</p>
+        <p><b class="red">Recordatorio Colposcopia:</b> {{ $value->colposcopia->recordatorio }}</p>
     @endif
   <p>
       <a href="{{ route('report.colposcopia', $value->colposcopia) }}" class="btn btn-info">Descargar reporte Colposcopia / Crioterapia</a>
@@ -96,4 +96,14 @@
         <a href="{{ route('report.malformacion', $value->malformacion) }}" class="btn btn-info">Descargar reporte Malformacion Fetal</a>
         <a href="{{ route('consulta.malformacion.delete', $value->malformacion) }}" class="btn btn-danger">Eliminar examen</a>
     </p>
+@endif
+
+@if($value->crioterapia)
+    @if($value->crioterapia->recordatorio != null)
+        <p><b class="red">Recordatorio Crioterapia:</b> {{ $value->crioterapia->recordatorio }}</p>
+    @endif
+  <p>
+      <a href="{{ route('report.crioterapia', $value->crioterapia) }}" class="btn btn-info">Descargar reporte Crioterapia</a>
+      <a href="{{ route('consulta.crioterapia.delete', $value->crioterapia) }}" class="btn btn-danger">Eliminar examen</a>
+  </p>
 @endif

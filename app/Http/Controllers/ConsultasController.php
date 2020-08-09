@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, FechaProcedimiento, MalformacionFetal};
+use App\Models\{Paciente, Consulta, UltrasonidoPelvico, Prenatal, UltrasonidoTrimestre, UltrasonidoTrimestreFeto, UltrasonidoEstructural, UltrasonidoEstructuralFeto, Neurosonografia, NeurosonografiaFeto, Ecocardiografia, EcocardiografiaFeto, Doppler, DopplerFeto, Ginecologica, Colposcopia, Crioterapia, FechaProcedimiento, MalformacionFetal};
 
 use PDF;
 use DataTables;
@@ -584,6 +584,45 @@ class ConsultasController extends Controller
 	public function reportMalformacion(MalformacionFetal $MalformacionFetal)
 	{
 		$pdf = \PDF::loadView('reports.malformacion', ['malformacion' => $MalformacionFetal]);
+		return $pdf->stream();
+	}
+
+	/**
+	 * [storeCrioterapia description]
+	 * @param   Request   $request   [$request description]
+	 * @param   Consulta  $consulta  [$consulta description]
+	 * @return  [type]               [return description]
+	 */
+	public function storeCrioterapia(Request $request, Consulta $consulta)
+	{
+		$consulta->colposcopia()->save(new Crioterapia($request->all()));
+
+		session()->flash('message_success', "Examen Agregado");
+		return back();
+	}
+
+	/**
+	 * [deleteCrioterapia description]
+	 * @param   Crioterapia  $Crioterapia  [$Crioterapia description]
+	 * @return  [type]                     [return description]
+	 */
+	public function deleteCrioterapia(Crioterapia $Crioterapia)
+	{
+		$Crioterapia->delete();
+
+		session()->flash('message_success', "Examen Eliminado");
+		return back();
+	}
+
+	/**
+	 * [reportCrioterapia description]
+	 * @param   Crioterapia  $crioterapia  [$crioterapia description]
+	 * @return  [type]                     [return description]
+	 */
+	public function reportCrioterapia(Crioterapia $crioterapia)
+	{
+
+		$pdf = \PDF::loadView('reports.crioterapia', compact('crioterapia'));
 		return $pdf->stream();
 	}
 }

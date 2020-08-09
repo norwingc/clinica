@@ -76,6 +76,9 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::name('consulta.colposcopia.store')->post('/Colposcopia/store/{consulta}', 'ConsultasController@storeColposcopia');
 		Route::name('consulta.colposcopia.delete')->get('/Colposcopia/delete/{colposcopia}', 'ConsultasController@deleteColposcopia');
 
+		Route::name('consulta.crioterapia.store')->post('/Crioterapia/store/{consulta}', 'ConsultasController@storeCrioterapia');
+		Route::name('consulta.crioterapia.delete')->get('/Crioterapia/delete/{Crioterapia}', 'ConsultasController@deleteCrioterapia');
+
 		Route::name('consulta.genecologica.store')->post('/Ginecologica/store/{consulta}', 'ConsultasController@storeGinecologica');
 		Route::name('consulta.genecologica.delete')->get('/Ginecologica/delete/{ginecologica}', 'ConsultasController@deleteGinecologica');
 
@@ -148,5 +151,6 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::name('report.prenatal')->get('Prenatal/{prenatal}', 'ConsultasController@reportPrenatal');
 		Route::name('report.colposcopia')->get('Colposcopia/{colposcopia}', 'ConsultasController@reportColposcopia');
 		Route::name('report.malformacion')->get('MalformacionFetal/{MalformacionFetal}', 'ConsultasController@reportMalformacion');
+		Route::name('report.crioterapia')->get('Crioterapia/{crioterapia}', 'ConsultasController@reportCrioterapia');
 	});
 });

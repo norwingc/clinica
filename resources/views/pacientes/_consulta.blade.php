@@ -31,7 +31,8 @@
                     <select class="form-control examen_tipo">
 						<option value="">Seleccione el Examen</option>
 						<option value="9">Comentarios</option>
-                        <option value="0">Colposcopia / Crioterapia</option>
+						<option value="0">Colposcopia</option>
+						<option value="11">Crioterapia</option>
                         <option value="1">Consulta de Atención Prenatal</option>
                         <option value="2">Consulta Ginecologica</option>
                         <option value="3">Curva de crecimiento / Doppler Fetal</option>

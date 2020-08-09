@@ -88,4 +88,9 @@ class Consulta extends Model
 	{
 		return $this->hasOne('App\Models\MalformacionFetal', 'consulta_id');
 	}
+
+	public function crioterapia()
+	{
+		return $this->hasOne('App\Models\Crioterapia', 'consulta_id');
+	}
 }

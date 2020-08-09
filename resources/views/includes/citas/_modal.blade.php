@@ -13,7 +13,8 @@
                             <div>
                                 <select name="examen_type" id="examen_type" required class="form-control">
                                     <option value="">Seleccione el Examen</option>
-                                    <option value="Colposcopia / Crioterapia">Colposcopia / Crioterapia</option>
+									<option value="Colposcopia">Colposcopia</option>
+									<option value="Crioterapia">Crioterapia</option>
                                     <option value="Consulta de Atención Prenatal">Consulta de Atención Prenatal</option>
                                     <option value="Consulta Ginecologica">Consulta Ginecologica</option>
                                     <option value="Consulta medica por primera vez">Consulta medica por primera vez</option>
