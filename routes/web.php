@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('test', function(){
+    // $user = new \App\Models\User();
+    // $user->name = 'Norwin Guerrero';
+    // $user->email = 'norwingcruz@gmail.com';
+    // $user->password = bcrypt('Adm!n!123');
+    // $user->save();
 });
+
+Route::view('/login', 'login');
+Route::post('/login', 'AuthController@login')->name('login');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+

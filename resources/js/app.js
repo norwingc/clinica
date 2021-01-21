@@ -1,1 +1,8 @@
-require('./bootstrap');
+require('./bootstrap')
+
+import 'sweetalert'
+import Vue from 'vue'
+
+new Vue({
+	el: '#app'
+})
