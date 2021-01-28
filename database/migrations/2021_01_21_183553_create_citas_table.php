@@ -15,7 +15,16 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->text('title');
+            $table->text('comentario')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
+            $table->boolean('all_day')->default(false);
+            $table->string('color')->default('#3c8dbc');
+            $table->string('url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

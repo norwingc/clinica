@@ -39,7 +39,7 @@
 			</a>
 		</li>
 		<li class="c-sidebar-nav-item">
-			<a class="c-sidebar-nav-link" href="">
+			<a class="c-sidebar-nav-link" href="{{ route('paciente.index') }}">
 				<i class="c-sidebar-nav-icon fas fa-users"></i> Pacientes
 			</a>
 		</li>
